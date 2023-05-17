@@ -1,0 +1,6 @@
+.signup-body-message-first-line {
+    color: var(--lumo-tertiary-text-color);
+    font-size: var(--lumo-font-size-xxs);
+    width: 320px;
+    text-align: center;
+}

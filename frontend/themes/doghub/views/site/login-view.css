@@ -1,0 +1,12 @@
+.login-view {
+}
+
+vaadin-login-form vaadin-button[theme~="submit"] {
+    background-color: var(--lumo-success-color);
+    color: var(--lumo-success-contrast-color);
+    cursor: pointer;
+}
+
+vaadin-login-form vaadin-button[theme~="submit"]:hover {
+    background-color: var(--lumo-success-text-color);
+}

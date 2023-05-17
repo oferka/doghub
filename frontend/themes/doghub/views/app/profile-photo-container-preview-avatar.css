@@ -1,0 +1,12 @@
+.profile-photo-container-preview-avatar {
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--lumo-secondary-text-color);
+}
+
+.profile-photo-container-preview-avatar:hover {
+    border-color: var(--lumo-primary-text-color);
+}

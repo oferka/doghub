@@ -1,0 +1,14 @@
+.signup-body-signup-with-google {
+    cursor: pointer;
+    border: 1px solid var(--lumo-tertiary-text-color);
+    border-radius: .5rem;
+    color: var(--lumo-tertiary-text-color);
+    background-color: var(--lumo-contrast-5pct);
+    width: 320px;
+    height: 40px;
+}
+
+.signup-body-signup-with-google:hover {
+    color: var(--lumo-primary-text-color);
+    background-color: var(--lumo-contrast-10pct);
+}

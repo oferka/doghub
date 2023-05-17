@@ -1,0 +1,8 @@
+.url-avatar {
+    cursor: pointer;
+    border: 1px solid var(--lumo-secondary-text-color);
+}
+
+.url-avatar:hover {
+    border: 1px solid var(--lumo-primary-text-color);
+}

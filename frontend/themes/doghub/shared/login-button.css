@@ -1,0 +1,13 @@
+.login-button {
+    color: var(--gray-600-gray-200);
+    cursor: pointer;
+    border-radius: .25rem;
+    font-size: .875rem;
+    font-weight: 600;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+    line-height: 1.4285714285714286;
+    min-height: 2rem;
+}

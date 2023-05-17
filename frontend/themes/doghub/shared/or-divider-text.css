@@ -1,0 +1,7 @@
+.or-divider-text {
+    color: var(--lumo-tertiary-text-color);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 40px;
+    text-align: center;
+}

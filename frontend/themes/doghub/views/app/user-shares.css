@@ -1,0 +1,24 @@
+.user-shares {
+
+}
+
+.user-shares-icon {
+    color: var(--lumo-tertiary-text-color);
+    height: calc(var(--lumo-icon-size-s) * 0.8);
+    margin-right: var(--lumo-space-s);
+    width: calc(var(--lumo-icon-size-s) * 0.8);
+}
+
+.user-shares-icon:hover {
+    color: var(--lumo-primary-text-color);
+}
+
+.user-shares-text {
+    color: var(--lumo-tertiary-text-color);
+    font-size: var(--lumo-font-size-xs);
+    margin-right: var(--lumo-space-l);
+}
+
+.user-shares-text:hover {
+    color: var(--lumo-primary-text-color);
+}

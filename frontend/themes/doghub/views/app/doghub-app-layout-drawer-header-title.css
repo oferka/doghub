@@ -1,0 +1,5 @@
+.doghub-app-layout-drawer-header-title {
+    font-size: var(--lumo-font-size-xl);
+    font-weight: 600;
+    margin: 0 var(--lumo-space-s);
+}

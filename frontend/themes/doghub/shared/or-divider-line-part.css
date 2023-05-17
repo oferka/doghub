@@ -1,0 +1,11 @@
+.or-divider-line-part {
+    color: var(--lumo-tertiary-text-color);
+    display: block;
+    textAlign: "center";
+    margin-top: 15px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 1px;
+    width: 140px;
+}

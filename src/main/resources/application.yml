@@ -1,0 +1,79 @@
+server:
+  port: ${PORT:3764}
+
+spring:
+  application:
+    name: "doghub"
+  profiles:
+    active: "users-service-data-provider, urls-service-data-provider"
+  data:
+    rest:
+      basePath: "/api/rest"
+  datasource:
+    url: jdbc:postgresql://localhost:54322/doghub
+    username: doghub
+    password: doghub_password
+  jpa:
+    hibernate:
+      ddl-auto: create
+  mustache:
+    check-template-location: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+      status:
+        http-mapping:
+          down: 500
+          out_of_service: 503
+          warning: 500
+    metrics:
+      enabled: true
+      export:
+        prometheus:
+          enabled: true
+    prometheus:
+      enabled: true
+    shutdown:
+      enabled: true
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: This is the doghub application
+    version: 1.0-SNAPSHOT
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+    org.springframework.web: INFO
+    org.apache.http: INFO
+    org.karp.k4t: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: INFO
+    org.springframework.web.client.RestTemplate: INFO
+    org.atmosphere: WARN
+
+springdoc:
+  api-docs:
+    enabled: true
+  show-actuator: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+vaadin:
+  # Launch the default browser when starting the application in development mode
+  launch-browser: true
+  # To improve the performance during development.
+  # For more information https://vaadin.com/docs/flow/spring/tutorial-spring-configuration.html#special-configuration-parameters
+  whitelisted-packages: com.vaadin,org.vaadin,dev.hilla,org.hk.doghub.ui
+#  urlMapping: /ui/*

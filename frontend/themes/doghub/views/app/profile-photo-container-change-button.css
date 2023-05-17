@@ -1,0 +1,7 @@
+.profile-photo-container-change-button {
+    color: var(--lumo-success-text-color);
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}

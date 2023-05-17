@@ -1,0 +1,7 @@
+.cancel-button {
+    color: var(--lumo-secondary-text-color);
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+}
