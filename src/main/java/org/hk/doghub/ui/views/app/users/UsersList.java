@@ -1,0 +1,29 @@
+package org.hk.doghub.ui.views.app.users;
+
+import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.GridVariant;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.hk.doghub.model.DogHubUser;
+
+public class UsersList extends Div {
+
+    public static final String CLASS_NAME = "users-list";
+
+    public UsersList(UsersDataProvider usersDataProvider) {
+        addClassName(CLASS_NAME);
+        setWidthFull();
+        Grid<DogHubUser> grid = new Grid<>();
+        grid.addClassName("users-list-grid");
+        setSizeFull();
+        grid.setHeightFull();
+        grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
+        grid.addComponentColumn(this::createListItem);
+        grid.setItems(usersDataProvider.findAll());
+        add(grid);
+    }
+
+    private HorizontalLayout createListItem(DogHubUser user) {
+        return new UsersListItem(user);
+    }
+}
