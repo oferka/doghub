@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 24">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/AddressProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/CityProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/CompanyProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/CountryProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/DateOfBirthProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/EmailProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/FirstNameProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/HouseNumberProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/LastNameProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/MobileNumberProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/PasswordProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/PostcodeProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/StateProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/StreetNameProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/ThumbnailPictureProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/TitleProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/UserProviderFakerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 26">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/health/user/DogHubUserCountHealthIndicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/metrics/TagUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,7 +46,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/randomme",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -71,11 +54,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/randomme" />
       <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/service/provider/domcop" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/randomme" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/faker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -89,31 +72,30 @@
       <recent name="org.hk.doghub.ui.views.app.users" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.hk.doghub.data.content.generator.user.service.provider.randomme" />
       <recent name="org.hk.doghub.data.content.generator.user.service.provider.faker" />
       <recent name="org.hk.doghub.data.content.generator.user.service" />
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.org.hk.doghub.data.content.generator.user.service.provider.randomme in doghub">
-    <configuration name="All in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.DogHubApplication">
+    <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompanyProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.service.provider.faker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.faker.CompanyProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.org.hk.doghub.data.content.generator.user.service.provider.randomme in doghub" />
         <item itemvalue="JUnit.RandomMeClientTest" />
         <item itemvalue="JUnit.All in doghub" />
         <item itemvalue="JUnit.org.hk.doghub.data.content.generator.user.service.provider.faker in doghub" />
-        <item itemvalue="JUnit.CompanyProviderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -361,11 +343,24 @@
       <option name="project" value="LOCAL" />
       <updated>1684588789441</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="doghub 25">
+      <created>1684589334814</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684589334814</updated>
+    </task>
+    <task id="LOCAL-00027" summary="doghub 26">
+      <created>1684589496619</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684589496619</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doghub 1" />
     <MESSAGE value="doghub 2" />
     <MESSAGE value="doghub 3" />
     <MESSAGE value="doghub 4" />
@@ -389,6 +384,8 @@
     <MESSAGE value="doghub 22" />
     <MESSAGE value="doghub 23" />
     <MESSAGE value="doghub 24" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 24" />
+    <MESSAGE value="doghub 25" />
+    <MESSAGE value="doghub 26" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 26" />
   </component>
 </project>
