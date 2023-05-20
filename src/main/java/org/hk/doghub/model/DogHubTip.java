@@ -27,7 +27,7 @@ public class DogHubTip extends NamedEntity {
     @NotBlank
     private String content;
 
-    @URL
+//    @URL
     private String moreInfo;
 
     @URL
