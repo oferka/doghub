@@ -1,0 +1,8 @@
+.tip-avatar {
+    cursor: pointer;
+    border: 1px solid var(--lumo-secondary-text-color);
+}
+
+.tip-avatar:hover {
+    border: 1px solid var(--lumo-primary-text-color);
+}

@@ -1,0 +1,15 @@
+.tip-anchor {
+    display: flex;
+    vertical-align: middle;
+}
+
+.tip-anchor-icon {
+    color: var(--lumo-tertiary-text-color);
+    height: calc(var(--lumo-icon-size-s) * 0.8);
+    margin-right: var(--lumo-space-s);
+    width: calc(var(--lumo-icon-size-s) * 0.8);
+}
+
+.tip-anchor-icon:hover {
+    color: var(--lumo-primary-text-color);
+}
