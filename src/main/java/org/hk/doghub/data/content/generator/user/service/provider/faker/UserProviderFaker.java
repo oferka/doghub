@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.model.User;
 import org.hk.doghub.data.content.generator.user.service.UserProvider;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @Validated
+@Primary
 public class UserProviderFaker implements UserProvider {
 
     private final FirstNameProvider firstNameProvider;

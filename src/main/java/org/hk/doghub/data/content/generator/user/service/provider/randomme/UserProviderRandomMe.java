@@ -17,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Validated
 @Slf4j
-@Primary
 public class UserProviderRandomMe implements UserProvider {
 
     private final RandomMeClient randomMeClient;
