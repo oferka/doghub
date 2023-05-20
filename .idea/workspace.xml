@@ -74,7 +74,7 @@
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubApplicationTest">
+  <component name="RunManager" selected="JUnit.UserGeneratorServiceTest">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -98,6 +98,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserGeneratorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user.service" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.service.UserGeneratorServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,6 +142,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserGeneratorServiceTest" />
         <item itemvalue="JUnit.DogHubApplicationTest" />
         <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="Docker.prometheus-grafana: Compose Deployment" />
