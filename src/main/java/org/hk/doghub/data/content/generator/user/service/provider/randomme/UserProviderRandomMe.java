@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.model.User;
 import org.hk.doghub.data.content.generator.user.service.UserProvider;
 import org.hk.doghub.data.content.generator.user.service.provider.randomme.response.RandomMeResponse;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Validated
 @Slf4j
+@Primary
 public class UserProviderRandomMe implements UserProvider {
 
     private final RandomMeClient randomMeClient;
