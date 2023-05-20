@@ -10,9 +10,9 @@ import java.util.Optional;
 
 public interface DogHubTipRepository extends JpaRepository<DogHubTip, Long>, JpaSpecificationExecutor<DogHubTip> {
 
-    Optional<DogHubTip> findByValue(String value);
+    Optional<DogHubTip> findByTitle(String title);
 
-    boolean existsByValue(String value);
+    boolean existsByTitle(String title);
 
     List<DogHubTip> findByCreatedBy(DogHubUser user);
 

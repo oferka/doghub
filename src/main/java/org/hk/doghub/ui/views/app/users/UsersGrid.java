@@ -3,6 +3,7 @@ package org.hk.doghub.ui.views.app.users;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.ui.components.shared.UserAvatarRouterLink;
 
 public class UsersGrid extends Grid<DogHubUser> {
 
@@ -13,7 +14,7 @@ public class UsersGrid extends Grid<DogHubUser> {
         setWidthFull();
         addColumn(new ComponentRenderer<>(UserIdRouterLink::new)).setHeader("ID").setComparator(DogHubUser::getId);
         addColumn(new ComponentRenderer<>(UserNameRouterLink::new)).setHeader("Name").setComparator(DogHubUser::getName);
-        addColumn(new ComponentRenderer<>(org.hk.doghub.ui.components.shared.UserAvatarRouterLink::new)).setHeader("Picture").setComparator(DogHubUser::getName);
+        addColumn(new ComponentRenderer<>(UserAvatarRouterLink::new)).setHeader("Picture").setComparator(DogHubUser::getName);
         addColumn(new ComponentRenderer<>(UserDateOfRegistration::new)).setHeader("Registered").setComparator(DogHubUser::getDateOfRegistration);
         addColumn(new ComponentRenderer<>(UserTipsRouterLink::new)).setHeader("Tips").setComparator(user -> user.getDogHubTips().size());
         addColumn(new ComponentRenderer<>(UserLikes::new)).setHeader("Likes").setComparator(DogHubUser::getLikes);

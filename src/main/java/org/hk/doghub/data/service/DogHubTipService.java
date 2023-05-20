@@ -51,12 +51,12 @@ public class DogHubTipService {
         return (int)repository.count();
     }
 
-    public boolean exists(@NotNull DogHubTip url) {
-        return repository.existsByValue(url.getValue());
+    public boolean exists(@NotNull DogHubTip tip) {
+        return repository.existsByTitle(tip.getTitle());
     }
 
-    public Optional<DogHubTip> findByValue(@NotNull String value) {
-        return repository.findByValue(value);
+    public Optional<DogHubTip> findByTitle(@NotNull String title) {
+        return repository.findByTitle(title);
     }
 
     public List<DogHubTip> findByCreatedBy(@NotNull DogHubUser user) {

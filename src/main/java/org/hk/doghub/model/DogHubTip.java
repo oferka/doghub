@@ -5,10 +5,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
@@ -21,8 +18,17 @@ import java.time.ZonedDateTime;
 public class DogHubTip extends NamedEntity {
 
     @NotNull
+    @Size(min = 2, max = 64)
     @NotBlank
-    private String value;
+    private String title;
+
+    @NotNull
+    @Size(min = 2, max = 1024)
+    @NotBlank
+    private String content;
+
+    @URL
+    private String moreInfo;
 
     @URL
     private String thumbnailPicture;
