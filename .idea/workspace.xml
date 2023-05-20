@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 12">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/faker/UserProviderFaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/faker/UserProviderFaker.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 14">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/model/Tip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/service/TipGeneratorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/service/TipProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/DogHubTipContentLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/DogHubTipContentProviderConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/DogHubTipContentProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/TipConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/UrlFaviconProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/verifier/DogHubTipContentVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tip-content-provider-configuration.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/randomme/UserProviderRandomMe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/randomme/UserProviderRandomMe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/randomme/UserProviderRandomMeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/randomme/UserProviderRandomMeConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/randomme",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/main/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -52,11 +61,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/randomme" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/service/provider/faker" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/model" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -211,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684559047406</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="doghub 13">
+      <created>1684559324347</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684559324347</updated>
+    </task>
+    <task id="LOCAL-00015" summary="doghub 14">
+      <created>1684559439459</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684559439459</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -227,6 +250,8 @@
     <MESSAGE value="doghub 10" />
     <MESSAGE value="doghub 11" />
     <MESSAGE value="doghub 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 12" />
+    <MESSAGE value="doghub 13" />
+    <MESSAGE value="doghub 14" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 14" />
   </component>
 </project>

@@ -10,13 +10,12 @@ import org.springframework.stereotype.Service;
 public class ContentLoader {
 
     private final DogHubUserContentLoader dogHubUserContentLoader;
-//    private final DogHubUrlContentLoader dogHubUrlContentLoader;
+    private final DogHubTipContentLoader dogHubTipContentLoader;
 
     public void ensureContentLoaded() {
         long ensuredLoadedUsersCounter = dogHubUserContentLoader.ensureContentLoaded();
-//        long ensuredLoadedUrlsCounter = dogHubUrlContentLoader.ensureContentLoaded();
-//        long loadedEntitiesCounter = ensuredLoadedUsersCounter + ensuredLoadedUrlsCounter;
-        long loadedEntitiesCounter = ensuredLoadedUsersCounter;
+        long ensuredLoadedTipsCounter = dogHubTipContentLoader.ensureContentLoaded();
+        long loadedEntitiesCounter = ensuredLoadedUsersCounter + ensuredLoadedTipsCounter;
         log.info("{} entities ensured loaded", loadedEntitiesCounter);
     }
 }
