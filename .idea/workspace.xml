@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 26">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/health/user/DogHubUserCountHealthIndicator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/metrics/TagUtils.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 27">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/health/tip/DogHubTipCountHealthIndicator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,11 +356,17 @@
       <option name="project" value="LOCAL" />
       <updated>1684589496619</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="doghub 27">
+      <created>1684590329437</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1684590329437</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doghub 2" />
     <MESSAGE value="doghub 3" />
     <MESSAGE value="doghub 4" />
     <MESSAGE value="doghub 5" />
@@ -386,6 +391,7 @@
     <MESSAGE value="doghub 24" />
     <MESSAGE value="doghub 25" />
     <MESSAGE value="doghub 26" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 26" />
+    <MESSAGE value="doghub 27" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 27" />
   </component>
 </project>
