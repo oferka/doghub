@@ -5,7 +5,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.DogHubAppLayout;
+import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 
 import static org.hk.doghub.ui.views.app.tips.TipsView.ROUTE;
 

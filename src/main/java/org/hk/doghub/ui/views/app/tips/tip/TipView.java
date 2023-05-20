@@ -4,7 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.DogHubAppLayout;
+import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
 

@@ -1,4 +1,4 @@
-package org.hk.doghub.ui.views.site;
+package org.hk.doghub.ui.views.site.layout;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.router.RouterLink;

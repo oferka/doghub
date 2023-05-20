@@ -1,4 +1,4 @@
-package org.hk.doghub.ui.views.app;
+package org.hk.doghub.ui.views.app.layout;
 
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.ButtonVariant;

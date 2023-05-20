@@ -1,4 +1,4 @@
-package org.hk.doghub.ui.views.app;
+package org.hk.doghub.ui.views.app.layout;
 
 import com.vaadin.flow.server.auth.AccessAnnotationChecker;
 import org.hk.doghub.ui.components.appnav.AppNav;
