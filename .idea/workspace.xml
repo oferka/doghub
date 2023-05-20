@@ -94,41 +94,11 @@
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in doghub">
-    <configuration name="AddressProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.service.provider.faker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.faker.AddressProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.org.hk.doghub.data.content.generator.user.service.provider.randomme in doghub">
     <configuration name="All in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CityProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.service.provider.faker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.faker.CityProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,6 +118,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RandomMeClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.service.provider.randomme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.randomme" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.randomme.RandomMeClientTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="org.hk.doghub.data.content.generator.user.service.provider.faker in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -162,6 +147,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.hk.doghub.data.content.generator.user.service.provider.randomme in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.service.provider.randomme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user.service.provider.randomme" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -170,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.org.hk.doghub.data.content.generator.user.service.provider.randomme in doghub" />
+        <item itemvalue="JUnit.RandomMeClientTest" />
         <item itemvalue="JUnit.All in doghub" />
         <item itemvalue="JUnit.org.hk.doghub.data.content.generator.user.service.provider.faker in doghub" />
         <item itemvalue="JUnit.CompanyProviderTest" />
-        <item itemvalue="JUnit.CityProviderTest" />
-        <item itemvalue="JUnit.AddressProviderTest" />
       </list>
     </recent_temporary>
   </component>
