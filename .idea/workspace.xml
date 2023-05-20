@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 16">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/service/provider/faker/TipContentProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/service/provider/faker/TipMoreInfoProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/service/provider/faker/TipProviderFaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/service/provider/faker/TipTitleProvider.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 17">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/TipsGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/TipsGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684562313483</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="doghub 17">
+      <created>1684563484381</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684563484381</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -260,6 +264,7 @@
     <MESSAGE value="doghub 14" />
     <MESSAGE value="doghub 15" />
     <MESSAGE value="doghub 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 16" />
+    <MESSAGE value="doghub 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 17" />
   </component>
 </project>
