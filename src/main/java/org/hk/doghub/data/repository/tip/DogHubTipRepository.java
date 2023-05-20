@@ -1,7 +1,7 @@
-package org.hk.doghub.data.repository;
+package org.hk.doghub.data.repository.tip;
 
-import org.hk.doghub.model.DogHubTip;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

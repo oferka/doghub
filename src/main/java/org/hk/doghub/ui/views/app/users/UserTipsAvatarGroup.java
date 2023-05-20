@@ -1,8 +1,8 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.avatar.AvatarGroup;
-import org.hk.doghub.model.DogHubTip;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.model.user.DogHubUser;
 
 import java.util.List;
 

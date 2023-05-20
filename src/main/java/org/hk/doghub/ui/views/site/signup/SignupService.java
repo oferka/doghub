@@ -4,15 +4,15 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.data.service.DogHubUserService;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
 import java.util.Set;
 
-import static org.hk.doghub.model.Role.USER;
+import static org.hk.doghub.model.user.Role.USER;
 
 @Slf4j
 @Service

@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.html.H2;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.Optional;

@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.tips;
 
 import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.model.DogHubTip;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 
 import java.util.List;

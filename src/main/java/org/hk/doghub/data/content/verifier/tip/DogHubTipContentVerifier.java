@@ -1,9 +1,9 @@
-package org.hk.doghub.data.content.verifier;
+package org.hk.doghub.data.content.verifier.tip;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.data.service.DogHubTipService;
-import org.hk.doghub.model.DogHubTip;
+import org.hk.doghub.data.service.tip.DogHubTipService;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

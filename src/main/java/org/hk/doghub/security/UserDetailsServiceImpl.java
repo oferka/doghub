@@ -1,8 +1,8 @@
 package org.hk.doghub.security;
 
 import lombok.RequiredArgsConstructor;
-import org.hk.doghub.data.service.DogHubUserService;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,4 +1,4 @@
-package org.hk.doghub.model;
+package org.hk.doghub.model.user;
 
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotBlank;

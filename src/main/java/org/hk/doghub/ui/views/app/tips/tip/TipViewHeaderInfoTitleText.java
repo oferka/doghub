@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.html.H2;
-import org.hk.doghub.model.DogHubTip;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 

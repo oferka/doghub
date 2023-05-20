@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.provider;
+package org.hk.doghub.data.content.provider.tip;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;

@@ -4,7 +4,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 
 public class UsersList extends Div {
 

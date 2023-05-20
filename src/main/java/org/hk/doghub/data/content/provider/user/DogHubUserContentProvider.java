@@ -1,10 +1,10 @@
-package org.hk.doghub.data.content.provider;
+package org.hk.doghub.data.content.provider.user;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.service.UserGeneratorService;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

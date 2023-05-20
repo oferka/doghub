@@ -1,10 +1,10 @@
-package org.hk.doghub.data.content.provider;
+package org.hk.doghub.data.content.provider.user;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.model.DogHubAddress;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubAddress;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +14,8 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
-import static org.hk.doghub.model.Role.ADMIN;
-import static org.hk.doghub.model.Role.USER;
+import static org.hk.doghub.model.user.Role.ADMIN;
+import static org.hk.doghub.model.user.Role.USER;
 
 
 @Service

@@ -6,7 +6,7 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.views.site.profile.ProfileView;
 import org.springframework.dao.DataIntegrityViolationException;
 

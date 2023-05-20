@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.router.RouterLink;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.views.app.users.user.UserView;
 
 public class UserIdRouterLink extends RouterLink {

@@ -1,13 +1,13 @@
-package org.hk.doghub.data.content.loader;
+package org.hk.doghub.data.content.loader.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.IterableUtils;
-import org.hk.doghub.data.content.provider.DogHubUserContentProvider;
-import org.hk.doghub.data.content.provider.DogHubUserContentProviderConfiguration;
-import org.hk.doghub.data.content.verifier.DogHubUserContentVerifier;
-import org.hk.doghub.data.service.DogHubUserService;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.content.provider.user.DogHubUserContentProvider;
+import org.hk.doghub.data.content.provider.user.DogHubUserContentProviderConfiguration;
+import org.hk.doghub.data.content.verifier.user.DogHubUserContentVerifier;
+import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

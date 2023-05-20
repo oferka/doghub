@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.loader;
+package org.hk.doghub.data.content.provider.user;
 
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:tip-content-provider-configuration.properties")
-@ConfigurationProperties(prefix = "tip.content.provider")
+@PropertySource("classpath:user-content-provider-configuration.properties")
+@ConfigurationProperties(prefix = "user.content.provider")
 @Data
-public class DogHubTipContentProviderConfiguration {
+public class DogHubUserContentProviderConfiguration {
 
     @Positive
     private Integer numberOfItems = 500;

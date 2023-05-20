@@ -2,8 +2,8 @@ package org.hk.doghub.ui.views.app.users;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.hk.doghub.data.service.DogHubUserService;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

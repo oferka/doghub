@@ -2,9 +2,9 @@ package org.hk.doghub.ui.views.app.tips;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.hk.doghub.data.service.DogHubTipService;
-import org.hk.doghub.model.DogHubTip;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.service.tip.DogHubTipService;
+import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

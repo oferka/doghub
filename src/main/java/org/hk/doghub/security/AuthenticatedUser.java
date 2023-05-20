@@ -2,15 +2,15 @@ package org.hk.doghub.security;
 
 import com.vaadin.flow.spring.security.AuthenticationContext;
 import lombok.RequiredArgsConstructor;
-import org.hk.doghub.data.service.DogHubUserService;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-import static org.hk.doghub.model.Role.ADMIN;
-import static org.hk.doghub.model.Role.USER;
+import static org.hk.doghub.model.user.Role.ADMIN;
+import static org.hk.doghub.model.user.Role.USER;
 
 @Component
 @RequiredArgsConstructor

@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.html.Span;
 import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 
 public class UsersListItemInfoSummary extends Span {
 

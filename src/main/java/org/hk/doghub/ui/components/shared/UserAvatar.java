@@ -4,7 +4,7 @@ import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.shared.Tooltip;
 import com.vaadin.flow.dom.DomEvent;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 
 @Slf4j
 public class UserAvatar extends Avatar {

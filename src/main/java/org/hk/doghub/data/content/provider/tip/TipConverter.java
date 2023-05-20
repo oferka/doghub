@@ -1,12 +1,12 @@
-package org.hk.doghub.data.content.provider;
+package org.hk.doghub.data.content.provider.tip;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.content.generator.tip.model.Tip;
-import org.hk.doghub.data.service.DogHubUserService;
-import org.hk.doghub.model.DogHubTip;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.model.user.DogHubUser;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

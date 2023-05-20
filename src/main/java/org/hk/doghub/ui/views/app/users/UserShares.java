@@ -3,7 +3,7 @@ package org.hk.doghub.ui.views.app.users;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.CONNECT_O;
 import static java.lang.String.format;

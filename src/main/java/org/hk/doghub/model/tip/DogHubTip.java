@@ -1,4 +1,4 @@
-package org.hk.doghub.model;
+package org.hk.doghub.model.tip;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
@@ -9,6 +9,8 @@ import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
+import org.hk.doghub.model.NamedEntity;
+import org.hk.doghub.model.user.DogHubUser;
 
 import java.time.ZonedDateTime;
 

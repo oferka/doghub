@@ -1,12 +1,12 @@
-package org.hk.doghub.data.content.provider;
+package org.hk.doghub.data.content.provider.user;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.content.generator.user.model.User;
-import org.hk.doghub.model.DogHubUser;
-import org.hk.doghub.model.Role;
+import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.model.user.Role;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

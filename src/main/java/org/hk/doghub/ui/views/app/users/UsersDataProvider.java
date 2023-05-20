@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 
 import java.util.List;
 import java.util.Optional;

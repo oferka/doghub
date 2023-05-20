@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.html.Div;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.model.user.DogHubUser;
 
 public class UsersListItemInfoHeaderDateOfRegistration extends Div {
 

@@ -1,10 +1,10 @@
-package org.hk.doghub.data.service;
+package org.hk.doghub.data.service.user;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomUtils;
-import org.hk.doghub.data.repository.DogHubUserRepository;
-import org.hk.doghub.model.DogHubUser;
+import org.hk.doghub.data.repository.user.DogHubUserRepository;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

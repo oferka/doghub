@@ -2,6 +2,8 @@ package org.hk.doghub.data.content.loader;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.data.content.loader.tip.DogHubTipContentLoader;
+import org.hk.doghub.data.content.loader.user.DogHubUserContentLoader;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package org.hk.doghub.model;
+package org.hk.doghub.model.user;
 
 public enum Role {
     USER, ADMIN;
