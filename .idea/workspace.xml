@@ -83,22 +83,7 @@
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PauseExecutorTest">
-    <configuration name="ElementDisplayStatusRetrieverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.element.display.status.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.element.display.status" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetrieverTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TextInputExecutorTest">
     <configuration name="ElementHighlighterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -159,6 +144,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TextInputExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.text.input" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -167,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TextInputExecutorTest" />
         <item itemvalue="JUnit.PauseExecutorTest" />
         <item itemvalue="JUnit.ElementRetrieverTest" />
         <item itemvalue="JUnit.ElementKeysSenderTest" />
         <item itemvalue="JUnit.ElementHighlighterTest" />
-        <item itemvalue="JUnit.ElementDisplayStatusRetrieverTest" />
       </list>
     </recent_temporary>
   </component>
