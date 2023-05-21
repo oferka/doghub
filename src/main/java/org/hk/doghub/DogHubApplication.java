@@ -16,7 +16,7 @@ public class DogHubApplication extends SpringBootServletInitializer implements A
 
     public static final String THEME_NAME = "doghub";
     public static final String APPLICATION_NAME = "Dog Hub";
-    public static final String APPLICATION_SHORT_NAME = "DogHub";
+    public static final String APPLICATION_SHORT_NAME = "DogHub2";
     public static final String APPLICATION_LOGO_BLACK_ON_TRANSPARENT = "images/doghub-high-resolution-logo-black-on-transparent-background.png";
     public static final String APPLICATION_LOGO_COLOR_ON_TRANSPARENT = "images/doghub-high-resolution-logo-color-on-transparent-background.png";
     public static final String APPLICATION_LOGO_WHITE_ON_TRANSPARENT = "images/doghub-high-resolution-logo-white-on-transparent-background.png";
