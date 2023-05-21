@@ -14,12 +14,6 @@ class RandomMeClientTest {
     private RandomMeClient randomMeClient;
 
     @RepeatedTest(10)
-    public void shouldGet() {
-        RandomMeResponse randomMeResponse = randomMeClient.get();
-        assertNotNull(randomMeResponse);
-    }
-
-    @RepeatedTest(10)
     public void shouldGetMultiple() {
         RandomMeResponse randomMeResponse = randomMeClient.get(20);
         assertNotNull(randomMeResponse);

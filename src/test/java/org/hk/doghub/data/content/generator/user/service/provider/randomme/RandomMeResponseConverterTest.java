@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 class RandomMeResponseConverterTest {
@@ -18,12 +17,6 @@ class RandomMeResponseConverterTest {
 
     @Autowired
     private RandomMeClient randomMeClient;
-
-    @RepeatedTest(10)
-    public void shouldConvertToUser() {
-        User user = randomMeResponseConverter.convertToUser(randomMeClient.get());
-        assertNotNull(user);
-    }
 
     @RepeatedTest(10)
     public void shouldConvertToUsers() {

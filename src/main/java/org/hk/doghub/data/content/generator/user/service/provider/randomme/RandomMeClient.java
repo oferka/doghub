@@ -15,10 +15,6 @@ public class RandomMeClient {
 
     private final RestTemplate restTemplate;
 
-    public RandomMeResponse get() {
-        return restTemplate.getForObject(API_ROOT_URL, RandomMeResponse.class);
-    }
-
     public RandomMeResponse get(int numberOfUsers) {
         return restTemplate.getForObject(API_ROOT_URL + "?results=" + numberOfUsers, RandomMeResponse.class);
     }

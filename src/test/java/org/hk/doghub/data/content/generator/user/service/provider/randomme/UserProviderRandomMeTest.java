@@ -21,7 +21,6 @@ class UserProviderRandomMeTest {
     @RepeatedTest(10)
     public void shouldGenerate() {
         User user = userProvider.generate();
-        log.info(user.getTitle());
         assertNotNull(user);
     }
 
