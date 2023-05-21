@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 34" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 35">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/browser/BrowserProviderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/browser/WebDriverProviderTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +46,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/resources",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/java/org/hk/doghub/automation/e2e/selenium/browser",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -51,11 +54,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/browser" />
+      <recent name="$PROJECT_DIR$/src/main/resources/automation/e2e/selenium" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/test/java/org/hk/automation/e2e/selenium/destination" />
-      <recent name="$PROJECT_DIR$/src/test/java/org/hk/automation/e2e/selenium" />
-      <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/randomme" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -81,7 +84,7 @@
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DogHubApplication">
+  <component name="RunManager" selected="JUnit.BrowserProviderTest.shouldGet">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -99,6 +102,22 @@
       <module name="doghub" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrowserProviderTest.shouldGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.browser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.browser" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.browser.BrowserProviderTest" />
+      <option name="METHOD_NAME" value="shouldGet" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,22 +153,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UriComponentsProviderTest.shouldGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.mapping.destination.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.mapping.destination" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.mapping.destination.UriComponentsProviderTest" />
-      <option name="METHOD_NAME" value="shouldGet" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -158,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BrowserProviderTest.shouldGet" />
         <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.SoundPlayerClipServiceTest" />
         <item itemvalue="JUnit.SoundPlayerClipServiceTest.shouldPlay" />
         <item itemvalue="JUnit.All in doghub" />
-        <item itemvalue="JUnit.UriComponentsProviderTest.shouldGet" />
       </list>
     </recent_temporary>
   </component>
@@ -420,11 +423,17 @@
       <option name="project" value="LOCAL" />
       <updated>1684602775825</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="doghub 35">
+      <created>1684663276613</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1684663276613</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doghub 10" />
     <MESSAGE value="doghub 11" />
     <MESSAGE value="doghub 12" />
     <MESSAGE value="doghub 13" />
@@ -449,6 +458,7 @@
     <MESSAGE value="doghub 32" />
     <MESSAGE value="doghub 33" />
     <MESSAGE value="doghub 34" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 34" />
+    <MESSAGE value="doghub 35" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 35" />
   </component>
 </project>
