@@ -86,7 +86,7 @@
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FileUploadExecutorTest">
+  <component name="RunManager" selected="JUnit.MouseHoverExecutorTest">
     <configuration name="ConfirmBoxExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -117,6 +117,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MouseHoverExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.ui.actions.mouse.hover.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.mouse.hover" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.mouse.hover.MouseHoverExecutorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PopupRemoverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -127,21 +142,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.popup" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.popup.PopupRemoverTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TitleVerifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.page.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.page" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.page.TitleVerifierTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MouseHoverExecutorTest" />
         <item itemvalue="JUnit.FileUploadExecutorTest" />
         <item itemvalue="JUnit.PopupRemoverTest" />
         <item itemvalue="JUnit.org.hk.doghub.automation.e2e.selenium.ui.actions.click in doghub" />
         <item itemvalue="JUnit.ConfirmBoxExecutorTest" />
-        <item itemvalue="JUnit.TitleVerifierTest" />
       </list>
     </recent_temporary>
   </component>
