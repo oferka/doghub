@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 47">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/file/upload/DefaultFileUploadExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/file/upload/FileUploadExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions/file/upload/FileUploadExecutorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/contact_us.gif" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 49">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/scroll/DefaultScrollExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/scroll/ScrollExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/scroll/ScrollInstructions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions/scroll/ScrollExecutorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/resources",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -56,11 +56,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/resources" />
-      <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions/file" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/file" />
       <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions" />
+      <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions/mouse" />
       <recent name="$PROJECT_DIR$/src/main/resources/automation/e2e/selenium" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/mouse" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -86,22 +86,7 @@
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MouseHoverExecutorTest">
-    <configuration name="ConfirmBoxExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.ui.actions.alert.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.alert" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.alert.ConfirmBoxExecutorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ScrollExecutorTest">
     <configuration name="FileUploadExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -147,6 +132,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ScrollExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.ui.actions.scroll.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.scroll" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.scroll.ScrollExecutorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="org.hk.doghub.automation.e2e.selenium.ui.actions.click in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -169,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ScrollExecutorTest" />
         <item itemvalue="JUnit.MouseHoverExecutorTest" />
         <item itemvalue="JUnit.FileUploadExecutorTest" />
         <item itemvalue="JUnit.PopupRemoverTest" />
         <item itemvalue="JUnit.org.hk.doghub.automation.e2e.selenium.ui.actions.click in doghub" />
-        <item itemvalue="JUnit.ConfirmBoxExecutorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -185,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00001" summary="doghub 1">
-      <created>1684060998699</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684060998699</updated>
     </task>
     <task id="LOCAL-00002" summary="doghub 2">
       <created>1684061244718</created>
@@ -522,12 +515,24 @@
       <option name="project" value="LOCAL" />
       <updated>1684676985539</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="doghub 48">
+      <created>1684677283349</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1684677283349</updated>
+    </task>
+    <task id="LOCAL-00050" summary="doghub 49">
+      <created>1684677471087</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1684677471087</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doghub 23" />
-    <MESSAGE value="doghub 24" />
     <MESSAGE value="doghub 25" />
     <MESSAGE value="doghub 26" />
     <MESSAGE value="doghub 27" />
@@ -551,6 +556,8 @@
     <MESSAGE value="doghub 45" />
     <MESSAGE value="doghub 46" />
     <MESSAGE value="doghub 47" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 47" />
+    <MESSAGE value="doghub 48" />
+    <MESSAGE value="doghub 49" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 49" />
   </component>
 </project>
