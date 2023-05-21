@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 37">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/element/click/status/ElementClickStatusRetrieverTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/element/display/status/ElementDisplayStatusRetrieverTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/element/highlight/ElementHighlighterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/element/keys/sender/ElementKeysSenderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/element/retrieve/ElementRetrieverTest.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 38">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions/pause/PauseExecutorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +45,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/java/org/hk/doghub/automation/e2e/selenium",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -58,11 +53,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions" />
       <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium" />
       <recent name="$PROJECT_DIR$/src/main/resources/automation/e2e/selenium" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/info" />
       <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions/text" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -88,22 +83,7 @@
       <recent name="org.hk.doghub" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ElementRetrieverTest">
-    <configuration name="ElementClickStatusRetrieverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.element.click.status.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.element.click.status" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.element.click.status.ElementClickStatusRetrieverTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PauseExecutorTest">
     <configuration name="ElementDisplayStatusRetrieverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -164,6 +144,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PauseExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.ui.actions.pause.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.pause" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -172,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PauseExecutorTest" />
         <item itemvalue="JUnit.ElementRetrieverTest" />
         <item itemvalue="JUnit.ElementKeysSenderTest" />
         <item itemvalue="JUnit.ElementHighlighterTest" />
         <item itemvalue="JUnit.ElementDisplayStatusRetrieverTest" />
-        <item itemvalue="JUnit.ElementClickStatusRetrieverTest" />
       </list>
     </recent_temporary>
   </component>
@@ -455,11 +450,17 @@
       <option name="project" value="LOCAL" />
       <updated>1684674731942</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="doghub 38">
+      <created>1684675259299</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1684675259299</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doghub 13" />
     <MESSAGE value="doghub 14" />
     <MESSAGE value="doghub 15" />
     <MESSAGE value="doghub 16" />
@@ -484,6 +485,7 @@
     <MESSAGE value="doghub 35" />
     <MESSAGE value="doghub 36" />
     <MESSAGE value="doghub 37" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 37" />
+    <MESSAGE value="doghub 38" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 38" />
   </component>
 </project>
