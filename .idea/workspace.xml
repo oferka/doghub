@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 59">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 60">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/model/tip/DogHubTip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/model/tip/DogHubTip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tip-content-provider-configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tip-content-provider-configuration.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/user-content-provider-configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user-content-provider-configuration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/tip/DogHubTipContentLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/tip/DogHubTipContentLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/user/DogHubUserContentLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/user/DogHubUserContentLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/verifier/tip/DogHubTipContentVerifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/verifier/user/DogHubUserContentVerifier.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,13 +180,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00013" summary="doghub 12">
-      <created>1684559047406</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1684559047406</updated>
     </task>
     <task id="LOCAL-00014" summary="doghub 13">
       <created>1684559324347</created>
@@ -522,12 +517,18 @@
       <option name="project" value="LOCAL" />
       <updated>1684755106753</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="doghub 60">
+      <created>1684759319519</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1684759319519</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 35" />
     <MESSAGE value="doghub 36" />
     <MESSAGE value="doghub 37" />
     <MESSAGE value="doghub 38" />
@@ -552,6 +553,7 @@
     <MESSAGE value="doghub 57" />
     <MESSAGE value="doghub 58" />
     <MESSAGE value="doghub 59" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 59" />
+    <MESSAGE value="doghub 60" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 60" />
   </component>
 </project>
