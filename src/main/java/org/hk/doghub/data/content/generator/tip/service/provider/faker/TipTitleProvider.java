@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class TipTitleProvider {
 
     public @NotNull @Size(min = 2, max = 64) @NotBlank String get(@NotNull Tip tip) {
-        return new Faker().book().title();
+        Faker faker = new Faker();
+        return faker.book().title() + " - " + faker.expression("#{regexify '[a-z]{3,5}'}");
     }
 }
