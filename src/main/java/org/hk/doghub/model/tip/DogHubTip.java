@@ -2,9 +2,7 @@ package org.hk.doghub.model.tip;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +15,7 @@ import java.time.ZonedDateTime;
 @Entity
 @Getter
 @Setter
+@Table(uniqueConstraints = { @UniqueConstraint(name = "Unique_title_and_created_by_id", columnNames = { "title", "created_by_id" }) })
 public class DogHubTip extends NamedEntity {
 
     @NotNull
@@ -49,5 +48,6 @@ public class DogHubTip extends NamedEntity {
     private ZonedDateTime creationTime;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="created_by_id")
     private DogHubUser createdBy;
 }
