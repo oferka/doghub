@@ -51,14 +51,6 @@ public class DogHubTipService {
         return (int)repository.count();
     }
 
-    public boolean exists(@NotNull DogHubTip tip) {
-        return repository.existsByTitle(tip.getTitle());
-    }
-
-    public Optional<DogHubTip> findByTitle(@NotNull String title) {
-        return repository.findByTitle(title);
-    }
-
     public List<DogHubTip> findByCreatedBy(@NotNull DogHubUser user) {
         return repository.findByCreatedBy(user);
     }
