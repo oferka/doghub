@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 56">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/DogHubApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/DogHubApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/ApplicationHeaderLogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/ApplicationHeaderLogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/layout/DogHubAppLayoutDrawerHeaderImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/layout/DogHubAppLayoutDrawerHeaderImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/layout/DogHubSiteLayoutTitleRouterLinkImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/layout/DogHubSiteLayoutTitleRouterLinkImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/user-content-provider-configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user-content-provider-configuration.properties" afterDir="false" />
-    </list>
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 57" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,13 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00010" summary="doghub 9">
-      <created>1684513201478</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1684513201478</updated>
     </task>
     <task id="LOCAL-00011" summary="doghub 10">
       <created>1684555601142</created>
@@ -525,12 +510,18 @@
       <option name="project" value="LOCAL" />
       <updated>1684741489696</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="doghub 57">
+      <created>1684745892626</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1684745892626</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 32" />
     <MESSAGE value="doghub 33" />
     <MESSAGE value="doghub 34" />
     <MESSAGE value="doghub 35" />
@@ -555,6 +546,7 @@
     <MESSAGE value="doghub 54" />
     <MESSAGE value="doghub 55" />
     <MESSAGE value="doghub 56" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 56" />
+    <MESSAGE value="doghub 57" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 57" />
   </component>
 </project>
