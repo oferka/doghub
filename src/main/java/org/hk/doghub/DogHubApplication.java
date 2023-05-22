@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@SpringBootApplication(scanBasePackages = "org.hk.doghub")
+@SpringBootApplication
 @EntityScan(basePackages = "org.hk.doghub.model")
 @Theme(value = DogHubApplication.THEME_NAME)
 @PWA(name = DogHubApplication.APPLICATION_NAME, shortName = DogHubApplication.APPLICATION_SHORT_NAME, offlineResources = { DogHubApplication.APPLICATION_HIGH_RESOLUTION_LOGO_COLOR_ON_TRANSPARENT})
