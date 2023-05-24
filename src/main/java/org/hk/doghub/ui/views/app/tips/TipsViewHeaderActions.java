@@ -9,7 +9,7 @@ public class TipsViewHeaderActions extends HorizontalLayout {
 
     private final TipsViewHeaderActionsPresentationTypeSelector tipsViewHeaderActionsPresentationTypeSelector;
     private final TipsViewHeaderActionsFilterButton tipsViewHeaderActionsFilterButton;
-    private final TipsViewHeaderActionsNewButton tipsViewHeaderActionsNewButton;
+    private final TipsViewHeaderActionsNewRouterLink tipsViewHeaderActionsNewRouterLink;
 
     public TipsViewHeaderActions(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -20,7 +20,7 @@ public class TipsViewHeaderActions extends HorizontalLayout {
         tipsViewHeaderActionsFilterButton = new TipsViewHeaderActionsFilterButton(tipsDataProvider, tipsViewState, authenticatedUser);
         add(tipsViewHeaderActionsFilterButton);
 
-        tipsViewHeaderActionsNewButton = new TipsViewHeaderActionsNewButton(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderActionsNewButton);
+        tipsViewHeaderActionsNewRouterLink = new TipsViewHeaderActionsNewRouterLink(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(tipsViewHeaderActionsNewRouterLink);
     }
 }

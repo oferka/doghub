@@ -65,14 +65,14 @@ public class TipsServiceDataProvider implements TipsDataProvider {
     }
 
     @Override
-    public boolean hasAccess(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId) {
+    public boolean hasAccess(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long tipId) {
         boolean result = false;
         if(authenticatedUser.hasAdminRole()) {
             result = true;
         }
         else {
             if(authenticatedUser.hasUserRole()) {
-                result = existsByIdAndCreatedBy(urlId, authenticatedUser.get().get());
+                result = existsByIdAndCreatedBy(tipId, authenticatedUser.get().get());
             }
         }
         return result;

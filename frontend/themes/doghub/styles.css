@@ -51,6 +51,7 @@
 @import url('./views/app/tip-anchor.css');
 @import url('./views/app/tip-comments.css');
 @import url('./views/app/tip-creation-time.css');
+@import url('./views/app/tip-creation-view.css');
 @import url('./views/app/tip-likes.css');
 @import url('./views/app/tip-router-link.css');
 @import url('./views/app/tip-id-router-link.css');
@@ -69,6 +70,7 @@
 @import url('./views/app/tip-view-header-info-title.css');
 @import url('./views/app/tip-view-header-info-title-avatar.css');
 @import url('./views/app/tip-view-header-info-title-text.css');
+@import url('./views/app/tips-creation-view.css');
 @import url('./views/app/tips-grid.css');
 @import url('./views/app/tips-list.css');
 @import url('./views/app/tips-list-item.css');
@@ -88,6 +90,7 @@
 @import url('./views/app/tips-view-header-actions.css');
 @import url('./views/app/tips-view-header-actions-filter-button.css');
 @import url('./views/app/tips-view-header-actions-new-button.css');
+@import url('./views/app/tips-view-header-actions-new-router-link.css');
 @import url('./views/app/tips-view-header-actions-presentation-type-selector.css');
 @import url('./views/app/tips-view-header-actions-presentation-type-selector-grid-button.css');
 @import url('./views/app/tips-view-header-actions-presentation-type-selector-list-button.css');

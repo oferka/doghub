@@ -62,4 +62,8 @@ public class DogHubTipService {
     public boolean existsByIdAndCreatedBy(@NotNull Long id, @NotNull DogHubUser user) {
         return repository.existsByIdAndCreatedBy(id, user);
     }
+
+    public boolean existsByTitleAndCreatedBy(@NotNull String title, @NotNull DogHubUser user) {
+        return repository.existsByTitleAndCreatedBy(title, user);
+    }
 }

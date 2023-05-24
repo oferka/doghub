@@ -19,4 +19,6 @@ public interface DogHubTipRepository extends JpaRepository<DogHubTip, Long>, Jpa
     long countByCreatedBy(DogHubUser user);
 
     boolean existsByIdAndCreatedBy(Long id, DogHubUser user);
+
+    boolean existsByTitleAndCreatedBy(String title, DogHubUser user);
 }
