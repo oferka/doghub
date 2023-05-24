@@ -8,7 +8,7 @@ public class UsersViewHeaderActions extends HorizontalLayout {
 
     private final UsersViewHeaderActionsPresentationTypeSelector usersViewHeaderActionsPresentationTypeSelector;
     private final UsersViewHeaderActionsFilterButton usersViewHeaderActionsFilterButton;
-    private final UsersViewHeaderActionsNewButton usersViewHeaderActionsNewButton;
+    private final UsersViewHeaderActionsNewRouterLink usersViewHeaderActionsNewRouterLink;
 
     public UsersViewHeaderActions(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
@@ -19,7 +19,7 @@ public class UsersViewHeaderActions extends HorizontalLayout {
         usersViewHeaderActionsFilterButton = new UsersViewHeaderActionsFilterButton(usersViewDataProvider, usersViewState);
         add(usersViewHeaderActionsFilterButton);
 
-        usersViewHeaderActionsNewButton = new UsersViewHeaderActionsNewButton(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderActionsNewButton);
+        usersViewHeaderActionsNewRouterLink = new UsersViewHeaderActionsNewRouterLink(usersViewDataProvider, usersViewState);
+        add(usersViewHeaderActionsNewRouterLink);
     }
 }
