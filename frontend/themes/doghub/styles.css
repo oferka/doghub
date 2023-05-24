@@ -159,6 +159,7 @@
 @import url('./views/app/users-view-header-actions.css');
 @import url('./views/app/users-view-header-actions-filter-button.css');
 @import url('./views/app/users-view-header-actions-new-button.css');
+@import url('./views/app/users-view-header-actions-new-router-link.css');
 @import url('./views/app/users-view-header-actions-presentation-type-selector.css');
 @import url('./views/app/users-view-header-actions-presentation-type-selector-grid-button.css');
 @import url('./views/app/users-view-header-actions-presentation-type-selector-list-button.css');
