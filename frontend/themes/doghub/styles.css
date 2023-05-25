@@ -129,6 +129,11 @@
 @import url('./views/app/user-creation-view-body.css');
 @import url('./views/app/user-creation-view-footer.css');
 @import url('./views/app/user-creation-view-header.css');
+@import url('./views/app/user-creation-view-header-info.css');
+@import url('./views/app/user-creation-view-header-info-description.css');
+@import url('./views/app/user-creation-view-header-info-title.css');
+@import url('./views/app/user-creation-view-header-info-title-icon.css');
+@import url('./views/app/user-creation-view-header-info-title-text.css');
 @import url('./views/app/user-date-of-registration.css');
 @import url('./views/app/user-likes.css');
 @import url('./views/app/user-router-link.css');

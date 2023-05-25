@@ -9,25 +9,25 @@ public class UserViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserViewHeaderInfo.CLASS_NAME + "-title";
 
-    private final UserViewHeaderInfoTitleAvatar userViewHeaderInfoTitleIcon;
-    private final UserViewHeaderInfoTitleText userViewHeaderInfoTitleText;
+    private final UserViewHeaderInfoTitleAvatar avatar;
+    private final UserViewHeaderInfoTitleText text;
 
     public UserViewHeaderInfoTitle(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        userViewHeaderInfoTitleIcon = new UserViewHeaderInfoTitleAvatar(usersDataProvider);
-        add(userViewHeaderInfoTitleIcon);
+        avatar = new UserViewHeaderInfoTitleAvatar(usersDataProvider);
+        add(avatar);
 
-        userViewHeaderInfoTitleText = new UserViewHeaderInfoTitleText(usersDataProvider);
-        add(userViewHeaderInfoTitleText);
+        text = new UserViewHeaderInfoTitleText(usersDataProvider);
+        add(text);
 
-        setVerticalComponentAlignment(CENTER, userViewHeaderInfoTitleIcon, userViewHeaderInfoTitleText);
+        setVerticalComponentAlignment(CENTER, avatar, text);
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        userViewHeaderInfoTitleIcon.selectedUserChanged(selectedUserId);
-        userViewHeaderInfoTitleText.selectedUserChanged(selectedUserId);
+        avatar.selectedUserChanged(selectedUserId);
+        text.selectedUserChanged(selectedUserId);
     }
 }

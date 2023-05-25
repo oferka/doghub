@@ -9,23 +9,23 @@ public class UserViewHeaderInfo extends VerticalLayout {
 
     public static final String CLASS_NAME = UserViewHeader.CLASS_NAME + "-info";
 
-    private final UserViewHeaderInfoTitle userViewHeaderInfoTitle;
-    private final UserViewHeaderInfoDescription userViewHeaderInfoDescription;
+    private final UserViewHeaderInfoTitle title;
+    private final UserViewHeaderInfoDescription description;
 
     public UserViewHeaderInfo(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        userViewHeaderInfoTitle = new UserViewHeaderInfoTitle(usersDataProvider);
-        add(userViewHeaderInfoTitle);
+        title = new UserViewHeaderInfoTitle(usersDataProvider);
+        add(title);
 
-        userViewHeaderInfoDescription = new UserViewHeaderInfoDescription(usersDataProvider);
-        add(userViewHeaderInfoDescription);
+        description = new UserViewHeaderInfoDescription(usersDataProvider);
+        add(description);
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        userViewHeaderInfoTitle.selectedUserChanged(selectedUserId);
-        userViewHeaderInfoDescription.selectedUserChanged(selectedUserId);
+        title.selectedUserChanged(selectedUserId);
+        description.selectedUserChanged(selectedUserId);
     }
 }

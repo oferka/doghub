@@ -9,8 +9,8 @@ public class UserViewHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserView.CLASS_NAME + "-header";
 
-    private final UserViewHeaderInfo userViewHeaderInfo;
-    private final UserViewHeaderActions userViewHeaderActions;
+    private final UserViewHeaderInfo info;
+    private final UserViewHeaderActions actions;
 
     public UserViewHeader(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
@@ -18,15 +18,15 @@ public class UserViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        userViewHeaderInfo = new UserViewHeaderInfo(usersDataProvider);
-        add(userViewHeaderInfo);
+        info = new UserViewHeaderInfo(usersDataProvider);
+        add(info);
 
-        userViewHeaderActions = new UserViewHeaderActions(usersDataProvider);
-        add(userViewHeaderActions);
+        actions = new UserViewHeaderActions(usersDataProvider);
+        add(actions);
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        userViewHeaderInfo.selectedUserChanged(selectedUserId);
-        userViewHeaderActions.selectedUserChanged(selectedUserId);
+        info.selectedUserChanged(selectedUserId);
+        actions.selectedUserChanged(selectedUserId);
     }
 }
