@@ -11,7 +11,6 @@ public class UserCreationViewHeaderInfoTitleIcon extends Icon {
 
     public UserCreationViewHeaderInfoTitleIcon(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         super(USER);
-        setSize("60px");
         addClassName(CLASS_NAME);
     }
 }
