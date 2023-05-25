@@ -14,13 +14,13 @@ public class SignupWithFacebook extends Button {
 
     public static final String CLASS_NAME = SignupWith.CLASS_NAME + "-facebook";
 
-    private final FacebookLogo facebookLogo;
+    private final FacebookLogo facebook;
 
     public SignupWithFacebook() {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
-        facebookLogo = new FacebookLogo();
-        setIcon(facebookLogo);
+        facebook = new FacebookLogo();
+        setIcon(facebook);
         setText("Continue with Facebook");
         addClickListener(this::signupWithFacebookClicked);
         addClickShortcut(KEY_F, ALT);

@@ -8,21 +8,21 @@ public class TipViewHeaderActions extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipViewHeader.CLASS_NAME + "-actions";
 
-    private final TipViewHeaderActionsShareButton tipViewHeaderActionsShareButton;
-    private final TipViewHeaderActionsExportButton tipViewHeaderActionsExportButton;
+    private final TipViewHeaderActionsShareButton share;
+    private final TipViewHeaderActionsExportButton export;
 
     public TipViewHeaderActions(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
-        tipViewHeaderActionsShareButton = new TipViewHeaderActionsShareButton(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderActionsShareButton);
+        share = new TipViewHeaderActionsShareButton(tipsDataProvider, authenticatedUser);
+        add(share);
 
-        tipViewHeaderActionsExportButton = new TipViewHeaderActionsExportButton(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderActionsExportButton);
+        export = new TipViewHeaderActionsExportButton(tipsDataProvider, authenticatedUser);
+        add(export);
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        tipViewHeaderActionsShareButton.selectedTipChanged(selectedTipId);
-        tipViewHeaderActionsExportButton.selectedTipChanged(selectedTipId);
+        share.selectedTipChanged(selectedTipId);
+        export.selectedTipChanged(selectedTipId);
     }
 }

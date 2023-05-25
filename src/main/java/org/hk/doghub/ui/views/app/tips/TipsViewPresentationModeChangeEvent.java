@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TipsViewPresentationModeChangeEvent {
 
-    private TipsViewPresentationMode oldTipViewPresentationMode;
+    private TipsViewPresentationMode oldPresentationMode;
 
-    private TipsViewPresentationMode newTipViewPresentationMode;
+    private TipsViewPresentationMode newPresentationMode;
 }

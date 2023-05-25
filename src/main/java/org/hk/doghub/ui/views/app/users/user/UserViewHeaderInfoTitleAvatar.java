@@ -11,20 +11,20 @@ public class UserViewHeaderInfoTitleAvatar extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserViewHeaderInfoTitle.CLASS_NAME + "-avatar";
 
-    private final UserAvatar userAvatar;
+    private final UserAvatar avatar;
     private final UsersDataProvider usersDataProvider;
 
     public UserViewHeaderInfoTitleAvatar(UsersDataProvider usersDataProvider) {
         this.usersDataProvider = usersDataProvider;
         addClassName(CLASS_NAME);
-        userAvatar = new UserAvatar(null);
-        add(userAvatar);
+        avatar = new UserAvatar(null);
+        add(avatar);
     }
 
     public void selectedUserChanged(long selectedUserId) {
         Optional<DogHubUser> user = usersDataProvider.findById(selectedUserId);
         if(user.isPresent()) {
-            userAvatar.selectedUserChanged(user.get());
+            avatar.selectedUserChanged(user.get());
         }
     }
 }

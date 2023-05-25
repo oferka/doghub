@@ -6,16 +6,16 @@ public class AuthenticationBar extends HorizontalLayout {
 
     public static final String CLASS_NAME = "authentication-bar";
 
-    private final LoginRouterLink loginRouterLink;
-    private final SignupRouterLink signupRouterLink;
+    private final LoginRouterLink login;
+    private final SignupRouterLink signup;
 
     public AuthenticationBar() {
         addClassName(CLASS_NAME);
 
-        loginRouterLink = new LoginRouterLink();
-        add(loginRouterLink);
+        login = new LoginRouterLink();
+        add(login);
 
-        signupRouterLink = new SignupRouterLink();
-        add(signupRouterLink);
+        signup = new SignupRouterLink();
+        add(signup);
     }
 }

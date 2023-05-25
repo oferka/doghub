@@ -7,19 +7,19 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
 
     public static final String CLASS_NAME = TipsViewHeaderActions.CLASS_NAME + "-presentation-type-selector";
 
-    private final TipsViewHeaderActionsTypeSelectorGridButton gridButton;
-    private final TipsViewHeaderActionsTypeSelectorListButton listButton;
+    private final TipsViewHeaderActionsTypeSelectorGridButton grid;
+    private final TipsViewHeaderActionsTypeSelectorListButton list;
 
     public TipsViewHeaderActionsPresentationTypeSelector(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setSpacing(false);
 
-        gridButton = new TipsViewHeaderActionsTypeSelectorGridButton(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(gridButton);
+        grid = new TipsViewHeaderActionsTypeSelectorGridButton(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(grid);
 
-        listButton = new TipsViewHeaderActionsTypeSelectorListButton(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(listButton);
+        list = new TipsViewHeaderActionsTypeSelectorListButton(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(list);
 
         setPresentationType(tipsViewState.getPresentationMode());
         tipsViewState.addPresentationModeChangeListener(this::presentationModeChanged);
@@ -28,17 +28,17 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
     private void setPresentationType(TipsViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID -> {
-                gridButton.setEnabled(false);
-                listButton.setEnabled(true);
+                grid.setEnabled(false);
+                list.setEnabled(true);
             }
             case LIST -> {
-                gridButton.setEnabled(true);
-                listButton.setEnabled(false);
+                grid.setEnabled(true);
+                list.setEnabled(false);
             }
         }
     }
 
     public void presentationModeChanged(TipsViewPresentationModeChangeEvent event) {
-        setPresentationType(event.getNewTipViewPresentationMode());
+        setPresentationType(event.getNewPresentationMode());
     }
 }

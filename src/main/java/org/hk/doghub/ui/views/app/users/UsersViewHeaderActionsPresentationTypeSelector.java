@@ -6,19 +6,19 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
 
     public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-presentation-type-selector";
 
-    private final UsersViewHeaderActionsTypeSelectorGridButton gridButton;
-    private final UsersViewHeaderActionsTypeSelectorListButton listButton;
+    private final UsersViewHeaderActionsTypeSelectorGridButton grid;
+    private final UsersViewHeaderActionsTypeSelectorListButton list;
 
     public UsersViewHeaderActionsPresentationTypeSelector(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setSpacing(false);
 
-        gridButton = new UsersViewHeaderActionsTypeSelectorGridButton(usersViewDataProvider, usersViewState);
-        add(gridButton);
+        grid = new UsersViewHeaderActionsTypeSelectorGridButton(usersViewDataProvider, usersViewState);
+        add(grid);
 
-        listButton = new UsersViewHeaderActionsTypeSelectorListButton(usersViewDataProvider, usersViewState);
-        add(listButton);
+        list = new UsersViewHeaderActionsTypeSelectorListButton(usersViewDataProvider, usersViewState);
+        add(list);
 
         setPresentationType(usersViewState.getPresentationMode());
         usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
@@ -27,17 +27,17 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
     private void setPresentationType(UsersViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID -> {
-                gridButton.setEnabled(false);
-                listButton.setEnabled(true);
+                grid.setEnabled(false);
+                list.setEnabled(true);
             }
             case LIST -> {
-                gridButton.setEnabled(true);
-                listButton.setEnabled(false);
+                grid.setEnabled(true);
+                list.setEnabled(false);
             }
         }
     }
 
     public void presentationModeChanged(UsersViewPresentationModeChangeEvent event) {
-        setPresentationType(event.getNewUserViewPresentationMode());
+        setPresentationType(event.getNewPresentationMode());
     }
 }

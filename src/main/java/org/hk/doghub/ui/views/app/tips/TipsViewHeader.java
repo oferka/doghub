@@ -9,8 +9,8 @@ public class TipsViewHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipsView.CLASS_NAME + "-header";
 
-    private final TipsViewHeaderInfo tipsViewHeaderInfo;
-    private final TipsViewHeaderActions tipsViewHeaderActions;
+    private final TipsViewHeaderInfo info;
+    private final TipsViewHeaderActions actions;
 
     public TipsViewHeader(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -18,10 +18,10 @@ public class TipsViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        tipsViewHeaderInfo = new TipsViewHeaderInfo(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderInfo);
+        info = new TipsViewHeaderInfo(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(info);
 
-        tipsViewHeaderActions = new TipsViewHeaderActions(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderActions);
+        actions = new TipsViewHeaderActions(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(actions);
     }
 }

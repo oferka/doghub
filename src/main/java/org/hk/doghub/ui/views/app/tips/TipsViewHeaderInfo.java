@@ -8,18 +8,18 @@ public class TipsViewHeaderInfo extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsViewHeader.CLASS_NAME + "-info";
 
-    private final TipsViewHeaderInfoTitle tipsViewHeaderInfoTitle;
-    private final TipsViewHeaderInfoDescription tipsViewHeaderInfoDescription;
+    private final TipsViewHeaderInfoTitle title;
+    private final TipsViewHeaderInfoDescription description;
 
     public TipsViewHeaderInfo(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setAlignItems(FlexComponent.Alignment.CENTER);
 
-        tipsViewHeaderInfoTitle = new TipsViewHeaderInfoTitle(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderInfoTitle);
+        title = new TipsViewHeaderInfoTitle(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(title);
 
-        tipsViewHeaderInfoDescription = new TipsViewHeaderInfoDescription(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderInfoDescription);
+        description = new TipsViewHeaderInfoDescription(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(description);
     }
 }

@@ -12,8 +12,8 @@ public class UserViewBody extends VerticalLayout {
 
     public static final String CLASS_NAME = UserView.CLASS_NAME + "-body";
 
-    private final Label selectedIdLabel;
-    private final RouterLink usersRouterLink;
+    private final Label selectedId;
+    private final RouterLink users;
 
     public UserViewBody(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
@@ -21,14 +21,14 @@ public class UserViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        selectedIdLabel = new Label();
-        add(selectedIdLabel);
+        selectedId = new Label();
+        add(selectedId);
 
-        usersRouterLink = new RouterLink(UsersView.NAME, UsersView.class);
-        add(usersRouterLink);
+        users = new RouterLink(UsersView.NAME, UsersView.class);
+        add(users);
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        selectedIdLabel.setText("Selected User: " + selectedUserId);
+        selectedId.setText("Selected User: " + selectedUserId);
     }
 }

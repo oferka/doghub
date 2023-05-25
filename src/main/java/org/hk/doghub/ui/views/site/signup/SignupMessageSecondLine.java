@@ -9,23 +9,23 @@ public class SignupMessageSecondLine extends HorizontalLayout {
 
     public static final String CLASS_NAME = SignupMessage.CLASS_NAME + "-second-line";
 
-    private final TermsOfServiceAnchor termsOfServiceAnchor;
+    private final TermsOfServiceAnchor termsOfService;
 
-    private final PrivacyPolicyAnchor privacyPolicyAnchor;
+    private final PrivacyPolicyAnchor privacyPolicy;
 
     public SignupMessageSecondLine() {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        termsOfServiceAnchor = new TermsOfServiceAnchor();
-        add(termsOfServiceAnchor);
+        termsOfService = new TermsOfServiceAnchor();
+        add(termsOfService);
 
         Label andLabel = new Label("and");
         andLabel.addClassName(CLASS_NAME + "-and");
         add(andLabel);
 
-        privacyPolicyAnchor = new PrivacyPolicyAnchor();
-        add(privacyPolicyAnchor);
+        privacyPolicy = new PrivacyPolicyAnchor();
+        add(privacyPolicy);
     }
 }

@@ -9,13 +9,13 @@ public class LoginRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "login-router-link";
 
-    private final LoginButton loginButton;
+    private final LoginButton login;
 
     public LoginRouterLink() {
         super(EMPTY, LoginView.class);
         addClassName(CLASS_NAME);
 
-        loginButton = new LoginButton();
-        add(loginButton);
+        login = new LoginButton();
+        add(login);
     }
 }

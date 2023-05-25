@@ -10,13 +10,13 @@ public class UserTipsRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "user-tips-router-link";
 
-    private final UserTipsAvatarGroup userTipsAvatarGroup;
+    private final UserTipsAvatarGroup avatarGroup;
 
     public UserTipsRouterLink(DogHubUser user) {
         super(EMPTY, TipsView.class);
         addClassName(CLASS_NAME);
 
-        userTipsAvatarGroup = new UserTipsAvatarGroup(user);
-        add(userTipsAvatarGroup);
+        avatarGroup = new UserTipsAvatarGroup(user);
+        add(avatarGroup);
     }
 }

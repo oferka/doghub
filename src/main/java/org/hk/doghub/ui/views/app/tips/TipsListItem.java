@@ -8,18 +8,18 @@ public class TipsListItem extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipsList.CLASS_NAME + "-item";
 
-    private final TipsListItemAvatar tipsListItemAvatar;
-    private final TipsListItemInfo tipsListItemInfo;
+    private final TipsListItemAvatar avatar;
+    private final TipsListItemInfo info;
 
     public TipsListItem(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        tipsListItemAvatar = new TipsListItemAvatar(tip, authenticatedUser);
-        add(tipsListItemAvatar);
+        avatar = new TipsListItemAvatar(tip, authenticatedUser);
+        add(avatar);
 
-        tipsListItemInfo = new TipsListItemInfo(tip, authenticatedUser);
-        add(tipsListItemInfo);
+        info = new TipsListItemInfo(tip, authenticatedUser);
+        add(info);
     }
 }

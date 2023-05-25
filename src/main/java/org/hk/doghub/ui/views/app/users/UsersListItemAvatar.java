@@ -8,11 +8,11 @@ public class UsersListItemAvatar extends Div {
 
     public static final String CLASS_NAME = UsersListItem.CLASS_NAME + "-avatar";
 
-    private final UserAvatar userAvatar;
+    private final UserAvatar avatar;
 
     public UsersListItemAvatar(DogHubUser user) {
         addClassNames(CLASS_NAME);
-        userAvatar = new UserAvatar(user);
-        add(userAvatar);
+        avatar = new UserAvatar(user);
+        add(avatar);
     }
 }

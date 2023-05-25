@@ -8,13 +8,13 @@ public class DogHubSiteLayoutTitleBar extends HorizontalLayout {
 
     public static final String CLASS_NAME = DogHubSiteLayout.ID + "-title-bar";
 
-    private final DogHubSiteLayoutTitleRouterLink titleRouterLink;
+    private final DogHubSiteLayoutTitleRouterLink title;
 
     public DogHubSiteLayoutTitleBar() {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
-        titleRouterLink = new DogHubSiteLayoutTitleRouterLink();
-        add(titleRouterLink);
+        title = new DogHubSiteLayoutTitleRouterLink();
+        add(title);
     }
 }

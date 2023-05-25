@@ -11,16 +11,16 @@ public class TipsListItemInfoSummary extends VerticalLayout {
 
     private final TipsListItemInfoHeaderCreationTime creationDate;
 
-    private final UserNameRouterLink userNameRouterLink;
+    private final UserNameRouterLink userName;
 
     public TipsListItemInfoSummary(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         creationDate = new TipsListItemInfoHeaderCreationTime(tip, authenticatedUser);
         add(creationDate);
 
-        userNameRouterLink = new UserNameRouterLink(tip.getCreatedBy());
+        userName = new UserNameRouterLink(tip.getCreatedBy());
         if(authenticatedUser.hasAdminRole()) {
-            add(userNameRouterLink);
+            add(userName);
         }
     }
 }

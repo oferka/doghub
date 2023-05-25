@@ -9,13 +9,13 @@ public class TipsViewBodyListPresentation extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsViewBody.CLASS_NAME + "-list-presentation";
 
-    private final TipsList tipsList;
+    private final TipsList list;
 
     public TipsViewBodyListPresentation(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        tipsList = new TipsList(tipsDataProvider, authenticatedUser);
-        addAndExpand(tipsList);
+        list = new TipsList(tipsDataProvider, authenticatedUser);
+        addAndExpand(list);
     }
 }

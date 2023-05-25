@@ -14,13 +14,13 @@ public class SignupWithGoogle extends Button {
 
     public static final String CLASS_NAME = SignupWith.CLASS_NAME + "-google";
 
-    private final GoogleLogo googleLogo;
+    private final GoogleLogo google;
 
     public SignupWithGoogle() {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
-        googleLogo = new GoogleLogo();
-        setIcon(googleLogo);
+        google = new GoogleLogo();
+        setIcon(google);
         setText("Continue with Google");
         addClickListener(this::signupWithGoogleClicked);
         addClickShortcut(KEY_G, ALT);

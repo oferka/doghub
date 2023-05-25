@@ -12,20 +12,20 @@ public class TipViewHeaderInfoTitleAvatar extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipViewHeaderInfoTitle.CLASS_NAME + "-avatar";
 
-    private final TipAvatar tipAvatar;
+    private final TipAvatar avatar;
     private final TipsDataProvider tipsDataProvider;
 
     public TipViewHeaderInfoTitleAvatar(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         this.tipsDataProvider = tipsDataProvider;
         addClassName(CLASS_NAME);
-        tipAvatar = new TipAvatar(null);
-        add(tipAvatar);
+        avatar = new TipAvatar(null);
+        add(avatar);
     }
 
     public void selectedTipChanged(long selectedTipId) {
         Optional<DogHubTip> tip = tipsDataProvider.findById(selectedTipId);
         if(tip.isPresent()) {
-            tipAvatar.selectedTipChanged(tip.get());
+            avatar.selectedTipChanged(tip.get());
         }
     }
 }

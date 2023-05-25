@@ -9,11 +9,11 @@ public class TipsListItemAvatar extends Div {
 
     public static final String CLASS_NAME = TipsListItem.CLASS_NAME + "-avatar";
 
-    private final TipAvatar tipAvatar;
+    private final TipAvatar avatar;
 
     public TipsListItemAvatar(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassNames(CLASS_NAME);
-        tipAvatar = new TipAvatar(tip);
-        add(tipAvatar);
+        avatar = new TipAvatar(tip);
+        add(avatar);
     }
 }

@@ -13,10 +13,10 @@ public class UsersViewHeaderActionsTypeSelectorListButton extends Button {
 
     public static final String CLASS_NAME = UsersViewHeaderActionsPresentationTypeSelector.CLASS_NAME + "-list-button";
 
-    private final UsersViewState usersViewState;
+    private final UsersViewState viewState;
 
-    public UsersViewHeaderActionsTypeSelectorListButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
-        this.usersViewState = usersViewState;
+    public UsersViewHeaderActionsTypeSelectorListButton(UsersDataProvider usersViewDataProvider, UsersViewState viewState) {
+        this.viewState = viewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "List View");
@@ -27,6 +27,6 @@ public class UsersViewHeaderActionsTypeSelectorListButton extends Button {
     }
 
     private void cardPresentationTypeClicked(ClickEvent<Button> event) {
-        usersViewState.setPresentationMode(LIST);
+        viewState.setPresentationMode(LIST);
     }
 }

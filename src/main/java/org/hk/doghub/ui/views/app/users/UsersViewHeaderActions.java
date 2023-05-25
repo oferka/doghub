@@ -6,20 +6,20 @@ public class UsersViewHeaderActions extends HorizontalLayout {
 
     public static final String CLASS_NAME = UsersViewHeader.CLASS_NAME + "-actions";
 
-    private final UsersViewHeaderActionsPresentationTypeSelector usersViewHeaderActionsPresentationTypeSelector;
-    private final UsersViewHeaderActionsFilterButton usersViewHeaderActionsFilterButton;
-    private final UsersViewHeaderActionsNewRouterLink usersViewHeaderActionsNewRouterLink;
+    private final UsersViewHeaderActionsPresentationTypeSelector presentationTypeSelector;
+    private final UsersViewHeaderActionsFilterButton filter;
+    private final UsersViewHeaderActionsNewRouterLink newRouterLink;
 
     public UsersViewHeaderActions(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
-        usersViewHeaderActionsPresentationTypeSelector = new UsersViewHeaderActionsPresentationTypeSelector(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderActionsPresentationTypeSelector);
+        presentationTypeSelector = new UsersViewHeaderActionsPresentationTypeSelector(usersViewDataProvider, usersViewState);
+        add(presentationTypeSelector);
 
-        usersViewHeaderActionsFilterButton = new UsersViewHeaderActionsFilterButton(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderActionsFilterButton);
+        filter = new UsersViewHeaderActionsFilterButton(usersViewDataProvider, usersViewState);
+        add(filter);
 
-        usersViewHeaderActionsNewRouterLink = new UsersViewHeaderActionsNewRouterLink(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderActionsNewRouterLink);
+        newRouterLink = new UsersViewHeaderActionsNewRouterLink(usersViewDataProvider, usersViewState);
+        add(newRouterLink);
     }
 }

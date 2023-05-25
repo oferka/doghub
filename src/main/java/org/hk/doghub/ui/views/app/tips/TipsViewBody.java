@@ -9,8 +9,8 @@ public class TipsViewBody extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsView.CLASS_NAME + "-body";
 
-    private final TipsViewBodyListPresentation tipsViewBodyListPresentation;
-    private final TipsViewBodyGridPresentation tipsViewBodyGridPresentation;
+    private final TipsViewBodyListPresentation listPresentation;
+    private final TipsViewBodyGridPresentation gridPresentation;
 
     public TipsViewBody(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -18,11 +18,11 @@ public class TipsViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        tipsViewBodyListPresentation = new TipsViewBodyListPresentation(tipsDataProvider, authenticatedUser);
-        add(tipsViewBodyListPresentation);
+        listPresentation = new TipsViewBodyListPresentation(tipsDataProvider, authenticatedUser);
+        add(listPresentation);
 
-        tipsViewBodyGridPresentation = new TipsViewBodyGridPresentation(tipsDataProvider, authenticatedUser);
-        add(tipsViewBodyGridPresentation);
+        gridPresentation = new TipsViewBodyGridPresentation(tipsDataProvider, authenticatedUser);
+        add(gridPresentation);
 
         setPresentationType(tipsViewState.getPresentationMode());
         tipsViewState.addPresentationModeChangeListener(this::presentationModeChanged);
@@ -31,17 +31,17 @@ public class TipsViewBody extends VerticalLayout {
     private void setPresentationType(TipsViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID:
-                remove(tipsViewBodyListPresentation);
-                add(tipsViewBodyGridPresentation);
+                remove(listPresentation);
+                add(gridPresentation);
                 break;
             case LIST:
-                remove(tipsViewBodyGridPresentation);
-                add(tipsViewBodyListPresentation);
+                remove(gridPresentation);
+                add(listPresentation);
                 break;
         }
     }
 
     public void presentationModeChanged(TipsViewPresentationModeChangeEvent event) {
-        setPresentationType(event.getNewTipViewPresentationMode());
+        setPresentationType(event.getNewPresentationMode());
     }
 }

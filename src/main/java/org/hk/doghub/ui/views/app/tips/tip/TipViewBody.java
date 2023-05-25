@@ -13,8 +13,8 @@ public class TipViewBody extends VerticalLayout {
 
     public static final String CLASS_NAME = TipView.CLASS_NAME + "-body";
 
-    private final Label selectedIdLabel;
-    private final RouterLink tipsRouterLink;
+    private final Label selectedId;
+    private final RouterLink tips;
 
     public TipViewBody(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -22,14 +22,14 @@ public class TipViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        selectedIdLabel = new Label();
-        add(selectedIdLabel);
+        selectedId = new Label();
+        add(selectedId);
 
-        tipsRouterLink = new RouterLink(TipsView.NAME, TipsView.class);
-        add(tipsRouterLink);
+        tips = new RouterLink(TipsView.NAME, TipsView.class);
+        add(tips);
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        selectedIdLabel.setText("Selected Tip: " + selectedTipId);
+        selectedId.setText("Selected Tip: " + selectedTipId);
     }
 }

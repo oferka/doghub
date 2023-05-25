@@ -8,13 +8,13 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
 
     public static final String CLASS_NAME = UsersViewBody.CLASS_NAME + "-grid-presentation";
 
-    private final UsersGrid usersGrid;
+    private final UsersGrid grid;
 
     public UsersViewBodyGridPresentation(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        usersGrid = new UsersGrid(usersDataProvider);
-        addAndExpand(usersGrid);
+        grid = new UsersGrid(usersDataProvider);
+        addAndExpand(grid);
     }
 }

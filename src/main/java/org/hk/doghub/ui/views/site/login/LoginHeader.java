@@ -9,14 +9,14 @@ public class LoginHeader extends VerticalLayout {
 
     public static final String CLASS_NAME = "login-header";
 
-    private final ApplicationHeader applicationHeader;
+    private final ApplicationHeader header;
 
     public LoginHeader() {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        applicationHeader = new ApplicationHeader();
-        add(applicationHeader);
+        header = new ApplicationHeader();
+        add(header);
     }
 }

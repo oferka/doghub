@@ -7,21 +7,21 @@ public class UserViewHeaderActions extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserViewHeader.CLASS_NAME + "-actions";
 
-    private final UserViewHeaderActionsShareButton userViewHeaderActionsShareButton;
-    private final UserViewHeaderActionsExportButton userViewHeaderActionsExportButton;
+    private final UserViewHeaderActionsShareButton share;
+    private final UserViewHeaderActionsExportButton export;
 
     public UserViewHeaderActions(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
 
-        userViewHeaderActionsShareButton = new UserViewHeaderActionsShareButton(usersDataProvider);
-        add(userViewHeaderActionsShareButton);
+        share = new UserViewHeaderActionsShareButton(usersDataProvider);
+        add(share);
 
-        userViewHeaderActionsExportButton = new UserViewHeaderActionsExportButton(usersDataProvider);
-        add(userViewHeaderActionsExportButton);
+        export = new UserViewHeaderActionsExportButton(usersDataProvider);
+        add(export);
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        userViewHeaderActionsShareButton.selectedUserChanged(selectedUserId);
-        userViewHeaderActionsExportButton.selectedUserChanged(selectedUserId);
+        share.selectedUserChanged(selectedUserId);
+        export.selectedUserChanged(selectedUserId);
     }
 }

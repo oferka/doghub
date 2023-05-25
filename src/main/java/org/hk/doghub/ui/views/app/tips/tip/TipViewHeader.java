@@ -10,8 +10,8 @@ public class TipViewHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipView.CLASS_NAME + "-header";
 
-    private final TipViewHeaderInfo tipViewHeaderInfo;
-    private final TipViewHeaderActions tipViewHeaderActions;
+    private final TipViewHeaderInfo info;
+    private final TipViewHeaderActions actions;
 
     public TipViewHeader(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -19,15 +19,15 @@ public class TipViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        tipViewHeaderInfo = new TipViewHeaderInfo(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderInfo);
+        info = new TipViewHeaderInfo(tipsDataProvider, authenticatedUser);
+        add(info);
 
-        tipViewHeaderActions = new TipViewHeaderActions(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderActions);
+        actions = new TipViewHeaderActions(tipsDataProvider, authenticatedUser);
+        add(actions);
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        tipViewHeaderInfo.selectedTipChanged(selectedTipId);
-        tipViewHeaderActions.selectedTipChanged(selectedTipId);
+        info.selectedTipChanged(selectedTipId);
+        actions.selectedTipChanged(selectedTipId);
     }
 }

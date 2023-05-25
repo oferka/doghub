@@ -7,18 +7,18 @@ public class UsersViewHeaderInfo extends VerticalLayout {
 
     public static final String CLASS_NAME = UsersViewHeader.CLASS_NAME + "-info";
 
-    private final UsersViewHeaderInfoTitle usersViewHeaderInfoTitle;
-    private final UsersViewHeaderInfoDescription usersViewHeaderInfoDescription;
+    private final UsersViewHeaderInfoTitle title;
+    private final UsersViewHeaderInfoDescription description;
 
     public UsersViewHeaderInfo(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setAlignItems(FlexComponent.Alignment.CENTER);
 
-        usersViewHeaderInfoTitle = new UsersViewHeaderInfoTitle(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderInfoTitle);
+        title = new UsersViewHeaderInfoTitle(usersViewDataProvider, usersViewState);
+        add(title);
 
-        usersViewHeaderInfoDescription = new UsersViewHeaderInfoDescription(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderInfoDescription);
+        description = new UsersViewHeaderInfoDescription(usersViewDataProvider, usersViewState);
+        add(description);
     }
 }

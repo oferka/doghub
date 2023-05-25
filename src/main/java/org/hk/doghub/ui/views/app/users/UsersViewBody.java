@@ -8,8 +8,8 @@ public class UsersViewBody extends VerticalLayout {
 
     public static final String CLASS_NAME = UsersView.CLASS_NAME + "-body";
 
-    private final UsersViewBodyListPresentation usersViewBodyCardPresentation;
-    private final UsersViewBodyGridPresentation usersViewBodyGridPresentation;
+    private final UsersViewBodyListPresentation cardPresentation;
+    private final UsersViewBodyGridPresentation gridPresentation;
 
     public UsersViewBody(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
@@ -17,11 +17,11 @@ public class UsersViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        usersViewBodyCardPresentation = new UsersViewBodyListPresentation(usersDataProvider);
-        add(usersViewBodyCardPresentation);
+        cardPresentation = new UsersViewBodyListPresentation(usersDataProvider);
+        add(cardPresentation);
 
-        usersViewBodyGridPresentation = new UsersViewBodyGridPresentation(usersDataProvider);
-        add(usersViewBodyGridPresentation);
+        gridPresentation = new UsersViewBodyGridPresentation(usersDataProvider);
+        add(gridPresentation);
 
         setPresentationType(usersViewState.getPresentationMode());
         usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
@@ -30,17 +30,17 @@ public class UsersViewBody extends VerticalLayout {
     private void setPresentationType(UsersViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID:
-                remove(usersViewBodyCardPresentation);
-                add(usersViewBodyGridPresentation);
+                remove(cardPresentation);
+                add(gridPresentation);
                 break;
             case LIST:
-                remove(usersViewBodyGridPresentation);
-                add(usersViewBodyCardPresentation);
+                remove(gridPresentation);
+                add(cardPresentation);
                 break;
         }
     }
 
     public void presentationModeChanged(UsersViewPresentationModeChangeEvent event) {
-        setPresentationType(event.getNewUserViewPresentationMode());
+        setPresentationType(event.getNewPresentationMode());
     }
 }

@@ -9,13 +9,13 @@ public class SignupRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "signup-router-link";
 
-    private final SignupButton signupButton;
+    private final SignupButton signup;
 
     public SignupRouterLink() {
         super(EMPTY, SignupView.class);
         addClassName(CLASS_NAME);
 
-        signupButton = new SignupButton();
-        add(signupButton);
+        signup = new SignupButton();
+        add(signup);
     }
 }

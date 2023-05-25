@@ -10,25 +10,25 @@ public class TipViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipViewHeaderInfo.CLASS_NAME + "-title";
 
-    private final TipViewHeaderInfoTitleAvatar tipViewHeaderInfoTitleAvatar;
-    private final TipViewHeaderInfoTitleText tipViewHeaderInfoTitleText;
+    private final TipViewHeaderInfoTitleAvatar avatar;
+    private final TipViewHeaderInfoTitleText text;
 
     public TipViewHeaderInfoTitle(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        tipViewHeaderInfoTitleAvatar = new TipViewHeaderInfoTitleAvatar(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderInfoTitleAvatar);
+        avatar = new TipViewHeaderInfoTitleAvatar(tipsDataProvider, authenticatedUser);
+        add(avatar);
 
-        tipViewHeaderInfoTitleText = new TipViewHeaderInfoTitleText(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderInfoTitleText);
+        text = new TipViewHeaderInfoTitleText(tipsDataProvider, authenticatedUser);
+        add(text);
 
-        setVerticalComponentAlignment(CENTER, tipViewHeaderInfoTitleAvatar, tipViewHeaderInfoTitleText);
+        setVerticalComponentAlignment(CENTER, avatar, text);
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        tipViewHeaderInfoTitleAvatar.selectedTipChanged(selectedTipId);
-        tipViewHeaderInfoTitleText.selectedTipChanged(selectedTipId);
+        avatar.selectedTipChanged(selectedTipId);
+        text.selectedTipChanged(selectedTipId);
     }
 }

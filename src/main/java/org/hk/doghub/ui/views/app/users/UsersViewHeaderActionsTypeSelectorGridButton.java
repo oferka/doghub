@@ -13,10 +13,10 @@ public class UsersViewHeaderActionsTypeSelectorGridButton extends Button {
 
     public static final String CLASS_NAME = UsersViewHeaderActionsPresentationTypeSelector.CLASS_NAME + "-grid-button";
 
-    private final UsersViewState usersViewState;
+    private final UsersViewState viewState;
 
-    public UsersViewHeaderActionsTypeSelectorGridButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
-        this.usersViewState = usersViewState;
+    public UsersViewHeaderActionsTypeSelectorGridButton(UsersDataProvider usersViewDataProvider, UsersViewState viewState) {
+        this.viewState = viewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Grid View");
@@ -27,6 +27,6 @@ public class UsersViewHeaderActionsTypeSelectorGridButton extends Button {
     }
 
     private void gridPresentationTypeClicked(ClickEvent<Button> event) {
-        usersViewState.setPresentationMode(GRID);
+        viewState.setPresentationMode(GRID);
     }
 }

@@ -9,13 +9,13 @@ public class DogHubAppLayoutUserProfileRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-profile-router-link";
 
-    private final DogHubAppLayoutUserProfileButton profileButton;
+    private final DogHubAppLayoutUserProfileButton profile;
 
     public DogHubAppLayoutUserProfileRouterLink() {
         super(EMPTY, ProfileView.class);
         addClassName(CLASS_NAME);
 
-        profileButton = new DogHubAppLayoutUserProfileButton();
-        add(profileButton);
+        profile = new DogHubAppLayoutUserProfileButton();
+        add(profile);
     }
 }

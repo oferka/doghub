@@ -10,23 +10,23 @@ public class TipViewHeaderInfo extends VerticalLayout {
 
     public static final String CLASS_NAME = TipViewHeader.CLASS_NAME + "-info";
 
-    private final TipViewHeaderInfoTitle tipViewHeaderInfoTitle;
-    private final TipViewHeaderInfoDescription tipViewHeaderInfoDescription;
+    private final TipViewHeaderInfoTitle title;
+    private final TipViewHeaderInfoDescription description;
 
     public TipViewHeaderInfo(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        tipViewHeaderInfoTitle = new TipViewHeaderInfoTitle(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderInfoTitle);
+        title = new TipViewHeaderInfoTitle(tipsDataProvider, authenticatedUser);
+        add(title);
 
-        tipViewHeaderInfoDescription = new TipViewHeaderInfoDescription(tipsDataProvider, authenticatedUser);
-        add(tipViewHeaderInfoDescription);
+        description = new TipViewHeaderInfoDescription(tipsDataProvider, authenticatedUser);
+        add(description);
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        tipViewHeaderInfoTitle.selectedTipChanged(selectedTipId);
-        tipViewHeaderInfoDescription.selectedTipChanged(selectedTipId);
+        title.selectedTipChanged(selectedTipId);
+        description.selectedTipChanged(selectedTipId);
     }
 }

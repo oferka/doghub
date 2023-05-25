@@ -8,8 +8,8 @@ public class UsersViewHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = UsersView.CLASS_NAME + "-header";
 
-    private final UsersViewHeaderInfo usersViewHeaderInfo;
-    private final UsersViewHeaderActions usersViewHeaderActions;
+    private final UsersViewHeaderInfo info;
+    private final UsersViewHeaderActions actions;
 
     public UsersViewHeader(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
@@ -17,10 +17,10 @@ public class UsersViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        usersViewHeaderInfo = new UsersViewHeaderInfo(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderInfo);
+        info = new UsersViewHeaderInfo(usersViewDataProvider, usersViewState);
+        add(info);
 
-        usersViewHeaderActions = new UsersViewHeaderActions(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderActions);
+        actions = new UsersViewHeaderActions(usersViewDataProvider, usersViewState);
+        add(actions);
     }
 }

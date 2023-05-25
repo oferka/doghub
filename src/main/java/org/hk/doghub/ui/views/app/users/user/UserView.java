@@ -20,21 +20,21 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "User";
 
-    private final UserViewHeader userViewHeader;
-    private final UserViewBody userViewBody;
-    private final UserViewFooter userViewFooter;
+    private final UserViewHeader header;
+    private final UserViewBody body;
+    private final UserViewFooter footer;
 
     public UserView(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
 
-        userViewHeader = new UserViewHeader(usersDataProvider);
-        add(userViewHeader);
+        header = new UserViewHeader(usersDataProvider);
+        add(header);
 
-        userViewBody = new UserViewBody(usersDataProvider);
-        addAndExpand(userViewBody);
+        body = new UserViewBody(usersDataProvider);
+        addAndExpand(body);
 
-        userViewFooter = new UserViewFooter(usersDataProvider);
-        add(userViewFooter);
+        footer = new UserViewFooter(usersDataProvider);
+        add(footer);
     }
 
     @Override
@@ -43,8 +43,8 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
     }
 
     private void setUser(long selectedUserId) {
-        userViewHeader.selectedUserChanged(selectedUserId);
-        userViewBody.selectedUserChanged(selectedUserId);
-        userViewFooter.selectedUserChanged(selectedUserId);
+        header.selectedUserChanged(selectedUserId);
+        body.selectedUserChanged(selectedUserId);
+        footer.selectedUserChanged(selectedUserId);
     }
 }

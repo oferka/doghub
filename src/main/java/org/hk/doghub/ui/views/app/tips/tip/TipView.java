@@ -18,9 +18,9 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long> {
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tip";
 
-    private final TipViewHeader tipViewHeader;
-    private final TipViewBody tipViewBody;
-    private final TipViewFooter tipViewFooter;
+    private final TipViewHeader header;
+    private final TipViewBody body;
+    private final TipViewFooter footer;
 
     private final TipsDataProvider tipsDataProvider;
 
@@ -31,14 +31,14 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long> {
         this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
 
-        tipViewHeader = new TipViewHeader(tipsDataProvider, authenticatedUser);
-        add(tipViewHeader);
+        header = new TipViewHeader(tipsDataProvider, authenticatedUser);
+        add(header);
 
-        tipViewBody = new TipViewBody(tipsDataProvider, authenticatedUser);
-        addAndExpand(tipViewBody);
+        body = new TipViewBody(tipsDataProvider, authenticatedUser);
+        addAndExpand(body);
 
-        tipViewFooter = new TipViewFooter(tipsDataProvider, authenticatedUser);
-        add(tipViewFooter);
+        footer = new TipViewFooter(tipsDataProvider, authenticatedUser);
+        add(footer);
     }
 
     @Override
@@ -50,8 +50,8 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long> {
     }
 
     private void setTip(long selectedTipId) {
-        tipViewHeader.selectedTipChanged(selectedTipId);
-        tipViewBody.selectedTipChanged(selectedTipId);
-        tipViewFooter.selectedTipChanged(selectedTipId);
+        header.selectedTipChanged(selectedTipId);
+        body.selectedTipChanged(selectedTipId);
+        footer.selectedTipChanged(selectedTipId);
     }
 }

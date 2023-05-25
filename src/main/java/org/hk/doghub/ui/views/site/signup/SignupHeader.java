@@ -9,14 +9,14 @@ public class SignupHeader extends VerticalLayout {
 
     public static final String CLASS_NAME = "signup-header";
 
-    private final ApplicationHeader applicationHeader;
+    private final ApplicationHeader header;
 
     public SignupHeader() {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        applicationHeader = new ApplicationHeader();
-        add(applicationHeader);
+        header = new ApplicationHeader();
+        add(header);
     }
 }

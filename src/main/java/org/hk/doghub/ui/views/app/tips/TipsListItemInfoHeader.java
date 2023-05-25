@@ -10,7 +10,7 @@ public class TipsListItemInfoHeader extends HorizontalLayout {
 
     private final TipsListItemInfoHeaderName name;
 
-    private final TipAnchor urlAnchor;
+    private final TipAnchor anchor;
 
     public TipsListItemInfoHeader(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -20,7 +20,7 @@ public class TipsListItemInfoHeader extends HorizontalLayout {
         name = new TipsListItemInfoHeaderName(tip, authenticatedUser);
         add(name);
 
-        urlAnchor = new TipAnchor(tip, authenticatedUser);
-        add(urlAnchor);
+        anchor = new TipAnchor(tip, authenticatedUser);
+        add(anchor);
     }
 }

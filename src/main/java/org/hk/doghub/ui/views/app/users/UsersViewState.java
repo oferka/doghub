@@ -12,16 +12,16 @@ import static org.hk.doghub.ui.views.app.users.UsersViewPresentationMode.GRID;
 @UIScope
 public class UsersViewState {
 
-    private final List<UsersViewPresentationModeChangeListener> usersViewPresentationModeChangeListeners = new ArrayList<>();
+    private final List<UsersViewPresentationModeChangeListener> presentationModeChangeListeners = new ArrayList<>();
 
     private UsersViewPresentationMode presentationMode = GRID;
 
     public void addPresentationModeChangeListener(UsersViewPresentationModeChangeListener listener) {
-        usersViewPresentationModeChangeListeners.add(listener);
+        presentationModeChangeListeners.add(listener);
     }
 
     public void removePresentationModeChangeListener(UsersViewPresentationModeChangeListener listener) {
-        usersViewPresentationModeChangeListeners.remove(listener);
+        presentationModeChangeListeners.remove(listener);
     }
 
     public UsersViewPresentationMode getPresentationMode() {
@@ -36,7 +36,7 @@ public class UsersViewState {
     }
 
     private void fireUsersViewPresentationModeChangeEvent(UsersViewPresentationModeChangeEvent event) {
-        for(UsersViewPresentationModeChangeListener listener : usersViewPresentationModeChangeListeners) {
+        for(UsersViewPresentationModeChangeListener listener : presentationModeChangeListeners) {
             listener.presentationModeChanged(event);
         }
     }

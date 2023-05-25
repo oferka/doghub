@@ -9,13 +9,13 @@ public class DogHubAppLayoutUserSettingsRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-settings-router-link";
 
-    private final DogHubAppLayoutUserSettingsButton settingsButton;
+    private final DogHubAppLayoutUserSettingsButton settings;
 
     public DogHubAppLayoutUserSettingsRouterLink() {
         super(EMPTY, SettingsView.class);
         addClassName(CLASS_NAME);
 
-        settingsButton = new DogHubAppLayoutUserSettingsButton();
-        add(settingsButton);
+        settings = new DogHubAppLayoutUserSettingsButton();
+        add(settings);
     }
 }

@@ -9,22 +9,22 @@ public class TipsViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipsViewHeaderInfo.CLASS_NAME + "-title";
 
-    private final TipsViewHeaderInfoTitleIcon tipsViewHeaderInfoTitleIcon;
-    private final TipsViewHeaderInfoTitleText tipsViewHeaderInfoTitleText;
-    private final TipsViewHeaderInfoTitleCount tipsViewHeaderInfoTitleCount;
+    private final TipsViewHeaderInfoTitleIcon icon;
+    private final TipsViewHeaderInfoTitleText text;
+    private final TipsViewHeaderInfoTitleCount count;
 
     public TipsViewHeaderInfoTitle(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        tipsViewHeaderInfoTitleIcon = new TipsViewHeaderInfoTitleIcon(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderInfoTitleIcon);
+        icon = new TipsViewHeaderInfoTitleIcon(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(icon);
 
-        tipsViewHeaderInfoTitleText = new TipsViewHeaderInfoTitleText(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderInfoTitleText);
+        text = new TipsViewHeaderInfoTitleText(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(text);
 
-        tipsViewHeaderInfoTitleCount = new TipsViewHeaderInfoTitleCount(tipsDataProvider, tipsViewState, authenticatedUser);
-        add(tipsViewHeaderInfoTitleCount);
+        count = new TipsViewHeaderInfoTitleCount(tipsDataProvider, tipsViewState, authenticatedUser);
+        add(count);
     }
 }

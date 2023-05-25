@@ -9,13 +9,13 @@ public class TipsViewBodyGridPresentation extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsViewBody.CLASS_NAME + "-grid-presentation";
 
-    private final TipsGrid tipsGrid;
+    private final TipsGrid grid;
 
     public TipsViewBodyGridPresentation(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        tipsGrid = new TipsGrid(tipsDataProvider, authenticatedUser);
-        addAndExpand(tipsGrid);
+        grid = new TipsGrid(tipsDataProvider, authenticatedUser);
+        addAndExpand(grid);
     }
 }

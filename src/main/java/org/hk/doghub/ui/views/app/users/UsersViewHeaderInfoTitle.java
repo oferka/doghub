@@ -8,22 +8,22 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = UsersViewHeaderInfo.CLASS_NAME + "-title";
 
-    private final UsersViewHeaderInfoTitleIcon usersViewHeaderInfoTitleIcon;
-    private final UsersViewHeaderInfoTitleText usersViewHeaderInfoTitleText;
-    private final UsersViewHeaderInfoTitleCount usersViewHeaderInfoTitleCount;
+    private final UsersViewHeaderInfoTitleIcon icon;
+    private final UsersViewHeaderInfoTitleText text;
+    private final UsersViewHeaderInfoTitleCount count;
 
     public UsersViewHeaderInfoTitle(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        usersViewHeaderInfoTitleIcon = new UsersViewHeaderInfoTitleIcon(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderInfoTitleIcon);
+        icon = new UsersViewHeaderInfoTitleIcon(usersViewDataProvider, usersViewState);
+        add(icon);
 
-        usersViewHeaderInfoTitleText = new UsersViewHeaderInfoTitleText(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderInfoTitleText);
+        text = new UsersViewHeaderInfoTitleText(usersViewDataProvider, usersViewState);
+        add(text);
 
-        usersViewHeaderInfoTitleCount = new UsersViewHeaderInfoTitleCount(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderInfoTitleCount);
+        count = new UsersViewHeaderInfoTitleCount(usersViewDataProvider, usersViewState);
+        add(count);
     }
 }

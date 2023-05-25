@@ -10,13 +10,13 @@ public class UserAvatarRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "user-avatar-router-link";
 
-    private final UserAvatar userAvatar;
+    private final UserAvatar avatar;
 
     public UserAvatarRouterLink(DogHubUser user) {
         super(EMPTY, UserView.class, user.getId());
         addClassName(CLASS_NAME);
 
-        userAvatar = new UserAvatar(user);
-        add(userAvatar);
+        avatar = new UserAvatar(user);
+        add(avatar);
     }
 }

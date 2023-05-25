@@ -9,7 +9,7 @@ public class DogHubAppLayoutHeaderContent extends HorizontalLayout {
 
     public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-content";
 
-    private final DogHubAppLayoutHeaderContentDrawerToggle drawerToggle;
+    private final DogHubAppLayoutHeaderContentDrawerToggle toggle;
     private final DogHubAppLayoutHeaderContentTitle title;
 
     public DogHubAppLayoutHeaderContent() {
@@ -17,8 +17,8 @@ public class DogHubAppLayoutHeaderContent extends HorizontalLayout {
         setSpacing(false);
         setAlignItems(CENTER);
 
-        drawerToggle = new DogHubAppLayoutHeaderContentDrawerToggle();
-        add(drawerToggle);
+        toggle = new DogHubAppLayoutHeaderContentDrawerToggle();
+        add(toggle);
 
         title = new DogHubAppLayoutHeaderContentTitle();
         add(title);
