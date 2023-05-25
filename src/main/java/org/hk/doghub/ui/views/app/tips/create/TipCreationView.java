@@ -1,6 +1,5 @@
 package org.hk.doghub.ui.views.app.tips.create;
 
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -8,8 +7,6 @@ import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipsView;
-
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
 @PageTitle(TipCreationView.NAME)
 @Route(value = TipCreationView.ROUTE, layout = DogHubAppLayout.class)
@@ -21,25 +18,21 @@ public class TipCreationView extends VerticalLayout {
     public static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tip Creation";
-//    private final TipCreationViewHeader header;
-//    private final TipCreationViewBody body;
-//    private final TipCreationViewFooter footer;
+
+    private final TipCreationViewHeader header;
+    private final TipCreationViewBody body;
+    private final TipCreationViewFooter footer;
 
     public TipCreationView(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
 
-//        header = new TipCreationViewHeader(authenticatedUser, tipCreationService);
-//        add(header);
-//
-//        body = new TipCreationViewBody(authenticatedUser, tipCreationService);
-//        addAndExpand(body);
-//
-//        footer = new TipCreationViewFooter(authenticatedUser, tipCreationService);
-//        add(footer);
+        header = new TipCreationViewHeader(authenticatedUser, tipCreationService);
+        add(header);
 
-        setAlignItems(CENTER);
-        Span text = new Span(NAME);
-        text.addClassName(CLASS_NAME.concat("-text"));
-        add(text);
+        body = new TipCreationViewBody(authenticatedUser, tipCreationService);
+        addAndExpand(body);
+
+        footer = new TipCreationViewFooter(authenticatedUser, tipCreationService);
+        add(footer);
     }
 }

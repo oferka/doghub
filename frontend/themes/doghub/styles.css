@@ -70,7 +70,10 @@
 @import url('./views/app/tip-view-header-info-title.css');
 @import url('./views/app/tip-view-header-info-title-avatar.css');
 @import url('./views/app/tip-view-header-info-title-text.css');
-@import url('./views/app/tips-creation-view.css');
+@import url('./views/app/tip-creation-view.css');
+@import url('./views/app/tip-creation-view-body.css');
+@import url('./views/app/tip-creation-view-footer.css');
+@import url('./views/app/tip-creation-view-header.css');
 @import url('./views/app/tips-grid.css');
 @import url('./views/app/tips-list.css');
 @import url('./views/app/tips-list-item.css');
@@ -123,6 +126,9 @@
 @import url('./views/app/doghub-app-layout-header-user-settings-router-link.css');
 @import url('./views/app/user-comments.css');
 @import url('./views/app/user-creation-view.css');
+@import url('./views/app/user-creation-view-body.css');
+@import url('./views/app/user-creation-view-footer.css');
+@import url('./views/app/user-creation-view-header.css');
 @import url('./views/app/user-date-of-registration.css');
 @import url('./views/app/user-likes.css');
 @import url('./views/app/user-router-link.css');
