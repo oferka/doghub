@@ -10,7 +10,6 @@ public class UsersViewHeaderInfoTitleIcon extends Icon {
 
     public UsersViewHeaderInfoTitleIcon(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         super(USERS);
-        setSize("60px");
         addClassName(CLASS_NAME);
     }
 }

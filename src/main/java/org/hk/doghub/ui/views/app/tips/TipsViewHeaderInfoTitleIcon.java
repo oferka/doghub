@@ -11,7 +11,6 @@ public class TipsViewHeaderInfoTitleIcon extends Icon {
 
     public TipsViewHeaderInfoTitleIcon(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         super(LINK);
-        setSize("60px");
         addClassName(CLASS_NAME);
     }
 }
