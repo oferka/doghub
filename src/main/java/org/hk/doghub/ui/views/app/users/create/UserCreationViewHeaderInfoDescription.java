@@ -11,7 +11,7 @@ public class UserCreationViewHeaderInfoDescription extends Span {
     public UserCreationViewHeaderInfoDescription(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
-        setDescriptionText("Create user view description");
+        setDescriptionText("Add someone you love to DogHub");
     }
 
     public void setDescriptionText(@NotNull String descriptionText) {
