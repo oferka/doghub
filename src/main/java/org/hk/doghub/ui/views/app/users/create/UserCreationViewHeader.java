@@ -10,7 +10,7 @@ public class UserCreationViewHeader extends HorizontalLayout {
     public static final String CLASS_NAME = UserCreationView.CLASS_NAME + "-header";
 
     private final UserCreationViewHeaderInfo info;
-//    private final UserCreationViewHeaderActions actions;
+    private final UserCreationViewHeaderActions actions;
 
     public UserCreationViewHeader(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
@@ -21,7 +21,7 @@ public class UserCreationViewHeader extends HorizontalLayout {
         info = new UserCreationViewHeaderInfo(authenticatedUser, userCreationService);
         add(info);
 
-//        actions = new UserCreationViewHeaderActions(authenticatedUser, userCreationService);
-//        add(actions);
+        actions = new UserCreationViewHeaderActions(authenticatedUser, userCreationService);
+        add(actions);
     }
 }

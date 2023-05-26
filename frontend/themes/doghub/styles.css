@@ -129,6 +129,9 @@
 @import url('./views/app/user-creation-view-body.css');
 @import url('./views/app/user-creation-view-footer.css');
 @import url('./views/app/user-creation-view-header.css');
+@import url('./views/app/user-creation-view-header-actions.css');
+@import url('./views/app/user-creation-view-header-actions-export-button.css');
+@import url('./views/app/user-creation-view-header-actions-share-button.css');
 @import url('./views/app/user-creation-view-header-info.css');
 @import url('./views/app/user-creation-view-header-info-description.css');
 @import url('./views/app/user-creation-view-header-info-title.css');
