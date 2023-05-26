@@ -1,18 +1,12 @@
-package org.hk.doghub.ui.views.site.signup;
+package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.ui.components.shared.UserCreationButton;
-import org.hk.doghub.ui.components.shared.UserCreationService;
-import org.hk.doghub.ui.components.shared.UserEmailField;
-import org.hk.doghub.ui.components.shared.UserPasswordField;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
-@Slf4j
-public class SignupWithEmail extends VerticalLayout {
+public class UserCreationContainer extends VerticalLayout {
 
-    public static final String CLASS_NAME = SignupBody.CLASS_NAME + "-signup-with-email";
+    public static final String CLASS_NAME = "user-creation-container";
 
     private final UserEmailField emailField;
 
@@ -20,7 +14,7 @@ public class SignupWithEmail extends VerticalLayout {
 
     private final UserCreationButton button;
 
-    public SignupWithEmail(UserCreationService userCreationService) {
+    public UserCreationContainer(UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);

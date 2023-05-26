@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.site.signup;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.ui.components.shared.UserCreationContainer;
 import org.hk.doghub.ui.components.shared.UserCreationService;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -13,7 +14,7 @@ public class SignupBody extends VerticalLayout {
 
     private final SignupDivider signupDivider;
 
-    private final SignupWithEmail signupWithEmail;
+    private final UserCreationContainer userCreationContainer;
 
     private final SignupMessage signupMessage;
 
@@ -28,8 +29,8 @@ public class SignupBody extends VerticalLayout {
         signupDivider = new SignupDivider();
         add(signupDivider);
 
-        signupWithEmail = new SignupWithEmail(userCreationService);
-        add(signupWithEmail);
+        userCreationContainer = new UserCreationContainer(userCreationService);
+        add(userCreationContainer);
 
         signupMessage = new SignupMessage();
         add(signupMessage);

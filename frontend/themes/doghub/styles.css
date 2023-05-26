@@ -18,6 +18,7 @@
 @import url('./shared/user-avatar-router-link.css');
 @import url('./shared/tip-avatar.css');
 @import url('./shared/user-creation-button.css');
+@import url('./shared/user-creation-container.css');
 @import url('./shared/user-email-field.css');
 @import url('./shared/user-menu-bar.css');
 @import url('./shared/user-password-field.css');
@@ -216,7 +217,6 @@
 @import url('./views/site/signup-body-message-first-line.css');
 @import url('./views/site/signup-body-message-second-line.css');
 @import url('./views/site/signup-body-signup-with.css');
-@import url('./views/site/signup-body-signup-with-email.css');
 @import url('./views/site/signup-body-signup-with-facebook.css');
 @import url('./views/site/signup-body-signup-with-google.css');
 @import url('./views/site/signup-footer.css');
