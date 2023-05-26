@@ -1,10 +1,13 @@
 package org.hk.doghub.ui.views.site.profile;
 
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.UserCreationService;
+import org.hk.doghub.ui.components.shared.UserInfoContainer;
+import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -20,11 +23,14 @@ public class ProfileView extends VerticalLayout {
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Profile";
 
-    public ProfileView() {
+    private final UserInfoContainer userInfo;
+
+    public ProfileView(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        Span text = new Span(NAME);
-        text.addClassName(CLASS_NAME.concat("-text"));
-        add(text);
+
+        userInfo = new UserInfoContainer(usersDataProvider, authenticatedUser, userCreationService);
+        userInfo.selectedUserChanged(authenticatedUser.get().get().getId());
+        add(userInfo);
     }
 }

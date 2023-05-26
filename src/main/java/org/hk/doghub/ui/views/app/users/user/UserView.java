@@ -6,6 +6,8 @@ import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.UserCreationService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -24,13 +26,13 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
     private final UserViewBody body;
     private final UserViewFooter footer;
 
-    public UserView(UsersDataProvider usersDataProvider) {
+    public UserView(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
         header = new UserViewHeader(usersDataProvider);
         add(header);
 
-        body = new UserViewBody(usersDataProvider);
+        body = new UserViewBody(usersDataProvider, authenticatedUser, userCreationService);
         addAndExpand(body);
 
         footer = new UserViewFooter(usersDataProvider);
