@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users.create;
 
 import com.vaadin.flow.component.icon.Icon;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.UserCreationService;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 

@@ -1,4 +1,4 @@
-package org.hk.doghub.ui.views.app.users.create;
+package org.hk.doghub.ui.components.shared;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
@@ -23,7 +23,7 @@ public class UserCreationService {
 
     private final PasswordEncoder passwordEncoder;
 
-    public DogHubUser createUser(@NotNull @Email String email, @NotNull String password) {
+    public DogHubUser create(@NotNull @Email String email, @NotNull String password) {
         return userService.save(getUserEntity(email, password));
     }
 

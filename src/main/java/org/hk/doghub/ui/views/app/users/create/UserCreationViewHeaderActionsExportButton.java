@@ -5,6 +5,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.UserCreationService;
 
 import static com.vaadin.flow.component.Key.KEY_E;
 import static com.vaadin.flow.component.KeyModifier.ALT;
