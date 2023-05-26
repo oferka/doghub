@@ -7,6 +7,8 @@ import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.UserEmailField;
+import org.hk.doghub.ui.components.shared.UserPasswordField;
 import org.hk.doghub.ui.views.site.profile.ProfileView;
 import org.springframework.dao.DataIntegrityViolationException;
 
@@ -19,9 +21,9 @@ public class SignupWithEmail extends VerticalLayout {
 
     public static final String CLASS_NAME = SignupBody.CLASS_NAME + "-signup-with-email";
 
-    private final EmailContainer emailContainer;
+    private final UserEmailField emailField;
 
-    private final PasswordContainer passwordContainer;
+    private final UserPasswordField passwordField;
 
     private final SignupWithEmailButton button;
 
@@ -33,11 +35,11 @@ public class SignupWithEmail extends VerticalLayout {
 
         setAlignItems(CENTER);
 
-        emailContainer = new EmailContainer();
-        add(emailContainer);
+        emailField = new UserEmailField();
+        add(emailField);
 
-        passwordContainer = new PasswordContainer();
-        add(passwordContainer);
+        passwordField = new UserPasswordField();
+        add(passwordField);
 
         button = new SignupWithEmailButton();
         button.addClickListener(this::continueClicked);
@@ -45,8 +47,8 @@ public class SignupWithEmail extends VerticalLayout {
     }
 
     private void continueClicked(ClickEvent<Button> event) {
-        String email = emailContainer.getValue();
-        String password = passwordContainer.getValue();
+        String email = emailField.getValue();
+        String password = passwordField.getValue();
         log.info("Signup flow for user with email '{}' has started", email);
         if(email.isBlank()) {
             log.warn("Attempt to signup user with blank email");
@@ -54,7 +56,7 @@ public class SignupWithEmail extends VerticalLayout {
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
         }
-        if(emailContainer.isInvalid()) {
+        if(emailField.isInvalid()) {
             log.warn("Attempt to signup user with invalid email '{}'", email);
             Notification notification = Notification.show(format("Can't signup user with email '%s'. Please enter a valid email address", email), 5000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
@@ -62,7 +64,7 @@ public class SignupWithEmail extends VerticalLayout {
         }
         if(signupService.exists(email)) {
             log.warn("Attempt to signup user with existing email '{}'", email);
-            emailContainer.setInvalid(true);
+            emailField.setInvalid(true);
             Notification notification = Notification.show(format("A user with email '%s' already exists. Please use sign in if this is your account, or use a different email address to sign up", email), 10000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
@@ -73,7 +75,7 @@ public class SignupWithEmail extends VerticalLayout {
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
         }
-        if(passwordContainer.isInvalid()) {
+        if(passwordField.isInvalid()) {
             log.warn("Attempt to signup user with invalid password '{}'", password);
             Notification notification = Notification.show("Can't signup user. Please enter a valid password", 5000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
