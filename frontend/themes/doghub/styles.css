@@ -17,7 +17,10 @@
 @import url('./shared/user-avatar.css');
 @import url('./shared/user-avatar-router-link.css');
 @import url('./shared/tip-avatar.css');
+@import url('./shared/user-email-field.css');
 @import url('./shared/user-menu-bar.css');
+@import url('./shared/user-password-field.css');
+@import url('./shared/user-registration-details-container.css');
 @import url('./views/app/about-view.css');
 @import url('./views/app/profile-buttons-container.css');
 @import url('./views/app/profile-contact-container.css');

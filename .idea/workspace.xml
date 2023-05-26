@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 76">
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/user-creation-view-header-actions-export-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/user-creation-view-header-actions-share-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/user-creation-view-header-actions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/create/UserCreationViewHeaderActions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/create/UserCreationViewHeaderActionsExportButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/create/UserCreationViewHeaderActionsShareButton.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 77">
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/User-registration-details-container.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/user-email-field.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/user-password-field.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/UserEmailField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/UserPasswordField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/UserRegistrationDetailsContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/create/UserCreationViewHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/create/UserCreationViewHeader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/frontend/themes/doghub/views/app",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/frontend/themes/doghub/shared",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -61,11 +61,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/themes/doghub/shared" />
       <recent name="$PROJECT_DIR$/frontend/themes/doghub/views/app" />
       <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions" />
       <recent name="$PROJECT_DIR$/src/main/resources/automation/e2e/selenium" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/hk/doghub/automation/e2e/selenium/ui/actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/themes/doghub/views/site" />
@@ -183,13 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00030" summary="doghub 29">
-      <created>1684590906434</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1684590906434</updated>
     </task>
     <task id="LOCAL-00031" summary="doghub 30">
       <created>1684601283444</created>
@@ -527,12 +520,18 @@
       <option name="project" value="LOCAL" />
       <updated>1685031762360</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="doghub 77">
+      <created>1685076603345</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1685076603345</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 52" />
     <MESSAGE value="doghub 53" />
     <MESSAGE value="doghub 54" />
     <MESSAGE value="doghub 55" />
@@ -557,6 +556,7 @@
     <MESSAGE value="doghub 74" />
     <MESSAGE value="doghub 75" />
     <MESSAGE value="doghub 76" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 76" />
+    <MESSAGE value="doghub 77" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 77" />
   </component>
 </project>
