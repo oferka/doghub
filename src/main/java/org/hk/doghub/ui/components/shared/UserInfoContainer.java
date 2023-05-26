@@ -19,6 +19,8 @@ public class UserInfoContainer extends VerticalLayout {
     private final Label id;
     private final Label name;
     private final Label username;
+    private final Label email;
+    private final Label title;
 
     public UserInfoContainer(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         this.usersDataProvider = usersDataProvider;
@@ -34,6 +36,12 @@ public class UserInfoContainer extends VerticalLayout {
 
         username = new Label();
         add(username);
+
+        email = new Label();
+        add(email);
+
+        title = new Label();
+        add(title);
     }
 
     public void setUser(long userId) {
@@ -43,6 +51,8 @@ public class UserInfoContainer extends VerticalLayout {
             DogHubUser user = userOptional.get();
             name.setText("Name: " + user.getName());
             username.setText("Username: " + user.getUsername());
+            email.setText("Email: " + user.getEmail());
+            email.setText("Title: " + user.getTitle());
         }
     }
 }
