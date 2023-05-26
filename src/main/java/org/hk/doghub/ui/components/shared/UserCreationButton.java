@@ -6,6 +6,8 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.views.app.users.user.UserView;
 import org.hk.doghub.ui.views.site.profile.ProfileView;
 import org.springframework.dao.DataIntegrityViolationException;
 
@@ -23,11 +25,14 @@ public class UserCreationButton extends Button {
 
     private final UserPasswordField passwordField;
 
+    private final AuthenticatedUser authenticatedUser;
+
     private final UserCreationService userCreationService;
 
-    public UserCreationButton(UserEmailField emailField, UserPasswordField passwordField, UserCreationService userCreationService) {
+    public UserCreationButton(UserEmailField emailField, UserPasswordField passwordField, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         this.emailField = emailField;
         this.passwordField = passwordField;
+        this.authenticatedUser = authenticatedUser;
         this.userCreationService = userCreationService;
         addClassName(CLASS_NAME);
         setText("Continue");
@@ -74,7 +79,14 @@ public class UserCreationButton extends Button {
             DogHubUser user = userCreationService.create(email, password);
             Notification notification = Notification.show(format("User %s is now signed up!", user.getUsername()), 3000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-            getUI().ifPresent(ui -> ui.navigate(ProfileView.class));
+            if(isUserSignup()) {
+                navigateToProfilePage();
+            }
+            else {
+                if(isUserCreationByAdmin()) {
+                    navigateToCreatedUserView(user);
+                }
+            }
         }
         catch (DataIntegrityViolationException e) {
             log.warn("Data integrity violation exception was thrown", e);
@@ -86,5 +98,21 @@ public class UserCreationButton extends Button {
             Notification notification = Notification.show(format("Failed to sign up user with email %s. Please try again later", email), 5000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
         }
+    }
+
+    private boolean isUserSignup() {
+        return authenticatedUser.get().isEmpty();
+    }
+
+    private boolean isUserCreationByAdmin() {
+        return  authenticatedUser.hasAdminRole();
+    }
+
+    private void navigateToProfilePage() {
+        getUI().ifPresent(ui -> ui.navigate(ProfileView.class));
+    }
+
+    private void navigateToCreatedUserView(DogHubUser user) {
+        getUI().ifPresent(ui -> ui.navigate(UserView.class, user.getId()));
     }
 }

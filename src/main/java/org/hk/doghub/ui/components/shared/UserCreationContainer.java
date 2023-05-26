@@ -26,7 +26,7 @@ public class UserCreationContainer extends VerticalLayout {
         passwordField = new UserPasswordField();
         add(passwordField);
 
-        button = new UserCreationButton(emailField, passwordField, userCreationService);
+        button = new UserCreationButton(emailField, passwordField, authenticatedUser, userCreationService);
         add(button);
     }
 }
