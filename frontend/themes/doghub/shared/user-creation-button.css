@@ -1,2 +1,10 @@
 .user-creation-button {
+    width: 320px;
+    background-color: var(--lumo-success-color);
+    color: var(--lumo-success-contrast-color);
+    cursor: pointer;
+}
+
+.user-creation-button:hover {
+    background-color: var(--lumo-success-text-color);
 }

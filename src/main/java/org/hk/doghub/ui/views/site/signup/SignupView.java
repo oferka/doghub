@@ -7,6 +7,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.UserCreationService;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
 
 @Route(SignupView.ROUTE)
@@ -24,11 +25,11 @@ public class SignupView extends VerticalLayout implements BeforeEnterObserver {
 
     private final SignupContainer signupContainer;
 
-    public SignupView(AuthenticatedUser authenticatedUser, SignupService signupService) {
+    public SignupView(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
 
-        signupContainer = new SignupContainer(signupService);
+        signupContainer = new SignupContainer(userCreationService);
         add(signupContainer);
 
         setSizeFull();
