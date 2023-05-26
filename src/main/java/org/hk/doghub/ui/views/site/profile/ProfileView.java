@@ -30,7 +30,9 @@ public class ProfileView extends VerticalLayout {
         setAlignItems(CENTER);
 
         userInfo = new UserInfoContainer(usersDataProvider, authenticatedUser, userCreationService);
-        userInfo.selectedUserChanged(authenticatedUser.get().get().getId());
+        if(authenticatedUser.get().isPresent()) {
+            userInfo.setUser(authenticatedUser.get().get().getId());
+        }
         add(userInfo);
     }
 }

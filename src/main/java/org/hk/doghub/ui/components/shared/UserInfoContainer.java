@@ -11,18 +11,18 @@ public class UserInfoContainer extends VerticalLayout {
 
     public static final String CLASS_NAME = "user-info-container";
 
-    private final Label selectedId;
+    private final Label id;
 
     public UserInfoContainer(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        selectedId = new Label();
-        add(selectedId);
+        id = new Label();
+        add(id);
     }
 
-    public void selectedUserChanged(long selectedUserId) {
-        selectedId.setText("Selected User: " + selectedUserId);
+    public void setUser(long userId) {
+        id.setText("User Id: " + userId);
     }
 }

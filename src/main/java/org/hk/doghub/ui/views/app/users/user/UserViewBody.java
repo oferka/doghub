@@ -25,6 +25,6 @@ public class UserViewBody extends VerticalLayout {
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        userInfo.selectedUserChanged(selectedUserId);
+        userInfo.setUser(selectedUserId);
     }
 }
