@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.site.signup;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.UserCreationService;
 
 public class SignupContainer extends VerticalLayout {
@@ -13,13 +14,13 @@ public class SignupContainer extends VerticalLayout {
 
     private final SignupFooter footer;
 
-    public SignupContainer(UserCreationService userCreationService) {
+    public SignupContainer(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
         header = new SignupHeader();
         add(header);
 
-        body = new SignupBody(userCreationService);
+        body = new SignupBody(authenticatedUser, userCreationService);
         add(body);
 
         footer = new SignupFooter();

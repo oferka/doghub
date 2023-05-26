@@ -29,7 +29,7 @@ public class SignupView extends VerticalLayout implements BeforeEnterObserver {
         this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
 
-        signupContainer = new SignupContainer(userCreationService);
+        signupContainer = new SignupContainer(authenticatedUser, userCreationService);
         add(signupContainer);
 
         setSizeFull();

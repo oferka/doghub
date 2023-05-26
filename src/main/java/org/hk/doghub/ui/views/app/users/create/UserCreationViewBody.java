@@ -19,7 +19,7 @@ public class UserCreationViewBody extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        userCreationContainer = new UserCreationContainer(userCreationService);
+        userCreationContainer = new UserCreationContainer(authenticatedUser, userCreationService);
         add(userCreationContainer);
     }
 }

@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.security.AuthenticatedUser;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -14,7 +15,7 @@ public class UserCreationContainer extends VerticalLayout {
 
     private final UserCreationButton button;
 
-    public UserCreationContainer(UserCreationService userCreationService) {
+    public UserCreationContainer(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
