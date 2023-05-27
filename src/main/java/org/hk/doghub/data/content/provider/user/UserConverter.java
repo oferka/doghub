@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -29,6 +30,7 @@ public class UserConverter {
 
     public DogHubUser convert(@NotNull User user) {
         DogHubUser dogHubUser = userModelMapper.map(user, DogHubUser.class);
+        dogHubUser.setDateOfRegistration(ZonedDateTime.now().minusDays(RandomUtils.nextLong(1, 1000)));
         dogHubUser.setHashedPassword(passwordEncoder.encode(user.getPassword()));
         dogHubUser.setLikes(getLikes(user));
         dogHubUser.setShares(getShares(user));

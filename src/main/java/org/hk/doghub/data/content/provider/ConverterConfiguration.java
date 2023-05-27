@@ -16,7 +16,6 @@ public class ConverterConfiguration {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.typeMap(User.class, DogHubUser.class).addMappings(mapper -> {
             mapper.map(User::getEmail, DogHubUser::setUsername);
-            mapper.map(User::getDateOfBirth, DogHubUser::setDateOfRegistration);
         });
         return modelMapper;
     }
