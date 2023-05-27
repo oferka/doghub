@@ -26,6 +26,12 @@ public class UserInfoContainer extends VerticalLayout {
     private final Label dateOfRegistration;
     private final Label company;
     private final Label mobileNumber;
+    private final Label country;
+    private final Label state;
+    private final Label city;
+    private final Label streetName;
+    private final Label number;
+    private final Label postcode;
 
     public UserInfoContainer(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         this.usersDataProvider = usersDataProvider;
@@ -62,6 +68,24 @@ public class UserInfoContainer extends VerticalLayout {
 
         mobileNumber = new Label();
         add(mobileNumber);
+
+        country = new Label();
+        add(country);
+
+        state = new Label();
+        add(state);
+
+        city = new Label();
+        add(city);
+
+        streetName = new Label();
+        add(streetName);
+
+        number = new Label();
+        add(number);
+
+        postcode = new Label();
+        add(postcode);
     }
 
     public void setUser(long userId) {
@@ -78,6 +102,12 @@ public class UserInfoContainer extends VerticalLayout {
             dateOfRegistration.setText("Date Of Registration: " + user.getDateOfRegistration());
             company.setText("Company: " + user.getCompany());
             mobileNumber.setText("Mobile Number: " + user.getMobileNumber());
+            country.setText("Country: " + user.getAddress().getCountry());
+            state.setText("State: " + user.getAddress().getState());
+            city.setText("City: " + user.getAddress().getCity());
+            streetName.setText("Street Name: " + user.getAddress().getStreetName());
+            number.setText("Number: " + user.getAddress().getNumber());
+            postcode.setText("Postcode: " + user.getAddress().getPostcode());
         }
     }
 }
