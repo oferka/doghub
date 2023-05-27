@@ -40,52 +40,22 @@ public class UserInfoContainer extends VerticalLayout {
         setAlignItems(CENTER);
 
         id = new Label();
-        add(id);
-
         name = new Label();
-        add(name);
-
         username = new Label();
-        add(username);
-
         email = new Label();
-        add(email);
-
         title = new Label();
-        add(title);
-
         thumbnailPicture = new Label();
-        add(thumbnailPicture);
-
         dateOfBirth = new Label();
-        add(dateOfBirth);
-
         dateOfRegistration = new Label();
-        add(dateOfRegistration);
-
         company = new Label();
-        add(company);
-
         mobileNumber = new Label();
-        add(mobileNumber);
-
         country = new Label();
-        add(country);
-
         state = new Label();
-        add(state);
-
         city = new Label();
-        add(city);
-
         streetName = new Label();
-        add(streetName);
-
         number = new Label();
-        add(number);
-
         postcode = new Label();
-        add(postcode);
+        add(id, name, username, email, title, thumbnailPicture, dateOfBirth, dateOfRegistration, company, mobileNumber, country, state, city, streetName, number, postcode);
     }
 
     public void setUser(long userId) {
