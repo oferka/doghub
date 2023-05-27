@@ -21,6 +21,9 @@
 @import url('./shared/user-creation-container.css');
 @import url('./shared/user-email-field.css');
 @import url('./shared/user-info-container.css');
+@import url('./shared/user-info-container-buttons.css');
+@import url('./shared/user-info-container-buttons-cancel.css');
+@import url('./shared/user-info-container-buttons-save.css');
 @import url('./shared/user-menu-bar.css');
 @import url('./shared/user-password-field.css');
 @import url('./views/app/about-view.css');

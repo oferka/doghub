@@ -33,6 +33,8 @@ public class UserInfoContainer extends VerticalLayout {
     private final Label number;
     private final Label postcode;
 
+    private final UserInfoContainerButtons buttons;
+
     public UserInfoContainer(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         this.usersDataProvider = usersDataProvider;
         addClassName(CLASS_NAME);
@@ -56,6 +58,9 @@ public class UserInfoContainer extends VerticalLayout {
         number = new Label();
         postcode = new Label();
         add(id, name, username, email, title, thumbnailPicture, dateOfBirth, dateOfRegistration, company, mobileNumber, country, state, city, streetName, number, postcode);
+
+        buttons = new UserInfoContainerButtons(usersDataProvider, authenticatedUser, userCreationService);
+        add(buttons);
     }
 
     public void setUser(long userId) {
