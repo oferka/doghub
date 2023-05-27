@@ -25,6 +25,7 @@ public class UserInfoContainer extends VerticalLayout {
     private final Label dateOfBirth;
     private final Label dateOfRegistration;
     private final Label company;
+    private final Label mobileNumber;
 
     public UserInfoContainer(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         this.usersDataProvider = usersDataProvider;
@@ -58,6 +59,9 @@ public class UserInfoContainer extends VerticalLayout {
 
         company = new Label();
         add(company);
+
+        mobileNumber = new Label();
+        add(mobileNumber);
     }
 
     public void setUser(long userId) {
@@ -68,11 +72,12 @@ public class UserInfoContainer extends VerticalLayout {
             name.setText("Name: " + user.getName());
             username.setText("Username: " + user.getUsername());
             email.setText("Email: " + user.getEmail());
-            email.setText("Title: " + user.getTitle());
+            title.setText("Title: " + user.getTitle());
             thumbnailPicture.setText("Thumbnail Picture: " + user.getThumbnailPicture());
             dateOfBirth.setText("Date Of Birth: " + user.getDateOfBirth());
             dateOfRegistration.setText("Date Of Registration: " + user.getDateOfRegistration());
             company.setText("Company: " + user.getCompany());
+            mobileNumber.setText("Mobile Number: " + user.getMobileNumber());
         }
     }
 }
