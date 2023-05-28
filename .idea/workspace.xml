@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 109">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 110">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/UserInfoContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/UserInfoContainer.java" afterDir="false" />
     </list>
@@ -178,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00063" summary="doghub 61">
-      <created>1684760579918</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1684760579918</updated>
     </task>
     <task id="LOCAL-00064" summary="doghub 62">
       <created>1684762172263</created>
@@ -522,12 +515,18 @@
       <option name="project" value="LOCAL" />
       <updated>1685262934770</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="doghub 110">
+      <created>1685263818862</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1685263818862</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 85" />
     <MESSAGE value="doghub 86" />
     <MESSAGE value="doghub 87" />
     <MESSAGE value="doghub 88" />
@@ -552,6 +551,7 @@
     <MESSAGE value="doghub 107" />
     <MESSAGE value="doghub 108" />
     <MESSAGE value="doghub 109" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 109" />
+    <MESSAGE value="doghub 110" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 110" />
   </component>
 </project>

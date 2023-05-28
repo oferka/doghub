@@ -35,7 +35,7 @@ public class UserInfoContainer extends VerticalLayout {
     private final DateTimePicker dateOfRegistration;
     private final TextField company;
     private final TextField mobileNumber;
-    private final TextField country;
+    private final ComboBox<String> country;
     private final TextField state;
     private final TextField city;
     private final TextField streetName;
@@ -102,10 +102,11 @@ public class UserInfoContainer extends VerticalLayout {
         mobileNumber.setAllowedCharPattern("[0-9()+-]");
         mobileNumber.setPrefixComponent(PHONE.create());
 
-        country = new TextField("Country");
-        company.setClearButtonVisible(true);
-        country.setMinLength(2);
-        country.setMaxLength(64);
+        country = new ComboBox<>("Country");
+        country.setAllowCustomValue(true);
+        List<String> countryValues = asList("USA", "Canada", "Israel", "Italy", "France", "Australia", "China", "Japan", "Mexico", "Russia", "Germany", "India");
+        country.setItems(countryValues);
+        country.setHelperText("Select or type your country");
         country.setPrefixComponent(MAP_MARKER.create());
 
         state = new TextField("State");
