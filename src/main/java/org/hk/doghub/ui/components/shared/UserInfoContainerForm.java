@@ -21,8 +21,6 @@ public class UserInfoContainerForm extends FormLayout {
 
     public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
 
-    private final UsersDataProvider usersDataProvider;
-
     private final BigDecimalField id;
     private final TextField name;
     private final TextField username;
@@ -41,7 +39,6 @@ public class UserInfoContainerForm extends FormLayout {
     private final TextField postcode;
 
     public UserInfoContainerForm(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
-        this.usersDataProvider = usersDataProvider;
         addClassName(CLASS_NAME);
 
         id = new BigDecimalField("ID");
@@ -134,7 +131,30 @@ public class UserInfoContainerForm extends FormLayout {
         postcode.setMaxLength(64);
         postcode.setPrefixComponent(MAP_MARKER.create());
 
-        add(id, title, name, username, email, thumbnailPicture, dateOfBirth, dateOfRegistration, company, mobileNumber, country, state, city, streetName, number, postcode);
+        add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, number, postcode);
+
+        setResponsiveSteps(
+                // Use one column by default
+                new ResponsiveStep("0", 1),
+                // Use two columns, if layout's width exceeds 600px
+                new ResponsiveStep("500px", 2)
+        );
+        setColspan(id, 1);
+        setColspan(username, 1);
+        setColspan(title, 1);
+        setColspan(name, 1);
+        setColspan(mobileNumber, 1);
+        setColspan(email, 1);
+        setColspan(thumbnailPicture, 2);
+        setColspan(company, 2);
+        setColspan(dateOfBirth, 1);
+        setColspan(dateOfRegistration, 1);
+        setColspan(country, 1);
+        setColspan(state, 1);
+        setColspan(city, 1);
+        setColspan(streetName, 1);
+        setColspan(number, 1);
+        setColspan(postcode, 1);
     }
 
     public void setUser(DogHubUser user) {
