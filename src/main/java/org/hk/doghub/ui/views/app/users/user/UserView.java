@@ -6,16 +6,20 @@ import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.UserCreationService;
+import org.hk.doghub.ui.components.shared.UserInfoSaveEvent;
+import org.hk.doghub.ui.components.shared.UserInfoSaveListener;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
 
+@Slf4j
 @Route(value = UsersView.ROUTE, layout = DogHubAppLayout.class)
 @PageTitle(UserView.NAME)
 @RolesAllowed({"ADMIN"})
-public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
+public class UserView extends VerticalLayout implements HasUrlParameter<Long>, UserInfoSaveListener {
 
     public static final String ID_PREFIX = "user";
     public static final String ID_SUFFIX = "-view";
@@ -33,6 +37,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
         add(header);
 
         body = new UserViewBody(usersDataProvider, authenticatedUser, userCreationService);
+        body.addUserInfoSaveListener(this);
         addAndExpand(body);
 
         footer = new UserViewFooter(usersDataProvider);
@@ -48,5 +53,10 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
         header.selectedUserChanged(selectedUserId);
         body.selectedUserChanged(selectedUserId);
         footer.selectedUserChanged(selectedUserId);
+    }
+
+    @Override
+    public void saveTriggered(UserInfoSaveEvent event) {
+        log.info("Saaaave!");
     }
 }

@@ -21,4 +21,12 @@ public class UserInfoContainerButtons extends HorizontalLayout {
         cancel = new UserInfoCancelButton();
         add(cancel);
     }
+
+    public void addUserInfoSaveListener(UserInfoSaveListener listener) {
+        save.addUserInfoSaveListener(listener);
+    }
+
+    public void removeUserInfoSaveListener(UserInfoSaveListener listener) {
+        save.removeUserInfoSaveListener(listener);
+    }
 }
