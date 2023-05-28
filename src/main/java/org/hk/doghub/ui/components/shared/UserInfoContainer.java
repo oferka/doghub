@@ -8,8 +8,7 @@ import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.Optional;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
-import static com.vaadin.flow.component.icon.VaadinIcon.PHONE;
+import static com.vaadin.flow.component.icon.VaadinIcon.*;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
 public class UserInfoContainer extends VerticalLayout {
@@ -61,35 +60,41 @@ public class UserInfoContainer extends VerticalLayout {
         username = new TextField("User Name");
         username.setRequiredIndicatorVisible(true);
         username.setEnabled(false);
-        name.setMinLength(5);
-        name.setMaxLength(128);
+        username.setMinLength(5);
+        username.setMaxLength(128);
+        username.setPrefixComponent(USER.create());
 
         email = new TextField("Email");
         email.setRequiredIndicatorVisible(true);
         email.setClearButtonVisible(true);
-        name.setMinLength(5);
-        name.setMaxLength(128);
+        email.setMinLength(5);
+        email.setMaxLength(128);
+        email.setPrefixComponent(MAILBOX.create());
 
         thumbnailPicture = new TextField("Avatar URL");
         thumbnailPicture.setClearButtonVisible(true);
         thumbnailPicture.setMinLength(5);
         thumbnailPicture.setMaxLength(256);
+        thumbnailPicture.setPrefixComponent(PICTURE.create());
 
         dateOfBirth = new TextField("Date of Birth");
         dateOfBirth.setClearButtonVisible(true);
         dateOfBirth.setMinLength(5);
         dateOfBirth.setMaxLength(128);
+        dateOfBirth.setPrefixComponent(DATE_INPUT.create());
 
         dateOfRegistration = new TextField("Date of Registration");
         dateOfRegistration.setClearButtonVisible(true);
         dateOfRegistration.setEnabled(false);
         dateOfRegistration.setMinLength(5);
         dateOfRegistration.setMaxLength(128);
+        dateOfRegistration.setPrefixComponent(DATE_INPUT.create());
 
         company = new TextField("Company");
         company.setClearButtonVisible(true);
         company.setMinLength(2);
         company.setMaxLength(64);
+        company.setPrefixComponent(FACTORY.create());
 
         mobileNumber = new TextField("Mobile Phone");
         mobileNumber.setClearButtonVisible(true);
@@ -97,7 +102,7 @@ public class UserInfoContainer extends VerticalLayout {
         mobileNumber.setAllowedCharPattern("[0-9()+-]");
         mobileNumber.setPrefixComponent(PHONE.create());
 
-        country = new TextField("Counter");
+        country = new TextField("Country");
         company.setClearButtonVisible(true);
         country.setMinLength(2);
         country.setMaxLength(64);
@@ -133,7 +138,7 @@ public class UserInfoContainer extends VerticalLayout {
         postcode.setMaxLength(64);
         postcode.setPrefixComponent(MAP_MARKER.create());
 
-        add(id, name, username, email, title, thumbnailPicture, dateOfBirth, dateOfRegistration, company, mobileNumber, country, state, city, streetName, number, postcode);
+        add(id, title, name, username, email, thumbnailPicture, dateOfBirth, dateOfRegistration, company, mobileNumber, country, state, city, streetName, number, postcode);
 
         buttons = new UserInfoContainerButtons(usersDataProvider, authenticatedUser, userCreationService);
         add(buttons);
