@@ -57,6 +57,8 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, U
 
     @Override
     public void saveTriggered(UserInfoSaveEvent event) {
-        log.info("Saaaave!");
+        header.save();
+        body.save();
+        footer.save();
     }
 }
