@@ -41,11 +41,23 @@ public class UserInfoContainer extends VerticalLayout {
         form.save();
     }
 
+    public void cancel() {
+        form.cancel();
+    }
+
     public void addUserInfoSaveListener(UserInfoSaveListener listener) {
         buttons.addUserInfoSaveListener(listener);
     }
 
     public void removeUserInfoSaveListener(UserInfoSaveListener listener) {
         buttons.removeUserInfoSaveListener(listener);
+    }
+
+    public void addUserInfoCancelListener(UserInfoCancelListener listener) {
+        buttons.addUserInfoCancelListener(listener);
+    }
+
+    public void removeUserInfoCancelListener(UserInfoCancelListener listener) {
+        buttons.removeUserInfoCancelListener(listener);
     }
 }

@@ -35,7 +35,6 @@ public class UserInfoSaveButton extends Button {
     }
 
     private void saveClicked(ClickEvent<Button> event) {
-        log.info("Save clicked");
         fireUserInfoSaveEvent(new UserInfoSaveEvent(this));
     }
 

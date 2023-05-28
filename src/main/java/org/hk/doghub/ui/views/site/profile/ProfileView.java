@@ -6,10 +6,7 @@ import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserCreationService;
-import org.hk.doghub.ui.components.shared.UserInfoContainer;
-import org.hk.doghub.ui.components.shared.UserInfoSaveEvent;
-import org.hk.doghub.ui.components.shared.UserInfoSaveListener;
+import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayout;
 
@@ -19,7 +16,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 @Route(value = ProfileView.ROUTE, layout = DogHubSiteLayout.class)
 @PageTitle(ProfileView.NAME)
 @RolesAllowed({"USER", "ADMIN"})
-public class ProfileView extends VerticalLayout implements UserInfoSaveListener {
+public class ProfileView extends VerticalLayout implements UserInfoSaveListener, UserInfoCancelListener {
 
     public static final String ROUTE = "profile";
     public static final String ID_PREFIX = "profile";
@@ -38,11 +35,17 @@ public class ProfileView extends VerticalLayout implements UserInfoSaveListener 
             userInfo.setUser(authenticatedUser.get().get().getId());
         }
         userInfo.addUserInfoSaveListener(this);
+        userInfo.addUserInfoCancelListener(this);
         add(userInfo);
     }
 
     @Override
     public void saveTriggered(UserInfoSaveEvent event) {
         userInfo.save();
+    }
+
+    @Override
+    public void cancelTriggered(UserInfoCancelEvent event) {
+        userInfo.cancel();
     }
 }

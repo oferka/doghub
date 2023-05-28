@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.*;
 import static java.util.Arrays.asList;
@@ -204,4 +205,9 @@ public class UserInfoContainerForm extends FormLayout {
                 postcode.getValue()
         );
     }
+
+    public void cancel() {
+        Optional<DogHubUser> userOptional = usersDataProvider.findById(id.getValue().longValue());
+        userOptional.ifPresent(this::setUser);
+     }
 }
