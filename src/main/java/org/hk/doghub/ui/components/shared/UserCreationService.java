@@ -1,17 +1,20 @@
 package org.hk.doghub.ui.components.shared;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
+import java.util.Optional;
 import java.util.Set;
 
+import static java.lang.String.format;
 import static org.hk.doghub.model.user.Role.USER;
 
 @Slf4j
@@ -25,6 +28,50 @@ public class UserCreationService {
 
     public DogHubUser create(@NotNull @Email String email, @NotNull String password) {
         return userService.save(getUserEntity(email, password));
+    }
+
+    public DogHubUser save(
+            Long id,
+            @NotNull @Size(min = 2, max = 128) @NotBlank String name,
+            @NotNull @Size(min = 5, max = 128) @NotBlank String username,
+            @Email String email,
+            @Size(min = 2, max = 64) String title,
+            @URL String thumbnailPicture,
+            @Past ZonedDateTime dateOfBirth,
+            @Past ZonedDateTime dateOfRegistration,
+            @Size(min = 2, max = 64) String company,
+            @Size(min = 2, max = 64) String mobileNumber,
+            @Positive Integer number,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String streetName,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String city,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String state,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String country,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String postcode) {
+        Optional<DogHubUser> userOptional = userService.findById(id);
+        if(userOptional.isPresent()) {
+            DogHubUser user = userOptional.get();
+            user.setName(name);
+            user.setUsername(username);
+            user.setEmail(email);
+            user.setTitle(title);
+            user.setThumbnailPicture(thumbnailPicture);
+            user.setDateOfBirth(dateOfBirth);
+            user.setDateOfRegistration(dateOfRegistration);
+            user.setCompany(company);
+            user.setMobileNumber(mobileNumber);
+            DogHubAddress address = user.getAddress();
+            if(address == null) {
+                address = new DogHubAddress();
+            }
+            address.setNumber(number);
+            address.setStreetName(streetName);
+            address.setCity(city);
+            address.setState(state);
+            address.setCountry(country);
+            address.setPostcode(postcode);
+            return userService.save(user);
+        }
+        throw new IllegalArgumentException(format("Failed to save user with ID: %s'", id.toString()));
     }
 
     private @NotNull DogHubUser getUserEntity(@NotNull @Email String email, @NotNull String password) {

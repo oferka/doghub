@@ -11,6 +11,8 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.math.BigDecimal;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.*;
@@ -38,7 +40,13 @@ public class UserInfoContainerForm extends FormLayout {
     private final IntegerField number;
     private final TextField postcode;
 
+    private final UsersDataProvider usersDataProvider;
+
+    private final UserCreationService userCreationService;
+
     public UserInfoContainerForm(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+        this.usersDataProvider = usersDataProvider;
+        this.userCreationService = userCreationService;
         addClassName(CLASS_NAME);
 
         id = new BigDecimalField("ID");
@@ -174,5 +182,26 @@ public class UserInfoContainerForm extends FormLayout {
         streetName.setValue((user.getAddress() != null)?user.getAddress().getStreetName() : EMPTY);
         number.setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
         postcode.setValue((user.getAddress() != null)?user.getAddress().getPostcode() : EMPTY);
+    }
+
+    public void save() {
+        userCreationService.save(
+                id.getValue().longValue(),
+                name.getValue(),
+                username.getValue(),
+                email.getValue(),
+                title.getValue(),
+                thumbnailPicture.getValue(),
+                ZonedDateTime.of(dateOfBirth.getValue(), ZoneId.systemDefault()),
+                ZonedDateTime.of(dateOfRegistration.getValue(),ZoneId.systemDefault()),
+                company.getValue(),
+                mobileNumber.getValue(),
+                number.getValue(),
+                streetName.getValue(),
+                city.getValue(),
+                state.getValue(),
+                country.getValue(),
+                postcode.getValue()
+        );
     }
 }

@@ -37,6 +37,10 @@ public class UserInfoContainer extends VerticalLayout {
         userOptional.ifPresent(form::setUser);
     }
 
+    public void save() {
+        form.save();
+    }
+
     public void addUserInfoSaveListener(UserInfoSaveListener listener) {
         buttons.addUserInfoSaveListener(listener);
     }

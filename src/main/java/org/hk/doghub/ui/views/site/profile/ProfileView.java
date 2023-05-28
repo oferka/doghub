@@ -43,6 +43,6 @@ public class ProfileView extends VerticalLayout implements UserInfoSaveListener 
 
     @Override
     public void saveTriggered(UserInfoSaveEvent event) {
-        log.info("Saaaave!");
+        userInfo.save();
     }
 }
