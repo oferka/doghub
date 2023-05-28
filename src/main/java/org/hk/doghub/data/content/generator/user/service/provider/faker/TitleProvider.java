@@ -12,6 +12,6 @@ import static org.apache.commons.lang3.RandomUtils.nextBoolean;
 public class TitleProvider {
 
     public @NotNull @Size(min = 2, max = 64) @NotBlank String get(@NotNull User user) {
-        return (nextBoolean())?"Mr":"Mrs";
+        return (nextBoolean())?"Mr.":"Mrs.";
     }
 }

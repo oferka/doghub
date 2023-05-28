@@ -1,5 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.BigDecimalField;
@@ -10,10 +11,12 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.*;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+import static java.util.Arrays.asList;
 
 public class UserInfoContainer extends VerticalLayout {
 
@@ -25,7 +28,7 @@ public class UserInfoContainer extends VerticalLayout {
     private final TextField name;
     private final TextField username;
     private final UserEmailField email;
-    private final TextField title;
+    private final ComboBox<String> title;
     private final TextField thumbnailPicture;
     private final DateTimePicker dateOfBirth;
     private final DateTimePicker dateOfRegistration;
@@ -49,10 +52,12 @@ public class UserInfoContainer extends VerticalLayout {
         id = new BigDecimalField("ID");
         id.setReadOnly(true);
 
-        title = new TextField("Title");
-        title.setClearButtonVisible(true);
-        title.setMinLength(2);
-        title.setMaxLength(64);
+        title = new ComboBox<>("Title");
+        title.setAllowCustomValue(true);
+        List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
+        title.setItems(titleValues);
+        title.setValue(titleValues.get(0));
+        title.setHelperText("Select or type your title");
 
         name = new TextField("Name");
         name.setRequiredIndicatorVisible(true);
