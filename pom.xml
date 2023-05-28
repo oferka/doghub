@@ -21,7 +21,7 @@
         <jackson-datatype-jsr310.version>2.15.1</jackson-datatype-jsr310.version>
         <junit-jupiter-engine.version>5.9.3</junit-jupiter-engine.version>
         <springdoc-openapi-starter-webmvc-ui.version>2.1.0</springdoc-openapi-starter-webmvc-ui.version>
-        <spring-cloud-dependencies.version>2022.0.2</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2022.0.3</spring-cloud-dependencies.version>
         <vaadin.version>24.0.5</vaadin.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <modelmapper.version>3.1.1</modelmapper.version>
