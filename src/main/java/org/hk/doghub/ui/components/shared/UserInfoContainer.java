@@ -44,7 +44,7 @@ public class UserInfoContainer extends VerticalLayout {
 
         id = new TextField("ID");
         id.setRequiredIndicatorVisible(true);
-        id.setEnabled(false);
+        id.setReadOnly(true);
 
         title = new TextField("Title");
         title.setClearButtonVisible(true);
@@ -59,7 +59,7 @@ public class UserInfoContainer extends VerticalLayout {
 
         username = new TextField("User Name");
         username.setRequiredIndicatorVisible(true);
-        username.setEnabled(false);
+        username.setReadOnly(true);
         username.setMinLength(5);
         username.setMaxLength(128);
         username.setPrefixComponent(USER.create());
@@ -85,7 +85,7 @@ public class UserInfoContainer extends VerticalLayout {
 
         dateOfRegistration = new TextField("Date of Registration");
         dateOfRegistration.setClearButtonVisible(true);
-        dateOfRegistration.setEnabled(false);
+        dateOfRegistration.setReadOnly(true);
         dateOfRegistration.setMinLength(5);
         dateOfRegistration.setMaxLength(128);
         dateOfRegistration.setPrefixComponent(DATE_INPUT.create());
