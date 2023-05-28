@@ -35,4 +35,8 @@ public class UserViewHeader extends HorizontalLayout {
     public void save() {
         log.info("Save");
     }
+
+    public void cancel() {
+        log.info("Cancel");
+    }
 }
