@@ -1,11 +1,15 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.BigDecimalField;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.*;
@@ -17,13 +21,13 @@ public class UserInfoContainer extends VerticalLayout {
 
     private final UsersDataProvider usersDataProvider;
 
-    private final TextField id;
+    private final BigDecimalField id;
     private final TextField name;
     private final TextField username;
     private final UserEmailField email;
     private final TextField title;
     private final TextField thumbnailPicture;
-    private final TextField dateOfBirth;
+    private final DateTimePicker dateOfBirth;
     private final TextField dateOfRegistration;
     private final TextField company;
     private final TextField mobileNumber;
@@ -31,7 +35,7 @@ public class UserInfoContainer extends VerticalLayout {
     private final TextField state;
     private final TextField city;
     private final TextField streetName;
-    private final TextField number;
+    private final IntegerField number;
     private final TextField postcode;
 
     private final UserInfoContainerButtons buttons;
@@ -42,7 +46,7 @@ public class UserInfoContainer extends VerticalLayout {
 
         setAlignItems(CENTER);
 
-        id = new TextField("ID");
+        id = new BigDecimalField("ID");
         id.setReadOnly(true);
 
         title = new TextField("Title");
@@ -76,11 +80,7 @@ public class UserInfoContainer extends VerticalLayout {
         thumbnailPicture.setMaxLength(256);
         thumbnailPicture.setPrefixComponent(PICTURE.create());
 
-        dateOfBirth = new TextField("Date of Birth");
-        dateOfBirth.setClearButtonVisible(true);
-        dateOfBirth.setMinLength(5);
-        dateOfBirth.setMaxLength(128);
-        dateOfBirth.setPrefixComponent(DATE_INPUT.create());
+        dateOfBirth = new DateTimePicker("Date of Birth");
 
         dateOfRegistration = new TextField("Date of Registration");
         dateOfRegistration.setClearButtonVisible(true);
@@ -125,10 +125,8 @@ public class UserInfoContainer extends VerticalLayout {
         streetName.setMaxLength(64);
         streetName.setPrefixComponent(MAP_MARKER.create());
 
-        number = new TextField("Number");
+        number = new IntegerField("Number");
         number.setClearButtonVisible(true);
-        number.setMinLength(2);
-        number.setMaxLength(64);
         number.setPrefixComponent(MAP_MARKER.create());
 
         postcode = new TextField("Postcode");
@@ -146,14 +144,14 @@ public class UserInfoContainer extends VerticalLayout {
     public void setUser(long userId) {
         Optional<DogHubUser> userOptional = usersDataProvider.findById(userId);
         if(userOptional.isPresent()) {
-            id.setValue(Long.toString(userId));
+            id.setValue(new BigDecimal(userId));
             DogHubUser user = userOptional.get();
             name.setValue(user.getName());
             username.setValue(user.getUsername());
             email.setValue(user.getEmail());
             title.setValue(user.getTitle());
             thumbnailPicture.setValue(user.getThumbnailPicture());
-            dateOfBirth.setValue(user.getDateOfBirth().toString());
+            dateOfBirth.setValue(user.getDateOfBirth().toLocalDateTime());
             dateOfRegistration.setValue(user.getDateOfRegistration().toString());
             company.setValue(user.getCompany());
             mobileNumber.setValue(user.getMobileNumber());
@@ -161,7 +159,7 @@ public class UserInfoContainer extends VerticalLayout {
             state.setValue(user.getAddress().getState());
             city.setValue(user.getAddress().getCity());
             streetName.setValue(user.getAddress().getStreetName());
-            number.setValue(Integer.toString(user.getAddress().getNumber()));
+            number.setValue(user.getAddress().getNumber());
             postcode.setValue(user.getAddress().getPostcode());
         }
     }
