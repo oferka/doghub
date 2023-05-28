@@ -14,6 +14,8 @@ public class UserViewHeader extends HorizontalLayout {
     private final UserViewHeaderInfo info;
     private final UserViewHeaderActions actions;
 
+    private long selectedUserId;
+
     public UserViewHeader(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
 
@@ -27,13 +29,22 @@ public class UserViewHeader extends HorizontalLayout {
         add(actions);
     }
 
+    public long getSelectedUserId() {
+        return selectedUserId;
+    }
+
+    public void setSelectedUserId(long selectedUserId) {
+        this.selectedUserId = selectedUserId;
+    }
+
     public void selectedUserChanged(long selectedUserId) {
+        setSelectedUserId(selectedUserId);
         info.selectedUserChanged(selectedUserId);
         actions.selectedUserChanged(selectedUserId);
     }
 
     public void save() {
-        log.info("Save");
+        selectedUserChanged(selectedUserId);
     }
 
     public void cancel() {
