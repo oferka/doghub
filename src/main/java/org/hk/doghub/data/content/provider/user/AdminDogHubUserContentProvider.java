@@ -30,7 +30,7 @@ public class AdminDogHubUserContentProvider {
         adminUsaUser.setName("Ofer Karp");
         adminUsaUser.setUsername("ofer.karp@gmail.com");
         adminUsaUser.setEmail("ofer.karp@gmail.com");
-        adminUsaUser.setTitle("Mr");
+        adminUsaUser.setTitle("Mr.");
         adminUsaUser.setThumbnailPicture("https://en.gravatar.com/userimage/33131799/3024d9952717995b6facc57f7bd50d2e.png");
         adminUsaUser.setDateOfBirth(ZonedDateTime.of(LocalDate.of(1976, 4, 15), LocalTime.of(2,  44), ZoneId.of("GMT+02:00")));
         adminUsaUser.setDateOfRegistration(ZonedDateTime.of(LocalDate.of(2022, 3, 19), LocalTime.of(6,  35), ZoneId.of("GMT+02:00")));

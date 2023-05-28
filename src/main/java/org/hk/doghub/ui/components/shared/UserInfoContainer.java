@@ -54,7 +54,7 @@ public class UserInfoContainer extends VerticalLayout {
 
         title = new ComboBox<>("Title");
         title.setAllowCustomValue(true);
-        List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
+        List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
         title.setItems(titleValues);
         title.setValue(titleValues.get(0));
         title.setHelperText("Select or type your title");
