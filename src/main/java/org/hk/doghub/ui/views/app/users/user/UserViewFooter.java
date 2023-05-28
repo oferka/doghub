@@ -18,6 +18,8 @@ public class UserViewFooter extends HorizontalLayout {
 
     private final RouterLink users;
 
+    private long selectedUserId;
+
     public UserViewFooter(UsersDataProvider usersDataProvider) {
         addClassName(CLASS_NAME);
 
@@ -31,12 +33,21 @@ public class UserViewFooter extends HorizontalLayout {
         add(users);
     }
 
+    public long getSelectedUserId() {
+        return selectedUserId;
+    }
+
+    public void setSelectedUserId(long selectedUserId) {
+        this.selectedUserId = selectedUserId;
+    }
+
     public void selectedUserChanged(long selectedUserId) {
+        setSelectedUserId(selectedUserId);
         label.setText("Selected User: " + selectedUserId);
     }
 
     public void save() {
-        log.info("Save");
+        selectedUserChanged(selectedUserId);
     }
 
     public void cancel() {
