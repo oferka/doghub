@@ -28,7 +28,7 @@ public class UserInfoContainer extends VerticalLayout {
     private final TextField title;
     private final TextField thumbnailPicture;
     private final DateTimePicker dateOfBirth;
-    private final TextField dateOfRegistration;
+    private final DateTimePicker dateOfRegistration;
     private final TextField company;
     private final TextField mobileNumber;
     private final TextField country;
@@ -82,12 +82,8 @@ public class UserInfoContainer extends VerticalLayout {
 
         dateOfBirth = new DateTimePicker("Date of Birth");
 
-        dateOfRegistration = new TextField("Date of Registration");
-        dateOfRegistration.setClearButtonVisible(true);
+        dateOfRegistration = new DateTimePicker("Date of Registration");
         dateOfRegistration.setReadOnly(true);
-        dateOfRegistration.setMinLength(5);
-        dateOfRegistration.setMaxLength(128);
-        dateOfRegistration.setPrefixComponent(DATE_INPUT.create());
 
         company = new TextField("Company");
         company.setClearButtonVisible(true);
@@ -152,7 +148,7 @@ public class UserInfoContainer extends VerticalLayout {
             title.setValue(user.getTitle());
             thumbnailPicture.setValue(user.getThumbnailPicture());
             dateOfBirth.setValue(user.getDateOfBirth().toLocalDateTime());
-            dateOfRegistration.setValue(user.getDateOfRegistration().toString());
+            dateOfRegistration.setValue(user.getDateOfRegistration().toLocalDateTime());
             company.setValue(user.getCompany());
             mobileNumber.setValue(user.getMobileNumber());
             country.setValue(user.getAddress().getCountry());
