@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
 
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
 @Slf4j
 public class UserViewFooter extends HorizontalLayout {
@@ -21,7 +21,7 @@ public class UserViewFooter extends HorizontalLayout {
         addClassName(CLASS_NAME);
 
         setWidthFull();
-        setAlignItems(CENTER);
+        setJustifyContentMode(CENTER);
 
         users = new RouterLink(UsersView.NAME, UsersView.class);
         add(users);
