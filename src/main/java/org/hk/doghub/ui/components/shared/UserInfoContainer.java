@@ -20,7 +20,7 @@ public class UserInfoContainer extends VerticalLayout {
     private final TextField id;
     private final TextField name;
     private final TextField username;
-    private final TextField email;
+    private final UserEmailField email;
     private final TextField title;
     private final TextField thumbnailPicture;
     private final TextField dateOfBirth;
@@ -43,7 +43,6 @@ public class UserInfoContainer extends VerticalLayout {
         setAlignItems(CENTER);
 
         id = new TextField("ID");
-        id.setRequiredIndicatorVisible(true);
         id.setReadOnly(true);
 
         title = new TextField("Title");
@@ -64,8 +63,8 @@ public class UserInfoContainer extends VerticalLayout {
         username.setMaxLength(128);
         username.setPrefixComponent(USER.create());
 
-        email = new TextField("Email");
-        email.setRequiredIndicatorVisible(true);
+        email = new UserEmailField();
+        email.setLabel("Email");
         email.setClearButtonVisible(true);
         email.setMinLength(5);
         email.setMaxLength(128);
