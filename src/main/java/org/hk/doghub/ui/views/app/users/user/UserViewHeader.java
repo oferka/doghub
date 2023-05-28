@@ -4,7 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
 @Slf4j
 public class UserViewHeader extends HorizontalLayout {
@@ -20,7 +20,7 @@ public class UserViewHeader extends HorizontalLayout {
         addClassName(CLASS_NAME);
 
         setWidthFull();
-        setAlignItems(CENTER);
+        setJustifyContentMode(CENTER);
 
         info = new UserViewHeaderInfo(usersDataProvider);
         add(info);

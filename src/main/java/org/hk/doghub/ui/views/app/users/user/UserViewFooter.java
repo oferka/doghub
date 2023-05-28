@@ -1,10 +1,9 @@
 package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.router.RouterLink;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.ui.components.shared.UsersRouterLink;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
-import org.hk.doghub.ui.views.app.users.UsersView;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
@@ -13,7 +12,7 @@ public class UserViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserView.CLASS_NAME + "-footer";
 
-    private final RouterLink users;
+    private final UsersRouterLink users;
 
     private long selectedUserId;
 
@@ -23,7 +22,7 @@ public class UserViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        users = new RouterLink(UsersView.NAME, UsersView.class);
+        users = new UsersRouterLink();
         add(users);
     }
 

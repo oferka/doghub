@@ -13,6 +13,8 @@ import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
 
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+
 @Slf4j
 @Route(value = UsersView.ROUTE, layout = DogHubAppLayout.class)
 @PageTitle(UserView.NAME)
@@ -30,6 +32,8 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, U
 
     public UserView(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
+
+        setAlignItems(CENTER);
 
         header = new UserViewHeader(usersDataProvider);
         add(header);
