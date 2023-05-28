@@ -17,6 +17,7 @@ import java.util.Optional;
 import static com.vaadin.flow.component.icon.VaadinIcon.*;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static java.util.Arrays.asList;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class UserInfoContainer extends VerticalLayout {
 
@@ -56,7 +57,6 @@ public class UserInfoContainer extends VerticalLayout {
         title.setAllowCustomValue(true);
         List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
         title.setItems(titleValues);
-        title.setValue(titleValues.get(0));
         title.setHelperText("Select or type your title");
 
         name = new TextField("Name");
@@ -149,19 +149,19 @@ public class UserInfoContainer extends VerticalLayout {
             DogHubUser user = userOptional.get();
             name.setValue(user.getName());
             username.setValue(user.getUsername());
-            email.setValue(user.getEmail());
-            title.setValue(user.getTitle());
-            thumbnailPicture.setValue(user.getThumbnailPicture());
-            dateOfBirth.setValue(user.getDateOfBirth().toLocalDateTime());
-            dateOfRegistration.setValue(user.getDateOfRegistration().toLocalDateTime());
-            company.setValue(user.getCompany());
-            mobileNumber.setValue(user.getMobileNumber());
-            country.setValue(user.getAddress().getCountry());
-            state.setValue(user.getAddress().getState());
-            city.setValue(user.getAddress().getCity());
-            streetName.setValue(user.getAddress().getStreetName());
-            number.setValue(user.getAddress().getNumber());
-            postcode.setValue(user.getAddress().getPostcode());
+            email.setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
+            title.setValue((user.getTitle() != null)?user.getTitle() : EMPTY);
+            thumbnailPicture.setValue((user.getThumbnailPicture() != null)?user.getThumbnailPicture() : EMPTY);
+            dateOfBirth.setValue((user.getDateOfBirth() != null)?user.getDateOfBirth().toLocalDateTime() : null);
+            dateOfRegistration.setValue((user.getDateOfRegistration() != null)?user.getDateOfRegistration().toLocalDateTime() : null);
+            company.setValue((user.getCompany() != null)?user.getCompany() : EMPTY);
+            mobileNumber.setValue((user.getMobileNumber() != null)?user.getMobileNumber() : EMPTY);
+            country.setValue((user.getAddress() != null)?user.getAddress().getCountry() : EMPTY);
+            state.setValue((user.getAddress() != null)?user.getAddress().getState() : EMPTY);
+            city.setValue((user.getAddress() != null)?user.getAddress().getCity() : EMPTY);
+            streetName.setValue((user.getAddress() != null)?user.getAddress().getStreetName() : EMPTY);
+            number.setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
+            postcode.setValue((user.getAddress() != null)?user.getAddress().getPostcode() : EMPTY);
         }
     }
 }
