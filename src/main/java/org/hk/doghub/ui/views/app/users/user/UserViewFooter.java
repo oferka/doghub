@@ -14,6 +14,8 @@ public class UserViewFooter extends HorizontalLayout {
 
     private final UsersRouterLink users;
 
+    private final NextUserRouterLink nextUser;
+
     private long selectedUserId;
 
     public UserViewFooter(UsersDataProvider usersDataProvider) {
@@ -24,6 +26,9 @@ public class UserViewFooter extends HorizontalLayout {
 
         users = new UsersRouterLink();
         add(users);
+
+        nextUser = new NextUserRouterLink(usersDataProvider);
+        add(nextUser);
     }
 
     public long getSelectedUserId() {
@@ -36,6 +41,7 @@ public class UserViewFooter extends HorizontalLayout {
 
     public void selectedUserChanged(long selectedUserId) {
         setSelectedUserId(selectedUserId);
+        nextUser.selectedUserChanged(selectedUserId);
     }
 
     public void save() {

@@ -73,4 +73,8 @@ public class DogHubUserService {
     public boolean existsByUsername(@NotNull String username) {
         return repository.existsByUsername(username);
     }
+
+    public Optional<DogHubUser> findNext(Long id) {
+        return repository.findTop1ByIdGreaterThanOrderById(id);
+    }
 }
