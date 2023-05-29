@@ -36,4 +36,9 @@ public class UsersServiceDataProvider implements UsersDataProvider {
     public @NotNull Optional<DogHubUser> findNext(@NotNull Long id) {
         return dogHubUserService.findNext(id);
     }
+
+    @Override
+    public @NotNull Optional<DogHubUser> findPrevious(@NotNull Long id) {
+        return dogHubUserService.findPrevious(id);
+    }
 }

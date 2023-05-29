@@ -13,4 +13,6 @@ public interface DogHubUserRepository extends JpaRepository<DogHubUser, Long>, J
     boolean existsByUsername(String username);
 
     Optional<DogHubUser> findTop1ByIdGreaterThanOrderById(Long id);
+
+    Optional<DogHubUser> findTop1ByIdLessThanOrderByIdDesc(Long id);
 }

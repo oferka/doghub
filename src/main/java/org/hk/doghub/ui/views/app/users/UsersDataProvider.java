@@ -18,4 +18,7 @@ public interface UsersDataProvider {
 
     @NotNull
     Optional<DogHubUser> findNext(Long id);
+
+    @NotNull
+    Optional<DogHubUser> findPrevious(Long id);
 }

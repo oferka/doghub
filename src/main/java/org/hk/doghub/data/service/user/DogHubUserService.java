@@ -77,4 +77,8 @@ public class DogHubUserService {
     public Optional<DogHubUser> findNext(Long id) {
         return repository.findTop1ByIdGreaterThanOrderById(id);
     }
+
+    public Optional<DogHubUser> findPrevious(Long id) {
+        return repository.findTop1ByIdLessThanOrderByIdDesc(id);
+    }
 }
