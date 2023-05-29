@@ -12,21 +12,25 @@ public class NextUserRouterLink extends RouterLink {
 
     private final UsersDataProvider usersDataProvider;
 
+    private final NextUserButton nextUserButton;
+
     public NextUserRouterLink(UsersDataProvider usersDataProvider) {
         this.usersDataProvider = usersDataProvider;
         addClassName(CLASS_NAME);
-        setText("Next User");
-        setEnabled(false);
+
+        nextUserButton = new NextUserButton();
+        nextUserButton.setEnabled(false);
+        add(nextUserButton);
     }
 
     public void selectedUserChanged(long selectedUserId) {
         Optional<DogHubUser> userOptional = usersDataProvider.findNext(selectedUserId);
         if(userOptional.isPresent()) {
             setRoute(UserView.class, userOptional.get().getId());
-            setEnabled(true);
+            nextUserButton.setEnabled(true);
         }
         else {
-            setEnabled(false);
+            nextUserButton.setEnabled(false);
         }
     }
 }
