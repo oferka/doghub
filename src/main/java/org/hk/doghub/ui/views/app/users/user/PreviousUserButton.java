@@ -11,7 +11,7 @@ import static com.vaadin.flow.component.icon.VaadinIcon.ARROW_LEFT;
 @Slf4j
 public class PreviousUserButton extends Button {
 
-    public static final String CLASS_NAME = "previuos-user-button";
+    public static final String CLASS_NAME = "previous-user-button";
 
     public PreviousUserButton() {
         addClassName(CLASS_NAME);

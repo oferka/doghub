@@ -16,6 +16,7 @@ public class NextUserButton extends Button {
     public NextUserButton() {
         addClassName(CLASS_NAME);
         setIcon(ARROW_RIGHT.create());
+        setIconAfterText(true);
         setText("Next User");
         addClickListener(this::nextUserClicked);
         addClickShortcut(KEY_N, ALT);
