@@ -117,6 +117,8 @@ public class UserInfoContainerForm extends FormLayout {
         mobileNumber.setClearButtonVisible(true);
         mobileNumber.setAllowedCharPattern("[0-9()+-]");
         mobileNumber.setPrefixComponent(PHONE.create());
+        mobileNumber.setValueChangeMode(EAGER);
+        mobileNumber.addValueChangeListener(this::mobileNumberValueChanged);
 
         country = new ComboBox<>("Country");
         country.setAllowCustomValue(true);
@@ -248,6 +250,18 @@ public class UserInfoContainerForm extends FormLayout {
         if(value.length() < 2 || value.length() > 64) {
             event.getSource().setInvalid(true);
             event.getSource().setErrorMessage("Company length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void mobileNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Mobile number length must be between 2 and 64 characters");
         }
         else {
             event.getSource().setInvalid(false);
