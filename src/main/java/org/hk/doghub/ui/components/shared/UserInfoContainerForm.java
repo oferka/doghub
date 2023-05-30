@@ -1,5 +1,7 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
+import com.vaadin.flow.component.HasValue.ValueChangeListener;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -51,7 +53,37 @@ public class UserInfoContainerForm extends FormLayout {
         addClassName(CLASS_NAME);
 
         id = new BigDecimalField("ID");
+        id.setRequiredIndicatorVisible(true);
         id.setReadOnly(true);
+        id.addValueChangeListener((ValueChangeListener<ComponentValueChangeEvent<BigDecimalField, BigDecimal>>) event -> {
+            BigDecimal value = event.getValue();
+            if(value.longValue() <= 0) {
+                event.getSource().setInvalid(true);
+                event.getSource().setErrorMessage("ID must be positive");
+            }
+            else {
+                event.getSource().setInvalid(false);
+                event.getSource().setErrorMessage(null);
+            }
+        });
+
+        username = new TextField("User Name");
+        username.setRequiredIndicatorVisible(true);
+        username.setReadOnly(true);
+        username.setMinLength(5);
+        username.setMaxLength(128);
+        username.setPrefixComponent(USER.create());
+        username.addValueChangeListener((ValueChangeListener<ComponentValueChangeEvent<TextField, String>>) event -> {
+            String value = event.getValue();
+            if(value.length() < 5 || value.length() > 128) {
+                event.getSource().setInvalid(true);
+                event.getSource().setErrorMessage("User name length must be between 5 and 128 characters");
+            }
+            else {
+                event.getSource().setInvalid(false);
+                event.getSource().setErrorMessage(null);
+            }
+        });
 
         title = new ComboBox<>("Title");
         title.setAllowCustomValue(true);
@@ -64,13 +96,6 @@ public class UserInfoContainerForm extends FormLayout {
         name.setClearButtonVisible(true);
         name.setMinLength(2);
         name.setMaxLength(128);
-
-        username = new TextField("User Name");
-        username.setRequiredIndicatorVisible(true);
-        username.setReadOnly(true);
-        username.setMinLength(5);
-        username.setMaxLength(128);
-        username.setPrefixComponent(USER.create());
 
         email = new UserEmailField();
         email.setLabel("Email");
