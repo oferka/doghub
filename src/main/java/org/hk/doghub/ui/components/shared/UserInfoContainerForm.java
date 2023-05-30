@@ -8,6 +8,7 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.textfield.BigDecimalField;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
+import org.apache.commons.validator.routines.UrlValidator;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
@@ -96,6 +97,8 @@ public class UserInfoContainerForm extends FormLayout {
         thumbnailPicture.setMinLength(5);
         thumbnailPicture.setMaxLength(256);
         thumbnailPicture.setPrefixComponent(PICTURE.create());
+        thumbnailPicture.setValueChangeMode(EAGER);
+        thumbnailPicture.addValueChangeListener(this::thumbnailPictureValueChanged);
 
         dateOfBirth = new DateTimePicker("Date of Birth");
 
@@ -219,6 +222,18 @@ public class UserInfoContainerForm extends FormLayout {
         if(value.length() < 2 || value.length() > 128) {
             event.getSource().setInvalid(true);
             event.getSource().setErrorMessage("Name length must be between 2 and 128 characters");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void thumbnailPictureValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(!new UrlValidator().isValid(value)) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Must be a valid URL");
         }
         else {
             event.getSource().setInvalid(false);
