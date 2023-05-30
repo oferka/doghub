@@ -3,6 +3,7 @@ package org.hk.doghub.ui.components.shared;
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.HasValue.ValueChangeListener;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.combobox.ComboBoxBase.CustomValueSetEvent;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.textfield.BigDecimalField;
@@ -86,10 +87,11 @@ public class UserInfoContainerForm extends FormLayout {
         });
 
         title = new ComboBox<>("Title");
-        title.setAllowCustomValue(true);
+        title.setHelperText("Select or type your title");
         List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
         title.setItems(titleValues);
-        title.setHelperText("Select or type your title");
+        title.setAllowCustomValue(true);
+        title.addCustomValueSetListener(this::customTitleValueEntered);
 
         name = new TextField("Name");
         name.setRequiredIndicatorVisible(true);
@@ -233,5 +235,10 @@ public class UserInfoContainerForm extends FormLayout {
     public void cancel() {
         Optional<DogHubUser> userOptional = usersDataProvider.findById(id.getValue().longValue());
         userOptional.ifPresent(this::setUser);
-     }
+    }
+
+    private void customTitleValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
+        String currentlyPresentedValue = event.getDetail();
+        event.getSource().setValue(currentlyPresentedValue);
+    }
 }
