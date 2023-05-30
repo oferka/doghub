@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.HasValue.ValueChangeListener;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.combobox.ComboBoxBase.CustomValueSetEvent;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
@@ -56,17 +55,7 @@ public class UserInfoContainerForm extends FormLayout {
         id = new BigDecimalField("ID");
         id.setRequiredIndicatorVisible(true);
         id.setReadOnly(true);
-        id.addValueChangeListener((ValueChangeListener<ComponentValueChangeEvent<BigDecimalField, BigDecimal>>) event -> {
-            BigDecimal value = event.getValue();
-            if(value.longValue() <= 0) {
-                event.getSource().setInvalid(true);
-                event.getSource().setErrorMessage("ID must be positive");
-            }
-            else {
-                event.getSource().setInvalid(false);
-                event.getSource().setErrorMessage(null);
-            }
-        });
+        id.addValueChangeListener(this::idValueChanged);
 
         username = new TextField("User Name");
         username.setRequiredIndicatorVisible(true);
@@ -74,17 +63,7 @@ public class UserInfoContainerForm extends FormLayout {
         username.setMinLength(5);
         username.setMaxLength(128);
         username.setPrefixComponent(USER.create());
-        username.addValueChangeListener((ValueChangeListener<ComponentValueChangeEvent<TextField, String>>) event -> {
-            String value = event.getValue();
-            if(value.length() < 5 || value.length() > 128) {
-                event.getSource().setInvalid(true);
-                event.getSource().setErrorMessage("User name length must be between 5 and 128 characters");
-            }
-            else {
-                event.getSource().setInvalid(false);
-                event.getSource().setErrorMessage(null);
-            }
-        });
+        username.addValueChangeListener(this::usernameValueChanged);
 
         title = new ComboBox<>("Title");
         title.setHelperText("Select or type your title");
@@ -190,6 +169,30 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(streetName, 1);
         setColspan(number, 1);
         setColspan(postcode, 1);
+    }
+
+    private void usernameValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(value.length() < 5 || value.length() > 128) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("User name length must be between 5 and 128 characters");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void idValueChanged(ComponentValueChangeEvent<BigDecimalField, BigDecimal> event) {
+        BigDecimal value = event.getValue();
+        if(value.longValue() <= 0) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("ID must be positive");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
     }
 
     public void setUser(DogHubUser user) {
