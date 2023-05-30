@@ -77,6 +77,7 @@ public class UserInfoContainerForm extends FormLayout {
         name.setClearButtonVisible(true);
         name.setMinLength(2);
         name.setMaxLength(128);
+        name.addValueChangeListener(this::nameValueChanged);
 
         email = new UserEmailField();
         email.setLabel("Email");
@@ -195,6 +196,31 @@ public class UserInfoContainerForm extends FormLayout {
         }
     }
 
+    private void customTitleValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
+        String value = event.getDetail();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Title length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setValue(value);
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void nameValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(value.length() < 2 || value.length() > 128) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Name length must be between 2 and 128 characters");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
     public void setUser(DogHubUser user) {
         id.setValue(new BigDecimal(user.getId()));
         name.setValue(user.getName());
@@ -238,18 +264,5 @@ public class UserInfoContainerForm extends FormLayout {
     public void cancel() {
         Optional<DogHubUser> userOptional = usersDataProvider.findById(id.getValue().longValue());
         userOptional.ifPresent(this::setUser);
-    }
-
-    private void customTitleValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
-        String value = event.getDetail();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Title length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setValue(value);
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
     }
 }
