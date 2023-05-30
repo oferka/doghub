@@ -100,16 +100,18 @@ public class UserInfoContainerForm extends FormLayout {
         thumbnailPicture.setValueChangeMode(EAGER);
         thumbnailPicture.addValueChangeListener(this::thumbnailPictureValueChanged);
 
-        dateOfBirth = new DateTimePicker("Date of Birth");
-
-        dateOfRegistration = new DateTimePicker("Date of Registration");
-        dateOfRegistration.setReadOnly(true);
-
         company = new TextField("Company");
         company.setClearButtonVisible(true);
         company.setMinLength(2);
         company.setMaxLength(64);
         company.setPrefixComponent(FACTORY.create());
+        company.setValueChangeMode(EAGER);
+        company.addValueChangeListener(this::companyValueChanged);
+
+        dateOfBirth = new DateTimePicker("Date of Birth");
+
+        dateOfRegistration = new DateTimePicker("Date of Registration");
+        dateOfRegistration.setReadOnly(true);
 
         mobileNumber = new TextField("Mobile Phone");
         mobileNumber.setClearButtonVisible(true);
@@ -234,6 +236,18 @@ public class UserInfoContainerForm extends FormLayout {
         if(!new UrlValidator().isValid(value)) {
             event.getSource().setInvalid(true);
             event.getSource().setErrorMessage("Must be a valid URL");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void companyValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Company length must be between 2 and 64 characters");
         }
         else {
             event.getSource().setInvalid(false);
