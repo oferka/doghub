@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.*;
+import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.util.Arrays.asList;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
@@ -55,6 +56,7 @@ public class UserInfoContainerForm extends FormLayout {
         id = new BigDecimalField("ID");
         id.setRequiredIndicatorVisible(true);
         id.setReadOnly(true);
+        id.setValueChangeMode(EAGER);
         id.addValueChangeListener(this::idValueChanged);
 
         username = new TextField("User Name");
@@ -63,6 +65,7 @@ public class UserInfoContainerForm extends FormLayout {
         username.setMinLength(5);
         username.setMaxLength(128);
         username.setPrefixComponent(USER.create());
+        username.setValueChangeMode(EAGER);
         username.addValueChangeListener(this::usernameValueChanged);
 
         title = new ComboBox<>("Title");
@@ -77,6 +80,7 @@ public class UserInfoContainerForm extends FormLayout {
         name.setClearButtonVisible(true);
         name.setMinLength(2);
         name.setMaxLength(128);
+        name.setValueChangeMode(EAGER);
         name.addValueChangeListener(this::nameValueChanged);
 
         email = new UserEmailField();
