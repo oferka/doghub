@@ -98,7 +98,6 @@ public class UserInfoContainerForm extends FormLayout {
 
         mobileNumber = new TextField("Mobile Phone");
         mobileNumber.setClearButtonVisible(true);
-//        mobileNumber.setPattern("^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$");
         mobileNumber.setAllowedCharPattern("[0-9()+-]");
         mobileNumber.setPrefixComponent(PHONE.create());
 
@@ -193,8 +192,8 @@ public class UserInfoContainerForm extends FormLayout {
                 email.getValue(),
                 title.getValue(),
                 thumbnailPicture.getValue(),
-                ZonedDateTime.of(dateOfBirth.getValue(), ZoneId.systemDefault()),
-                ZonedDateTime.of(dateOfRegistration.getValue(),ZoneId.systemDefault()),
+                (dateOfBirth.getValue() != null)?ZonedDateTime.of(dateOfBirth.getValue(), ZoneId.systemDefault()) : null,
+                (dateOfRegistration.getValue() != null)?ZonedDateTime.of(dateOfRegistration.getValue(),ZoneId.systemDefault()): null,
                 company.getValue(),
                 mobileNumber.getValue(),
                 number.getValue(),
