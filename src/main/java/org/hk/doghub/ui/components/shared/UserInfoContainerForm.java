@@ -121,36 +121,46 @@ public class UserInfoContainerForm extends FormLayout {
         mobileNumber.addValueChangeListener(this::mobileNumberValueChanged);
 
         country = new ComboBox<>("Country");
-        country.setAllowCustomValue(true);
+        country.setHelperText("Select or type your country");
         List<String> countryValues = asList("USA", "Canada", "Israel", "Italy", "France", "Australia", "China", "Japan", "Mexico", "Russia", "Germany", "India");
         country.setItems(countryValues);
-        country.setHelperText("Select or type your country");
         country.setPrefixComponent(MAP_MARKER.create());
+        country.setAllowCustomValue(true);
+        country.addCustomValueSetListener(this::customCountryValueEntered);
 
         state = new ComboBox<>("State");
+        state.setHelperText("Select or type your state");
+        state.setPrefixComponent(MAP_MARKER.create());
         state.setClearButtonVisible(true);
         List<String> stateValues = asList("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
                 "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
                 "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming");
         state.setItems(stateValues);
-        state.setHelperText("Select or type your state");
-        state.setPrefixComponent(MAP_MARKER.create());
+        state.addCustomValueSetListener(this::customStateValueEntered);
 
         city = new TextField("City");
         city.setClearButtonVisible(true);
         city.setMinLength(2);
         city.setMaxLength(64);
         city.setPrefixComponent(MAP_MARKER.create());
+        city.setValueChangeMode(EAGER);
+        city.addValueChangeListener(this::cityNumberValueChanged);
 
         streetName = new TextField("Street Name");
         streetName.setClearButtonVisible(true);
         streetName.setMinLength(2);
         streetName.setMaxLength(64);
         streetName.setPrefixComponent(MAP_MARKER.create());
+        streetName.setValueChangeMode(EAGER);
+        streetName.addValueChangeListener(this::streetNameNumberValueChanged);
 
         number = new IntegerField("Number");
         number.setClearButtonVisible(true);
         number.setPrefixComponent(MAP_MARKER.create());
+        number.setMin(1);
+        number.setMax(100000);
+        number.setErrorMessage("Number must be between 1 and 100000");
+        number.setValueChangeMode(EAGER);
 
         postcode = new TextField("Postcode");
         postcode.setClearButtonVisible(true);
@@ -221,6 +231,32 @@ public class UserInfoContainerForm extends FormLayout {
         }
     }
 
+    private void customCountryValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
+        String value = event.getDetail();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Country length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setValue(value);
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void customStateValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
+        String value = event.getDetail();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("State length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setValue(value);
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
     private void nameValueChanged(ComponentValueChangeEvent<TextField, String> event) {
         String value = event.getValue();
         if(value.length() < 2 || value.length() > 128) {
@@ -262,6 +298,30 @@ public class UserInfoContainerForm extends FormLayout {
         if(value.length() < 2 || value.length() > 64) {
             event.getSource().setInvalid(true);
             event.getSource().setErrorMessage("Mobile number length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void cityNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("City length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void streetNameNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Street Name length must be between 2 and 64 characters");
         }
         else {
             event.getSource().setInvalid(false);
