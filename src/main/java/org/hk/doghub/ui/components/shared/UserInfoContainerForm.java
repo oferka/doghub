@@ -238,7 +238,15 @@ public class UserInfoContainerForm extends FormLayout {
     }
 
     private void customTitleValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
-        String currentlyPresentedValue = event.getDetail();
-        event.getSource().setValue(currentlyPresentedValue);
+        String value = event.getDetail();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Title length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setValue(value);
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
     }
 }
