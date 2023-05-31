@@ -27,15 +27,15 @@ public class UserInfoContainerForm extends FormLayout {
     public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
 
     private final UserIdField id;
-    private final TextField name;
     private final TextField username;
-    private final UserEmailField email;
     private final ComboBox<String> title;
+    private final TextField name;
+    private final TextField mobileNumber;
+    private final UserEmailField email;
     private final TextField thumbnailPicture;
+    private final TextField company;
     private final DateTimePicker dateOfBirth;
     private final DateTimePicker dateOfRegistration;
-    private final TextField company;
-    private final TextField mobileNumber;
     private final ComboBox<String> country;
     private final ComboBox<String> state;
     private final TextField city;
