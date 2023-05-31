@@ -27,7 +27,7 @@ public class UserInfoContainerForm extends FormLayout {
     public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
 
     private final UserIdField id;
-    private final TextField username;
+    private final UserUsernameField username;
     private final ComboBox<String> title;
     private final TextField name;
     private final TextField mobileNumber;
@@ -53,15 +53,7 @@ public class UserInfoContainerForm extends FormLayout {
         addClassName(CLASS_NAME);
 
         id = new UserIdField();
-
-        username = new TextField("User Name");
-        username.setRequiredIndicatorVisible(true);
-        username.setReadOnly(true);
-        username.setMinLength(5);
-        username.setMaxLength(128);
-        username.setPrefixComponent(USER.create());
-        username.setValueChangeMode(EAGER);
-        username.addValueChangeListener(this::usernameValueChanged);
+        username = new UserUsernameField();
 
         title = new ComboBox<>("Title");
         title.setHelperText("Select or type your title");
@@ -187,18 +179,6 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(streetName, 1);
         setColspan(number, 1);
         setColspan(postcode, 1);
-    }
-
-    private void usernameValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(value.length() < 5 || value.length() > 128) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("User name length must be between 5 and 128 characters");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
     }
 
     private void customTitleValueEntered(CustomValueSetEvent<ComboBox<String>> event) {

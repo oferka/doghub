@@ -35,12 +35,12 @@ public class UserIdField extends BigDecimalField {
     private void valueChanged(ComponentValueChangeEvent<BigDecimalField, BigDecimal> event) {
         BigDecimal value = event.getValue();
         if(isValidValue(value)) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} must be a positive number", LABEL));
-        }
-        else {
             event.getSource().setInvalid(false);
             event.getSource().setErrorMessage(null);
+        }
+        else {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage(format("{0} must be a positive number", LABEL));
         }
     }
 
