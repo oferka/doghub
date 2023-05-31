@@ -172,18 +172,6 @@ public class UserInfoContainerForm extends FormLayout {
         }
     }
 
-    private void thumbnailPictureValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(!new UrlValidator().isValid(value)) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Must be a valid URL");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
     private void cityNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
         String value = event.getValue();
         if(value.length() < 2 || value.length() > 64) {
