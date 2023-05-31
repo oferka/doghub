@@ -17,7 +17,8 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.*;
+import static com.vaadin.flow.component.icon.VaadinIcon.MAILBOX;
+import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.util.Arrays.asList;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
@@ -33,8 +34,8 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserNameField name;
     private final UserMobileNumberField mobileNumber;
     private final UserEmailField email;
-    private final TextField thumbnailPicture;
-    private final TextField company;
+    private final UserThumbnailPictureField thumbnailPicture;
+    private final UserCompanyField company;
     private final DateTimePicker dateOfBirth;
     private final DateTimePicker dateOfRegistration;
     private final ComboBox<String> country;
@@ -63,14 +64,7 @@ public class UserInfoContainerForm extends FormLayout {
         email.setPrefixComponent(MAILBOX.create());
         email.setValueChangeMode(EAGER);
         thumbnailPicture = new UserThumbnailPictureField();
-
-        company = new TextField("Company");
-        company.setClearButtonVisible(true);
-        company.setMinLength(2);
-        company.setMaxLength(64);
-        company.setPrefixComponent(FACTORY.create());
-        company.setValueChangeMode(EAGER);
-        company.addValueChangeListener(this::companyValueChanged);
+        company = new UserCompanyField();
 
         dateOfBirth = new DateTimePicker("Date of Birth");
 
@@ -183,18 +177,6 @@ public class UserInfoContainerForm extends FormLayout {
         if(!new UrlValidator().isValid(value)) {
             event.getSource().setInvalid(true);
             event.getSource().setErrorMessage("Must be a valid URL");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
-    private void companyValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Company length must be between 2 and 64 characters");
         }
         else {
             event.getSource().setInvalid(false);

@@ -17,6 +17,7 @@
 @import url('./shared/user-avatar.css');
 @import url('./shared/user-avatar-router-link.css');
 @import url('./shared/tip-avatar.css');
+@import url('./shared/user-company-field.css');
 @import url('./shared/user-creation-button.css');
 @import url('./shared/user-creation-container.css');
 @import url('./shared/user-email-field.css');
@@ -30,6 +31,7 @@
 @import url('./shared/user-mobile-number-field.css');
 @import url('./shared/user-name-field.css');
 @import url('./shared/user-password-field.css');
+@import url('./shared/user-thumbnail-picture-field.css');
 @import url('./shared/user-title-field.css');
 @import url('./shared/user-username-field.css');
 @import url('./shared/users-button.css');
