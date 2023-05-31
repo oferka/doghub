@@ -155,10 +155,9 @@ public class UserInfoContainerForm extends FormLayout {
         streetName.addValueChangeListener(this::streetNameNumberValueChanged);
 
         number = new IntegerField("Number");
-        number.setClearButtonVisible(true);
-        number.setPrefixComponent(MAP_MARKER.create());
         number.setMin(1);
         number.setMax(100000);
+        number.setStepButtonsVisible(true);
         number.setErrorMessage("Number must be between 1 and 100000");
         number.setValueChangeMode(EAGER);
 
