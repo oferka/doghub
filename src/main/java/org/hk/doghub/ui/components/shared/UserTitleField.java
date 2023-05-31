@@ -6,6 +6,7 @@ import org.hk.doghub.model.user.DogHubUser;
 
 import java.util.List;
 
+import static java.text.MessageFormat.format;
 import static java.util.Arrays.asList;
 
 public class UserTitleField extends ComboBox<String> {
@@ -37,7 +38,7 @@ public class UserTitleField extends ComboBox<String> {
         }
         else {
             event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Title length must be between 2 and 64 characters");
+            event.getSource().setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
         }
     }
 

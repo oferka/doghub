@@ -4,30 +4,26 @@ import com.vaadin.flow.component.textfield.TextField;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.USER;
-import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
 
-public class UserUsernameField extends TextField {
+public class UserMobileNumberField extends TextField {
 
-    public static final String CLASS_NAME = "user-username-field";
+    public static final String CLASS_NAME = "user-mobile-number-field";
 
-    public static final String LABEL = "User Name";
+    public static final String LABEL = "Mobile Phone";
 
-    public UserUsernameField() {
+    public UserMobileNumberField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
-        setReadOnly(true);
-        setMinLength(5);
-        setMaxLength(128);
-        setPrefixComponent(USER.create());
-        setValueChangeMode(EAGER);
+        setAllowedCharPattern("[0-9()+-]");
+        setMinLength(2);
+        setMaxLength(64);
         addValueChangeListener(this::valueChanged);
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getUsername());
+        setValue(user.getName());
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
@@ -38,11 +34,11 @@ public class UserUsernameField extends TextField {
         }
         else {
             event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} length must be between 5 and 128 characters", LABEL));
+            event.getSource().setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
         }
     }
 
     private boolean isValidValue(String value) {
-        return(value.length() >= 5 && value.length() <= 128);
+        return(value.length() >= 2 && value.length() <= 64);
     }
 }

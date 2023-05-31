@@ -6,6 +6,7 @@ import org.hk.doghub.model.user.DogHubUser;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
+import static java.text.MessageFormat.format;
 
 public class UserNameField extends TextField {
 
@@ -37,7 +38,7 @@ public class UserNameField extends TextField {
         }
         else {
             event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Name length must be between 2 and 128 characters");
+            event.getSource().setErrorMessage(format("{0} length must be between 2 and 128 characters", LABEL));
         }
     }
 

@@ -30,7 +30,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserUsernameField username;
     private final UserTitleField title;
     private final UserNameField name;
-    private final TextField mobileNumber;
+    private final UserMobileNumberField mobileNumber;
     private final UserEmailField email;
     private final TextField thumbnailPicture;
     private final TextField company;
@@ -56,6 +56,7 @@ public class UserInfoContainerForm extends FormLayout {
         username = new UserUsernameField();
         title = new UserTitleField();
         name = new UserNameField();
+        mobileNumber = new UserMobileNumberField();
 
 
         email = new UserEmailField();
@@ -86,13 +87,6 @@ public class UserInfoContainerForm extends FormLayout {
 
         dateOfRegistration = new DateTimePicker("Date of Registration");
         dateOfRegistration.setReadOnly(true);
-
-        mobileNumber = new TextField("Mobile Phone");
-        mobileNumber.setClearButtonVisible(true);
-        mobileNumber.setAllowedCharPattern("[0-9()+-]");
-        mobileNumber.setPrefixComponent(PHONE.create());
-        mobileNumber.setValueChangeMode(EAGER);
-        mobileNumber.addValueChangeListener(this::mobileNumberValueChanged);
 
         country = new ComboBox<>("Country");
         country.setHelperText("Select or type your country");
@@ -212,18 +206,6 @@ public class UserInfoContainerForm extends FormLayout {
         if(value.length() < 2 || value.length() > 64) {
             event.getSource().setInvalid(true);
             event.getSource().setErrorMessage("Company length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
-    private void mobileNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Mobile number length must be between 2 and 64 characters");
         }
         else {
             event.getSource().setInvalid(false);
