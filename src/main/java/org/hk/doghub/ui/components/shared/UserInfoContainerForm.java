@@ -166,6 +166,8 @@ public class UserInfoContainerForm extends FormLayout {
         postcode.setMinLength(2);
         postcode.setMaxLength(64);
         postcode.setPrefixComponent(MAP_MARKER.create());
+        postcode.setValueChangeMode(EAGER);
+        postcode.addValueChangeListener(this::postcodeNumberValueChanged);
 
         add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, number, postcode);
 
@@ -321,6 +323,18 @@ public class UserInfoContainerForm extends FormLayout {
         if(value.length() < 2 || value.length() > 64) {
             event.getSource().setInvalid(true);
             event.getSource().setErrorMessage("Street Name length must be between 2 and 64 characters");
+        }
+        else {
+            event.getSource().setInvalid(false);
+            event.getSource().setErrorMessage(null);
+        }
+    }
+
+    private void postcodeNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
+        String value = event.getValue();
+        if(value.length() < 2 || value.length() > 64) {
+            event.getSource().setInvalid(true);
+            event.getSource().setErrorMessage("Postcode length must be between 2 and 64 characters");
         }
         else {
             event.getSource().setInvalid(false);
