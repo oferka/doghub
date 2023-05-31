@@ -55,20 +55,15 @@ public class UserInfoContainerForm extends FormLayout {
         id = new UserIdField();
         username = new UserUsernameField();
 
+        name = new UserNameField();
+
+
         title = new ComboBox<>("Title");
         title.setHelperText("Select or type your title");
         List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
         title.setItems(titleValues);
         title.setAllowCustomValue(true);
         title.addCustomValueSetListener(this::customTitleValueEntered);
-
-        name = new TextField("Name");
-        name.setRequiredIndicatorVisible(true);
-        name.setClearButtonVisible(true);
-        name.setMinLength(2);
-        name.setMaxLength(128);
-        name.setValueChangeMode(EAGER);
-        name.addValueChangeListener(this::nameValueChanged);
 
         email = new UserEmailField();
         email.setLabel("Email");
@@ -220,18 +215,6 @@ public class UserInfoContainerForm extends FormLayout {
         }
     }
 
-    private void nameValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(value.length() < 2 || value.length() > 128) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Name length must be between 2 and 128 characters");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
     private void thumbnailPictureValueChanged(ComponentValueChangeEvent<TextField, String> event) {
         String value = event.getValue();
         if(!new UrlValidator().isValid(value)) {
@@ -306,15 +289,15 @@ public class UserInfoContainerForm extends FormLayout {
 
     public void setUser(DogHubUser user) {
         id.setValue(user);
-        name.setValue(user.getName());
         username.setValue(user.getUsername());
-        email.setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
         title.setValue((user.getTitle() != null)?user.getTitle() : EMPTY);
+        name.setValue(user.getName());
+        mobileNumber.setValue((user.getMobileNumber() != null)?user.getMobileNumber() : EMPTY);
+        email.setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
         thumbnailPicture.setValue((user.getThumbnailPicture() != null)?user.getThumbnailPicture() : EMPTY);
+        company.setValue((user.getCompany() != null)?user.getCompany() : EMPTY);
         dateOfBirth.setValue((user.getDateOfBirth() != null)?user.getDateOfBirth().toLocalDateTime() : null);
         dateOfRegistration.setValue((user.getDateOfRegistration() != null)?user.getDateOfRegistration().toLocalDateTime() : null);
-        company.setValue((user.getCompany() != null)?user.getCompany() : EMPTY);
-        mobileNumber.setValue((user.getMobileNumber() != null)?user.getMobileNumber() : EMPTY);
         country.setValue((user.getAddress() != null)?user.getAddress().getCountry() : EMPTY);
         state.setValue((user.getAddress() != null)?user.getAddress().getState() : EMPTY);
         city.setValue((user.getAddress() != null)?user.getAddress().getCity() : EMPTY);
@@ -326,20 +309,20 @@ public class UserInfoContainerForm extends FormLayout {
     public void save() {
         userCreationService.save(
                 id.getValueAsLong(),
-                name.getValue(),
                 username.getValue(),
-                email.getValue(),
                 title.getValue(),
+                name.getValue(),
+                mobileNumber.getValue(),
+                email.getValue(),
                 thumbnailPicture.getValue(),
+                company.getValue(),
                 (dateOfBirth.getValue() != null)?ZonedDateTime.of(dateOfBirth.getValue(), ZoneId.systemDefault()) : null,
                 (dateOfRegistration.getValue() != null)?ZonedDateTime.of(dateOfRegistration.getValue(),ZoneId.systemDefault()): null,
-                company.getValue(),
-                mobileNumber.getValue(),
-                number.getValue(),
-                streetName.getValue(),
-                city.getValue(),
-                state.getValue(),
                 country.getValue(),
+                state.getValue(),
+                city.getValue(),
+                streetName.getValue(),
+                number.getValue(),
                 postcode.getValue()
         );
     }

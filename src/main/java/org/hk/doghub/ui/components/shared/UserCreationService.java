@@ -31,21 +31,21 @@ public class UserCreationService {
     }
 
     public DogHubUser save(
-            Long id,
-            @NotNull @Size(min = 2, max = 128) @NotBlank String name,
+            @NotNull Long id,
             @NotNull @Size(min = 5, max = 128) @NotBlank String username,
-            @Email String email,
             @Size(min = 2, max = 64) String title,
+            @NotNull @Size(min = 2, max = 128) @NotBlank String name,
+            @Size(min = 2, max = 64) String mobileNumber,
+            @Email String email,
             @URL String thumbnailPicture,
+            @Size(min = 2, max = 64) String company,
             @Past ZonedDateTime dateOfBirth,
             @Past ZonedDateTime dateOfRegistration,
-            @Size(min = 2, max = 64) String company,
-            @Size(min = 2, max = 64) String mobileNumber,
-            @Positive Integer number,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String streetName,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String city,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String state,
             @NotNull @Size(min = 2, max = 64) @NotBlank String country,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String state,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String city,
+            @NotNull @Size(min = 2, max = 64) @NotBlank String streetName,
+            @Positive Integer number,
             @NotNull @Size(min = 2, max = 64) @NotBlank String postcode) {
         Optional<DogHubUser> userOptional = userService.findById(id);
         if(userOptional.isPresent()) {

@@ -7,13 +7,13 @@ import org.hk.doghub.model.user.DogHubUser;
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 
-public class UserUsernameField extends TextField {
+public class UserNameField extends TextField {
 
-    public static final String CLASS_NAME = "user-username-field";
+    public static final String CLASS_NAME = "user-name-field";
 
-    public static final String LABEL = "User Name";
+    public static final String LABEL = "Name";
 
-    public UserUsernameField() {
+    public UserNameField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
@@ -26,7 +26,7 @@ public class UserUsernameField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getUsername());
+        setValue(user.getName());
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
@@ -37,11 +37,11 @@ public class UserUsernameField extends TextField {
         }
         else {
             event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("User name length must be between 5 and 128 characters");
+            event.getSource().setErrorMessage("Name length must be between 2 and 128 characters");
         }
     }
 
     private boolean isValidValue(String value) {
-        return(value.length() > 5 && value.length() < 128);
+        return(value.length() > 2 && value.length() < 128);
     }
 }
