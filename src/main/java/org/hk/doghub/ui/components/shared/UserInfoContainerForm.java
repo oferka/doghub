@@ -21,6 +21,7 @@ import static com.vaadin.flow.component.icon.VaadinIcon.*;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.util.Arrays.asList;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
+import static org.hk.doghub.ui.components.shared.UserEmailField.LABEL;
 
 public class UserInfoContainerForm extends FormLayout {
 
@@ -57,23 +58,11 @@ public class UserInfoContainerForm extends FormLayout {
         title = new UserTitleField();
         name = new UserNameField();
         mobileNumber = new UserMobileNumberField();
-
-
         email = new UserEmailField();
-        email.setLabel("Email");
-        email.setClearButtonVisible(true);
-        email.setMinLength(5);
-        email.setMaxLength(128);
+        email.setLabel(LABEL);
         email.setPrefixComponent(MAILBOX.create());
         email.setValueChangeMode(EAGER);
-
-        thumbnailPicture = new TextField("Avatar URL");
-        thumbnailPicture.setClearButtonVisible(true);
-        thumbnailPicture.setMinLength(5);
-        thumbnailPicture.setMaxLength(256);
-        thumbnailPicture.setPrefixComponent(PICTURE.create());
-        thumbnailPicture.setValueChangeMode(EAGER);
-        thumbnailPicture.addValueChangeListener(this::thumbnailPictureValueChanged);
+        thumbnailPicture = new UserThumbnailPictureField();
 
         company = new TextField("Company");
         company.setClearButtonVisible(true);

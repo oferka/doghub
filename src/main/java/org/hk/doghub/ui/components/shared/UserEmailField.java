@@ -13,6 +13,8 @@ public class UserEmailField extends EmailField {
     public UserEmailField() {
         addClassName(CLASS_NAME);
         setPlaceholder(LABEL);
+        setMinLength(5);
+        setMaxLength(128);
         getElement().setAttribute("name", "email");
         setErrorMessage(format("Please enter a valid {0} address", LABEL));
         setClearButtonVisible(true);
