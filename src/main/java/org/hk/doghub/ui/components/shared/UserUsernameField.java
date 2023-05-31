@@ -4,8 +4,6 @@ import com.vaadin.flow.component.textfield.TextField;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
-import java.math.BigDecimal;
-
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 
