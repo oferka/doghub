@@ -29,7 +29,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserIdField id;
     private final UserUsernameField username;
     private final ComboBox<String> title;
-    private final TextField name;
+    private final UserNameField name;
     private final TextField mobileNumber;
     private final UserEmailField email;
     private final TextField thumbnailPicture;
