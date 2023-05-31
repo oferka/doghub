@@ -28,6 +28,7 @@
 @import url('./shared/user-info-container-form.css');
 @import url('./shared/user-menu-bar.css');
 @import url('./shared/user-password-field.css');
+@import url('./shared/user-username-field.css');
 @import url('./shared/users-button.css');
 @import url('./shared/users-router-link.css');
 @import url('./views/app/about-view.css');
