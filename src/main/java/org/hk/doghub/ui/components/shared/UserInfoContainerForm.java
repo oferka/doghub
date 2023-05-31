@@ -5,7 +5,6 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.combobox.ComboBoxBase.CustomValueSetEvent;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.textfield.BigDecimalField;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import org.apache.commons.validator.routines.UrlValidator;
@@ -13,7 +12,6 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
-import java.math.BigDecimal;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -28,7 +26,7 @@ public class UserInfoContainerForm extends FormLayout {
 
     public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
 
-    private final BigDecimalField id;
+    private final UserIdField id;
     private final TextField name;
     private final TextField username;
     private final UserEmailField email;
@@ -54,11 +52,7 @@ public class UserInfoContainerForm extends FormLayout {
         this.userCreationService = userCreationService;
         addClassName(CLASS_NAME);
 
-        id = new BigDecimalField("ID");
-        id.setRequiredIndicatorVisible(true);
-        id.setReadOnly(true);
-        id.setValueChangeMode(EAGER);
-        id.addValueChangeListener(this::idValueChanged);
+        id = new UserIdField();
 
         username = new TextField("User Name");
         username.setRequiredIndicatorVisible(true);
@@ -207,18 +201,6 @@ public class UserInfoContainerForm extends FormLayout {
         }
     }
 
-    private void idValueChanged(ComponentValueChangeEvent<BigDecimalField, BigDecimal> event) {
-        BigDecimal value = event.getValue();
-        if(value.longValue() <= 0) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("ID must be positive");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
     private void customTitleValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
         String value = event.getDetail();
         if(value.length() < 2 || value.length() > 64) {
@@ -343,7 +325,7 @@ public class UserInfoContainerForm extends FormLayout {
     }
 
     public void setUser(DogHubUser user) {
-        id.setValue(new BigDecimal(user.getId()));
+        id.setValue(user);
         name.setValue(user.getName());
         username.setValue(user.getUsername());
         email.setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
@@ -363,7 +345,7 @@ public class UserInfoContainerForm extends FormLayout {
 
     public void save() {
         userCreationService.save(
-                id.getValue().longValue(),
+                id.getValueAsLong(),
                 name.getValue(),
                 username.getValue(),
                 email.getValue(),
