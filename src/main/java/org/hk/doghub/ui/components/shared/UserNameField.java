@@ -18,7 +18,7 @@ public class UserNameField extends TextField {
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
         setReadOnly(true);
-        setMinLength(5);
+        setMinLength(2);
         setMaxLength(128);
         setPrefixComponent(USER.create());
         setValueChangeMode(EAGER);
@@ -42,6 +42,6 @@ public class UserNameField extends TextField {
     }
 
     private boolean isValidValue(String value) {
-        return(value.length() > 2 && value.length() < 128);
+        return(value.length() >= 2 && value.length() <= 128);
     }
 }

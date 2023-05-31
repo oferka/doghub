@@ -28,7 +28,7 @@ public class UserInfoContainerForm extends FormLayout {
 
     private final UserIdField id;
     private final UserUsernameField username;
-    private final ComboBox<String> title;
+    private final UserTitleField title;
     private final UserNameField name;
     private final TextField mobileNumber;
     private final UserEmailField email;
@@ -54,16 +54,9 @@ public class UserInfoContainerForm extends FormLayout {
 
         id = new UserIdField();
         username = new UserUsernameField();
-
+        title = new UserTitleField();
         name = new UserNameField();
 
-
-        title = new ComboBox<>("Title");
-        title.setHelperText("Select or type your title");
-        List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
-        title.setItems(titleValues);
-        title.setAllowCustomValue(true);
-        title.addCustomValueSetListener(this::customTitleValueEntered);
 
         email = new UserEmailField();
         email.setLabel("Email");
@@ -174,19 +167,6 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(streetName, 1);
         setColspan(number, 1);
         setColspan(postcode, 1);
-    }
-
-    private void customTitleValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
-        String value = event.getDetail();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Title length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setValue(value);
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
     }
 
     private void customCountryValueEntered(CustomValueSetEvent<ComboBox<String>> event) {

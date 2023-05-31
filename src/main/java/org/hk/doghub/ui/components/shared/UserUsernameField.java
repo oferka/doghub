@@ -42,6 +42,6 @@ public class UserUsernameField extends TextField {
     }
 
     private boolean isValidValue(String value) {
-        return(value.length() > 5 && value.length() < 128);
+        return(value.length() >= 5 && value.length() <= 128);
     }
 }
