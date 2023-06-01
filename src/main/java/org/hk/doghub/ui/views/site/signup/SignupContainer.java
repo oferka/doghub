@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.site.signup;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserCreationService;
 
 public class SignupContainer extends VerticalLayout {
 

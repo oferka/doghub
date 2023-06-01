@@ -2,10 +2,10 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserCreationService;
-import org.hk.doghub.ui.components.shared.UserInfoCancelListener;
-import org.hk.doghub.ui.components.shared.UserInfoContainer;
-import org.hk.doghub.ui.components.shared.UserInfoSaveListener;
+import org.hk.doghub.ui.components.shared.user.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserInfoCancelListener;
+import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
+import org.hk.doghub.ui.components.shared.user.UserInfoSaveListener;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;

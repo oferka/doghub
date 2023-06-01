@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.layout;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserMenuBar;
+import org.hk.doghub.ui.components.shared.user.UserMenuBar;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 

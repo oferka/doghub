@@ -3,7 +3,7 @@ package org.hk.doghub.ui.views.app.users.create;
 import com.vaadin.flow.component.html.Span;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserCreationService;
 
 public class UserCreationViewHeaderInfoDescription extends Span {
 

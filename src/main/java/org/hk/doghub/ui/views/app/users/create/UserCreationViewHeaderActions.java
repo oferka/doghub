@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.users.create;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserCreationService;
 
 public class UserCreationViewHeaderActions extends HorizontalLayout {
 

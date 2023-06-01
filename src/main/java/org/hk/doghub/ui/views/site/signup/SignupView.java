@@ -7,7 +7,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
 
 @Route(SignupView.ROUTE)

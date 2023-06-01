@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.ui.components.shared.UserAvatar;
+import org.hk.doghub.ui.components.shared.user.UserAvatar;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.Optional;

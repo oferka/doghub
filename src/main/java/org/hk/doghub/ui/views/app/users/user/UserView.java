@@ -8,7 +8,7 @@ import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.*;
+import org.hk.doghub.ui.components.shared.user.*;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;

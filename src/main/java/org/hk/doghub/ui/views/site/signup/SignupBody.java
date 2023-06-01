@@ -2,8 +2,8 @@ package org.hk.doghub.ui.views.site.signup;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.UserCreationContainer;
-import org.hk.doghub.ui.components.shared.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserCreationContainer;
+import org.hk.doghub.ui.components.shared.user.UserCreationService;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 

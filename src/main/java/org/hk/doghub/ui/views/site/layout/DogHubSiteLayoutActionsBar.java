@@ -3,8 +3,8 @@ package org.hk.doghub.ui.views.site.layout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.AuthenticatedUserBar;
 import org.hk.doghub.ui.components.shared.AuthenticationBar;
+import org.hk.doghub.ui.components.shared.user.AuthenticatedUserBar;
 
 import java.util.Optional;
 

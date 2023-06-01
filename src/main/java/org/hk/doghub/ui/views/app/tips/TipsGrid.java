@@ -4,8 +4,8 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.TipAvatar;
-import org.hk.doghub.ui.components.shared.UserAvatarRouterLink;
+import org.hk.doghub.ui.components.shared.tip.TipAvatar;
+import org.hk.doghub.ui.components.shared.user.UserAvatarRouterLink;
 
 public class TipsGrid extends Grid<DogHubTip> {
 

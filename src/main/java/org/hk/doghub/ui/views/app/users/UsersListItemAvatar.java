@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.html.Div;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.ui.components.shared.UserAvatar;
+import org.hk.doghub.ui.components.shared.user.UserAvatar;
 
 public class UsersListItemAvatar extends Div {
 
