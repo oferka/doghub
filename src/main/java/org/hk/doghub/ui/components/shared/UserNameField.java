@@ -18,7 +18,6 @@ public class UserNameField extends TextField {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
-        setReadOnly(true);
         setMinLength(2);
         setMaxLength(128);
         setPrefixComponent(USER.create());
@@ -27,22 +26,27 @@ public class UserNameField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getName());
+        @NotNull String value = user.getName();
+        setValue(value);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
+        @NotNull String value = event.getValue();
+        validateValue(value);
+    }
+
+    private void validateValue(@NotNull String value) {
         if(isValidValue(value)) {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
+            setInvalid(false);
+            setErrorMessage(null);
         }
         else {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} length must be between 2 and 128 characters", LABEL));
+            setInvalid(true);
+            setErrorMessage(format("{0} length must be between 2 and 128 characters", LABEL));
         }
     }
 
-    private boolean isValidValue(String value) {
+    private boolean isValidValue(@NotNull String value) {
         return(value.length() >= 2 && value.length() <= 128);
     }
 }

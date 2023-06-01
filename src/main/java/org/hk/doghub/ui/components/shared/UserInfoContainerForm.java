@@ -2,7 +2,6 @@ package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.formlayout.FormLayout;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.Optional;
@@ -34,13 +33,10 @@ public class UserInfoContainerForm extends FormLayout {
 
     private final UsersDataProvider usersDataProvider;
 
-    private final AuthenticatedUser authenticatedUser;
-
     private final UserCreationService userCreationService;
 
-    public UserInfoContainerForm(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserInfoContainerForm(UsersDataProvider usersDataProvider, UserCreationService userCreationService) {
         this.usersDataProvider = usersDataProvider;
-        this.authenticatedUser = authenticatedUser;
         this.userCreationService = userCreationService;
         addClassName(CLASS_NAME);
 

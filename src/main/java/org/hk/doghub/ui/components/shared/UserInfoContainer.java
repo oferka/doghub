@@ -25,7 +25,7 @@ public class UserInfoContainer extends VerticalLayout {
 
         setAlignItems(CENTER);
 
-        form = new UserInfoContainerForm(usersDataProvider, authenticatedUser, userCreationService);
+        form = new UserInfoContainerForm(usersDataProvider, userCreationService);
         add(form);
 
         buttons = new UserInfoContainerButtons(usersDataProvider, authenticatedUser, userCreationService);

@@ -8,7 +8,6 @@ import java.util.List;
 
 import static java.text.MessageFormat.format;
 import static java.util.Arrays.asList;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class UserTitleField extends ComboBox<String> {
 
@@ -23,27 +22,38 @@ public class UserTitleField extends ComboBox<String> {
         List<String> titleValues = asList("Mr.", "Mrs.", "Ms.", "Miss", "Dr.", "Rev.", "Prof.", "Hon.", "Capt.", "Col.", "Lt.", "Sen.", "Rep.", "Gov.", "Pres.", "Sir", "Dame", "Lady", "Lord", "Knight", "Prince", "Princess");
         setItems(titleValues);
         setAllowCustomValue(true);
+        addValueChangeListener(this::valueChanged);
         addCustomValueSetListener(this::customValueEntered);
     }
 
+    private void valueChanged(ComponentValueChangeEvent<ComboBox<String>, String> event) {
+        String value = event.getValue();
+        setValueWithValidation(value);
+    }
+
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getTitle() != null)?user.getTitle() : EMPTY);
+        String value = user.getTitle();
+        setValueWithValidation(value);
     }
 
     private void customValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
         String value = event.getDetail();
+        setValueWithValidation(value);
+    }
+
+    private void setValueWithValidation(String value) {
         if(isValidValue(value)) {
-            event.getSource().setValue(value);
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
+            setValue(value);
+            setInvalid(false);
+            setErrorMessage(null);
         }
         else {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
+            setInvalid(true);
+            setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
         }
     }
 
     private boolean isValidValue(String value) {
-        return(value.length() >=2 && value.length() <= 64);
+        return(value != null && value.length() >=2 && value.length() <= 64);
     }
 }

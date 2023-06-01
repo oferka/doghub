@@ -27,22 +27,27 @@ public class UserUsernameField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getUsername());
+        @NotNull String username = user.getUsername();
+        setValue(username);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
+        @NotNull String value = event.getValue();
+        validateValue(value);
+    }
+
+    private void validateValue(@NotNull String value) {
         if(isValidValue(value)) {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
+            setInvalid(false);
+            setErrorMessage(null);
         }
         else {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} length must be between 5 and 128 characters", LABEL));
+            setInvalid(true);
+            setErrorMessage(format("{0} length must be between 5 and 128 characters", LABEL));
         }
     }
 
-    private boolean isValidValue(String value) {
+    private boolean isValidValue(@NotNull String value) {
         return(value.length() >= 5 && value.length() <= 128);
     }
 }

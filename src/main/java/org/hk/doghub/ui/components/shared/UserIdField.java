@@ -25,7 +25,8 @@ public class UserIdField extends BigDecimalField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(new BigDecimal(user.getId()));
+        @NotNull Long userId = user.getId();
+        setValue(new BigDecimal(userId));
     }
 
     public long getValueAsLong() {
@@ -33,18 +34,22 @@ public class UserIdField extends BigDecimalField {
     }
 
     private void valueChanged(ComponentValueChangeEvent<BigDecimalField, BigDecimal> event) {
-        BigDecimal value = event.getValue();
+        @NotNull BigDecimal value = event.getValue();
+        validateValue(value);
+    }
+
+    private void validateValue(@NotNull BigDecimal value) {
         if(isValidValue(value)) {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
+            setInvalid(false);
+            setErrorMessage(null);
         }
         else {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} must be a positive number", LABEL));
+            setInvalid(true);
+            setErrorMessage(format("{0} length must be between 5 and 128 characters", LABEL));
         }
     }
 
-    private boolean isValidValue(BigDecimal value) {
+    private boolean isValidValue(@NotNull BigDecimal value) {
         return(value.longValue() > 0);
     }
 }
