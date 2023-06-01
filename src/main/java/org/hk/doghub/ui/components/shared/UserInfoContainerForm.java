@@ -1,8 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.combobox.ComboBoxBase.CustomValueSetEvent;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
@@ -10,13 +8,11 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
-import java.util.List;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.MAILBOX;
 import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
-import static java.util.Arrays.asList;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.ui.components.shared.UserEmailField.LABEL;
 
@@ -35,7 +31,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserDateOfBirthField dateOfBirth;
     private final UserDateOfRegistrationField dateOfRegistration;
     private final UserCountryField country;
-    private final ComboBox<String> state;
+    private final UserStateField state;
     private final TextField city;
     private final TextField streetName;
     private final IntegerField number;
@@ -64,16 +60,7 @@ public class UserInfoContainerForm extends FormLayout {
         dateOfBirth = new UserDateOfBirthField();
         dateOfRegistration = new UserDateOfRegistrationField();
         country = new UserCountryField();
-
-        state = new ComboBox<>("State");
-        state.setHelperText("Select or type your state");
-        state.setPrefixComponent(MAP_MARKER.create());
-        state.setClearButtonVisible(true);
-        List<String> stateValues = asList("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
-                "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
-                "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming");
-        state.setItems(stateValues);
-        state.addCustomValueSetListener(this::customStateValueEntered);
+        state = new UserStateField();
 
         city = new TextField("City");
         city.setClearButtonVisible(true);
@@ -130,19 +117,6 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(streetName, 1);
         setColspan(number, 1);
         setColspan(postcode, 1);
-    }
-
-    private void customStateValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
-        String value = event.getDetail();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("State length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setValue(value);
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
     }
 
     private void cityNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
