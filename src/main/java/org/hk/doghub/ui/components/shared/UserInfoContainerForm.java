@@ -35,7 +35,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserEmailField email;
     private final UserThumbnailPictureField thumbnailPicture;
     private final UserCompanyField company;
-    private final DateTimePicker dateOfBirth;
+    private final UserDateOfBirthField dateOfBirth;
     private final DateTimePicker dateOfRegistration;
     private final ComboBox<String> country;
     private final ComboBox<String> state;
@@ -64,8 +64,7 @@ public class UserInfoContainerForm extends FormLayout {
         email.setValueChangeMode(EAGER);
         thumbnailPicture = new UserThumbnailPictureField();
         company = new UserCompanyField();
-
-        dateOfBirth = new DateTimePicker("Date of Birth");
+        dateOfBirth = new UserDateOfBirthField();
 
         dateOfRegistration = new DateTimePicker("Date of Registration");
         dateOfRegistration.setReadOnly(true);
