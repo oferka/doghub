@@ -27,18 +27,23 @@ public class UserCompanyField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getCompany() != null)?user.getCompany() : EMPTY);
+        String value = user.getCompany();
+        setValue((value != null) ? value : EMPTY);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
         String value = event.getValue();
+        validateValue(value);
+    }
+
+    private void validateValue(String value) {
         if(isValidValue(value)) {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
+            setInvalid(false);
+            setErrorMessage(null);
         }
         else {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} length must be between 2 and 128 characters", LABEL));
+            setInvalid(true);
+            setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
         }
     }
 
