@@ -10,8 +10,6 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -212,8 +210,8 @@ public class UserInfoContainerForm extends FormLayout {
                 email.getValue(),
                 thumbnailPicture.getValue(),
                 company.getValue(),
-                (dateOfBirth.getValue() != null)?ZonedDateTime.of(dateOfBirth.getValue(), ZoneId.systemDefault()) : null,
-                (dateOfRegistration.getValue() != null)?ZonedDateTime.of(dateOfRegistration.getValue(),ZoneId.systemDefault()): null,
+                dateOfBirth.getValueAsZonedDateTime(),
+                dateOfRegistration.getValueAsZonedDateTime(),
                 country.getValue(),
                 state.getValue(),
                 city.getValue(),
