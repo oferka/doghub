@@ -3,12 +3,12 @@ package org.hk.doghub.ui.views.app.layout;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.notification.Notification;
+import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
 import static com.vaadin.flow.component.icon.VaadinIcon.BELL_O;
-import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 
+@Slf4j
 public class DogHubAppLayoutUserNotificationsButton extends Button {
 
     public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-notifications-button";
@@ -24,6 +24,6 @@ public class DogHubAppLayoutUserNotificationsButton extends Button {
     }
 
     private void notificationsClicked(ClickEvent<Button> event) {
-        Notification.show("Notifications clicked", 3000, MIDDLE);
+        log.info("Notifications clicked");
     }
 }
