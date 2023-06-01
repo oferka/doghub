@@ -2,7 +2,6 @@ package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
@@ -32,7 +31,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserStateField state;
     private final UserCityField city;
     private final UserStreetNameField streetName;
-    private final IntegerField number;
+    private final UserStreetNumberField streetNumber;
     private final UserPostcodeField postcode;
 
     private final UsersDataProvider usersDataProvider;
@@ -61,17 +60,10 @@ public class UserInfoContainerForm extends FormLayout {
         state = new UserStateField();
         city = new UserCityField();
         streetName = new UserStreetNameField();
-
-        number = new IntegerField("Number");
-        number.setMin(1);
-        number.setMax(100000);
-        number.setStepButtonsVisible(true);
-        number.setErrorMessage("Number must be between 1 and 100000");
-        number.setValueChangeMode(EAGER);
-
+        streetNumber = new UserStreetNumberField();
         postcode = new UserPostcodeField();
 
-        add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, number, postcode);
+        add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, streetNumber, postcode);
 
         setResponsiveSteps(
                 // Use one column by default
@@ -93,7 +85,7 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(state, 1);
         setColspan(city, 1);
         setColspan(streetName, 1);
-        setColspan(number, 1);
+        setColspan(streetNumber, 1);
         setColspan(postcode, 1);
     }
 
@@ -124,7 +116,7 @@ public class UserInfoContainerForm extends FormLayout {
         state.setValue(user);
         city.setValue(user);
         streetName.setValue(user);
-        number.setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
+        streetNumber.setValue(user);
         postcode.setValue(user);
     }
 
@@ -144,7 +136,7 @@ public class UserInfoContainerForm extends FormLayout {
                 state.getValue(),
                 city.getValue(),
                 streetName.getValue(),
-                number.getValue(),
+                streetNumber.getValue(),
                 postcode.getValue()
         );
     }
