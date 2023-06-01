@@ -33,7 +33,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserCountryField country;
     private final UserStateField state;
     private final UserCityField city;
-    private final TextField streetName;
+    private final UserStreetNameField streetName;
     private final IntegerField number;
     private final TextField postcode;
 
@@ -62,14 +62,7 @@ public class UserInfoContainerForm extends FormLayout {
         country = new UserCountryField();
         state = new UserStateField();
         city = new UserCityField();
-
-        streetName = new TextField("Street Name");
-        streetName.setClearButtonVisible(true);
-        streetName.setMinLength(2);
-        streetName.setMaxLength(64);
-        streetName.setPrefixComponent(MAP_MARKER.create());
-        streetName.setValueChangeMode(EAGER);
-        streetName.addValueChangeListener(this::streetNameNumberValueChanged);
+        streetName = new UserStreetNameField();
 
         number = new IntegerField("Number");
         number.setMin(1);
@@ -112,18 +105,6 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(postcode, 1);
     }
 
-    private void streetNameNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Street Name length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
     private void postcodeNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
         String value = event.getValue();
         if(value.length() < 2 || value.length() > 64) {
@@ -150,7 +131,7 @@ public class UserInfoContainerForm extends FormLayout {
         country.setValue(user);
         state.setValue(user);
         city.setValue(user);
-        streetName.setValue((user.getAddress() != null)?user.getAddress().getStreetName() : EMPTY);
+        streetName.setValue(user);
         number.setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
         postcode.setValue((user.getAddress() != null)?user.getAddress().getPostcode() : EMPTY);
     }

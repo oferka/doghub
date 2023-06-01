@@ -9,13 +9,13 @@ import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
-public class UserCityField extends TextField {
+public class UserStreetNameField extends TextField {
 
-    public static final String CLASS_NAME = "user-city-field";
+    public static final String CLASS_NAME = "user-street-name-field";
 
-    public static final String LABEL = "City";
+    public static final String LABEL = "Street Name";
 
-    public UserCityField() {
+    public UserStreetNameField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
@@ -27,7 +27,7 @@ public class UserCityField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getAddress() != null)?user.getAddress().getCity() : EMPTY);
+        setValue((user.getAddress() != null)?user.getAddress().getStreetName() : EMPTY);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
