@@ -27,23 +27,34 @@ public class UserStateField extends ComboBox<String> {
         setItems(stateValues);
         setPrefixComponent(MAP_MARKER.create());
         setAllowCustomValue(true);
+        addValueChangeListener(this::valueChanged);
         addCustomValueSetListener(this::customValueEntered);
     }
 
+    private void valueChanged(ComponentValueChangeEvent<ComboBox<String>, String> event) {
+        String value = event.getValue();
+        setValueWithValidation(value);
+    }
+
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getAddress() != null)?user.getAddress().getState() : EMPTY);
+        String value = (user.getAddress() != null) ? user.getAddress().getState() : EMPTY;
+        setValueWithValidation(value);
     }
 
     private void customValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
         String value = event.getDetail();
+        setValueWithValidation(value);
+    }
+
+    private void setValueWithValidation(String value) {
         if(isValidValue(value)) {
-            event.getSource().setValue(value);
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
+            setValue(value);
+            setInvalid(false);
+            setErrorMessage(null);
         }
         else {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
+            setInvalid(true);
+            setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
         }
     }
 
