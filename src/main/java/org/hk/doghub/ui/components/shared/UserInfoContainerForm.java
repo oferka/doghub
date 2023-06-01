@@ -131,8 +131,7 @@ public class UserInfoContainerForm extends FormLayout {
                         streetNumber.getValue(),
                         postcode.getValue()
                 );
-                Notification notification = Notification.show(format("User %s saved successfully!", username.getValue()), 3000, TOP_CENTER);
-                notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                showSavedSuccessfullyNotification();
             }
             catch (Exception e) {
                 log.error("Unexpected exception was thrown", e);
@@ -145,6 +144,11 @@ public class UserInfoContainerForm extends FormLayout {
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
         }
         log.info("Save for user with ID '{}' has completed", id.getValue());
+    }
+
+    private void showSavedSuccessfullyNotification() {
+        Notification notification = Notification.show(format("User %s saved successfully!", username.getValue()), 3000, TOP_CENTER);
+        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
     }
 
     private List<String> validateInput() {
