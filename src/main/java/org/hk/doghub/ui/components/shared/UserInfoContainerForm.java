@@ -1,8 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
@@ -90,18 +88,6 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(streetName, 1);
         setColspan(streetNumber, 1);
         setColspan(postcode, 1);
-    }
-
-    private void postcodeNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Postcode length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
     }
 
     public void setUser(DogHubUser user) {
