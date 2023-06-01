@@ -32,7 +32,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserDateOfRegistrationField dateOfRegistration;
     private final UserCountryField country;
     private final UserStateField state;
-    private final TextField city;
+    private final UserCityField city;
     private final TextField streetName;
     private final IntegerField number;
     private final TextField postcode;
@@ -61,14 +61,7 @@ public class UserInfoContainerForm extends FormLayout {
         dateOfRegistration = new UserDateOfRegistrationField();
         country = new UserCountryField();
         state = new UserStateField();
-
-        city = new TextField("City");
-        city.setClearButtonVisible(true);
-        city.setMinLength(2);
-        city.setMaxLength(64);
-        city.setPrefixComponent(MAP_MARKER.create());
-        city.setValueChangeMode(EAGER);
-        city.addValueChangeListener(this::cityNumberValueChanged);
+        city = new UserCityField();
 
         streetName = new TextField("Street Name");
         streetName.setClearButtonVisible(true);
@@ -119,18 +112,6 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(postcode, 1);
     }
 
-    private void cityNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("City length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
     private void streetNameNumberValueChanged(ComponentValueChangeEvent<TextField, String> event) {
         String value = event.getValue();
         if(value.length() < 2 || value.length() > 64) {
@@ -168,7 +149,7 @@ public class UserInfoContainerForm extends FormLayout {
         dateOfRegistration.setValue(user);
         country.setValue(user);
         state.setValue(user);
-        city.setValue((user.getAddress() != null)?user.getAddress().getCity() : EMPTY);
+        city.setValue(user);
         streetName.setValue((user.getAddress() != null)?user.getAddress().getStreetName() : EMPTY);
         number.setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
         postcode.setValue((user.getAddress() != null)?user.getAddress().getPostcode() : EMPTY);
