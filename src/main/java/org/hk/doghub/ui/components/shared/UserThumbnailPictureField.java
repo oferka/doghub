@@ -7,6 +7,7 @@ import org.hk.doghub.model.user.DogHubUser;
 import static com.vaadin.flow.component.icon.VaadinIcon.PICTURE;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class UserThumbnailPictureField extends TextField {
 
@@ -26,7 +27,7 @@ public class UserThumbnailPictureField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getThumbnailPicture());
+        setValue((user.getThumbnailPicture() != null)?user.getThumbnailPicture() : EMPTY);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {

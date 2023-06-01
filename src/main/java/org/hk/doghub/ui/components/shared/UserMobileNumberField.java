@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
 import static java.text.MessageFormat.format;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class UserMobileNumberField extends TextField {
 
@@ -23,7 +24,7 @@ public class UserMobileNumberField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getName());
+        setValue((user.getMobileNumber() != null)?user.getMobileNumber() : EMPTY);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {

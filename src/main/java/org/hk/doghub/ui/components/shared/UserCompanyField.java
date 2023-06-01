@@ -7,6 +7,7 @@ import org.hk.doghub.model.user.DogHubUser;
 import static com.vaadin.flow.component.icon.VaadinIcon.FACTORY;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class UserCompanyField extends TextField {
 
@@ -26,7 +27,7 @@ public class UserCompanyField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getCompany());
+        setValue((user.getCompany() != null)?user.getCompany() : EMPTY);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {

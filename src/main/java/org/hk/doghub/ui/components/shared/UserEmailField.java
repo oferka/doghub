@@ -1,8 +1,11 @@
 package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.textfield.EmailField;
+import jakarta.validation.constraints.NotNull;
+import org.hk.doghub.model.user.DogHubUser;
 
 import static java.text.MessageFormat.format;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class UserEmailField extends EmailField {
 
@@ -18,5 +21,9 @@ public class UserEmailField extends EmailField {
         getElement().setAttribute("name", "email");
         setErrorMessage(format("Please enter a valid {0} address", LABEL));
         setClearButtonVisible(true);
+    }
+
+    public void setValue(@NotNull DogHubUser user) {
+        setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
     }
 }

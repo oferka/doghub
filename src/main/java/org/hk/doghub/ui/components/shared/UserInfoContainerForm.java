@@ -7,7 +7,6 @@ import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
-import org.apache.commons.validator.routines.UrlValidator;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
@@ -210,13 +209,13 @@ public class UserInfoContainerForm extends FormLayout {
 
     public void setUser(DogHubUser user) {
         id.setValue(user);
-        username.setValue(user.getUsername());
-        title.setValue((user.getTitle() != null)?user.getTitle() : EMPTY);
-        name.setValue(user.getName());
-        mobileNumber.setValue((user.getMobileNumber() != null)?user.getMobileNumber() : EMPTY);
-        email.setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
-        thumbnailPicture.setValue((user.getThumbnailPicture() != null)?user.getThumbnailPicture() : EMPTY);
-        company.setValue((user.getCompany() != null)?user.getCompany() : EMPTY);
+        username.setValue(user);
+        title.setValue(user);
+        name.setValue(user);
+        mobileNumber.setValue(user);
+        email.setValue(user);
+        thumbnailPicture.setValue(user);
+        company.setValue(user);
         dateOfBirth.setValue((user.getDateOfBirth() != null)?user.getDateOfBirth().toLocalDateTime() : null);
         dateOfRegistration.setValue((user.getDateOfRegistration() != null)?user.getDateOfRegistration().toLocalDateTime() : null);
         country.setValue((user.getAddress() != null)?user.getAddress().getCountry() : EMPTY);

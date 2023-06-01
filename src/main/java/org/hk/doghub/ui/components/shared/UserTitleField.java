@@ -8,6 +8,7 @@ import java.util.List;
 
 import static java.text.MessageFormat.format;
 import static java.util.Arrays.asList;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class UserTitleField extends ComboBox<String> {
 
@@ -26,7 +27,7 @@ public class UserTitleField extends ComboBox<String> {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue(user.getTitle());
+        setValue((user.getTitle() != null)?user.getTitle() : EMPTY);
     }
 
     private void customValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
