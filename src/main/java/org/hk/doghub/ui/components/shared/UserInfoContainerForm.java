@@ -11,9 +11,7 @@ import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.MAILBOX;
-import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.ui.components.shared.UserEmailField.LABEL;
 
 public class UserInfoContainerForm extends FormLayout {
@@ -35,7 +33,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserCityField city;
     private final UserStreetNameField streetName;
     private final IntegerField number;
-    private final TextField postcode;
+    private final UserPostcodeField postcode;
 
     private final UsersDataProvider usersDataProvider;
 
@@ -71,13 +69,7 @@ public class UserInfoContainerForm extends FormLayout {
         number.setErrorMessage("Number must be between 1 and 100000");
         number.setValueChangeMode(EAGER);
 
-        postcode = new TextField("Postcode");
-        postcode.setClearButtonVisible(true);
-        postcode.setMinLength(2);
-        postcode.setMaxLength(64);
-        postcode.setPrefixComponent(MAP_MARKER.create());
-        postcode.setValueChangeMode(EAGER);
-        postcode.addValueChangeListener(this::postcodeNumberValueChanged);
+        postcode = new UserPostcodeField();
 
         add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, number, postcode);
 
@@ -133,7 +125,7 @@ public class UserInfoContainerForm extends FormLayout {
         city.setValue(user);
         streetName.setValue(user);
         number.setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
-        postcode.setValue((user.getAddress() != null)?user.getAddress().getPostcode() : EMPTY);
+        postcode.setValue(user);
     }
 
     public void save() {
