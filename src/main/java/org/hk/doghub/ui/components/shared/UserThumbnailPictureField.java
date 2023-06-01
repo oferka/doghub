@@ -27,18 +27,23 @@ public class UserThumbnailPictureField extends TextField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getThumbnailPicture() != null)?user.getThumbnailPicture() : EMPTY);
+        String value = user.getThumbnailPicture();
+        setValue((value != null) ? value : EMPTY);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
         String value = event.getValue();
+        validateValue(value);
+    }
+
+    private void validateValue(String value) {
         if(isValidValue(value)) {
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
+            setInvalid(false);
+            setErrorMessage(null);
         }
         else {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage(format("{0} length must be between 5 and 256 characters", LABEL));
+            setInvalid(true);
+            setErrorMessage(format("{0} length must be between 5 and 256 characters", LABEL));
         }
     }
 
