@@ -104,6 +104,12 @@
 @import url('./views/app/tip-creation-view-body.css');
 @import url('./views/app/tip-creation-view-footer.css');
 @import url('./views/app/tip-creation-view-header.css');
+@import url('./views/app/tip-creation-view-header-actions.css');
+@import url('./views/app/tip-creation-view-header-actions-share-button.css');
+@import url('./views/app/tip-creation-view-header-info.css');
+@import url('./views/app/tip-creation-view-header-info-title.css');
+@import url('./views/app/tip-creation-view-header-info-title-icon.css');
+@import url('./views/app/tip-creation-view-header-info-title-text.css');
 @import url('./views/app/tips-grid.css');
 @import url('./views/app/tips-list.css');
 @import url('./views/app/tips-list-item.css');
