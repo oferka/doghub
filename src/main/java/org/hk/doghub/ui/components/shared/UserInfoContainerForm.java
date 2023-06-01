@@ -167,7 +167,7 @@ public class UserInfoContainerForm extends FormLayout {
         dateOfBirth.setValue(user);
         dateOfRegistration.setValue(user);
         country.setValue(user);
-        state.setValue((user.getAddress() != null)?user.getAddress().getState() : EMPTY);
+        state.setValue(user);
         city.setValue((user.getAddress() != null)?user.getAddress().getCity() : EMPTY);
         streetName.setValue((user.getAddress() != null)?user.getAddress().getStreetName() : EMPTY);
         number.setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);

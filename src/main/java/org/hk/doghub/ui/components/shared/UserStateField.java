@@ -31,7 +31,7 @@ public class UserStateField extends ComboBox<String> {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getAddress() != null)?user.getAddress().getCountry() : EMPTY);
+        setValue((user.getAddress() != null)?user.getAddress().getState() : EMPTY);
     }
 
     private void customValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
