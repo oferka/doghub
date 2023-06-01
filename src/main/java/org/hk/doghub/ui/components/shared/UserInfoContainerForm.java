@@ -3,7 +3,6 @@ package org.hk.doghub.ui.components.shared;
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.combobox.ComboBoxBase.CustomValueSetEvent;
-import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
@@ -36,7 +35,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserThumbnailPictureField thumbnailPicture;
     private final UserCompanyField company;
     private final UserDateOfBirthField dateOfBirth;
-    private final DateTimePicker dateOfRegistration;
+    private final UserDateOfRegistrationField dateOfRegistration;
     private final ComboBox<String> country;
     private final ComboBox<String> state;
     private final TextField city;
@@ -65,9 +64,7 @@ public class UserInfoContainerForm extends FormLayout {
         thumbnailPicture = new UserThumbnailPictureField();
         company = new UserCompanyField();
         dateOfBirth = new UserDateOfBirthField();
-
-        dateOfRegistration = new DateTimePicker("Date of Registration");
-        dateOfRegistration.setReadOnly(true);
+        dateOfRegistration = new UserDateOfRegistrationField();
 
         country = new ComboBox<>("Country");
         country.setHelperText("Select or type your country");
