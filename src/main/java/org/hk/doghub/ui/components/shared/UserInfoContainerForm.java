@@ -64,12 +64,7 @@ public class UserInfoContainerForm extends FormLayout {
         streetNumber = new UserStreetNumberField();
         postcode = new UserPostcodeField();
 
-        setResponsiveSteps(
-                // Use one column by default
-                new ResponsiveStep("0", 1),
-                // Use two columns, if layout's width exceeds 600px
-                new ResponsiveStep("500px", 2)
-        );
+        setResponsiveSteps(new ResponsiveStep("0", 1), new ResponsiveStep("500px", 2));
         setColspan(id, 1);
         setColspan(username, 1);
         setColspan(title, 1);
