@@ -4,6 +4,9 @@ import com.vaadin.flow.component.textfield.EmailField;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.text.MessageFormat.format;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
@@ -25,5 +28,13 @@ public class UserEmailField extends EmailField {
 
     public void setValue(@NotNull DogHubUser user) {
         setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
+    }
+
+    public List<String> validateUserField() {
+        List<String> result = new ArrayList<>();
+        if(isInvalid()) {
+            result.add(getErrorMessage());
+        }
+        return result;
     }
 }

@@ -4,6 +4,7 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
@@ -45,18 +46,27 @@ public class UserCountryField extends ComboBox<String> {
     }
 
     private void setValueWithValidation(String value) {
-        if(isValidValue(value)) {
+        List<String> violations = validateUserField(value);
+        if(violations.isEmpty()) {
             setValue(value);
             setInvalid(false);
             setErrorMessage(null);
         }
         else {
             setInvalid(true);
-            setErrorMessage(format("{0} length must be between 2 and 64 characters", LABEL));
+            setErrorMessage(violations.get(0));
         }
     }
 
-    private boolean isValidValue(String value) {
-        return(value.length() >=2 && value.length() <= 64);
+    private List<String> validateUserField(String value) {
+        List<String> result = new ArrayList<>();
+        if(value == null || value.length() < 2 || value.length() > 64) {
+            result.add(format("{0} length must be between 2 and 64 characters", LABEL));
+        }
+        return result;
+    }
+
+    public List<String> validateUserField() {
+        return validateUserField(getValue());
     }
 }

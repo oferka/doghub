@@ -4,6 +4,9 @@ import com.vaadin.flow.component.textfield.IntegerField;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 
 public class UserStreetNumberField extends IntegerField {
@@ -24,5 +27,13 @@ public class UserStreetNumberField extends IntegerField {
 
     public void setValue(@NotNull DogHubUser user) {
         setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
+    }
+
+    public List<String> validateUserField() {
+        List<String> result = new ArrayList<>();
+        if(isInvalid()) {
+            result.add(getErrorMessage());
+        }
+        return result;
     }
 }

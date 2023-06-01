@@ -7,6 +7,8 @@ import org.hk.doghub.model.user.DogHubUser;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.text.MessageFormat.format;
 
@@ -33,14 +35,15 @@ public class UserDateOfBirthField extends DateTimePicker {
     }
 
     private void setValueWithValidation(LocalDateTime value) {
-        if(isValidValue(value)) {
+        List<String> violations = validateUserField(value);
+        if(violations.isEmpty()) {
             setValue(value);
             setInvalid(false);
             setErrorMessage(null);
         }
         else {
             setInvalid(true);
-            setErrorMessage(format("Must be a valid date & time"));
+            setErrorMessage(violations.get(0));
         }
     }
 
@@ -48,7 +51,15 @@ public class UserDateOfBirthField extends DateTimePicker {
         return ((getValue() != null) ? ZonedDateTime.of(getValue(), ZoneId.systemDefault()) : null);
     }
 
-    private boolean isValidValue(LocalDateTime value) {
-        return(value != null && value.isBefore(LocalDateTime.now()));
+    private List<String> validateUserField(LocalDateTime value) {
+        List<String> result = new ArrayList<>();
+        if(value == null || value.isAfter(LocalDateTime.now())) {
+            result.add(format("{0} Must be a valid date and time", LABEL));
+        }
+        return result;
+    }
+
+    public List<String> validateUserField() {
+        return validateUserField(getValue());
     }
 }

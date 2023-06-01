@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
@@ -39,17 +41,26 @@ public class UserIdField extends BigDecimalField {
     }
 
     private void validateValue(@NotNull BigDecimal value) {
-        if(isValidValue(value)) {
+        List<String> violations = validateUserField(value);
+        if(violations.isEmpty()) {
             setInvalid(false);
             setErrorMessage(null);
         }
         else {
             setInvalid(true);
-            setErrorMessage(format("{0} length must be between 5 and 128 characters", LABEL));
+            setErrorMessage(violations.get(0));
         }
     }
 
-    private boolean isValidValue(@NotNull BigDecimal value) {
-        return(value.longValue() > 0);
+    private List<String> validateUserField(@NotNull BigDecimal value) {
+        List<String> result = new ArrayList<>();
+        if(value.longValue() <= 0) {
+            result.add(format("{0} must be positive", LABEL));
+        }
+        return result;
+    }
+
+    public List<String> validateUserField() {
+        return validateUserField(getValue());
     }
 }

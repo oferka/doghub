@@ -1,15 +1,24 @@
 package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.formlayout.FormLayout;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
+import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.MAILBOX;
+import static com.vaadin.flow.component.notification.Notification.Position.TOP_CENTER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
+import static java.lang.String.format;
 import static org.hk.doghub.ui.components.shared.UserEmailField.LABEL;
 
+
+@Slf4j
 public class UserInfoContainerForm extends FormLayout {
 
     public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
@@ -100,24 +109,63 @@ public class UserInfoContainerForm extends FormLayout {
     }
 
     public void save() {
-        userCreationService.save(
-                id.getValueAsLong(),
-                username.getValue(),
-                title.getValue(),
-                name.getValue(),
-                mobileNumber.getValue(),
-                email.getValue(),
-                thumbnailPicture.getValue(),
-                company.getValue(),
-                dateOfBirth.getValueAsZonedDateTime(),
-                dateOfRegistration.getValueAsZonedDateTime(),
-                country.getValue(),
-                state.getValue(),
-                city.getValue(),
-                streetName.getValue(),
-                streetNumber.getValue(),
-                postcode.getValue()
-        );
+        log.info("Save for user with ID '{}' has started", id.getValue());
+        List<String> violations = validateInput();
+        if(violations.isEmpty()) {
+            try {
+                userCreationService.save(
+                        id.getValueAsLong(),
+                        username.getValue(),
+                        title.getValue(),
+                        name.getValue(),
+                        mobileNumber.getValue(),
+                        email.getValue(),
+                        thumbnailPicture.getValue(),
+                        company.getValue(),
+                        dateOfBirth.getValueAsZonedDateTime(),
+                        dateOfRegistration.getValueAsZonedDateTime(),
+                        country.getValue(),
+                        state.getValue(),
+                        city.getValue(),
+                        streetName.getValue(),
+                        streetNumber.getValue(),
+                        postcode.getValue()
+                );
+                Notification notification = Notification.show(format("User %s saved successfully!", username.getValue()), 3000, TOP_CENTER);
+                notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+            }
+            catch (Exception e) {
+                log.error("Unexpected exception was thrown", e);
+                Notification notification = Notification.show("Failed to save user!", 5000, TOP_CENTER);
+                notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+            }
+        }
+        else {
+            Notification notification = Notification.show("Failed to save user: " + violations, 5000, TOP_CENTER);
+            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+        }
+        log.info("Save for user with ID '{}' has completed", id.getValue());
+    }
+
+    private List<String> validateInput() {
+        List<String> violations = new ArrayList<>();
+        violations.addAll(id.validateUserField());
+        violations.addAll(username.validateUserField());
+        violations.addAll(title.validateUserField());
+        violations.addAll(name.validateUserField());
+        violations.addAll(mobileNumber.validateUserField());
+        violations.addAll(email.validateUserField());
+        violations.addAll(thumbnailPicture.validateUserField());
+        violations.addAll(company.validateUserField());
+        violations.addAll(dateOfBirth.validateUserField());
+        violations.addAll(dateOfRegistration.validateUserField());
+        violations.addAll(country.validateUserField());
+        violations.addAll(state.validateUserField());
+        violations.addAll(city.validateUserField());
+        violations.addAll(streetName.validateUserField());
+        violations.addAll(streetNumber.validateUserField());
+        violations.addAll(postcode.validateUserField());
+        return violations;
     }
 
     public void cancel() {

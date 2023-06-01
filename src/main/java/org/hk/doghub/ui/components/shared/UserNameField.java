@@ -4,6 +4,9 @@ import com.vaadin.flow.component.textfield.TextField;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
@@ -35,18 +38,27 @@ public class UserNameField extends TextField {
         validateValue(value);
     }
 
-    private void validateValue(@NotNull String value) {
-        if(isValidValue(value)) {
+    private void validateValue(String value) {
+        List<String> violations = validateUserField(value);
+        if(violations.isEmpty()) {
             setInvalid(false);
             setErrorMessage(null);
         }
         else {
             setInvalid(true);
-            setErrorMessage(format("{0} length must be between 2 and 128 characters", LABEL));
+            setErrorMessage(violations.get(0));
         }
     }
 
-    private boolean isValidValue(@NotNull String value) {
-        return(value.length() >= 2 && value.length() <= 128);
+    private List<String> validateUserField(String value) {
+        List<String> result = new ArrayList<>();
+        if(value == null || value.length() < 5 || value.length() > 128) {
+            result.add(format("{0} length must be between 5 and 128 characters", LABEL));
+        }
+        return result;
+    }
+
+    public List<String> validateUserField() {
+        return validateUserField(getValue());
     }
 }
