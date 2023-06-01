@@ -64,8 +64,6 @@ public class UserInfoContainerForm extends FormLayout {
         streetNumber = new UserStreetNumberField();
         postcode = new UserPostcodeField();
 
-        add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, streetNumber, postcode);
-
         setResponsiveSteps(
                 // Use one column by default
                 new ResponsiveStep("0", 1),
@@ -88,6 +86,7 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(streetName, 1);
         setColspan(streetNumber, 1);
         setColspan(postcode, 1);
+        add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, streetNumber, postcode);
     }
 
     public void setUser(DogHubUser user) {
