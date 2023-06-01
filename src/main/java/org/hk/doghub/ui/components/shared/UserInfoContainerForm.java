@@ -1,8 +1,13 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
@@ -11,10 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.MAILBOX;
+import static com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY_INLINE;
+import static com.vaadin.flow.component.icon.VaadinIcon.*;
+import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static com.vaadin.flow.component.notification.Notification.Position.TOP_CENTER;
+import static com.vaadin.flow.component.notification.NotificationVariant.LUMO_SUCCESS;
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
-import static java.lang.String.format;
 import static org.hk.doghub.ui.components.shared.UserEmailField.LABEL;
 
 
@@ -145,8 +153,20 @@ public class UserInfoContainerForm extends FormLayout {
     }
 
     private void showSavedSuccessfullyNotification() {
-        Notification notification = Notification.show(format("User %s saved successfully!", username.getValue()), 3000, TOP_CENTER);
-        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+        Notification notification = new Notification();
+        notification.addThemeVariants(LUMO_SUCCESS);
+
+        Icon icon = CHECK_CIRCLE.create();
+        Div info = new Div(new Text("User saved successfully!"));
+        Button viewBtn = new Button("View", clickEvent -> notification.close());
+        viewBtn.getStyle().set("margin", "0 0 0 var(--lumo-space-l)");
+        HorizontalLayout layout = new HorizontalLayout(icon, info, viewBtn, createCloseBtn(notification));
+        layout.setAlignItems(CENTER);
+
+        notification.add(layout);
+        notification.setPosition(MIDDLE);
+        notification.setDuration(5000);
+        notification.open();
     }
 
     private void showSaveFailedWithUnexpectedErrorNotification() {
@@ -157,6 +177,12 @@ public class UserInfoContainerForm extends FormLayout {
     private void showSaveFailedWithInvalidInput(List<String> violations) {
         Notification notification = Notification.show("Failed to save user: " + violations, 5000, TOP_CENTER);
         notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+    }
+
+    private Button createCloseBtn(Notification notification) {
+        Button closeBtn = new Button(CLOSE_SMALL.create(), clickEvent -> notification.close());
+        closeBtn.addThemeVariants(LUMO_TERTIARY_INLINE);
+        return closeBtn;
     }
 
     private List<String> validateInput() {
