@@ -36,10 +36,13 @@ public class UserInfoContainerForm extends FormLayout {
 
     private final UsersDataProvider usersDataProvider;
 
+    private final AuthenticatedUser authenticatedUser;
+
     private final UserCreationService userCreationService;
 
     public UserInfoContainerForm(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         this.usersDataProvider = usersDataProvider;
+        this.authenticatedUser = authenticatedUser;
         this.userCreationService = userCreationService;
         addClassName(CLASS_NAME);
 
