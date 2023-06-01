@@ -135,13 +135,11 @@ public class UserInfoContainerForm extends FormLayout {
             }
             catch (Exception e) {
                 log.error("Unexpected exception was thrown", e);
-                Notification notification = Notification.show("Failed to save user!", 5000, TOP_CENTER);
-                notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+                showSaveFailedWithUnexpectedErrorNotification();
             }
         }
         else {
-            Notification notification = Notification.show("Failed to save user: " + violations, 5000, TOP_CENTER);
-            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+            showSaveFailedWithInvalidInput(violations);
         }
         log.info("Save for user with ID '{}' has completed", id.getValue());
     }
@@ -149,6 +147,16 @@ public class UserInfoContainerForm extends FormLayout {
     private void showSavedSuccessfullyNotification() {
         Notification notification = Notification.show(format("User %s saved successfully!", username.getValue()), 3000, TOP_CENTER);
         notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+    }
+
+    private void showSaveFailedWithUnexpectedErrorNotification() {
+        Notification notification = Notification.show("Failed to save user!", 5000, TOP_CENTER);
+        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+    }
+
+    private void showSaveFailedWithInvalidInput(List<String> violations) {
+        Notification notification = Notification.show("Failed to save user: " + violations, 5000, TOP_CENTER);
+        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
     }
 
     private List<String> validateInput() {
