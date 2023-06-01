@@ -36,7 +36,7 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserCompanyField company;
     private final UserDateOfBirthField dateOfBirth;
     private final UserDateOfRegistrationField dateOfRegistration;
-    private final ComboBox<String> country;
+    private final UserCountryField country;
     private final ComboBox<String> state;
     private final TextField city;
     private final TextField streetName;
@@ -65,14 +65,7 @@ public class UserInfoContainerForm extends FormLayout {
         company = new UserCompanyField();
         dateOfBirth = new UserDateOfBirthField();
         dateOfRegistration = new UserDateOfRegistrationField();
-
-        country = new ComboBox<>("Country");
-        country.setHelperText("Select or type your country");
-        List<String> countryValues = asList("USA", "Canada", "Israel", "Italy", "France", "Australia", "China", "Japan", "Mexico", "Russia", "Germany", "India");
-        country.setItems(countryValues);
-        country.setPrefixComponent(MAP_MARKER.create());
-        country.setAllowCustomValue(true);
-        country.addCustomValueSetListener(this::customCountryValueEntered);
+        country = new UserCountryField();
 
         state = new ComboBox<>("State");
         state.setHelperText("Select or type your state");
@@ -141,19 +134,6 @@ public class UserInfoContainerForm extends FormLayout {
         setColspan(postcode, 1);
     }
 
-    private void customCountryValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
-        String value = event.getDetail();
-        if(value.length() < 2 || value.length() > 64) {
-            event.getSource().setInvalid(true);
-            event.getSource().setErrorMessage("Country length must be between 2 and 64 characters");
-        }
-        else {
-            event.getSource().setValue(value);
-            event.getSource().setInvalid(false);
-            event.getSource().setErrorMessage(null);
-        }
-    }
-
     private void customStateValueEntered(CustomValueSetEvent<ComboBox<String>> event) {
         String value = event.getDetail();
         if(value.length() < 2 || value.length() > 64) {
@@ -212,9 +192,9 @@ public class UserInfoContainerForm extends FormLayout {
         email.setValue(user);
         thumbnailPicture.setValue(user);
         company.setValue(user);
-        dateOfBirth.setValue((user.getDateOfBirth() != null)?user.getDateOfBirth().toLocalDateTime() : null);
-        dateOfRegistration.setValue((user.getDateOfRegistration() != null)?user.getDateOfRegistration().toLocalDateTime() : null);
-        country.setValue((user.getAddress() != null)?user.getAddress().getCountry() : EMPTY);
+        dateOfBirth.setValue(user);
+        dateOfRegistration.setValue(user);
+        country.setValue(user);
         state.setValue((user.getAddress() != null)?user.getAddress().getState() : EMPTY);
         city.setValue((user.getAddress() != null)?user.getAddress().getCity() : EMPTY);
         streetName.setValue((user.getAddress() != null)?user.getAddress().getStreetName() : EMPTY);
