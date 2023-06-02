@@ -59,18 +59,6 @@ public class TipCreationButton extends Button {
 //            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
 //            return;
 //        }
-//        if(password.isBlank()) {
-//            log.warn("Attempt to signup user with blank password");
-//            Notification notification = Notification.show("Can't signup user with blank password. Please a valid password", 5000, TOP_CENTER);
-//            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
-//            return;
-//        }
-//        if(passwordField.isInvalid()) {
-//            log.warn("Attempt to signup user with invalid password '{}'", password);
-//            Notification notification = Notification.show("Can't signup user. Please enter a valid password", 5000, TOP_CENTER);
-//            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
-//            return;
-//        }
 //        try {
 //            DogHubUser user = userCreationService.create(email, password);
 //            Notification notification = Notification.show(format("User %s is now signed up!", user.getUsername()), 3000, TOP_CENTER);
