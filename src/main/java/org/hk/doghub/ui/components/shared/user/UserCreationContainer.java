@@ -9,24 +9,24 @@ public class UserCreationContainer extends VerticalLayout {
 
     public static final String CLASS_NAME = "user-creation-container";
 
-    private final UserEmailField emailField;
+    private final UserEmailField email;
 
-    private final UserPasswordField passwordField;
+    private final UserPasswordField password;
 
-    private final UserCreationButton button;
+    private final UserCreationButton create;
 
     public UserCreationContainer(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        emailField = new UserEmailField();
-        add(emailField);
+        email = new UserEmailField();
+        add(email);
 
-        passwordField = new UserPasswordField();
-        add(passwordField);
+        password = new UserPasswordField();
+        add(password);
 
-        button = new UserCreationButton(emailField, passwordField, authenticatedUser, userCreationService);
-        add(button);
+        create = new UserCreationButton(email, password, authenticatedUser, userCreationService);
+        add(create);
     }
 }

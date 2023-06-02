@@ -46,13 +46,13 @@ public class UserCreationButton extends Button {
         log.info("Signup flow for user with email '{}' has started", email);
         if(email.isBlank()) {
             log.warn("Attempt to signup user with blank email");
-            Notification notification = Notification.show("Can't signup user with blank email. Please enter your email address", 5000, TOP_CENTER);
+            Notification notification = Notification.show("Can't signup a user with a blank email. Please enter your email address", 5000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
         }
         if(emailField.isInvalid()) {
             log.warn("Attempt to signup user with invalid email '{}'", email);
-            Notification notification = Notification.show(format("Can't signup user with email '%s'. Please enter a valid email address", email), 5000, TOP_CENTER);
+            Notification notification = Notification.show(format("Can't signup a user with email '%s'. Please enter a valid email address", email), 5000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
         }

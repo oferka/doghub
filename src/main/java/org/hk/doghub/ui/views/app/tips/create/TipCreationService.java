@@ -21,11 +21,11 @@ public class TipCreationService {
 
     private final DogHubTipService tipService;
 
-    public DogHubTip createTip(@NotNull @Size(min = 2, max = 64) @NotBlank String title,
-                               @NotNull @Size(min = 2, max = 1024) @NotBlank String content,
-                               @Nullable String moreInfo,
-                               @Nullable @URL String thumbnailPicture,
-                               @NotNull DogHubUser createdBy) {
+    public DogHubTip create(@NotNull @Size(min = 2, max = 64) @NotBlank String title,
+                            @NotNull @Size(min = 2, max = 1024) @NotBlank String content,
+                            @Nullable String moreInfo,
+                            @Nullable @URL String thumbnailPicture,
+                            @NotNull DogHubUser createdBy) {
         return tipService.save(getTipEntity(title, content, moreInfo, thumbnailPicture, createdBy));
     }
 

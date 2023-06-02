@@ -17,6 +17,9 @@
 @import url('./shared/user-avatar.css');
 @import url('./shared/user-avatar-router-link.css');
 @import url('./shared/tip-avatar.css');
+@import url('./shared/tip-creation-button.css');
+@import url('./shared/tip-creation-container.css');
+@import url('./shared/tip-title-field.css');
 @import url('./shared/user-city-field.css');
 @import url('./shared/user-company-field.css');
 @import url('./shared/user-country-field.css');
