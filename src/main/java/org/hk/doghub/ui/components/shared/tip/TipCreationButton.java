@@ -14,6 +14,7 @@ import org.hk.doghub.ui.views.site.profile.ProfileView;
 import static com.vaadin.flow.component.Key.KEY_C;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.notification.Notification.Position.TOP_CENTER;
+import static java.lang.String.format;
 
 @Slf4j
 public class TipCreationButton extends Button {
@@ -45,12 +46,12 @@ public class TipCreationButton extends Button {
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
         }
-//        if(title.isInvalid()) {
-//            log.warn("Attempt to signup user with invalid email '{}'", email);
-//            Notification notification = Notification.show(format("Can't signup user with email '%s'. Please enter a valid email address", email), 5000, TOP_CENTER);
-//            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
-//            return;
-//        }
+        if(title.isInvalid()) {
+            log.warn("Attempt to create a tip with invalid title '{}'", titleValue);
+            Notification notification = Notification.show(format("Can't create a tip with title '%s'. Please enter a valid title", titleValue), 5000, TOP_CENTER);
+            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+            return;
+        }
 //        if(userCreationService.exists(email)) {
 //            log.warn("Attempt to signup user with existing email '{}'", email);
 //            emailField.setInvalid(true);
