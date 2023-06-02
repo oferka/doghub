@@ -11,6 +11,8 @@ import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 import org.hk.doghub.ui.views.app.users.user.UserView;
 import org.hk.doghub.ui.views.site.profile.ProfileView;
 
+import java.util.Optional;
+
 import static com.vaadin.flow.component.Key.KEY_C;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.notification.Notification.Position.TOP_CENTER;
@@ -52,13 +54,16 @@ public class TipCreationButton extends Button {
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
         }
-//        if(userCreationService.exists(email)) {
-//            log.warn("Attempt to signup user with existing email '{}'", email);
-//            emailField.setInvalid(true);
-//            Notification notification = Notification.show(format("A user with email '%s' already exists. Please use sign in if this is your account, or use a different email address to sign up", email), 10000, TOP_CENTER);
-//            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
-//            return;
-//        }
+        Optional<DogHubUser> userOptional = authenticatedUser.get();
+        DogHubUser user = userOptional.orElseThrow();
+        if(tipCreationService.exists(titleValue, user)) {
+            log.warn("Attempt to create a tip with existing title '{}'", titleValue);
+            title.setInvalid(true);
+            title.setErrorMessage("You already created a tip with that title. Please enter a unique one.");
+            Notification notification = Notification.show(format("You already created a tip titled '%s'. Please use a different title.", titleValue), 10000, TOP_CENTER);
+            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+            return;
+        }
 //        try {
 //            DogHubUser user = userCreationService.create(email, password);
 //            Notification notification = Notification.show(format("User %s is now signed up!", user.getUsername()), 3000, TOP_CENTER);

@@ -59,6 +59,7 @@ public class UserCreationButton extends Button {
         if(userCreationService.exists(email)) {
             log.warn("Attempt to signup user with existing email '{}'", email);
             emailField.setInvalid(true);
+            emailField.setErrorMessage("A user with this email already exists.");
             Notification notification = Notification.show(format("A user with email '%s' already exists. Please use sign in if this is your account, or use a different email address to sign up", email), 10000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
