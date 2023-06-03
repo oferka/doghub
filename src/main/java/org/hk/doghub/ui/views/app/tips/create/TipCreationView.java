@@ -10,7 +10,7 @@ import org.hk.doghub.ui.views.app.tips.TipsView;
 
 @PageTitle(TipCreationView.NAME)
 @Route(value = TipCreationView.ROUTE, layout = DogHubAppLayout.class)
-@RolesAllowed({"ADMIN"})
+@RolesAllowed({"USER", "ADMIN"})
 public class TipCreationView extends VerticalLayout {
 
     public static final String ROUTE = TipsView.ROUTE + "/create";
