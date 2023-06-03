@@ -23,9 +23,7 @@ public class DogHubTip extends NamedEntity {
     @NotBlank
     private String title;
 
-    @NotNull
     @Size(min = 2, max = 1024)
-    @NotBlank
     private String content;
 
 //    @URL

@@ -21,8 +21,12 @@ public class TipCreationService {
 
     private final DogHubTipService tipService;
 
+    public DogHubTip create(@NotNull @Size(min = 2, max = 64) @NotBlank String title, @NotNull DogHubUser createdBy) {
+        return create(title, null, null, null, createdBy);
+    }
+
     public DogHubTip create(@NotNull @Size(min = 2, max = 64) @NotBlank String title,
-                            @NotNull @Size(min = 2, max = 1024) @NotBlank String content,
+                            @Nullable @Size(min = 2, max = 1024) String content,
                             @Nullable String moreInfo,
                             @Nullable @URL String thumbnailPicture,
                             @NotNull DogHubUser createdBy) {
@@ -30,7 +34,7 @@ public class TipCreationService {
     }
 
     private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = 2, max = 64) @NotBlank String title,
-                                            @NotNull @Size(min = 2, max = 1024) @NotBlank String content,
+                                            @Nullable @Size(min = 2, max = 1024) String content,
                                             @Nullable String moreInfo,
                                             @Nullable @URL String thumbnailPicture,
                                             @NotNull DogHubUser createdBy) {
