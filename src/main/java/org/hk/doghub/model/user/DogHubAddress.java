@@ -18,6 +18,12 @@ public class DogHubAddress {
     public static final int CITY_MIN_LENGTH = 2;
     public static final int CITY_MAX_LENGTH = 64;
 
+    public static final int STATE_MIN_LENGTH = 2;
+    public static final int STATE_MAX_LENGTH = 64;
+
+    public static final int COUNTRY_MIN_LENGTH = 2;
+    public static final int COUNTRY_MAX_LENGTH = 64;
+
     public static final int STREET_NAME_MIN_LENGTH = 2;
     public static final int STREET_NAME_MAX_LENGTH = 64;
 
@@ -38,12 +44,12 @@ public class DogHubAddress {
     private String city;
 
     @NotNull
-    @Size(min = 2, max = 64)
+    @Size(min = STATE_MIN_LENGTH, max = STATE_MAX_LENGTH)
     @NotBlank
     private String state;
 
     @NotNull
-    @Size(min = 2, max = 64)
+    @Size(min = COUNTRY_MIN_LENGTH, max = COUNTRY_MAX_LENGTH)
     @NotBlank
     private String country;
 
