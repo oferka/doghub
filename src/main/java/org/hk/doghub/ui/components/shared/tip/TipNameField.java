@@ -53,7 +53,7 @@ public class TipNameField extends TextField {
 
     private List<String> validateTipField(@NotNull String value) {
         List<String> result = new ArrayList<>();
-        if(value.length() < 5 || value.length() > 128) {
+        if(value.length() < 2 || value.length() > 64) {
             result.add(format("{0} length must be between 2 and 64 characters", LABEL));
         }
         return result;
