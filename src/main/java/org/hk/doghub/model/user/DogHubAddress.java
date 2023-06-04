@@ -15,6 +15,9 @@ import lombok.ToString;
 @ToString
 public class DogHubAddress {
 
+    public static final int CITY_MIN_LENGTH = 2;
+    public static final int CITY_MAX_LENGTH = 64;
+
     @Positive
     private Integer number = 0;
 
@@ -24,7 +27,7 @@ public class DogHubAddress {
     private String streetName;
 
     @NotNull
-    @Size(min = 2, max = 64)
+    @Size(min = CITY_MIN_LENGTH, max = CITY_MAX_LENGTH)
     @NotBlank
     private String city;
 
