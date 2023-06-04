@@ -217,7 +217,7 @@ public class UserInfoContainerForm extends FormLayout {
 
     private List<String> validateInput() {
         List<String> violations = new ArrayList<>();
-        violations.addAll(id.validateUserField());
+        violations.addAll(id.validateField());
         violations.addAll(username.validateUserField());
         violations.addAll(title.validateUserField());
         violations.addAll(name.validateUserField());
