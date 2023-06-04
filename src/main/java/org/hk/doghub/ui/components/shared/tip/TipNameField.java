@@ -23,7 +23,7 @@ public class TipNameField extends TextField {
         setRequiredIndicatorVisible(true);
         setReadOnly(true);
         setMinLength(2);
-        setMaxLength(64);
+        setMaxLength(128);
         setPrefixComponent(LINK.create());
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);
@@ -53,8 +53,8 @@ public class TipNameField extends TextField {
 
     private List<String> validateTipField(@NotNull String value) {
         List<String> result = new ArrayList<>();
-        if(value.length() < 2 || value.length() > 64) {
-            result.add(format("{0} length must be between 2 and 64 characters", LABEL));
+        if(value.length() < 2 || value.length() > 128) {
+            result.add(format("{0} length must be between 2 and 128 characters", LABEL));
         }
         return result;
     }

@@ -52,8 +52,8 @@ public class UserNameField extends TextField {
 
     private List<String> validateUserField(String value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() < 5 || value.length() > 128) {
-            result.add(format("{0} length must be between 5 and 128 characters", LABEL));
+        if(value == null || value.length() < 2 || value.length() > 128) {
+            result.add(format("{0} length must be between 2 and 128 characters", LABEL));
         }
         return result;
     }
