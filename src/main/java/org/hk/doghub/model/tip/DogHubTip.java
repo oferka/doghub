@@ -21,17 +21,27 @@ public class DogHubTip extends NamedEntity {
     public static final int TITLE_MIN_LENGTH = 2;
     public static final int TITLE_MAX_LENGTH = 64;
 
+    public static final int CONTENT_MIN_LENGTH = 2;
+    public static final int CONTENT_MAX_LENGTH = 1024;
+
+    public static final int MORE_INFO_MIN_LENGTH = 5;
+    public static final int MORE_INFO_MAX_LENGTH = 1024;
+
+    public static final int THUMBNAIL_PICTURE_MIN_LENGTH = 5;
+    public static final int THUMBNAIL_PICTURE_MAX_LENGTH = 1024;
+
     @NotNull
     @Size(min = TITLE_MIN_LENGTH, max = TITLE_MAX_LENGTH)
     @NotBlank
     private String title;
 
-    @Size(min = 2, max = 1024)
+    @Size(min = CONTENT_MIN_LENGTH, max = CONTENT_MAX_LENGTH)
     private String content;
 
-//    @URL
+    @Size(min = MORE_INFO_MIN_LENGTH, max = MORE_INFO_MAX_LENGTH)
     private String moreInfo;
 
+    @Size(min = THUMBNAIL_PICTURE_MIN_LENGTH, max = THUMBNAIL_PICTURE_MAX_LENGTH)
     @URL
     private String thumbnailPicture;
 
