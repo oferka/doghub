@@ -173,9 +173,9 @@ public class TipInfoContainerForm extends FormLayout {
         violations.addAll(id.validateField());
         violations.addAll(name.validateField());
         violations.addAll(title.validateField());
-        violations.addAll(content.validateTipField());
-        violations.addAll(moreInfo.validateTipField());
-        violations.addAll(thumbnailPicture.validateTipField());
+        violations.addAll(content.validateField());
+        violations.addAll(moreInfo.validateField());
+        violations.addAll(thumbnailPicture.validateField());
         violations.addAll(creationTime.validateTipField());
         violations.addAll(createdBy.validateTipField());
         return violations;
