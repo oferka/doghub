@@ -21,19 +21,19 @@ public class DogHubUserService {
 
     private final DogHubUserRepository repository;
 
-    public Optional<DogHubUser> findById(Long id) {
+    public Optional<DogHubUser> findById(@NotNull Long id) {
         return repository.findById(id);
     }
 
-    public DogHubUser save(DogHubUser entity) {
+    public DogHubUser save(@NotNull DogHubUser entity) {
         return repository.save(entity);
     }
 
-    public Iterable<DogHubUser> saveAll(Iterable<DogHubUser> entities) {
+    public Iterable<DogHubUser> saveAll(@NotNull Iterable<DogHubUser> entities) {
         return repository.saveAll(entities);
     }
 
-    public void deleteById(Long id) {
+    public void deleteById(@NotNull Long id) {
         repository.deleteById(id);
     }
 
@@ -41,11 +41,11 @@ public class DogHubUserService {
         return repository.findAll();
     }
 
-    public Page<DogHubUser> findAll(Pageable pageable) {
+    public Page<DogHubUser> findAll(@NotNull Pageable pageable) {
         return repository.findAll(pageable);
     }
 
-    public Page<DogHubUser> findAll(Pageable pageable, Specification<DogHubUser> filter) {
+    public Page<DogHubUser> findAll(@NotNull Pageable pageable, @NotNull Specification<DogHubUser> filter) {
         return repository.findAll(filter, pageable);
     }
 
@@ -57,7 +57,7 @@ public class DogHubUserService {
         return repository.existsByUsername(user.getUsername());
     }
 
-    public Optional<DogHubUser> findByUsername(String username) {
+    public Optional<DogHubUser> findByUsername(@NotNull String username) {
         return repository.findByUsername(username);
     }
 
@@ -74,11 +74,11 @@ public class DogHubUserService {
         return repository.existsByUsername(username);
     }
 
-    public Optional<DogHubUser> findNext(Long id) {
+    public Optional<DogHubUser> findNext(@NotNull Long id) {
         return repository.findTop1ByIdGreaterThanOrderById(id);
     }
 
-    public Optional<DogHubUser> findPrevious(Long id) {
+    public Optional<DogHubUser> findPrevious(@NotNull Long id) {
         return repository.findTop1ByIdLessThanOrderByIdDesc(id);
     }
 }

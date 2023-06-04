@@ -67,11 +67,19 @@ public class DogHubTipService {
         return repository.existsByTitleAndCreatedBy(title, user);
     }
 
-    public Optional<DogHubTip> findPrevious(long selectedTipId, DogHubUser user) {
-        return Optional.empty();
+    public Optional<DogHubTip> findPrevious(@NotNull Long id) {
+        return repository.findTop1ByIdLessThanOrderByIdDesc(id);
     }
 
-    public Optional<DogHubTip> findNext(long selectedTipId, DogHubUser user) {
-        return Optional.empty();
+    public Optional<DogHubTip> findNext(@NotNull Long id) {
+        return repository.findTop1ByIdGreaterThanOrderById(id);
+    }
+
+    public Optional<DogHubTip> findPreviousByCreatedBy(@NotNull Long id, @NotNull DogHubUser user) {
+        return repository.findTop1ByIdLessThanAndCreatedByOrderByIdDesc(id, user);
+    }
+
+    public Optional<DogHubTip> findNextByCreatedBy(@NotNull Long id, @NotNull DogHubUser user) {
+        return repository.findTop1ByIdGreaterThanAndCreatedByOrderById(id, user);
     }
 }

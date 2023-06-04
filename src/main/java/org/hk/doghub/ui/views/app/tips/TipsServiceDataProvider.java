@@ -79,19 +79,33 @@ public class TipsServiceDataProvider implements TipsDataProvider {
     }
 
     @Override
-    public Optional<DogHubTip> findPrevious(long selectedTipId, AuthenticatedUser authenticatedUser) {
-        if(authenticatedUser.get().isPresent()) {
-            return dogHubTipService.findPrevious(selectedTipId, authenticatedUser.get().get());
+    public Optional<DogHubTip> findPrevious(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long id) {
+        Optional<DogHubTip> result = Optional.empty();
+        if(authenticatedUser.hasAdminRole()) {
+            result = dogHubTipService.findPrevious(id);
         }
-        return Optional.empty();
+        else {
+            Optional<DogHubUser> userOptional = authenticatedUser.get();
+            if(userOptional.isPresent()) {
+                return dogHubTipService.findPreviousByCreatedBy(id, userOptional.get());
+            }
+        }
+        return result;
     }
 
     @Override
-    public Optional<DogHubTip> findNext(long selectedTipId, AuthenticatedUser authenticatedUser) {
-        if(authenticatedUser.get().isPresent()) {
-            return dogHubTipService.findNext(selectedTipId, authenticatedUser.get().get());
+    public Optional<DogHubTip> findNext(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long id) {
+        Optional<DogHubTip> result = Optional.empty();
+        if(authenticatedUser.hasAdminRole()) {
+            result = dogHubTipService.findNext(id);
         }
-        return Optional.empty();
+        else {
+            Optional<DogHubUser> userOptional = authenticatedUser.get();
+            if(userOptional.isPresent()) {
+                return dogHubTipService.findNextByCreatedBy(id, userOptional.get());
+            }
+        }
+        return result;
     }
 
     private boolean existsByIdAndCreatedBy(@NotNull Long id, @NotNull DogHubUser user) {

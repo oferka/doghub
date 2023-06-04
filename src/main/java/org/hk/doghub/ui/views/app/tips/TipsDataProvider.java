@@ -23,7 +23,7 @@ public interface TipsDataProvider {
 
     boolean hasAccess(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
 
-    Optional<DogHubTip> findPrevious(long selectedTipId, AuthenticatedUser authenticatedUser);
+    Optional<DogHubTip> findPrevious(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
 
-    Optional<DogHubTip> findNext(long selectedTipId, AuthenticatedUser authenticatedUser);
+    Optional<DogHubTip> findNext(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
 }

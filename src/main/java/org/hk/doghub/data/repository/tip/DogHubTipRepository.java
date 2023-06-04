@@ -21,4 +21,12 @@ public interface DogHubTipRepository extends JpaRepository<DogHubTip, Long>, Jpa
     boolean existsByIdAndCreatedBy(Long id, DogHubUser user);
 
     boolean existsByTitleAndCreatedBy(String title, DogHubUser user);
+
+    Optional<DogHubTip> findTop1ByIdGreaterThanOrderById(Long id);
+
+    Optional<DogHubTip> findTop1ByIdLessThanOrderByIdDesc(Long id);
+
+    Optional<DogHubTip> findTop1ByIdGreaterThanAndCreatedByOrderById(Long id, DogHubUser user);
+
+    Optional<DogHubTip> findTop1ByIdLessThanAndCreatedByOrderByIdDesc(Long id, DogHubUser user);
 }

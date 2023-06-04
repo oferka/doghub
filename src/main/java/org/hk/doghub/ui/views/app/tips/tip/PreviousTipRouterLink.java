@@ -28,7 +28,7 @@ public class PreviousTipRouterLink extends RouterLink {
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        Optional<DogHubTip> tipOptional = tipsDataProvider.findPrevious(selectedTipId, authenticatedUser);
+        Optional<DogHubTip> tipOptional = tipsDataProvider.findPrevious(authenticatedUser, selectedTipId);
         if(tipOptional.isPresent()) {
             setRoute(TipView.class, tipOptional.get().getId());
             previousTipButton.setEnabled(true);
