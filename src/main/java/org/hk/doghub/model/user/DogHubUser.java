@@ -28,6 +28,9 @@ public class DogHubUser extends NamedEntity {
     public static final int MOBILE_NUMBER_MIN_LENGTH = 2;
     public static final int MOBILE_NUMBER_MAX_LENGTH = 64;
 
+    public static final int THUMBNAIL_PICTURE_MIN_LENGTH = 5;
+    public static final int THUMBNAIL_PICTURE_MAX_LENGTH = 1024;
+
     @NotNull
     @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH)
     @NotBlank
@@ -40,6 +43,7 @@ public class DogHubUser extends NamedEntity {
     @Size(min = 2, max = 64)
     private String title;
 
+    @Size(min = THUMBNAIL_PICTURE_MIN_LENGTH, max = THUMBNAIL_PICTURE_MAX_LENGTH)
     @URL
     private String thumbnailPicture;
 
