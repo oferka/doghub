@@ -22,4 +22,6 @@ public interface TipsDataProvider {
     long countForUser(@NotNull AuthenticatedUser authenticatedUser);
 
     boolean hasAccess(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
+
+    Optional<DogHubTip> findPrevious(long selectedTipId, AuthenticatedUser authenticatedUser);
 }

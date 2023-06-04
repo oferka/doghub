@@ -11,7 +11,7 @@ public class TipViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipView.CLASS_NAME + "-footer";
 
-//    private final PreviousTipRouterLink previous;
+    private final PreviousTipRouterLink previous;
 
     private final TipsRouterLink tips;
 
@@ -25,13 +25,13 @@ public class TipViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
 
-//        previous = new PreviousTipRouterLink(tipsDataProvider);
-//        add(previous);
+        previous = new PreviousTipRouterLink(tipsDataProvider, authenticatedUser);
+        add(previous);
 
         tips = new TipsRouterLink();
         add(tips);
 
-//        next = new NextTipRouterLink(tipsDataProvider);
+//        next = new NextTipRouterLink(tipsDataProvider, authenticatedUser);
 //        add(next);
     }
 
@@ -46,7 +46,7 @@ public class TipViewFooter extends HorizontalLayout {
     public void selectedTipChanged(long selectedTipId) {
         setSelectedTipId(selectedTipId);
 //        next.selectedTipChanged(selectedTipId);
-//        previous.selectedTipChanged(selectedTipId);
+        previous.selectedTipChanged(selectedTipId);
     }
 
     public void save() {

@@ -78,6 +78,11 @@ public class TipsServiceDataProvider implements TipsDataProvider {
         return result;
     }
 
+    @Override
+    public Optional<DogHubTip> findPrevious(long selectedTipId, AuthenticatedUser authenticatedUser) {
+        return Optional.empty();
+    }
+
     private boolean existsByIdAndCreatedBy(@NotNull Long id, @NotNull DogHubUser user) {
         return dogHubTipService.existsByIdAndCreatedBy(id, user);
     }
