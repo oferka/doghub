@@ -1,45 +1,46 @@
 package org.hk.doghub.ui.components.shared.tip;
 
-import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.textfield.BigDecimalField;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.tip.DogHubTip;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.DIAMOND;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
 
-public class TipTitleField extends TextField {
+public class TipIdField extends BigDecimalField {
 
-    public static final String CLASS_NAME = "tip-title-field";
+    public static final String CLASS_NAME = "tip-id-field";
 
-    public static final String LABEL = "Title";
+    public static final String LABEL = "ID";
 
-    public TipTitleField() {
+    public TipIdField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
-        setClearButtonVisible(true);
-        setMinLength(2);
-        setMaxLength(64);
-        setPrefixComponent(DIAMOND.create());
+        setReadOnly(true);
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);
     }
 
     public void setValue(@NotNull DogHubTip tip) {
-        @NotNull String value = tip.getTitle();
-        setValue(value);
+        @NotNull Long tipId = tip.getId();
+        setValue(new BigDecimal(tipId));
     }
 
-    private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
+    public long getValueAsLong() {
+        return getValue().longValue();
+    }
+
+    private void valueChanged(ComponentValueChangeEvent<BigDecimalField, BigDecimal> event) {
+        @NotNull BigDecimal value = event.getValue();
         validateValue(value);
     }
 
-    private void validateValue(String value) {
+    private void validateValue(@NotNull BigDecimal value) {
         List<String> violations = validateTipField(value);
         if(violations.isEmpty()) {
             setInvalid(false);
@@ -51,10 +52,10 @@ public class TipTitleField extends TextField {
         }
     }
 
-    private List<String> validateTipField(String value) {
+    private List<String> validateTipField(@NotNull BigDecimal value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() < 2 || value.length() > 64) {
-            result.add(format("{0} length must be between 2 and 64 characters", LABEL));
+        if(value.longValue() <= 0) {
+            result.add(format("{0} must be positive", LABEL));
         }
         return result;
     }

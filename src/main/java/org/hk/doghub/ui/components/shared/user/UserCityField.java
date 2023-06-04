@@ -21,7 +21,6 @@ public class UserCityField extends TextField {
     public UserCityField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
-        setRequiredIndicatorVisible(true);
         setMinLength(2);
         setMaxLength(64);
         setPrefixComponent(USER.create());

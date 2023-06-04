@@ -21,7 +21,6 @@ public class UserStreetNameField extends TextField {
     public UserStreetNameField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
-        setRequiredIndicatorVisible(true);
         setMinLength(2);
         setMaxLength(64);
         setPrefixComponent(USER.create());

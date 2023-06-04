@@ -1,8 +1,8 @@
-package org.hk.doghub.ui.components.shared.user;
+package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.model.tip.DogHubTip;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -12,13 +12,13 @@ import java.util.List;
 
 import static java.text.MessageFormat.format;
 
-public class UserDateOfRegistrationField extends DateTimePicker {
+public class TipCreationTimeField extends DateTimePicker {
 
-    public static final String CLASS_NAME = "user-date-of-registration-field";
+    public static final String CLASS_NAME = "tip-creation-time-field";
 
-    public static final String LABEL = "Date of Registration";
+    public static final String LABEL = "Creation Time";
 
-    public UserDateOfRegistrationField() {
+    public TipCreationTimeField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
@@ -31,13 +31,13 @@ public class UserDateOfRegistrationField extends DateTimePicker {
         setValueWithValidation(value);
     }
 
-    public void setValue(@NotNull DogHubUser user) {
-        LocalDateTime value = (user.getDateOfRegistration() != null) ? user.getDateOfRegistration().toLocalDateTime() : null;
+    public void setValue(@NotNull DogHubTip tip) {
+        LocalDateTime value = (tip.getCreationTime() != null) ? tip.getCreationTime().toLocalDateTime() : null;
         setValue(value);
     }
 
     private void setValueWithValidation(LocalDateTime value) {
-        List<String> violations = validateUserField(value);
+        List<String> violations = validateTipField(value);
         if(violations.isEmpty()) {
             setValue(value);
             setInvalid(false);
@@ -53,7 +53,7 @@ public class UserDateOfRegistrationField extends DateTimePicker {
         return ((getValue() != null) ? ZonedDateTime.of(getValue(), ZoneId.systemDefault()) : null);
     }
 
-    private List<String> validateUserField(LocalDateTime value) {
+    private List<String> validateTipField(LocalDateTime value) {
         List<String> result = new ArrayList<>();
         if(value == null || value.isAfter(LocalDateTime.now())) {
             result.add(format("{0} Must be a valid date and time", LABEL));
@@ -61,7 +61,7 @@ public class UserDateOfRegistrationField extends DateTimePicker {
         return result;
     }
 
-    public List<String> validateUserField() {
-        return validateUserField(getValue());
+    public List<String> validateTipField() {
+        return validateTipField(getValue());
     }
 }

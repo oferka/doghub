@@ -1,45 +1,46 @@
-package org.hk.doghub.ui.components.shared.user;
+package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.textfield.TextField;
 import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.model.tip.DogHubTip;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.USER;
+import static com.vaadin.flow.component.icon.VaadinIcon.LINK;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
 
-public class UserPostcodeField extends TextField {
+public class TipNameField extends TextField {
 
-    public static final String CLASS_NAME = "user-postcode-field";
+    public static final String CLASS_NAME = "tip-name-field";
 
-    public static final String LABEL = "Postcode";
+    public static final String LABEL = "Tip Name";
 
-    public UserPostcodeField() {
+    public TipNameField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
+        setRequiredIndicatorVisible(true);
+        setReadOnly(true);
         setMinLength(2);
         setMaxLength(64);
-        setPrefixComponent(USER.create());
+        setPrefixComponent(LINK.create());
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);
     }
 
-    public void setValue(@NotNull DogHubUser user) {
-        String value = (user.getAddress() != null) ? user.getAddress().getPostcode() : EMPTY;
-        setValue(value);
+    public void setValue(@NotNull DogHubTip tip) {
+        @NotNull String name = tip.getName();
+        setValue(name);
     }
 
     private void valueChanged(ComponentValueChangeEvent<TextField, String> event) {
-        String value = event.getValue();
+        @NotNull String value = event.getValue();
         validateValue(value);
     }
 
-    private void validateValue(String value) {
-        List<String> violations = validateUserField(value);
+    private void validateValue(@NotNull String value) {
+        List<String> violations = validateTipField(value);
         if(violations.isEmpty()) {
             setInvalid(false);
             setErrorMessage(null);
@@ -50,15 +51,15 @@ public class UserPostcodeField extends TextField {
         }
     }
 
-    private List<String> validateUserField(String value) {
+    private List<String> validateTipField(@NotNull String value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() < 2 || value.length() > 64) {
+        if(value.length() < 5 || value.length() > 128) {
             result.add(format("{0} length must be between 2 and 64 characters", LABEL));
         }
         return result;
     }
 
-    public List<String> validateUserField() {
-        return validateUserField(getValue());
+    public List<String> validateTipField() {
+        return validateTipField(getValue());
     }
 }

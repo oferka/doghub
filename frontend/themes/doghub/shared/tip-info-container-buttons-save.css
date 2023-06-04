@@ -1,0 +1,9 @@
+.tip-info-container-buttons-save {
+    background-color: var(--lumo-success-color);
+    color: var(--lumo-success-contrast-color);
+    cursor: pointer;
+}
+
+.tip-info-container-buttons-save:hover {
+    background-color: var(--lumo-success-text-color);
+}

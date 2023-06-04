@@ -1,11 +1,11 @@
 package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
-
+@Slf4j
 public class TipViewHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipView.CLASS_NAME + "-header";
@@ -13,11 +13,13 @@ public class TipViewHeader extends HorizontalLayout {
     private final TipViewHeaderInfo info;
     private final TipViewHeaderActions actions;
 
+    private long selectedTipId;
+
     public TipViewHeader(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
-        setAlignItems(CENTER);
+        setJustifyContentMode(JustifyContentMode.CENTER);
 
         info = new TipViewHeaderInfo(tipsDataProvider, authenticatedUser);
         add(info);
@@ -26,8 +28,25 @@ public class TipViewHeader extends HorizontalLayout {
         add(actions);
     }
 
+    public long getSelectedTipId() {
+        return selectedTipId;
+    }
+
+    public void setSelectedTipId(long selectedTipId) {
+        this.selectedTipId = selectedTipId;
+    }
+
     public void selectedTipChanged(long selectedTipId) {
+        setSelectedTipId(selectedTipId);
         info.selectedTipChanged(selectedTipId);
         actions.selectedTipChanged(selectedTipId);
+    }
+
+    public void save() {
+        selectedTipChanged(selectedTipId);
+    }
+
+    public void cancel() {
+        log.info("Cancel");
     }
 }

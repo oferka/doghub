@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Nullable;
 import java.time.ZonedDateTime;
+import java.util.Optional;
+
+import static java.lang.String.format;
 
 @Slf4j
 @Service
@@ -21,7 +24,9 @@ public class TipCreationService {
 
     private final DogHubTipService tipService;
 
-    public DogHubTip create(@NotNull @Size(min = 2, max = 64) @NotBlank String title, @NotNull DogHubUser createdBy) {
+    public DogHubTip create(@NotNull @Size(min = 2, max = 64)
+                            @NotBlank String title,
+                            @NotNull DogHubUser createdBy) {
         return create(title, null, null, null, createdBy);
     }
 
@@ -31,6 +36,24 @@ public class TipCreationService {
                             @Nullable @URL String thumbnailPicture,
                             @NotNull DogHubUser createdBy) {
         return tipService.save(getTipEntity(title, content, moreInfo, thumbnailPicture, createdBy));
+    }
+
+    public DogHubTip save(@NotNull Long id,
+                           @NotNull @Size(min = 2, max = 64) @NotBlank String title,
+                           @Nullable @Size(min = 2, max = 1024) String content,
+                           @Nullable String moreInfo,
+                           @Nullable @URL String thumbnailPicture) {
+        Optional<DogHubTip> tipOptional = tipService.findById(id);
+        if(tipOptional.isPresent()) {
+            DogHubTip tip = tipOptional.get();
+            tip.setName(title);
+            tip.setTitle(title);
+            tip.setContent(content);
+            tip.setMoreInfo(moreInfo);
+            tip.setThumbnailPicture(thumbnailPicture);
+            return tipService.save(tip);
+        }
+        throw new IllegalArgumentException(format("Failed to save tip with ID: %s'", id.toString()));
     }
 
     private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = 2, max = 64) @NotBlank String title,

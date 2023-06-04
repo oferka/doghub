@@ -21,7 +21,6 @@ public class UserThumbnailPictureField extends TextField {
     public UserThumbnailPictureField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
-        setRequiredIndicatorVisible(true);
         setMinLength(5);
         setMaxLength(256);
         setPrefixComponent(PICTURE.create());
