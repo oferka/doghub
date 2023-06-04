@@ -86,6 +86,7 @@ public class TipInfoContainerForm extends FormLayout {
             try {
                 tipCreationService.save(
                         id.getValueAsLong(),
+                        name.getValue(),
                         title.getValue(),
                         content.getValue(),
                         moreInfo.getValue(),

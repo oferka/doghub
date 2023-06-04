@@ -27,43 +27,46 @@ public class TipCreationService {
     public DogHubTip create(@NotNull @Size(min = 2, max = 64)
                             @NotBlank String title,
                             @NotNull DogHubUser createdBy) {
-        return create(title, null, null, null, createdBy);
+        return create(title, title, null, null, null, createdBy);
     }
 
-    public DogHubTip create(@NotNull @Size(min = 2, max = 64) @NotBlank String title,
+    public DogHubTip create(@NotNull @Size(min = 2, max = 128) @NotBlank String name,
+                            @NotNull @Size(min = 2, max = 64) @NotBlank String title,
                             @Nullable @Size(min = 2, max = 1024) String content,
                             @Nullable String moreInfo,
                             @Nullable @URL String thumbnailPicture,
                             @NotNull DogHubUser createdBy) {
-        return tipService.save(getTipEntity(title, content, moreInfo, thumbnailPicture, createdBy));
+        return tipService.save(getTipEntity(name, title, content, moreInfo, thumbnailPicture, createdBy));
     }
 
     public DogHubTip save(@NotNull Long id,
-                           @NotNull @Size(min = 2, max = 64) @NotBlank String title,
-                           @Nullable @Size(min = 2, max = 1024) String content,
-                           @Nullable String moreInfo,
-                           @Nullable @URL String thumbnailPicture) {
+                          @NotNull @Size(min = 2, max = 128) @NotBlank String name,
+                          @NotNull @Size(min = 2, max = 64) @NotBlank String title,
+                          @Nullable @Size(min = 2, max = 1024) String content,
+                          @Nullable String moreInfo,
+                          @Nullable @URL String thumbnailPicture) {
         Optional<DogHubTip> tipOptional = tipService.findById(id);
         if(tipOptional.isPresent()) {
             DogHubTip tip = tipOptional.get();
-            tip.setName(title);
+            tip.setName(name);
             tip.setTitle(title);
             tip.setContent(content);
             tip.setMoreInfo(moreInfo);
             tip.setThumbnailPicture(thumbnailPicture);
             return tipService.save(tip);
         }
-        throw new IllegalArgumentException(format("Failed to save tip with ID: %s'", id.toString()));
+        throw new IllegalArgumentException(format("Failed to save tip with ID: %s'", id));
     }
 
-    private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = 2, max = 64) @NotBlank String title,
+    private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = 2, max = 128) @NotBlank String name,
+                                            @NotNull @Size(min = 2, max = 64) @NotBlank String title,
                                             @Nullable @Size(min = 2, max = 1024) String content,
                                             @Nullable String moreInfo,
                                             @Nullable @URL String thumbnailPicture,
                                             @NotNull DogHubUser createdBy) {
         DogHubTip result = new DogHubTip();
+        result.setName(name);
         result.setTitle(title);
-        result.setName(title);
         result.setContent(content);
         result.setMoreInfo(moreInfo);
         result.setThumbnailPicture(thumbnailPicture);
