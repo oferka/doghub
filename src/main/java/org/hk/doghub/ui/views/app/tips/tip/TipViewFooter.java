@@ -15,7 +15,7 @@ public class TipViewFooter extends HorizontalLayout {
 
     private final TipsRouterLink tips;
 
-//    private final NextTipRouterLink next;
+    private final NextTipRouterLink next;
 
     private long selectedTipId;
 
@@ -31,8 +31,8 @@ public class TipViewFooter extends HorizontalLayout {
         tips = new TipsRouterLink();
         add(tips);
 
-//        next = new NextTipRouterLink(tipsDataProvider, authenticatedUser);
-//        add(next);
+        next = new NextTipRouterLink(tipsDataProvider, authenticatedUser);
+        add(next);
     }
 
     public long getSelectedTipId() {
@@ -45,7 +45,7 @@ public class TipViewFooter extends HorizontalLayout {
 
     public void selectedTipChanged(long selectedTipId) {
         setSelectedTipId(selectedTipId);
-//        next.selectedTipChanged(selectedTipId);
+        next.selectedTipChanged(selectedTipId);
         previous.selectedTipChanged(selectedTipId);
     }
 
