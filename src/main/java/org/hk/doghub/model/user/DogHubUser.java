@@ -25,6 +25,9 @@ public class DogHubUser extends NamedEntity {
     public static final int USER_NAME_MIN_LENGTH = 5;
     public static final int USER_NAME_MAX_LENGTH = 128;
 
+    public static final int MOBILE_NUMBER_MIN_LENGTH = 2;
+    public static final int MOBILE_NUMBER_MAX_LENGTH = 64;
+
     @NotNull
     @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH)
     @NotBlank
@@ -54,7 +57,7 @@ public class DogHubUser extends NamedEntity {
     @Embedded
     private DogHubAddress address;
 
-    @Size(min = 2, max = 64)
+    @Size(min = MOBILE_NUMBER_MIN_LENGTH, max = MOBILE_NUMBER_MAX_LENGTH)
     private String mobileNumber;
 
     @JsonIgnore
