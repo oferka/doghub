@@ -32,6 +32,8 @@
 @import url('./shared/tip-name-field.css');
 @import url('./shared/tip-thumbnail-picture-field.css');
 @import url('./shared/tip-title-field.css');
+@import url('./shared/tips-button.css');
+@import url('./shared/tips-router-link.css');
 @import url('./shared/user-city-field.css');
 @import url('./shared/user-company-field.css');
 @import url('./shared/user-country-field.css');

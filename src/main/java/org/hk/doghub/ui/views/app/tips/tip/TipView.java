@@ -66,13 +66,13 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, Ti
     public void saveTriggered(TipInfoSaveEvent event) {
         header.save();
         body.save();
-//        footer.save();
+        footer.save();
     }
 
     @Override
     public void cancelTriggered(TipInfoCancelEvent event) {
         header.cancel();
         body.cancel();
-//        footer.cancel();
+        footer.cancel();
     }
 }

@@ -1,29 +1,59 @@
 package org.hk.doghub.ui.views.app.tips.tip;
 
-import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.tip.TipsRouterLink;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
-
+@Slf4j
 public class TipViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipView.CLASS_NAME + "-footer";
 
-    private final H2 label;
+//    private final PreviousTipRouterLink previous;
+
+    private final TipsRouterLink tips;
+
+//    private final NextTipRouterLink next;
+
+    private long selectedTipId;
 
     public TipViewFooter(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
-        setAlignItems(CENTER);
+        setJustifyContentMode(JustifyContentMode.CENTER);
 
-        label = new H2("say what again");
-        add(label);
+//        previous = new PreviousTipRouterLink(tipsDataProvider);
+//        add(previous);
+
+        tips = new TipsRouterLink();
+        add(tips);
+
+//        next = new NextTipRouterLink(tipsDataProvider);
+//        add(next);
+    }
+
+    public long getSelectedTipId() {
+        return selectedTipId;
+    }
+
+    public void setSelectedTipId(long selectedTipId) {
+        this.selectedTipId = selectedTipId;
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        label.setText("Selected Tip: " + selectedTipId);
+        setSelectedTipId(selectedTipId);
+//        next.selectedTipChanged(selectedTipId);
+//        previous.selectedTipChanged(selectedTipId);
+    }
+
+    public void save() {
+        selectedTipChanged(selectedTipId);
+    }
+
+    public void cancel() {
+        log.info("Cancel");
     }
 }

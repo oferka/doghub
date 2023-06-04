@@ -12,11 +12,11 @@ public class UserViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserView.CLASS_NAME + "-footer";
 
-    private final PreviousUserRouterLink previousUser;
+    private final PreviousUserRouterLink previous;
 
     private final UsersRouterLink users;
 
-    private final NextUserRouterLink nextUser;
+    private final NextUserRouterLink next;
 
     private long selectedUserId;
 
@@ -26,14 +26,14 @@ public class UserViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        previousUser = new PreviousUserRouterLink(usersDataProvider);
-        add(previousUser);
+        previous = new PreviousUserRouterLink(usersDataProvider);
+        add(previous);
 
         users = new UsersRouterLink();
         add(users);
 
-        nextUser = new NextUserRouterLink(usersDataProvider);
-        add(nextUser);
+        next = new NextUserRouterLink(usersDataProvider);
+        add(next);
     }
 
     public long getSelectedUserId() {
@@ -46,8 +46,8 @@ public class UserViewFooter extends HorizontalLayout {
 
     public void selectedUserChanged(long selectedUserId) {
         setSelectedUserId(selectedUserId);
-        nextUser.selectedUserChanged(selectedUserId);
-        previousUser.selectedUserChanged(selectedUserId);
+        next.selectedUserChanged(selectedUserId);
+        previous.selectedUserChanged(selectedUserId);
     }
 
     public void save() {

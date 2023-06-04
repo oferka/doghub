@@ -17,11 +17,11 @@ public class UsersButton extends Button {
         addClassName(CLASS_NAME);
         setIcon(TABLE.create());
         setText("Users");
-        addClickListener(this::UsersClicked);
+        addClickListener(this::usersClicked);
         addClickShortcut(KEY_U, ALT);
     }
 
-    private void UsersClicked(ClickEvent<Button> event) {
+    private void usersClicked(ClickEvent<Button> event) {
         log.info("Users clicked");
     }
 }
