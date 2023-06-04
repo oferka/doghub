@@ -230,9 +230,9 @@ public class UserInfoContainerForm extends FormLayout {
         violations.addAll(country.validateUserField());
         violations.addAll(state.validateUserField());
         violations.addAll(city.validateField());
-        violations.addAll(streetName.validateUserField());
+        violations.addAll(streetName.validateField());
         violations.addAll(streetNumber.validateUserField());
-        violations.addAll(postcode.validateUserField());
+        violations.addAll(postcode.validateField());
         return violations;
     }
 

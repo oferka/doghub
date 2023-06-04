@@ -18,11 +18,17 @@ public class DogHubAddress {
     public static final int CITY_MIN_LENGTH = 2;
     public static final int CITY_MAX_LENGTH = 64;
 
+    public static final int STREET_NAME_MIN_LENGTH = 2;
+    public static final int STREET_NAME_MAX_LENGTH = 64;
+
+    public static final int POSTCODE_MIN_LENGTH = 2;
+    public static final int POSTCODE_MAX_LENGTH = 64;
+
     @Positive
     private Integer number = 0;
 
     @NotNull
-    @Size(min = 2, max = 64)
+    @Size(min = STREET_NAME_MIN_LENGTH, max = STREET_NAME_MAX_LENGTH)
     @NotBlank
     private String streetName;
 
@@ -42,7 +48,7 @@ public class DogHubAddress {
     private String country;
 
     @NotNull
-    @Size(min = 2, max = 64)
+    @Size(min = POSTCODE_MIN_LENGTH, max = POSTCODE_MAX_LENGTH)
     @NotBlank
     private String postcode;
 }
