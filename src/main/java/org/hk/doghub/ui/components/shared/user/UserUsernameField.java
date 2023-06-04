@@ -10,6 +10,8 @@ import java.util.List;
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
+import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MAX_LENGTH;
+import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MIN_LENGTH;
 
 public class UserUsernameField extends TextField {
 
@@ -22,8 +24,8 @@ public class UserUsernameField extends TextField {
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
         setReadOnly(true);
-        setMinLength(5);
-        setMaxLength(128);
+        setMinLength(USER_NAME_MIN_LENGTH);
+        setMaxLength(USER_NAME_MAX_LENGTH);
         setPrefixComponent(USER.create());
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);

@@ -17,6 +17,8 @@ import java.util.Set;
 import static java.lang.String.format;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.hk.doghub.model.NamedEntity.NAME_MIN_LENGTH;
+import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MAX_LENGTH;
+import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MIN_LENGTH;
 import static org.hk.doghub.model.user.Role.USER;
 
 @Slf4j
@@ -34,7 +36,7 @@ public class UserCreationService {
 
     public DogHubUser save(
             @NotNull Long id,
-            @NotNull @Size(min = 5, max = 128) @NotBlank String username,
+            @NotNull @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH) @NotBlank String username,
             @Size(min = 2, max = 64) String title,
             @NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
             @Size(min = 2, max = 64) String mobileNumber,
@@ -73,7 +75,7 @@ public class UserCreationService {
             address.setPostcode(postcode);
             return userService.save(user);
         }
-        throw new IllegalArgumentException(format("Failed to save user with ID: %s'", id.toString()));
+        throw new IllegalArgumentException(format("Failed to save user with ID: %s'", id));
     }
 
     private @NotNull DogHubUser getUserEntity(@NotNull @Email String email, @NotNull String password) {

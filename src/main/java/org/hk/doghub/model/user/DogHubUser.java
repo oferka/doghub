@@ -22,8 +22,11 @@ import java.util.Set;
 @Setter
 public class DogHubUser extends NamedEntity {
 
+    public static final int USER_NAME_MIN_LENGTH = 5;
+    public static final int USER_NAME_MAX_LENGTH = 128;
+
     @NotNull
-    @Size(min = 5, max = 128)
+    @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH)
     @NotBlank
     @Column(unique=true)
     private String username;
