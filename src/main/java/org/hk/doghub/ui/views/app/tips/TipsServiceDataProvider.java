@@ -80,11 +80,17 @@ public class TipsServiceDataProvider implements TipsDataProvider {
 
     @Override
     public Optional<DogHubTip> findPrevious(long selectedTipId, AuthenticatedUser authenticatedUser) {
+        if(authenticatedUser.get().isPresent()) {
+            return dogHubTipService.findPrevious(selectedTipId, authenticatedUser.get().get());
+        }
         return Optional.empty();
     }
 
     @Override
     public Optional<DogHubTip> findNext(long selectedTipId, AuthenticatedUser authenticatedUser) {
+        if(authenticatedUser.get().isPresent()) {
+            return dogHubTipService.findNext(selectedTipId, authenticatedUser.get().get());
+        }
         return Optional.empty();
     }
 
