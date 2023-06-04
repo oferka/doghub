@@ -170,7 +170,7 @@ public class TipInfoContainerForm extends FormLayout {
     private List<String> validateInput() {
         List<String> violations = new ArrayList<>();
         violations.addAll(id.validateField());
-        violations.addAll(name.validateTipField());
+        violations.addAll(name.validateField());
         violations.addAll(title.validateTipField());
         violations.addAll(content.validateTipField());
         violations.addAll(moreInfo.validateTipField());

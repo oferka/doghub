@@ -2,7 +2,7 @@ package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.textfield.TextField;
 import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.model.NamedEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class TipNameField extends TextField {
 
     public static final String CLASS_NAME = "tip-name-field";
 
-    public static final String LABEL = "Tip Name";
+    public static final String LABEL = "Name";
 
     public TipNameField() {
         addClassName(CLASS_NAME);
@@ -29,8 +29,8 @@ public class TipNameField extends TextField {
         addValueChangeListener(this::valueChanged);
     }
 
-    public void setValue(@NotNull DogHubTip tip) {
-        @NotNull String name = tip.getName();
+    public void setValue(@NotNull NamedEntity entity) {
+        @NotNull String name = entity.getName();
         setValue(name);
     }
 
@@ -40,7 +40,7 @@ public class TipNameField extends TextField {
     }
 
     private void validateValue(@NotNull String value) {
-        List<String> violations = validateTipField(value);
+        List<String> violations = validateField(value);
         if(violations.isEmpty()) {
             setInvalid(false);
             setErrorMessage(null);
@@ -51,7 +51,7 @@ public class TipNameField extends TextField {
         }
     }
 
-    private List<String> validateTipField(@NotNull String value) {
+    private List<String> validateField(@NotNull String value) {
         List<String> result = new ArrayList<>();
         if(value.length() < 2 || value.length() > 128) {
             result.add(format("{0} length must be between 2 and 128 characters", LABEL));
@@ -59,7 +59,7 @@ public class TipNameField extends TextField {
         return result;
     }
 
-    public List<String> validateTipField() {
-        return validateTipField(getValue());
+    public List<String> validateField() {
+        return validateField(getValue());
     }
 }
