@@ -42,6 +42,10 @@ public class UserViewBody extends VerticalLayout {
         userInfo.removeUserInfoSaveListener(listener);
     }
 
+    public void removeUserInfoCancelListener(UserInfoCancelListener listener) {
+        userInfo.removeUserInfoCancelListener(listener);
+    }
+
     public void save() {
         userInfo.save();
     }

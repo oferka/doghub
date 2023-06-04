@@ -40,6 +40,8 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, Ti
         add(header);
 
         body = new TipViewBody(tipsDataProvider, authenticatedUser, tipCreationService);
+        body.addTipInfoSaveListener(this);
+        body.addTipInfoCancelListener(this);
         addAndExpand(body);
 
         footer = new TipViewFooter(tipsDataProvider, authenticatedUser);
