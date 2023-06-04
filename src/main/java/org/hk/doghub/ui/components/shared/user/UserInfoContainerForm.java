@@ -222,7 +222,7 @@ public class UserInfoContainerForm extends FormLayout {
         violations.addAll(title.validateField());
         violations.addAll(name.validateField());
         violations.addAll(mobileNumber.validateField());
-        violations.addAll(email.validateUserField());
+        violations.addAll(email.validateField());
         violations.addAll(thumbnailPicture.validateField());
         violations.addAll(company.validateField());
         violations.addAll(dateOfBirth.validateUserField());

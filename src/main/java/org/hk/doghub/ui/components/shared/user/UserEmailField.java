@@ -30,7 +30,7 @@ public class UserEmailField extends EmailField {
         setValue((user.getEmail() != null)?user.getEmail() : EMPTY);
     }
 
-    public List<String> validateUserField() {
+    public List<String> validateField() {
         List<String> result = new ArrayList<>();
         if(isInvalid()) {
             result.add(getErrorMessage());
