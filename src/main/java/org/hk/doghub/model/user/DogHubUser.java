@@ -31,6 +31,9 @@ public class DogHubUser extends NamedEntity {
     public static final int THUMBNAIL_PICTURE_MIN_LENGTH = 5;
     public static final int THUMBNAIL_PICTURE_MAX_LENGTH = 1024;
 
+    public static final int COMPANY_MIN_LENGTH = 2;
+    public static final int COMPANY_MAX_LENGTH = 64;
+
     @NotNull
     @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH)
     @NotBlank
@@ -55,7 +58,7 @@ public class DogHubUser extends NamedEntity {
     @Past
     private ZonedDateTime dateOfRegistration;
 
-    @Size(min = 2, max = 64)
+    @Size(min = COMPANY_MIN_LENGTH, max = COMPANY_MAX_LENGTH)
     private String company;
 
     @Embedded
