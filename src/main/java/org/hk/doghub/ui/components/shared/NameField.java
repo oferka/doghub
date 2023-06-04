@@ -10,6 +10,8 @@ import java.util.List;
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
+import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
+import static org.hk.doghub.model.NamedEntity.NAME_MIN_LENGTH;
 
 public class NameField extends TextField {
 
@@ -17,15 +19,12 @@ public class NameField extends TextField {
 
     public static final String LABEL = "Name";
 
-    public static final int MIN_LENGTH = 2;
-    public static final int MAX_LENGTH = 128;
-
     public NameField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
-        setMinLength(MIN_LENGTH);
-        setMaxLength(MAX_LENGTH);
+        setMinLength(NAME_MIN_LENGTH);
+        setMaxLength(NAME_MAX_LENGTH);
         setPrefixComponent(USER.create());
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);
@@ -55,8 +54,8 @@ public class NameField extends TextField {
 
     private List<String> validateField(String value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() < MIN_LENGTH || value.length() > MAX_LENGTH) {
-            result.add(format("{0} length must be between {1} and {2} characters", LABEL, MIN_LENGTH, MAX_LENGTH));
+        if(value == null || value.length() < NAME_MIN_LENGTH || value.length() > NAME_MAX_LENGTH) {
+            result.add(format("{0} length must be between {1} and {2} characters", LABEL, NAME_MIN_LENGTH, NAME_MAX_LENGTH));
         }
         return result;
     }

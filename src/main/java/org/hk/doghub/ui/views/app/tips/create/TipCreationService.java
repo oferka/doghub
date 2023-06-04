@@ -16,6 +16,8 @@ import java.time.ZonedDateTime;
 import java.util.Optional;
 
 import static java.lang.String.format;
+import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
+import static org.hk.doghub.model.NamedEntity.NAME_MIN_LENGTH;
 
 @Slf4j
 @Service
@@ -24,13 +26,11 @@ public class TipCreationService {
 
     private final DogHubTipService tipService;
 
-    public DogHubTip create(@NotNull @Size(min = 2, max = 64)
-                            @NotBlank String title,
-                            @NotNull DogHubUser createdBy) {
+    public DogHubTip create(@NotNull @Size(min = 2, max = 64) @NotBlank String title, @NotNull DogHubUser createdBy) {
         return create(title, title, null, null, null, createdBy);
     }
 
-    public DogHubTip create(@NotNull @Size(min = 2, max = 128) @NotBlank String name,
+    public DogHubTip create(@NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
                             @NotNull @Size(min = 2, max = 64) @NotBlank String title,
                             @Nullable @Size(min = 2, max = 1024) String content,
                             @Nullable String moreInfo,
@@ -40,7 +40,7 @@ public class TipCreationService {
     }
 
     public DogHubTip save(@NotNull Long id,
-                          @NotNull @Size(min = 2, max = 128) @NotBlank String name,
+                          @NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
                           @NotNull @Size(min = 2, max = 64) @NotBlank String title,
                           @Nullable @Size(min = 2, max = 1024) String content,
                           @Nullable String moreInfo,
@@ -58,7 +58,7 @@ public class TipCreationService {
         throw new IllegalArgumentException(format("Failed to save tip with ID: %s'", id));
     }
 
-    private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = 2, max = 128) @NotBlank String name,
+    private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
                                             @NotNull @Size(min = 2, max = 64) @NotBlank String title,
                                             @Nullable @Size(min = 2, max = 1024) String content,
                                             @Nullable String moreInfo,

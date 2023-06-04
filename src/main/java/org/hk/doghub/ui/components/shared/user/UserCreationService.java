@@ -15,6 +15,8 @@ import java.util.Optional;
 import java.util.Set;
 
 import static java.lang.String.format;
+import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
+import static org.hk.doghub.model.NamedEntity.NAME_MIN_LENGTH;
 import static org.hk.doghub.model.user.Role.USER;
 
 @Slf4j
@@ -34,7 +36,7 @@ public class UserCreationService {
             @NotNull Long id,
             @NotNull @Size(min = 5, max = 128) @NotBlank String username,
             @Size(min = 2, max = 64) String title,
-            @NotNull @Size(min = 2, max = 128) @NotBlank String name,
+            @NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
             @Size(min = 2, max = 64) String mobileNumber,
             @Email String email,
             @URL String thumbnailPicture,
