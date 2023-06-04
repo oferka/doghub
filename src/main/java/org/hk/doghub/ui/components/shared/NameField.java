@@ -17,12 +17,15 @@ public class NameField extends TextField {
 
     public static final String LABEL = "Name";
 
+    public static final int MIN_LENGTH = 2;
+    public static final int MAX_LENGTH = 128;
+
     public NameField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
-        setMinLength(2);
-        setMaxLength(128);
+        setMinLength(MIN_LENGTH);
+        setMaxLength(MAX_LENGTH);
         setPrefixComponent(USER.create());
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);
@@ -52,8 +55,8 @@ public class NameField extends TextField {
 
     private List<String> validateField(String value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() < 2 || value.length() > 128) {
-            result.add(format("{0} length must be between 2 and 128 characters", LABEL));
+        if(value == null || value.length() < MIN_LENGTH || value.length() > MAX_LENGTH) {
+            result.add(format("{0} length must be between {1} and {2} characters", LABEL, MIN_LENGTH, MAX_LENGTH));
         }
         return result;
     }
