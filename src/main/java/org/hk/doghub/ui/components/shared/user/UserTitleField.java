@@ -9,6 +9,8 @@ import java.util.List;
 
 import static java.text.MessageFormat.format;
 import static java.util.Arrays.asList;
+import static org.hk.doghub.model.user.DogHubUser.TITLE_MAX_LENGTH;
+import static org.hk.doghub.model.user.DogHubUser.TITLE_MIN_LENGTH;
 
 public class UserTitleField extends ComboBox<String> {
 
@@ -57,8 +59,8 @@ public class UserTitleField extends ComboBox<String> {
 
     private List<String> validateUserField(String value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() < 2 || value.length() > 64) {
-            result.add(format("{0} length must be between 2 and 64 characters", LABEL));
+        if(value == null || value.length() < TITLE_MIN_LENGTH || value.length() > TITLE_MAX_LENGTH) {
+            result.add(format("{0} length must be between {1} and {2} characters", LABEL, TITLE_MIN_LENGTH, TITLE_MAX_LENGTH));
         }
         return result;
     }

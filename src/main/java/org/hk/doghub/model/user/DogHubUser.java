@@ -25,6 +25,9 @@ public class DogHubUser extends NamedEntity {
     public static final int USER_NAME_MIN_LENGTH = 5;
     public static final int USER_NAME_MAX_LENGTH = 128;
 
+    public static final int TITLE_MIN_LENGTH = 2;
+    public static final int TITLE_MAX_LENGTH = 64;
+
     public static final int MOBILE_NUMBER_MIN_LENGTH = 2;
     public static final int MOBILE_NUMBER_MAX_LENGTH = 64;
 
@@ -33,6 +36,9 @@ public class DogHubUser extends NamedEntity {
 
     public static final int COMPANY_MIN_LENGTH = 2;
     public static final int COMPANY_MAX_LENGTH = 64;
+
+    public static final int PASSWORD_MIN_LENGTH = 2;
+    public static final int PASSWORD_MAX_LENGTH = 64;
 
     @NotNull
     @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH)
@@ -43,7 +49,7 @@ public class DogHubUser extends NamedEntity {
     @Email
     private String email;
 
-    @Size(min = 2, max = 64)
+    @Size(min = TITLE_MIN_LENGTH, max = TITLE_MAX_LENGTH)
     private String title;
 
     @Size(min = THUMBNAIL_PICTURE_MIN_LENGTH, max = THUMBNAIL_PICTURE_MAX_LENGTH)
@@ -69,7 +75,7 @@ public class DogHubUser extends NamedEntity {
 
     @JsonIgnore
     @NotNull
-    @Size(min = 2, max = 64)
+    @Size(min = PASSWORD_MIN_LENGTH, max = PASSWORD_MAX_LENGTH)
     @NotBlank
     private String hashedPassword;
 
