@@ -16,11 +16,14 @@ public class TipAnchor extends Anchor {
 
     public TipAnchor(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
-        setHref(format("https://www.%s", tip.getMoreInfo()));
-        Icon externalLinkIcon = new Icon(EXTERNAL_LINK);
-        externalLinkIcon.addClassName(format("%s-icon", CLASS_NAME));
-        Tooltip.forComponent(externalLinkIcon).setText("Open link in a new tab");
-        add(externalLinkIcon);
-        setTarget(BLANK);
+        String moreInfo = tip.getMoreInfo();
+        if(moreInfo != null) {
+            setHref(format("https://www.%s", tip.getMoreInfo()));
+            Icon externalLinkIcon = new Icon(EXTERNAL_LINK);
+            externalLinkIcon.addClassName(format("%s-icon", CLASS_NAME));
+            Tooltip.forComponent(externalLinkIcon).setText("Open link in a new tab");
+            add(externalLinkIcon);
+            setTarget(BLANK);
+        }
     }
 }
