@@ -18,8 +18,11 @@ import java.time.ZonedDateTime;
 @Table(uniqueConstraints = { @UniqueConstraint(name = "Unique_title_and_created_by_id", columnNames = { "title", "created_by_id" }) })
 public class DogHubTip extends NamedEntity {
 
+    public static final int TITLE_MIN_LENGTH = 2;
+    public static final int TITLE_MAX_LENGTH = 64;
+
     @NotNull
-    @Size(min = 2, max = 64)
+    @Size(min = TITLE_MIN_LENGTH, max = TITLE_MAX_LENGTH)
     @NotBlank
     private String title;
 
