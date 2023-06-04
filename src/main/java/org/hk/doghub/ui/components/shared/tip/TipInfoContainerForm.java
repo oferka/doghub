@@ -59,13 +59,13 @@ public class TipInfoContainerForm extends FormLayout {
         setResponsiveSteps(new ResponsiveStep("0", 1), new ResponsiveStep("500px", 2));
         setColspan(id, 1);
         setColspan(name, 1);
-        setColspan(creationTime, 1);
         setColspan(createdBy, 1);
+        setColspan(creationTime, 1);
         setColspan(title, 2);
         setColspan(content, 2);
         setColspan(thumbnailPicture, 2);
         setColspan(moreInfo, 2);
-        add(id, name, creationTime, createdBy, title, content, thumbnailPicture, moreInfo);
+        add(id, name, createdBy, creationTime, title, content, thumbnailPicture, moreInfo);
     }
 
     public void setTip(DogHubTip tip) {
