@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 203">
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/tips-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/tips-router-link.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipsButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipsRouterLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 204">
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-view-footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-view-footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-view-header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-view-header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tips-view-footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tips-view-footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UsersButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UsersButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/tip/TipView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/tip/TipView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/tip/TipViewFooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/tip/TipViewFooter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/user/UserViewFooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/user/UserViewFooter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tips-view-header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tips-view-header.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,13 +181,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00157" summary="doghub 155">
-      <created>1685539032959</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1685539032959</updated>
     </task>
     <task id="LOCAL-00158" summary="doghub 156">
       <created>1685539666200</created>
@@ -531,12 +518,18 @@
       <option name="project" value="LOCAL" />
       <updated>1685863480343</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <task id="LOCAL-00206" summary="doghub 204">
+      <created>1685864432177</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1685864432177</updated>
+    </task>
+    <option name="localTasksCounter" value="207" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 179" />
     <MESSAGE value="doghub 180" />
     <MESSAGE value="doghub 181" />
     <MESSAGE value="doghub 182" />
@@ -561,6 +554,7 @@
     <MESSAGE value="doghub 201" />
     <MESSAGE value="doghub 202" />
     <MESSAGE value="doghub 203" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 203" />
+    <MESSAGE value="doghub 204" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 204" />
   </component>
 </project>

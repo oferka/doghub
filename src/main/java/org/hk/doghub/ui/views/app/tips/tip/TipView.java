@@ -13,6 +13,8 @@ import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+
 @Route(value = TipsView.ROUTE, layout = DogHubAppLayout.class)
 @PageTitle(TipView.NAME)
 @RolesAllowed({"USER", "ADMIN"})
@@ -35,6 +37,8 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, Ti
         this.tipsDataProvider = tipsDataProvider;
         this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
+
+        setAlignItems(CENTER);
 
         header = new TipViewHeader(tipsDataProvider, authenticatedUser);
         add(header);
