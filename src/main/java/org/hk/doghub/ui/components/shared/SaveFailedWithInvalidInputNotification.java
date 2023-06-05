@@ -1,10 +1,10 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.Text;
-import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.details.Details;
+import com.vaadin.flow.component.html.ListItem;
+import com.vaadin.flow.component.html.UnorderedList;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import java.util.List;
 
@@ -20,12 +20,11 @@ public class SaveFailedWithInvalidInputNotification extends Notification {
     public SaveFailedWithInvalidInputNotification(List<String> violations) {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ERROR);
-        VerticalLayout info = new VerticalLayout();
-        Div infoHeader = new Div(new Text("Save Failed!"));
-        info.add(infoHeader);
+        UnorderedList unorderedList = new UnorderedList();
         for(String violation : violations) {
-            info.add(new Div(new Text(violation)));
+            unorderedList.add(new ListItem(violation));
         }
+        Details info = new Details("Save Failed!", unorderedList);
         HorizontalLayout layout = new HorizontalLayout(WARNING.create(), info, new CloseNotificationButton(this));
         layout.setAlignItems(CENTER);
         add(layout);
