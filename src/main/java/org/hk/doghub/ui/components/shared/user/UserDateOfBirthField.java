@@ -13,7 +13,7 @@ public class UserDateOfBirthField extends DogHubDateTimeField {
     public static final String LABEL = "Date of Birth";
 
     public UserDateOfBirthField() {
-        super(LABEL, false);
+        super(LABEL, false, false);
         addClassName(CLASS_NAME);
     }
 

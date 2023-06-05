@@ -14,9 +14,10 @@ public class DogHubDateTimeField extends DateTimePicker {
 
     public static final String CLASS_NAME = "dog-hub-date-time-field";
 
-    public DogHubDateTimeField(String label, boolean readOnly) {
+    public DogHubDateTimeField(String label, boolean required, boolean readOnly) {
         addClassName(CLASS_NAME);
         setLabel(label);
+        setRequiredIndicatorVisible(required);
         setReadOnly(readOnly);
         addValueChangeListener(this::valueChanged);
     }
