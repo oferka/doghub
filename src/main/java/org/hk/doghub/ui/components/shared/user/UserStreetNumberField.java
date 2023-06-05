@@ -15,17 +15,19 @@ public class UserStreetNumberField extends IntegerField {
 
     public static final String LABEL = "Number";
 
+    public static final int MIN_VALUE = 1;
+
     public UserStreetNumberField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
-        setMin(1);
+        setMin(MIN_VALUE);
         setStepButtonsVisible(true);
         setErrorMessage("Number must be positive");
         setValueChangeMode(EAGER);
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getAddress() != null && user.getAddress().getNumber() != null) ? user.getAddress().getNumber() : 1);
+        setValue((user.getAddress() != null && user.getAddress().getNumber() != null) ? user.getAddress().getNumber() : MIN_VALUE);
     }
 
     public List<String> validateField() {
