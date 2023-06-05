@@ -19,17 +19,16 @@ public class UserStreetNumberField extends IntegerField {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
         setMin(1);
-        setMax(100000);
         setStepButtonsVisible(true);
-        setErrorMessage("Number must be between 1 and 100000");
+        setErrorMessage("Number must be positive");
         setValueChangeMode(EAGER);
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        setValue((user.getAddress() != null)?user.getAddress().getNumber() : 0);
+        setValue((user.getAddress() != null && user.getAddress().getNumber() != null) ? user.getAddress().getNumber() : 1);
     }
 
-    public List<String> validateUserField() {
+    public List<String> validateField() {
         List<String> result = new ArrayList<>();
         if(isInvalid()) {
             result.add(getErrorMessage());
