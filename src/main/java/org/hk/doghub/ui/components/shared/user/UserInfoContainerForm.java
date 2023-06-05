@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
+import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ import java.util.Optional;
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY_INLINE;
 import static com.vaadin.flow.component.icon.VaadinIcon.*;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
-import static com.vaadin.flow.component.notification.NotificationVariant.LUMO_ERROR;
 import static com.vaadin.flow.component.notification.NotificationVariant.LUMO_SUCCESS;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
@@ -147,7 +147,7 @@ public class UserInfoContainerForm extends FormLayout {
             }
         }
         else {
-            showSaveFailedWithInvalidInput(violations);
+            showSaveFailedWithInvalidInputNotification(violations);
         }
         log.info("Save for user with ID '{}' has completed", id.getValue());
     }
@@ -170,26 +170,11 @@ public class UserInfoContainerForm extends FormLayout {
     }
 
     private void showSaveFailedWithUnexpectedErrorNotification() {
-        Notification notification = new Notification();
-        notification.addThemeVariants(LUMO_ERROR);
-
-        Icon icon = WARNING.create();
-        Div info = new Div(new Text("Failed to save user!"));
-        Button retryBtn = new Button("Retry", clickEvent -> {
-            notification.close();
-            save();
-        });
-        retryBtn.getStyle().set("margin", "0 0 0 var(--lumo-space-l)");
-        HorizontalLayout layout = new HorizontalLayout(icon, info, retryBtn, createCloseBtn(notification));
-        layout.setAlignItems(CENTER);
-
-        notification.add(layout);
-        notification.setPosition(MIDDLE);
-        notification.setDuration(5000);
+        Notification notification = new SaveFailedWithUnexpectedErrorNotification();
         notification.open();
     }
 
-    private void showSaveFailedWithInvalidInput(List<String> violations) {
+    private void showSaveFailedWithInvalidInputNotification(List<String> violations) {
         Notification notification = new SaveFailedWithInvalidInputNotification(violations);
         notification.open();
     }
