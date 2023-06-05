@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 242">
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/save-failed-with-invalid-input-notification.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/SaveFailedWithInvalidInputNotification.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 244">
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/saved-successfully-notification.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/SavedSuccessfullyNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipInfoContainerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipInfoContainerForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserInfoContainerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserInfoContainerForm.java" afterDir="false" />
@@ -182,20 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00196" summary="doghub 194">
-      <created>1685637943377</created>
-      <option name="number" value="00196" />
-      <option name="presentableId" value="LOCAL-00196" />
-      <option name="project" value="LOCAL" />
-      <updated>1685637943377</updated>
-    </task>
-    <task id="LOCAL-00197" summary="doghub 195">
-      <created>1685638292863</created>
-      <option name="number" value="00197" />
-      <option name="presentableId" value="LOCAL-00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1685638292863</updated>
     </task>
     <task id="LOCAL-00198" summary="doghub 196">
       <created>1685717076850</created>
@@ -526,13 +513,25 @@
       <option name="project" value="LOCAL" />
       <updated>1685963218878</updated>
     </task>
-    <option name="localTasksCounter" value="245" />
+    <task id="LOCAL-00245" summary="doghub 243">
+      <created>1685963885365</created>
+      <option name="number" value="00245" />
+      <option name="presentableId" value="LOCAL-00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1685963885365</updated>
+    </task>
+    <task id="LOCAL-00246" summary="doghub 244">
+      <created>1685964336109</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1685964336109</updated>
+    </task>
+    <option name="localTasksCounter" value="247" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 218" />
-    <MESSAGE value="doghub 219" />
     <MESSAGE value="doghub 220" />
     <MESSAGE value="doghub 221" />
     <MESSAGE value="doghub 222" />
@@ -556,6 +555,8 @@
     <MESSAGE value="doghub 240" />
     <MESSAGE value="doghub 241" />
     <MESSAGE value="doghub 242" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 242" />
+    <MESSAGE value="doghub 243" />
+    <MESSAGE value="doghub 244" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 244" />
   </component>
 </project>

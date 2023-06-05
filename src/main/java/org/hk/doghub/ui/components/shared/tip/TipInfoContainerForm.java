@@ -1,16 +1,13 @@
 package org.hk.doghub.ui.components.shared.tip;
 
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
 import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
+import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
@@ -19,11 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY_INLINE;
-import static com.vaadin.flow.component.icon.VaadinIcon.CHECK_CIRCLE;
 import static com.vaadin.flow.component.icon.VaadinIcon.CLOSE_SMALL;
-import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
-import static com.vaadin.flow.component.notification.NotificationVariant.LUMO_SUCCESS;
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
 @Slf4j
 public class TipInfoContainerForm extends FormLayout {
@@ -107,19 +100,7 @@ public class TipInfoContainerForm extends FormLayout {
     }
 
     private void showSavedSuccessfullyNotification() {
-        Notification notification = new Notification();
-        notification.addThemeVariants(LUMO_SUCCESS);
-
-        Icon icon = CHECK_CIRCLE.create();
-        Div info = new Div(new Text("Tip saved successfully!"));
-        Button viewBtn = new Button("View", clickEvent -> notification.close());
-        viewBtn.getStyle().set("margin", "0 0 0 var(--lumo-space-l)");
-        HorizontalLayout layout = new HorizontalLayout(icon, info, viewBtn, createCloseBtn(notification));
-        layout.setAlignItems(CENTER);
-
-        notification.add(layout);
-        notification.setPosition(MIDDLE);
-        notification.setDuration(5000);
+        Notification notification = new SavedSuccessfullyNotification();
         notification.open();
     }
 
