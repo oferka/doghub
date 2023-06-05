@@ -23,7 +23,6 @@ public class SavedSuccessfullyNotification extends Notification {
 
         Div info = new Div(new Text("Saved Successfully!"));
         Button viewBtn = new Button("View", clickEvent -> close());
-        viewBtn.getStyle().set("margin", "0 0 0 var(--lumo-space-l)");
         HorizontalLayout layout = new HorizontalLayout(CHECK_CIRCLE.create(), info, viewBtn, createCloseBtn(this));
         layout.setAlignItems(CENTER);
         add(layout);
