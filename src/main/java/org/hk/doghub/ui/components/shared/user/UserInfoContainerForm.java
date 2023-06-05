@@ -7,9 +7,9 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.ArrayList;
@@ -190,22 +190,7 @@ public class UserInfoContainerForm extends FormLayout {
     }
 
     private void showSaveFailedWithInvalidInput(List<String> violations) {
-        Notification notification = new Notification();
-        notification.addThemeVariants(LUMO_ERROR);
-
-        Icon icon = WARNING.create();
-        VerticalLayout info = new VerticalLayout();
-        Div infoHeader = new Div(new Text("Failed to save user!"));
-        info.add(infoHeader);
-        for(String violation : violations) {
-            info.add(new Div(new Text(violation)));
-        }
-        HorizontalLayout layout = new HorizontalLayout(icon, info, createCloseBtn(notification));
-        layout.setAlignItems(CENTER);
-
-        notification.add(layout);
-        notification.setPosition(MIDDLE);
-        notification.setDuration(10000);
+        Notification notification = new SaveFailedWithInvalidInputNotification(violations);
         notification.open();
     }
 
