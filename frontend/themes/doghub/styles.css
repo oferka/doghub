@@ -38,7 +38,6 @@
 @import url('./shared/tip-info-container.css');
 @import url('./shared/tip-info-container-buttons.css');
 @import url('./shared/tip-info-container-buttons-cancel.css');
-@import url('./shared/tip-info-container-buttons-save.css');
 @import url('./shared/tip-info-container-form.css');
 @import url('./shared/tip-more-info-field.css');
 @import url('./shared/tip-name-field.css');
@@ -58,7 +57,6 @@
 @import url('./shared/user-info-container.css');
 @import url('./shared/user-info-container-buttons.css');
 @import url('./shared/user-info-container-buttons-cancel.css');
-@import url('./shared/user-info-container-buttons-save.css');
 @import url('./shared/user-info-container-form.css');
 @import url('./shared/user-menu-bar.css');
 @import url('./shared/user-mobile-number-field.css');
