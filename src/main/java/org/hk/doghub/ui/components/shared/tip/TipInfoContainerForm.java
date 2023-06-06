@@ -74,7 +74,7 @@ public class TipInfoContainerForm extends FormLayout {
         List<String> violations = validateInput();
         if(violations.isEmpty()) {
             try {
-                tipCreationService.save(
+                DogHubTip tip = tipCreationService.update(
                         id.getValueAsLong(),
                         name.getValue(),
                         title.getValue(),
@@ -82,6 +82,7 @@ public class TipInfoContainerForm extends FormLayout {
                         moreInfo.getValue(),
                         thumbnailPicture.getValue()
                 );
+                log.info("Save successfully for tip with ID '{}'", tip.getId());
                 showSavedSuccessfullyNotification();
             }
             catch (Exception e) {

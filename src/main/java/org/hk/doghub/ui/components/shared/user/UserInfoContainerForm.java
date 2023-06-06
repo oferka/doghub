@@ -113,7 +113,7 @@ public class UserInfoContainerForm extends FormLayout {
         List<String> violations = validateInput();
         if(violations.isEmpty()) {
             try {
-                userCreationService.save(
+                DogHubUser user = userCreationService.update(
                         id.getValueAsLong(),
                         username.getValue(),
                         title.getValue(),
@@ -131,6 +131,7 @@ public class UserInfoContainerForm extends FormLayout {
                         streetNumber.getValue(),
                         postcode.getValue()
                 );
+                log.info("Save successfully for user with ID '{}'", user.getId());
                 showSavedSuccessfullyNotification();
             }
             catch (Exception e) {

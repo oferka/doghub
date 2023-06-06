@@ -29,12 +29,12 @@ public class TipCreationService {
         return tipService.save(getTipEntity(title, createdBy));
     }
 
-    public DogHubTip save(@NotNull Long id,
-                          @NotNull @Size(max = NAME_MAX_LENGTH) String name,
-                          @NotNull @Size(max = TITLE_MAX_LENGTH) String title,
-                          @Size(max = CONTENT_MAX_LENGTH) String content,
-                          @Size(max = MORE_INFO_MAX_LENGTH) String moreInfo,
-                          @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) @URL String thumbnailPicture) {
+    public DogHubTip update(@NotNull Long id,
+                            @NotNull @Size(max = NAME_MAX_LENGTH) String name,
+                            @NotNull @Size(max = TITLE_MAX_LENGTH) String title,
+                            @Size(max = CONTENT_MAX_LENGTH) String content,
+                            @Size(max = MORE_INFO_MAX_LENGTH) String moreInfo,
+                            @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) @URL String thumbnailPicture) {
         Optional<DogHubTip> tipOptional = tipService.findById(id);
         if(tipOptional.isPresent()) {
             DogHubTip tip = tipOptional.get();

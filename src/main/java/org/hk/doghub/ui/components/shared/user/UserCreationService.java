@@ -35,22 +35,22 @@ public class UserCreationService {
         return userService.save(getUserEntity(username, password));
     }
 
-    public DogHubUser save(@NotNull Long id,
-                           @NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
-                           @Size(max = TITLE_MAX_LENGTH) String title,
-                           @Size(max = NAME_MAX_LENGTH) String name,
-                           @Size(max = MOBILE_NUMBER_MAX_LENGTH) String mobileNumber,
-                           @Email @Size(max = EMAIL_MAX_LENGTH)String email,
-                           @URL @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) String thumbnailPicture,
-                           @Size(max = COMPANY_MAX_LENGTH) String company,
-                           @Past ZonedDateTime dateOfBirth,
-                           @NotNull @Past ZonedDateTime dateOfRegistration,
-                           @Size(max = COUNTRY_MAX_LENGTH) String country,
-                           @Size(max = STATE_MAX_LENGTH) String state,
-                           @Size(max = CITY_MAX_LENGTH) String city,
-                           @Size(max = STREET_NAME_MAX_LENGTH) String streetName,
-                           @Positive Integer number,
-                           @Size(max = POSTCODE_MAX_LENGTH) String postcode) {
+    public DogHubUser update(@NotNull Long id,
+                             @NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
+                             @Size(max = TITLE_MAX_LENGTH) String title,
+                             @Size(max = NAME_MAX_LENGTH) String name,
+                             @Size(max = MOBILE_NUMBER_MAX_LENGTH) String mobileNumber,
+                             @Email @Size(max = EMAIL_MAX_LENGTH)String email,
+                             @URL @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) String thumbnailPicture,
+                             @Size(max = COMPANY_MAX_LENGTH) String company,
+                             @Past ZonedDateTime dateOfBirth,
+                             @NotNull @Past ZonedDateTime dateOfRegistration,
+                             @Size(max = COUNTRY_MAX_LENGTH) String country,
+                             @Size(max = STATE_MAX_LENGTH) String state,
+                             @Size(max = CITY_MAX_LENGTH) String city,
+                             @Size(max = STREET_NAME_MAX_LENGTH) String streetName,
+                             @Positive Integer number,
+                             @Size(max = POSTCODE_MAX_LENGTH) String postcode) {
         Optional<DogHubUser> userOptional = userService.findById(id);
         if(userOptional.isPresent()) {
             DogHubUser user = userOptional.get();
