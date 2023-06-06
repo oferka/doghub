@@ -6,8 +6,8 @@ import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
+import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.tip.TipInfoCancelListener;
-import org.hk.doghub.ui.components.shared.tip.TipInfoSaveListener;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
@@ -18,7 +18,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 @Route(value = TipsView.ROUTE, layout = DogHubAppLayout.class)
 @PageTitle(TipView.NAME)
 @RolesAllowed({"USER", "ADMIN"})
-public class TipView extends VerticalLayout implements HasUrlParameter<Long>, TipInfoSaveListener, TipInfoCancelListener {
+public class TipView extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, TipInfoCancelListener {
 
     public static final String ID_PREFIX = "tip";
     public static final String ID_SUFFIX = "-view";
@@ -44,7 +44,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, Ti
         add(header);
 
         body = new TipViewBody(tipsDataProvider, authenticatedUser, tipCreationService);
-        body.addTipInfoSaveListener(this);
+        body.addInfoSaveListener(this);
         body.addTipInfoCancelListener(this);
         addAndExpand(body);
 

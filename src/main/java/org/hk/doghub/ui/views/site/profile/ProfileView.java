@@ -8,10 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
+import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.components.shared.user.UserInfoCancelListener;
 import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
-import org.hk.doghub.ui.components.shared.user.UserInfoSaveListener;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayout;
 
@@ -21,7 +21,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 @Route(value = ProfileView.ROUTE, layout = DogHubSiteLayout.class)
 @PageTitle(ProfileView.NAME)
 @RolesAllowed({"USER", "ADMIN"})
-public class ProfileView extends VerticalLayout implements UserInfoSaveListener, UserInfoCancelListener {
+public class ProfileView extends VerticalLayout implements InfoSaveListener, UserInfoCancelListener {
 
     public static final String ROUTE = "profile";
     public static final String ID_PREFIX = "profile";
@@ -39,7 +39,7 @@ public class ProfileView extends VerticalLayout implements UserInfoSaveListener,
         if(authenticatedUser.get().isPresent()) {
             userInfo.setUser(authenticatedUser.get().get().getId());
         }
-        userInfo.addUserInfoSaveListener(this);
+        userInfo.addInfoSaveListener(this);
         userInfo.addUserInfoCancelListener(this);
         add(userInfo);
     }

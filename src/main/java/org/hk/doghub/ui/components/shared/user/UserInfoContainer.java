@@ -3,6 +3,7 @@ package org.hk.doghub.ui.components.shared.user;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.Optional;
@@ -45,12 +46,12 @@ public class UserInfoContainer extends VerticalLayout {
         form.cancel();
     }
 
-    public void addUserInfoSaveListener(UserInfoSaveListener listener) {
-        buttons.addUserInfoSaveListener(listener);
+    public void addInfoSaveListener(InfoSaveListener listener) {
+        buttons.addInfoSaveListener(listener);
     }
 
-    public void removeUserInfoSaveListener(UserInfoSaveListener listener) {
-        buttons.removeUserInfoSaveListener(listener);
+    public void removeInfoSaveListener(InfoSaveListener listener) {
+        buttons.removeInfoSaveListener(listener);
     }
 
     public void addUserInfoCancelListener(UserInfoCancelListener listener) {

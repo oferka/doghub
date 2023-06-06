@@ -3,6 +3,7 @@ package org.hk.doghub.ui.components.shared.tip;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
@@ -46,12 +47,12 @@ public class TipInfoContainer extends VerticalLayout {
         form.cancel();
     }
 
-    public void addTipInfoSaveListener(TipInfoSaveListener listener) {
-        buttons.addTipInfoSaveListener(listener);
+    public void addInfoSaveListener(InfoSaveListener listener) {
+        buttons.addInfoSaveListener(listener);
     }
 
-    public void removeTipInfoSaveListener(TipInfoSaveListener listener) {
-        buttons.removeTipInfoSaveListener(listener);
+    public void removeInfoSaveListener(InfoSaveListener listener) {
+        buttons.removeInfoSaveListener(listener);
     }
 
     public void addTipInfoCancelListener(TipInfoCancelListener listener) {
