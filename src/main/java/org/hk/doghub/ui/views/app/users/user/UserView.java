@@ -12,7 +12,7 @@ import org.hk.doghub.ui.components.shared.InfoCancelEvent;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
-import org.hk.doghub.ui.components.shared.user.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserUpdateService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -34,7 +34,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
     private final UserViewBody body;
     private final UserViewFooter footer;
 
-    public UserView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
@@ -42,7 +42,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
         header = new UserViewHeader(userDataProvider);
         add(header);
 
-        body = new UserViewBody(userDataProvider, authenticatedUser, userCreationService);
+        body = new UserViewBody(userDataProvider, authenticatedUser, userUpdateService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);

@@ -22,13 +22,13 @@ public class UserInfoContainer extends VerticalLayout {
 
     private final InfoContainerButtons buttons;
 
-    public UserInfoContainer(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserInfoContainer(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
         this.userDataProvider = userDataProvider;
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        form = new UserInfoContainerForm(userDataProvider, userCreationService);
+        form = new UserInfoContainerForm(userDataProvider, userUpdateService);
         add(form);
 
         buttons = new InfoContainerButtons();

@@ -7,7 +7,6 @@ import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoContainerButtons;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
-import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
 import java.util.Optional;
 
@@ -23,13 +22,13 @@ public class TipInfoContainer extends VerticalLayout {
 
     private final InfoContainerButtons buttons;
 
-    public TipInfoContainer(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+    public TipInfoContainer(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipUpdateService tipUpdateService) {
         this.tipDataProvider = tipDataProvider;
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        form = new TipInfoContainerForm(tipDataProvider, tipCreationService);
+        form = new TipInfoContainerForm(tipDataProvider, tipUpdateService);
         add(form);
 
         buttons = new InfoContainerButtons();

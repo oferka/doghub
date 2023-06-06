@@ -4,8 +4,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
-import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
+import org.hk.doghub.ui.components.shared.user.UserUpdateService;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -16,13 +16,13 @@ public class UserViewBody extends VerticalLayout {
 
     private final UserInfoContainer userInfo;
 
-    public UserViewBody(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserViewBody(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        userInfo = new UserInfoContainer(userDataProvider, authenticatedUser, userCreationService);
+        userInfo = new UserInfoContainer(userDataProvider, authenticatedUser, userUpdateService);
         add(userInfo);
     }
 

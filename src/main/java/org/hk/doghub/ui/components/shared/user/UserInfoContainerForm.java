@@ -42,11 +42,11 @@ public class UserInfoContainerForm extends FormLayout {
 
     private final UserDataProvider userDataProvider;
 
-    private final UserCreationService userCreationService;
+    private final UserUpdateService userUpdateService;
 
-    public UserInfoContainerForm(UserDataProvider userDataProvider, UserCreationService userCreationService) {
+    public UserInfoContainerForm(UserDataProvider userDataProvider, UserUpdateService userUpdateService) {
         this.userDataProvider = userDataProvider;
-        this.userCreationService = userCreationService;
+        this.userUpdateService = userUpdateService;
         addClassName(CLASS_NAME);
 
         id = new UserIdField();
@@ -113,7 +113,7 @@ public class UserInfoContainerForm extends FormLayout {
         List<String> violations = validateInput();
         if(violations.isEmpty()) {
             try {
-                DogHubUser user = userCreationService.update(
+                DogHubUser user = userUpdateService.update(
                         id.getValueAsLong(),
                         username.getValue(),
                         title.getValue(),

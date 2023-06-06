@@ -5,8 +5,8 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.tip.TipInfoContainer;
+import org.hk.doghub.ui.components.shared.tip.TipUpdateService;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
-import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -16,13 +16,13 @@ public class TipViewBody extends VerticalLayout {
 
     private final TipInfoContainer tipInfo;
 
-    public TipViewBody(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+    public TipViewBody(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipUpdateService tipUpdateService) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        tipInfo = new TipInfoContainer(tipDataProvider, authenticatedUser, tipCreationService);
+        tipInfo = new TipInfoContainer(tipDataProvider, authenticatedUser, tipUpdateService);
         add(tipInfo);
     }
 

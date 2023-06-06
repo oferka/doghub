@@ -8,10 +8,10 @@ import org.hk.doghub.ui.components.shared.InfoCancelEvent;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
+import org.hk.doghub.ui.components.shared.tip.TipUpdateService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
-import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -33,7 +33,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
 
     private final AuthenticatedUser authenticatedUser;
 
-    public TipView(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+    public TipView(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipUpdateService tipUpdateService) {
         this.tipDataProvider = tipDataProvider;
         this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
@@ -43,7 +43,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
         header = new TipViewHeader(tipDataProvider, authenticatedUser);
         add(header);
 
-        body = new TipViewBody(tipDataProvider, authenticatedUser, tipCreationService);
+        body = new TipViewBody(tipDataProvider, authenticatedUser, tipUpdateService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);

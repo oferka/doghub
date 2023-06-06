@@ -10,8 +10,8 @@ import org.hk.doghub.ui.components.shared.InfoCancelEvent;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
-import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
+import org.hk.doghub.ui.components.shared.user.UserUpdateService;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayout;
 
@@ -31,11 +31,11 @@ public class ProfileView extends VerticalLayout implements InfoSaveListener, Inf
 
     private final UserInfoContainer userInfo;
 
-    public ProfileView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public ProfileView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
-        userInfo = new UserInfoContainer(userDataProvider, authenticatedUser, userCreationService);
+        userInfo = new UserInfoContainer(userDataProvider, authenticatedUser, userUpdateService);
         if(authenticatedUser.get().isPresent()) {
             userInfo.setUser(authenticatedUser.get().get().getId());
         }

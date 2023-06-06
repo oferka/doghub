@@ -8,7 +8,6 @@ import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification
 import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
-import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +29,11 @@ public class TipInfoContainerForm extends FormLayout {
 
     private final TipDataProvider tipDataProvider;
 
-    private final TipCreationService tipCreationService;
+    private final TipUpdateService tipUpdateService;
 
-    public TipInfoContainerForm(TipDataProvider tipDataProvider, TipCreationService tipCreationService) {
+    public TipInfoContainerForm(TipDataProvider tipDataProvider, TipUpdateService tipUpdateService) {
         this.tipDataProvider = tipDataProvider;
-        this.tipCreationService = tipCreationService;
+        this.tipUpdateService = tipUpdateService;
         addClassName(CLASS_NAME);
 
         id = new TipIdField();
@@ -74,7 +73,7 @@ public class TipInfoContainerForm extends FormLayout {
         List<String> violations = validateInput();
         if(violations.isEmpty()) {
             try {
-                DogHubTip tip = tipCreationService.update(
+                DogHubTip tip = tipUpdateService.update(
                         id.getValueAsLong(),
                         name.getValue(),
                         title.getValue(),
