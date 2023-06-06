@@ -114,12 +114,6 @@ public class TipInfoContainerForm extends FormLayout {
         notification.open();
     }
 
-    private Button createCloseBtn(Notification notification) {
-        Button closeBtn = new Button(CLOSE_SMALL.create(), clickEvent -> notification.close());
-        closeBtn.addThemeVariants(LUMO_TERTIARY_INLINE);
-        return closeBtn;
-    }
-
     private List<String> validateInput() {
         List<String> violations = new ArrayList<>();
         violations.addAll(id.validateField());
