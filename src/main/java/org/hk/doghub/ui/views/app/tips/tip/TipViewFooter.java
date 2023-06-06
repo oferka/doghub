@@ -3,8 +3,9 @@ package org.hk.doghub.ui.views.app.tips.tip;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.tip.TipsRouterLink;
+import org.hk.doghub.ui.components.shared.EntitiesRouterLink;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
+import org.hk.doghub.ui.views.app.tips.TipsView;
 
 @Slf4j
 public class TipViewFooter extends HorizontalLayout {
@@ -13,7 +14,7 @@ public class TipViewFooter extends HorizontalLayout {
 
     private final PreviousTipRouterLink previous;
 
-    private final TipsRouterLink tips;
+    private final EntitiesRouterLink entities;
 
     private final NextTipRouterLink next;
 
@@ -28,8 +29,8 @@ public class TipViewFooter extends HorizontalLayout {
         previous = new PreviousTipRouterLink(tipDataProvider, authenticatedUser);
         add(previous);
 
-        tips = new TipsRouterLink();
-        add(tips);
+        entities = new EntitiesRouterLink(TipsView.class, "Tips");
+        add(entities);
 
         next = new NextTipRouterLink(tipDataProvider, authenticatedUser);
         add(next);
