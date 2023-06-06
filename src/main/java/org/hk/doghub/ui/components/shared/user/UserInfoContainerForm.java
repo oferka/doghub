@@ -145,6 +145,11 @@ public class UserInfoContainerForm extends FormLayout {
         log.info("Save for user with ID '{}' has completed", id.getValue());
     }
 
+    public void cancel() {
+        Optional<DogHubUser> userOptional = userDataProvider.findById(id.getValue().longValue());
+        userOptional.ifPresent(this::setUser);
+    }
+
     private void showSavedSuccessfullyNotification() {
         Notification notification = new SavedSuccessfullyNotification();
         notification.open();
@@ -179,10 +184,5 @@ public class UserInfoContainerForm extends FormLayout {
         violations.addAll(streetNumber.validateField());
         violations.addAll(postcode.validateField());
         return violations;
-    }
-
-    public void cancel() {
-        Optional<DogHubUser> userOptional = userDataProvider.findById(id.getValue().longValue());
-        userOptional.ifPresent(this::setUser);
     }
 }

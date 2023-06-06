@@ -95,6 +95,11 @@ public class TipInfoContainerForm extends FormLayout {
         log.info("Save for tip with ID '{}' has completed", id.getValue());
     }
 
+    public void cancel() {
+        Optional<DogHubTip> tipOptional = tipDataProvider.findById(id.getValue().longValue());
+        tipOptional.ifPresent(this::setTip);
+    }
+
     private void showSavedSuccessfullyNotification() {
         Notification notification = new SavedSuccessfullyNotification();
         notification.open();
@@ -121,10 +126,5 @@ public class TipInfoContainerForm extends FormLayout {
         violations.addAll(creationTime.validateField());
         violations.addAll(createdBy.validateTipField());
         return violations;
-    }
-
-    public void cancel() {
-        Optional<DogHubTip> tipOptional = tipDataProvider.findById(id.getValue().longValue());
-        tipOptional.ifPresent(this::setTip);
     }
 }
