@@ -18,7 +18,7 @@ public class TipInfoSaveButton extends Button {
 
     private final List<TipInfoSaveListener> tipInfoSaveListeners = new ArrayList<>();
 
-    public TipInfoSaveButton(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+    public TipInfoSaveButton() {
         addClassName(CLASS_NAME);
         setText("Save");
         addClickShortcut(KEY_S, ALT);

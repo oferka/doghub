@@ -16,7 +16,7 @@ public class TipInfoContainerButtons extends HorizontalLayout {
     public TipInfoContainerButtons(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
 
-        save = new TipInfoSaveButton(tipsDataProvider, authenticatedUser, tipCreationService);
+        save = new TipInfoSaveButton();
         add(save);
 
         cancel = new TipInfoCancelButton();

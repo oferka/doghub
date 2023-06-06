@@ -17,7 +17,7 @@ public class UserInfoSaveButton extends Button {
 
     private final List<UserInfoSaveListener> userInfoSaveListeners = new ArrayList<>();
 
-    public UserInfoSaveButton(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserInfoSaveButton() {
         addClassName(CLASS_NAME);
         setText("Save");
         addClickShortcut(KEY_S, ALT);

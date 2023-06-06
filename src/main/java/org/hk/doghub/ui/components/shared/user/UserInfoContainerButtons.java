@@ -15,7 +15,7 @@ public class UserInfoContainerButtons extends HorizontalLayout {
     public UserInfoContainerButtons(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
-        save = new UserInfoSaveButton(usersDataProvider, authenticatedUser, userCreationService);
+        save = new UserInfoSaveButton();
         add(save);
 
         cancel = new UserInfoCancelButton();
