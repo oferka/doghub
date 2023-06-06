@@ -2,9 +2,6 @@ package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
-import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,8 +2,6 @@ package org.hk.doghub.ui.components.shared.user;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
 import java.util.ArrayList;
 import java.util.List;
