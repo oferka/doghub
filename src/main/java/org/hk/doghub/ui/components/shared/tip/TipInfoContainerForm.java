@@ -1,6 +1,5 @@
 package org.hk.doghub.ui.components.shared.tip;
 
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
@@ -14,9 +13,6 @@ import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import static com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY_INLINE;
-import static com.vaadin.flow.component.icon.VaadinIcon.CLOSE_SMALL;
 
 @Slf4j
 public class TipInfoContainerForm extends FormLayout {
