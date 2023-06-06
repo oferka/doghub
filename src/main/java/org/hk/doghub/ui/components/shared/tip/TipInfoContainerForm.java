@@ -57,7 +57,7 @@ public class TipInfoContainerForm extends FormLayout {
         add(id, name, createdBy, creationTime, title, content, thumbnailPicture, moreInfo);
     }
 
-    public void setTip(DogHubTip tip) {
+    public void setValue(DogHubTip tip) {
         id.setValue(tip);
         name.setValue(tip);
         title.setValue(tip);
@@ -97,7 +97,7 @@ public class TipInfoContainerForm extends FormLayout {
 
     public void cancel() {
         Optional<DogHubTip> tipOptional = tipDataProvider.findById(id.getValue().longValue());
-        tipOptional.ifPresent(this::setTip);
+        tipOptional.ifPresent(this::setValue);
     }
 
     private void showSavedSuccessfullyNotification() {

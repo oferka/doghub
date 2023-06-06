@@ -37,7 +37,7 @@ public class UserInfoContainer extends VerticalLayout {
 
     public void setUser(long userId) {
         Optional<DogHubUser> userOptional = userDataProvider.findById(userId);
-        userOptional.ifPresent(form::setUser);
+        userOptional.ifPresent(form::setValue);
     }
 
     public void save() {

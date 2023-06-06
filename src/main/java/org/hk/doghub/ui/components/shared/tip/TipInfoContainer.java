@@ -37,7 +37,7 @@ public class TipInfoContainer extends VerticalLayout {
 
     public void setTip(long tipId) {
         Optional<DogHubTip> tipOptional = tipDataProvider.findById(tipId);
-        tipOptional.ifPresent(form::setTip);
+        tipOptional.ifPresent(form::setValue);
     }
 
     public void save() {

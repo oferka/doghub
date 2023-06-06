@@ -89,7 +89,7 @@ public class UserInfoContainerForm extends FormLayout {
         add(id, username, title, name, mobileNumber, email, thumbnailPicture, company, dateOfBirth, dateOfRegistration, country, state, city, streetName, streetNumber, postcode);
     }
 
-    public void setUser(DogHubUser user) {
+    public void setValue(DogHubUser user) {
         id.setValue(user);
         username.setValue(user);
         title.setValue(user);
@@ -147,7 +147,7 @@ public class UserInfoContainerForm extends FormLayout {
 
     public void cancel() {
         Optional<DogHubUser> userOptional = userDataProvider.findById(id.getValue().longValue());
-        userOptional.ifPresent(this::setUser);
+        userOptional.ifPresent(this::setValue);
     }
 
     private void showSavedSuccessfullyNotification() {
