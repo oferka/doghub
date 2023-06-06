@@ -51,7 +51,7 @@ public class DogHubComboBoxField extends ComboBox<String> {
 
     private List<String> validateField(String value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() > maxLength) {
+        if(value != null && value.length() > maxLength) {
             result.add(format("{0} length must be up to {1} characters", getLabel(), maxLength));
         }
         return result;

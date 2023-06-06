@@ -10,7 +10,6 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Nullable;
 import java.time.ZonedDateTime;
 import java.util.Optional;
 import java.util.Set;
@@ -31,27 +30,27 @@ public class UserCreationService {
 
     private final PasswordEncoder passwordEncoder;
 
-    public DogHubUser create(@NotNull @Email String email, @NotNull String password) {
-        return userService.save(getUserEntity(email, password));
+    public DogHubUser create(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
+                             @NotNull String password) {
+        return userService.save(getUserEntity(username, password));
     }
 
-    public DogHubUser save(
-            @NotNull Long id,
-            @NotNull @Size(max = USER_NAME_MAX_LENGTH) @NotBlank String username,
-            @Nullable @Size(max = TITLE_MAX_LENGTH) String title,
-            @Nullable @Size(max = NAME_MAX_LENGTH) @NotBlank String name,
-            @Nullable @Size(max = MOBILE_NUMBER_MAX_LENGTH) String mobileNumber,
-            @Nullable @Email String email,
-            @Nullable @URL @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) String thumbnailPicture,
-            @Nullable @Size(max = COMPANY_MAX_LENGTH) String company,
-            @Nullable @Past ZonedDateTime dateOfBirth,
-            @NotNull @Past ZonedDateTime dateOfRegistration,
-            @Nullable @Size(max = COUNTRY_MAX_LENGTH) @NotBlank String country,
-            @Nullable @Size(max = STATE_MAX_LENGTH) @NotBlank String state,
-            @Nullable @Size(max = CITY_MAX_LENGTH) @NotBlank String city,
-            @Nullable @Size(max = STREET_NAME_MAX_LENGTH) @NotBlank String streetName,
-            @Nullable @Positive Integer number,
-            @Nullable @Size(max = POSTCODE_MAX_LENGTH) @NotBlank String postcode) {
+    public DogHubUser save(@NotNull Long id,
+                           @NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
+                           @Size(max = TITLE_MAX_LENGTH) String title,
+                           @Size(max = NAME_MAX_LENGTH) String name,
+                           @Size(max = MOBILE_NUMBER_MAX_LENGTH) String mobileNumber,
+                           @Email @Size(max = EMAIL_MAX_LENGTH)String email,
+                           @URL @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) String thumbnailPicture,
+                           @Size(max = COMPANY_MAX_LENGTH) String company,
+                           @Past ZonedDateTime dateOfBirth,
+                           @NotNull @Past ZonedDateTime dateOfRegistration,
+                           @Size(max = COUNTRY_MAX_LENGTH) String country,
+                           @Size(max = STATE_MAX_LENGTH) String state,
+                           @Size(max = CITY_MAX_LENGTH) String city,
+                           @Size(max = STREET_NAME_MAX_LENGTH) String streetName,
+                           @Positive Integer number,
+                           @Size(max = POSTCODE_MAX_LENGTH) String postcode) {
         Optional<DogHubUser> userOptional = userService.findById(id);
         if(userOptional.isPresent()) {
             DogHubUser user = userOptional.get();
@@ -80,18 +79,19 @@ public class UserCreationService {
         throw new IllegalArgumentException(format("Failed to save user with ID: %s'", id));
     }
 
-    private @NotNull DogHubUser getUserEntity(@NotNull @Email String email, @NotNull String password) {
+    private @NotNull DogHubUser getUserEntity(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
+                                              @NotNull String password) {
         DogHubUser result = new DogHubUser();
-        result.setUsername(email);
-        result.setEmail(email);
-        result.setName(email);
+        result.setUsername(username);
+        result.setEmail(username);
+        result.setName(username);
         result.setHashedPassword(passwordEncoder.encode(password));
         result.setRoles(Set.of(USER));
         result.setDateOfRegistration(ZonedDateTime.now());
         return result;
     }
 
-    public boolean exists(@NotNull @Email String email) {
-        return userService.existsByUsername(email);
+    public boolean exists(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username) {
+        return userService.existsByUsername(username);
     }
 }

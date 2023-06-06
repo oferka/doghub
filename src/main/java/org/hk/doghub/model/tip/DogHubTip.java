@@ -3,7 +3,10 @@ package org.hk.doghub.model.tip;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
@@ -26,9 +29,7 @@ public class DogHubTip extends NamedEntity {
 
     public static final int THUMBNAIL_PICTURE_MAX_LENGTH = 1024;
 
-    @NotNull
-    @Size(max = TITLE_MAX_LENGTH)
-    @NotBlank
+    @NotNull @Size(max = TITLE_MAX_LENGTH)
     private String title;
 
     @Size(max = CONTENT_MAX_LENGTH)
@@ -37,8 +38,7 @@ public class DogHubTip extends NamedEntity {
     @Size(max = MORE_INFO_MAX_LENGTH)
     private String moreInfo;
 
-    @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH)
-    @URL
+    @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) @URL
     private String thumbnailPicture;
 
     @PositiveOrZero
@@ -54,6 +54,7 @@ public class DogHubTip extends NamedEntity {
     @Past
     private ZonedDateTime creationTime;
 
+    @NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="created_by_id")
     private DogHubUser createdBy;

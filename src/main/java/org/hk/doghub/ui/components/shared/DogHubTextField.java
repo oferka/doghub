@@ -43,10 +43,10 @@ public class DogHubTextField extends TextField {
         }
     }
 
-    private List<String> validateField(@NotNull String value) {
+    private List<String> validateField(String value) {
         List<String> result = new ArrayList<>();
-        if(value.length() < getMinLength() || value.length() > getMaxLength()) {
-            result.add(format("{0} length must be between {1} and {2} characters", getLabel(), getMinLength(), getMaxLength()));
+        if(value != null && value.length() > getMaxLength()) {
+            result.add(format("{0} length must be up to {1} characters", getLabel(), getMaxLength()));
         }
         return result;
     }

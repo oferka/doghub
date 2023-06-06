@@ -36,21 +36,17 @@ public class DogHubUser extends NamedEntity {
 
     public static final int PASSWORD_MAX_LENGTH = 64;
 
-    @NotNull
-    @Size(max = USER_NAME_MAX_LENGTH)
-    @NotBlank
+    @NotNull @Size(max = USER_NAME_MAX_LENGTH)
     @Column(unique=true)
     private String username;
 
-    @Size(max = EMAIL_MAX_LENGTH)
-    @Email
+    @Size(max = EMAIL_MAX_LENGTH) @Email
     private String email;
 
     @Size(max = TITLE_MAX_LENGTH)
     private String title;
 
-    @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH)
-    @URL
+    @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) @URL
     private String thumbnailPicture;
 
     @JsonSerialize(using = ZonedDateTimeSerializer.class)
@@ -71,9 +67,7 @@ public class DogHubUser extends NamedEntity {
     private String mobileNumber;
 
     @JsonIgnore
-    @NotNull
-    @Size(max = PASSWORD_MAX_LENGTH)
-    @NotBlank
+    @NotNull @Size(max = PASSWORD_MAX_LENGTH)
     private String hashedPassword;
 
     @PositiveOrZero
