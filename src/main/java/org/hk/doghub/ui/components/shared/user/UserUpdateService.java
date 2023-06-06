@@ -7,7 +7,6 @@ import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
@@ -25,8 +24,6 @@ import static org.hk.doghub.model.user.DogHubUser.*;
 public class UserUpdateService {
 
     private final DogHubUserService userService;
-
-    private final PasswordEncoder passwordEncoder;
 
     public DogHubUser update(@NotNull Long id,
                              @NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
