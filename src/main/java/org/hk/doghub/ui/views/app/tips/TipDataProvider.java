@@ -3,19 +3,12 @@ package org.hk.doghub.ui.views.app.tips;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface TipDataProvider {
-
-    long count();
-
-    @NotNull
-    List<DogHubTip> findAll();
-
-    @NotNull
-    Optional<DogHubTip> findById(@NotNull Long id);
+public interface TipDataProvider extends EntityDataProvider<DogHubTip> {
 
     Optional<DogHubTip> findNext(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
 

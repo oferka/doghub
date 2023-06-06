@@ -2,19 +2,11 @@ package org.hk.doghub.ui.views.app.users;
 
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 
-import java.util.List;
 import java.util.Optional;
 
-public interface UserDataProvider {
-
-    long count();
-
-    @NotNull
-    List<DogHubUser> findAll();
-
-    @NotNull
-    Optional<DogHubUser> findById(@NotNull Long id);
+public interface UserDataProvider extends EntityDataProvider<DogHubUser> {
 
     @NotNull
     Optional<DogHubUser> findNext(Long id);
