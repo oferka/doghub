@@ -31,7 +31,7 @@ public class TipInfoContainer extends VerticalLayout {
         form = new TipInfoContainerForm(tipsDataProvider, tipCreationService);
         add(form);
 
-        buttons = new TipInfoContainerButtons(tipsDataProvider, authenticatedUser, tipCreationService);
+        buttons = new TipInfoContainerButtons();
         add(buttons);
     }
 

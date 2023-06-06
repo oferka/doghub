@@ -30,7 +30,7 @@ public class UserInfoContainer extends VerticalLayout {
         form = new UserInfoContainerForm(usersDataProvider, userCreationService);
         add(form);
 
-        buttons = new UserInfoContainerButtons(usersDataProvider, authenticatedUser, userCreationService);
+        buttons = new UserInfoContainerButtons();
         add(buttons);
     }
 
