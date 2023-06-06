@@ -8,9 +8,9 @@ import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoCancelEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
-import org.hk.doghub.ui.components.shared.user.UserInfoCancelEvent;
 import org.hk.doghub.ui.components.shared.user.UserInfoCancelListener;
 import org.hk.doghub.ui.components.shared.user.UserInfoSaveListener;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
@@ -70,7 +70,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, U
     }
 
     @Override
-    public void cancelTriggered(UserInfoCancelEvent event) {
+    public void cancelTriggered(InfoCancelEvent event) {
         header.cancel();
         body.cancel();
         footer.cancel();

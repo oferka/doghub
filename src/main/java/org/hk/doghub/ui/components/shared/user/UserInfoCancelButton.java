@@ -2,6 +2,7 @@ package org.hk.doghub.ui.components.shared.user;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import org.hk.doghub.ui.components.shared.InfoCancelEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +32,10 @@ public class UserInfoCancelButton extends Button {
     }
 
     private void cancelClicked(ClickEvent<Button> event) {
-        fireUserInfoCancelEvent(new UserInfoCancelEvent(this));
+        fireInfoCancelEvent(new InfoCancelEvent(this));
     }
 
-    private void fireUserInfoCancelEvent(UserInfoCancelEvent event) {
+    private void fireInfoCancelEvent(InfoCancelEvent event) {
         for(UserInfoCancelListener listener : userInfoCancelListeners) {
             listener.cancelTriggered(event);
         }
