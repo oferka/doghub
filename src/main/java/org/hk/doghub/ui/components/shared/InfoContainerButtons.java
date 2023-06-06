@@ -1,20 +1,16 @@
-package org.hk.doghub.ui.components.shared.user;
+package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.ui.components.shared.InfoCancelButton;
-import org.hk.doghub.ui.components.shared.InfoCancelListener;
-import org.hk.doghub.ui.components.shared.InfoSaveButton;
-import org.hk.doghub.ui.components.shared.InfoSaveListener;
 
-public class UserInfoContainerButtons extends HorizontalLayout {
+public class InfoContainerButtons extends HorizontalLayout {
 
-    public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-buttons";
+    public static final String CLASS_NAME = "info-container-buttons";
 
     private final InfoSaveButton save;
 
     private final InfoCancelButton cancel;
 
-    public UserInfoContainerButtons() {
+    public InfoContainerButtons() {
         addClassName(CLASS_NAME);
 
         save = new InfoSaveButton();
