@@ -8,7 +8,11 @@ import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.user.*;
+import org.hk.doghub.ui.components.shared.InfoSaveEvent;
+import org.hk.doghub.ui.components.shared.user.UserCreationService;
+import org.hk.doghub.ui.components.shared.user.UserInfoCancelEvent;
+import org.hk.doghub.ui.components.shared.user.UserInfoCancelListener;
+import org.hk.doghub.ui.components.shared.user.UserInfoSaveListener;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -59,7 +63,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, U
     }
 
     @Override
-    public void saveTriggered(UserInfoSaveEvent event) {
+    public void saveTriggered(InfoSaveEvent event) {
         header.save();
         body.save();
         footer.save();

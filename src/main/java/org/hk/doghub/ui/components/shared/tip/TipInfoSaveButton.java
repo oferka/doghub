@@ -2,6 +2,7 @@ package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +32,10 @@ public class TipInfoSaveButton extends Button {
     }
 
     private void saveClicked(ClickEvent<Button> event) {
-        fireTipInfoSaveEvent(new TipInfoSaveEvent(this));
+        fireInfoSaveEvent(new InfoSaveEvent(this));
     }
 
-    private void fireTipInfoSaveEvent(TipInfoSaveEvent event) {
+    private void fireInfoSaveEvent(InfoSaveEvent event) {
         for(TipInfoSaveListener listener : tipInfoSaveListeners) {
             listener.saveTriggered(event);
         }

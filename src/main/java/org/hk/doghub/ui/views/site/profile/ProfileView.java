@@ -6,6 +6,7 @@ import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.user.*;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayout;
@@ -40,7 +41,7 @@ public class ProfileView extends VerticalLayout implements UserInfoSaveListener,
     }
 
     @Override
-    public void saveTriggered(UserInfoSaveEvent event) {
+    public void saveTriggered(InfoSaveEvent event) {
         userInfo.save();
     }
 

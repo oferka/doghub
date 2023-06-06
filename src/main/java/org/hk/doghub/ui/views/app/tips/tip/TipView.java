@@ -4,9 +4,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.tip.TipInfoCancelEvent;
 import org.hk.doghub.ui.components.shared.tip.TipInfoCancelListener;
-import org.hk.doghub.ui.components.shared.tip.TipInfoSaveEvent;
 import org.hk.doghub.ui.components.shared.tip.TipInfoSaveListener;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
@@ -67,7 +67,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, Ti
     }
 
     @Override
-    public void saveTriggered(TipInfoSaveEvent event) {
+    public void saveTriggered(InfoSaveEvent event) {
         header.save();
         body.save();
         footer.save();
