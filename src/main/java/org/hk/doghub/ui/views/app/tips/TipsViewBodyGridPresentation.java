@@ -11,11 +11,11 @@ public class TipsViewBodyGridPresentation extends VerticalLayout {
 
     private final TipsGrid grid;
 
-    public TipsViewBodyGridPresentation(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipsViewBodyGridPresentation(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        grid = new TipsGrid(tipsDataProvider, authenticatedUser);
+        grid = new TipsGrid(tipDataProvider, authenticatedUser);
         addAndExpand(grid);
     }
 }

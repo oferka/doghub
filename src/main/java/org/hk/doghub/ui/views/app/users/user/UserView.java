@@ -14,7 +14,7 @@ import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
+import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -34,20 +34,20 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
     private final UserViewBody body;
     private final UserViewFooter footer;
 
-    public UserView(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        header = new UserViewHeader(usersDataProvider);
+        header = new UserViewHeader(userDataProvider);
         add(header);
 
-        body = new UserViewBody(usersDataProvider, authenticatedUser, userCreationService);
+        body = new UserViewBody(userDataProvider, authenticatedUser, userCreationService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);
 
-        footer = new UserViewFooter(usersDataProvider);
+        footer = new UserViewFooter(userDataProvider);
         add(footer);
     }
 

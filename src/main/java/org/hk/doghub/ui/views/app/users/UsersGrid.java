@@ -9,7 +9,7 @@ public class UsersGrid extends Grid<DogHubUser> {
 
     public static final String CLASS_NAME = "users-grid";
 
-    public UsersGrid(UsersDataProvider usersDataProvider) {
+    public UsersGrid(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
         setWidthFull();
         addColumn(new ComponentRenderer<>(UserIdRouterLink::new)).setHeader("ID").setComparator(DogHubUser::getId);
@@ -20,6 +20,6 @@ public class UsersGrid extends Grid<DogHubUser> {
         addColumn(new ComponentRenderer<>(UserLikes::new)).setHeader("Likes").setComparator(DogHubUser::getLikes);
         addColumn(new ComponentRenderer<>(UserComments::new)).setHeader("Comments").setComparator(DogHubUser::getComments);
         addColumn(new ComponentRenderer<>(UserShares::new)).setHeader("Shares").setComparator(DogHubUser::getShares);
-        setItems(usersDataProvider.findAll());
+        setItems(userDataProvider.findAll());
     }
 }

@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
+import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 public class UserViewHeaderActions extends HorizontalLayout {
 
@@ -10,13 +10,13 @@ public class UserViewHeaderActions extends HorizontalLayout {
     private final UserViewHeaderActionsShareButton share;
     private final UserViewHeaderActionsExportButton export;
 
-    public UserViewHeaderActions(UsersDataProvider usersDataProvider) {
+    public UserViewHeaderActions(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
 
-        share = new UserViewHeaderActionsShareButton(usersDataProvider);
+        share = new UserViewHeaderActionsShareButton(userDataProvider);
         add(share);
 
-        export = new UserViewHeaderActionsExportButton(usersDataProvider);
+        export = new UserViewHeaderActionsExportButton(userDataProvider);
         add(export);
     }
 

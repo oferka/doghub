@@ -9,7 +9,7 @@ public class TipsViewHeaderInfoTitleIcon extends Icon {
 
     public static final String CLASS_NAME = TipsViewHeaderInfoTitle.CLASS_NAME + "-icon";
 
-    public TipsViewHeaderInfoTitleIcon(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfoTitleIcon(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         super(LINK);
         addClassName(CLASS_NAME);
     }

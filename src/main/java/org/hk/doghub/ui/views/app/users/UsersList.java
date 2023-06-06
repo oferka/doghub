@@ -10,7 +10,7 @@ public class UsersList extends Div {
 
     public static final String CLASS_NAME = "users-list";
 
-    public UsersList(UsersDataProvider usersDataProvider) {
+    public UsersList(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
         setWidthFull();
         Grid<DogHubUser> grid = new Grid<>();
@@ -19,7 +19,7 @@ public class UsersList extends Div {
         grid.setHeightFull();
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
         grid.addComponentColumn(this::createListItem);
-        grid.setItems(usersDataProvider.findAll());
+        grid.setItems(userDataProvider.findAll());
         add(grid);
     }
 

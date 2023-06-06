@@ -7,7 +7,7 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
 import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
-import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
+import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
 import java.util.ArrayList;
@@ -28,12 +28,12 @@ public class TipInfoContainerForm extends FormLayout {
     private final TipCreationTimeField creationTime;
     private final TipCreatedByField createdBy;
 
-    private final TipsDataProvider tipsDataProvider;
+    private final TipDataProvider tipDataProvider;
 
     private final TipCreationService tipCreationService;
 
-    public TipInfoContainerForm(TipsDataProvider tipsDataProvider, TipCreationService tipCreationService) {
-        this.tipsDataProvider = tipsDataProvider;
+    public TipInfoContainerForm(TipDataProvider tipDataProvider, TipCreationService tipCreationService) {
+        this.tipDataProvider = tipDataProvider;
         this.tipCreationService = tipCreationService;
         addClassName(CLASS_NAME);
 
@@ -124,7 +124,7 @@ public class TipInfoContainerForm extends FormLayout {
     }
 
     public void cancel() {
-        Optional<DogHubTip> tipOptional = tipsDataProvider.findById(id.getValue().longValue());
+        Optional<DogHubTip> tipOptional = tipDataProvider.findById(id.getValue().longValue());
         tipOptional.ifPresent(this::setTip);
     }
 }

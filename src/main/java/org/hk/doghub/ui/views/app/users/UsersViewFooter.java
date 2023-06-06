@@ -9,7 +9,7 @@ public class UsersViewFooter extends VerticalLayout {
 
     public static final String CLASS_NAME = UsersView.CLASS_NAME + "-footer";
 
-    public UsersViewFooter(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewFooter(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setWidthFull();

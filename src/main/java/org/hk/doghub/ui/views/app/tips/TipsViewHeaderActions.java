@@ -11,16 +11,16 @@ public class TipsViewHeaderActions extends HorizontalLayout {
     private final TipsViewHeaderActionsFilterButton filter;
     private final TipsViewHeaderActionsNewRouterLink newRouterLink;
 
-    public TipsViewHeaderActions(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActions(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
-        presentationTypeSelector = new TipsViewHeaderActionsPresentationTypeSelector(tipsDataProvider, tipsViewState, authenticatedUser);
+        presentationTypeSelector = new TipsViewHeaderActionsPresentationTypeSelector(tipDataProvider, tipsViewState, authenticatedUser);
         add(presentationTypeSelector);
 
-        filter = new TipsViewHeaderActionsFilterButton(tipsDataProvider, tipsViewState, authenticatedUser);
+        filter = new TipsViewHeaderActionsFilterButton(tipDataProvider, tipsViewState, authenticatedUser);
         add(filter);
 
-        newRouterLink = new TipsViewHeaderActionsNewRouterLink(tipsDataProvider, tipsViewState, authenticatedUser);
+        newRouterLink = new TipsViewHeaderActionsNewRouterLink(tipDataProvider, tipsViewState, authenticatedUser);
         add(newRouterLink);
     }
 }

@@ -11,7 +11,7 @@ public class UsersViewHeader extends HorizontalLayout {
     private final UsersViewHeaderInfo info;
     private final UsersViewHeaderActions actions;
 
-    public UsersViewHeader(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeader(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setWidthFull();

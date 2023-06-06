@@ -7,7 +7,7 @@ public class UsersViewHeaderInfoTitleText extends H2 {
 
     public static final String CLASS_NAME = UsersViewHeaderInfoTitle.CLASS_NAME + "-text";
 
-    public UsersViewHeaderInfoTitleText(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderInfoTitleText(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setTitleText(UsersView.NAME);

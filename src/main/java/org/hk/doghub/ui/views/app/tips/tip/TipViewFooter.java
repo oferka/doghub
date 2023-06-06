@@ -4,7 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.tip.TipsRouterLink;
-import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
+import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
 @Slf4j
 public class TipViewFooter extends HorizontalLayout {
@@ -19,19 +19,19 @@ public class TipViewFooter extends HorizontalLayout {
 
     private long selectedTipId;
 
-    public TipViewFooter(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewFooter(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
 
-        previous = new PreviousTipRouterLink(tipsDataProvider, authenticatedUser);
+        previous = new PreviousTipRouterLink(tipDataProvider, authenticatedUser);
         add(previous);
 
         tips = new TipsRouterLink();
         add(tips);
 
-        next = new NextTipRouterLink(tipsDataProvider, authenticatedUser);
+        next = new NextTipRouterLink(tipDataProvider, authenticatedUser);
         add(next);
     }
 

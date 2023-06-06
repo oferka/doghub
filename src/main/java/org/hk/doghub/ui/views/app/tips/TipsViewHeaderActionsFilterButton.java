@@ -14,7 +14,7 @@ public class TipsViewHeaderActionsFilterButton extends Button {
 
     public static final String CLASS_NAME = TipsViewHeaderActions.CLASS_NAME + "-filter-button";
 
-    public TipsViewHeaderActionsFilterButton(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsFilterButton(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setIcon(FILTER.create());

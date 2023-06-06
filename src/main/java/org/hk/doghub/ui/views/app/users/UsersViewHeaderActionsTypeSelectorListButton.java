@@ -15,7 +15,7 @@ public class UsersViewHeaderActionsTypeSelectorListButton extends Button {
 
     private final UsersViewState viewState;
 
-    public UsersViewHeaderActionsTypeSelectorListButton(UsersDataProvider usersViewDataProvider, UsersViewState viewState) {
+    public UsersViewHeaderActionsTypeSelectorListButton(UserDataProvider usersViewDataProvider, UsersViewState viewState) {
         this.viewState = viewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);

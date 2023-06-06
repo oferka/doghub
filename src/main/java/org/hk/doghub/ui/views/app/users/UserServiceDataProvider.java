@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 @Profile({"users-service-data-provider", "default"})
-public class UsersServiceDataProvider implements UsersDataProvider {
+public class UserServiceDataProvider implements UserDataProvider {
 
     private final DogHubUserService dogHubUserService;
 

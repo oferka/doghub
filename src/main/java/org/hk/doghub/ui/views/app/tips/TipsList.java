@@ -11,7 +11,7 @@ public class TipsList extends Div {
 
     public static final String CLASS_NAME = "tips-list";
 
-    public TipsList(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipsList(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         Grid<DogHubTip> grid = new Grid<>();
@@ -20,7 +20,7 @@ public class TipsList extends Div {
         grid.setHeightFull();
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
         grid.addColumn(new ComponentRenderer<>(tip -> new TipsListItem(tip, authenticatedUser)));
-        grid.setItems(tipsDataProvider.findAllForUser(authenticatedUser));
+        grid.setItems(tipDataProvider.findAllForUser(authenticatedUser));
         add(grid);
     }
 }

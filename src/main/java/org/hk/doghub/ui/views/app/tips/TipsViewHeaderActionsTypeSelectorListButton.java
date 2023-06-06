@@ -16,7 +16,7 @@ public class TipsViewHeaderActionsTypeSelectorListButton extends Button {
 
     private final TipsViewState tipsViewState;
 
-    public TipsViewHeaderActionsTypeSelectorListButton(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsTypeSelectorListButton(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         this.tipsViewState = tipsViewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);

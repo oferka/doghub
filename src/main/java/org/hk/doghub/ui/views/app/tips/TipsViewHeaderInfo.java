@@ -11,15 +11,15 @@ public class TipsViewHeaderInfo extends VerticalLayout {
     private final TipsViewHeaderInfoTitle title;
     private final TipsViewHeaderInfoDescription description;
 
-    public TipsViewHeaderInfo(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfo(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setAlignItems(FlexComponent.Alignment.CENTER);
 
-        title = new TipsViewHeaderInfoTitle(tipsDataProvider, tipsViewState, authenticatedUser);
+        title = new TipsViewHeaderInfoTitle(tipDataProvider, tipsViewState, authenticatedUser);
         add(title);
 
-        description = new TipsViewHeaderInfoDescription(tipsDataProvider, tipsViewState, authenticatedUser);
+        description = new TipsViewHeaderInfoDescription(tipDataProvider, tipsViewState, authenticatedUser);
         add(description);
     }
 }

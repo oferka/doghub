@@ -12,7 +12,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
     private final UsersViewHeaderInfoTitleText text;
     private final UsersViewHeaderInfoTitleCount count;
 
-    public UsersViewHeaderInfoTitle(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderInfoTitle(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);

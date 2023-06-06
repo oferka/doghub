@@ -8,7 +8,7 @@ public class TipsViewHeaderInfoTitleText extends H2 {
 
     public static final String CLASS_NAME = TipsViewHeaderInfoTitle.CLASS_NAME + "-text";
 
-    public TipsViewHeaderInfoTitleText(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfoTitleText(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setTitleText(TipsView.NAME);

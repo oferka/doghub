@@ -24,16 +24,16 @@ public class TipsView extends VerticalLayout {
     private final TipsViewBody body;
     private final TipsViewFooter footer;
 
-    public TipsView(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsView(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
-        header = new TipsViewHeader(tipsDataProvider, tipsViewState, authenticatedUser);
+        header = new TipsViewHeader(tipDataProvider, tipsViewState, authenticatedUser);
         add(header);
 
-        body = new TipsViewBody(tipsDataProvider, tipsViewState, authenticatedUser);
+        body = new TipsViewBody(tipDataProvider, tipsViewState, authenticatedUser);
         addAndExpand(body);
 
-        footer = new TipsViewFooter(tipsDataProvider, tipsViewState, authenticatedUser);
+        footer = new TipsViewFooter(tipDataProvider, tipsViewState, authenticatedUser);
         add(footer);
     }
 }

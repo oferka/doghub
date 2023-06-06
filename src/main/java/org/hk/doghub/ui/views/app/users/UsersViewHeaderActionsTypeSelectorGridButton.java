@@ -15,7 +15,7 @@ public class UsersViewHeaderActionsTypeSelectorGridButton extends Button {
 
     private final UsersViewState viewState;
 
-    public UsersViewHeaderActionsTypeSelectorGridButton(UsersDataProvider usersViewDataProvider, UsersViewState viewState) {
+    public UsersViewHeaderActionsTypeSelectorGridButton(UserDataProvider usersViewDataProvider, UsersViewState viewState) {
         this.viewState = viewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);

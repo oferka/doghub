@@ -10,11 +10,11 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
 
     private final UsersGrid grid;
 
-    public UsersViewBodyGridPresentation(UsersDataProvider usersDataProvider) {
+    public UsersViewBodyGridPresentation(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        grid = new UsersGrid(usersDataProvider);
+        grid = new UsersGrid(userDataProvider);
         addAndExpand(grid);
     }
 }

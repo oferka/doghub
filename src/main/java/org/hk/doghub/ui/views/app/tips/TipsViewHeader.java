@@ -12,16 +12,16 @@ public class TipsViewHeader extends HorizontalLayout {
     private final TipsViewHeaderInfo info;
     private final TipsViewHeaderActions actions;
 
-    public TipsViewHeader(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeader(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        info = new TipsViewHeaderInfo(tipsDataProvider, tipsViewState, authenticatedUser);
+        info = new TipsViewHeaderInfo(tipDataProvider, tipsViewState, authenticatedUser);
         add(info);
 
-        actions = new TipsViewHeaderActions(tipsDataProvider, tipsViewState, authenticatedUser);
+        actions = new TipsViewHeaderActions(tipDataProvider, tipsViewState, authenticatedUser);
         add(actions);
     }
 }

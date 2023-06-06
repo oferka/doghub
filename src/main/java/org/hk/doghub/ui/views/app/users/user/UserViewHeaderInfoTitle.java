@@ -1,7 +1,7 @@
 package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
+import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -12,15 +12,15 @@ public class UserViewHeaderInfoTitle extends HorizontalLayout {
     private final UserViewHeaderInfoTitleAvatar avatar;
     private final UserViewHeaderInfoTitleText text;
 
-    public UserViewHeaderInfoTitle(UsersDataProvider usersDataProvider) {
+    public UserViewHeaderInfoTitle(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        avatar = new UserViewHeaderInfoTitleAvatar(usersDataProvider);
+        avatar = new UserViewHeaderInfoTitleAvatar(userDataProvider);
         add(avatar);
 
-        text = new UserViewHeaderInfoTitleText(usersDataProvider);
+        text = new UserViewHeaderInfoTitleText(userDataProvider);
         add(text);
 
         setVerticalComponentAlignment(CENTER, avatar, text);

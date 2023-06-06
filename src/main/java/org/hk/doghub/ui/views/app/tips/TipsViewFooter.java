@@ -10,7 +10,7 @@ public class TipsViewFooter extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsView.CLASS_NAME + "-footer";
 
-    public TipsViewFooter(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewFooter(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();

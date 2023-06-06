@@ -10,15 +10,15 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
     private final TipsViewHeaderActionsTypeSelectorGridButton grid;
     private final TipsViewHeaderActionsTypeSelectorListButton list;
 
-    public TipsViewHeaderActionsPresentationTypeSelector(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsPresentationTypeSelector(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setSpacing(false);
 
-        grid = new TipsViewHeaderActionsTypeSelectorGridButton(tipsDataProvider, tipsViewState, authenticatedUser);
+        grid = new TipsViewHeaderActionsTypeSelectorGridButton(tipDataProvider, tipsViewState, authenticatedUser);
         add(grid);
 
-        list = new TipsViewHeaderActionsTypeSelectorListButton(tipsDataProvider, tipsViewState, authenticatedUser);
+        list = new TipsViewHeaderActionsTypeSelectorListButton(tipDataProvider, tipsViewState, authenticatedUser);
         add(list);
 
         setPresentationType(tipsViewState.getPresentationMode());

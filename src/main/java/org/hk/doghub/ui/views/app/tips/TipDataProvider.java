@@ -7,7 +7,7 @@ import org.hk.doghub.security.AuthenticatedUser;
 import java.util.List;
 import java.util.Optional;
 
-public interface TipsDataProvider {
+public interface TipDataProvider {
 
     long count();
 
@@ -17,13 +17,13 @@ public interface TipsDataProvider {
     @NotNull
     Optional<DogHubTip> findById(@NotNull Long id);
 
+    Optional<DogHubTip> findNext(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
+
+    Optional<DogHubTip> findPrevious(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
+
     List<DogHubTip> findAllForUser(@NotNull AuthenticatedUser authenticatedUser);
 
     long countForUser(@NotNull AuthenticatedUser authenticatedUser);
 
     boolean hasAccess(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
-
-    Optional<DogHubTip> findPrevious(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
-
-    Optional<DogHubTip> findNext(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
 }

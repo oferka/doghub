@@ -21,16 +21,16 @@ public class UsersView extends VerticalLayout {
     private final UsersViewBody body;
     private final UsersViewFooter footer;
 
-    public UsersView(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
+    public UsersView(UserDataProvider userDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
-        header = new UsersViewHeader(usersDataProvider, usersViewState);
+        header = new UsersViewHeader(userDataProvider, usersViewState);
         add(header);
 
-        body = new UsersViewBody(usersDataProvider, usersViewState);
+        body = new UsersViewBody(userDataProvider, usersViewState);
         addAndExpand(body);
 
-        footer = new UsersViewFooter(usersDataProvider, usersViewState);
+        footer = new UsersViewFooter(userDataProvider, usersViewState);
         add(footer);
     }
 }

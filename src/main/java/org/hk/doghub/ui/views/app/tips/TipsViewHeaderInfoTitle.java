@@ -13,18 +13,18 @@ public class TipsViewHeaderInfoTitle extends HorizontalLayout {
     private final TipsViewHeaderInfoTitleText text;
     private final TipsViewHeaderInfoTitleCount count;
 
-    public TipsViewHeaderInfoTitle(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfoTitle(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        icon = new TipsViewHeaderInfoTitleIcon(tipsDataProvider, tipsViewState, authenticatedUser);
+        icon = new TipsViewHeaderInfoTitleIcon(tipDataProvider, tipsViewState, authenticatedUser);
         add(icon);
 
-        text = new TipsViewHeaderInfoTitleText(tipsDataProvider, tipsViewState, authenticatedUser);
+        text = new TipsViewHeaderInfoTitleText(tipDataProvider, tipsViewState, authenticatedUser);
         add(text);
 
-        count = new TipsViewHeaderInfoTitleCount(tipsDataProvider, tipsViewState, authenticatedUser);
+        count = new TipsViewHeaderInfoTitleCount(tipDataProvider, tipsViewState, authenticatedUser);
         add(count);
     }
 }

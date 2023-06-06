@@ -12,16 +12,16 @@ public class TipsViewBody extends VerticalLayout {
     private final TipsViewBodyListPresentation listPresentation;
     private final TipsViewBodyGridPresentation gridPresentation;
 
-    public TipsViewBody(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewBody(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        listPresentation = new TipsViewBodyListPresentation(tipsDataProvider, authenticatedUser);
+        listPresentation = new TipsViewBodyListPresentation(tipDataProvider, authenticatedUser);
         add(listPresentation);
 
-        gridPresentation = new TipsViewBodyGridPresentation(tipsDataProvider, authenticatedUser);
+        gridPresentation = new TipsViewBodyGridPresentation(tipDataProvider, authenticatedUser);
         add(gridPresentation);
 
         setPresentationType(tipsViewState.getPresentationMode());

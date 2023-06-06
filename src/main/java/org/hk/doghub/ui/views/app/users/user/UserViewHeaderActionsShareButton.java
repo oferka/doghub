@@ -4,7 +4,7 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
+import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 import java.util.Optional;
 
@@ -17,11 +17,11 @@ public class UserViewHeaderActionsShareButton extends Button {
 
     public static final String CLASS_NAME = UserViewHeaderActions.CLASS_NAME + "-share-button";
 
-    private final UsersDataProvider usersDataProvider;
+    private final UserDataProvider userDataProvider;
     private long selectedUserId;
 
-    public UserViewHeaderActionsShareButton(UsersDataProvider usersDataProvider) {
-        this.usersDataProvider = usersDataProvider;
+    public UserViewHeaderActionsShareButton(UserDataProvider userDataProvider) {
+        this.userDataProvider = userDataProvider;
         addClassName(CLASS_NAME);
 
         setIcon(SHARE.create());
@@ -32,7 +32,7 @@ public class UserViewHeaderActionsShareButton extends Button {
 
     private void shareClicked(ClickEvent<Button> event) {
         String name = null;
-        Optional<DogHubUser> user = usersDataProvider.findById(selectedUserId);
+        Optional<DogHubUser> user = userDataProvider.findById(selectedUserId);
         if(user.isPresent()) {
             name = user.get().getName();
         }

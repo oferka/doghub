@@ -11,11 +11,11 @@ public class TipsGrid extends Grid<DogHubTip> {
 
     public static final String CLASS_NAME = "tips-grid";
 
-    public TipsGrid(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipsGrid(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         addColumns(authenticatedUser);
-        setItems(tipsDataProvider.findAllForUser(authenticatedUser));
+        setItems(tipDataProvider.findAllForUser(authenticatedUser));
     }
 
     private void addColumns(AuthenticatedUser authenticatedUser) {

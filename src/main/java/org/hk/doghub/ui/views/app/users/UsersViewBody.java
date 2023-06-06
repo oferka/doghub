@@ -11,16 +11,16 @@ public class UsersViewBody extends VerticalLayout {
     private final UsersViewBodyListPresentation cardPresentation;
     private final UsersViewBodyGridPresentation gridPresentation;
 
-    public UsersViewBody(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
+    public UsersViewBody(UserDataProvider userDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        cardPresentation = new UsersViewBodyListPresentation(usersDataProvider);
+        cardPresentation = new UsersViewBodyListPresentation(userDataProvider);
         add(cardPresentation);
 
-        gridPresentation = new UsersViewBodyGridPresentation(usersDataProvider);
+        gridPresentation = new UsersViewBodyGridPresentation(userDataProvider);
         add(gridPresentation);
 
         setPresentationType(usersViewState.getPresentationMode());

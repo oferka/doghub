@@ -3,7 +3,7 @@ package org.hk.doghub.ui.views.app.tips.tip;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
+import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
 @Slf4j
 public class TipViewHeader extends HorizontalLayout {
@@ -15,16 +15,16 @@ public class TipViewHeader extends HorizontalLayout {
 
     private long selectedTipId;
 
-    public TipViewHeader(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeader(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
 
-        info = new TipViewHeaderInfo(tipsDataProvider, authenticatedUser);
+        info = new TipViewHeaderInfo(tipDataProvider, authenticatedUser);
         add(info);
 
-        actions = new TipViewHeaderActions(tipsDataProvider, authenticatedUser);
+        actions = new TipViewHeaderActions(tipDataProvider, authenticatedUser);
         add(actions);
     }
 

@@ -6,7 +6,7 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoContainerButtons;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
+import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 import java.util.Optional;
 
@@ -16,19 +16,19 @@ public class UserInfoContainer extends VerticalLayout {
 
     public static final String CLASS_NAME = "user-info-container";
 
-    private final UsersDataProvider usersDataProvider;
+    private final UserDataProvider userDataProvider;
 
     private final UserInfoContainerForm form;
 
     private final InfoContainerButtons buttons;
 
-    public UserInfoContainer(UsersDataProvider usersDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
-        this.usersDataProvider = usersDataProvider;
+    public UserInfoContainer(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+        this.userDataProvider = userDataProvider;
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        form = new UserInfoContainerForm(usersDataProvider, userCreationService);
+        form = new UserInfoContainerForm(userDataProvider, userCreationService);
         add(form);
 
         buttons = new InfoContainerButtons();
@@ -36,7 +36,7 @@ public class UserInfoContainer extends VerticalLayout {
     }
 
     public void setUser(long userId) {
-        Optional<DogHubUser> userOptional = usersDataProvider.findById(userId);
+        Optional<DogHubUser> userOptional = userDataProvider.findById(userId);
         userOptional.ifPresent(form::setUser);
     }
 

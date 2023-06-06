@@ -16,7 +16,7 @@ public class TipsViewHeaderActionsTypeSelectorGridButton extends Button {
 
     private final TipsViewState tipsViewState;
 
-    public TipsViewHeaderActionsTypeSelectorGridButton(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsTypeSelectorGridButton(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         this.tipsViewState = tipsViewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);

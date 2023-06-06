@@ -5,7 +5,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
+import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
 import java.util.Optional;
 
@@ -18,11 +18,11 @@ public class TipViewHeaderActionsShareButton extends Button {
 
     public static final String CLASS_NAME = TipViewHeaderActions.CLASS_NAME + "-share-button";
 
-    private final TipsDataProvider tipsDataProvider;
+    private final TipDataProvider tipDataProvider;
     private long selectedTipId;
 
-    public TipViewHeaderActionsShareButton(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
-        this.tipsDataProvider = tipsDataProvider;
+    public TipViewHeaderActionsShareButton(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+        this.tipDataProvider = tipDataProvider;
         addClassName(CLASS_NAME);
 
         setIcon(SHARE.create());
@@ -33,7 +33,7 @@ public class TipViewHeaderActionsShareButton extends Button {
 
     private void shareClicked(ClickEvent<Button> event) {
         String name = null;
-        Optional<DogHubTip> tip = tipsDataProvider.findById(selectedTipId);
+        Optional<DogHubTip> tip = tipDataProvider.findById(selectedTipId);
         if(tip.isPresent()) {
             name = tip.get().getName();
         }

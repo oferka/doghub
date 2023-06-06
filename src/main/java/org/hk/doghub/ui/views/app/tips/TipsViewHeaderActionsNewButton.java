@@ -15,7 +15,7 @@ public class TipsViewHeaderActionsNewButton extends Button {
 
     public static final String CLASS_NAME = TipsViewHeaderActions.CLASS_NAME + "-new-button";
 
-    public TipsViewHeaderActionsNewButton(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsNewButton(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setIcon(PLUS_CIRCLE.create());

@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
+import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
 public class TipViewHeaderActions extends HorizontalLayout {
 
@@ -11,13 +11,13 @@ public class TipViewHeaderActions extends HorizontalLayout {
     private final TipViewHeaderActionsShareButton share;
     private final TipViewHeaderActionsExportButton export;
 
-    public TipViewHeaderActions(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeaderActions(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
-        share = new TipViewHeaderActionsShareButton(tipsDataProvider, authenticatedUser);
+        share = new TipViewHeaderActionsShareButton(tipDataProvider, authenticatedUser);
         add(share);
 
-        export = new TipViewHeaderActionsExportButton(tipsDataProvider, authenticatedUser);
+        export = new TipViewHeaderActionsExportButton(tipDataProvider, authenticatedUser);
         add(export);
     }
 

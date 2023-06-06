@@ -9,7 +9,7 @@ import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
-import org.hk.doghub.ui.views.app.tips.TipsDataProvider;
+import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationService;
 
@@ -29,33 +29,33 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
     private final TipViewBody body;
     private final TipViewFooter footer;
 
-    private final TipsDataProvider tipsDataProvider;
+    private final TipDataProvider tipDataProvider;
 
     private final AuthenticatedUser authenticatedUser;
 
-    public TipView(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
-        this.tipsDataProvider = tipsDataProvider;
+    public TipView(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+        this.tipDataProvider = tipDataProvider;
         this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        header = new TipViewHeader(tipsDataProvider, authenticatedUser);
+        header = new TipViewHeader(tipDataProvider, authenticatedUser);
         add(header);
 
-        body = new TipViewBody(tipsDataProvider, authenticatedUser, tipCreationService);
+        body = new TipViewBody(tipDataProvider, authenticatedUser, tipCreationService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);
 
-        footer = new TipViewFooter(tipsDataProvider, authenticatedUser);
+        footer = new TipViewFooter(tipDataProvider, authenticatedUser);
         add(footer);
     }
 
     @Override
     public void setParameter(BeforeEvent event, Long parameter) {
         setTip(parameter);
-        if(!tipsDataProvider.hasAccess(authenticatedUser, parameter)) {
+        if(!tipDataProvider.hasAccess(authenticatedUser, parameter)) {
             throw new NotFoundException();
         }
     }

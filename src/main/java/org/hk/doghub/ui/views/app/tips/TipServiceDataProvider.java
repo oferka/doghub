@@ -17,7 +17,7 @@ import static java.util.Collections.emptyList;
 @Service
 @RequiredArgsConstructor
 @Profile({"tips-service-data-provider", "default"})
-public class TipsServiceDataProvider implements TipsDataProvider {
+public class TipServiceDataProvider implements TipDataProvider {
 
     private final DogHubTipService dogHubTipService;
 

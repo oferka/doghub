@@ -6,7 +6,7 @@ import org.hk.doghub.model.user.DogHubUser;
 import java.util.List;
 import java.util.Optional;
 
-public interface UsersDataProvider {
+public interface UserDataProvider {
 
     long count();
 

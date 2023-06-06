@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
+import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
@@ -16,16 +16,16 @@ public class UserViewHeader extends HorizontalLayout {
 
     private long selectedUserId;
 
-    public UserViewHeader(UsersDataProvider usersDataProvider) {
+    public UserViewHeader(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        info = new UserViewHeaderInfo(usersDataProvider);
+        info = new UserViewHeaderInfo(userDataProvider);
         add(info);
 
-        actions = new UserViewHeaderActions(usersDataProvider);
+        actions = new UserViewHeaderActions(userDataProvider);
         add(actions);
     }
 

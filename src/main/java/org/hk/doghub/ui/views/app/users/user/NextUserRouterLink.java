@@ -2,7 +2,7 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.router.RouterLink;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.ui.views.app.users.UsersDataProvider;
+import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 import java.util.Optional;
 
@@ -10,12 +10,12 @@ public class NextUserRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "next-user-router-link";
 
-    private final UsersDataProvider usersDataProvider;
+    private final UserDataProvider userDataProvider;
 
     private final NextUserButton nextUserButton;
 
-    public NextUserRouterLink(UsersDataProvider usersDataProvider) {
-        this.usersDataProvider = usersDataProvider;
+    public NextUserRouterLink(UserDataProvider userDataProvider) {
+        this.userDataProvider = userDataProvider;
         addClassName(CLASS_NAME);
 
         nextUserButton = new NextUserButton();
@@ -24,7 +24,7 @@ public class NextUserRouterLink extends RouterLink {
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        Optional<DogHubUser> userOptional = usersDataProvider.findNext(selectedUserId);
+        Optional<DogHubUser> userOptional = userDataProvider.findNext(selectedUserId);
         if(userOptional.isPresent()) {
             setRoute(UserView.class, userOptional.get().getId());
             nextUserButton.setEnabled(true);

@@ -12,11 +12,11 @@ public class TipsViewHeaderActionsNewRouterLink extends RouterLink {
 
     private final TipsViewHeaderActionsNewButton newButton;
 
-    public TipsViewHeaderActionsNewRouterLink(TipsDataProvider tipsDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsNewRouterLink(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         super(EMPTY, TipCreationView.class);
         addClassName(CLASS_NAME);
 
-        newButton = new TipsViewHeaderActionsNewButton(tipsDataProvider, tipsViewState, authenticatedUser);
+        newButton = new TipsViewHeaderActionsNewButton(tipDataProvider, tipsViewState, authenticatedUser);
         add(newButton);
     }
 }

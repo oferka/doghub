@@ -11,11 +11,11 @@ public class TipsViewBodyListPresentation extends VerticalLayout {
 
     private final TipsList list;
 
-    public TipsViewBodyListPresentation(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipsViewBodyListPresentation(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        list = new TipsList(tipsDataProvider, authenticatedUser);
+        list = new TipsList(tipDataProvider, authenticatedUser);
         addAndExpand(list);
     }
 }

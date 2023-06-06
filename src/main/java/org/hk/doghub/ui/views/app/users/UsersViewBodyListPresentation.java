@@ -10,11 +10,11 @@ public class UsersViewBodyListPresentation extends VerticalLayout {
 
     private final UsersList list;
 
-    public UsersViewBodyListPresentation(UsersDataProvider usersDataProvider) {
+    public UsersViewBodyListPresentation(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        list = new UsersList(usersDataProvider);
+        list = new UsersList(userDataProvider);
         addAndExpand(list);
     }
 }
