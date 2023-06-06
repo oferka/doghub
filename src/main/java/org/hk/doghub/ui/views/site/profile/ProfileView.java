@@ -7,10 +7,10 @@ import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelEvent;
+import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
-import org.hk.doghub.ui.components.shared.user.UserInfoCancelListener;
 import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayout;
@@ -21,7 +21,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 @Route(value = ProfileView.ROUTE, layout = DogHubSiteLayout.class)
 @PageTitle(ProfileView.NAME)
 @RolesAllowed({"USER", "ADMIN"})
-public class ProfileView extends VerticalLayout implements InfoSaveListener, UserInfoCancelListener {
+public class ProfileView extends VerticalLayout implements InfoSaveListener, InfoCancelListener {
 
     public static final String ROUTE = "profile";
     public static final String ID_PREFIX = "profile";
@@ -40,7 +40,7 @@ public class ProfileView extends VerticalLayout implements InfoSaveListener, Use
             userInfo.setUser(authenticatedUser.get().get().getId());
         }
         userInfo.addInfoSaveListener(this);
-        userInfo.addUserInfoCancelListener(this);
+        userInfo.addInfoCancelListener(this);
         add(userInfo);
     }
 

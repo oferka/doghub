@@ -2,6 +2,7 @@ package org.hk.doghub.ui.components.shared.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
@@ -31,11 +32,11 @@ public class UserInfoContainerButtons extends HorizontalLayout {
         save.removeInfoSaveListener(listener);
     }
 
-    public void addUserInfoCancelListener(UserInfoCancelListener listener) {
-        cancel.addUserInfoCancelListener(listener);
+    public void addInfoCancelListener(InfoCancelListener listener) {
+        cancel.addInfoCancelListener(listener);
     }
 
-    public void removeUserInfoCancelListener(UserInfoCancelListener listener) {
-        cancel.removeUserInfoCancelListener(listener);
+    public void removeInfoCancelListener(InfoCancelListener listener) {
+        cancel.removeInfoCancelListener(listener);
     }
 }

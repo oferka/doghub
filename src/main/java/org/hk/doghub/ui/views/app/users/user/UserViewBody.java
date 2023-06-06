@@ -2,9 +2,9 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
-import org.hk.doghub.ui.components.shared.user.UserInfoCancelListener;
 import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 
@@ -34,16 +34,16 @@ public class UserViewBody extends VerticalLayout {
         userInfo.addInfoSaveListener(listener);
     }
 
-    public void addUserInfoCancelListener(UserInfoCancelListener listener) {
-        userInfo.addUserInfoCancelListener(listener);
+    public void addInfoCancelListener(InfoCancelListener listener) {
+        userInfo.addInfoCancelListener(listener);
     }
 
     public void removeInfoSaveListener(InfoSaveListener listener) {
         userInfo.removeInfoSaveListener(listener);
     }
 
-    public void removeUserInfoCancelListener(UserInfoCancelListener listener) {
-        userInfo.removeUserInfoCancelListener(listener);
+    public void removeInfoCancelListener(InfoCancelListener listener) {
+        userInfo.removeInfoCancelListener(listener);
     }
 
     public void save() {

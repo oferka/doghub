@@ -9,10 +9,10 @@ import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelEvent;
+import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveEvent;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
-import org.hk.doghub.ui.components.shared.user.UserInfoCancelListener;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -23,7 +23,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 @Route(value = UsersView.ROUTE, layout = DogHubAppLayout.class)
 @PageTitle(UserView.NAME)
 @RolesAllowed({"ADMIN"})
-public class UserView extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, UserInfoCancelListener {
+public class UserView extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, InfoCancelListener {
 
     public static final String ID_PREFIX = "user";
     public static final String ID_SUFFIX = "-view";
@@ -44,7 +44,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
 
         body = new UserViewBody(usersDataProvider, authenticatedUser, userCreationService);
         body.addInfoSaveListener(this);
-        body.addUserInfoCancelListener(this);
+        body.addInfoCancelListener(this);
         addAndExpand(body);
 
         footer = new UserViewFooter(usersDataProvider);

@@ -3,6 +3,7 @@ package org.hk.doghub.ui.components.shared.user;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import org.hk.doghub.ui.components.shared.InfoCancelEvent;
+import org.hk.doghub.ui.components.shared.InfoCancelListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ public class UserInfoCancelButton extends Button {
 
     public static final String CLASS_NAME = UserInfoContainerButtons.CLASS_NAME + "-cancel";
 
-    private final List<UserInfoCancelListener> userInfoCancelListeners = new ArrayList<>();
+    private final List<InfoCancelListener> infoCancelListeners = new ArrayList<>();
 
     public UserInfoCancelButton() {
         addClassName(CLASS_NAME);
@@ -23,12 +24,12 @@ public class UserInfoCancelButton extends Button {
         addClickListener(this::cancelClicked);
     }
 
-    public void addUserInfoCancelListener(UserInfoCancelListener listener) {
-        userInfoCancelListeners.add(listener);
+    public void addInfoCancelListener(InfoCancelListener listener) {
+        infoCancelListeners.add(listener);
     }
 
-    public void removeUserInfoCancelListener(UserInfoCancelListener listener) {
-        userInfoCancelListeners.remove(listener);
+    public void removeInfoCancelListener(InfoCancelListener listener) {
+        infoCancelListeners.remove(listener);
     }
 
     private void cancelClicked(ClickEvent<Button> event) {
@@ -36,7 +37,7 @@ public class UserInfoCancelButton extends Button {
     }
 
     private void fireInfoCancelEvent(InfoCancelEvent event) {
-        for(UserInfoCancelListener listener : userInfoCancelListeners) {
+        for(InfoCancelListener listener : infoCancelListeners) {
             listener.cancelTriggered(event);
         }
     }
