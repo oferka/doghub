@@ -2,6 +2,7 @@ package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.InfoCancelButton;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveButton;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
@@ -14,7 +15,7 @@ public class TipInfoContainerButtons extends HorizontalLayout {
 
     private final InfoSaveButton save;
 
-    private final TipInfoCancelButton cancel;
+    private final InfoCancelButton cancel;
 
     public TipInfoContainerButtons(TipsDataProvider tipsDataProvider, AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
@@ -22,7 +23,7 @@ public class TipInfoContainerButtons extends HorizontalLayout {
         save = new InfoSaveButton();
         add(save);
 
-        cancel = new TipInfoCancelButton();
+        cancel = new InfoCancelButton();
         add(cancel);
     }
 
