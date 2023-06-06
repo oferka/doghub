@@ -27,16 +27,7 @@ public class TipCreationService {
     private final DogHubTipService tipService;
 
     public DogHubTip create(@NotNull @Size(min = 2, max = 64) @NotBlank String title, @NotNull DogHubUser createdBy) {
-        return create(title, title, null, null, null, createdBy);
-    }
-
-    public DogHubTip create(@NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
-                            @NotNull @Size(min = 2, max = 64) @NotBlank String title,
-                            @Nullable @Size(min = 2, max = 1024) String content,
-                            @Nullable String moreInfo,
-                            @Nullable @URL String thumbnailPicture,
-                            @NotNull DogHubUser createdBy) {
-        return tipService.save(getTipEntity(name, title, content, moreInfo, thumbnailPicture, createdBy));
+        return tipService.save(getTipEntity(title, createdBy));
     }
 
     public DogHubTip save(@NotNull Long id,
@@ -58,18 +49,11 @@ public class TipCreationService {
         throw new IllegalArgumentException(format("Failed to save tip with ID: %s'", id));
     }
 
-    private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
-                                            @NotNull @Size(min = 2, max = 64) @NotBlank String title,
-                                            @Nullable @Size(min = 2, max = 1024) String content,
-                                            @Nullable String moreInfo,
-                                            @Nullable @URL String thumbnailPicture,
+    private @NotNull DogHubTip getTipEntity(@NotNull @Size(min = 2, max = 64) @NotBlank String title,
                                             @NotNull DogHubUser createdBy) {
         DogHubTip result = new DogHubTip();
-        result.setName(name);
+        result.setName(title);
         result.setTitle(title);
-        result.setContent(content);
-        result.setMoreInfo(moreInfo);
-        result.setThumbnailPicture(thumbnailPicture);
         result.setCreationTime(ZonedDateTime.now());
         result.setCreatedBy(createdBy);
         return result;

@@ -66,6 +66,7 @@ public class UserCreationService {
             DogHubAddress address = user.getAddress();
             if(address == null) {
                 address = new DogHubAddress();
+                user.setAddress(address);
             }
             address.setNumber(number);
             address.setStreetName(streetName);
