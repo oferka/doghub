@@ -46,8 +46,8 @@ public class DogHubDateTimeField extends DateTimePicker {
 
     private List<String> validateField(LocalDateTime value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.isAfter(LocalDateTime.now())) {
-            result.add(format("{0} Must be a valid date and time", getLabel()));
+        if(value != null && !value.isBefore(LocalDateTime.now())) {
+            result.add(format("{0} Must be a past date and time", getLabel()));
         }
         return result;
     }
