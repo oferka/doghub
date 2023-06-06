@@ -14,11 +14,10 @@ import lombok.ToString;
 @ToString
 public class NamedEntity extends AbstractEntity {
 
-    public static final int NAME_MIN_LENGTH = 2;
     public static final int NAME_MAX_LENGTH = 128;
 
     @NotNull
-    @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH)
+    @Size(max = NAME_MAX_LENGTH)
     @NotBlank
     private String name;
 }

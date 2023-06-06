@@ -17,7 +17,6 @@ import java.util.Optional;
 
 import static java.lang.String.format;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
-import static org.hk.doghub.model.NamedEntity.NAME_MIN_LENGTH;
 
 @Slf4j
 @Service
@@ -31,7 +30,7 @@ public class TipCreationService {
     }
 
     public DogHubTip save(@NotNull Long id,
-                          @NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
+                          @NotNull @Size(max = NAME_MAX_LENGTH) @NotBlank String name,
                           @NotNull @Size(min = 2, max = 64) @NotBlank String title,
                           @Nullable @Size(min = 2, max = 1024) String content,
                           @Nullable String moreInfo,

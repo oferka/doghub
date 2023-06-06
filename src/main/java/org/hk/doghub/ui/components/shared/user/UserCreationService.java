@@ -10,15 +10,16 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Nullable;
 import java.time.ZonedDateTime;
 import java.util.Optional;
 import java.util.Set;
 
 import static java.lang.String.format;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
-import static org.hk.doghub.model.NamedEntity.NAME_MIN_LENGTH;
-import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MAX_LENGTH;
-import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MIN_LENGTH;
+import static org.hk.doghub.model.user.DogHubAddress.*;
+import static org.hk.doghub.model.user.DogHubUser.*;
 import static org.hk.doghub.model.user.Role.USER;
 
 @Slf4j
@@ -36,25 +37,25 @@ public class UserCreationService {
 
     public DogHubUser save(
             @NotNull Long id,
-            @NotNull @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH) @NotBlank String username,
-            @Size(min = 2, max = 64) String title,
-            @NotNull @Size(min = NAME_MIN_LENGTH, max = NAME_MAX_LENGTH) @NotBlank String name,
-            @Size(min = 2, max = 64) String mobileNumber,
-            @Email String email,
-            @URL String thumbnailPicture,
-            @Size(min = 2, max = 64) String company,
-            @Past ZonedDateTime dateOfBirth,
-            @Past ZonedDateTime dateOfRegistration,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String country,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String state,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String city,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String streetName,
-            @Positive Integer number,
-            @NotNull @Size(min = 2, max = 64) @NotBlank String postcode) {
+            @NotNull @Size(max = USER_NAME_MAX_LENGTH) @NotBlank String username,
+            @Nullable @Size(max = TITLE_MAX_LENGTH) String title,
+            @Nullable @Size(max = NAME_MAX_LENGTH) @NotBlank String name,
+            @Nullable @Size(max = MOBILE_NUMBER_MAX_LENGTH) String mobileNumber,
+            @Nullable @Email String email,
+            @Nullable @URL @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) String thumbnailPicture,
+            @Nullable @Size(max = COMPANY_MAX_LENGTH) String company,
+            @Nullable @Past ZonedDateTime dateOfBirth,
+            @NotNull @Past ZonedDateTime dateOfRegistration,
+            @Nullable @Size(max = COUNTRY_MAX_LENGTH) @NotBlank String country,
+            @Nullable @Size(max = STATE_MAX_LENGTH) @NotBlank String state,
+            @Nullable @Size(max = CITY_MAX_LENGTH) @NotBlank String city,
+            @Nullable @Size(max = STREET_NAME_MAX_LENGTH) @NotBlank String streetName,
+            @Nullable @Positive Integer number,
+            @Nullable @Size(max = POSTCODE_MAX_LENGTH) @NotBlank String postcode) {
         Optional<DogHubUser> userOptional = userService.findById(id);
         if(userOptional.isPresent()) {
             DogHubUser user = userOptional.get();
-            user.setName(name);
+            user.setName((name != null) ? name : EMPTY);
             user.setUsername(username);
             user.setEmail(email);
             user.setTitle(title);
@@ -69,11 +70,11 @@ public class UserCreationService {
                 user.setAddress(address);
             }
             address.setNumber(number);
-            address.setStreetName(streetName);
-            address.setCity(city);
-            address.setState(state);
-            address.setCountry(country);
-            address.setPostcode(postcode);
+            address.setStreetName((streetName != null) ? streetName : EMPTY);
+            address.setCity((city != null) ? city : EMPTY);
+            address.setState((state != null) ? state : EMPTY);
+            address.setCountry((country != null) ? country : EMPTY);
+            address.setPostcode((postcode != null) ? postcode : EMPTY);
             return userService.save(user);
         }
         throw new IllegalArgumentException(format("Failed to save user with ID: %s'", id));

@@ -9,6 +9,7 @@ import java.util.List;
 
 import static java.text.MessageFormat.format;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
+import static org.hk.doghub.model.user.DogHubUser.EMAIL_MAX_LENGTH;
 
 public class UserEmailField extends EmailField {
 
@@ -19,8 +20,7 @@ public class UserEmailField extends EmailField {
     public UserEmailField() {
         addClassName(CLASS_NAME);
         setPlaceholder(LABEL);
-        setMinLength(5);
-        setMaxLength(128);
+        setMaxLength(EMAIL_MAX_LENGTH);
         getElement().setAttribute("name", "email");
         setErrorMessage(format("Please enter a valid {0} address", LABEL));
         setClearButtonVisible(true);

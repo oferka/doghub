@@ -6,8 +6,8 @@ public class EditableTextField extends DogHubTextField {
 
     public static final String CLASS_NAME = "editable-text-field";
 
-    public EditableTextField(String label, boolean required, int minLength, int maxLength, Component prefixComponent, String allowedCharPattern) {
-        super(label, required, false, minLength, maxLength, prefixComponent, allowedCharPattern);
+    public EditableTextField(String label, boolean required, int maxLength, Component prefixComponent, String allowedCharPattern) {
+        super(label, required, false, maxLength, prefixComponent, allowedCharPattern);
         addClassName(CLASS_NAME);
     }
 }

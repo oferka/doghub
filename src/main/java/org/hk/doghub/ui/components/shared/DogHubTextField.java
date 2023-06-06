@@ -14,13 +14,12 @@ public class DogHubTextField extends TextField {
 
     public static final String CLASS_NAME = "dog-hub-text-field";
 
-    public DogHubTextField(String label, boolean required, boolean readOnly, int minLength, int maxLength, Component prefixComponent, String allowedCharPattern) {
+    public DogHubTextField(String label, boolean required, boolean readOnly, int maxLength, Component prefixComponent, String allowedCharPattern) {
         addClassName(CLASS_NAME);
         setLabel(label);
         setRequiredIndicatorVisible(required);
         setReadOnly(readOnly);
         setAllowedCharPattern(allowedCharPattern);
-        setMinLength(minLength);
         setMaxLength(maxLength);
         setPrefixComponent(prefixComponent);
         setValueChangeMode(EAGER);

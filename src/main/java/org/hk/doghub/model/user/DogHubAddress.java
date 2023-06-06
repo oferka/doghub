@@ -9,52 +9,39 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.annotation.Nullable;
+
 @Embeddable
 @Getter
 @Setter
 @ToString
 public class DogHubAddress {
 
-    public static final int CITY_MIN_LENGTH = 2;
     public static final int CITY_MAX_LENGTH = 64;
 
-    public static final int STATE_MIN_LENGTH = 2;
     public static final int STATE_MAX_LENGTH = 64;
 
-    public static final int COUNTRY_MIN_LENGTH = 2;
     public static final int COUNTRY_MAX_LENGTH = 64;
 
-    public static final int STREET_NAME_MIN_LENGTH = 2;
     public static final int STREET_NAME_MAX_LENGTH = 64;
 
-    public static final int POSTCODE_MIN_LENGTH = 2;
     public static final int POSTCODE_MAX_LENGTH = 64;
 
     @Positive
     private Integer number = 0;
 
-    @NotNull
-    @Size(min = STREET_NAME_MIN_LENGTH, max = STREET_NAME_MAX_LENGTH)
-    @NotBlank
+    @Size(max = STREET_NAME_MAX_LENGTH)
     private String streetName;
 
-    @NotNull
-    @Size(min = CITY_MIN_LENGTH, max = CITY_MAX_LENGTH)
-    @NotBlank
+    @Size(max = CITY_MAX_LENGTH)
     private String city;
 
-    @NotNull
-    @Size(min = STATE_MIN_LENGTH, max = STATE_MAX_LENGTH)
-    @NotBlank
+    @Size(max = STATE_MAX_LENGTH)
     private String state;
 
-    @NotNull
-    @Size(min = COUNTRY_MIN_LENGTH, max = COUNTRY_MAX_LENGTH)
-    @NotBlank
+    @Size(max = COUNTRY_MAX_LENGTH)
     private String country;
 
-    @NotNull
-    @Size(min = POSTCODE_MIN_LENGTH, max = POSTCODE_MAX_LENGTH)
-    @NotBlank
+    @Size(max = POSTCODE_MAX_LENGTH)
     private String postcode;
 }

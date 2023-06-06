@@ -6,7 +6,6 @@ import org.hk.doghub.ui.components.shared.EditableTextField;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.DIAMOND;
 import static org.hk.doghub.model.tip.DogHubTip.TITLE_MAX_LENGTH;
-import static org.hk.doghub.model.tip.DogHubTip.TITLE_MIN_LENGTH;
 
 public class TipTitleField extends EditableTextField {
 
@@ -15,7 +14,7 @@ public class TipTitleField extends EditableTextField {
     public static final String LABEL = "Title";
 
     public TipTitleField() {
-        super(LABEL, true, TITLE_MIN_LENGTH, TITLE_MAX_LENGTH, DIAMOND.create(), null);
+        super(LABEL, true, TITLE_MAX_LENGTH, DIAMOND.create(), null);
         addClassName(CLASS_NAME);
     }
 

@@ -12,11 +12,9 @@ public class DogHubComboBoxField extends ComboBox<String> {
 
     public static final String CLASS_NAME = "dog-hub-combo-box-title-field";
 
-    private final int minLength;
     private final int maxLength;
 
-    public DogHubComboBoxField(String label, int minLength, int maxLength, Component prefixComponent, List<String> values) {
-        this.minLength = minLength;
+    public DogHubComboBoxField(String label, int maxLength, Component prefixComponent, List<String> values) {
         this.maxLength = maxLength;
         addClassName(CLASS_NAME);
         setLabel(label);
@@ -53,8 +51,8 @@ public class DogHubComboBoxField extends ComboBox<String> {
 
     private List<String> validateField(String value) {
         List<String> result = new ArrayList<>();
-        if(value == null || value.length() < minLength || value.length() > maxLength) {
-            result.add(format("{0} length must be between {1} and {2} characters", getLabel(), minLength, maxLength));
+        if(value == null || value.length() > maxLength) {
+            result.add(format("{0} length must be up to {1} characters", getLabel(), maxLength));
         }
         return result;
     }

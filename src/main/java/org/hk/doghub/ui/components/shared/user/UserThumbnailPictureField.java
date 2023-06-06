@@ -7,7 +7,6 @@ import org.hk.doghub.ui.components.shared.EditableTextField;
 import static com.vaadin.flow.component.icon.VaadinIcon.PICTURE;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.user.DogHubUser.THUMBNAIL_PICTURE_MAX_LENGTH;
-import static org.hk.doghub.model.user.DogHubUser.THUMBNAIL_PICTURE_MIN_LENGTH;
 
 public class UserThumbnailPictureField extends EditableTextField {
 
@@ -16,7 +15,7 @@ public class UserThumbnailPictureField extends EditableTextField {
     public static final String LABEL = "Avatar URL";
 
     public UserThumbnailPictureField() {
-        super(LABEL, false, THUMBNAIL_PICTURE_MIN_LENGTH, THUMBNAIL_PICTURE_MAX_LENGTH, PICTURE.create(), null);
+        super(LABEL, false, THUMBNAIL_PICTURE_MAX_LENGTH, PICTURE.create(), null);
         addClassName(CLASS_NAME);
     }
 

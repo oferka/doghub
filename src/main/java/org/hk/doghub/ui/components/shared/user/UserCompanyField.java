@@ -7,7 +7,6 @@ import org.hk.doghub.ui.components.shared.EditableTextField;
 import static com.vaadin.flow.component.icon.VaadinIcon.FACTORY;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.user.DogHubUser.COMPANY_MAX_LENGTH;
-import static org.hk.doghub.model.user.DogHubUser.COMPANY_MIN_LENGTH;
 
 public class UserCompanyField extends EditableTextField {
 
@@ -16,7 +15,7 @@ public class UserCompanyField extends EditableTextField {
     public static final String LABEL = "Company";
 
     public UserCompanyField() {
-        super(LABEL, false, COMPANY_MIN_LENGTH, COMPANY_MAX_LENGTH, FACTORY.create(), null);
+        super(LABEL, false, COMPANY_MAX_LENGTH, FACTORY.create(), null);
         addClassName(CLASS_NAME);
     }
 

@@ -6,7 +6,6 @@ import org.hk.doghub.ui.components.shared.ReadOnlyTextField;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MAX_LENGTH;
-import static org.hk.doghub.model.user.DogHubUser.USER_NAME_MIN_LENGTH;
 
 public class UserUsernameField extends ReadOnlyTextField {
 
@@ -15,7 +14,7 @@ public class UserUsernameField extends ReadOnlyTextField {
     public static final String LABEL = "User Name";
 
     public UserUsernameField() {
-        super(LABEL, true, USER_NAME_MIN_LENGTH, USER_NAME_MAX_LENGTH, USER.create());
+        super(LABEL, true, USER_NAME_MAX_LENGTH, USER.create());
         addClassName(CLASS_NAME);
     }
 
