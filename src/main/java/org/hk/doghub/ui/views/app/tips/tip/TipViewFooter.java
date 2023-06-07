@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesRouterLink;
+import org.hk.doghub.ui.components.shared.PreviousEntityRouterLink;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
 
@@ -12,7 +13,7 @@ public class TipViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipView.CLASS_NAME + "-footer";
 
-    private final PreviousTipRouterLink previous;
+    private final PreviousEntityRouterLink previous;
 
     private final EntitiesRouterLink entities;
 
@@ -26,7 +27,7 @@ public class TipViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
 
-        previous = new PreviousTipRouterLink(tipDataProvider, authenticatedUser);
+        previous = new PreviousEntityRouterLink(tipDataProvider, authenticatedUser, "Previous Tip");
         add(previous);
 
         entities = new EntitiesRouterLink(TipsView.class, "Tips");
@@ -47,7 +48,7 @@ public class TipViewFooter extends HorizontalLayout {
     public void selectedTipChanged(long selectedTipId) {
         setSelectedTipId(selectedTipId);
         next.selectedTipChanged(selectedTipId);
-        previous.selectedTipChanged(selectedTipId);
+        previous.selectedEntityChanged(selectedTipId);
     }
 
     public void save() {
