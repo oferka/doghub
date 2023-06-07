@@ -14,7 +14,7 @@ public class TipViewHeaderActions extends HorizontalLayout {
     private final EntityViewHeaderActionsShareButton<DogHubTip> share;
     private final EntityViewHeaderActionsExportButton<DogHubTip> export;
 
-    public TipViewHeaderActions(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeaderActions(TipDataProvider tipDataProvider) {
         addClassName(CLASS_NAME);
 
         share = new EntityViewHeaderActionsShareButton<>(tipDataProvider);

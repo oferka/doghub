@@ -17,7 +17,7 @@ public class TipViewHeader extends HorizontalLayout {
 
     private long selectedTipId;
 
-    public TipViewHeader(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeader(TipDataProvider tipDataProvider) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
@@ -26,7 +26,7 @@ public class TipViewHeader extends HorizontalLayout {
         info = new EntityViewHeaderInfo<>(tipDataProvider);
         add(info);
 
-        actions = new TipViewHeaderActions(tipDataProvider, authenticatedUser);
+        actions = new TipViewHeaderActions(tipDataProvider);
         add(actions);
     }
 

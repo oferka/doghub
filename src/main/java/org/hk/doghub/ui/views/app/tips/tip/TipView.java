@@ -38,7 +38,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
 
         setAlignItems(CENTER);
 
-        header = new TipViewHeader(tipDataProvider, authenticatedUser);
+        header = new TipViewHeader(tipDataProvider);
         add(header);
 
         body = new TipViewBody(tipDataProvider, authenticatedUser, tipUpdateService);
