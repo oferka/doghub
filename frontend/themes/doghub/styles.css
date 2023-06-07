@@ -21,6 +21,7 @@
 @import url('./shared/login-button.css');
 @import url('./shared/login-router-link.css');
 @import url('./shared/name-field.css');
+@import url('./shared/next-entity-button.css');
 @import url('./shared/or-divider.css');
 @import url('./shared/or-divider-line-part.css');
 @import url('./shared/or-divider-text.css');
@@ -94,9 +95,7 @@
 @import url('./views/app/help-view.css');
 @import url('./views/app/minimize-view.css');
 @import url('./views/app/monitor-view.css');
-@import url('./views/app/next-tip-button.css');
 @import url('./views/app/next-tip-router-link.css');
-@import url('./views/app/next-user-button.css');
 @import url('./views/app/next-user-router-link.css');
 @import url('./views/app/note-view.css');
 @import url('./views/app/notifications-view.css');
