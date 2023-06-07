@@ -9,9 +9,9 @@ public class EntitiesRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "entities-router-link";
 
-    public EntitiesRouterLink(Class<? extends Component> navigationTarget, String buttonText) {
+    public EntitiesRouterLink(Class<? extends Component> navigationTarget, String entitiesLabel) {
         super(EMPTY, navigationTarget);
         addClassName(CLASS_NAME);
-        add(new EntitiesButton(buttonText));
+        add(new EntitiesButton(entitiesLabel));
     }
 }
