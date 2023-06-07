@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 318" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 319" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,13 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00272" summary="doghub 270">
-      <created>1686058834647</created>
-      <option name="number" value="00272" />
-      <option name="presentableId" value="LOCAL-00272" />
-      <option name="project" value="LOCAL" />
-      <updated>1686058834647</updated>
     </task>
     <task id="LOCAL-00273" summary="doghub 271">
       <created>1686059761974</created>
@@ -527,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686148156684</updated>
     </task>
-    <option name="localTasksCounter" value="321" />
+    <task id="LOCAL-00321" summary="doghub 319">
+      <created>1686150343202</created>
+      <option name="number" value="00321" />
+      <option name="presentableId" value="LOCAL-00321" />
+      <option name="project" value="LOCAL" />
+      <updated>1686150343202</updated>
+    </task>
+    <option name="localTasksCounter" value="322" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 294" />
     <MESSAGE value="doghub 295" />
     <MESSAGE value="doghub 296" />
     <MESSAGE value="doghub 297" />
@@ -568,6 +567,7 @@
     <MESSAGE value="doghub 316" />
     <MESSAGE value="doghub 317" />
     <MESSAGE value="doghub 318" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 318" />
+    <MESSAGE value="doghub 319" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 319" />
   </component>
 </project>
