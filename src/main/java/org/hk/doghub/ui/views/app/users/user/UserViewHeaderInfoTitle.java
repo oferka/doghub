@@ -3,6 +3,7 @@ package org.hk.doghub.ui.views.app.users.user;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderInfoTitleAvatar;
+import org.hk.doghub.ui.components.shared.EntityViewHeaderInfoTitleText;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -12,7 +13,7 @@ public class UserViewHeaderInfoTitle extends HorizontalLayout {
     public static final String CLASS_NAME = UserViewHeaderInfo.CLASS_NAME + "-title";
 
     private final EntityViewHeaderInfoTitleAvatar<DogHubUser> avatar;
-    private final UserViewHeaderInfoTitleText text;
+    private final EntityViewHeaderInfoTitleText<DogHubUser> text;
 
     public UserViewHeaderInfoTitle(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
@@ -22,7 +23,7 @@ public class UserViewHeaderInfoTitle extends HorizontalLayout {
         avatar = new EntityViewHeaderInfoTitleAvatar<>(userDataProvider);
         add(avatar);
 
-        text = new UserViewHeaderInfoTitleText(userDataProvider);
+        text = new EntityViewHeaderInfoTitleText<>(userDataProvider);
         add(text);
 
         setVerticalComponentAlignment(CENTER, avatar, text);
@@ -30,6 +31,6 @@ public class UserViewHeaderInfoTitle extends HorizontalLayout {
 
     public void selectedUserChanged(long selectedUserId) {
         avatar.selectedEntityChanged(selectedUserId);
-        text.selectedUserChanged(selectedUserId);
+        text.selectedEntityChanged(selectedUserId);
     }
 }
