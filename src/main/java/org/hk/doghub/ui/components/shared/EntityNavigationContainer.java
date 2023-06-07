@@ -3,7 +3,7 @@ package org.hk.doghub.ui.components.shared;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.views.app.users.UserDataProvider;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
@@ -20,19 +20,19 @@ public class EntityNavigationContainer extends HorizontalLayout {
 
     private long selectedEntityId;
 
-    public EntityNavigationContainer(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class entityClass, String entitiesLabel, Class entitiesClass) {
+    public EntityNavigationContainer(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class entityClass, String entitiesLabel, Class entitiesClass) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        previous = new PreviousEntityRouterLink(userDataProvider, authenticatedUser, entityLabel, entityClass);
+        previous = new PreviousEntityRouterLink(entityDataProvider, authenticatedUser, entityLabel, entityClass);
         add(previous);
 
         entities = new EntitiesRouterLink(entitiesClass, entitiesLabel);
         add(entities);
 
-        next = new NextEntityRouterLink(userDataProvider, authenticatedUser, entityLabel, entityClass);
+        next = new NextEntityRouterLink(entityDataProvider, authenticatedUser, entityLabel, entityClass);
         add(next);
     }
 

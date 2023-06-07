@@ -3,60 +3,46 @@ package org.hk.doghub.ui.views.app.tips.tip;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.EntitiesRouterLink;
-import org.hk.doghub.ui.components.shared.NextEntityRouterLink;
-import org.hk.doghub.ui.components.shared.PreviousEntityRouterLink;
+import org.hk.doghub.ui.components.shared.EntityNavigationContainer;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
+
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
 @Slf4j
 public class TipViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipView.CLASS_NAME + "-footer";
 
-    private final PreviousEntityRouterLink previous;
-
-    private final EntitiesRouterLink entities;
-
-    private final NextEntityRouterLink next;
-
-    private long selectedTipId;
+    private final EntityNavigationContainer navigationContainer;
 
     public TipViewFooter(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
-        setJustifyContentMode(JustifyContentMode.CENTER);
+        setJustifyContentMode(CENTER);
 
-        previous = new PreviousEntityRouterLink(tipDataProvider, authenticatedUser, "Tip", TipView.class);
-        add(previous);
-
-        entities = new EntitiesRouterLink(TipsView.class, "Tips");
-        add(entities);
-
-        next = new NextEntityRouterLink(tipDataProvider, authenticatedUser, "Tip", TipView.class);
-        add(next);
+        navigationContainer = new EntityNavigationContainer(tipDataProvider, authenticatedUser, TipView.NAME, TipView.class, TipsView.NAME, TipsView.class);
+        add(navigationContainer);
     }
 
     public long getSelectedTipId() {
-        return selectedTipId;
+        return navigationContainer.getSelectedEntityId();
     }
 
     public void setSelectedTipId(long selectedTipId) {
-        this.selectedTipId = selectedTipId;
+        navigationContainer.setSelectedEntityId(selectedTipId);
     }
 
     public void selectedTipChanged(long selectedTipId) {
-        setSelectedTipId(selectedTipId);
-        next.selectedEntityChanged(selectedTipId);
-        previous.selectedEntityChanged(selectedTipId);
+        navigationContainer.selectedEntityChanged(selectedTipId);
     }
 
     public void save() {
-        selectedTipChanged(selectedTipId);
+        navigationContainer.save();
     }
 
     public void cancel() {
-        log.info("Cancel");
+        navigationContainer.cancel();
     }
 }
