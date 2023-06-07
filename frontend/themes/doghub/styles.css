@@ -24,6 +24,7 @@
 @import url('./shared/or-divider.css');
 @import url('./shared/or-divider-line-part.css');
 @import url('./shared/or-divider-text.css');
+@import url('./shared/previous-entity-button.css');
 @import url('./shared/read-only-text-field.css');
 @import url('./shared/save-failed-with-invalid-input-notification.css');
 @import url('./shared/save-failed-with-unexpected-error-notification.css');
@@ -72,7 +73,6 @@
 @import url('./views/app/about-view.css');
 @import url('./views/app/previous-tip-button.css');
 @import url('./views/app/previous-tip-router-link.css');
-@import url('./views/app/previous-user-button.css');
 @import url('./views/app/previous-user-router-link.css');
 @import url('./views/app/profile-buttons-container.css');
 @import url('./views/app/profile-contact-container.css');
