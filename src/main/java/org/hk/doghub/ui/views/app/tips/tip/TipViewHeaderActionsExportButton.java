@@ -5,7 +5,6 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
 import java.util.Optional;
@@ -22,7 +21,7 @@ public class TipViewHeaderActionsExportButton extends Button {
     private final TipDataProvider tipDataProvider;
     private long selectedTipId;
 
-    public TipViewHeaderActionsExportButton(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeaderActionsExportButton(TipDataProvider tipDataProvider) {
         this.tipDataProvider = tipDataProvider;
         addClassName(CLASS_NAME);
 

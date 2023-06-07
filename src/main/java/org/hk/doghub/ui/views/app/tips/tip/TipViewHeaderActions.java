@@ -19,7 +19,7 @@ public class TipViewHeaderActions extends HorizontalLayout {
         share = new EntityViewHeaderActionsShareButton<>(tipDataProvider);
         add(share);
 
-        export = new TipViewHeaderActionsExportButton(tipDataProvider, authenticatedUser);
+        export = new TipViewHeaderActionsExportButton(tipDataProvider);
         add(export);
     }
 
