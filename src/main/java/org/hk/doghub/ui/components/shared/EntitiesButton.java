@@ -16,10 +16,10 @@ public class EntitiesButton extends Button {
         addClassName(CLASS_NAME);
         setIcon(TABLE.create());
         setText(text);
-        addClickListener(this::clicked);
+        addClickListener(this::entitiesClicked);
     }
 
-    private void clicked(ClickEvent<Button> event) {
+    private void entitiesClicked(ClickEvent<Button> event) {
         log.info(format("{0} clicked", getText()));
     }
 }
