@@ -3,11 +3,9 @@ package org.hk.doghub.ui.views.app.tips.tip;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import jakarta.annotation.security.RolesAllowed;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.InfoCancelEvent;
-import org.hk.doghub.ui.components.shared.InfoCancelListener;
-import org.hk.doghub.ui.components.shared.InfoSaveEvent;
-import org.hk.doghub.ui.components.shared.InfoSaveListener;
+import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.components.shared.tip.TipUpdateService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
@@ -27,7 +25,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
 
     private final TipViewHeader header;
     private final TipViewBody body;
-    private final TipViewFooter footer;
+    private final EntityViewFooter<DogHubTip> footer;
 
     private final TipDataProvider tipDataProvider;
 
@@ -48,7 +46,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
         body.addInfoCancelListener(this);
         addAndExpand(body);
 
-        footer = new TipViewFooter(tipDataProvider, authenticatedUser);
+        footer = new EntityViewFooter<>(tipDataProvider, authenticatedUser, TipView.NAME, TipView.class, TipsView.NAME, TipsView.class);
         add(footer);
     }
 
@@ -63,7 +61,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
     private void setTip(long selectedTipId) {
         header.selectedTipChanged(selectedTipId);
         body.selectedTipChanged(selectedTipId);
-        footer.selectedTipChanged(selectedTipId);
+        footer.selectedEntityChanged(selectedTipId);
     }
 
     @Override

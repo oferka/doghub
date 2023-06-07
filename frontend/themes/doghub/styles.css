@@ -13,6 +13,7 @@
 @import url('./shared/entities-button.css');
 @import url('./shared/entities-router-link.css');
 @import url('./shared/entity-navigation-container.css');
+@import url('./shared/entity-view-footer.css');
 @import url('./shared/facebook-logo.css');
 @import url('./shared/google-logo.css');
 @import url('./shared/id-field.css');
@@ -114,7 +115,6 @@
 @import url('./views/app/tip-shares.css');
 @import url('./views/app/tip-view.css');
 @import url('./views/app/tip-view-body.css');
-@import url('./views/app/tip-view-footer.css');
 @import url('./views/app/tip-view-header.css');
 @import url('./views/app/tip-view-header-actions.css');
 @import url('./views/app/tip-view-header-actions-export-button.css');
@@ -207,7 +207,6 @@
 @import url('./views/app/user-tips-router-link.css');
 @import url('./views/app/user-view.css');
 @import url('./views/app/user-view-body.css');
-@import url('./views/app/user-view-footer.css');
 @import url('./views/app/user-view-header.css');
 @import url('./views/app/user-view-header-actions.css');
 @import url('./views/app/user-view-header-actions-export-button.css');
