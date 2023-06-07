@@ -30,13 +30,13 @@ public class UserViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        previous = new PreviousEntityRouterLink(userDataProvider, authenticatedUser, "User", UserView.class);
+        previous = new PreviousEntityRouterLink(userDataProvider, authenticatedUser, UserView.NAME, UserView.class);
         add(previous);
 
-        entities = new EntitiesRouterLink(UsersView.class, "Users");
+        entities = new EntitiesRouterLink(UsersView.class, UsersView.NAME);
         add(entities);
 
-        next = new NextEntityRouterLink(userDataProvider, authenticatedUser, "User", UserView.class);
+        next = new NextEntityRouterLink(userDataProvider, authenticatedUser, UserView.NAME, UserView.class);
         add(next);
     }
 
