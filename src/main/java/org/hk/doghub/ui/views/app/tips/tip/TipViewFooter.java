@@ -28,13 +28,13 @@ public class TipViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
 
-        previous = new PreviousEntityRouterLink(tipDataProvider, authenticatedUser, "Previous Tip", TipView.class);
+        previous = new PreviousEntityRouterLink(tipDataProvider, authenticatedUser, "Tip", TipView.class);
         add(previous);
 
         entities = new EntitiesRouterLink(TipsView.class, "Tips");
         add(entities);
 
-        next = new NextEntityRouterLink(tipDataProvider, authenticatedUser, "Next Tip", TipView.class);
+        next = new NextEntityRouterLink(tipDataProvider, authenticatedUser, "Tip", TipView.class);
         add(next);
     }
 

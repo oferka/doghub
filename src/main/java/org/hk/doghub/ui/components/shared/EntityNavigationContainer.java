@@ -1,20 +1,18 @@
-package org.hk.doghub.ui.views.app.users.user;
+package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.EntitiesRouterLink;
-import org.hk.doghub.ui.components.shared.NextEntityRouterLink;
-import org.hk.doghub.ui.components.shared.PreviousEntityRouterLink;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
+import org.hk.doghub.ui.views.app.users.user.UserView;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
 @Slf4j
-public class UserViewFooter extends HorizontalLayout {
+public class EntityNavigationContainer extends HorizontalLayout {
 
-    public static final String CLASS_NAME = UserView.CLASS_NAME + "-footer";
+    public static final String CLASS_NAME = "entity-navigation-container";
 
     private final PreviousEntityRouterLink previous;
 
@@ -22,9 +20,9 @@ public class UserViewFooter extends HorizontalLayout {
 
     private final NextEntityRouterLink next;
 
-    private long selectedUserId;
+    private long selectedEntityId;
 
-    public UserViewFooter(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser) {
+    public EntityNavigationContainer(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
@@ -40,22 +38,22 @@ public class UserViewFooter extends HorizontalLayout {
         add(next);
     }
 
-    public long getSelectedUserId() {
-        return selectedUserId;
+    public long getSelectedEntityId() {
+        return selectedEntityId;
     }
 
-    public void setSelectedUserId(long selectedUserId) {
-        this.selectedUserId = selectedUserId;
+    public void setSelectedEntityId(long selectedEntityId) {
+        this.selectedEntityId = selectedEntityId;
     }
 
-    public void selectedUserChanged(long selectedUserId) {
-        setSelectedUserId(selectedUserId);
-        next.selectedEntityChanged(selectedUserId);
-        previous.selectedEntityChanged(selectedUserId);
+    public void selectedEntityChanged(long selectedEntityId) {
+        setSelectedEntityId(selectedEntityId);
+        next.selectedEntityChanged(selectedEntityId);
+        previous.selectedEntityChanged(selectedEntityId);
     }
 
     public void save() {
-        selectedUserChanged(selectedUserId);
+        selectedEntityChanged(selectedEntityId);
     }
 
     public void cancel() {

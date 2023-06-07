@@ -7,6 +7,8 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.Optional;
 
+import static java.text.MessageFormat.format;
+
 public class NextEntityRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "next-entity-router-link";
@@ -19,13 +21,13 @@ public class NextEntityRouterLink extends RouterLink {
 
     private final Class navigationTarget;
 
-    public NextEntityRouterLink(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String text, Class navigationTarget) {
+    public NextEntityRouterLink(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class navigationTarget) {
         this.entityDataProvider = entityDataProvider;
         this.authenticatedUser = authenticatedUser;
         this.navigationTarget = navigationTarget;
         addClassName(CLASS_NAME);
 
-        nextEntityButton = new NextEntityButton(text);
+        nextEntityButton = new NextEntityButton(format("Next {0}", entityLabel));
         nextEntityButton.setEnabled(false);
         add(nextEntityButton);
     }
