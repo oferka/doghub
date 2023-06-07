@@ -7,6 +7,7 @@ import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.router.RouterLink;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityAvatar;
 import org.hk.doghub.ui.views.site.help.HelpView;
 import org.hk.doghub.ui.views.site.notifications.NotificationsView;
 import org.hk.doghub.ui.views.site.profile.ProfileView;
@@ -26,7 +27,7 @@ public class UserMenuBar extends MenuBar {
         Optional<DogHubUser> maybeUser = authenticatedUser.get();
         if (maybeUser.isPresent()) {
             DogHubUser user = maybeUser.get();
-            UserAvatar userAvatar = new UserAvatar(user);
+            EntityAvatar<DogHubUser> userAvatar = new EntityAvatar<>(user);
             MenuItem menuItem = addItem(userAvatar);
             SubMenu subMenu = menuItem.getSubMenu();
             subMenu.addItem(new RouterLink(ProfileView.NAME, ProfileView.class));

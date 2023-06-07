@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
+import org.hk.doghub.model.HasThumbnailPicture;
 import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.model.tip.DogHubTip;
 
@@ -20,7 +21,7 @@ import java.util.Set;
 @ToString
 @Getter
 @Setter
-public class DogHubUser extends NamedEntity {
+public class DogHubUser extends NamedEntity implements HasThumbnailPicture {
 
     public static final int USER_NAME_MAX_LENGTH = 128;
 
@@ -29,8 +30,6 @@ public class DogHubUser extends NamedEntity {
     public static final int TITLE_MAX_LENGTH = 64;
 
     public static final int MOBILE_NUMBER_MAX_LENGTH = 64;
-
-    public static final int THUMBNAIL_PICTURE_MAX_LENGTH = 1024;
 
     public static final int COMPANY_MAX_LENGTH = 64;
 

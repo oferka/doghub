@@ -1,8 +1,8 @@
-.user-avatar {
+.entity-avatar {
     cursor: pointer;
     border: 1px solid var(--lumo-secondary-text-color);
 }
 
-.user-avatar:hover {
+.entity-avatar:hover {
     border: 1px solid var(--lumo-primary-text-color);
 }
