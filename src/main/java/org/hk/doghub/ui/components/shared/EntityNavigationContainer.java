@@ -1,38 +1,40 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.model.AbstractEntity;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
 @Slf4j
-public class EntityNavigationContainer extends HorizontalLayout {
+public class EntityNavigationContainer<T extends AbstractEntity> extends HorizontalLayout {
 
     public static final String CLASS_NAME = "entity-navigation-container";
 
-    private final PreviousEntityRouterLink previous;
+    private final PreviousEntityRouterLink<T> previous;
 
     private final EntitiesRouterLink entities;
 
-    private final NextEntityRouterLink next;
+    private final NextEntityRouterLink<T> next;
 
     private long selectedEntityId;
 
-    public EntityNavigationContainer(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class entityClass, String entitiesLabel, Class entitiesClass) {
+    public EntityNavigationContainer(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class entityClass, String entitiesLabel, Class<? extends Component> entitiesClass) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        previous = new PreviousEntityRouterLink(entityDataProvider, authenticatedUser, entityLabel, entityClass);
+        previous = new PreviousEntityRouterLink<>(entityDataProvider, authenticatedUser, entityLabel, entityClass);
         add(previous);
 
         entities = new EntitiesRouterLink(entitiesClass, entitiesLabel);
         add(entities);
 
-        next = new NextEntityRouterLink(entityDataProvider, authenticatedUser, entityLabel, entityClass);
+        next = new NextEntityRouterLink<>(entityDataProvider, authenticatedUser, entityLabel, entityClass);
         add(next);
     }
 

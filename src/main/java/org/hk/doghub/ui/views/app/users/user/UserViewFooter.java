@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntityNavigationContainer;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
@@ -14,7 +15,7 @@ public class UserViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserView.CLASS_NAME + "-footer";
 
-    private final EntityNavigationContainer navigationContainer;
+    private final EntityNavigationContainer<DogHubUser> navigationContainer;
 
     public UserViewFooter(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -22,7 +23,7 @@ public class UserViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        navigationContainer = new EntityNavigationContainer(userDataProvider, authenticatedUser, UserView.NAME, UserView.class, UsersView.NAME, UsersView.class);
+        navigationContainer = new EntityNavigationContainer<>(userDataProvider, authenticatedUser, UserView.NAME, UserView.class, UsersView.NAME, UsersView.class);
         add(navigationContainer);
     }
 

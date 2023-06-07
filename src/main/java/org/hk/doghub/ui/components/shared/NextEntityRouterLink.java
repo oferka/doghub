@@ -9,11 +9,11 @@ import java.util.Optional;
 
 import static java.text.MessageFormat.format;
 
-public class NextEntityRouterLink extends RouterLink {
+public class NextEntityRouterLink<T extends AbstractEntity> extends RouterLink {
 
     public static final String CLASS_NAME = "next-entity-router-link";
 
-    private final EntityDataProvider entityDataProvider;
+    private final EntityDataProvider<T> entityDataProvider;
 
     private final NextEntityButton nextEntityButton;
 
@@ -21,7 +21,7 @@ public class NextEntityRouterLink extends RouterLink {
 
     private final Class navigationTarget;
 
-    public NextEntityRouterLink(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class navigationTarget) {
+    public NextEntityRouterLink(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class navigationTarget) {
         this.entityDataProvider = entityDataProvider;
         this.authenticatedUser = authenticatedUser;
         this.navigationTarget = navigationTarget;
@@ -33,7 +33,7 @@ public class NextEntityRouterLink extends RouterLink {
     }
 
     public void selectedEntityChanged(long selectedEntityId) {
-        Optional<AbstractEntity> entityOptional = entityDataProvider.findNext(authenticatedUser, selectedEntityId);
+        Optional<T> entityOptional = entityDataProvider.findNext(authenticatedUser, selectedEntityId);
         if(entityOptional.isPresent()) {
             setRoute(navigationTarget, entityOptional.get().getId());
             nextEntityButton.setEnabled(true);

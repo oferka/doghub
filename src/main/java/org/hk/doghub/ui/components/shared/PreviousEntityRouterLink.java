@@ -9,11 +9,11 @@ import java.util.Optional;
 
 import static java.text.MessageFormat.format;
 
-public class PreviousEntityRouterLink extends RouterLink {
+public class PreviousEntityRouterLink<T extends AbstractEntity> extends RouterLink {
 
     public static final String CLASS_NAME = "previous-entity-router-link";
 
-    private final EntityDataProvider entityDataProvider;
+    private final EntityDataProvider<T> entityDataProvider;
 
     private final PreviousEntityButton previousEntityButton;
 
@@ -21,7 +21,7 @@ public class PreviousEntityRouterLink extends RouterLink {
 
     private final Class navigationTarget;
 
-    public PreviousEntityRouterLink(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class navigationTarget) {
+    public PreviousEntityRouterLink(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class navigationTarget) {
         this.entityDataProvider = entityDataProvider;
         this.authenticatedUser = authenticatedUser;
         this.navigationTarget = navigationTarget;
@@ -33,7 +33,7 @@ public class PreviousEntityRouterLink extends RouterLink {
     }
 
     public void selectedEntityChanged(long selectedEntityId) {
-        Optional<AbstractEntity> entityOptional = entityDataProvider.findPrevious(authenticatedUser, selectedEntityId);
+        Optional<T> entityOptional = entityDataProvider.findPrevious(authenticatedUser, selectedEntityId);
         if(entityOptional.isPresent()) {
             setRoute(navigationTarget, entityOptional.get().getId());
             previousEntityButton.setEnabled(true);
