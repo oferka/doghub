@@ -7,7 +7,7 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
 import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
-import org.hk.doghub.ui.views.app.users.UserDataProvider;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,12 +40,12 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserStreetNumberField streetNumber;
     private final UserPostcodeField postcode;
 
-    private final UserDataProvider userDataProvider;
+    private final EntityDataProvider<DogHubUser> entityDataProvider;
 
     private final UserUpdateService userUpdateService;
 
-    public UserInfoContainerForm(UserDataProvider userDataProvider, UserUpdateService userUpdateService) {
-        this.userDataProvider = userDataProvider;
+    public UserInfoContainerForm(EntityDataProvider<DogHubUser> entityDataProvider, UserUpdateService userUpdateService) {
+        this.entityDataProvider = entityDataProvider;
         this.userUpdateService = userUpdateService;
         addClassName(CLASS_NAME);
 
@@ -146,7 +146,7 @@ public class UserInfoContainerForm extends FormLayout {
     }
 
     public void cancel() {
-        Optional<DogHubUser> userOptional = userDataProvider.findById(id.getValue().longValue());
+        Optional<DogHubUser> userOptional = entityDataProvider.findById(id.getValue().longValue());
         userOptional.ifPresent(this::setValue);
     }
 
