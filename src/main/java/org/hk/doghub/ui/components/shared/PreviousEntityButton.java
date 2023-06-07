@@ -5,7 +5,6 @@ import com.vaadin.flow.component.button.Button;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.ARROW_LEFT;
-import static java.text.MessageFormat.format;
 
 @Slf4j
 public class PreviousEntityButton extends Button {
@@ -20,6 +19,6 @@ public class PreviousEntityButton extends Button {
     }
 
     private void previousEntityClicked(ClickEvent<Button> event) {
-        log.info(format("{0} clicked", getText()));
+        log.info("Previous entity clicked");
     }
 }
