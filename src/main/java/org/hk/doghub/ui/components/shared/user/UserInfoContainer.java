@@ -2,7 +2,6 @@ package org.hk.doghub.ui.components.shared.user;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoContainerButtons;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
@@ -22,7 +21,7 @@ public class UserInfoContainer extends VerticalLayout {
 
     private final InfoContainerButtons buttons;
 
-    public UserInfoContainer(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
+    public UserInfoContainer(UserDataProvider userDataProvider, UserUpdateService userUpdateService) {
         this.userDataProvider = userDataProvider;
         addClassName(CLASS_NAME);
 

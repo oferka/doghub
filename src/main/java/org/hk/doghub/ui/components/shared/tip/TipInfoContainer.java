@@ -2,7 +2,6 @@ package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoContainerButtons;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
@@ -22,7 +21,7 @@ public class TipInfoContainer extends VerticalLayout {
 
     private final InfoContainerButtons buttons;
 
-    public TipInfoContainer(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipUpdateService tipUpdateService) {
+    public TipInfoContainer(TipDataProvider tipDataProvider, TipUpdateService tipUpdateService) {
         this.tipDataProvider = tipDataProvider;
         addClassName(CLASS_NAME);
 

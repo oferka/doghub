@@ -35,7 +35,7 @@ public class ProfileView extends VerticalLayout implements InfoSaveListener, Inf
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
-        userInfo = new UserInfoContainer(userDataProvider, authenticatedUser, userUpdateService);
+        userInfo = new UserInfoContainer(userDataProvider, userUpdateService);
         if(authenticatedUser.get().isPresent()) {
             userInfo.setUser(authenticatedUser.get().get().getId());
         }

@@ -22,7 +22,7 @@ public class UserViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        userInfo = new UserInfoContainer(userDataProvider, authenticatedUser, userUpdateService);
+        userInfo = new UserInfoContainer(userDataProvider, userUpdateService);
         add(userInfo);
     }
 

@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
 import org.hk.doghub.ui.components.shared.tip.TipInfoContainer;
@@ -16,13 +15,13 @@ public class TipViewBody extends VerticalLayout {
 
     private final TipInfoContainer tipInfo;
 
-    public TipViewBody(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipUpdateService tipUpdateService) {
+    public TipViewBody(TipDataProvider tipDataProvider, TipUpdateService tipUpdateService) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        tipInfo = new TipInfoContainer(tipDataProvider, authenticatedUser, tipUpdateService);
+        tipInfo = new TipInfoContainer(tipDataProvider, tipUpdateService);
         add(tipInfo);
     }
 

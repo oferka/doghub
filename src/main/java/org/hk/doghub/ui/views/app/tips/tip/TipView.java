@@ -41,7 +41,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
         header = new EntityViewHeader<>(tipDataProvider);
         add(header);
 
-        body = new TipViewBody(tipDataProvider, authenticatedUser, tipUpdateService);
+        body = new TipViewBody(tipDataProvider, tipUpdateService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);
