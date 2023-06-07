@@ -2,7 +2,6 @@ package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderInfoTitle;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
@@ -15,7 +14,7 @@ public class TipViewHeaderInfo extends VerticalLayout {
     private final EntityViewHeaderInfoTitle<DogHubTip> title;
     private final TipViewHeaderInfoDescription description;
 
-    public TipViewHeaderInfo(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeaderInfo(TipDataProvider tipDataProvider) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
@@ -23,7 +22,7 @@ public class TipViewHeaderInfo extends VerticalLayout {
         title = new EntityViewHeaderInfoTitle<>(tipDataProvider);
         add(title);
 
-        description = new TipViewHeaderInfoDescription(tipDataProvider, authenticatedUser);
+        description = new TipViewHeaderInfoDescription(tipDataProvider);
         add(description);
     }
 

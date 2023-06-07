@@ -2,7 +2,6 @@ package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.html.Span;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
 import java.util.Optional;
@@ -13,7 +12,7 @@ public class TipViewHeaderInfoDescription extends Span {
 
     private final TipDataProvider tipDataProvider;
 
-    public TipViewHeaderInfoDescription(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeaderInfoDescription(TipDataProvider tipDataProvider) {
         this.tipDataProvider = tipDataProvider;
         addClassName(CLASS_NAME);
     }

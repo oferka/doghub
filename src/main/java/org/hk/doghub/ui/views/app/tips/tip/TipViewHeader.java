@@ -21,7 +21,7 @@ public class TipViewHeader extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
 
-        info = new TipViewHeaderInfo(tipDataProvider, authenticatedUser);
+        info = new TipViewHeaderInfo(tipDataProvider);
         add(info);
 
         actions = new TipViewHeaderActions(tipDataProvider, authenticatedUser);
