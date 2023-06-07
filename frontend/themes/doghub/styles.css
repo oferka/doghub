@@ -47,7 +47,6 @@
 @import url('./shared/tip-name-field.css');
 @import url('./shared/tip-thumbnail-picture-field.css');
 @import url('./shared/tip-title-field.css');
-@import url('./shared/tips-router-link.css');
 @import url('./shared/user-city-field.css');
 @import url('./shared/user-company-field.css');
 @import url('./shared/user-country-field.css');
@@ -70,7 +69,6 @@
 @import url('./shared/user-thumbnail-picture-field.css');
 @import url('./shared/user-title-field.css');
 @import url('./shared/user-username-field.css');
-@import url('./shared/users-router-link.css');
 @import url('./views/app/about-view.css');
 @import url('./views/app/previous-tip-router-link.css');
 @import url('./views/app/previous-user-router-link.css');
