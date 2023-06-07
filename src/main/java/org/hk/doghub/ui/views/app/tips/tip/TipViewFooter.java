@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesRouterLink;
+import org.hk.doghub.ui.components.shared.NextEntityRouterLink;
 import org.hk.doghub.ui.components.shared.PreviousEntityRouterLink;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
@@ -17,7 +18,7 @@ public class TipViewFooter extends HorizontalLayout {
 
     private final EntitiesRouterLink entities;
 
-    private final NextTipRouterLink next;
+    private final NextEntityRouterLink next;
 
     private long selectedTipId;
 
@@ -27,13 +28,13 @@ public class TipViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
 
-        previous = new PreviousEntityRouterLink(tipDataProvider, authenticatedUser, "Previous Tip");
+        previous = new PreviousEntityRouterLink(tipDataProvider, authenticatedUser, "Previous Tip", TipView.class);
         add(previous);
 
         entities = new EntitiesRouterLink(TipsView.class, "Tips");
         add(entities);
 
-        next = new NextTipRouterLink(tipDataProvider, authenticatedUser);
+        next = new NextEntityRouterLink(tipDataProvider, authenticatedUser, "Next Tip", TipView.class);
         add(next);
     }
 
@@ -47,7 +48,7 @@ public class TipViewFooter extends HorizontalLayout {
 
     public void selectedTipChanged(long selectedTipId) {
         setSelectedTipId(selectedTipId);
-        next.selectedTipChanged(selectedTipId);
+        next.selectedEntityChanged(selectedTipId);
         previous.selectedEntityChanged(selectedTipId);
     }
 

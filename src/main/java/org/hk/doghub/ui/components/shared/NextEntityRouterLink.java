@@ -4,7 +4,6 @@ import com.vaadin.flow.router.RouterLink;
 import org.hk.doghub.model.AbstractEntity;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
-import org.hk.doghub.ui.views.app.users.user.UserView;
 
 import java.util.Optional;
 
@@ -18,9 +17,12 @@ public class NextEntityRouterLink extends RouterLink {
 
     private final AuthenticatedUser authenticatedUser;
 
-    public NextEntityRouterLink(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String text) {
+    private final Class navigationTarget;
+
+    public NextEntityRouterLink(EntityDataProvider entityDataProvider, AuthenticatedUser authenticatedUser, String text, Class navigationTarget) {
         this.entityDataProvider = entityDataProvider;
         this.authenticatedUser = authenticatedUser;
+        this.navigationTarget = navigationTarget;
         addClassName(CLASS_NAME);
 
         nextEntityButton = new NextEntityButton(text);
@@ -31,7 +33,7 @@ public class NextEntityRouterLink extends RouterLink {
     public void selectedEntityChanged(long selectedEntityId) {
         Optional<AbstractEntity> entityOptional = entityDataProvider.findNext(authenticatedUser, selectedEntityId);
         if(entityOptional.isPresent()) {
-            setRoute(UserView.class, entityOptional.get().getId());
+            setRoute(navigationTarget, entityOptional.get().getId());
             nextEntityButton.setEnabled(true);
         }
         else {

@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesRouterLink;
+import org.hk.doghub.ui.components.shared.NextEntityRouterLink;
 import org.hk.doghub.ui.components.shared.PreviousEntityRouterLink;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -19,7 +20,7 @@ public class UserViewFooter extends HorizontalLayout {
 
     private final EntitiesRouterLink entities;
 
-    private final NextUserRouterLink next;
+    private final NextEntityRouterLink next;
 
     private long selectedUserId;
 
@@ -29,13 +30,13 @@ public class UserViewFooter extends HorizontalLayout {
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        previous = new PreviousEntityRouterLink(userDataProvider, authenticatedUser, "Previous User");
+        previous = new PreviousEntityRouterLink(userDataProvider, authenticatedUser, "Previous User", UserView.class);
         add(previous);
 
         entities = new EntitiesRouterLink(UsersView.class, "Users");
         add(entities);
 
-        next = new NextUserRouterLink(userDataProvider, authenticatedUser);
+        next = new NextEntityRouterLink(userDataProvider, authenticatedUser, "Next User", UserView.class);
         add(next);
     }
 
@@ -49,7 +50,7 @@ public class UserViewFooter extends HorizontalLayout {
 
     public void selectedUserChanged(long selectedUserId) {
         setSelectedUserId(selectedUserId);
-        next.selectedUserChanged(selectedUserId);
+        next.selectedEntityChanged(selectedUserId);
         previous.selectedEntityChanged(selectedUserId);
     }
 
