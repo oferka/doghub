@@ -47,7 +47,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
         body.addInfoCancelListener(this);
         addAndExpand(body);
 
-        footer = new UserViewFooter(userDataProvider);
+        footer = new UserViewFooter(userDataProvider, authenticatedUser);
         add(footer);
     }
 

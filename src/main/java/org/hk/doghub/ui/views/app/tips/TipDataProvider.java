@@ -6,13 +6,8 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface TipDataProvider extends EntityDataProvider<DogHubTip> {
-
-    Optional<DogHubTip> findNext(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
-
-    Optional<DogHubTip> findPrevious(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
 
     List<DogHubTip> findAllForUser(@NotNull AuthenticatedUser authenticatedUser);
 

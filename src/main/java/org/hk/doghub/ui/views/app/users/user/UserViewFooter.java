@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesRouterLink;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -21,19 +22,19 @@ public class UserViewFooter extends HorizontalLayout {
 
     private long selectedUserId;
 
-    public UserViewFooter(UserDataProvider userDataProvider) {
+    public UserViewFooter(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
         setJustifyContentMode(CENTER);
 
-        previous = new PreviousUserRouterLink(userDataProvider);
+        previous = new PreviousUserRouterLink(userDataProvider, authenticatedUser);
         add(previous);
 
         entities = new EntitiesRouterLink(UsersView.class, "Users");
         add(entities);
 
-        next = new NextUserRouterLink(userDataProvider);
+        next = new NextUserRouterLink(userDataProvider, authenticatedUser);
         add(next);
     }
 

@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.router.RouterLink;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.PreviousEntityButton;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
@@ -15,8 +16,11 @@ public class PreviousUserRouterLink extends RouterLink {
 
     private final PreviousEntityButton previousEntityButton;
 
-    public PreviousUserRouterLink(UserDataProvider userDataProvider) {
+    private final AuthenticatedUser authenticatedUser;
+
+    public PreviousUserRouterLink(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser) {
         this.userDataProvider = userDataProvider;
+        this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
 
         previousEntityButton = new PreviousEntityButton("Previous User");
@@ -25,7 +29,7 @@ public class PreviousUserRouterLink extends RouterLink {
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        Optional<DogHubUser> userOptional = userDataProvider.findPrevious(selectedUserId);
+        Optional<DogHubUser> userOptional = userDataProvider.findPrevious(authenticatedUser, selectedUserId);
         if(userOptional.isPresent()) {
             setRoute(UserView.class, userOptional.get().getId());
             previousEntityButton.setEnabled(true);

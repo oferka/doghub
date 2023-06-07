@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.security.AuthenticatedUser;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -33,12 +34,12 @@ public class UserServiceDataProvider implements UserDataProvider {
     }
 
     @Override
-    public @NotNull Optional<DogHubUser> findNext(@NotNull Long id) {
+    public @NotNull Optional<DogHubUser> findNext(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long id) {
         return dogHubUserService.findNext(id);
     }
 
     @Override
-    public @NotNull Optional<DogHubUser> findPrevious(@NotNull Long id) {
+    public @NotNull Optional<DogHubUser> findPrevious(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long id) {
         return dogHubUserService.findPrevious(id);
     }
 }
