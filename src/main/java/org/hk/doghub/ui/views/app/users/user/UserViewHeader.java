@@ -3,6 +3,7 @@ package org.hk.doghub.ui.views.app.users.user;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntityViewHeaderActions;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderInfo;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
@@ -14,7 +15,7 @@ public class UserViewHeader extends HorizontalLayout {
     public static final String CLASS_NAME = UserView.CLASS_NAME + "-header";
 
     private final EntityViewHeaderInfo<DogHubUser> info;
-    private final UserViewHeaderActions actions;
+    private final EntityViewHeaderActions<DogHubUser> actions;
 
     private long selectedUserId;
 
@@ -27,7 +28,7 @@ public class UserViewHeader extends HorizontalLayout {
         info = new EntityViewHeaderInfo<>(userDataProvider);
         add(info);
 
-        actions = new UserViewHeaderActions(userDataProvider);
+        actions = new EntityViewHeaderActions<>(userDataProvider);
         add(actions);
     }
 
@@ -42,7 +43,7 @@ public class UserViewHeader extends HorizontalLayout {
     public void selectedUserChanged(long selectedUserId) {
         setSelectedUserId(selectedUserId);
         info.selectedEntityChanged(selectedUserId);
-        actions.selectedUserChanged(selectedUserId);
+        actions.selectedEntityChanged(selectedUserId);
     }
 
     public void save() {
