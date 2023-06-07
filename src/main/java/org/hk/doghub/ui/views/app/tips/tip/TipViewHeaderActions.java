@@ -2,7 +2,6 @@ package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderActionsExportButton;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderActionsShareButton;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;

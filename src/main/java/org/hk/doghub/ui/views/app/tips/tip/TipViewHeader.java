@@ -3,7 +3,6 @@ package org.hk.doghub.ui.views.app.tips.tip;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderInfo;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
