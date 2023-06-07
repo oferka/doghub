@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.tips.tip;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.ui.components.shared.EntityViewHeaderInfoDescription;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderInfoTitle;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 
@@ -12,7 +13,7 @@ public class TipViewHeaderInfo extends VerticalLayout {
     public static final String CLASS_NAME = TipViewHeader.CLASS_NAME + "-info";
 
     private final EntityViewHeaderInfoTitle<DogHubTip> title;
-    private final TipViewHeaderInfoDescription description;
+    private final EntityViewHeaderInfoDescription<DogHubTip> description;
 
     public TipViewHeaderInfo(TipDataProvider tipDataProvider) {
         addClassName(CLASS_NAME);
@@ -22,12 +23,12 @@ public class TipViewHeaderInfo extends VerticalLayout {
         title = new EntityViewHeaderInfoTitle<>(tipDataProvider);
         add(title);
 
-        description = new TipViewHeaderInfoDescription(tipDataProvider);
+        description = new EntityViewHeaderInfoDescription<>(tipDataProvider);
         add(description);
     }
 
     public void selectedTipChanged(long selectedTipId) {
         title.selectedEntityChanged(selectedTipId);
-        description.selectedTipChanged(selectedTipId);
+        description.selectedEntityChanged(selectedTipId);
     }
 }

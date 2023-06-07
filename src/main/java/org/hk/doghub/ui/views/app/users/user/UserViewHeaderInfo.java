@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users.user;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntityViewHeaderInfoDescription;
 import org.hk.doghub.ui.components.shared.EntityViewHeaderInfoTitle;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 
@@ -12,7 +13,7 @@ public class UserViewHeaderInfo extends VerticalLayout {
     public static final String CLASS_NAME = UserViewHeader.CLASS_NAME + "-info";
 
     private final EntityViewHeaderInfoTitle<DogHubUser> title;
-    private final UserViewHeaderInfoDescription description;
+    private final EntityViewHeaderInfoDescription<DogHubUser> description;
 
     public UserViewHeaderInfo(UserDataProvider userDataProvider) {
         addClassName(CLASS_NAME);
@@ -22,12 +23,12 @@ public class UserViewHeaderInfo extends VerticalLayout {
         title = new EntityViewHeaderInfoTitle<>(userDataProvider);
         add(title);
 
-        description = new UserViewHeaderInfoDescription(userDataProvider);
+        description = new EntityViewHeaderInfoDescription<>(userDataProvider);
         add(description);
     }
 
     public void selectedUserChanged(long selectedUserId) {
         title.selectedEntityChanged(selectedUserId);
-        description.selectedUserChanged(selectedUserId);
+        description.selectedEntityChanged(selectedUserId);
     }
 }
