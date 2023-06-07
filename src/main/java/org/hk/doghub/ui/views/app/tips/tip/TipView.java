@@ -23,7 +23,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tip";
 
-    private final TipViewHeader header;
+    private final EntityViewHeader<DogHubTip> header;
     private final TipViewBody body;
     private final EntityViewFooter<DogHubTip> footer;
 
@@ -38,7 +38,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
 
         setAlignItems(CENTER);
 
-        header = new TipViewHeader(tipDataProvider);
+        header = new EntityViewHeader<>(tipDataProvider);
         add(header);
 
         body = new TipViewBody(tipDataProvider, authenticatedUser, tipUpdateService);
@@ -59,7 +59,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
     }
 
     private void setTip(long selectedTipId) {
-        header.selectedTipChanged(selectedTipId);
+        header.selectedEntityChanged(selectedTipId);
         body.selectedTipChanged(selectedTipId);
         footer.selectedEntityChanged(selectedTipId);
     }

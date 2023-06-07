@@ -28,7 +28,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "User";
 
-    private final UserViewHeader header;
+    private final EntityViewHeader<DogHubUser> header;
     private final UserViewBody body;
     private final EntityViewFooter<DogHubUser> footer;
 
@@ -37,7 +37,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
 
         setAlignItems(CENTER);
 
-        header = new UserViewHeader(userDataProvider);
+        header = new EntityViewHeader<>(userDataProvider);
         add(header);
 
         body = new UserViewBody(userDataProvider, authenticatedUser, userUpdateService);
@@ -55,7 +55,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
     }
 
     private void setUser(long selectedUserId) {
-        header.selectedUserChanged(selectedUserId);
+        header.selectedEntityChanged(selectedUserId);
         body.selectedUserChanged(selectedUserId);
         footer.selectedEntityChanged(selectedUserId);
     }
