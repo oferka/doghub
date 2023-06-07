@@ -14,7 +14,7 @@ public class TipViewHeaderActions extends HorizontalLayout {
     public TipViewHeaderActions(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
-        share = new TipViewHeaderActionsShareButton(tipDataProvider, authenticatedUser);
+        share = new TipViewHeaderActionsShareButton(tipDataProvider);
         add(share);
 
         export = new TipViewHeaderActionsExportButton(tipDataProvider, authenticatedUser);

@@ -21,7 +21,7 @@ public class TipViewHeaderActionsShareButton extends Button {
     private final TipDataProvider tipDataProvider;
     private long selectedTipId;
 
-    public TipViewHeaderActionsShareButton(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipViewHeaderActionsShareButton(TipDataProvider tipDataProvider) {
         this.tipDataProvider = tipDataProvider;
         addClassName(CLASS_NAME);
 
