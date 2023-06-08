@@ -21,9 +21,7 @@ import org.hk.doghub.ui.views.app.tips.TipsView;
 @RolesAllowed({"USER", "ADMIN"})
     public class TipView extends EntityView<DogHubTip, TipUpdateParameters> {
 
-    private static final String ID_PREFIX = "tip";
-    private static final String ID_SUFFIX = "-view";
-    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = "tip-view";
     public static final String NAME = "Tip";
 
     public TipView(EntityDataProvider<DogHubTip> entityDataProvider, AuthenticatedUser authenticatedUser, EntityUpdateService<DogHubTip, TipUpdateParameters> entityUpdateService) {

@@ -18,9 +18,7 @@ import org.hk.doghub.ui.views.app.users.UsersView;
 @RolesAllowed({"ADMIN"})
 public class UserView extends EntityView<DogHubUser, UserUpdateParameters> {
 
-    private static final String ID_PREFIX = "user";
-    private static final String ID_SUFFIX = "-view";
-    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = "user-view";
     public static final String NAME = "User";
 
     public UserView(EntityDataProvider<DogHubUser> entityDataProvider, AuthenticatedUser authenticatedUser, EntityUpdateService<DogHubUser, UserUpdateParameters> entityUpdateService) {
