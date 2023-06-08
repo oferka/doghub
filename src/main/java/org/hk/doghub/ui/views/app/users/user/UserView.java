@@ -40,7 +40,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
         header = new EntityViewHeader<>(userDataProvider);
         add(header);
 
-        body = new UserViewBody(userDataProvider, authenticatedUser, userUpdateService);
+        body = new UserViewBody(userDataProvider, userUpdateService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);

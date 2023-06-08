@@ -5,12 +5,11 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.InfoCancelEvent;
-import org.hk.doghub.ui.components.shared.InfoCancelListener;
-import org.hk.doghub.ui.components.shared.InfoSaveEvent;
-import org.hk.doghub.ui.components.shared.InfoSaveListener;
+import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
+import org.hk.doghub.ui.components.shared.user.UserUpdateParameters;
 import org.hk.doghub.ui.components.shared.user.UserUpdateService;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayout;
@@ -29,28 +28,28 @@ public class ProfileView extends VerticalLayout implements InfoSaveListener, Inf
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Profile";
 
-    private final UserInfoContainer userInfo;
+    private final EntityInfoContainer<DogHubUser, UserUpdateParameters> entityInfo;
 
     public ProfileView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
-        userInfo = new UserInfoContainer(userDataProvider, userUpdateService);
+        entityInfo = new UserInfoContainer(userDataProvider, userUpdateService);
         if(authenticatedUser.get().isPresent()) {
-            userInfo.setUser(authenticatedUser.get().get().getId());
+            entityInfo.setEntity(authenticatedUser.get().get().getId());
         }
-        userInfo.addInfoSaveListener(this);
-        userInfo.addInfoCancelListener(this);
-        add(userInfo);
+        entityInfo.addInfoSaveListener(this);
+        entityInfo.addInfoCancelListener(this);
+        add(entityInfo);
     }
 
     @Override
     public void saveTriggered(InfoSaveEvent event) {
-        userInfo.save();
+        entityInfo.save();
     }
 
     @Override
     public void cancelTriggered(InfoCancelEvent event) {
-        userInfo.cancel();
+        entityInfo.cancel();
     }
 }
