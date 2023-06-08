@@ -7,7 +7,6 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.components.shared.tip.TipUpdateParameters;
-import org.hk.doghub.ui.components.shared.tip.TipUpdateService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
 import org.hk.doghub.ui.views.app.tips.TipsView;
@@ -32,7 +31,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
 
     private final AuthenticatedUser authenticatedUser;
 
-    public TipView(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, TipUpdateService tipUpdateService) {
+    public TipView(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser, EntityUpdateService<DogHubTip, TipUpdateParameters> entityUpdateService) {
         this.tipDataProvider = tipDataProvider;
         this.authenticatedUser = authenticatedUser;
         addClassName(CLASS_NAME);
@@ -42,7 +41,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
         header = new EntityViewHeader<>(tipDataProvider);
         add(header);
 
-        body = new TipViewBody(tipDataProvider, tipUpdateService);
+        body = new TipViewBody(tipDataProvider, entityUpdateService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);
@@ -53,16 +52,16 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
 
     @Override
     public void setParameter(BeforeEvent event, Long parameter) {
-        setTip(parameter);
+        setEntity(parameter);
         if(!tipDataProvider.hasAccess(authenticatedUser, parameter)) {
             throw new NotFoundException();
         }
     }
 
-    private void setTip(long selectedTipId) {
-        header.selectedEntityChanged(selectedTipId);
-        body.selectedEntityChanged(selectedTipId);
-        footer.selectedEntityChanged(selectedTipId);
+    private void setEntity(long selectedEntityId) {
+        header.selectedEntityChanged(selectedEntityId);
+        body.selectedEntityChanged(selectedEntityId);
+        footer.selectedEntityChanged(selectedEntityId);
     }
 
     @Override

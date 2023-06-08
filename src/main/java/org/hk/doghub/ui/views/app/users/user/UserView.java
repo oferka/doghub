@@ -10,9 +10,8 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.components.shared.user.UserUpdateParameters;
-import org.hk.doghub.ui.components.shared.user.UserUpdateService;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
-import org.hk.doghub.ui.views.app.users.UserDataProvider;
 import org.hk.doghub.ui.views.app.users.UsersView;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -31,32 +30,32 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
     private final EntityViewBody<DogHubUser, UserUpdateParameters> body;
     private final EntityViewFooter<DogHubUser> footer;
 
-    public UserView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
+    public UserView(EntityDataProvider<DogHubUser> entityDataProvider, AuthenticatedUser authenticatedUser, EntityUpdateService<DogHubUser, UserUpdateParameters> entityUpdateService) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        header = new EntityViewHeader<>(userDataProvider);
+        header = new EntityViewHeader<>(entityDataProvider);
         add(header);
 
-        body = new UserViewBody(userDataProvider, userUpdateService);
+        body = new UserViewBody(entityDataProvider, entityUpdateService);
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);
 
-        footer = new EntityViewFooter<>(userDataProvider, authenticatedUser, UserView.NAME, UserView.class, UsersView.NAME, UsersView.class);
+        footer = new EntityViewFooter<>(entityDataProvider, authenticatedUser, UserView.NAME, UserView.class, UsersView.NAME, UsersView.class);
         add(footer);
     }
 
     @Override
     public void setParameter(BeforeEvent event, Long parameter) {
-        setUser(parameter);
+        setEntity(parameter);
     }
 
-    private void setUser(long selectedUserId) {
-        header.selectedEntityChanged(selectedUserId);
-        body.selectedEntityChanged(selectedUserId);
-        footer.selectedEntityChanged(selectedUserId);
+    private void setEntity(long selectedEntityId) {
+        header.selectedEntityChanged(selectedEntityId);
+        body.selectedEntityChanged(selectedEntityId);
+        footer.selectedEntityChanged(selectedEntityId);
     }
 
     @Override
