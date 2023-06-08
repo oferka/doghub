@@ -5,7 +5,7 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoContainerButtons;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
-import org.hk.doghub.ui.views.app.users.UserDataProvider;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.Optional;
 
@@ -15,19 +15,19 @@ public class UserInfoContainer extends VerticalLayout {
 
     public static final String CLASS_NAME = "user-info-container";
 
-    private final UserDataProvider userDataProvider;
+    private final EntityDataProvider<DogHubUser> entityDataProvider;
 
     private final UserInfoContainerForm form;
 
     private final InfoContainerButtons buttons;
 
-    public UserInfoContainer(UserDataProvider userDataProvider, UserUpdateService userUpdateService) {
-        this.userDataProvider = userDataProvider;
+    public UserInfoContainer(EntityDataProvider<DogHubUser> entityDataProvider, UserUpdateService userUpdateService) {
+        this.entityDataProvider = entityDataProvider;
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
 
-        form = new UserInfoContainerForm(userDataProvider, userUpdateService);
+        form = new UserInfoContainerForm(entityDataProvider, userUpdateService);
         add(form);
 
         buttons = new InfoContainerButtons();
@@ -35,7 +35,7 @@ public class UserInfoContainer extends VerticalLayout {
     }
 
     public void setUser(long userId) {
-        Optional<DogHubUser> userOptional = userDataProvider.findById(userId);
+        Optional<DogHubUser> userOptional = entityDataProvider.findById(userId);
         userOptional.ifPresent(form::setValue);
     }
 
