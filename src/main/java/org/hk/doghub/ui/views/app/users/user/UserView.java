@@ -21,8 +21,8 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 @RolesAllowed({"ADMIN"})
 public class UserView extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, InfoCancelListener {
 
-    public static final String ID_PREFIX = "user";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "user";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "User";
 

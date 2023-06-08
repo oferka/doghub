@@ -18,8 +18,8 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 @RolesAllowed({"USER", "ADMIN"})
 public class TipView extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, InfoCancelListener {
 
-    public static final String ID_PREFIX = "tip";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "tip";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tip";
 
