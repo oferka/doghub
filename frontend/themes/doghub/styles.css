@@ -12,6 +12,7 @@
 @import url('./shared/editable-text-field.css');
 @import url('./shared/entities-button.css');
 @import url('./shared/entities-router-link.css');
+@import url('./shared/entities-view-footer.css');
 @import url('./shared/entity-avatar.css');
 @import url('./shared/entity-info-container.css');
 @import url('./shared/entity-info-container-form.css');
@@ -149,7 +150,6 @@
 @import url('./views/app/tips-view-body.css');
 @import url('./views/app/tips-view-body-grid-presentation.css');
 @import url('./views/app/tips-view-body-list-presentation.css');
-@import url('./views/app/tips-view-footer.css');
 @import url('./views/app/tips-view-header.css');
 @import url('./views/app/tips-view-header-actions.css');
 @import url('./views/app/tips-view-header-actions-filter-button.css');
@@ -222,7 +222,6 @@
 @import url('./views/app/users-view-body.css');
 @import url('./views/app/users-view-body-grid-presentation.css');
 @import url('./views/app/users-view-body-list-presentation.css');
-@import url('./views/app/users-view-footer.css');
 @import url('./views/app/users-view-header.css');
 @import url('./views/app/users-view-header-actions.css');
 @import url('./views/app/users-view-header-actions-filter-button.css');

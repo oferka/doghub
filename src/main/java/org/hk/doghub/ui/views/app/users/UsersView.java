@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import org.hk.doghub.ui.components.shared.EntitiesViewFooter;
 import org.hk.doghub.ui.views.app.admin.AdminView;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 
@@ -19,7 +20,7 @@ public class UsersView extends VerticalLayout {
     public static final String NAME = "Users";
     private final UsersViewHeader header;
     private final UsersViewBody body;
-    private final UsersViewFooter footer;
+    private final EntitiesViewFooter footer;
 
     public UsersView(UserDataProvider userDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
@@ -30,7 +31,7 @@ public class UsersView extends VerticalLayout {
         body = new UsersViewBody(userDataProvider, usersViewState);
         addAndExpand(body);
 
-        footer = new UsersViewFooter();
+        footer = new EntitiesViewFooter();
         add(footer);
     }
 }

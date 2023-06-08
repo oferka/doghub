@@ -5,6 +5,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesViewFooter;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 
 import static org.hk.doghub.ui.views.app.tips.TipsView.ROUTE;
@@ -22,7 +23,7 @@ public class TipsView extends VerticalLayout {
 
     private final TipsViewHeader header;
     private final TipsViewBody body;
-    private final TipsViewFooter footer;
+    private final EntitiesViewFooter footer;
 
     public TipsView(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -33,7 +34,7 @@ public class TipsView extends VerticalLayout {
         body = new TipsViewBody(tipDataProvider, tipsViewState, authenticatedUser);
         addAndExpand(body);
 
-        footer = new TipsViewFooter();
+        footer = new EntitiesViewFooter();
         add(footer);
     }
 }
