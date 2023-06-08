@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
@@ -21,20 +22,38 @@ import static org.hk.doghub.model.user.DogHubUser.*;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class UserUpdateService {
+public class UserUpdateService implements EntityUpdateService<DogHubUser, UserUpdateParameters>  {
 
     private final DogHubUserService userService;
 
-    public DogHubUser update(@NotNull Long id,
-                             @NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
+    @Override
+    public @NotNull DogHubUser update(@NotNull UserUpdateParameters updateParameters) {
+        return update(
+                updateParameters.getId(),
+                updateParameters.getTitle(),
+                updateParameters.getName(),
+                updateParameters.getMobileNumber(),
+                updateParameters.getEmail(),
+                updateParameters.getThumbnailPicture(),
+                updateParameters.getCompany(),
+                updateParameters.getDateOfBirth(),
+                updateParameters.getCountry(),
+                updateParameters.getState(),
+                updateParameters.getCity(),
+                updateParameters.getStreetName(),
+                updateParameters.getNumber(),
+                updateParameters.getPostcode()
+        );
+    }
+
+    private DogHubUser update(@NotNull Long id,
                              @Size(max = TITLE_MAX_LENGTH) String title,
                              @Size(max = NAME_MAX_LENGTH) String name,
                              @Size(max = MOBILE_NUMBER_MAX_LENGTH) String mobileNumber,
-                             @Email @Size(max = EMAIL_MAX_LENGTH)String email,
+                             @Email @Size(max = EMAIL_MAX_LENGTH) String email,
                              @URL @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) String thumbnailPicture,
                              @Size(max = COMPANY_MAX_LENGTH) String company,
                              @Past ZonedDateTime dateOfBirth,
-                             @NotNull @Past ZonedDateTime dateOfRegistration,
                              @Size(max = COUNTRY_MAX_LENGTH) String country,
                              @Size(max = STATE_MAX_LENGTH) String state,
                              @Size(max = CITY_MAX_LENGTH) String city,
@@ -45,12 +64,10 @@ public class UserUpdateService {
         if(userOptional.isPresent()) {
             DogHubUser user = userOptional.get();
             user.setName((name != null) ? name : EMPTY);
-            user.setUsername(username);
             user.setEmail(email);
             user.setTitle(title);
             user.setThumbnailPicture(thumbnailPicture);
             user.setDateOfBirth(dateOfBirth);
-            user.setDateOfRegistration(dateOfRegistration);
             user.setCompany(company);
             user.setMobileNumber(mobileNumber);
             DogHubAddress address = user.getAddress();

@@ -4,6 +4,7 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
 import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
@@ -29,11 +30,11 @@ public class TipInfoContainerForm extends FormLayout {
 
     private final EntityDataProvider<DogHubTip> entityDataProvider;
 
-    private final TipUpdateService tipUpdateService;
+    private final EntityUpdateService<DogHubTip, TipUpdateParameters> entityUpdateService;
 
-    public TipInfoContainerForm(EntityDataProvider<DogHubTip> entityDataProvider, TipUpdateService tipUpdateService) {
+    public TipInfoContainerForm(EntityDataProvider<DogHubTip> entityDataProvider, EntityUpdateService<DogHubTip, TipUpdateParameters> entityUpdateService) {
         this.entityDataProvider = entityDataProvider;
-        this.tipUpdateService = tipUpdateService;
+        this.entityUpdateService = entityUpdateService;
         addClassName(CLASS_NAME);
 
         id = new TipIdField();
@@ -73,14 +74,7 @@ public class TipInfoContainerForm extends FormLayout {
         List<String> violations = validateInput();
         if(violations.isEmpty()) {
             try {
-                DogHubTip tip = tipUpdateService.update(
-                        id.getValueAsLong(),
-                        name.getValue(),
-                        title.getValue(),
-                        content.getValue(),
-                        moreInfo.getValue(),
-                        thumbnailPicture.getValue()
-                );
+                DogHubTip tip = entityUpdateService.update(getUpdateParameters());
                 log.info("Save successfully for tip with ID '{}'", tip.getId());
                 showSavedSuccessfullyNotification();
             }
@@ -93,6 +87,17 @@ public class TipInfoContainerForm extends FormLayout {
             showSaveFailedWithInvalidInputNotification(violations);
         }
         log.info("Save for tip with ID '{}' has completed", id.getValue());
+    }
+
+    private TipUpdateParameters getUpdateParameters() {
+        TipUpdateParameters result = new TipUpdateParameters();
+        result.setId(id.getValueAsLong());
+        result.setName(name.getValue());
+        result.setTitle(title.getValue());
+        result.setContent(content.getValue());
+        result.setMoreInfo(moreInfo.getValue());
+        result.setThumbnailPicture(thumbnailPicture.getValue());
+        return result;
     }
 
     public void cancel() {

@@ -4,6 +4,7 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
 import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
@@ -42,11 +43,11 @@ public class UserInfoContainerForm extends FormLayout {
 
     private final EntityDataProvider<DogHubUser> entityDataProvider;
 
-    private final UserUpdateService userUpdateService;
+    private final EntityUpdateService<DogHubUser, UserUpdateParameters> entityUpdateService;
 
-    public UserInfoContainerForm(EntityDataProvider<DogHubUser> entityDataProvider, UserUpdateService userUpdateService) {
+    public UserInfoContainerForm(EntityDataProvider<DogHubUser> entityDataProvider, EntityUpdateService<DogHubUser, UserUpdateParameters> entityUpdateService) {
         this.entityDataProvider = entityDataProvider;
-        this.userUpdateService = userUpdateService;
+        this.entityUpdateService = entityUpdateService;
         addClassName(CLASS_NAME);
 
         id = new UserIdField();
@@ -113,24 +114,7 @@ public class UserInfoContainerForm extends FormLayout {
         List<String> violations = validateInput();
         if(violations.isEmpty()) {
             try {
-                DogHubUser user = userUpdateService.update(
-                        id.getValueAsLong(),
-                        username.getValue(),
-                        title.getValue(),
-                        name.getValue(),
-                        mobileNumber.getValue(),
-                        email.getValue(),
-                        thumbnailPicture.getValue(),
-                        company.getValue(),
-                        dateOfBirth.getValueAsZonedDateTime(),
-                        dateOfRegistration.getValueAsZonedDateTime(),
-                        country.getValue(),
-                        state.getValue(),
-                        city.getValue(),
-                        streetName.getValue(),
-                        streetNumber.getValue(),
-                        postcode.getValue()
-                );
+                DogHubUser user = entityUpdateService.update(getUpdateParameters());
                 log.info("Save successfully for user with ID '{}'", user.getId());
                 showSavedSuccessfullyNotification();
             }
@@ -143,6 +127,25 @@ public class UserInfoContainerForm extends FormLayout {
             showSaveFailedWithInvalidInputNotification(violations);
         }
         log.info("Save for user with ID '{}' has completed", id.getValue());
+    }
+
+    private UserUpdateParameters getUpdateParameters() {
+        UserUpdateParameters result = new UserUpdateParameters();
+        result.setId(id.getValueAsLong());
+        result.setName(name.getValue());
+        result.setTitle(title.getValue());
+        result.setMobileNumber(mobileNumber.getValue());
+        result.setEmail(email.getValue());
+        result.setThumbnailPicture(thumbnailPicture.getValue());
+        result.setCompany(company.getValue());
+        result.setDateOfBirth(dateOfBirth.getValueAsZonedDateTime());
+        result.setNumber(streetNumber.getValue());
+        result.setStreetName(streetName.getValue());
+        result.setCity(city.getValue());
+        result.setState(state.getValue());
+        result.setCountry(country.getValue());
+        result.setPostcode(postcode.getValue());
+        return result;
     }
 
     public void cancel() {

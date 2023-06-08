@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.data.service.tip.DogHubTipService;
 import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -18,11 +19,23 @@ import static org.hk.doghub.model.tip.DogHubTip.*;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class TipUpdateService {
+public class TipUpdateService implements EntityUpdateService<DogHubTip, TipUpdateParameters> {
 
     private final DogHubTipService tipService;
 
-    public DogHubTip update(@NotNull Long id,
+    @Override
+    public @NotNull DogHubTip update(@NotNull TipUpdateParameters updateParameters) {
+        return update(
+                updateParameters.getId(),
+                updateParameters.getName(),
+                updateParameters.getTitle(),
+                updateParameters.getContent(),
+                updateParameters.getMoreInfo(),
+                updateParameters.getThumbnailPicture()
+        );
+    }
+
+    private @NotNull DogHubTip update(@NotNull Long id,
                             @NotNull @Size(max = NAME_MAX_LENGTH) String name,
                             @NotNull @Size(max = TITLE_MAX_LENGTH) String title,
                             @Size(max = CONTENT_MAX_LENGTH) String content,
