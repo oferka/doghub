@@ -11,7 +11,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyConte
 @Slf4j
 public class EntityViewHeader<T extends NamedEntity & HasThumbnailPicture> extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entity-view-header";
+    public static final String CLASS_NAME = EntityView.CLASS_NAME + "-header";
 
     private final EntityViewHeaderInfo<T> info;
     private final EntityViewHeaderActions<T> actions;

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class EntityViewHeaderInfoDescription<T extends NamedEntity> extends Span {
 
-    public static final String CLASS_NAME = "entity-view=header-info-description";
+    public static final String CLASS_NAME = EntityViewHeaderInfo.CLASS_NAME + "-description";
 
     private final EntityDataProvider<T> entityDataProvider;
 

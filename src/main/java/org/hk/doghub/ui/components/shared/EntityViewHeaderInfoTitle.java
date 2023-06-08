@@ -9,7 +9,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 
 public class EntityViewHeaderInfoTitle<T extends NamedEntity & HasThumbnailPicture> extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entity-view-header-info-title";
+    public static final String CLASS_NAME = EntityViewHeaderInfo.CLASS_NAME + "-title";
 
     private final EntityViewHeaderInfoTitleAvatar<T> avatar;
     private final EntityViewHeaderInfoTitleText<T> text;

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class EntityViewHeaderInfoTitleText<T extends NamedEntity> extends H2 {
 
-    public static final String CLASS_NAME = "entity-view-header-info-title-text";
+    public static final String CLASS_NAME = EntityViewHeaderInfoTitle.CLASS_NAME + "-text";
 
     private final EntityDataProvider<T> entityDataProvider;
 

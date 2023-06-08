@@ -13,7 +13,7 @@ import static com.vaadin.flow.component.notification.Notification.Position.MIDDL
 
 public class EntityViewHeaderActionsShareButton<T extends NamedEntity> extends Button {
 
-    public static final String CLASS_NAME = "entity-view-header-actions-share-button";
+    public static final String CLASS_NAME = EntityViewHeaderActions.CLASS_NAME + "-share-button";
 
     private final EntityDataProvider<T> entityDataProvider;
     private long selectedEntityId;

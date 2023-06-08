@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class EntityViewHeaderInfoTitleAvatar<T extends NamedEntity & HasThumbnailPicture> extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entity-view-header-info-title-avatar";
+    public static final String CLASS_NAME = EntityViewHeaderInfoTitle.CLASS_NAME + "-avatar";
 
     private final EntityAvatar<T> avatar;
     private final EntityDataProvider<T> entityDataProvider;

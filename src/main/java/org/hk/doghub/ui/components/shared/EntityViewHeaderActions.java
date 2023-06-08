@@ -6,7 +6,7 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 public class EntityViewHeaderActions<T extends NamedEntity> extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entity-view-header-actions";
+    public static final String CLASS_NAME = EntityViewHeader.CLASS_NAME + "-actions";
 
     private final EntityViewHeaderActionsShareButton<T> share;
     private final EntityViewHeaderActionsExportButton<T> export;

@@ -8,7 +8,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 
 public abstract class EntityViewBody<T extends NamedEntity, P extends EntityUpdateParameters> extends VerticalLayout {
 
-    public static final String CLASS_NAME = "entity-view-body";
+    public static final String CLASS_NAME = EntityView.CLASS_NAME + "-body";
 
     protected final EntityDataProvider<T> entityDataProvider;
 

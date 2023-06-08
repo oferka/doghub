@@ -10,7 +10,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyConte
 
 public class EntityViewFooter<T extends AbstractEntity> extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entity-view-footer";
+    public static final String CLASS_NAME = EntityView.CLASS_NAME + "-footer";
 
     private final EntityNavigationContainer<T> navigationContainer;
 

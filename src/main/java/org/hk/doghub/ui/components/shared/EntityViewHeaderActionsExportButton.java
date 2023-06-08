@@ -14,7 +14,7 @@ import static com.vaadin.flow.component.notification.Notification.Position.MIDDL
 
 public class EntityViewHeaderActionsExportButton<T extends NamedEntity> extends Button {
 
-    public static final String CLASS_NAME = "entity-view-header-actions-export-button";
+    public static final String CLASS_NAME = EntityViewHeaderActions.CLASS_NAME + "-export-button";
 
     private final EntityDataProvider<T> entityDataProvider;
     private long selectedEntityId;
