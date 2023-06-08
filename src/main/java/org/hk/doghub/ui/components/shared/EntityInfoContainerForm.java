@@ -22,7 +22,16 @@ public abstract class EntityInfoContainerForm<T extends NamedEntity, P extends E
         this.entityDataProvider = entityDataProvider;
         this.entityUpdateService = entityUpdateService;
         addClassName(CLASS_NAME);
+        addClassName();
+        createFields();
+        addFields();
     }
+
+    protected abstract void addClassName();
+
+    protected abstract void createFields();
+
+    protected abstract void addFields();
 
     public abstract void setValue(T value);
 

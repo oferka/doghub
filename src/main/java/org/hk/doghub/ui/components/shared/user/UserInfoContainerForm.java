@@ -20,27 +20,32 @@ public class UserInfoContainerForm extends EntityInfoContainerForm<DogHubUser, U
 
     public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
 
-    private final UserIdField id;
-    private final UserUsernameField username;
-    private final UserTitleField title;
-    private final UserNameField name;
-    private final UserMobileNumberField mobileNumber;
-    private final UserEmailField email;
-    private final UserThumbnailPictureField thumbnailPicture;
-    private final UserCompanyField company;
-    private final UserDateOfBirthField dateOfBirth;
-    private final UserDateOfRegistrationField dateOfRegistration;
-    private final UserCountryField country;
-    private final UserStateField state;
-    private final UserCityField city;
-    private final UserStreetNameField streetName;
-    private final UserStreetNumberField streetNumber;
-    private final UserPostcodeField postcode;
+    private UserIdField id;
+    private UserUsernameField username;
+    private UserTitleField title;
+    private UserNameField name;
+    private UserMobileNumberField mobileNumber;
+    private UserEmailField email;
+    private UserThumbnailPictureField thumbnailPicture;
+    private UserCompanyField company;
+    private UserDateOfBirthField dateOfBirth;
+    private UserDateOfRegistrationField dateOfRegistration;
+    private UserCountryField country;
+    private UserStateField state;
+    private UserCityField city;
+    private UserStreetNameField streetName;
+    private UserStreetNumberField streetNumber;
+    private UserPostcodeField postcode;
 
     public UserInfoContainerForm(EntityDataProvider<DogHubUser> entityDataProvider, EntityUpdateService<DogHubUser, UserUpdateParameters> entityUpdateService) {
         super(entityDataProvider, entityUpdateService);
-        addClassName(CLASS_NAME);
+    }
 
+    protected void addClassName() {
+        addClassName(CLASS_NAME);
+    }
+
+    protected void createFields() {
         id = new UserIdField();
         username = new UserUsernameField();
         title = new UserTitleField();
@@ -60,7 +65,9 @@ public class UserInfoContainerForm extends EntityInfoContainerForm<DogHubUser, U
         streetName = new UserStreetNameField();
         streetNumber = new UserStreetNumberField();
         postcode = new UserPostcodeField();
+    }
 
+    protected void addFields() {
         setResponsiveSteps(new ResponsiveStep("0", 1), new ResponsiveStep("500px", 2));
         setColspan(id, 1);
         setColspan(username, 1);

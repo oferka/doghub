@@ -15,19 +15,24 @@ public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, Tip
 
     public static final String CLASS_NAME = TipInfoContainer.CLASS_NAME + "-form";
 
-    private final TipIdField id;
-    private final TipNameField name;
-    private final TipTitleField title;
-    private final TipContentField content;
-    private final TipMoreInfoField moreInfo;
-    private final TipThumbnailPictureField thumbnailPicture;
-    private final TipCreationTimeField creationTime;
-    private final TipCreatedByField createdBy;
+    private TipIdField id;
+    private TipNameField name;
+    private TipTitleField title;
+    private TipContentField content;
+    private TipMoreInfoField moreInfo;
+    private TipThumbnailPictureField thumbnailPicture;
+    private TipCreationTimeField creationTime;
+    private TipCreatedByField createdBy;
 
     public TipInfoContainerForm(EntityDataProvider<DogHubTip> entityDataProvider, EntityUpdateService<DogHubTip, TipUpdateParameters> entityUpdateService) {
         super(entityDataProvider, entityUpdateService);
-        addClassName(CLASS_NAME);
+    }
 
+    protected void addClassName() {
+        addClassName(CLASS_NAME);
+    }
+
+    protected void createFields() {
         id = new TipIdField();
         name = new TipNameField();
         title = new TipTitleField();
@@ -36,7 +41,9 @@ public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, Tip
         thumbnailPicture = new TipThumbnailPictureField();
         creationTime = new TipCreationTimeField();
         createdBy = new TipCreatedByField();
+    }
 
+    protected void addFields() {
         setResponsiveSteps(new ResponsiveStep("0", 1), new ResponsiveStep("500px", 2));
         setColspan(id, 1);
         setColspan(name, 1);
