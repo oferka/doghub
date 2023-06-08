@@ -33,7 +33,7 @@ public class TipsView extends VerticalLayout {
         body = new TipsViewBody(tipDataProvider, tipsViewState, authenticatedUser);
         addAndExpand(body);
 
-        footer = new TipsViewFooter(tipDataProvider, tipsViewState, authenticatedUser);
+        footer = new TipsViewFooter();
         add(footer);
     }
 }

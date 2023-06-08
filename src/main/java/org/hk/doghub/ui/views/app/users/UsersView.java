@@ -30,7 +30,7 @@ public class UsersView extends VerticalLayout {
         body = new UsersViewBody(userDataProvider, usersViewState);
         addAndExpand(body);
 
-        footer = new UsersViewFooter(userDataProvider, usersViewState);
+        footer = new UsersViewFooter();
         add(footer);
     }
 }
