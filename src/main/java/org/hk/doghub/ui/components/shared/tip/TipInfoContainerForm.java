@@ -1,14 +1,14 @@
 package org.hk.doghub.ui.components.shared.tip;
 
-import com.vaadin.flow.component.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.ui.components.shared.*;
+import org.hk.doghub.ui.components.shared.EntityInfoContainerForm;
+import org.hk.doghub.ui.components.shared.EntityUpdateParameters;
+import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, TipUpdateParameters> {
@@ -60,27 +60,12 @@ public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, Tip
         createdBy.setValue(tip);
     }
 
-    public void save() {
-        log.info("Save for tip with ID '{}' has started", id.getValue());
-        List<String> violations = validateInput();
-        if(violations.isEmpty()) {
-            try {
-                DogHubTip tip = entityUpdateService.update(getUpdateParameters());
-                log.info("Save successfully for tip with ID '{}'", tip.getId());
-                showSavedSuccessfullyNotification();
-            }
-            catch (Exception e) {
-                log.error("Unexpected exception was thrown", e);
-                showSaveFailedWithUnexpectedErrorNotification();
-            }
-        }
-        else {
-            showSaveFailedWithInvalidInputNotification(violations);
-        }
-        log.info("Save for tip with ID '{}' has completed", id.getValue());
+    @Override
+    protected DogHubTip update(EntityUpdateParameters updateParameters) {
+        return entityUpdateService.update((TipUpdateParameters) updateParameters);
     }
 
-    private TipUpdateParameters getUpdateParameters() {
+    protected TipUpdateParameters getUpdateParameters() {
         TipUpdateParameters result = new TipUpdateParameters();
         result.setId(id.getValueAsLong());
         result.setName(name.getValue());
@@ -91,27 +76,7 @@ public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, Tip
         return result;
     }
 
-    public void cancel() {
-        Optional<DogHubTip> tipOptional = entityDataProvider.findById(id.getValue().longValue());
-        tipOptional.ifPresent(this::setValue);
-    }
-
-    private void showSavedSuccessfullyNotification() {
-        Notification notification = new SavedSuccessfullyNotification();
-        notification.open();
-    }
-
-    private void showSaveFailedWithUnexpectedErrorNotification() {
-        Notification notification = new SaveFailedWithUnexpectedErrorNotification();
-        notification.open();
-    }
-
-    private void showSaveFailedWithInvalidInputNotification(List<String> violations) {
-        Notification notification = new SaveFailedWithInvalidInputNotification(violations);
-        notification.open();
-    }
-
-    private List<String> validateInput() {
+    protected List<String> validateInput() {
         List<String> violations = new ArrayList<>();
         violations.addAll(id.validateField());
         violations.addAll(name.validateField());

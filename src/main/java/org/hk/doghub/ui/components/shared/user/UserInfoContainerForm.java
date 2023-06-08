@@ -1,14 +1,14 @@
 package org.hk.doghub.ui.components.shared.user;
 
-import com.vaadin.flow.component.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.ui.components.shared.*;
+import org.hk.doghub.ui.components.shared.EntityInfoContainerForm;
+import org.hk.doghub.ui.components.shared.EntityUpdateParameters;
+import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.MAILBOX;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
@@ -100,27 +100,12 @@ public class UserInfoContainerForm extends EntityInfoContainerForm<DogHubUser, U
         postcode.setValue(user);
     }
 
-    public void save() {
-        log.info("Save for user with ID '{}' has started", id.getValue());
-        List<String> violations = validateInput();
-        if(violations.isEmpty()) {
-            try {
-                DogHubUser user = entityUpdateService.update(getUpdateParameters());
-                log.info("Save successfully for user with ID '{}'", user.getId());
-                showSavedSuccessfullyNotification();
-            }
-            catch (Exception e) {
-                log.error("Unexpected exception was thrown", e);
-                showSaveFailedWithUnexpectedErrorNotification();
-            }
-        }
-        else {
-            showSaveFailedWithInvalidInputNotification(violations);
-        }
-        log.info("Save for user with ID '{}' has completed", id.getValue());
+    @Override
+    protected DogHubUser update(EntityUpdateParameters updateParameters) {
+        return entityUpdateService.update((UserUpdateParameters) updateParameters);
     }
 
-    private UserUpdateParameters getUpdateParameters() {
+    protected UserUpdateParameters getUpdateParameters() {
         UserUpdateParameters result = new UserUpdateParameters();
         result.setId(id.getValueAsLong());
         result.setName(name.getValue());
@@ -139,27 +124,7 @@ public class UserInfoContainerForm extends EntityInfoContainerForm<DogHubUser, U
         return result;
     }
 
-    public void cancel() {
-        Optional<DogHubUser> userOptional = entityDataProvider.findById(id.getValue().longValue());
-        userOptional.ifPresent(this::setValue);
-    }
-
-    private void showSavedSuccessfullyNotification() {
-        Notification notification = new SavedSuccessfullyNotification();
-        notification.open();
-    }
-
-    private void showSaveFailedWithUnexpectedErrorNotification() {
-        Notification notification = new SaveFailedWithUnexpectedErrorNotification();
-        notification.open();
-    }
-
-    private void showSaveFailedWithInvalidInputNotification(List<String> violations) {
-        Notification notification = new SaveFailedWithInvalidInputNotification(violations);
-        notification.open();
-    }
-
-    private List<String> validateInput() {
+    protected List<String> validateInput() {
         List<String> violations = new ArrayList<>();
         violations.addAll(id.validateField());
         violations.addAll(username.validateField());
