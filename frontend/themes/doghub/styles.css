@@ -13,6 +13,7 @@
 @import url('./shared/entities-button.css');
 @import url('./shared/entities-router-link.css');
 @import url('./shared/entities-view-footer.css');
+@import url('./shared/entities-view-header-info-title-icon.css');
 @import url('./shared/entity-avatar.css');
 @import url('./shared/entity-info-container.css');
 @import url('./shared/entity-info-container-form.css');
@@ -162,7 +163,6 @@
 @import url('./views/app/tips-view-header-info-description.css');
 @import url('./views/app/tips-view-header-info-title.css');
 @import url('./views/app/tips-view-header-info-title-count.css');
-@import url('./views/app/tips-view-header-info-title-icon.css');
 @import url('./views/app/tips-view-header-info-title-text.css');
 @import url('./views/app/doghub-app-layout.css');
 @import url('./views/app/doghub-app-layout-drawer.css');
@@ -234,7 +234,6 @@
 @import url('./views/app/users-view-header-info-description.css');
 @import url('./views/app/users-view-header-info-title.css');
 @import url('./views/app/users-view-header-info-title-count.css');
-@import url('./views/app/users-view-header-info-title-icon.css');
 @import url('./views/app/users-view-header-info-title-text.css');
 @import url('./views/site/features-view.css');
 @import url('./views/site/for-individuals-view.css');
