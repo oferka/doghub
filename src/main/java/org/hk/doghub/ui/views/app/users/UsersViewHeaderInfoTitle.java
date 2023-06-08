@@ -26,7 +26,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
         text = new EntitiesViewHeaderInfoTitleText(UsersView.NAME);
         add(text);
 
-        count = new UsersViewHeaderInfoTitleCount(usersViewDataProvider, usersViewState);
+        count = new UsersViewHeaderInfoTitleCount(usersViewDataProvider);
         add(count);
     }
 }

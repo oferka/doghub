@@ -9,7 +9,7 @@ public class TipsViewHeaderInfoTitleCount extends H2 {
 
     public static final String CLASS_NAME = TipsViewHeaderInfoTitle.CLASS_NAME + "-count";
 
-    public TipsViewHeaderInfoTitleCount(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfoTitleCount(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setTitleText(tipDataProvider.countForUser(authenticatedUser));
     }
