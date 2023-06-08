@@ -23,7 +23,7 @@ public class TipsViewHeaderInfoTitle extends HorizontalLayout {
         icon = new EntitiesViewHeaderInfoTitleIcon(LINK);
         add(icon);
 
-        text = new TipsViewHeaderInfoTitleText(tipDataProvider, tipsViewState, authenticatedUser);
+        text = new TipsViewHeaderInfoTitleText();
         add(text);
 
         count = new TipsViewHeaderInfoTitleCount(tipDataProvider, tipsViewState, authenticatedUser);

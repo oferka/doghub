@@ -22,7 +22,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
         icon = new EntitiesViewHeaderInfoTitleIcon(USERS);
         add(icon);
 
-        text = new UsersViewHeaderInfoTitleText(usersViewDataProvider, usersViewState);
+        text = new UsersViewHeaderInfoTitleText();
         add(text);
 
         count = new UsersViewHeaderInfoTitleCount(usersViewDataProvider, usersViewState);
