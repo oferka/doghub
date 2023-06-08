@@ -1,13 +1,9 @@
 package org.hk.doghub.ui.components.shared.user;
 
-import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
-import org.hk.doghub.ui.components.shared.EntityUpdateService;
-import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
-import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
-import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
+import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.ArrayList;
@@ -20,7 +16,7 @@ import static org.hk.doghub.ui.components.shared.user.UserEmailField.LABEL;
 
 
 @Slf4j
-public class UserInfoContainerForm extends FormLayout {
+public class UserInfoContainerForm extends EntityInfoContainerForm<DogHubUser, UserUpdateParameters> {
 
     public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
 
@@ -41,13 +37,8 @@ public class UserInfoContainerForm extends FormLayout {
     private final UserStreetNumberField streetNumber;
     private final UserPostcodeField postcode;
 
-    private final EntityDataProvider<DogHubUser> entityDataProvider;
-
-    private final EntityUpdateService<DogHubUser, UserUpdateParameters> entityUpdateService;
-
     public UserInfoContainerForm(EntityDataProvider<DogHubUser> entityDataProvider, EntityUpdateService<DogHubUser, UserUpdateParameters> entityUpdateService) {
-        this.entityDataProvider = entityDataProvider;
-        this.entityUpdateService = entityUpdateService;
+        super(entityDataProvider, entityUpdateService);
         addClassName(CLASS_NAME);
 
         id = new UserIdField();

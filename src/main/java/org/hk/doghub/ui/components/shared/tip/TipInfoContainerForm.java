@@ -1,13 +1,9 @@
 package org.hk.doghub.ui.components.shared.tip;
 
-import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.notification.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.ui.components.shared.EntityUpdateService;
-import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
-import org.hk.doghub.ui.components.shared.SaveFailedWithUnexpectedErrorNotification;
-import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
+import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.ArrayList;
@@ -15,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-public class TipInfoContainerForm extends FormLayout {
+public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, TipUpdateParameters> {
 
     public static final String CLASS_NAME = TipInfoContainer.CLASS_NAME + "-form";
 
@@ -28,13 +24,8 @@ public class TipInfoContainerForm extends FormLayout {
     private final TipCreationTimeField creationTime;
     private final TipCreatedByField createdBy;
 
-    private final EntityDataProvider<DogHubTip> entityDataProvider;
-
-    private final EntityUpdateService<DogHubTip, TipUpdateParameters> entityUpdateService;
-
     public TipInfoContainerForm(EntityDataProvider<DogHubTip> entityDataProvider, EntityUpdateService<DogHubTip, TipUpdateParameters> entityUpdateService) {
-        this.entityDataProvider = entityDataProvider;
-        this.entityUpdateService = entityUpdateService;
+        super(entityDataProvider, entityUpdateService);
         addClassName(CLASS_NAME);
 
         id = new TipIdField();
