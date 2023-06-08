@@ -17,7 +17,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
 
         setAlignItems(CENTER);
 
-        icon = new UsersViewHeaderInfoTitleIcon(usersViewDataProvider, usersViewState);
+        icon = new UsersViewHeaderInfoTitleIcon();
         add(icon);
 
         text = new UsersViewHeaderInfoTitleText(usersViewDataProvider, usersViewState);

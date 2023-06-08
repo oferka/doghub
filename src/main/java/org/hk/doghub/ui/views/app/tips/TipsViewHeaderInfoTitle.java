@@ -18,7 +18,7 @@ public class TipsViewHeaderInfoTitle extends HorizontalLayout {
 
         setAlignItems(CENTER);
 
-        icon = new TipsViewHeaderInfoTitleIcon(tipDataProvider, tipsViewState, authenticatedUser);
+        icon = new TipsViewHeaderInfoTitleIcon();
         add(icon);
 
         text = new TipsViewHeaderInfoTitleText(tipDataProvider, tipsViewState, authenticatedUser);

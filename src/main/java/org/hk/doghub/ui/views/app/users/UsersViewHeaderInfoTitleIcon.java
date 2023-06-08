@@ -8,7 +8,7 @@ public class UsersViewHeaderInfoTitleIcon extends Icon {
 
     public static final String CLASS_NAME = UsersViewHeaderInfoTitle.CLASS_NAME + "-icon";
 
-    public UsersViewHeaderInfoTitleIcon(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderInfoTitleIcon() {
         super(USERS);
         addClassName(CLASS_NAME);
     }
