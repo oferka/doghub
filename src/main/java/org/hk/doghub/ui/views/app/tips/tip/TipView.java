@@ -6,6 +6,7 @@ import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.*;
+import org.hk.doghub.ui.components.shared.tip.TipUpdateParameters;
 import org.hk.doghub.ui.components.shared.tip.TipUpdateService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipDataProvider;
@@ -24,7 +25,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
     public static final String NAME = "Tip";
 
     private final EntityViewHeader<DogHubTip> header;
-    private final TipViewBody body;
+    private final EntityViewBody<DogHubTip, TipUpdateParameters> body;
     private final EntityViewFooter<DogHubTip> footer;
 
     private final TipDataProvider tipDataProvider;

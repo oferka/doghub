@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.*;
+import org.hk.doghub.ui.components.shared.user.UserUpdateParameters;
 import org.hk.doghub.ui.components.shared.user.UserUpdateService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
@@ -29,7 +30,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
     public static final String NAME = "User";
 
     private final EntityViewHeader<DogHubUser> header;
-    private final UserViewBody body;
+    private final EntityViewBody<DogHubUser, UserUpdateParameters> body;
     private final EntityViewFooter<DogHubUser> footer;
 
     public UserView(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser, UserUpdateService userUpdateService) {
