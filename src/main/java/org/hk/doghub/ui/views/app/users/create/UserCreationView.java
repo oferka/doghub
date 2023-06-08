@@ -15,8 +15,8 @@ import org.hk.doghub.ui.views.app.users.UsersView;
 public class UserCreationView extends VerticalLayout {
 
     public static final String ROUTE = UsersView.ROUTE + "/create";
-    public static final String ID_PREFIX = "user-creation";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "user-creation";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "User Creation";
     private final UserCreationViewHeader header;

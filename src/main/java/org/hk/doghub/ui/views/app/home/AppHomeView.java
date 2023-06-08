@@ -16,8 +16,8 @@ import static org.hk.doghub.ui.views.app.home.AppHomeView.ROUTE;
 public class AppHomeView extends VerticalLayout {
 
     public static final String ROUTE = "app-home";
-    public static final String ID_PREFIX = "app-home";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "app-home";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Application Home";
 

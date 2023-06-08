@@ -10,8 +10,8 @@ import static java.lang.String.format;
 @Slf4j
 public class DogHubSiteLayout extends AppLayout {
 
-    public static final String ID_PREFIX = "doghub-site";
-    public static final String ID_SUFFIX = "-layout";
+    private static final String ID_PREFIX = "doghub-site";
+    private static final String ID_SUFFIX = "-layout";
     public static final String ID = ID_PREFIX + ID_SUFFIX;
 
     private final DogHubSiteLayoutHeader header;

@@ -7,8 +7,8 @@ import org.hk.doghub.security.AuthenticatedUser;
 
 public class DogHubAppLayout extends AppLayout {
 
-    public static final String ID_PREFIX = "doghub-app";
-    public static final String ID_SUFFIX = "-layout";
+    private static final String ID_PREFIX = "doghub-app";
+    private static final String ID_SUFFIX = "-layout";
     public static final String ID = ID_PREFIX + ID_SUFFIX;
 
     private final DogHubAppLayoutHeader header;

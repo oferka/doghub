@@ -23,8 +23,8 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 public class ProfileView extends VerticalLayout implements InfoSaveListener, InfoCancelListener {
 
     public static final String ROUTE = "profile";
-    public static final String ID_PREFIX = "profile";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "profile";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Profile";
 

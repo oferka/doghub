@@ -16,8 +16,8 @@ import org.hk.doghub.ui.views.site.home.SiteHomeView;
 public class SignupView extends VerticalLayout implements BeforeEnterObserver {
 
     public static final String ROUTE = "signup";
-    public static final String ID_PREFIX = "signup";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "signup";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Sign Up";
 

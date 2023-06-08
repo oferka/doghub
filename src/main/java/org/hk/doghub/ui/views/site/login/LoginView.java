@@ -21,8 +21,8 @@ import static org.hk.doghub.ui.views.site.login.LoginView.ROUTE;
 public class LoginView extends VerticalLayout implements BeforeEnterObserver {
 
     public static final String ROUTE = "login";
-    public static final String ID_PREFIX = "login";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "login";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Login";
 

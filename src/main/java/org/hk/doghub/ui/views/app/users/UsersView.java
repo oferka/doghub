@@ -13,8 +13,8 @@ import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 public class UsersView extends VerticalLayout {
 
     public static final String ROUTE = AdminView.ROUTE + "/users";
-    public static final String ID_PREFIX = "users";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "users";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Users";
     private final UsersViewHeader header;

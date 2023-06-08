@@ -14,8 +14,8 @@ import org.hk.doghub.ui.views.app.tips.TipsView;
 public class TipCreationView extends VerticalLayout {
 
     public static final String ROUTE = TipsView.ROUTE + "/create";
-    public static final String ID_PREFIX = "tip-creation";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "tip-creation";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tip Creation";
 

@@ -15,8 +15,8 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 public class SettingsView extends VerticalLayout {
 
     public static final String ROUTE = "settings";
-    public static final String ID_PREFIX = "settings";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "settings";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Settings";
 

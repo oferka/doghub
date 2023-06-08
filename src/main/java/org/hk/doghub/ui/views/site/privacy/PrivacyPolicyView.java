@@ -15,8 +15,8 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 public class PrivacyPolicyView extends VerticalLayout {
 
     public static final String ROUTE = "privacy";
-    public static final String ID_PREFIX = "privacy-policy";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "privacy-policy";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Privacy Policy";
 

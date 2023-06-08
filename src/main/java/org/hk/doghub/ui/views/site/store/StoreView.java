@@ -15,8 +15,8 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 public class StoreView extends VerticalLayout {
 
     public static final String ROUTE = "store";
-    public static final String ID_PREFIX = "store";
-    public static final String ID_SUFFIX = "-view";
+    private static final String ID_PREFIX = "store";
+    private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Store";
 
