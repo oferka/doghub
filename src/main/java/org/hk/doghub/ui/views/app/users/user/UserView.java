@@ -56,7 +56,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long>, I
 
     private void setUser(long selectedUserId) {
         header.selectedEntityChanged(selectedUserId);
-        body.selectedUserChanged(selectedUserId);
+        body.selectedEntityChanged(selectedUserId);
         footer.selectedEntityChanged(selectedUserId);
     }
 

@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 328">
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/entity-info-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/EntityInfoContainer.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 329">
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/entity-view-body.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/EntityViewBody.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/shared/tip-info-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/tip-info-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/shared/user-info-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/user-info-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/shared/entity-view=header-info-description.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/entity-view-header-info-description.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-view-body.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-view-body.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/user-view-body.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/user-view-body.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipInfoContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipInfoContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserInfoContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserInfoContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/tip/TipViewBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/tip/TipViewBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/user/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/user/UserView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/user/UserViewBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/user/UserViewBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/profile/ProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/profile/ProfileView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,13 +195,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00282" summary="doghub 280">
-      <created>1686111990886</created>
-      <option name="number" value="00282" />
-      <option name="presentableId" value="LOCAL-00282" />
-      <option name="project" value="LOCAL" />
-      <updated>1686111990886</updated>
     </task>
     <task id="LOCAL-00283" summary="doghub 281">
       <created>1686112143227</created>
@@ -540,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686218845261</updated>
     </task>
-    <option name="localTasksCounter" value="331" />
+    <task id="LOCAL-00331" summary="doghub 329">
+      <created>1686220416014</created>
+      <option name="number" value="00331" />
+      <option name="presentableId" value="LOCAL-00331" />
+      <option name="project" value="LOCAL" />
+      <updated>1686220416014</updated>
+    </task>
+    <option name="localTasksCounter" value="332" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,7 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 304" />
     <MESSAGE value="doghub 305" />
     <MESSAGE value="doghub 306" />
     <MESSAGE value="doghub 307" />
@@ -581,6 +579,7 @@
     <MESSAGE value="doghub 326" />
     <MESSAGE value="doghub 327" />
     <MESSAGE value="doghub 328" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 328" />
+    <MESSAGE value="doghub 329" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 329" />
   </component>
 </project>

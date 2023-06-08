@@ -60,7 +60,7 @@ public class TipView extends VerticalLayout implements HasUrlParameter<Long>, In
 
     private void setTip(long selectedTipId) {
         header.selectedEntityChanged(selectedTipId);
-        body.selectedTipChanged(selectedTipId);
+        body.selectedEntityChanged(selectedTipId);
         footer.selectedEntityChanged(selectedTipId);
     }
 
