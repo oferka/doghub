@@ -2,6 +2,7 @@ package org.hk.doghub.ui.components.shared.tip;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.ui.components.shared.EntityInfoContainerForm;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoContainerButtons;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
@@ -17,7 +18,7 @@ public class TipInfoContainer extends VerticalLayout {
 
     private final EntityDataProvider<DogHubTip> entityDataProvider;
 
-    private final TipInfoContainerForm form;
+    private final EntityInfoContainerForm<DogHubTip, TipUpdateParameters> form;
 
     private final InfoContainerButtons buttons;
 

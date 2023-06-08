@@ -2,6 +2,7 @@ package org.hk.doghub.ui.components.shared.user;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntityInfoContainerForm;
 import org.hk.doghub.ui.components.shared.InfoCancelListener;
 import org.hk.doghub.ui.components.shared.InfoContainerButtons;
 import org.hk.doghub.ui.components.shared.InfoSaveListener;
@@ -17,7 +18,7 @@ public class UserInfoContainer extends VerticalLayout {
 
     private final EntityDataProvider<DogHubUser> entityDataProvider;
 
-    private final UserInfoContainerForm form;
+    private final EntityInfoContainerForm<DogHubUser, UserUpdateParameters> form;
 
     private final InfoContainerButtons buttons;
 
