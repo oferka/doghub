@@ -16,7 +16,7 @@ public class TipsListItem extends HorizontalLayout {
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        avatar = new TipsListItemAvatar(tip, authenticatedUser);
+        avatar = new TipsListItemAvatar(tip);
         add(avatar);
 
         info = new TipsListItemInfo(tip, authenticatedUser);
