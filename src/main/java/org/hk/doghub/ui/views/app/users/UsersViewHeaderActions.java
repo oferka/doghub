@@ -2,7 +2,10 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsFilterButton;
+import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsNewRouterLink;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsPresentationTypeSelector;
+import org.hk.doghub.ui.views.app.users.create.UserCreationView;
+import org.hk.doghub.ui.views.app.users.user.UserView;
 
 public class UsersViewHeaderActions extends HorizontalLayout {
 
@@ -10,7 +13,7 @@ public class UsersViewHeaderActions extends HorizontalLayout {
 
     private final EntitiesViewHeaderActionsPresentationTypeSelector presentationTypeSelector;
     private final EntitiesViewHeaderActionsFilterButton filter;
-    private final UsersViewHeaderActionsNewRouterLink newRouterLink;
+    private final EntitiesViewHeaderActionsNewRouterLink newRouterLink;
 
     public UsersViewHeaderActions(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
@@ -21,7 +24,7 @@ public class UsersViewHeaderActions extends HorizontalLayout {
         filter = new EntitiesViewHeaderActionsFilterButton();
         add(filter);
 
-        newRouterLink = new UsersViewHeaderActionsNewRouterLink();
+        newRouterLink = new EntitiesViewHeaderActionsNewRouterLink(UserCreationView.class, UserView.NAME);
         add(newRouterLink);
     }
 }

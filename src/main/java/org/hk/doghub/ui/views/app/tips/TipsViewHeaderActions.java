@@ -3,7 +3,10 @@ package org.hk.doghub.ui.views.app.tips;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsFilterButton;
+import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsNewRouterLink;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsPresentationTypeSelector;
+import org.hk.doghub.ui.views.app.tips.create.TipCreationView;
+import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
 public class TipsViewHeaderActions extends HorizontalLayout {
 
@@ -11,7 +14,7 @@ public class TipsViewHeaderActions extends HorizontalLayout {
 
     private final EntitiesViewHeaderActionsPresentationTypeSelector presentationTypeSelector;
     private final EntitiesViewHeaderActionsFilterButton filter;
-    private final TipsViewHeaderActionsNewRouterLink newRouterLink;
+    private final EntitiesViewHeaderActionsNewRouterLink newRouterLink;
 
     public TipsViewHeaderActions(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -22,7 +25,7 @@ public class TipsViewHeaderActions extends HorizontalLayout {
         filter = new EntitiesViewHeaderActionsFilterButton();
         add(filter);
 
-        newRouterLink = new TipsViewHeaderActionsNewRouterLink();
+        newRouterLink = new EntitiesViewHeaderActionsNewRouterLink(TipCreationView.class, TipView.NAME);
         add(newRouterLink);
     }
 }
