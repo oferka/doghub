@@ -22,13 +22,10 @@ public class EntitiesViewHeader extends HorizontalLayout {
                               @NotNull Class<? extends Component> entityCreationNavigationTarget,
                               @NotNull String entityName) {
         addClassName(CLASS_NAME);
-
         setWidthFull();
         setAlignItems(CENTER);
-
         info = new EntitiesViewHeaderInfo(vaadinIcon, titleText, entityCount, descriptionText);
         add(info);
-
         actions = new EntitiesViewHeaderActions(viewState, entityCreationNavigationTarget, entityName);
         add(actions);
     }
