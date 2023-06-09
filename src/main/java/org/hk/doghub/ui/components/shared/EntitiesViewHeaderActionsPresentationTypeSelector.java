@@ -1,16 +1,15 @@
-package org.hk.doghub.ui.views.app.users;
+package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.ui.components.shared.*;
 
-public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
+public class EntitiesViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
 
-    public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-presentation-type-selector";
+    public static final String CLASS_NAME = "entities-view-header-actions-type-selector";
 
     private final EntitiesViewHeaderActionsTypeSelectorGridButton grid;
     private final EntitiesViewHeaderActionsTypeSelectorListButton list;
 
-    public UsersViewHeaderActionsPresentationTypeSelector(EntitiesViewState viewState) {
+    public EntitiesViewHeaderActionsPresentationTypeSelector(EntitiesViewState viewState) {
         addClassName(CLASS_NAME);
 
         setSpacing(false);
