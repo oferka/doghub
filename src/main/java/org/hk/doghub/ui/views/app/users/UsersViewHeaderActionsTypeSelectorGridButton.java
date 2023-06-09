@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import org.hk.doghub.ui.components.shared.EntitiesViewState;
 
 import static com.vaadin.flow.component.Key.KEY_G;
 import static com.vaadin.flow.component.KeyModifier.ALT;
@@ -13,9 +14,9 @@ public class UsersViewHeaderActionsTypeSelectorGridButton extends Button {
 
     public static final String CLASS_NAME = UsersViewHeaderActionsPresentationTypeSelector.CLASS_NAME + "-grid-button";
 
-    private final UsersViewState viewState;
+    private final EntitiesViewState viewState;
 
-    public UsersViewHeaderActionsTypeSelectorGridButton(UsersViewState viewState) {
+    public UsersViewHeaderActionsTypeSelectorGridButton(EntitiesViewState viewState) {
         this.viewState = viewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);

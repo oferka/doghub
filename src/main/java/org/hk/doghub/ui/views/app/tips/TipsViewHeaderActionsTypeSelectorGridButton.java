@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import org.hk.doghub.ui.components.shared.EntitiesViewState;
 
 import static com.vaadin.flow.component.Key.KEY_G;
 import static com.vaadin.flow.component.KeyModifier.ALT;
@@ -13,10 +14,10 @@ public class TipsViewHeaderActionsTypeSelectorGridButton extends Button {
 
     public static final String CLASS_NAME = TipsViewHeaderActionsPresentationTypeSelector.CLASS_NAME + "-grid-button";
 
-    private final TipsViewState tipsViewState;
+    private final EntitiesViewState viewState;
 
-    public TipsViewHeaderActionsTypeSelectorGridButton(TipsViewState tipsViewState) {
-        this.tipsViewState = tipsViewState;
+    public TipsViewHeaderActionsTypeSelectorGridButton(EntitiesViewState viewState) {
+        this.viewState = viewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Grid View");
@@ -27,6 +28,6 @@ public class TipsViewHeaderActionsTypeSelectorGridButton extends Button {
     }
 
     private void gridPresentationTypeClicked(ClickEvent<Button> event) {
-        tipsViewState.setPresentationMode(GRID);
+        viewState.setPresentationMode(GRID);
     }
 }
