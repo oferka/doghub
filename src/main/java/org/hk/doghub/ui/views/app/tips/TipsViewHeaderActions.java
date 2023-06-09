@@ -22,7 +22,7 @@ public class TipsViewHeaderActions extends HorizontalLayout {
         filter = new EntitiesViewHeaderActionsFilterButton();
         add(filter);
 
-        newRouterLink = new TipsViewHeaderActionsNewRouterLink(tipDataProvider, tipsViewState, authenticatedUser);
+        newRouterLink = new TipsViewHeaderActionsNewRouterLink();
         add(newRouterLink);
     }
 }

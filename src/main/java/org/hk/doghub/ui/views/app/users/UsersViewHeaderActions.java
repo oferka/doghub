@@ -21,7 +21,7 @@ public class UsersViewHeaderActions extends HorizontalLayout {
         filter = new EntitiesViewHeaderActionsFilterButton();
         add(filter);
 
-        newRouterLink = new UsersViewHeaderActionsNewRouterLink(usersViewDataProvider, usersViewState);
+        newRouterLink = new UsersViewHeaderActionsNewRouterLink();
         add(newRouterLink);
     }
 }

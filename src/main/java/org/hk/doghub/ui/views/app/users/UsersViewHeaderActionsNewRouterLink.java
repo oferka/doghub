@@ -13,7 +13,7 @@ public class UsersViewHeaderActionsNewRouterLink extends RouterLink {
 
     private final EntitiesViewHeaderActionsNewButton newButton;
 
-    public UsersViewHeaderActionsNewRouterLink(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderActionsNewRouterLink() {
         super(EMPTY, UserCreationView.class);
         addClassName(CLASS_NAME);
 
