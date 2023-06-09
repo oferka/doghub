@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsFilterButton;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsNewRouterLink;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsPresentationTypeSelector;
@@ -16,7 +15,7 @@ public class TipsViewHeaderActions extends HorizontalLayout {
     private final EntitiesViewHeaderActionsFilterButton filter;
     private final EntitiesViewHeaderActionsNewRouterLink newRouterLink;
 
-    public TipsViewHeaderActions(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActions(TipsViewState tipsViewState) {
         addClassName(CLASS_NAME);
 
         presentationTypeSelector = new EntitiesViewHeaderActionsPresentationTypeSelector(tipsViewState);

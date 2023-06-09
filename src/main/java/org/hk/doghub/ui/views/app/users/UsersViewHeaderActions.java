@@ -15,7 +15,7 @@ public class UsersViewHeaderActions extends HorizontalLayout {
     private final EntitiesViewHeaderActionsFilterButton filter;
     private final EntitiesViewHeaderActionsNewRouterLink newRouterLink;
 
-    public UsersViewHeaderActions(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderActions(UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         presentationTypeSelector = new EntitiesViewHeaderActionsPresentationTypeSelector(usersViewState);

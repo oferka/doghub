@@ -23,7 +23,7 @@ public class TipsViewHeader extends HorizontalLayout {
         info = new EntitiesViewHeaderInfo(LINK, TipsView.NAME, tipDataProvider.countForUser(authenticatedUser), "Tips view description");
         add(info);
 
-        actions = new TipsViewHeaderActions(tipDataProvider, tipsViewState, authenticatedUser);
+        actions = new TipsViewHeaderActions(tipsViewState);
         add(actions);
     }
 }

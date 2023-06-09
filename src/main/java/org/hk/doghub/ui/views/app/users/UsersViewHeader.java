@@ -22,7 +22,7 @@ public class UsersViewHeader extends HorizontalLayout {
         info = new EntitiesViewHeaderInfo(USERS, UsersView.NAME, usersViewDataProvider.count(), "Users view description");
         add(info);
 
-        actions = new UsersViewHeaderActions(usersViewDataProvider, usersViewState);
+        actions = new UsersViewHeaderActions(usersViewState);
         add(actions);
     }
 }
