@@ -4,6 +4,7 @@ import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +15,16 @@ import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.GR
 @UIScope
 public class TipsViewState {
 
-    private final List<TipsViewPresentationModeChangeListener> tipsViewPresentationModeChangeListeners = new ArrayList<>();
+    private final List<EntitiesViewPresentationModeChangeListener> entitiesViewPresentationModeChangeListeners = new ArrayList<>();
 
     private EntitiesViewPresentationMode presentationMode = GRID;
 
-    public void addPresentationModeChangeListener(TipsViewPresentationModeChangeListener listener) {
-        tipsViewPresentationModeChangeListeners.add(listener);
+    public void addPresentationModeChangeListener(EntitiesViewPresentationModeChangeListener listener) {
+        entitiesViewPresentationModeChangeListeners.add(listener);
     }
 
-    public void removePresentationModeChangeListener(TipsViewPresentationModeChangeListener listener) {
-        tipsViewPresentationModeChangeListeners.remove(listener);
+    public void removePresentationModeChangeListener(EntitiesViewPresentationModeChangeListener listener) {
+        entitiesViewPresentationModeChangeListeners.remove(listener);
     }
 
     public EntitiesViewPresentationMode getPresentationMode() {
@@ -38,7 +39,7 @@ public class TipsViewState {
     }
 
     private void fireTipsViewPresentationModeChangeEvent(EntitiesViewPresentationModeChangeEvent event) {
-        for(TipsViewPresentationModeChangeListener listener : tipsViewPresentationModeChangeListeners) {
+        for(EntitiesViewPresentationModeChangeListener listener : entitiesViewPresentationModeChangeListeners) {
             listener.presentationModeChanged(event);
         }
     }
