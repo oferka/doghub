@@ -1,12 +1,11 @@
 package org.hk.doghub.ui.views.app.tips;
 
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import org.hk.doghub.security.AuthenticatedUser;
+import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoDescription;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoTitle;
-
-import static com.vaadin.flow.component.icon.VaadinIcon.LINK;
 
 public class TipsViewHeaderInfo extends VerticalLayout {
 
@@ -15,15 +14,15 @@ public class TipsViewHeaderInfo extends VerticalLayout {
     private final EntitiesViewHeaderInfoTitle title;
     private final EntitiesViewHeaderInfoDescription description;
 
-    public TipsViewHeaderInfo(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfo(@NotNull VaadinIcon vaadinIcon, @NotNull String titleText, long entityCount, @NotNull String descriptionText) {
         addClassName(CLASS_NAME);
 
         setAlignItems(FlexComponent.Alignment.CENTER);
 
-        title = new EntitiesViewHeaderInfoTitle(LINK, TipsView.NAME, tipDataProvider.countForUser(authenticatedUser));
+        title = new EntitiesViewHeaderInfoTitle(vaadinIcon, titleText, entityCount);
         add(title);
 
-        description = new EntitiesViewHeaderInfoDescription("Tips view description");
+        description = new EntitiesViewHeaderInfoDescription(descriptionText);
         add(description);
     }
 }
