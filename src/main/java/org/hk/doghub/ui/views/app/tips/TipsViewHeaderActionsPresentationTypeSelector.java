@@ -1,10 +1,7 @@
 package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsTypeSelectorGridButton;
-import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsTypeSelectorListButton;
-import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
-import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
+import org.hk.doghub.ui.components.shared.*;
 
 public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
 
@@ -13,19 +10,19 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
     private final EntitiesViewHeaderActionsTypeSelectorGridButton grid;
     private final EntitiesViewHeaderActionsTypeSelectorListButton list;
 
-    public TipsViewHeaderActionsPresentationTypeSelector(TipsViewState tipsViewState) {
+    public TipsViewHeaderActionsPresentationTypeSelector(EntitiesViewState viewState) {
         addClassName(CLASS_NAME);
 
         setSpacing(false);
 
-        grid = new EntitiesViewHeaderActionsTypeSelectorGridButton(tipsViewState);
+        grid = new EntitiesViewHeaderActionsTypeSelectorGridButton(viewState);
         add(grid);
 
-        list = new EntitiesViewHeaderActionsTypeSelectorListButton(tipsViewState);
+        list = new EntitiesViewHeaderActionsTypeSelectorListButton(viewState);
         add(list);
 
-        setPresentationType(tipsViewState.getPresentationMode());
-        tipsViewState.addPresentationModeChangeListener(this::presentationModeChanged);
+        setPresentationType(viewState.getPresentationMode());
+        viewState.addPresentationModeChangeListener(this::presentationModeChanged);
     }
 
     private void setPresentationType(EntitiesViewPresentationMode presentationMode) {
