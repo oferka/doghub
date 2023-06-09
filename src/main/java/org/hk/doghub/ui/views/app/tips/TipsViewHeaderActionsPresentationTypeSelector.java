@@ -15,7 +15,7 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
 
         setSpacing(false);
 
-        grid = new TipsViewHeaderActionsTypeSelectorGridButton(tipDataProvider, tipsViewState, authenticatedUser);
+        grid = new TipsViewHeaderActionsTypeSelectorGridButton(tipsViewState);
         add(grid);
 
         list = new TipsViewHeaderActionsTypeSelectorListButton(tipDataProvider, tipsViewState, authenticatedUser);

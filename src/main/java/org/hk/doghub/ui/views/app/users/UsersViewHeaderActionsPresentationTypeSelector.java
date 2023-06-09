@@ -14,7 +14,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
 
         setSpacing(false);
 
-        grid = new UsersViewHeaderActionsTypeSelectorGridButton(usersViewDataProvider, usersViewState);
+        grid = new UsersViewHeaderActionsTypeSelectorGridButton(usersViewState);
         add(grid);
 
         list = new UsersViewHeaderActionsTypeSelectorListButton(usersViewDataProvider, usersViewState);
