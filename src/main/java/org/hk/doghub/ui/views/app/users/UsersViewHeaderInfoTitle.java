@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoTitleCount;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoTitleIcon;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoTitleText;
 
@@ -13,7 +14,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
 
     private final EntitiesViewHeaderInfoTitleIcon icon;
     private final EntitiesViewHeaderInfoTitleText text;
-    private final UsersViewHeaderInfoTitleCount count;
+    private final EntitiesViewHeaderInfoTitleCount count;
 
     public UsersViewHeaderInfoTitle(UserDataProvider usersViewDataProvider) {
         addClassName(CLASS_NAME);
@@ -26,7 +27,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
         text = new EntitiesViewHeaderInfoTitleText(UsersView.NAME);
         add(text);
 
-        count = new UsersViewHeaderInfoTitleCount(usersViewDataProvider.count());
+        count = new EntitiesViewHeaderInfoTitleCount(usersViewDataProvider.count());
         add(count);
     }
 }
