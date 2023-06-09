@@ -22,7 +22,7 @@ public class TipsViewHeaderInfo extends VerticalLayout {
         title = new EntitiesViewHeaderInfoTitle(LINK, TipsView.NAME, tipDataProvider.countForUser(authenticatedUser));
         add(title);
 
-        description = new TipsViewHeaderInfoDescription(tipDataProvider, tipsViewState, authenticatedUser);
+        description = new TipsViewHeaderInfoDescription();
         add(description);
     }
 }

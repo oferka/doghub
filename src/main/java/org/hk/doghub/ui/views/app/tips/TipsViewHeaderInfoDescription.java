@@ -8,7 +8,7 @@ public class TipsViewHeaderInfoDescription extends Span {
 
     public static final String CLASS_NAME = TipsViewHeaderInfo.CLASS_NAME + "-description";
 
-    public TipsViewHeaderInfoDescription(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfoDescription() {
         addClassName(CLASS_NAME);
 
         setDescriptionText("Tips view description");

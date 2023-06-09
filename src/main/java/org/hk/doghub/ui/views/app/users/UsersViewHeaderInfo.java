@@ -21,7 +21,7 @@ public class UsersViewHeaderInfo extends VerticalLayout {
         title = new EntitiesViewHeaderInfoTitle(USERS, UsersView.NAME, usersViewDataProvider.count());
         add(title);
 
-        description = new UsersViewHeaderInfoDescription(usersViewDataProvider, usersViewState);
+        description = new UsersViewHeaderInfoDescription();
         add(description);
     }
 }

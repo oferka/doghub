@@ -7,7 +7,7 @@ public class UsersViewHeaderInfoDescription extends Span {
 
     public static final String CLASS_NAME = UsersViewHeaderInfo.CLASS_NAME + "-description";
 
-    public UsersViewHeaderInfoDescription(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderInfoDescription() {
         addClassName(CLASS_NAME);
 
         setDescriptionText("Users view description");
