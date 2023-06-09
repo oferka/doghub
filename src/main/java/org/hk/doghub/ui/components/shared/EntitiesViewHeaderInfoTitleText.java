@@ -9,10 +9,6 @@ public class EntitiesViewHeaderInfoTitleText extends H2 {
 
     public EntitiesViewHeaderInfoTitleText(@NotNull String titleText) {
         addClassName(CLASS_NAME);
-        setTitleText(titleText);
-    }
-
-    public void setTitleText(@NotNull String titleText) {
         setText(titleText);
     }
 }
