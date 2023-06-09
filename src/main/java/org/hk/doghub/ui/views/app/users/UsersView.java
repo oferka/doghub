@@ -5,8 +5,13 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.ui.components.shared.EntitiesViewFooter;
+import org.hk.doghub.ui.components.shared.EntitiesViewHeader;
 import org.hk.doghub.ui.views.app.admin.AdminView;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
+import org.hk.doghub.ui.views.app.users.create.UserCreationView;
+import org.hk.doghub.ui.views.app.users.user.UserView;
+
+import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
 
 @PageTitle(UsersView.NAME)
 @Route(value = UsersView.ROUTE, layout = DogHubAppLayout.class)
@@ -18,14 +23,14 @@ public class UsersView extends VerticalLayout {
     private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Users";
-    private final UsersViewHeader header;
+    private final EntitiesViewHeader header;
     private final UsersViewBody body;
     private final EntitiesViewFooter footer;
 
     public UsersView(UserDataProvider userDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
-        header = new UsersViewHeader(userDataProvider, usersViewState);
+        header = new EntitiesViewHeader(usersViewState, USERS, UsersView.NAME, userDataProvider.count(), "Users view description", UserCreationView.class, UserView.NAME);
         add(header);
 
         body = new UsersViewBody(userDataProvider, usersViewState);
