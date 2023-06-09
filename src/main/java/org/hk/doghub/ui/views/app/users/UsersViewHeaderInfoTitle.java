@@ -15,7 +15,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
     private final EntitiesViewHeaderInfoTitleText text;
     private final UsersViewHeaderInfoTitleCount count;
 
-    public UsersViewHeaderInfoTitle(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderInfoTitle(UserDataProvider usersViewDataProvider) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
@@ -26,7 +26,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
         text = new EntitiesViewHeaderInfoTitleText(UsersView.NAME);
         add(text);
 
-        count = new UsersViewHeaderInfoTitleCount(usersViewDataProvider);
+        count = new UsersViewHeaderInfoTitleCount(usersViewDataProvider.count());
         add(count);
     }
 }
