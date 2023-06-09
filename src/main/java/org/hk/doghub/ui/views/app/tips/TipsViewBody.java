@@ -3,6 +3,7 @@ package org.hk.doghub.ui.views.app.tips;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -42,7 +43,7 @@ public class TipsViewBody extends VerticalLayout {
         }
     }
 
-    public void presentationModeChanged(TipsViewPresentationModeChangeEvent event) {
+    public void presentationModeChanged(EntitiesViewPresentationModeChangeEvent event) {
         setPresentationType(event.getNewPresentationMode());
     }
 }

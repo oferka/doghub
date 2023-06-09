@@ -3,6 +3,7 @@ package org.hk.doghub.ui.views.app.users;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +32,12 @@ public class UsersViewState {
 
     public void setPresentationMode(EntitiesViewPresentationMode presentationMode) {
         if(presentationMode != this.presentationMode) {
-            fireUsersViewPresentationModeChangeEvent(new UsersViewPresentationModeChangeEvent(this.presentationMode, presentationMode));
+            fireUsersViewPresentationModeChangeEvent(new EntitiesViewPresentationModeChangeEvent(this.presentationMode, presentationMode));
         }
         this.presentationMode = presentationMode;
     }
 
-    private void fireUsersViewPresentationModeChangeEvent(UsersViewPresentationModeChangeEvent event) {
+    private void fireUsersViewPresentationModeChangeEvent(EntitiesViewPresentationModeChangeEvent event) {
         for(UsersViewPresentationModeChangeListener listener : presentationModeChangeListeners) {
             listener.presentationModeChanged(event);
         }

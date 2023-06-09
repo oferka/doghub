@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
 public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
 
@@ -38,7 +39,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
         }
     }
 
-    public void presentationModeChanged(UsersViewPresentationModeChangeEvent event) {
+    public void presentationModeChanged(EntitiesViewPresentationModeChangeEvent event) {
         setPresentationType(event.getNewPresentationMode());
     }
 }

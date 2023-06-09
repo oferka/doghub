@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -41,7 +42,7 @@ public class UsersViewBody extends VerticalLayout {
         }
     }
 
-    public void presentationModeChanged(UsersViewPresentationModeChangeEvent event) {
+    public void presentationModeChanged(EntitiesViewPresentationModeChangeEvent event) {
         setPresentationType(event.getNewPresentationMode());
     }
 }

@@ -1,14 +1,13 @@
-package org.hk.doghub.ui.views.app.users;
+package org.hk.doghub.ui.components.shared;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsersViewPresentationModeChangeEvent {
+public class EntitiesViewPresentationModeChangeEvent {
 
     private EntitiesViewPresentationMode oldPresentationMode;
 
