@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActions;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfo;
+import org.hk.doghub.ui.components.shared.EntitiesViewState;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationView;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
@@ -17,7 +18,7 @@ public class TipsViewHeader extends HorizontalLayout {
     private final EntitiesViewHeaderInfo info;
     private final EntitiesViewHeaderActions actions;
 
-    public TipsViewHeader(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeader(TipDataProvider tipDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
         setWidthFull();
@@ -26,7 +27,7 @@ public class TipsViewHeader extends HorizontalLayout {
         info = new EntitiesViewHeaderInfo(LINK, TipsView.NAME, tipDataProvider.countForUser(authenticatedUser), "Tips view description");
         add(info);
 
-        actions = new EntitiesViewHeaderActions(tipsViewState, TipCreationView.class, TipView.NAME);
+        actions = new EntitiesViewHeaderActions(viewState, TipCreationView.class, TipView.NAME);
         add(actions);
     }
 }
