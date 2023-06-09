@@ -14,7 +14,7 @@ public class TipsViewHeaderActions extends HorizontalLayout {
     public TipsViewHeaderActions(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
 
-        presentationTypeSelector = new TipsViewHeaderActionsPresentationTypeSelector(tipDataProvider, tipsViewState, authenticatedUser);
+        presentationTypeSelector = new TipsViewHeaderActionsPresentationTypeSelector(tipsViewState);
         add(presentationTypeSelector);
 
         filter = new TipsViewHeaderActionsFilterButton(tipDataProvider, tipsViewState, authenticatedUser);

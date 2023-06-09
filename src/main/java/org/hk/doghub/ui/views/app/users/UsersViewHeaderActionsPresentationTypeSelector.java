@@ -13,7 +13,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
     private final EntitiesViewHeaderActionsTypeSelectorGridButton grid;
     private final EntitiesViewHeaderActionsTypeSelectorListButton list;
 
-    public UsersViewHeaderActionsPresentationTypeSelector(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderActionsPresentationTypeSelector(UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
         setSpacing(false);

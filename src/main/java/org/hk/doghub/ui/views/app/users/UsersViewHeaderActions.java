@@ -13,7 +13,7 @@ public class UsersViewHeaderActions extends HorizontalLayout {
     public UsersViewHeaderActions(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(CLASS_NAME);
 
-        presentationTypeSelector = new UsersViewHeaderActionsPresentationTypeSelector(usersViewDataProvider, usersViewState);
+        presentationTypeSelector = new UsersViewHeaderActionsPresentationTypeSelector(usersViewState);
         add(presentationTypeSelector);
 
         filter = new UsersViewHeaderActionsFilterButton(usersViewDataProvider, usersViewState);
