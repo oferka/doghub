@@ -13,7 +13,7 @@ public class UsersViewHeaderActionsFilterButton extends Button {
 
     public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-filter-button";
 
-    public UsersViewHeaderActionsFilterButton(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderActionsFilterButton() {
         addClassName(CLASS_NAME);
 
         setIcon(FILTER.create());
