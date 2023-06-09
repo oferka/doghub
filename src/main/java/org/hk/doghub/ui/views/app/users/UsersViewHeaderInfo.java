@@ -14,7 +14,7 @@ public class UsersViewHeaderInfo extends VerticalLayout {
     private final EntitiesViewHeaderInfoTitle title;
     private final EntitiesViewHeaderInfoDescription description;
 
-    public UsersViewHeaderInfo(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
+    public UsersViewHeaderInfo(UserDataProvider usersViewDataProvider) {
         addClassName(CLASS_NAME);
 
         setAlignItems(FlexComponent.Alignment.CENTER);

@@ -17,7 +17,7 @@ public class UsersViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        info = new UsersViewHeaderInfo(usersViewDataProvider, usersViewState);
+        info = new UsersViewHeaderInfo(usersViewDataProvider);
         add(info);
 
         actions = new UsersViewHeaderActions(usersViewDataProvider, usersViewState);

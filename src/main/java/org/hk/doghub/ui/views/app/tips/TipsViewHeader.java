@@ -18,7 +18,7 @@ public class TipsViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        info = new TipsViewHeaderInfo(tipDataProvider, tipsViewState, authenticatedUser);
+        info = new TipsViewHeaderInfo(tipDataProvider, authenticatedUser);
         add(info);
 
         actions = new TipsViewHeaderActions(tipDataProvider, tipsViewState, authenticatedUser);
