@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsTypeSelectorGridButton;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
@@ -8,7 +9,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
 
     public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-presentation-type-selector";
 
-    private final UsersViewHeaderActionsTypeSelectorGridButton grid;
+    private final EntitiesViewHeaderActionsTypeSelectorGridButton grid;
     private final UsersViewHeaderActionsTypeSelectorListButton list;
 
     public UsersViewHeaderActionsPresentationTypeSelector(UserDataProvider usersViewDataProvider, UsersViewState usersViewState) {
@@ -16,7 +17,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
 
         setSpacing(false);
 
-        grid = new UsersViewHeaderActionsTypeSelectorGridButton(usersViewState);
+        grid = new EntitiesViewHeaderActionsTypeSelectorGridButton(usersViewState);
         add(grid);
 
         list = new UsersViewHeaderActionsTypeSelectorListButton(usersViewDataProvider, usersViewState);

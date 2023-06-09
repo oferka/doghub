@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsTypeSelectorGridButton;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
@@ -9,7 +10,7 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
 
     public static final String CLASS_NAME = TipsViewHeaderActions.CLASS_NAME + "-presentation-type-selector";
 
-    private final TipsViewHeaderActionsTypeSelectorGridButton grid;
+    private final EntitiesViewHeaderActionsTypeSelectorGridButton grid;
     private final TipsViewHeaderActionsTypeSelectorListButton list;
 
     public TipsViewHeaderActionsPresentationTypeSelector(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
@@ -17,7 +18,7 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
 
         setSpacing(false);
 
-        grid = new TipsViewHeaderActionsTypeSelectorGridButton(tipsViewState);
+        grid = new EntitiesViewHeaderActionsTypeSelectorGridButton(tipsViewState);
         add(grid);
 
         list = new TipsViewHeaderActionsTypeSelectorListButton(tipDataProvider, tipsViewState, authenticatedUser);
