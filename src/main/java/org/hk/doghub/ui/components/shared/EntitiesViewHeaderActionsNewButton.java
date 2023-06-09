@@ -1,30 +1,31 @@
-package org.hk.doghub.ui.views.app.users;
+package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.Key.KEY_N;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_PRIMARY;
 import static com.vaadin.flow.component.icon.VaadinIcon.PLUS_CIRCLE;
+import static java.text.MessageFormat.format;
 
 @Slf4j
-public class UsersViewHeaderActionsNewButton extends Button {
+public class EntitiesViewHeaderActionsNewButton extends Button {
 
-    public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-new-button";
+    public static final String CLASS_NAME = "entities-view-header-actions-new-button";
 
-    public UsersViewHeaderActionsNewButton() {
+    public EntitiesViewHeaderActionsNewButton(@NotNull String entityName) {
         addClassName(CLASS_NAME);
-
         setIcon(PLUS_CIRCLE.create());
-        setText("New User");
+        setText(format("New {0}", entityName));
         addThemeVariants(LUMO_PRIMARY);
         addClickListener(this::newClicked);
         addClickShortcut(KEY_N, ALT);
     }
 
     private void newClicked(ClickEvent<Button> event) {
-        log.info("New user clicked");
+        log.info("New entity clicked");
     }
 }
