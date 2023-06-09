@@ -8,7 +8,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 
 public class EntitiesViewHeaderInfoTitle extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entities-view-header-info-title-title";
+    public static final String CLASS_NAME = "entities-view-header-info-title";
 
     private final EntitiesViewHeaderInfoTitleIcon icon;
     private final EntitiesViewHeaderInfoTitleText text;
