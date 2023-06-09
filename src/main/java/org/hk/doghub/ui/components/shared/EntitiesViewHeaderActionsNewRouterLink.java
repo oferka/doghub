@@ -12,8 +12,8 @@ public class EntitiesViewHeaderActionsNewRouterLink extends RouterLink {
 
     private final EntitiesViewHeaderActionsNewButton newButton;
 
-    public EntitiesViewHeaderActionsNewRouterLink(@NotNull Class<? extends Component> navigationTarget, @NotNull String entityName) {
-        super(EMPTY, navigationTarget);
+    public EntitiesViewHeaderActionsNewRouterLink(@NotNull Class<? extends Component> entityCreationNavigationTarget, @NotNull String entityName) {
+        super(EMPTY, entityCreationNavigationTarget);
         addClassName(CLASS_NAME);
         newButton = new EntitiesViewHeaderActionsNewButton(entityName);
         add(newButton);
