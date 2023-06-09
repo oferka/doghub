@@ -16,7 +16,7 @@ public class TipsViewHeaderActionsNewRouterLink extends RouterLink {
         super(EMPTY, TipCreationView.class);
         addClassName(CLASS_NAME);
 
-        newButton = new TipsViewHeaderActionsNewButton(tipDataProvider, tipsViewState, authenticatedUser);
+        newButton = new TipsViewHeaderActionsNewButton();
         add(newButton);
     }
 }

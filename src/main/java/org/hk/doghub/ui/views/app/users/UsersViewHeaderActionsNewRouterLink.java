@@ -15,7 +15,7 @@ public class UsersViewHeaderActionsNewRouterLink extends RouterLink {
         super(EMPTY, UserCreationView.class);
         addClassName(CLASS_NAME);
 
-        newButton = new UsersViewHeaderActionsNewButton(usersViewDataProvider, usersViewState);
+        newButton = new UsersViewHeaderActionsNewButton();
         add(newButton);
     }
 }

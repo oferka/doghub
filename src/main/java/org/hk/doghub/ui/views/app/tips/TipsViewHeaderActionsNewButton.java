@@ -3,7 +3,6 @@ package org.hk.doghub.ui.views.app.tips;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.security.AuthenticatedUser;
 
 import static com.vaadin.flow.component.Key.KEY_N;
 import static com.vaadin.flow.component.KeyModifier.ALT;
@@ -15,7 +14,7 @@ public class TipsViewHeaderActionsNewButton extends Button {
 
     public static final String CLASS_NAME = TipsViewHeaderActions.CLASS_NAME + "-new-button";
 
-    public TipsViewHeaderActionsNewButton(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsNewButton() {
         addClassName(CLASS_NAME);
 
         setIcon(PLUS_CIRCLE.create());
