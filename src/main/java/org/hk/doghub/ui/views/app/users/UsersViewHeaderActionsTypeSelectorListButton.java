@@ -7,7 +7,7 @@ import static com.vaadin.flow.component.Key.KEY_C;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
 import static com.vaadin.flow.component.icon.VaadinIcon.BULLETS;
-import static org.hk.doghub.ui.views.app.users.UsersViewPresentationMode.LIST;
+import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.LIST;
 
 public class UsersViewHeaderActionsTypeSelectorListButton extends Button {
 

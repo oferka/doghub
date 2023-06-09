@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 
 public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
 
@@ -24,7 +25,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
         usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
     }
 
-    private void setPresentationType(UsersViewPresentationMode presentationMode) {
+    private void setPresentationType(EntitiesViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID -> {
                 grid.setEnabled(false);

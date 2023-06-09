@@ -2,13 +2,12 @@ package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import org.hk.doghub.security.AuthenticatedUser;
 
 import static com.vaadin.flow.component.Key.KEY_G;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
 import static com.vaadin.flow.component.icon.VaadinIcon.TABLE;
-import static org.hk.doghub.ui.views.app.tips.TipsViewPresentationMode.GRID;
+import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.GRID;
 
 public class TipsViewHeaderActionsTypeSelectorGridButton extends Button {
 

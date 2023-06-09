@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 
 public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
 
@@ -25,7 +26,7 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
         tipsViewState.addPresentationModeChangeListener(this::presentationModeChanged);
     }
 
-    private void setPresentationType(TipsViewPresentationMode presentationMode) {
+    private void setPresentationType(EntitiesViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID -> {
                 grid.setEnabled(false);

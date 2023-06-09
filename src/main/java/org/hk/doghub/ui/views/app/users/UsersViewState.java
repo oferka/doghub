@@ -2,11 +2,12 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hk.doghub.ui.views.app.users.UsersViewPresentationMode.GRID;
+import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.GRID;
 
 @SpringComponent
 @UIScope
@@ -14,7 +15,7 @@ public class UsersViewState {
 
     private final List<UsersViewPresentationModeChangeListener> presentationModeChangeListeners = new ArrayList<>();
 
-    private UsersViewPresentationMode presentationMode = GRID;
+    private EntitiesViewPresentationMode presentationMode = GRID;
 
     public void addPresentationModeChangeListener(UsersViewPresentationModeChangeListener listener) {
         presentationModeChangeListeners.add(listener);
@@ -24,11 +25,11 @@ public class UsersViewState {
         presentationModeChangeListeners.remove(listener);
     }
 
-    public UsersViewPresentationMode getPresentationMode() {
+    public EntitiesViewPresentationMode getPresentationMode() {
         return presentationMode;
     }
 
-    public void setPresentationMode(UsersViewPresentationMode presentationMode) {
+    public void setPresentationMode(EntitiesViewPresentationMode presentationMode) {
         if(presentationMode != this.presentationMode) {
             fireUsersViewPresentationModeChangeEvent(new UsersViewPresentationModeChangeEvent(this.presentationMode, presentationMode));
         }

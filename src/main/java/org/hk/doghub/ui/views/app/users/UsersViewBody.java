@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -27,7 +28,7 @@ public class UsersViewBody extends VerticalLayout {
         usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
     }
 
-    private void setPresentationType(UsersViewPresentationMode presentationMode) {
+    private void setPresentationType(EntitiesViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID:
                 remove(cardPresentation);
