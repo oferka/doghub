@@ -16,7 +16,7 @@ public class TipsViewHeaderInfo extends VerticalLayout {
 
         setAlignItems(FlexComponent.Alignment.CENTER);
 
-        title = new TipsViewHeaderInfoTitle(tipDataProvider, authenticatedUser);
+        title = new TipsViewHeaderInfoTitle(tipDataProvider.countForUser(authenticatedUser));
         add(title);
 
         description = new TipsViewHeaderInfoDescription(tipDataProvider, tipsViewState, authenticatedUser);

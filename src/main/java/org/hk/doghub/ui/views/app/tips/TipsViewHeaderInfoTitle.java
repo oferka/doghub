@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoTitleCount;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoTitleIcon;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderInfoTitleText;
@@ -17,7 +16,7 @@ public class TipsViewHeaderInfoTitle extends HorizontalLayout {
     private final EntitiesViewHeaderInfoTitleText text;
     private final EntitiesViewHeaderInfoTitleCount count;
 
-    public TipsViewHeaderInfoTitle(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderInfoTitle(long entityCount) {
         addClassName(CLASS_NAME);
 
         setAlignItems(CENTER);
@@ -28,7 +27,7 @@ public class TipsViewHeaderInfoTitle extends HorizontalLayout {
         text = new EntitiesViewHeaderInfoTitleText(TipsView.NAME);
         add(text);
 
-        count = new EntitiesViewHeaderInfoTitleCount(tipDataProvider.countForUser(authenticatedUser));
+        count = new EntitiesViewHeaderInfoTitleCount(entityCount);
         add(count);
     }
 }
