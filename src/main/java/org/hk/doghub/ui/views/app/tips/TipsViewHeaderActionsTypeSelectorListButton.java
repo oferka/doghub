@@ -2,7 +2,6 @@ package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import org.hk.doghub.security.AuthenticatedUser;
 
 import static com.vaadin.flow.component.Key.KEY_C;
 import static com.vaadin.flow.component.KeyModifier.ALT;
@@ -16,7 +15,7 @@ public class TipsViewHeaderActionsTypeSelectorListButton extends Button {
 
     private final TipsViewState tipsViewState;
 
-    public TipsViewHeaderActionsTypeSelectorListButton(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsViewHeaderActionsTypeSelectorListButton(TipsViewState tipsViewState) {
         this.tipsViewState = tipsViewState;
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);

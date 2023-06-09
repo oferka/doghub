@@ -21,7 +21,7 @@ public class TipsViewHeaderActionsPresentationTypeSelector extends HorizontalLay
         grid = new EntitiesViewHeaderActionsTypeSelectorGridButton(tipsViewState);
         add(grid);
 
-        list = new TipsViewHeaderActionsTypeSelectorListButton(tipDataProvider, tipsViewState, authenticatedUser);
+        list = new TipsViewHeaderActionsTypeSelectorListButton(tipsViewState);
         add(list);
 
         setPresentationType(tipsViewState.getPresentationMode());

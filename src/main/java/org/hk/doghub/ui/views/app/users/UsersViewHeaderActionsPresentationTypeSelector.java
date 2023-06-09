@@ -20,7 +20,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
         grid = new EntitiesViewHeaderActionsTypeSelectorGridButton(usersViewState);
         add(grid);
 
-        list = new UsersViewHeaderActionsTypeSelectorListButton(usersViewDataProvider, usersViewState);
+        list = new UsersViewHeaderActionsTypeSelectorListButton(usersViewState);
         add(list);
 
         setPresentationType(usersViewState.getPresentationMode());
