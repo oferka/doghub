@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class EntitiesViewHeaderInfo extends VerticalLayout {
 
-    public static final String CLASS_NAME = "entities-view-header-info";
+    public static final String CLASS_NAME = EntitiesViewHeader.CLASS_NAME + "-info";
 
     private final EntitiesViewHeaderInfoTitle title;
     private final EntitiesViewHeaderInfoDescription description;

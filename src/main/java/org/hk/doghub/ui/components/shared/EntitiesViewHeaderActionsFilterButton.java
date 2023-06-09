@@ -9,7 +9,7 @@ import static com.vaadin.flow.component.notification.Notification.Position.MIDDL
 
 public class EntitiesViewHeaderActionsFilterButton extends Button {
 
-    public static final String CLASS_NAME = "entities-view-header-actions-filter-button";
+    public static final String CLASS_NAME = EntitiesViewHeaderActions.CLASS_NAME + "-filter-button";
 
     public EntitiesViewHeaderActionsFilterButton() {
         addClassName(CLASS_NAME);

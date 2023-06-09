@@ -9,7 +9,7 @@ import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.LI
 
 public class EntitiesViewHeaderActionsTypeSelectorListButton extends Button {
 
-    public static final String CLASS_NAME = "entities-view-header-actions-type-selector-list-button";
+    public static final String CLASS_NAME = EntitiesViewHeaderActionsPresentationTypeSelector.CLASS_NAME + "-list-button";
 
     private final EntitiesViewState viewState;
 

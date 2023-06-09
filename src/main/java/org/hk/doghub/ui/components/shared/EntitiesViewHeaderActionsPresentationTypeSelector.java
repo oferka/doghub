@@ -4,7 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 public class EntitiesViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entities-view-header-actions-type-selector";
+    public static final String CLASS_NAME = EntitiesViewHeaderActions.CLASS_NAME + "-type-selector";
 
     private final EntitiesViewHeaderActionsTypeSelectorGridButton grid;
     private final EntitiesViewHeaderActionsTypeSelectorListButton list;

@@ -14,7 +14,7 @@ import static java.text.MessageFormat.format;
 @Slf4j
 public class EntitiesViewHeaderActionsNewButton extends Button {
 
-    public static final String CLASS_NAME = "entities-view-header-actions-new-button";
+    public static final String CLASS_NAME = EntitiesViewHeaderActions.CLASS_NAME + "-new-button";
 
     public EntitiesViewHeaderActionsNewButton(@NotNull String entityName) {
         addClassName(CLASS_NAME);

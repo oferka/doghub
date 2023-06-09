@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class EntitiesViewHeaderActions extends HorizontalLayout {
 
-    public static final String CLASS_NAME = "entities-view-header-actions";
+    public static final String CLASS_NAME = EntitiesViewHeader.CLASS_NAME + "-actions";
 
     private final EntitiesViewHeaderActionsPresentationTypeSelector presentationTypeSelector;
     private final EntitiesViewHeaderActionsFilterButton filter;

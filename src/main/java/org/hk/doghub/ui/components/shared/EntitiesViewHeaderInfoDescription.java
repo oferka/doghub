@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class EntitiesViewHeaderInfoDescription extends Span {
 
-    public static final String CLASS_NAME = "entities-view-header-info-description";
+    public static final String CLASS_NAME = EntitiesViewHeaderInfo.CLASS_NAME + "-description";
 
     public EntitiesViewHeaderInfoDescription(@NotNull String descriptionText) {
         addClassName(CLASS_NAME);

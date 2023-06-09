@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class EntitiesViewHeaderInfoTitleIcon extends Icon {
 
-    public static final String CLASS_NAME = "entities-view-header-info-title-icon";
+    public static final String CLASS_NAME = EntitiesViewHeaderInfoTitle.CLASS_NAME + "-icon";
 
     public EntitiesViewHeaderInfoTitleIcon(@NotNull VaadinIcon icon) {
         super(icon);

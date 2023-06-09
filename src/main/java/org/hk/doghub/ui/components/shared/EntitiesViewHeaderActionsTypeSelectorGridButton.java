@@ -9,7 +9,7 @@ import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.GR
 
 public class EntitiesViewHeaderActionsTypeSelectorGridButton extends Button {
 
-    public static final String CLASS_NAME = "entities-view-header-actions-type-selector-grid-button";
+    public static final String CLASS_NAME = EntitiesViewHeaderActionsPresentationTypeSelector.CLASS_NAME + "-grid-button";
 
     private final EntitiesViewState viewState;
 

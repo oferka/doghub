@@ -8,7 +8,7 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class EntitiesViewHeaderActionsNewRouterLink extends RouterLink {
 
-    public static final String CLASS_NAME = "entities-view-header-actions-new-router-link";
+    public static final String CLASS_NAME = EntitiesViewHeaderActions.CLASS_NAME + "-new-router-link";
 
     private final EntitiesViewHeaderActionsNewButton newButton;
 
