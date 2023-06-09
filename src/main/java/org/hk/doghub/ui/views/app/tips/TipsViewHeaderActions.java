@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsFilterButton;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsNewRouterLink;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeaderActionsPresentationTypeSelector;
+import org.hk.doghub.ui.components.shared.EntitiesViewState;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationView;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
@@ -15,10 +16,10 @@ public class TipsViewHeaderActions extends HorizontalLayout {
     private final EntitiesViewHeaderActionsFilterButton filter;
     private final EntitiesViewHeaderActionsNewRouterLink newRouterLink;
 
-    public TipsViewHeaderActions(TipsViewState tipsViewState) {
+    public TipsViewHeaderActions(EntitiesViewState viewState) {
         addClassName(CLASS_NAME);
 
-        presentationTypeSelector = new EntitiesViewHeaderActionsPresentationTypeSelector(tipsViewState);
+        presentationTypeSelector = new EntitiesViewHeaderActionsPresentationTypeSelector(viewState);
         add(presentationTypeSelector);
 
         filter = new EntitiesViewHeaderActionsFilterButton();
