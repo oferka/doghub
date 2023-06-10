@@ -5,11 +5,11 @@ import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.RouterLink;
 import org.hk.doghub.model.NamedEntity;
 
-public class EntityRouterLink<T extends NamedEntity> extends RouterLink {
+public class EntityNameRouterLink<T extends NamedEntity> extends RouterLink {
 
-    public static final String CLASS_NAME = "entity-router-link";
+    public static final String CLASS_NAME = "entity-name-router-link";
 
-    public <C extends Component & HasUrlParameter<Long>> EntityRouterLink(T entity, Class<? extends C> entityClass) {
+    public <C extends Component & HasUrlParameter<Long>> EntityNameRouterLink(T entity, Class<? extends C> entityClass) {
         super(entity.getName(), entityClass, entity.getId());
         addClassName(CLASS_NAME);
     }

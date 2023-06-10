@@ -35,8 +35,8 @@
 @import url('./shared/entity-avatar.css');
 @import url('./shared/entity-info-container.css');
 @import url('./shared/entity-info-container-form.css');
+@import url('./shared/entity-name-router-link.css');
 @import url('./shared/entity-navigation-container.css');
-@import url('./shared/entity-router-link.css');
 @import url('./shared/entity-view.css');
 @import url('./shared/entity-view-body.css');
 @import url('./shared/entity-view-footer.css');
