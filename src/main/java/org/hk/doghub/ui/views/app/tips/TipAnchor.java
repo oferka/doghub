@@ -14,7 +14,7 @@ public class TipAnchor extends Anchor {
 
     public static final String CLASS_NAME = "tip-anchor";
 
-    public TipAnchor(DogHubTip tip, AuthenticatedUser authenticatedUser) {
+    public TipAnchor(DogHubTip tip) {
         addClassName(CLASS_NAME);
         String moreInfo = tip.getMoreInfo();
         if(moreInfo != null) {

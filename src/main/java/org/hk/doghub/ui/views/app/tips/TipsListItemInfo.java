@@ -17,7 +17,7 @@ public class TipsListItemInfo extends VerticalLayout {
         setSpacing(false);
         setPadding(false);
 
-        header = new TipsListItemInfoHeader(tip, authenticatedUser);
+        header = new TipsListItemInfoHeader(tip);
         add(header);
 
         summary = new TipsListItemInfoSummary(tip, authenticatedUser);
