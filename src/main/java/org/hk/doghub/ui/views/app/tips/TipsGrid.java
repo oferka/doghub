@@ -26,7 +26,7 @@ public class TipsGrid extends Grid<DogHubTip> {
         if(authenticatedUser.hasAdminRole()) {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
         }
-        addColumn(new ComponentRenderer<>(tip -> new TipCreationTime(tip, authenticatedUser))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
+        addColumn(new ComponentRenderer<>(tip -> new TipCreationTime(tip))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
         addColumn(new ComponentRenderer<>(tip -> new TipLikes(tip, authenticatedUser))).setHeader("Likes").setComparator(DogHubTip::getLikes);
         addColumn(new ComponentRenderer<>(tip -> new TipComments(tip, authenticatedUser))).setHeader("Comments").setComparator(DogHubTip::getComments);
         addColumn(new ComponentRenderer<>(tip -> new TipShares(tip, authenticatedUser))).setHeader("Shares").setComparator(DogHubTip::getShares);
