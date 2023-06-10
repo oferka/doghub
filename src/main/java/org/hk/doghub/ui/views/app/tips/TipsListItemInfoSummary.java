@@ -12,14 +12,14 @@ public class TipsListItemInfoSummary extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsListItemInfo.CLASS_NAME + "-summary";
 
-    private final EntitiesListItemInfoCreationTime<DogHubTip> creationDate;
+    private final EntitiesListItemInfoCreationTime<DogHubTip> creationTime;
 
     private final EntityNameRouterLink<DogHubUser> createdBy;
 
     public TipsListItemInfoSummary(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
-        creationDate = new EntitiesListItemInfoCreationTime<>(tip);
-        add(creationDate);
+        creationTime = new EntitiesListItemInfoCreationTime<>(tip);
+        add(creationTime);
 
         createdBy = new EntityNameRouterLink<>(tip.getCreatedBy(), UserView.class);
         if(authenticatedUser.hasAdminRole()) {

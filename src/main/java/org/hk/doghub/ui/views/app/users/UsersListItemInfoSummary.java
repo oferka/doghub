@@ -10,14 +10,14 @@ public class UsersListItemInfoSummary extends VerticalLayout {
 
     public static final String CLASS_NAME = UsersListItemInfo.CLASS_NAME + "-summary";
 
-    private final EntitiesListItemInfoCreationTime<DogHubUser> creationDate;
+    private final EntitiesListItemInfoCreationTime<DogHubUser> creationTime;
 
     private final Span summary;
 
     public UsersListItemInfoSummary(DogHubUser user) {
         addClassName(CLASS_NAME);
-        creationDate = new EntitiesListItemInfoCreationTime<>(user);
-        add(creationDate);
+        creationTime = new EntitiesListItemInfoCreationTime<>(user);
+        add(creationTime);
 
         summary = new Span(getSummary(user));
         add(summary);
