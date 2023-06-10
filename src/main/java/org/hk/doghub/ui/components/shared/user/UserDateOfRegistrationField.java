@@ -18,7 +18,7 @@ public class UserDateOfRegistrationField extends DogHubDateTimeField {
     }
 
     public void setValue(@NotNull DogHubUser user) {
-        LocalDateTime value = (user.getDateOfRegistration() != null) ? user.getDateOfRegistration().toLocalDateTime() : null;
+        LocalDateTime value = (user.getCreationTime() != null) ? user.getCreationTime().toLocalDateTime() : null;
         setValue(value);
     }
 }

@@ -14,7 +14,7 @@ public class UserDateOfRegistration extends Span {
 
     public UserDateOfRegistration(DogHubUser user) {
         addClassName(CLASS_NAME);
-        ZonedDateTime dateOfRegistration = user.getDateOfRegistration();
+        ZonedDateTime dateOfRegistration = user.getCreationTime();
         if(dateOfRegistration != null) {
             setText(dateOfRegistration.format(DateTimeFormatter.ofLocalizedDate(MEDIUM)));
         }

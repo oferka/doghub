@@ -52,10 +52,6 @@ public class DogHubUser extends NamedEntity implements HasThumbnailPicture {
     @Past
     private ZonedDateTime dateOfBirth;
 
-    @JsonSerialize(using = ZonedDateTimeSerializer.class)
-    @Past
-    private ZonedDateTime dateOfRegistration;
-
     @Size(max = COMPANY_MAX_LENGTH)
     private String company;
 

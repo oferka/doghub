@@ -1,10 +1,7 @@
 package org.hk.doghub.model.tip;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -13,8 +10,6 @@ import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.model.HasThumbnailPicture;
 import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.model.user.DogHubUser;
-
-import java.time.ZonedDateTime;
 
 @Entity
 @Getter
@@ -48,10 +43,6 @@ public class DogHubTip extends NamedEntity implements HasThumbnailPicture {
 
     @PositiveOrZero
     private Long shares = 0L;
-
-    @JsonSerialize(using = ZonedDateTimeSerializer.class)
-    @Past
-    private ZonedDateTime creationTime;
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER)

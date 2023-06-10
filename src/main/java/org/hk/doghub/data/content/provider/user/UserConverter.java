@@ -30,7 +30,7 @@ public class UserConverter {
 
     public DogHubUser convert(@NotNull User user) {
         DogHubUser dogHubUser = userModelMapper.map(user, DogHubUser.class);
-        dogHubUser.setDateOfRegistration(ZonedDateTime.now().minusDays(RandomUtils.nextLong(1, 1000)));
+        dogHubUser.setCreationTime(ZonedDateTime.now().minusDays(RandomUtils.nextLong(1, 1000)));
         dogHubUser.setHashedPassword(passwordEncoder.encode(user.getPassword()));
         dogHubUser.setLikes(getLikes(user));
         dogHubUser.setShares(getShares(user));

@@ -37,7 +37,7 @@ public class UserCreationService {
         result.setName(username);
         result.setHashedPassword(passwordEncoder.encode(password));
         result.setRoles(Set.of(USER));
-        result.setDateOfRegistration(ZonedDateTime.now());
+        result.setCreationTime(ZonedDateTime.now());
         return result;
     }
 
