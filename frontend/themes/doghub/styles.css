@@ -11,6 +11,7 @@
 @import url('./shared/dog-hub-text-field.css');
 @import url('./shared/editable-text-field.css');
 @import url('./shared/entities-button.css');
+@import url('./shared/entities-list-item-avatar.css');
 @import url('./shared/entities-router-link.css');
 @import url('./shared/entities-view-footer.css');
 @import url('./shared/entities-view-header.css');
@@ -153,7 +154,6 @@
 @import url('./views/app/tips-grid.css');
 @import url('./views/app/tips-list.css');
 @import url('./views/app/tips-list-item.css');
-@import url('./views/app/tips-list-item-avatar.css');
 @import url('./views/app/tips-list-item-info.css');
 @import url('./views/app/tips-list-item-info-actions.css');
 @import url('./views/app/tips-list-item-info-header.css');
@@ -211,7 +211,6 @@
 @import url('./views/app/users-grid.css');
 @import url('./views/app/users-list.css');
 @import url('./views/app/users-list-item.css');
-@import url('./views/app/users-list-item-avatar.css');
 @import url('./views/app/users-list-item-info.css');
 @import url('./views/app/users-list-item-info-actions.css');
 @import url('./views/app/users-list-item-info-header.css');
