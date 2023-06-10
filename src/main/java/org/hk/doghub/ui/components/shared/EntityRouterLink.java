@@ -9,8 +9,8 @@ public class EntityRouterLink<T extends NamedEntity> extends RouterLink {
 
     public static final String CLASS_NAME = "entity-router-link";
 
-    public <C extends Component & HasUrlParameter<Long>> EntityRouterLink(T entity, Class<? extends C> navigationTarget) {
-        super(entity.getName(), navigationTarget, entity.getId());
+    public <C extends Component & HasUrlParameter<Long>> EntityRouterLink(T entity, Class<? extends C> entityClass) {
+        super(entity.getName(), entityClass, entity.getId());
         addClassName(CLASS_NAME);
     }
 }

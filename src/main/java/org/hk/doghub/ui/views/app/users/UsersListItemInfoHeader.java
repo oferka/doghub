@@ -2,12 +2,14 @@ package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntitiesListItemInfoHeaderName;
+import org.hk.doghub.ui.views.app.users.user.UserView;
 
 public class UsersListItemInfoHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = UsersListItemInfo.CLASS_NAME + "-header";
 
-    private final UsersListItemInfoHeaderName name;
+    private final EntitiesListItemInfoHeaderName<DogHubUser> name;
     private final UsersListItemInfoHeaderDateOfRegistration dateOfRegistration;
 
     public UsersListItemInfoHeader(DogHubUser user) {
@@ -15,7 +17,7 @@ public class UsersListItemInfoHeader extends HorizontalLayout {
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        name = new UsersListItemInfoHeaderName(user);
+        name = new EntitiesListItemInfoHeaderName<>(user, UserView.class);
         add(name);
 
         dateOfRegistration = new UsersListItemInfoHeaderDateOfRegistration(user);

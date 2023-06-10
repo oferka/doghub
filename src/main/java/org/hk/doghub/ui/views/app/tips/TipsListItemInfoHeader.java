@@ -3,12 +3,14 @@ package org.hk.doghub.ui.views.app.tips;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesListItemInfoHeaderName;
+import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
 public class TipsListItemInfoHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipsListItemInfo.CLASS_NAME + "-header";
 
-    private final TipsListItemInfoHeaderName name;
+    private final EntitiesListItemInfoHeaderName<DogHubTip> name;
 
     private final TipAnchor anchor;
 
@@ -17,7 +19,7 @@ public class TipsListItemInfoHeader extends HorizontalLayout {
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        name = new TipsListItemInfoHeaderName(tip);
+        name = new EntitiesListItemInfoHeaderName<>(tip, TipView.class);
         add(name);
 
         anchor = new TipAnchor(tip, authenticatedUser);

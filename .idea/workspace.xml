@@ -7,8 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 384">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 385">
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/entities-list-item-info-name.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/EntitiesListItemInfoHeaderName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tips-list-item-info-header-name.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/users-list-item-info-header-name.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/EntityRouterLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/EntityRouterLink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/TipsListItemInfoHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/TipsListItemInfoHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/TipsListItemInfoHeaderName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/UsersListItemInfoHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/UsersListItemInfoHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/UsersListItemInfoHeaderName.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,13 +199,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00338" summary="doghub 336">
-      <created>1686241067975</created>
-      <option name="number" value="00338" />
-      <option name="presentableId" value="LOCAL-00338" />
-      <option name="project" value="LOCAL" />
-      <updated>1686241067975</updated>
     </task>
     <task id="LOCAL-00339" summary="doghub 337">
       <created>1686241193086</created>
@@ -534,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686375763294</updated>
     </task>
-    <option name="localTasksCounter" value="387" />
+    <task id="LOCAL-00387" summary="doghub 385">
+      <created>1686376656616</created>
+      <option name="number" value="00387" />
+      <option name="presentableId" value="LOCAL-00387" />
+      <option name="project" value="LOCAL" />
+      <updated>1686376656616</updated>
+    </task>
+    <option name="localTasksCounter" value="388" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 360" />
     <MESSAGE value="doghub 361" />
     <MESSAGE value="doghub 362" />
     <MESSAGE value="doghub 363" />
@@ -575,6 +583,7 @@
     <MESSAGE value="doghub 382" />
     <MESSAGE value="doghub 383" />
     <MESSAGE value="doghub 384" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 384" />
+    <MESSAGE value="doghub 385" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 385" />
   </component>
 </project>
