@@ -2,7 +2,6 @@ package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.html.Div;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 
 public class TipsListItemInfoHeaderName extends Div {
 
@@ -10,9 +9,9 @@ public class TipsListItemInfoHeaderName extends Div {
 
     private final TipRouterLink link;
 
-    public TipsListItemInfoHeaderName(DogHubTip tip, AuthenticatedUser authenticatedUser) {
+    public TipsListItemInfoHeaderName(DogHubTip tip) {
         addClassName(CLASS_NAME);
-        link = new TipRouterLink(tip, authenticatedUser);
+        link = new TipRouterLink(tip);
         add(link);
     }
 }

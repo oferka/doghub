@@ -17,7 +17,7 @@ public class TipsListItemInfoHeader extends HorizontalLayout {
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        name = new TipsListItemInfoHeaderName(tip, authenticatedUser);
+        name = new TipsListItemInfoHeaderName(tip);
         add(name);
 
         anchor = new TipAnchor(tip, authenticatedUser);
