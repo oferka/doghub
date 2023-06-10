@@ -9,13 +9,13 @@ public class TipsListItemInfoSummary extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsListItemInfo.CLASS_NAME + "-summary";
 
-    private final TipsListItemInfoHeaderCreationTime creationDate;
+    private final TipsListItemInfoCreationTime creationDate;
 
     private final UserNameRouterLink userName;
 
     public TipsListItemInfoSummary(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
-        creationDate = new TipsListItemInfoHeaderCreationTime(tip, authenticatedUser);
+        creationDate = new TipsListItemInfoCreationTime(tip, authenticatedUser);
         add(creationDate);
 
         userName = new UserNameRouterLink(tip.getCreatedBy());

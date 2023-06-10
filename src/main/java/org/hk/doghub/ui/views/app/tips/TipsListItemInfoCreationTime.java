@@ -4,13 +4,13 @@ import com.vaadin.flow.component.html.Div;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 
-public class TipsListItemInfoHeaderCreationTime extends Div {
+public class TipsListItemInfoCreationTime extends Div {
 
-    public static final String CLASS_NAME = TipsListItemInfoHeader.CLASS_NAME + "-creation-time";
+    public static final String CLASS_NAME = TipsListItemInfo.CLASS_NAME + "-creation-time";
 
     private final TipCreationTime creationTime;
 
-    public TipsListItemInfoHeaderCreationTime(DogHubTip tip, AuthenticatedUser authenticatedUser) {
+    public TipsListItemInfoCreationTime(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassNames(CLASS_NAME);
         creationTime = new TipCreationTime(tip, authenticatedUser);
         add(creationTime);
