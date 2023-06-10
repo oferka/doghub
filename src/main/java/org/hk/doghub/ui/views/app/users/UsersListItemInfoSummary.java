@@ -1,9 +1,8 @@
 package org.hk.doghub.ui.views.app.users;
 
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.DogHubLabel;
 import org.hk.doghub.ui.components.shared.EntitiesListItemInfoCreationTime;
 
 public class UsersListItemInfoSummary extends VerticalLayout {
@@ -12,18 +11,13 @@ public class UsersListItemInfoSummary extends VerticalLayout {
 
     private final EntitiesListItemInfoCreationTime<DogHubUser> creationTime;
 
-    private final Span summary;
+    private final DogHubLabel company;
 
     public UsersListItemInfoSummary(DogHubUser user) {
         addClassName(CLASS_NAME);
         creationTime = new EntitiesListItemInfoCreationTime<>(user);
         add(creationTime);
-
-        summary = new Span(getSummary(user));
-        add(summary);
-    }
-
-    private @NotNull String getSummary(DogHubUser user) {
-        return user.getCompany();
+        company = new DogHubLabel(user.getCompany());
+        add(company);
     }
 }
