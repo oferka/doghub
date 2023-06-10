@@ -27,7 +27,7 @@ public class DefaultScrollExecutor implements ScrollExecutor {
 
     @Override
     public void scroll(@NotNull WebDriver driver, @NotNull ScrollInstructions scrollInstructions) {
-        log.debug("Scroll by instructions '{}' started", scrollInstructions.toString());
+        log.debug("Scroll by instructions '{}' started", scrollInstructions);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         int numberOfSteps = 10;
         int signedPixels = getSignedScroll(

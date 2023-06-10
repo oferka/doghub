@@ -27,7 +27,7 @@ public class DefaultElementDisplayStatusRetriever implements ElementDisplayStatu
         log.info("Check if element is currently displayed started");
         boolean result;
         try {
-            log.debug("Using locator '{}'", locator.toString());
+            log.debug("Using locator '{}'", locator);
             WebElement element = driver.findElement(locator);
             log.debug("Found element");
             result = element.isDisplayed();

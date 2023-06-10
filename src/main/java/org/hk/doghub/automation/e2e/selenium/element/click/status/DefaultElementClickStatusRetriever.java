@@ -32,7 +32,7 @@ public class DefaultElementClickStatusRetriever implements ElementClickStatusRet
         log.info("Check if element is currently clickable started");
         boolean result;
         try {
-            log.debug("Using locator '{}'", locator.toString());
+            log.debug("Using locator '{}'", locator);
             WebElement element = elementRetriever.getByClickable(driver, locator, 1L);
             log.debug("Found element");
             if(highlightIfClickable) {
