@@ -10,17 +10,12 @@ public class UsersListItemInfoHeader extends HorizontalLayout {
     public static final String CLASS_NAME = UsersListItemInfo.CLASS_NAME + "-header";
 
     private final EntitiesListItemInfoHeaderName<DogHubUser> name;
-    private final UsersListItemInfoHeaderDateOfRegistration dateOfRegistration;
 
     public UsersListItemInfoHeader(DogHubUser user) {
         addClassName(CLASS_NAME);
         setSpacing(false);
         getThemeList().add("spacing-s");
-
         name = new EntitiesListItemInfoHeaderName<>(user, UserView.class);
         add(name);
-
-        dateOfRegistration = new UsersListItemInfoHeaderDateOfRegistration(user);
-        add(dateOfRegistration);
     }
 }
