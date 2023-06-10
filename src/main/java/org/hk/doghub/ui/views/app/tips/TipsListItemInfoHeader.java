@@ -11,17 +11,11 @@ public class TipsListItemInfoHeader extends HorizontalLayout {
 
     private final EntitiesListItemInfoHeaderName<DogHubTip> name;
 
-    private final TipAnchor anchor;
-
     public TipsListItemInfoHeader(DogHubTip tip) {
         addClassName(CLASS_NAME);
         setSpacing(false);
         getThemeList().add("spacing-s");
-
         name = new EntitiesListItemInfoHeaderName<>(tip, TipView.class);
         add(name);
-
-        anchor = new TipAnchor(tip);
-        add(anchor);
     }
 }
