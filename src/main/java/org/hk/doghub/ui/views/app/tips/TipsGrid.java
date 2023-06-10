@@ -4,6 +4,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.CreationTimeLabel;
 import org.hk.doghub.ui.components.shared.EntityAvatar;
 import org.hk.doghub.ui.components.shared.user.UserAvatarRouterLink;
 
@@ -26,7 +27,7 @@ public class TipsGrid extends Grid<DogHubTip> {
         if(authenticatedUser.hasAdminRole()) {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
         }
-        addColumn(new ComponentRenderer<>(tip -> new TipCreationTime(tip))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
+        addColumn(new ComponentRenderer<>(tip -> new CreationTimeLabel(tip.getCreationTime()))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
         addColumn(new ComponentRenderer<>(tip -> new TipLikes(tip, authenticatedUser))).setHeader("Likes").setComparator(DogHubTip::getLikes);
         addColumn(new ComponentRenderer<>(tip -> new TipComments(tip, authenticatedUser))).setHeader("Comments").setComparator(DogHubTip::getComments);
         addColumn(new ComponentRenderer<>(tip -> new TipShares(tip, authenticatedUser))).setHeader("Shares").setComparator(DogHubTip::getShares);

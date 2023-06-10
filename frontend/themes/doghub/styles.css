@@ -6,6 +6,7 @@
 @import url('./shared/authenticated-user-bar.css');
 @import url('./shared/authentication-bar.css');
 @import url('./shared/close-notification-button.css');
+@import url('./shared/creation-time-label.css');
 @import url('./shared/dog-hub-combo-box-field.css');
 @import url('./shared/dog-hub-date-time-field.css');
 @import url('./shared/dog-hub-text-field.css');
@@ -134,7 +135,6 @@
 @import url('./views/app/tag-view.css');
 @import url('./views/app/tip-anchor.css');
 @import url('./views/app/tip-comments.css');
-@import url('./views/app/tip-creation-time.css');
 @import url('./views/app/tip-creation-view.css');
 @import url('./views/app/tip-likes.css');
 @import url('./views/app/tip-id-router-link.css');
