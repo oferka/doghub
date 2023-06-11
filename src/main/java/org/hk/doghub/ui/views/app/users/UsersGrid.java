@@ -21,7 +21,7 @@ public class UsersGrid extends Grid<DogHubUser> {
         addColumn(new ComponentRenderer<>(UserDateOfRegistration::new)).setHeader("Registered").setComparator(DogHubUser::getCreationTime);
         addColumn(new ComponentRenderer<>(UserTipsRouterLink::new)).setHeader("Tips").setComparator(user -> user.getDogHubTips().size());
         addColumn(new ComponentRenderer<>(user -> new LikesContainer(user.getFeedback().getLikes()))).setHeader("Likes").setComparator(user -> user.getFeedback().getLikes());
-        addColumn(new ComponentRenderer<>(UserComments::new)).setHeader("Comments").setComparator(user -> user.getFeedback().getComments());
+        addColumn(new ComponentRenderer<>(user -> new LikesContainer(user.getFeedback().getComments()))).setHeader("Comments").setComparator(user -> user.getFeedback().getComments());
         addColumn(new ComponentRenderer<>(UserShares::new)).setHeader("Shares").setComparator(user -> user.getFeedback().getShares());
         setItems(userDataProvider.findAll());
     }

@@ -7,12 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 407">
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/likes-counter-label.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/LikesCounterLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/shared/likes-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/likes-container.css" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 409">
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/comments-container.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/comments-counter-label.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/comments-icon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/CommentsContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/CommentsCounterLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/CommentsIcon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/LikesContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/LikesContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-comments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/user-comments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/tips/TipComments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/users/UserComments.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,20 +200,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00362" summary="doghub 360">
-      <created>1686298502647</created>
-      <option name="number" value="00362" />
-      <option name="presentableId" value="LOCAL-00362" />
-      <option name="project" value="LOCAL" />
-      <updated>1686298502647</updated>
-    </task>
-    <task id="LOCAL-00363" summary="doghub 361">
-      <created>1686298943322</created>
-      <option name="number" value="00363" />
-      <option name="presentableId" value="LOCAL-00363" />
-      <option name="project" value="LOCAL" />
-      <updated>1686298943322</updated>
     </task>
     <task id="LOCAL-00364" summary="doghub 362">
       <created>1686299044911</created>
@@ -538,7 +530,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686467837791</updated>
     </task>
-    <option name="localTasksCounter" value="411" />
+    <task id="LOCAL-00411" summary="doghub 408">
+      <created>1686468169333</created>
+      <option name="number" value="00411" />
+      <option name="presentableId" value="LOCAL-00411" />
+      <option name="project" value="LOCAL" />
+      <updated>1686468169333</updated>
+    </task>
+    <task id="LOCAL-00412" summary="doghub 409">
+      <created>1686468315279</created>
+      <option name="number" value="00412" />
+      <option name="presentableId" value="LOCAL-00412" />
+      <option name="project" value="LOCAL" />
+      <updated>1686468315279</updated>
+    </task>
+    <option name="localTasksCounter" value="413" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,8 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 383" />
-    <MESSAGE value="doghub 384" />
     <MESSAGE value="doghub 385" />
     <MESSAGE value="doghub 386" />
     <MESSAGE value="doghub 387" />
@@ -579,6 +583,8 @@
     <MESSAGE value="doghub 405" />
     <MESSAGE value="doghub 406" />
     <MESSAGE value="doghub 407" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 407" />
+    <MESSAGE value="doghub 408" />
+    <MESSAGE value="doghub 409" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 409" />
   </component>
 </project>

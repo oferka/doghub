@@ -6,6 +6,9 @@
 @import url('./shared/authenticated-user-bar.css');
 @import url('./shared/authentication-bar.css');
 @import url('./shared/close-notification-button.css');
+@import url('./shared/comments-container.css');
+@import url('./shared/comments-counter-label.css');
+@import url('./shared/comments-icon.css');
 @import url('./shared/creation-time-label.css');
 @import url('./shared/dog-hub-combo-box-field.css');
 @import url('./shared/dog-hub-date-time-field.css');
@@ -139,7 +142,6 @@
 @import url('./views/app/settings-view.css');
 @import url('./views/app/tag-view.css');
 @import url('./views/app/tip-anchor.css');
-@import url('./views/app/tip-comments.css');
 @import url('./views/app/tip-creation-view.css');
 @import url('./views/app/tip-id-router-link.css');
 @import url('./views/app/tip-name-router-link.css');
@@ -188,7 +190,6 @@
 @import url('./views/app/doghub-app-layout-header-user-profile-router-link.css');
 @import url('./views/app/doghub-app-layout-header-user-settings-button.css');
 @import url('./views/app/doghub-app-layout-header-user-settings-router-link.css');
-@import url('./views/app/user-comments.css');
 @import url('./views/app/user-creation-view.css');
 @import url('./views/app/user-creation-view-body.css');
 @import url('./views/app/user-creation-view-footer.css');
