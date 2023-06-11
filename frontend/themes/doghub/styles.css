@@ -100,6 +100,7 @@
 @import url('./shared/user-creation-button.css');
 @import url('./shared/user-creation-container.css');
 @import url('./shared/user-date-of-birth-field.css');
+@import url('./shared/user-date-of-registration-field.css');
 @import url('./shared/user-email-field.css');
 @import url('./shared/user-id-field.css');
 @import url('./shared/user-info-container.css');
@@ -199,7 +200,6 @@
 @import url('./views/app/user-creation-view-header-info-title.css');
 @import url('./views/app/user-creation-view-header-info-title-icon.css');
 @import url('./views/app/user-creation-view-header-info-title-text.css');
-@import url('./views/app/user-date-of-registration.css');
 @import url('./views/app/user-id-router-link.css');
 @import url('./views/app/user-tips-avatar-group.css');
 @import url('./views/app/user-tips-router-link.css');
