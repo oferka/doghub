@@ -1,38 +1,27 @@
 package org.hk.doghub.ui.views.app.tips;
 
-import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.*;
+import org.hk.doghub.ui.components.shared.EntitiesGrid;
 import org.hk.doghub.ui.components.shared.user.UserAvatarRouterLink;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
-import org.hk.doghub.ui.views.app.users.user.UserView;
 
-public class TipsGrid extends Grid<DogHubTip> {
+public class TipsGrid extends EntitiesGrid<DogHubTip, TipView> {
 
     public static final String CLASS_NAME = "tips-grid";
 
-    public TipsGrid(TipDataProvider tipDataProvider, AuthenticatedUser authenticatedUser) {
+    public TipsGrid(EntityDataProvider<DogHubTip> entityDataProvider, AuthenticatedUser authenticatedUser) {
+        super(entityDataProvider, authenticatedUser, TipView.class);
         addClassName(CLASS_NAME);
-        setWidthFull();
-        addColumns(authenticatedUser);
-        setItems(tipDataProvider.findAllForUser(authenticatedUser));
     }
 
-    private void addColumns(AuthenticatedUser authenticatedUser) {
-        addColumn(new ComponentRenderer<>(tip -> new EntityIdRouterLink<>(tip, UserView.class))).setHeader("ID").setComparator(DogHubTip::getId);
-        addColumn(new ComponentRenderer<>(tip -> new EntityNameRouterLink<>(tip, TipView.class))).setHeader("Name").setComparator(DogHubTip::getName);
-        addColumn(new ComponentRenderer<>(EntityAvatar<DogHubTip>::new)).setHeader("Picture").setComparator(DogHubTip::getName);
-        addColumn(new ComponentRenderer<>(tip -> new CreationTimeLabel(tip.getCreationTime()))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
-
+    @Override
+    protected void addSpecificColumns(AuthenticatedUser authenticatedUser, Class<? extends TipView> entityClass) {
         addColumn(new ComponentRenderer<>(TipAnchor::new)).setHeader("More Info").setComparator(DogHubTip::getMoreInfo);
         if(authenticatedUser.hasAdminRole()) {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
         }
-
-        addColumn(new ComponentRenderer<>(tip -> new LikesContainer(tip.getFeedback().getLikes()))).setHeader("Likes").setComparator(tip -> tip.getFeedback().getLikes());
-        addColumn(new ComponentRenderer<>(tip -> new CommentsContainer(tip.getFeedback().getComments()))).setHeader("Comments").setComparator(tip -> tip.getFeedback().getComments());
-        addColumn(new ComponentRenderer<>(tip -> new SharesContainer(tip.getFeedback().getShares()))).setHeader("Shares").setComparator(tip -> tip.getFeedback().getShares());
     }
 }
