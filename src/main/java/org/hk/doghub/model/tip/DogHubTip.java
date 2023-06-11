@@ -2,11 +2,11 @@ package org.hk.doghub.model.tip;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.HasThumbnailPicture;
 import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.model.user.DogHubUser;
@@ -35,14 +35,8 @@ public class DogHubTip extends NamedEntity implements HasThumbnailPicture {
     @Size(max = THUMBNAIL_PICTURE_MAX_LENGTH) @URL
     private String thumbnailPicture;
 
-    @PositiveOrZero
-    private Long likes = 0L;
-
-    @PositiveOrZero
-    private Long comments = 0L;
-
-    @PositiveOrZero
-    private Long shares = 0L;
+    @Embedded
+    private DogHubFeedback feedback;
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER)

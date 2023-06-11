@@ -19,7 +19,7 @@ public class TipLikes extends HorizontalLayout {
         likesIcon.addClassName(format("%s-icon", CLASS_NAME));
         add(likesIcon);
 
-        Span likesText = new Span(tip.getLikes().toString());
+        Span likesText = new Span(tip.getFeedback().getLikes().toString());
         likesText.addClassName(format("%s-text", CLASS_NAME));
         add(likesText);
     }

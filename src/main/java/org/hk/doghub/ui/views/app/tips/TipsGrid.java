@@ -28,8 +28,8 @@ public class TipsGrid extends Grid<DogHubTip> {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
         }
         addColumn(new ComponentRenderer<>(tip -> new CreationTimeLabel(tip.getCreationTime()))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
-        addColumn(new ComponentRenderer<>(TipLikes::new)).setHeader("Likes").setComparator(DogHubTip::getLikes);
-        addColumn(new ComponentRenderer<>(tip -> new TipComments(tip, authenticatedUser))).setHeader("Comments").setComparator(DogHubTip::getComments);
-        addColumn(new ComponentRenderer<>(tip -> new TipShares(tip, authenticatedUser))).setHeader("Shares").setComparator(DogHubTip::getShares);
+        addColumn(new ComponentRenderer<>(TipLikes::new)).setHeader("Likes").setComparator(tip -> tip.getFeedback().getLikes());
+        addColumn(new ComponentRenderer<>(tip -> new TipComments(tip, authenticatedUser))).setHeader("Comments").setComparator(tip -> tip.getFeedback().getComments());
+        addColumn(new ComponentRenderer<>(tip -> new TipShares(tip, authenticatedUser))).setHeader("Shares").setComparator(tip -> tip.getFeedback().getShares());
     }
 }

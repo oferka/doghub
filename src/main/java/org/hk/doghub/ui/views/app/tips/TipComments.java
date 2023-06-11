@@ -20,7 +20,7 @@ public class TipComments extends HorizontalLayout {
         commentsIcon.addClassName(format("%s-icon", CLASS_NAME));
         add(commentsIcon);
 
-        Span commentsText = new Span(tip.getComments().toString());
+        Span commentsText = new Span(tip.getFeedback().getComments().toString());
         commentsText.addClassName(format("%s-text", CLASS_NAME));
         add(commentsText);
     }

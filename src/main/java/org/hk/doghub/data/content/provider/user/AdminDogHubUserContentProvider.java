@@ -3,6 +3,7 @@ package org.hk.doghub.data.content.provider.user;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -38,9 +39,7 @@ public class AdminDogHubUserContentProvider {
         adminUsaUser.setAddress(getAddress());
         adminUsaUser.setMobileNumber("+972545597059");
         adminUsaUser.setHashedPassword(passwordEncoder.encode("password"));
-        adminUsaUser.setLikes(12L);
-        adminUsaUser.setComments(11L);
-        adminUsaUser.setShares(10L);
+        adminUsaUser.setFeedback(getFeedback());
         adminUsaUser.setRoles(Set.of(USER, ADMIN));
         return adminUsaUser;
     }
@@ -54,5 +53,13 @@ public class AdminDogHubUserContentProvider {
         address.setCountry("Israel");
         address.setPostcode("1524000");
         return address;
+    }
+
+    private @NotNull DogHubFeedback getFeedback() {
+        DogHubFeedback result = new DogHubFeedback();
+        result.setLikes(12L);
+        result.setComments(11L);
+        result.setShares(10L);
+        return result;
     }
 }

@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.content.generator.tip.model.Tip;
 import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
 import org.modelmapper.ModelMapper;
@@ -29,9 +30,7 @@ public class TipConverter {
     public DogHubTip convert(@NotNull Tip tip) {
         DogHubTip dogHubTip = tipModelMapper.map(tip, DogHubTip.class);
         dogHubTip.setThumbnailPicture(urlFaviconProvider.get(tip));
-        dogHubTip.setLikes(getLikes(tip));
-        dogHubTip.setShares(getShares(tip));
-        dogHubTip.setComments(getComments(tip));
+        dogHubTip.setFeedback(getFeedback());
         dogHubTip.setCreationTime(getCreationTime());
         dogHubTip.setName(getName(tip));
         Optional<DogHubUser> createdByOptional = getCreatedBy();
@@ -47,15 +46,23 @@ public class TipConverter {
         return result;
     }
 
-    private long getLikes(@NotNull Tip tip) {
+    private @NotNull DogHubFeedback getFeedback() {
+        DogHubFeedback result = new DogHubFeedback();
+        result.setLikes(getLikes());
+        result.setShares(getShares());
+        result.setComments(getComments());
+        return result;
+    }
+
+    private long getLikes() {
         return RandomUtils.nextLong(0, 10000);
     }
 
-    private long getShares(@NotNull Tip tip) {
+    private long getShares() {
         return RandomUtils.nextLong(0, 10000);
     }
 
-    private long getComments(@NotNull Tip tip) {
+    private long getComments() {
         return RandomUtils.nextLong(0, 10000);
     }
 

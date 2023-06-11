@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Size;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,7 @@ public class UserCreationService {
         result.setHashedPassword(passwordEncoder.encode(password));
         result.setRoles(Set.of(USER));
         result.setCreationTime(ZonedDateTime.now());
+        result.setFeedback(new DogHubFeedback());
         return result;
     }
 

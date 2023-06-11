@@ -19,7 +19,7 @@ public class UserShares extends HorizontalLayout {
         sharesIcon.addClassName(format("%s-icon", CLASS_NAME));
         add(sharesIcon);
 
-        Span sharesText = new Span(user.getShares().toString());
+        Span sharesText = new Span(user.getFeedback().getShares().toString());
         sharesText.addClassName(format("%s-text", CLASS_NAME));
         add(sharesText);
     }

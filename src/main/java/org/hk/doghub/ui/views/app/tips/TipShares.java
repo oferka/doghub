@@ -20,7 +20,7 @@ public class TipShares extends HorizontalLayout {
         sharesIcon.addClassName(format("%s-icon", CLASS_NAME));
         add(sharesIcon);
 
-        Span sharesText = new Span(tip.getShares().toString());
+        Span sharesText = new Span(tip.getFeedback().getShares().toString());
         sharesText.addClassName(format("%s-text", CLASS_NAME));
         add(sharesText);
     }

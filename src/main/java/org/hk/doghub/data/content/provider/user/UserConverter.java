@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.content.generator.user.model.User;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.model.user.Role;
 import org.modelmapper.ModelMapper;
@@ -32,10 +33,8 @@ public class UserConverter {
         DogHubUser dogHubUser = userModelMapper.map(user, DogHubUser.class);
         dogHubUser.setCreationTime(ZonedDateTime.now().minusDays(RandomUtils.nextLong(1, 1000)));
         dogHubUser.setHashedPassword(passwordEncoder.encode(user.getPassword()));
-        dogHubUser.setLikes(getLikes(user));
-        dogHubUser.setShares(getShares(user));
-        dogHubUser.setComments(getComments(user));
-        dogHubUser.setRoles(getUserRoles(user));
+        dogHubUser.setFeedback(getFeedback());
+        dogHubUser.setRoles(getUserRoles());
         log.info(format("User Name: %s, password: %s, roles: %s", dogHubUser.getUsername(), user.getPassword(), dogHubUser.getRoles()));
         return dogHubUser;
     }
@@ -48,19 +47,27 @@ public class UserConverter {
         return result;
     }
 
-    private long getLikes(@NotNull User user) {
+    private @NotNull DogHubFeedback getFeedback() {
+        DogHubFeedback result = new DogHubFeedback();
+        result.setLikes(getLikes());
+        result.setShares(getShares());
+        result.setComments(getComments());
+        return result;
+    }
+
+    private long getLikes() {
         return RandomUtils.nextLong(0, 10000);
     }
 
-    private long getShares(@NotNull User user) {
+    private long getShares() {
         return RandomUtils.nextLong(0, 10000);
     }
 
-    private long getComments(@NotNull User user) {
+    private long getComments() {
         return RandomUtils.nextLong(0, 10000);
     }
 
-    private Set<Role> getUserRoles(@NotNull User user) {
+    private Set<Role> getUserRoles() {
         Set<Role> result = new HashSet<>();
         Role[] allRoles = Role.values();
         for(Role role : allRoles) {

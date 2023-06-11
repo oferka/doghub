@@ -4,11 +4,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.HasThumbnailPicture;
 import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.model.tip.DogHubTip;
@@ -65,14 +69,8 @@ public class DogHubUser extends NamedEntity implements HasThumbnailPicture {
     @NotNull @Size(max = PASSWORD_MAX_LENGTH)
     private String hashedPassword;
 
-    @PositiveOrZero
-    private Long likes = 0L;
-
-    @PositiveOrZero
-    private Long comments = 0L;
-
-    @PositiveOrZero
-    private Long shares = 0L;
+    @Embedded
+    private DogHubFeedback feedback;
 
     @OneToMany(mappedBy = "createdBy", fetch = FetchType.EAGER)
     private List<DogHubTip> dogHubTips;

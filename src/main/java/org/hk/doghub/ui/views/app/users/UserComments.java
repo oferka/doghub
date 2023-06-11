@@ -19,7 +19,7 @@ public class UserComments extends HorizontalLayout {
         commentsIcon.addClassName(format("%s-icon", CLASS_NAME));
         add(commentsIcon);
 
-        Span commentsText = new Span(user.getComments().toString());
+        Span commentsText = new Span(user.getFeedback().getComments().toString());
         commentsText.addClassName(format("%s-text", CLASS_NAME));
         add(commentsText);
     }

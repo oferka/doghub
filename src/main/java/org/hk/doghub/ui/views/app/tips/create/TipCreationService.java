@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Size;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.service.tip.DogHubTipService;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ public class TipCreationService {
         result.setTitle(title);
         result.setCreationTime(ZonedDateTime.now());
         result.setCreatedBy(createdBy);
+        result.setFeedback(new DogHubFeedback());
         return result;
     }
 
