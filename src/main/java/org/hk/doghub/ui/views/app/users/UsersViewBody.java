@@ -25,7 +25,7 @@ public class UsersViewBody extends VerticalLayout {
         cardPresentation = new UsersViewBodyListPresentation(userDataProvider, authenticatedUser);
         add(cardPresentation);
 
-        gridPresentation = new UsersViewBodyGridPresentation(userDataProvider);
+        gridPresentation = new UsersViewBodyGridPresentation(userDataProvider, authenticatedUser);
         add(gridPresentation);
 
         setPresentationType(usersViewState.getPresentationMode());

@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.security.AuthenticatedUser;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
@@ -10,11 +11,11 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
 
     private final UsersGrid grid;
 
-    public UsersViewBodyGridPresentation(UserDataProvider userDataProvider) {
+    public UsersViewBodyGridPresentation(UserDataProvider userDataProvider, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        grid = new UsersGrid(userDataProvider);
+        grid = new UsersGrid(userDataProvider, authenticatedUser);
         addAndExpand(grid);
     }
 }
