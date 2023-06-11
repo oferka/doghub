@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.CommentsContainer;
 import org.hk.doghub.ui.components.shared.LikesContainer;
+import org.hk.doghub.ui.components.shared.SharesContainer;
 
 public class UsersListItemInfoActions extends HorizontalLayout {
 
@@ -11,7 +12,7 @@ public class UsersListItemInfoActions extends HorizontalLayout {
 
     private final LikesContainer likes;
     private final CommentsContainer comments;
-    private final UserShares shares;
+    private final SharesContainer shares;
 
     public UsersListItemInfoActions(DogHubUser user) {
         addClassName(CLASS_NAME);
@@ -24,7 +25,7 @@ public class UsersListItemInfoActions extends HorizontalLayout {
         comments = new CommentsContainer(user.getFeedback().getComments());
         add(comments);
 
-        shares = new UserShares(user);
+        shares = new SharesContainer(user.getFeedback().getShares());
         add(shares);
     }
 }

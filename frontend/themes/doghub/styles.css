@@ -74,6 +74,9 @@
 @import url('./shared/save-failed-with-invalid-input-notification.css');
 @import url('./shared/save-failed-with-unexpected-error-notification.css');
 @import url('./shared/saved-successfully-notification.css');
+@import url('./shared/shares-container.css');
+@import url('./shared/shares-counter-label.css');
+@import url('./shared/shares-icon.css');
 @import url('./shared/signup-button.css');
 @import url('./shared/signup-router-link.css');
 @import url('./shared/user-avatar-router-link.css');
@@ -145,8 +148,6 @@
 @import url('./views/app/tip-creation-view.css');
 @import url('./views/app/tip-id-router-link.css');
 @import url('./views/app/tip-name-router-link.css');
-@import url('./views/app/tip-shares.css');
-@import url('./views/app/tip-shares.css');
 @import url('./views/app/tip-view.css');
 @import url('./views/app/tip-view-body.css');
 @import url('./views/app/tip-creation-view.css');
@@ -204,7 +205,6 @@
 @import url('./views/app/user-creation-view-header-info-title-text.css');
 @import url('./views/app/user-date-of-registration.css');
 @import url('./views/app/user-id-router-link.css');
-@import url('./views/app/user-shares.css');
 @import url('./views/app/user-tips-avatar-group.css');
 @import url('./views/app/user-tips-router-link.css');
 @import url('./views/app/user-view.css');

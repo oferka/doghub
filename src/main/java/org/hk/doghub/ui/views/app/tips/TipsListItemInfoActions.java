@@ -5,6 +5,7 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.CommentsContainer;
 import org.hk.doghub.ui.components.shared.LikesContainer;
+import org.hk.doghub.ui.components.shared.SharesContainer;
 
 public class TipsListItemInfoActions extends HorizontalLayout {
 
@@ -12,7 +13,7 @@ public class TipsListItemInfoActions extends HorizontalLayout {
 
     private final LikesContainer likes;
     private final CommentsContainer comments;
-    private final TipShares shares;
+    private final SharesContainer shares;
 
     public TipsListItemInfoActions(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -25,7 +26,7 @@ public class TipsListItemInfoActions extends HorizontalLayout {
         comments = new CommentsContainer(tip.getFeedback().getComments());
         add(comments);
 
-        shares = new TipShares(tip, authenticatedUser);
+        shares = new SharesContainer(tip.getFeedback().getShares());
         add(shares);
     }
 }
