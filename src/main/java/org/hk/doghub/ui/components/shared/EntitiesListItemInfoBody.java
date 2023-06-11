@@ -1,8 +1,10 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.NamedEntity;
-import org.hk.doghub.security.AuthenticatedUser;
+
+import java.util.List;
 
 public class EntitiesListItemInfoBody<T extends NamedEntity> extends VerticalLayout {
 
@@ -10,9 +12,10 @@ public class EntitiesListItemInfoBody<T extends NamedEntity> extends VerticalLay
 
     private final EntitiesListItemInfoCreationTime<T> creationTime;
 
-    public EntitiesListItemInfoBody(T entity, AuthenticatedUser authenticatedUser) {
+    public EntitiesListItemInfoBody(T entity, List<Component> components) {
         addClassName(CLASS_NAME);
         creationTime = new EntitiesListItemInfoCreationTime<>(entity);
         add(creationTime);
+        add(components);
     }
 }

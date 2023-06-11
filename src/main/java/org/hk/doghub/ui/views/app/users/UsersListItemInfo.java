@@ -1,5 +1,6 @@
 package org.hk.doghub.ui.views.app.users;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
@@ -7,6 +8,9 @@ import org.hk.doghub.ui.components.shared.EntitiesListItemInfoBody;
 import org.hk.doghub.ui.components.shared.EntitiesListItemInfoHeader;
 import org.hk.doghub.ui.components.shared.FeedbackContainer;
 import org.hk.doghub.ui.views.app.users.user.UserView;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class UsersListItemInfo extends VerticalLayout {
 
@@ -24,10 +28,15 @@ public class UsersListItemInfo extends VerticalLayout {
         header = new EntitiesListItemInfoHeader<>(user, UserView.class);
         add(header);
 
-        body = new EntitiesListItemInfoBody<>(user, authenticatedUser);
+        body = new EntitiesListItemInfoBody<>(user, getBodyComponents(authenticatedUser));
         add(body);
 
         feedback = new FeedbackContainer<>(user);
         add(feedback);
+    }
+
+    private List<Component> getBodyComponents(AuthenticatedUser authenticatedUser) {
+        List<Component> result = Arrays.asList();
+        return result;
     }
 }
