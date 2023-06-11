@@ -9,6 +9,7 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 import org.hk.doghub.ui.views.app.users.user.UserView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class TipsList extends EntitiesList<DogHubTip> {
@@ -26,5 +27,10 @@ public class TipsList extends EntitiesList<DogHubTip> {
             result.add(new EntityNameRouterLink<>(tip.getCreatedBy(), UserView.class));
         }
         return result;
+    }
+
+    @Override
+    protected Collection<DogHubTip> getItems(EntityDataProvider<DogHubTip> entityDataProvider, AuthenticatedUser authenticatedUser) {
+        return ((TipDataProvider)entityDataProvider).findAllForUser(authenticatedUser);
     }
 }

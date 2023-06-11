@@ -8,6 +8,7 @@ import org.hk.doghub.ui.components.shared.EntitiesList;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class UsersList extends EntitiesList<DogHubUser> {
@@ -22,5 +23,10 @@ public class UsersList extends EntitiesList<DogHubUser> {
         List<Component> result = new ArrayList<>();
         result.add(new DogHubLabel(user.getCompany()));
         return result;
+    }
+
+    @Override
+    protected Collection<DogHubUser> getItems(EntityDataProvider<DogHubUser> entityDataProvider, AuthenticatedUser authenticatedUser) {
+        return entityDataProvider.findAll();
     }
 }

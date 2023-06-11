@@ -11,6 +11,7 @@ import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
+import java.util.Collection;
 import java.util.List;
 
 public abstract class EntitiesList<T extends NamedEntity & HasThumbnailPicture & HasFeedback> extends Div {
@@ -26,7 +27,7 @@ public abstract class EntitiesList<T extends NamedEntity & HasThumbnailPicture &
         grid.setHeightFull();
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
         grid.addComponentColumn((T entity) -> createListItem(entity, authenticatedUser));
-        grid.setItems(entityDataProvider.findAll());
+        grid.setItems(getItems(entityDataProvider, authenticatedUser));
         add(grid);
     }
 
@@ -35,4 +36,6 @@ public abstract class EntitiesList<T extends NamedEntity & HasThumbnailPicture &
     }
 
     protected abstract List<Component> getListItemInfoBodyComponents(T entity, AuthenticatedUser authenticatedUser);
+
+    protected abstract Collection<T> getItems(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser);
 }
