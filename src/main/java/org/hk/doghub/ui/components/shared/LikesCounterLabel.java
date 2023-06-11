@@ -1,13 +1,11 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.html.Span;
-
-public class LikesCounterLabel extends Span {
+public class LikesCounterLabel extends FeedbackAttributeCounterLabel {
 
     public static final String CLASS_NAME = "likes-counter-label";
 
     public LikesCounterLabel(Long likesCounter) {
-        super(likesCounter.toString());
+        super(likesCounter);
         addClassName(CLASS_NAME);
     }
 }

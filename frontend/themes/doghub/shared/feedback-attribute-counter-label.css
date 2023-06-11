@@ -1,0 +1,9 @@
+.feedback-attribute-counter-label {
+    color: var(--lumo-tertiary-text-color);
+    font-size: var(--lumo-font-size-xs);
+    margin-right: var(--lumo-space-l);
+}
+
+.feedback-attribute-counter-label:hover {
+    color: var(--lumo-primary-text-color);
+}
