@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.model.DogHubFeedback;
+import org.hk.doghub.model.HasFeedback;
 import org.hk.doghub.model.HasThumbnailPicture;
 import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.model.user.DogHubUser;
@@ -15,7 +16,7 @@ import org.hk.doghub.model.user.DogHubUser;
 @Getter
 @Setter
 @Table(uniqueConstraints = { @UniqueConstraint(name = "Unique_title_and_created_by_id", columnNames = { "title", "created_by_id" }) })
-public class DogHubTip extends NamedEntity implements HasThumbnailPicture {
+public class DogHubTip extends NamedEntity implements HasThumbnailPicture, HasFeedback {
 
     public static final int TITLE_MAX_LENGTH = 64;
 
