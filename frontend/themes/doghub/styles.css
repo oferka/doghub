@@ -40,6 +40,7 @@
 @import url('./shared/entities-view-header-info-title-icon.css');
 @import url('./shared/entities-view-header-info-title-text.css');
 @import url('./shared/entity-avatar.css');
+@import url('./shared/entity-id-router-link.css');
 @import url('./shared/entity-info-container.css');
 @import url('./shared/entity-info-container-form.css');
 @import url('./shared/entity-name-router-link.css');
@@ -148,7 +149,6 @@
 @import url('./views/app/tag-view.css');
 @import url('./views/app/tip-anchor.css');
 @import url('./views/app/tip-creation-view.css');
-@import url('./views/app/tip-id-router-link.css');
 @import url('./views/app/tip-view.css');
 @import url('./views/app/tip-view-body.css');
 @import url('./views/app/tip-creation-view.css');
@@ -199,7 +199,6 @@
 @import url('./views/app/user-creation-view-header-info-title.css');
 @import url('./views/app/user-creation-view-header-info-title-icon.css');
 @import url('./views/app/user-creation-view-header-info-title-text.css');
-@import url('./views/app/user-id-router-link.css');
 @import url('./views/app/user-tips-avatar-group.css');
 @import url('./views/app/user-tips-router-link.css');
 @import url('./views/app/user-view.css');
