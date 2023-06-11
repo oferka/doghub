@@ -161,6 +161,7 @@
 @import url('./views/app/tip-creation-view-header-info-title-icon.css');
 @import url('./views/app/tip-creation-view-header-info-title-text.css');
 @import url('./views/app/tips-grid.css');
+@import url('./views/app/tips-list.css');
 @import url('./views/app/tips-view.css');
 @import url('./views/app/tips-view-body.css');
 @import url('./views/app/tips-view-body-grid-presentation.css');
@@ -205,6 +206,7 @@
 @import url('./views/app/user-view.css');
 @import url('./views/app/user-view-body.css');
 @import url('./views/app/users-grid.css');
+@import url('./views/app/users-list.css');
 @import url('./views/app/users-view.css');
 @import url('./views/app/users-view-body.css');
 @import url('./views/app/users-view-body-grid-presentation.css');
