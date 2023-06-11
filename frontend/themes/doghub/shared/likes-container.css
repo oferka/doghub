@@ -1,24 +1,24 @@
-.tip-likes {
+.likes-container {
 
 }
 
-.tip-likes-icon {
+.likes-container-icon {
     color: var(--lumo-tertiary-text-color);
     height: calc(var(--lumo-icon-size-s) * 0.8);
     margin-right: var(--lumo-space-s);
     width: calc(var(--lumo-icon-size-s) * 0.8);
 }
 
-.tip-likes-icon:hover {
+.likes-container-icon:hover {
     color: var(--lumo-primary-text-color);
 }
 
-.tip-likes-text {
+.likes-container-text {
     color: var(--lumo-tertiary-text-color);
     font-size: var(--lumo-font-size-xs);
     margin-right: var(--lumo-space-l);
 }
 
-.tip-likes-text:hover {
+.likes-container-text:hover {
     color: var(--lumo-primary-text-color);
 }

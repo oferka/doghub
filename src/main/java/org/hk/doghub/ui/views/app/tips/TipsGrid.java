@@ -6,6 +6,7 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.CreationTimeLabel;
 import org.hk.doghub.ui.components.shared.EntityAvatar;
+import org.hk.doghub.ui.components.shared.LikesContainer;
 import org.hk.doghub.ui.components.shared.user.UserAvatarRouterLink;
 
 public class TipsGrid extends Grid<DogHubTip> {
@@ -28,7 +29,7 @@ public class TipsGrid extends Grid<DogHubTip> {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
         }
         addColumn(new ComponentRenderer<>(tip -> new CreationTimeLabel(tip.getCreationTime()))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
-        addColumn(new ComponentRenderer<>(TipLikes::new)).setHeader("Likes").setComparator(tip -> tip.getFeedback().getLikes());
+        addColumn(new ComponentRenderer<>(tip -> new LikesContainer(tip.getFeedback().getLikes()))).setHeader("Likes").setComparator(tip -> tip.getFeedback().getLikes());
         addColumn(new ComponentRenderer<>(tip -> new TipComments(tip, authenticatedUser))).setHeader("Comments").setComparator(tip -> tip.getFeedback().getComments());
         addColumn(new ComponentRenderer<>(tip -> new TipShares(tip, authenticatedUser))).setHeader("Shares").setComparator(tip -> tip.getFeedback().getShares());
     }
