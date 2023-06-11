@@ -21,7 +21,7 @@ public class TipsListItemInfoActions extends HorizontalLayout {
         likes = new LikesContainer(tip.getFeedback().getLikes());
         add(likes);
 
-        comments = new TipComments(tip, authenticatedUser);
+        comments = new TipComments(tip);
         add(comments);
 
         shares = new TipShares(tip, authenticatedUser);
