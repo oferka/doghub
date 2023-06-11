@@ -6,10 +6,12 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesListItemInfoBody;
 import org.hk.doghub.ui.components.shared.EntitiesListItemInfoHeader;
+import org.hk.doghub.ui.components.shared.EntityNameRouterLink;
 import org.hk.doghub.ui.components.shared.FeedbackContainer;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
+import org.hk.doghub.ui.views.app.users.user.UserView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TipsListItemInfo extends VerticalLayout {
@@ -28,15 +30,18 @@ public class TipsListItemInfo extends VerticalLayout {
         header = new EntitiesListItemInfoHeader<>(tip, TipView.class);
         add(header);
 
-        body = new EntitiesListItemInfoBody<>(tip, getBodyComponents(authenticatedUser));
+        body = new EntitiesListItemInfoBody<>(tip, getBodyComponents(tip, authenticatedUser));
         add(body);
 
         feedback = new FeedbackContainer<>(tip);
         add(feedback);
     }
 
-    private List<Component> getBodyComponents(AuthenticatedUser authenticatedUser) {
-        List<Component> result = Arrays.asList();
+    private List<Component> getBodyComponents(DogHubTip tip, AuthenticatedUser authenticatedUser) {
+        List<Component> result = new ArrayList<>();
+        if(authenticatedUser.hasAdminRole()) {
+            result.add(new EntityNameRouterLink<>(tip.getCreatedBy(), UserView.class));
+        }
         return result;
     }
 }
