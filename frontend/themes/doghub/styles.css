@@ -7,8 +7,6 @@
 @import url('./shared/authentication-bar.css');
 @import url('./shared/close-notification-button.css');
 @import url('./shared/comments-container.css');
-@import url('./shared/comments-counter-label.css');
-@import url('./shared/comments-icon.css');
 @import url('./shared/creation-time-label.css');
 @import url('./shared/dog-hub-combo-box-field.css');
 @import url('./shared/dog-hub-date-time-field.css');
@@ -60,8 +58,6 @@
 @import url('./shared/info-container-buttons.css');
 @import url('./shared/info-save-button.css');
 @import url('./shared/likes-container.css');
-@import url('./shared/likes-counter-label.css');
-@import url('./shared/likes-icon.css');
 @import url('./shared/login-button.css');
 @import url('./shared/login-router-link.css');
 @import url('./shared/name-field.css');
@@ -77,8 +73,6 @@
 @import url('./shared/save-failed-with-unexpected-error-notification.css');
 @import url('./shared/saved-successfully-notification.css');
 @import url('./shared/shares-container.css');
-@import url('./shared/shares-counter-label.css');
-@import url('./shared/shares-icon.css');
 @import url('./shared/signup-button.css');
 @import url('./shared/signup-router-link.css');
 @import url('./shared/user-avatar-router-link.css');
