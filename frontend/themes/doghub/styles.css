@@ -161,7 +161,6 @@
 @import url('./views/app/tips-list.css');
 @import url('./views/app/tips-list-item.css');
 @import url('./views/app/tips-list-item-info.css');
-@import url('./views/app/tips-list-item-info-summary.css');
 @import url('./views/app/tips-view.css');
 @import url('./views/app/tips-view-body.css');
 @import url('./views/app/tips-view-body-grid-presentation.css');
@@ -209,7 +208,6 @@
 @import url('./views/app/users-list.css');
 @import url('./views/app/users-list-item.css');
 @import url('./views/app/users-list-item-info.css');
-@import url('./views/app/users-list-item-info-summary.css');
 @import url('./views/app/users-view.css');
 @import url('./views/app/users-view-body.css');
 @import url('./views/app/users-view-body-grid-presentation.css');
