@@ -22,7 +22,7 @@ public class UsersViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        cardPresentation = new UsersViewBodyListPresentation(userDataProvider, authenticatedUser);
+        cardPresentation = new EntitiesViewBodyListPresentation<>(new UsersList(userDataProvider, authenticatedUser));
         add(cardPresentation);
 
         gridPresentation = new UsersViewBodyGridPresentation(userDataProvider, authenticatedUser);

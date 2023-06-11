@@ -166,7 +166,6 @@
 @import url('./views/app/tips-view.css');
 @import url('./views/app/tips-view-body.css');
 @import url('./views/app/tips-view-body-grid-presentation.css');
-@import url('./views/app/tips-view-body-list-presentation.css');
 @import url('./views/app/doghub-app-layout.css');
 @import url('./views/app/doghub-app-layout-drawer.css');
 @import url('./views/app/doghub-app-layout-drawer-content.css');
@@ -210,7 +209,6 @@
 @import url('./views/app/users-view.css');
 @import url('./views/app/users-view-body.css');
 @import url('./views/app/users-view-body-grid-presentation.css');
-@import url('./views/app/users-view-body-list-presentation.css');
 @import url('./views/site/features-view.css');
 @import url('./views/site/for-individuals-view.css');
 @import url('./views/site/for-teams-view.css');

@@ -22,7 +22,7 @@ public class TipsViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        listPresentation = new TipsViewBodyListPresentation(tipDataProvider, authenticatedUser);
+        listPresentation = new EntitiesViewBodyListPresentation<>(new TipsList(tipDataProvider, authenticatedUser));
         add(listPresentation);
 
         gridPresentation = new TipsViewBodyGridPresentation(tipDataProvider, authenticatedUser);
