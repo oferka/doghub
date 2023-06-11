@@ -9,7 +9,7 @@ public class TipIdRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "tip-id-router-link";
 
-    public TipIdRouterLink(DogHubTip tip, AuthenticatedUser authenticatedUser) {
+    public TipIdRouterLink(DogHubTip tip) {
         super(tip.getId().toString(), TipView.class, tip.getId());
         addClassName(CLASS_NAME);
     }

@@ -19,9 +19,9 @@ public class TipsGrid extends Grid<DogHubTip> {
     }
 
     private void addColumns(AuthenticatedUser authenticatedUser) {
-        addColumn(new ComponentRenderer<>(tip -> new TipIdRouterLink(tip, authenticatedUser))).setHeader("ID").setComparator(DogHubTip::getId);
+        addColumn(new ComponentRenderer<>(TipIdRouterLink::new)).setHeader("ID").setComparator(DogHubTip::getId);
         addColumn(new ComponentRenderer<>(EntityAvatar<DogHubTip>::new)).setHeader("Favicon").setComparator(DogHubTip::getMoreInfo);
-        addColumn(new ComponentRenderer<>(tip -> new TipNameRouterLink(tip, authenticatedUser))).setHeader("Name").setComparator(DogHubTip::getName);
+        addColumn(new ComponentRenderer<>(TipNameRouterLink::new)).setHeader("Name").setComparator(DogHubTip::getName);
         addColumn(new ComponentRenderer<>(TipAnchor::new)).setHeader("More Info").setComparator(DogHubTip::getMoreInfo);
         if(authenticatedUser.hasAdminRole()) {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
