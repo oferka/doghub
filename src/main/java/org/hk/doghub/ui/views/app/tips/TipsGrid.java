@@ -6,6 +6,7 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.*;
 import org.hk.doghub.ui.components.shared.user.UserAvatarRouterLink;
+import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
 public class TipsGrid extends Grid<DogHubTip> {
 
@@ -21,7 +22,7 @@ public class TipsGrid extends Grid<DogHubTip> {
     private void addColumns(AuthenticatedUser authenticatedUser) {
         addColumn(new ComponentRenderer<>(TipIdRouterLink::new)).setHeader("ID").setComparator(DogHubTip::getId);
         addColumn(new ComponentRenderer<>(EntityAvatar<DogHubTip>::new)).setHeader("Favicon").setComparator(DogHubTip::getMoreInfo);
-        addColumn(new ComponentRenderer<>(TipNameRouterLink::new)).setHeader("Name").setComparator(DogHubTip::getName);
+        addColumn(new ComponentRenderer<>(tip -> new EntityNameRouterLink<>(tip, TipView.class))).setHeader("Name").setComparator(DogHubTip::getName);
         addColumn(new ComponentRenderer<>(TipAnchor::new)).setHeader("More Info").setComparator(DogHubTip::getMoreInfo);
         if(authenticatedUser.hasAdminRole()) {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
