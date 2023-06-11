@@ -15,7 +15,7 @@ public class CreationTimeLabel extends Span {
     public CreationTimeLabel(@Past ZonedDateTime creationTime) {
         addClassName(CLASS_NAME);
         if(creationTime != null) {
-            setText(creationTime.format(DateTimeFormatter.ofLocalizedDateTime(MEDIUM)));
+            setText(creationTime.format(DateTimeFormatter.ofLocalizedDate(MEDIUM)));
         }
     }
 }
