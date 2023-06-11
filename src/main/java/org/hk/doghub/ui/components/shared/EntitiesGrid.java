@@ -10,6 +10,8 @@ import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
+import java.util.Collection;
+
 public abstract class EntitiesGrid<T extends NamedEntity & HasThumbnailPicture & HasFeedback, C extends Component & HasUrlParameter<Long>> extends Grid<T> {
 
     public static final String CLASS_NAME = "entities-grid";
@@ -18,7 +20,7 @@ public abstract class EntitiesGrid<T extends NamedEntity & HasThumbnailPicture &
         addClassName(CLASS_NAME);
         setWidthFull();
         addColumns(authenticatedUser, entityClass);
-        setItems(entityDataProvider.findAll());
+        setItems(getItems(entityDataProvider, authenticatedUser));
     }
 
     private void addColumns(AuthenticatedUser authenticatedUser, Class<? extends C> entityClass) {
@@ -33,4 +35,6 @@ public abstract class EntitiesGrid<T extends NamedEntity & HasThumbnailPicture &
     }
 
     protected abstract void addSpecificColumns(AuthenticatedUser authenticatedUser, Class<? extends C> entityClass);
+
+    protected abstract Collection<T> getItems(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser);
 }

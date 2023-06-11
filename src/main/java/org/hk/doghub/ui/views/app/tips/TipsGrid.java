@@ -8,6 +8,8 @@ import org.hk.doghub.ui.components.shared.user.UserAvatarRouterLink;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
+import java.util.Collection;
+
 public class TipsGrid extends EntitiesGrid<DogHubTip, TipView> {
 
     public static final String CLASS_NAME = "tips-grid";
@@ -23,5 +25,10 @@ public class TipsGrid extends EntitiesGrid<DogHubTip, TipView> {
         if(authenticatedUser.hasAdminRole()) {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
         }
+    }
+
+    @Override
+    protected Collection<DogHubTip> getItems(EntityDataProvider<DogHubTip> entityDataProvider, AuthenticatedUser authenticatedUser) {
+        return ((TipDataProvider)entityDataProvider).findAllForUser(authenticatedUser);
     }
 }
