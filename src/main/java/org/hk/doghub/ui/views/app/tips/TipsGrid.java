@@ -23,12 +23,12 @@ public class TipsGrid extends Grid<DogHubTip> {
         addColumn(new ComponentRenderer<>(tip -> new TipIdRouterLink(tip, authenticatedUser))).setHeader("ID").setComparator(DogHubTip::getId);
         addColumn(new ComponentRenderer<>(EntityAvatar<DogHubTip>::new)).setHeader("Favicon").setComparator(DogHubTip::getMoreInfo);
         addColumn(new ComponentRenderer<>(tip -> new TipNameRouterLink(tip, authenticatedUser))).setHeader("Name").setComparator(DogHubTip::getName);
-        addColumn(new ComponentRenderer<>(tip -> new TipAnchor(tip))).setHeader("More Info").setComparator(DogHubTip::getMoreInfo);
+        addColumn(new ComponentRenderer<>(TipAnchor::new)).setHeader("More Info").setComparator(DogHubTip::getMoreInfo);
         if(authenticatedUser.hasAdminRole()) {
             addColumn(new ComponentRenderer<>(tip -> new UserAvatarRouterLink(tip.getCreatedBy()))).setHeader("Created By").setComparator(tip -> tip.getCreatedBy().getName());
         }
         addColumn(new ComponentRenderer<>(tip -> new CreationTimeLabel(tip.getCreationTime()))).setHeader("Creation Time").setComparator(DogHubTip::getCreationTime);
-        addColumn(new ComponentRenderer<>(tip -> new TipLikes(tip, authenticatedUser))).setHeader("Likes").setComparator(DogHubTip::getLikes);
+        addColumn(new ComponentRenderer<>(TipLikes::new)).setHeader("Likes").setComparator(DogHubTip::getLikes);
         addColumn(new ComponentRenderer<>(tip -> new TipComments(tip, authenticatedUser))).setHeader("Comments").setComparator(DogHubTip::getComments);
         addColumn(new ComponentRenderer<>(tip -> new TipShares(tip, authenticatedUser))).setHeader("Shares").setComparator(DogHubTip::getShares);
     }

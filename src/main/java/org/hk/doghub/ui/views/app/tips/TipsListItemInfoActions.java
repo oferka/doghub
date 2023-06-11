@@ -17,7 +17,7 @@ public class TipsListItemInfoActions extends HorizontalLayout {
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        likes = new TipLikes(tip, authenticatedUser);
+        likes = new TipLikes(tip);
         add(likes);
 
         comments = new TipComments(tip, authenticatedUser);
