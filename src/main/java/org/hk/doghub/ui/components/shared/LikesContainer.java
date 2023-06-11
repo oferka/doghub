@@ -1,22 +1,13 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import static com.vaadin.flow.component.icon.VaadinIcon.HEART_O;
 
-public class LikesContainer extends HorizontalLayout {
+public class LikesContainer extends FeedbackAttributeContainer {
 
     public static final String CLASS_NAME = "likes-container";
 
-    private final LikesIcon likesIcon;
-
-    private final LikesCounterLabel likesCounterLabel;
-
     public LikesContainer(Long likes) {
+        super(HEART_O, likes);
         addClassName(CLASS_NAME);
-
-        likesIcon = new LikesIcon();
-        add(likesIcon);
-
-        likesCounterLabel = new LikesCounterLabel(likes);
-        add(likesCounterLabel);
     }
 }

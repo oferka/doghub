@@ -1,22 +1,13 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import static com.vaadin.flow.component.icon.VaadinIcon.SHARE_SQUARE;
 
-public class SharesContainer extends HorizontalLayout {
+public class SharesContainer extends FeedbackAttributeContainer {
 
     public static final String CLASS_NAME = "shares-container";
 
-    private final SharesIcon sharesIcon;
-
-    private final SharesCounterLabel sharesCounterLabel;
-
     public SharesContainer(Long shares) {
+        super(SHARE_SQUARE, shares);
         addClassName(CLASS_NAME);
-
-        sharesIcon = new SharesIcon();
-        add(sharesIcon);
-
-        sharesCounterLabel = new SharesCounterLabel(shares);
-        add(sharesCounterLabel);
     }
 }
