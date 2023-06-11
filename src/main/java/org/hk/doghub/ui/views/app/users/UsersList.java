@@ -1,11 +1,17 @@
 package org.hk.doghub.ui.views.app.users;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.DogHubLabel;
+import org.hk.doghub.ui.components.shared.EntitiesListItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsersList extends Div {
 
@@ -25,6 +31,12 @@ public class UsersList extends Div {
     }
 
     private HorizontalLayout createListItem(DogHubUser user, AuthenticatedUser authenticatedUser) {
-        return new UsersListItem(user, authenticatedUser);
+        return new EntitiesListItem<>(user, getListItemInfoBodyComponents(user, authenticatedUser));
+    }
+
+    private List<Component> getListItemInfoBodyComponents(DogHubUser user, AuthenticatedUser authenticatedUser) {
+        List<Component> result = new ArrayList<>();
+        result.add(new DogHubLabel(user.getCompany()));
+        return result;
     }
 }
