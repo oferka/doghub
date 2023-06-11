@@ -1,7 +1,9 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesViewBodyListPresentation;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
@@ -11,7 +13,7 @@ public class UsersViewBody extends VerticalLayout {
 
     public static final String CLASS_NAME = UsersView.CLASS_NAME + "-body";
 
-    private final UsersViewBodyListPresentation cardPresentation;
+    private final EntitiesViewBodyListPresentation<DogHubUser> cardPresentation;
     private final UsersViewBodyGridPresentation gridPresentation;
 
     public UsersViewBody(UserDataProvider userDataProvider, UsersViewState usersViewState, AuthenticatedUser authenticatedUser) {

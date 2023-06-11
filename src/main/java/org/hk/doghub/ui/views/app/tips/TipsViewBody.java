@@ -1,7 +1,9 @@
 package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesViewBodyListPresentation;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode;
 import org.hk.doghub.ui.components.shared.EntitiesViewPresentationModeChangeEvent;
 
@@ -11,7 +13,7 @@ public class TipsViewBody extends VerticalLayout {
 
     public static final String CLASS_NAME = TipsView.CLASS_NAME + "-body";
 
-    private final TipsViewBodyListPresentation listPresentation;
+    private final EntitiesViewBodyListPresentation<DogHubTip> listPresentation;
     private final TipsViewBodyGridPresentation gridPresentation;
 
     public TipsViewBody(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
