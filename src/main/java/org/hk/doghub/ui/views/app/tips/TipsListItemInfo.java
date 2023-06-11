@@ -25,7 +25,7 @@ public class TipsListItemInfo extends VerticalLayout {
         summary = new TipsListItemInfoSummary(tip, authenticatedUser);
         add(summary);
 
-        actions = new TipsListItemInfoActions(tip, authenticatedUser);
+        actions = new TipsListItemInfoActions(tip);
         add(actions);
     }
 }

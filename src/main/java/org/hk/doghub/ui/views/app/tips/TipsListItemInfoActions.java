@@ -2,7 +2,6 @@ package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
-import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.CommentsContainer;
 import org.hk.doghub.ui.components.shared.LikesContainer;
 import org.hk.doghub.ui.components.shared.SharesContainer;
@@ -15,7 +14,7 @@ public class TipsListItemInfoActions extends HorizontalLayout {
     private final CommentsContainer comments;
     private final SharesContainer shares;
 
-    public TipsListItemInfoActions(DogHubTip tip, AuthenticatedUser authenticatedUser) {
+    public TipsListItemInfoActions(DogHubTip tip) {
         addClassName(CLASS_NAME);
         setSpacing(false);
         getThemeList().add("spacing-s");
