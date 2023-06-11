@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntitiesListItemInfoHeader;
+import org.hk.doghub.ui.components.shared.FeedbackContainer;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
 public class TipsListItemInfo extends VerticalLayout {
@@ -12,7 +13,7 @@ public class TipsListItemInfo extends VerticalLayout {
 
     private final EntitiesListItemInfoHeader<DogHubTip> header;
     private final TipsListItemInfoSummary summary;
-    private final TipsListItemInfoActions actions;
+    private final FeedbackContainer<DogHubTip> feedback;
 
     public TipsListItemInfo(DogHubTip tip, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
@@ -25,7 +26,7 @@ public class TipsListItemInfo extends VerticalLayout {
         summary = new TipsListItemInfoSummary(tip, authenticatedUser);
         add(summary);
 
-        actions = new TipsListItemInfoActions(tip);
-        add(actions);
+        feedback = new FeedbackContainer<>(tip);
+        add(feedback);
     }
 }
