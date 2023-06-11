@@ -1,7 +1,7 @@
-.tips-list {
+.entities-list {
 }
 
-.tips-list-grid vaadin-grid-cell-content {
+.entities-list-grid vaadin-grid-cell-content {
     background-color: var(--lumo-primary-color-10pct);
     line-height: var(--lumo-line-height-m);
 }
