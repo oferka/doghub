@@ -1,10 +1,2 @@
 .shares-icon {
-    color: var(--lumo-tertiary-text-color);
-    height: calc(var(--lumo-icon-size-s) * 0.8);
-    margin-right: var(--lumo-space-s);
-    width: calc(var(--lumo-icon-size-s) * 0.8);
-}
-
-.shares-icon:hover {
-    color: var(--lumo-primary-text-color);
 }

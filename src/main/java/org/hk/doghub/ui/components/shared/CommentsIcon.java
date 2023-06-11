@@ -1,10 +1,8 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.icon.Icon;
-
 import static com.vaadin.flow.component.icon.VaadinIcon.COMMENT_O;
 
-public class CommentsIcon extends Icon {
+public class CommentsIcon extends FeedbackAttributeIcon {
 
     public static final String CLASS_NAME = "comments-icon";
 
