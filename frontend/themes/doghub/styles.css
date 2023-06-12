@@ -152,7 +152,6 @@
 @import url('./views/app/tip-anchor.css');
 @import url('./views/app/tip-creation-view.css');
 @import url('./views/app/tip-view.css');
-@import url('./views/app/tip-view-body.css');
 @import url('./views/app/tip-creation-view.css');
 @import url('./views/app/tip-creation-view-body.css');
 @import url('./views/app/tip-creation-view-footer.css');
@@ -202,7 +201,6 @@
 @import url('./views/app/user-tips-avatar-group.css');
 @import url('./views/app/user-tips-router-link.css');
 @import url('./views/app/user-view.css');
-@import url('./views/app/user-view-body.css');
 @import url('./views/app/users-grid.css');
 @import url('./views/app/users-list.css');
 @import url('./views/app/users-view.css');

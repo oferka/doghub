@@ -5,9 +5,11 @@ import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityInfoContainer;
 import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.components.shared.EntityView;
 import org.hk.doghub.ui.components.shared.EntityViewBody;
+import org.hk.doghub.ui.components.shared.user.UserInfoContainerForm;
 import org.hk.doghub.ui.components.shared.user.UserUpdateParameters;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
@@ -27,7 +29,7 @@ public class UserView extends EntityView<DogHubUser, UserUpdateParameters> {
     }
 
     protected EntityViewBody<DogHubUser, UserUpdateParameters> getBody() {
-        return new UserViewBody(entityDataProvider, entityUpdateService);
+        return new EntityViewBody<>(new EntityInfoContainer<>(entityDataProvider, new UserInfoContainerForm(entityDataProvider, entityUpdateService)));
     }
 
     @Override

@@ -7,9 +7,11 @@ import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityInfoContainer;
 import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.components.shared.EntityView;
 import org.hk.doghub.ui.components.shared.EntityViewBody;
+import org.hk.doghub.ui.components.shared.tip.TipInfoContainerForm;
 import org.hk.doghub.ui.components.shared.tip.TipUpdateParameters;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
@@ -30,7 +32,7 @@ import org.hk.doghub.ui.views.app.tips.TipsView;
     }
 
     protected EntityViewBody<DogHubTip, TipUpdateParameters> getBody() {
-        return new TipViewBody(entityDataProvider, entityUpdateService);
+        return new EntityViewBody<>(new EntityInfoContainer<>(entityDataProvider, new TipInfoContainerForm(entityDataProvider, entityUpdateService)));
     }
 
     @Override
