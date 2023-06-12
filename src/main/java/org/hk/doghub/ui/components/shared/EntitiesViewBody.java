@@ -18,16 +18,11 @@ public class EntitiesViewBody<T extends NamedEntity & HasThumbnailPicture & HasF
 
     public EntitiesViewBody(EntitiesList<T> list, EntitiesGrid<T, C> grid, EntitiesViewState viewState) {
         addClassName(CLASS_NAME);
-
         setWidthFull();
         setAlignItems(CENTER);
-
         cardPresentation = new EntitiesViewBodyListPresentation<>(list);
-        add(cardPresentation);
-
         gridPresentation = new EntitiesViewBodyGridPresentation<>(grid);
-        add(gridPresentation);
-
+        add(cardPresentation, gridPresentation);
         setPresentationType(viewState.getPresentationMode());
         viewState.addPresentationModeChangeListener(this::presentationModeChanged);
     }
