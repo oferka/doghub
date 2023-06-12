@@ -10,7 +10,7 @@ public class UserCreationViewHeaderInfoTitleIcon extends Icon {
 
     public static final String CLASS_NAME = UserCreationViewHeaderInfoTitle.CLASS_NAME + "-icon";
 
-    public UserCreationViewHeaderInfoTitleIcon(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserCreationViewHeaderInfoTitleIcon() {
         super(USER);
         addClassName(CLASS_NAME);
     }

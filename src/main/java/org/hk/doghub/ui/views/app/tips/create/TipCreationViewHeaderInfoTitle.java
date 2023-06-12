@@ -12,7 +12,7 @@ public class TipCreationViewHeaderInfoTitle extends HorizontalLayout {
     public TipCreationViewHeaderInfoTitle(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        TipCreationViewHeaderInfoTitleIcon icon = new TipCreationViewHeaderInfoTitleIcon(authenticatedUser, tipCreationService);
+        TipCreationViewHeaderInfoTitleIcon icon = new TipCreationViewHeaderInfoTitleIcon();
         TipCreationViewHeaderInfoTitleText text = new TipCreationViewHeaderInfoTitleText(authenticatedUser, tipCreationService);
         add(icon, text);
         setVerticalComponentAlignment(CENTER, icon, text);

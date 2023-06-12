@@ -13,7 +13,7 @@ public class UserCreationViewHeaderInfoTitle extends HorizontalLayout {
     public UserCreationViewHeaderInfoTitle(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        UserCreationViewHeaderInfoTitleIcon icon = new UserCreationViewHeaderInfoTitleIcon(authenticatedUser, userCreationService);
+        UserCreationViewHeaderInfoTitleIcon icon = new UserCreationViewHeaderInfoTitleIcon();
         UserCreationViewHeaderInfoTitleText text = new UserCreationViewHeaderInfoTitleText(authenticatedUser, userCreationService);
         add(icon, text);
         setVerticalComponentAlignment(CENTER, icon, text);
