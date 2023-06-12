@@ -11,19 +11,15 @@ public class DogHubAppLayoutHeader extends HorizontalLayout {
     public static final String CLASS_NAME = DogHubAppLayout.ID + "-header";
 
     private final DogHubAppLayoutHeaderContent content;
-    private final DogHubAppLayoutHeaderActions actions;
 
     public DogHubAppLayoutHeader(AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setPadding(true);
         setJustifyContentMode(BETWEEN);
-
         content = new DogHubAppLayoutHeaderContent();
-        add(content);
-
-        actions = new DogHubAppLayoutHeaderActions(authenticatedUser);
-        add(actions);
+        DogHubAppLayoutHeaderActions actions = new DogHubAppLayoutHeaderActions(authenticatedUser);
+        add(content, actions);
     }
 
     public void setTitleText(@NotNull String titleText) {

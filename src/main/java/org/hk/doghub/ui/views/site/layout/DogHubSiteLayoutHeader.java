@@ -11,24 +11,18 @@ public class DogHubSiteLayoutHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = DogHubSiteLayout.ID + "-header";
 
-    private final DogHubSiteLayoutTitleBar titleBar;
     private final DogHubSiteLayoutTabs tabs;
-    private final DogHubSiteLayoutActionsBar actionsBar;
 
     public DogHubSiteLayoutHeader(AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
         setPadding(true);
         setJustifyContentMode(BETWEEN);
-
-        titleBar = new DogHubSiteLayoutTitleBar();
+        DogHubSiteLayoutTitleBar titleBar = new DogHubSiteLayoutTitleBar();
         add(titleBar);
-
         tabs = new DogHubSiteLayoutTabs();
         addAndExpand(tabs);
-
-        actionsBar = new DogHubSiteLayoutActionsBar(authenticatedUser);
+        DogHubSiteLayoutActionsBar actionsBar = new DogHubSiteLayoutActionsBar(authenticatedUser);
         add(actionsBar);
-
         setVerticalComponentAlignment(CENTER, titleBar, tabs, actionsBar);
     }
 

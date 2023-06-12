@@ -9,13 +9,10 @@ public class DogHubAppLayoutUserNotificationsRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-notifications-router-link";
 
-    private final DogHubAppLayoutUserNotificationsButton notifications;
-
     public DogHubAppLayoutUserNotificationsRouterLink() {
         super(EMPTY, NotificationsView.class);
         addClassName(CLASS_NAME);
-
-        notifications = new DogHubAppLayoutUserNotificationsButton();
+        DogHubAppLayoutUserNotificationsButton notifications = new DogHubAppLayoutUserNotificationsButton();
         add(notifications);
     }
 }

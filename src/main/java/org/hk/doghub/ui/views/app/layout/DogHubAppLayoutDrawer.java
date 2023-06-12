@@ -9,10 +9,6 @@ public class DogHubAppLayoutDrawer extends VerticalLayout {
 
     public static final String CLASS_NAME = DogHubAppLayout.ID + "-drawer";
 
-    private final DogHubAppLayoutDrawerHeader header;
-    private final DogHubAppLayoutDrawerContent content;
-    private final DogHubAppLayoutDrawerFooter footer;
-
     public DogHubAppLayoutDrawer(AccessAnnotationChecker accessChecker) {
         addClassName(CLASS_NAME);
         getThemeList().set("dark", true);
@@ -20,9 +16,9 @@ public class DogHubAppLayoutDrawer extends VerticalLayout {
         setPadding(false);
         setSpacing(false);
         setAlignItems(STRETCH);
-        header = new DogHubAppLayoutDrawerHeader();
-        content = new DogHubAppLayoutDrawerContent(accessChecker);
-        footer = new DogHubAppLayoutDrawerFooter();
+        DogHubAppLayoutDrawerHeader header = new DogHubAppLayoutDrawerHeader();
+        DogHubAppLayoutDrawerContent content = new DogHubAppLayoutDrawerContent(accessChecker);
+        DogHubAppLayoutDrawerFooter footer = new DogHubAppLayoutDrawerFooter();
         add(header, content, footer);
     }
 }

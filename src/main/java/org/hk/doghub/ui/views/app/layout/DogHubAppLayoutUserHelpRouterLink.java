@@ -9,13 +9,10 @@ public class DogHubAppLayoutUserHelpRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-help-router-link";
 
-    private final DogHubAppLayoutUserHelpButton help;
-
     public DogHubAppLayoutUserHelpRouterLink() {
         super(EMPTY, HelpView.class);
         addClassName(CLASS_NAME);
-
-        help = new DogHubAppLayoutUserHelpButton();
+        DogHubAppLayoutUserHelpButton help = new DogHubAppLayoutUserHelpButton();
         add(help);
     }
 }

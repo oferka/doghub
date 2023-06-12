@@ -8,12 +8,9 @@ public class DogHubAppLayoutDrawerContent extends VerticalLayout {
 
     public static final String CLASS_NAME = DogHubAppLayoutDrawer.CLASS_NAME + "-content";
 
-    private final DogHubAppLayoutDrawerContentNavigation navigation;
-
     public DogHubAppLayoutDrawerContent(AccessAnnotationChecker accessChecker) {
         addClassName(CLASS_NAME);
-
-        navigation = new DogHubAppLayoutDrawerContentNavigation(accessChecker);
+        DogHubAppLayoutDrawerContentNavigation navigation = new DogHubAppLayoutDrawerContentNavigation(accessChecker);
         add(new Scroller(navigation));
     }
 }
