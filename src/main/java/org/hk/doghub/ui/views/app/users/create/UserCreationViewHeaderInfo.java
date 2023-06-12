@@ -5,7 +5,7 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.EntityCreationViewHeaderInfoTitle;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.LINK;
+import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
 public class UserCreationViewHeaderInfo extends VerticalLayout {
@@ -15,7 +15,7 @@ public class UserCreationViewHeaderInfo extends VerticalLayout {
     public UserCreationViewHeaderInfo(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        EntityCreationViewHeaderInfoTitle title = new EntityCreationViewHeaderInfoTitle(LINK, "Create a User");
+        EntityCreationViewHeaderInfoTitle title = new EntityCreationViewHeaderInfoTitle(USERS, "Create a User");
         UserCreationViewHeaderInfoDescription description = new UserCreationViewHeaderInfoDescription(authenticatedUser, userCreationService);
         add(title, description);
     }
