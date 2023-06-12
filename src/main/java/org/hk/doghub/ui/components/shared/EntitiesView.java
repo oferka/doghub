@@ -14,17 +14,14 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 public abstract class EntitiesView<T extends NamedEntity & HasThumbnailPicture & HasFeedback, C extends Component & HasUrlParameter<Long>> extends VerticalLayout {
 
     public static final String CLASS_NAME = "entities-view";
-    private final EntitiesViewHeader header;
-    private final EntitiesViewBody<T, C> body;
-    private final EntitiesViewFooter footer;
 
     public EntitiesView(EntityDataProvider<T> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
-        header = getViewHeader(entityDataProvider, viewState, authenticatedUser);
+        EntitiesViewHeader header = getViewHeader(entityDataProvider, viewState, authenticatedUser);
         add(header);
-        body = getViewBody(entityDataProvider, viewState, authenticatedUser);
+        EntitiesViewBody<T, C> body = getViewBody(entityDataProvider, viewState, authenticatedUser);
         addAndExpand(body);
-        footer = new EntitiesViewFooter();
+        EntitiesViewFooter footer = new EntitiesViewFooter();
         add(footer);
     }
 

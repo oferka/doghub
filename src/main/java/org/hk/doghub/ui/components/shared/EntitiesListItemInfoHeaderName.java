@@ -9,11 +9,9 @@ public class EntitiesListItemInfoHeaderName<T extends NamedEntity> extends Div {
 
     public static final String CLASS_NAME = "entities-list-item-info-header-name";
 
-    private final EntityNameRouterLink<T> link;
-
     public <C extends Component & HasUrlParameter<Long>> EntitiesListItemInfoHeaderName(T entity, Class<? extends C> entityClass) {
         addClassName(CLASS_NAME);
-        link = new EntityNameRouterLink<>(entity, entityClass);
+        EntityNameRouterLink<T> link = new EntityNameRouterLink<>(entity, entityClass);
         add(link);
     }
 }
