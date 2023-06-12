@@ -17,26 +17,18 @@ public class EntityNavigationContainer<T extends AbstractEntity, C extends Compo
 
     private final PreviousEntityRouterLink<T, C> previous;
 
-    private final EntitiesRouterLink entities;
-
     private final NextEntityRouterLink<T, C> next;
 
     private long selectedEntityId;
 
     public EntityNavigationContainer(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class<? extends C> entityClass, String entitiesLabel, Class<? extends Component> entitiesClass) {
         addClassName(CLASS_NAME);
-
         setWidthFull();
         setJustifyContentMode(CENTER);
-
         previous = new PreviousEntityRouterLink<>(entityDataProvider, authenticatedUser, entityLabel, entityClass);
-        add(previous);
-
-        entities = new EntitiesRouterLink(entitiesClass, entitiesLabel);
-        add(entities);
-
+        EntitiesRouterLink entities = new EntitiesRouterLink(entitiesClass, entitiesLabel);
         next = new NextEntityRouterLink<>(entityDataProvider, authenticatedUser, entityLabel, entityClass);
-        add(next);
+        add(previous, entities, next);
     }
 
     public long getSelectedEntityId() {
