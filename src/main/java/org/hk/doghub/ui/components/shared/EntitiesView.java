@@ -1,0 +1,36 @@
+package org.hk.doghub.ui.components.shared;
+
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.HasUrlParameter;
+import jakarta.validation.constraints.NotNull;
+import org.hk.doghub.model.HasFeedback;
+import org.hk.doghub.model.HasThumbnailPicture;
+import org.hk.doghub.model.NamedEntity;
+import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
+
+public abstract class EntitiesView<T extends NamedEntity & HasThumbnailPicture & HasFeedback, C extends Component & HasUrlParameter<Long>> extends VerticalLayout {
+
+    public static final String CLASS_NAME = "entities-view";
+    private final EntitiesViewHeader header;
+    private final EntitiesViewBody<T, C> body;
+    private final EntitiesViewFooter footer;
+
+    public EntitiesView(EntityDataProvider<T> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
+        addClassName(CLASS_NAME);
+
+        header = getViewHeader(entityDataProvider, viewState, authenticatedUser);
+        add(header);
+
+        body = getViewBody(entityDataProvider, viewState, authenticatedUser);
+        addAndExpand(body);
+
+        footer = new EntitiesViewFooter();
+        add(footer);
+    }
+
+    protected abstract @NotNull EntitiesViewHeader getViewHeader(EntityDataProvider<T> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser);
+
+    protected abstract @NotNull EntitiesViewBody<T, C> getViewBody(EntityDataProvider<T> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser);
+}

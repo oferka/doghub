@@ -1,14 +1,16 @@
 package org.hk.doghub.ui.views.app.tips;
 
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesView;
 import org.hk.doghub.ui.components.shared.EntitiesViewBody;
-import org.hk.doghub.ui.components.shared.EntitiesViewFooter;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeader;
+import org.hk.doghub.ui.components.shared.EntitiesViewState;
+import org.hk.doghub.ui.views.app.EntityDataProvider;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationView;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
@@ -19,7 +21,7 @@ import static org.hk.doghub.ui.views.app.tips.TipsView.ROUTE;
 @PageTitle(TipsView.NAME)
 @Route(value = ROUTE, layout = DogHubAppLayout.class)
 @RolesAllowed({"USER", "ADMIN"})
-public class TipsView extends VerticalLayout {
+public class TipsView extends EntitiesView<DogHubTip, TipView> {
 
     public static final String ROUTE = "tips";
     private static final String ID_PREFIX = "tips";
@@ -27,20 +29,18 @@ public class TipsView extends VerticalLayout {
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tips";
 
-    private final EntitiesViewHeader header;
-    private final EntitiesViewBody<DogHubTip, TipView> body;
-    private final EntitiesViewFooter footer;
-
-    public TipsView(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+    public TipsView(EntityDataProvider<DogHubTip> entityDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
+        super(entityDataProvider, tipsViewState, authenticatedUser);
         addClassName(CLASS_NAME);
+    }
 
-        header = new EntitiesViewHeader(tipsViewState, LINK, TipsView.NAME, tipDataProvider.countForUser(authenticatedUser), "Tips view description", TipCreationView.class, TipView.NAME);
-        add(header);
+    @Override
+    protected @NotNull EntitiesViewHeader getViewHeader(EntityDataProvider<DogHubTip> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
+        return new EntitiesViewHeader(viewState, LINK, TipsView.NAME, ((TipDataProvider)entityDataProvider).countForUser(authenticatedUser), "Tips view description", TipCreationView.class, TipView.NAME);
+    }
 
-        body = new EntitiesViewBody<>(new TipsList(tipDataProvider, authenticatedUser), new TipsGrid(tipDataProvider, authenticatedUser), tipsViewState);
-        addAndExpand(body);
-
-        footer = new EntitiesViewFooter();
-        add(footer);
+    @Override
+    protected @NotNull EntitiesViewBody<DogHubTip, TipView> getViewBody(EntityDataProvider<DogHubTip> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
+        return new EntitiesViewBody<>(new TipsList(entityDataProvider, authenticatedUser), new TipsGrid(entityDataProvider, authenticatedUser), viewState);
     }
 }
