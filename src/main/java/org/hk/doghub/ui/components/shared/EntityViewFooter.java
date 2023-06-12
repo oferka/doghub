@@ -17,10 +17,8 @@ public class EntityViewFooter<T extends AbstractEntity, C extends Component & Ha
 
     public EntityViewFooter(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class<? extends C> entityClass, String entitiesLabel, Class<? extends Component> entitiesClass) {
         addClassName(CLASS_NAME);
-
         setWidthFull();
         setJustifyContentMode(CENTER);
-
         navigationContainer = new EntityNavigationContainer<>(entityDataProvider, authenticatedUser, entityLabel, entityClass, entitiesLabel, entitiesClass);
         add(navigationContainer);
     }

@@ -37,7 +37,7 @@ public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P 
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);
-        footer = new EntityViewFooter<T, C>(entityDataProvider, authenticatedUser, getEntityLabel(), getEntityClass(), getEntitiesLabel(), getEntitiesClass());
+        footer = new EntityViewFooter<>(entityDataProvider, authenticatedUser, getEntityLabel(), getEntityClass(), getEntitiesLabel(), getEntitiesClass());
         add(footer);
     }
 

@@ -20,13 +20,10 @@ public abstract class EntitiesView<T extends NamedEntity & HasThumbnailPicture &
 
     public EntitiesView(EntityDataProvider<T> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
-
         header = getViewHeader(entityDataProvider, viewState, authenticatedUser);
         add(header);
-
         body = getViewBody(entityDataProvider, viewState, authenticatedUser);
         addAndExpand(body);
-
         footer = new EntitiesViewFooter();
         add(footer);
     }
