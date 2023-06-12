@@ -8,20 +8,12 @@ public class SignupMessage extends VerticalLayout {
 
     public static final String CLASS_NAME = SignupBody.CLASS_NAME + "-message";
 
-    private final SignupMessageFirstLine firstLine;
-
-    private final SignupMessageSecondLine secondLine;
-
     public SignupMessage() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
         setSpacing(false);
-
-        firstLine = new SignupMessageFirstLine();
-        add(firstLine);
-
-        secondLine = new SignupMessageSecondLine();
-        add(secondLine);
+        SignupMessageFirstLine firstLine = new SignupMessageFirstLine();
+        SignupMessageSecondLine secondLine = new SignupMessageSecondLine();
+        add(firstLine, secondLine);
     }
 }
