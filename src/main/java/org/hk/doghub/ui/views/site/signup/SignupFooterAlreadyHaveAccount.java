@@ -8,20 +8,12 @@ public class SignupFooterAlreadyHaveAccount extends VerticalLayout {
 
     public static final String CLASS_NAME = SignupFooter.CLASS_NAME + "-already-have-account";
 
-    private final SignupFooterAlreadyHaveAccountExplanation explanation;
-
-    private final SignupFooterAlreadyHaveAccountLoginLink loginLink;
-
     public SignupFooterAlreadyHaveAccount() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
         setSpacing(false);
-
-        explanation = new SignupFooterAlreadyHaveAccountExplanation();
-        add(explanation);
-
-        loginLink = new SignupFooterAlreadyHaveAccountLoginLink();
-        add(loginLink);
+        SignupFooterAlreadyHaveAccountExplanation explanation = new SignupFooterAlreadyHaveAccountExplanation();
+        SignupFooterAlreadyHaveAccountLoginLink loginLink = new SignupFooterAlreadyHaveAccountLoginLink();
+        add(explanation, loginLink);
     }
 }

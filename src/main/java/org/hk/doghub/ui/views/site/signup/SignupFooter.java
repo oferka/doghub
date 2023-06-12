@@ -8,14 +8,10 @@ public class SignupFooter extends VerticalLayout {
 
     public static final String CLASS_NAME = "signup-footer";
 
-    private final SignupFooterAlreadyHaveAccount alreadyHaveAccount;
-
     public SignupFooter() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        alreadyHaveAccount = new SignupFooterAlreadyHaveAccount();
+        SignupFooterAlreadyHaveAccount alreadyHaveAccount = new SignupFooterAlreadyHaveAccount();
         add(alreadyHaveAccount);
     }
 }
