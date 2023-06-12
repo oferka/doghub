@@ -4,7 +4,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntitiesViewBody;
 import org.hk.doghub.ui.components.shared.EntitiesViewFooter;
 import org.hk.doghub.ui.components.shared.EntitiesViewHeader;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
@@ -26,7 +28,7 @@ public class TipsView extends VerticalLayout {
     public static final String NAME = "Tips";
 
     private final EntitiesViewHeader header;
-    private final TipsViewBody body;
+    private final EntitiesViewBody<DogHubTip, TipView> body;
     private final EntitiesViewFooter footer;
 
     public TipsView(TipDataProvider tipDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
@@ -35,7 +37,7 @@ public class TipsView extends VerticalLayout {
         header = new EntitiesViewHeader(tipsViewState, LINK, TipsView.NAME, tipDataProvider.countForUser(authenticatedUser), "Tips view description", TipCreationView.class, TipView.NAME);
         add(header);
 
-        body = new TipsViewBody(tipDataProvider, tipsViewState, authenticatedUser);
+        body = new EntitiesViewBody<>(new TipsList(tipDataProvider, authenticatedUser), new TipsGrid(tipDataProvider, authenticatedUser), tipsViewState);
         addAndExpand(body);
 
         footer = new EntitiesViewFooter();
