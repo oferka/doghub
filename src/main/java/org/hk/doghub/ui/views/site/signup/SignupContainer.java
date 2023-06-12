@@ -8,22 +8,11 @@ public class SignupContainer extends VerticalLayout {
 
     public static final String CLASS_NAME = "signup-container";
 
-    private final SignupHeader header;
-
-    private final SignupBody body;
-
-    private final SignupFooter footer;
-
     public SignupContainer(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
-
-        header = new SignupHeader();
-        add(header);
-
-        body = new SignupBody(authenticatedUser, userCreationService);
-        add(body);
-
-        footer = new SignupFooter();
-        add(footer);
+        SignupHeader header = new SignupHeader();
+        SignupBody body = new SignupBody(authenticatedUser, userCreationService);
+        SignupFooter footer = new SignupFooter();
+        add(header, body, footer);
     }
 }
