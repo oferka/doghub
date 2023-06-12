@@ -1,11 +1,11 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
-public class EntityCreationViewFooter extends HorizontalLayout {
+public class EntityCreationViewFooter extends VerticalLayout {
 
     public static final String CLASS_NAME = "entity-creation-view-footer";
 
@@ -13,6 +13,6 @@ public class EntityCreationViewFooter extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        add(new Span("Entity creation footer"));
+        add(new H2("Entity creation footer"));
     }
 }

@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 491">
-      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/tip-creation-view-header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/views/app/user-creation-view-header.css" beforeDir="false" />
-    </list>
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 494" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,27 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00447" summary="doghub 444">
-      <created>1686519068607</created>
-      <option name="number" value="00447" />
-      <option name="presentableId" value="LOCAL-00447" />
-      <option name="project" value="LOCAL" />
-      <updated>1686519068607</updated>
-    </task>
-    <task id="LOCAL-00448" summary="doghub 445">
-      <created>1686552279400</created>
-      <option name="number" value="00448" />
-      <option name="presentableId" value="LOCAL-00448" />
-      <option name="project" value="LOCAL" />
-      <updated>1686552279400</updated>
-    </task>
-    <task id="LOCAL-00449" summary="doghub 446">
-      <created>1686552541384</created>
-      <option name="number" value="00449" />
-      <option name="presentableId" value="LOCAL-00449" />
-      <option name="project" value="LOCAL" />
-      <updated>1686552541384</updated>
     </task>
     <task id="LOCAL-00450" summary="doghub 447">
       <created>1686554227635</created>
@@ -538,7 +514,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686577370697</updated>
     </task>
-    <option name="localTasksCounter" value="496" />
+    <task id="LOCAL-00496" summary="doghub 492">
+      <created>1686577464349</created>
+      <option name="number" value="00496" />
+      <option name="presentableId" value="LOCAL-00496" />
+      <option name="project" value="LOCAL" />
+      <updated>1686577464349</updated>
+    </task>
+    <task id="LOCAL-00497" summary="doghub 493">
+      <created>1686577540883</created>
+      <option name="number" value="00497" />
+      <option name="presentableId" value="LOCAL-00497" />
+      <option name="project" value="LOCAL" />
+      <updated>1686577540883</updated>
+    </task>
+    <task id="LOCAL-00498" summary="doghub 494">
+      <created>1686577831762</created>
+      <option name="number" value="00498" />
+      <option name="presentableId" value="LOCAL-00498" />
+      <option name="project" value="LOCAL" />
+      <updated>1686577831762</updated>
+    </task>
+    <option name="localTasksCounter" value="499" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -554,9 +551,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 467" />
-    <MESSAGE value="doghub 468" />
-    <MESSAGE value="doghub 469" />
     <MESSAGE value="doghub 470" />
     <MESSAGE value="doghub 471" />
     <MESSAGE value="doghub 472" />
@@ -579,6 +573,9 @@
     <MESSAGE value="doghub 489" />
     <MESSAGE value="doghub 490" />
     <MESSAGE value="doghub 491" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 491" />
+    <MESSAGE value="doghub 492" />
+    <MESSAGE value="doghub 493" />
+    <MESSAGE value="doghub 494" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 494" />
   </component>
 </project>
