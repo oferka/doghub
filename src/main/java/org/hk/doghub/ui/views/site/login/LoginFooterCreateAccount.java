@@ -8,20 +8,12 @@ public class LoginFooterCreateAccount extends VerticalLayout {
 
     public static final String CLASS_NAME = LoginFooter.CLASS_NAME + "-create-account";
 
-    private final LoginFooterCreateAccountExplanation explanation;
-
-    private final LoginFooterCreateAccountSignupLink signupLink;
-
     public LoginFooterCreateAccount() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
         setSpacing(false);
-
-        explanation = new LoginFooterCreateAccountExplanation();
-        add(explanation);
-
-        signupLink = new LoginFooterCreateAccountSignupLink();
-        add(signupLink);
+        LoginFooterCreateAccountExplanation explanation = new LoginFooterCreateAccountExplanation();
+        LoginFooterCreateAccountSignupLink signupLink = new LoginFooterCreateAccountSignupLink();
+        add(explanation, signupLink);
     }
 }

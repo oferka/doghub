@@ -8,21 +8,13 @@ public class LoginWith extends VerticalLayout {
 
     public static final String CLASS_NAME = LoginBody.CLASS_NAME + "-login-with";
 
-    private final LoginWithGoogle google;
-
-    private final LoginWithFacebook facebook;
-
     public LoginWith() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
         setSpacing(false);
         setPadding(false);
-
-        google = new LoginWithGoogle();
-        add(google);
-
-        facebook = new LoginWithFacebook();
-        add(facebook);
+        LoginWithGoogle google = new LoginWithGoogle();
+        LoginWithFacebook facebook = new LoginWithFacebook();
+        add(google, facebook);
     }
 }
