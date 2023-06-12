@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.tips.create;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.hk.doghub.ui.components.shared.EntityCreationViewHeaderActions;
 import org.hk.doghub.ui.components.shared.EntityCreationViewHeaderInfo;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.LINK;
@@ -15,7 +16,7 @@ public class TipCreationViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
         EntityCreationViewHeaderInfo info = new EntityCreationViewHeaderInfo(LINK, "Create a Tip", "Add some interesting tip to DogHub");
-        TipCreationViewHeaderActions actions = new TipCreationViewHeaderActions();
+        EntityCreationViewHeaderActions actions = new EntityCreationViewHeaderActions();
         add(info, actions);
     }
 }
