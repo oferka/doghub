@@ -5,9 +5,12 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityCreationViewHeader;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersView;
+
+import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
 
 @PageTitle(UserCreationView.NAME)
 @Route(value = UserCreationView.ROUTE, layout = DogHubAppLayout.class)
@@ -22,7 +25,7 @@ public class UserCreationView extends VerticalLayout {
 
     public UserCreationView(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
-        UserCreationViewHeader header = new UserCreationViewHeader();
+        EntityCreationViewHeader header = new EntityCreationViewHeader(USERS, "Create a User", "Add someone you love to DogHub");
         add(header);
         UserCreationViewBody body = new UserCreationViewBody(authenticatedUser, userCreationService);
         addAndExpand(body);
