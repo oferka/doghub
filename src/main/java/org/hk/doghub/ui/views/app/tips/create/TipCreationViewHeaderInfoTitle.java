@@ -9,20 +9,12 @@ public class TipCreationViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipCreationViewHeaderInfo.CLASS_NAME + "-title";
 
-    private final TipCreationViewHeaderInfoTitleIcon icon;
-    private final TipCreationViewHeaderInfoTitleText text;
-
     public TipCreationViewHeaderInfoTitle(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        icon = new TipCreationViewHeaderInfoTitleIcon(authenticatedUser, tipCreationService);
-        add(icon);
-
-        text = new TipCreationViewHeaderInfoTitleText(authenticatedUser, tipCreationService);
-        add(text);
-
+        TipCreationViewHeaderInfoTitleIcon icon = new TipCreationViewHeaderInfoTitleIcon(authenticatedUser, tipCreationService);
+        TipCreationViewHeaderInfoTitleText text = new TipCreationViewHeaderInfoTitleText(authenticatedUser, tipCreationService);
+        add(icon, text);
         setVerticalComponentAlignment(CENTER, icon, text);
     }
 }
