@@ -21,13 +21,11 @@ public class TipCreationService {
 
     private final DogHubTipService tipService;
 
-    public DogHubTip create(@NotNull @Size(max = TITLE_MAX_LENGTH) String title,
-                            @NotNull DogHubUser createdBy) {
+    public DogHubTip create(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull DogHubUser createdBy) {
         return tipService.save(getTipEntity(title, createdBy));
     }
 
-    private @NotNull DogHubTip getTipEntity(@NotNull @Size(max = TITLE_MAX_LENGTH) String title,
-                                            @NotNull DogHubUser createdBy) {
+    private @NotNull DogHubTip getTipEntity(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull DogHubUser createdBy) {
         DogHubTip result = new DogHubTip();
         result.setName(title);
         result.setTitle(title);
@@ -37,8 +35,7 @@ public class TipCreationService {
         return result;
     }
 
-    public boolean exists(@NotNull @Size(max = TITLE_MAX_LENGTH) String title,
-                          @NotNull DogHubUser createdBy) {
+    public boolean exists(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull DogHubUser createdBy) {
         return tipService.existsByTitleAndCreatedBy(title, createdBy);
     }
 }
