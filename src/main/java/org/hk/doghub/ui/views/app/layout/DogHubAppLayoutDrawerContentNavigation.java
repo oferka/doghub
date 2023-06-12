@@ -45,42 +45,6 @@ public class DogHubAppLayoutDrawerContentNavigation extends AppNav {
             AppNavItem urlsNavItem = new AppNavItem(TipsView.NAME, TipsView.class, LINK_SOLID.create());
             addItem(urlsNavItem);
         }
-//        if (accessChecker.hasAccess(MinimizeView.class)) {
-//            AppNavItem minimizeNavItem = new AppNavItem(MinimizeView.NAME, MinimizeView.class, COMPRESS_SOLID.create());
-//            addItem(minimizeNavItem);
-//        }
-//        if (accessChecker.hasAccess(MonitorView.class)) {
-//            AppNavItem monitorNavItem = new AppNavItem(MonitorView.NAME, MonitorView.class, EYE.create());
-//            addItem(monitorNavItem);
-//        }
-//        if (accessChecker.hasAccess(ScrapeView.class)) {
-//            AppNavItem scrapeNavItem = new AppNavItem(ScrapeView.NAME, ScrapeView.class, SCROLL_SOLID.create());
-//            addItem(scrapeNavItem);
-//        }
-//        if (accessChecker.hasAccess(AutomateView.class)) {
-//            AppNavItem automateNavItem = new AppNavItem(AutomateView.NAME, AutomateView.class, ROBOT_SOLID.create());
-//            addItem(automateNavItem);
-//        }
-//        if (accessChecker.hasAccess(TagView.class)) {
-//            AppNavItem tagNavItem = new AppNavItem(TagView.NAME, TagView.class, TAG_SOLID.create());
-//            addItem(tagNavItem);
-//        }
-//        if (accessChecker.hasAccess(ReadView.class)) {
-//            AppNavItem readNavItem = new AppNavItem(ReadView.NAME, ReadView.class, BOOK_READER_SOLID.create());
-//            addItem(readNavItem);
-//        }
-//        if (accessChecker.hasAccess(NoteView.class)) {
-//            AppNavItem noteNavItem = new AppNavItem(NoteView.NAME, NoteView.class, STICKY_NOTE.create());
-//            addItem(noteNavItem);
-//        }
-//        if (accessChecker.hasAccess(RecommendView.class)) {
-//            AppNavItem recommendNavItem = new AppNavItem(RecommendView.NAME, RecommendView.class, BULLSEYE_SOLID.create());
-//            addItem(recommendNavItem);
-//        }
-//        if (accessChecker.hasAccess(BookmarkView.class)) {
-//            AppNavItem bookmarkNavItem = new AppNavItem(BookmarkView.NAME, BookmarkView.class, BOOKMARK.create());
-//            addItem(bookmarkNavItem);
-//        }
         if (accessChecker.hasAccess(AboutView.class)) {
             AppNavItem aboutNavItem = new AppNavItem(AboutView.NAME, AboutView.class, INFO_CIRCLE_SOLID.create());
             addItem(aboutNavItem);

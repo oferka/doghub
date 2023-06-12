@@ -30,8 +30,6 @@ public class UserProviderRandomMe implements UserProvider {
 
     @Override
     public User generate() {
-//        RandomMeResponse response = randomMeClient.get();
-//        return randomMeResponseConverter.convertToUser(response);
         return generate(20).get(0);
     }
 }

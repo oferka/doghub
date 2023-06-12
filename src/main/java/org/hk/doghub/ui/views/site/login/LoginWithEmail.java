@@ -23,10 +23,7 @@ public class LoginWithEmail extends VerticalLayout {
         LoginI18n loginI18n = LoginI18n.createDefault();
         LoginI18n.Form i18nForm = loginI18n.getForm();
         i18nForm.setTitle(EMPTY);
-//        i18nForm.setUsername("Käyttäjänimi");
-//        i18nForm.setPassword("Salasana");
         i18nForm.setSubmit("Continue");
-//        i18nForm.setForgotPassword("Unohtuiko salasana?");
         loginI18n.setForm(i18nForm);
         loginForm = new LoginForm(loginI18n);
         loginForm.setForgotPasswordButtonVisible(false);
