@@ -10,12 +10,10 @@ public class EntitiesViewHeaderActionsNewRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = EntitiesViewHeaderActions.CLASS_NAME + "-new-router-link";
 
-    private final EntitiesViewHeaderActionsNewButton newButton;
-
     public EntitiesViewHeaderActionsNewRouterLink(@NotNull Class<? extends Component> entityCreationNavigationTarget, @NotNull String entityName) {
         super(EMPTY, entityCreationNavigationTarget);
         addClassName(CLASS_NAME);
-        newButton = new EntitiesViewHeaderActionsNewButton(entityName);
+        EntitiesViewHeaderActionsNewButton newButton = new EntitiesViewHeaderActionsNewButton(entityName);
         add(newButton);
     }
 }

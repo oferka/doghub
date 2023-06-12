@@ -11,9 +11,6 @@ public class EntitiesViewHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = "entities-view-header";
 
-    private final EntitiesViewHeaderInfo info;
-    private final EntitiesViewHeaderActions actions;
-
     public EntitiesViewHeader(@NotNull EntitiesViewState viewState,
                               @NotNull VaadinIcon vaadinIcon,
                               @NotNull String titleText,
@@ -24,9 +21,8 @@ public class EntitiesViewHeader extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        info = new EntitiesViewHeaderInfo(vaadinIcon, titleText, entityCount, descriptionText);
-        add(info);
-        actions = new EntitiesViewHeaderActions(viewState, entityCreationNavigationTarget, entityName);
-        add(actions);
+        EntitiesViewHeaderInfo info = new EntitiesViewHeaderInfo(vaadinIcon, titleText, entityCount, descriptionText);
+        EntitiesViewHeaderActions actions = new EntitiesViewHeaderActions(viewState, entityCreationNavigationTarget, entityName);
+        add(info, actions);
     }
 }

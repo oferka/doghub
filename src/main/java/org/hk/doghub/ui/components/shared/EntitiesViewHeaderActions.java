@@ -8,20 +8,11 @@ public class EntitiesViewHeaderActions extends HorizontalLayout {
 
     public static final String CLASS_NAME = EntitiesViewHeader.CLASS_NAME + "-actions";
 
-    private final EntitiesViewHeaderActionsPresentationTypeSelector presentationTypeSelector;
-    private final EntitiesViewHeaderActionsFilterButton filter;
-    private final EntitiesViewHeaderActionsNewRouterLink newRouterLink;
-
     public EntitiesViewHeaderActions(EntitiesViewState viewState, @NotNull Class<? extends Component> entityCreationNavigationTarget, @NotNull String entityName) {
         addClassName(CLASS_NAME);
-
-        presentationTypeSelector = new EntitiesViewHeaderActionsPresentationTypeSelector(viewState);
-        add(presentationTypeSelector);
-
-        filter = new EntitiesViewHeaderActionsFilterButton();
-        add(filter);
-
-        newRouterLink = new EntitiesViewHeaderActionsNewRouterLink(entityCreationNavigationTarget, entityName);
-        add(newRouterLink);
+        EntitiesViewHeaderActionsPresentationTypeSelector presentationTypeSelector = new EntitiesViewHeaderActionsPresentationTypeSelector(viewState);
+        EntitiesViewHeaderActionsFilterButton filter = new EntitiesViewHeaderActionsFilterButton();
+        EntitiesViewHeaderActionsNewRouterLink newRouterLink = new EntitiesViewHeaderActionsNewRouterLink(entityCreationNavigationTarget, entityName);
+        add(presentationTypeSelector, filter, newRouterLink);
     }
 }
