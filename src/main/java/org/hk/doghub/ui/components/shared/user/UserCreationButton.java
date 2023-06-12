@@ -4,6 +4,7 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
@@ -56,7 +57,8 @@ public class UserCreationButton extends Button {
             notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             return;
         }
-        if(userCreationService.exists(email)) {
+        UserCreationParameters userCreationParameters = getUserCreationParameters(email, password);
+        if(userCreationService.exists(userCreationParameters)) {
             log.warn("Attempt to signup user with existing email '{}'", email);
             emailField.setInvalid(true);
             emailField.setErrorMessage("A user with this email already exists.");
@@ -77,7 +79,7 @@ public class UserCreationButton extends Button {
             return;
         }
         try {
-            DogHubUser user = userCreationService.create(email, password);
+            DogHubUser user = userCreationService.create(userCreationParameters);
             Notification notification = Notification.show(format("User %s is now signed up!", user.getUsername()), 3000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             if(isUserSignup()) {
@@ -115,5 +117,12 @@ public class UserCreationButton extends Button {
 
     private void navigateToCreatedUserView(DogHubUser user) {
         getUI().ifPresent(ui -> ui.navigate(UserView.class, user.getId()));
+    }
+
+    private @NotNull UserCreationParameters getUserCreationParameters(@NotNull String email, @NotNull String password) {
+        UserCreationParameters result = new UserCreationParameters();
+        result.setName(email);
+        result.setPassword(password);
+        return result;
     }
 }

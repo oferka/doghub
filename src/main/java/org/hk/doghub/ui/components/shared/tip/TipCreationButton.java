@@ -4,6 +4,7 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
@@ -57,7 +58,8 @@ public class TipCreationButton extends Button {
         }
         Optional<DogHubUser> userOptional = authenticatedUser.get();
         DogHubUser user = userOptional.orElseThrow();
-        if(tipCreationService.exists(titleValue, user)) {
+        TipCreationParameters tipCreationParameters = getTipCreationParameters(titleValue, user);
+        if(tipCreationService.exists(tipCreationParameters)) {
             log.warn("Attempt to create a tip with existing title '{}'", titleValue);
             title.setInvalid(true);
             title.setErrorMessage("You already created a tip with that title. Please enter a unique one.");
@@ -66,7 +68,7 @@ public class TipCreationButton extends Button {
             return;
         }
         try {
-            DogHubTip tip = tipCreationService.create(titleValue, user);
+            DogHubTip tip = tipCreationService.create(tipCreationParameters);
             Notification notification = Notification.show(format("Tip title %s created successfully!", titleValue), 3000, TOP_CENTER);
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             navigateToCreatedTipView(tip);
@@ -85,5 +87,13 @@ public class TipCreationButton extends Button {
 
     private void navigateToCreatedTipView(DogHubTip tip) {
         getUI().ifPresent(ui -> ui.navigate(TipView.class, tip.getId()));
+    }
+
+    private @NotNull TipCreationParameters getTipCreationParameters(@NotNull String titleValue, @NotNull DogHubUser user) {
+        TipCreationParameters result = new TipCreationParameters();
+        result.setTitle(titleValue);
+        result.setName(titleValue);
+        result.setCreatedBy(user);
+        return result;
     }
 }

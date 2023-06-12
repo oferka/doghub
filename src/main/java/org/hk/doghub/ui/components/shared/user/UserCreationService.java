@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntityCreationService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +20,23 @@ import static org.hk.doghub.model.user.Role.USER;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class UserCreationService {
+public class UserCreationService implements EntityCreationService<DogHubUser, UserCreationParameters> {
 
     private final DogHubUserService userService;
 
     private final PasswordEncoder passwordEncoder;
 
-    public DogHubUser create(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username, @NotNull String password) {
+    @Override
+    public @NotNull DogHubUser create(@NotNull UserCreationParameters creationParameters) {
+        return create(creationParameters.getName(), creationParameters.getPassword());
+    }
+
+    @Override
+    public boolean exists(@NotNull UserCreationParameters creationParameters) {
+        return exists(creationParameters.getName());
+    }
+
+    private DogHubUser create(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username, @NotNull String password) {
         return userService.save(getUserEntity(username, password));
     }
 
@@ -41,7 +52,7 @@ public class UserCreationService {
         return result;
     }
 
-    public boolean exists(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username) {
+    private boolean exists(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username) {
         return userService.existsByUsername(username);
     }
 }

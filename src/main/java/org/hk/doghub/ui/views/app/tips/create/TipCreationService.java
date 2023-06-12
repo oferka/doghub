@@ -8,6 +8,8 @@ import org.hk.doghub.data.service.tip.DogHubTipService;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.ui.components.shared.EntityCreationService;
+import org.hk.doghub.ui.components.shared.tip.TipCreationParameters;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
@@ -17,11 +19,21 @@ import static org.hk.doghub.model.tip.DogHubTip.TITLE_MAX_LENGTH;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class TipCreationService {
+public class TipCreationService implements EntityCreationService<DogHubTip, TipCreationParameters> {
 
     private final DogHubTipService tipService;
 
-    public DogHubTip create(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull DogHubUser createdBy) {
+    @Override
+    public @NotNull DogHubTip create(@NotNull TipCreationParameters creationParameters) {
+        return create(creationParameters.getTitle(), creationParameters.getCreatedBy());
+    }
+
+    @Override
+    public boolean exists(@NotNull TipCreationParameters creationParameters) {
+        return exists(creationParameters.getTitle(), creationParameters.getCreatedBy());
+    }
+
+    private DogHubTip create(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull DogHubUser createdBy) {
         return tipService.save(getTipEntity(title, createdBy));
     }
 
@@ -35,7 +47,7 @@ public class TipCreationService {
         return result;
     }
 
-    public boolean exists(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull DogHubUser createdBy) {
+    private boolean exists(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull DogHubUser createdBy) {
         return tipService.existsByTitleAndCreatedBy(title, createdBy);
     }
 }
