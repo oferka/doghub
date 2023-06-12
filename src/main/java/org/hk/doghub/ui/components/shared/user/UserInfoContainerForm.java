@@ -18,7 +18,7 @@ import static org.hk.doghub.ui.components.shared.user.UserEmailField.LABEL;
 @Slf4j
 public class UserInfoContainerForm extends EntityInfoContainerForm<DogHubUser, UserUpdateParameters> {
 
-    public static final String CLASS_NAME = UserInfoContainer.CLASS_NAME + "-form";
+    public static final String CLASS_NAME = "user-info-container-form";
 
     private UserIdField id;
     private UserUsernameField username;

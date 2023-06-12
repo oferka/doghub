@@ -8,33 +8,24 @@ import java.util.Optional;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
-public abstract class EntityInfoContainer<T extends NamedEntity, P extends EntityUpdateParameters> extends VerticalLayout {
+public class EntityInfoContainer<T extends NamedEntity, P extends EntityUpdateParameters> extends VerticalLayout {
 
     public static final String CLASS_NAME = "entity-info-container";
 
     protected final EntityDataProvider<T> entityDataProvider;
 
-    protected final EntityUpdateService<T, P> entityUpdateService;
-
     private final EntityInfoContainerForm<T, P> form;
 
     private final InfoContainerButtons buttons;
 
-    public EntityInfoContainer(EntityDataProvider<T> entityDataProvider, EntityUpdateService<T, P> entityUpdateService) {
+    public EntityInfoContainer(EntityDataProvider<T> entityDataProvider, EntityInfoContainerForm<T, P> form) {
         this.entityDataProvider = entityDataProvider;
-        this.entityUpdateService = entityUpdateService;
+        this.form = form;
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        form = getForm();
-        add(form);
-
         buttons = new InfoContainerButtons();
-        add(buttons);
+        add(form, buttons);
     }
-
-    protected abstract EntityInfoContainerForm<T, P> getForm();
 
     public void setEntity(long entityId) {
         Optional<T> entityOptional = entityDataProvider.findById(entityId);

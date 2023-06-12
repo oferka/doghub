@@ -4,7 +4,7 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.ui.components.shared.EntityInfoContainer;
 import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.components.shared.EntityViewBody;
-import org.hk.doghub.ui.components.shared.tip.TipInfoContainer;
+import org.hk.doghub.ui.components.shared.tip.TipInfoContainerForm;
 import org.hk.doghub.ui.components.shared.tip.TipUpdateParameters;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
@@ -19,6 +19,6 @@ public class TipViewBody extends EntityViewBody<DogHubTip, TipUpdateParameters> 
 
     @Override
     protected EntityInfoContainer<DogHubTip, TipUpdateParameters> getEntityInfo() {
-        return new TipInfoContainer(entityDataProvider, entityUpdateService);
+        return new EntityInfoContainer<>(entityDataProvider, new TipInfoContainerForm(entityDataProvider, entityUpdateService));
     }
 }

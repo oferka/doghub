@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.*;
-import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
+import org.hk.doghub.ui.components.shared.user.UserInfoContainerForm;
 import org.hk.doghub.ui.components.shared.user.UserUpdateParameters;
 import org.hk.doghub.ui.components.shared.user.UserUpdateService;
 import org.hk.doghub.ui.views.app.users.UserDataProvider;
@@ -34,7 +34,7 @@ public class ProfileView extends VerticalLayout implements InfoSaveListener, Inf
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
-        entityInfo = new UserInfoContainer(userDataProvider, userUpdateService);
+        entityInfo = new EntityInfoContainer<>(userDataProvider, new UserInfoContainerForm(userDataProvider, userUpdateService));
         if(authenticatedUser.get().isPresent()) {
             entityInfo.setEntity(authenticatedUser.get().get().getId());
         }

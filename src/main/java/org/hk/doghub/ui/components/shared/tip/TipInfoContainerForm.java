@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, TipUpdateParameters> {
 
-    public static final String CLASS_NAME = TipInfoContainer.CLASS_NAME + "-form";
+    public static final String CLASS_NAME = "tip-info-container-form";
 
     private TipIdField id;
     private TipNameField name;

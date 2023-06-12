@@ -4,7 +4,7 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.EntityInfoContainer;
 import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.components.shared.EntityViewBody;
-import org.hk.doghub.ui.components.shared.user.UserInfoContainer;
+import org.hk.doghub.ui.components.shared.user.UserInfoContainerForm;
 import org.hk.doghub.ui.components.shared.user.UserUpdateParameters;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
@@ -19,6 +19,6 @@ public class UserViewBody extends EntityViewBody<DogHubUser, UserUpdateParameter
 
     @Override
     protected EntityInfoContainer<DogHubUser, UserUpdateParameters> getEntityInfo() {
-        return new UserInfoContainer(entityDataProvider, entityUpdateService);
+        return new EntityInfoContainer<>(entityDataProvider, new UserInfoContainerForm(entityDataProvider, entityUpdateService));
     }
 }
