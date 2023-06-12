@@ -11,7 +11,7 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
-public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P extends EntityUpdateParameters, C extends Component & HasUrlParameter<Long>> extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, InfoCancelListener {
+public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P extends EntityUpdateParameters, C extends Component & HasUrlParameter<Long>, E extends Component> extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, InfoCancelListener {
 
     public static final String CLASS_NAME = "entity-view";
 
@@ -49,7 +49,7 @@ public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P 
 
     protected abstract String getEntitiesLabel();
 
-    protected abstract Class getEntitiesClass();
+    protected abstract Class<? extends E> getEntitiesClass();
 
     @Override
     public void setParameter(BeforeEvent event, Long parameter) {

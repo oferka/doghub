@@ -18,7 +18,7 @@ import org.hk.doghub.ui.views.app.users.UsersView;
 @Route(value = UsersView.ROUTE, layout = DogHubAppLayout.class)
 @PageTitle(UserView.NAME)
 @RolesAllowed({"ADMIN"})
-public class UserView extends EntityView<DogHubUser, UserUpdateParameters, UserView> {
+public class UserView extends EntityView<DogHubUser, UserUpdateParameters, UserView, UsersView> {
 
     public static final String CLASS_NAME = "user-view";
     public static final String NAME = "User";
@@ -48,7 +48,7 @@ public class UserView extends EntityView<DogHubUser, UserUpdateParameters, UserV
     }
 
     @Override
-    protected Class getEntitiesClass() {
+    protected Class<? extends UsersView> getEntitiesClass() {
         return UsersView.class;
     }
 }
