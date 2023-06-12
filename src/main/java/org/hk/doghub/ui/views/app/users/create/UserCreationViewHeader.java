@@ -14,7 +14,7 @@ public class UserCreationViewHeader extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        UserCreationViewHeaderInfo info = new UserCreationViewHeaderInfo(authenticatedUser, userCreationService);
+        UserCreationViewHeaderInfo info = new UserCreationViewHeaderInfo();
         UserCreationViewHeaderActions actions = new UserCreationViewHeaderActions(authenticatedUser, userCreationService);
         add(info, actions);
     }

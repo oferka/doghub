@@ -13,7 +13,7 @@ public class TipCreationViewHeader extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        TipCreationViewHeaderInfo info = new TipCreationViewHeaderInfo(authenticatedUser, tipCreationService);
+        TipCreationViewHeaderInfo info = new TipCreationViewHeaderInfo();
         TipCreationViewHeaderActions actions = new TipCreationViewHeaderActions(authenticatedUser, tipCreationService);
         add(info, actions);
     }
