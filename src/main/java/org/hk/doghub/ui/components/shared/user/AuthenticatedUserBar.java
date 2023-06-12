@@ -7,11 +7,9 @@ public class AuthenticatedUserBar extends HorizontalLayout {
 
     public static final String CLASS_NAME = "authenticated-user-bar";
 
-    private final UserMenuBar userMenuBar;
-
     public AuthenticatedUserBar(AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
-        userMenuBar = new UserMenuBar(authenticatedUser);
+        UserMenuBar userMenuBar = new UserMenuBar(authenticatedUser);
         add(userMenuBar);
     }
 }

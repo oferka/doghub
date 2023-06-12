@@ -8,19 +8,11 @@ public class ApplicationHeader extends VerticalLayout {
 
     public static final String CLASS_NAME = "application-header";
 
-    private final ApplicationHeaderLogo logo;
-
-    private final ApplicationHeaderSlogan slogan;
-
     public ApplicationHeader() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        logo = new ApplicationHeaderLogo();
-        add(logo);
-
-        slogan = new ApplicationHeaderSlogan();
-        add(slogan);
+        ApplicationHeaderLogo logo = new ApplicationHeaderLogo();
+        ApplicationHeaderSlogan slogan = new ApplicationHeaderSlogan();
+        add(logo, slogan);
     }
 }

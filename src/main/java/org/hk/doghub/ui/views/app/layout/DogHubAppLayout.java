@@ -13,14 +13,12 @@ public class DogHubAppLayout extends AppLayout {
 
     private final DogHubAppLayoutHeader header;
 
-    private final DogHubAppLayoutDrawer drawer;
-
     public DogHubAppLayout(AuthenticatedUser authenticatedUser, AccessAnnotationChecker accessChecker) {
         setId(ID);
         setPrimarySection(Section.DRAWER);
         header = new DogHubAppLayoutHeader(authenticatedUser);
         addToNavbar(true, header);
-        drawer = new DogHubAppLayoutDrawer(accessChecker);
+        DogHubAppLayoutDrawer drawer = new DogHubAppLayoutDrawer(accessChecker);
         addToDrawer(drawer);
     }
 
