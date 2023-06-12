@@ -14,12 +14,10 @@ public class LoginWithGoogle extends Button {
 
     public static final String CLASS_NAME = LoginWith.CLASS_NAME + "-google";
 
-    private final GoogleLogo google;
-
     public LoginWithGoogle() {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
-        google = new GoogleLogo();
+        GoogleLogo google = new GoogleLogo();
         setIcon(google);
         setText("Continue with Google");
         addClickListener(this::loginWithGoogleClicked);
