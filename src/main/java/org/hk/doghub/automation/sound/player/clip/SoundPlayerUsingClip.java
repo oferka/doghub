@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 
+@SuppressWarnings("BusyWait")
 @Service
 @RequiredArgsConstructor
 @Slf4j
