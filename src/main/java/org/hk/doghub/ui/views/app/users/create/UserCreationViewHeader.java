@@ -2,8 +2,10 @@ package org.hk.doghub.ui.views.app.users.create;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityCreationViewHeaderInfo;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 
+import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
 public class UserCreationViewHeader extends HorizontalLayout {
@@ -14,7 +16,7 @@ public class UserCreationViewHeader extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        UserCreationViewHeaderInfo info = new UserCreationViewHeaderInfo();
+        EntityCreationViewHeaderInfo info = new EntityCreationViewHeaderInfo(USERS, "Create a User", "Add someone you love to DogHub");
         UserCreationViewHeaderActions actions = new UserCreationViewHeaderActions(authenticatedUser, userCreationService);
         add(info, actions);
     }
