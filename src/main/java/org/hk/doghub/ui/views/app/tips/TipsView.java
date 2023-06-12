@@ -29,8 +29,8 @@ public class TipsView extends EntitiesView<DogHubTip, TipView> {
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tips";
 
-    public TipsView(EntityDataProvider<DogHubTip> entityDataProvider, TipsViewState tipsViewState, AuthenticatedUser authenticatedUser) {
-        super(entityDataProvider, tipsViewState, authenticatedUser);
+    public TipsView(EntityDataProvider<DogHubTip> entityDataProvider, TipsViewState viewState, AuthenticatedUser authenticatedUser) {
+        super(entityDataProvider, viewState, authenticatedUser);
         addClassName(CLASS_NAME);
     }
 
