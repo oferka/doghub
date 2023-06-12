@@ -10,20 +10,12 @@ public class UserCreationViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserCreationViewHeaderInfo.CLASS_NAME + "-title";
 
-    private final UserCreationViewHeaderInfoTitleIcon icon;
-    private final UserCreationViewHeaderInfoTitleText text;
-
     public UserCreationViewHeaderInfoTitle(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        icon = new UserCreationViewHeaderInfoTitleIcon(authenticatedUser, userCreationService);
-        add(icon);
-
-        text = new UserCreationViewHeaderInfoTitleText(authenticatedUser, userCreationService);
-        add(text);
-
+        UserCreationViewHeaderInfoTitleIcon icon = new UserCreationViewHeaderInfoTitleIcon(authenticatedUser, userCreationService);
+        UserCreationViewHeaderInfoTitleText text = new UserCreationViewHeaderInfoTitleText(authenticatedUser, userCreationService);
+        add(icon, text);
         setVerticalComponentAlignment(CENTER, icon, text);
     }
 }

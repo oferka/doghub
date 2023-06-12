@@ -11,15 +11,11 @@ public class UserCreationViewBody extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserCreationView.CLASS_NAME + "-body";
 
-    private final UserCreationContainer userCreationContainer;
-
     public UserCreationViewBody(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
-
         setWidthFull();
         setAlignItems(CENTER);
-
-        userCreationContainer = new UserCreationContainer(authenticatedUser, userCreationService);
+        UserCreationContainer userCreationContainer = new UserCreationContainer(authenticatedUser, userCreationService);
         add(userCreationContainer);
     }
 }

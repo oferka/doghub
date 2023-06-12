@@ -11,13 +11,10 @@ public class UserAvatarRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = "user-avatar-router-link";
 
-    private final EntityAvatar<DogHubUser> avatar;
-
     public UserAvatarRouterLink(DogHubUser user) {
         super(EMPTY, UserView.class, user.getId());
         addClassName(CLASS_NAME);
-
-        avatar = new EntityAvatar<>(user);
+        EntityAvatar<DogHubUser> avatar = new EntityAvatar<>(user);
         add(avatar);
     }
 }

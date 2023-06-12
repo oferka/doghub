@@ -10,18 +10,11 @@ public class UserCreationViewHeaderInfo extends VerticalLayout {
 
     public static final String CLASS_NAME = UserCreationViewHeader.CLASS_NAME + "-info";
 
-    private final UserCreationViewHeaderInfoTitle title;
-    private final UserCreationViewHeaderInfoDescription description;
-
     public UserCreationViewHeaderInfo(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        title = new UserCreationViewHeaderInfoTitle(authenticatedUser, userCreationService);
-        add(title);
-
-        description = new UserCreationViewHeaderInfoDescription(authenticatedUser, userCreationService);
-        add(description);
+        UserCreationViewHeaderInfoTitle title = new UserCreationViewHeaderInfoTitle(authenticatedUser, userCreationService);
+        UserCreationViewHeaderInfoDescription description = new UserCreationViewHeaderInfoDescription(authenticatedUser, userCreationService);
+        add(title, description);
     }
 }

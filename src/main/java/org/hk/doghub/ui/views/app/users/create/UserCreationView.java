@@ -19,20 +19,14 @@ public class UserCreationView extends VerticalLayout {
     private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "User Creation";
-    private final UserCreationViewHeader header;
-    private final UserCreationViewBody body;
-    private final UserCreationViewFooter footer;
 
     public UserCreationView(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
-
-        header = new UserCreationViewHeader(authenticatedUser, userCreationService);
+        UserCreationViewHeader header = new UserCreationViewHeader(authenticatedUser, userCreationService);
         add(header);
-
-        body = new UserCreationViewBody(authenticatedUser, userCreationService);
+        UserCreationViewBody body = new UserCreationViewBody(authenticatedUser, userCreationService);
         addAndExpand(body);
-
-        footer = new UserCreationViewFooter(authenticatedUser, userCreationService);
+        UserCreationViewFooter footer = new UserCreationViewFooter(authenticatedUser, userCreationService);
         add(footer);
     }
 }
