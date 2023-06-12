@@ -22,7 +22,7 @@ public class UserCreationView extends VerticalLayout {
 
     public UserCreationView(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
-        UserCreationViewHeader header = new UserCreationViewHeader(authenticatedUser, userCreationService);
+        UserCreationViewHeader header = new UserCreationViewHeader();
         add(header);
         UserCreationViewBody body = new UserCreationViewBody(authenticatedUser, userCreationService);
         addAndExpand(body);
