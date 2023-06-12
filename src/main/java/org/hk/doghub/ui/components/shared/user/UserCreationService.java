@@ -25,13 +25,11 @@ public class UserCreationService {
 
     private final PasswordEncoder passwordEncoder;
 
-    public DogHubUser create(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
-                             @NotNull String password) {
+    public DogHubUser create(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username, @NotNull String password) {
         return userService.save(getUserEntity(username, password));
     }
 
-    private @NotNull DogHubUser getUserEntity(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username,
-                                              @NotNull String password) {
+    private @NotNull DogHubUser getUserEntity(@NotNull @Size(max = USER_NAME_MAX_LENGTH) String username, @NotNull String password) {
         DogHubUser result = new DogHubUser();
         result.setUsername(username);
         result.setEmail(username);
