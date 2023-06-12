@@ -12,13 +12,11 @@ public class DogHubSiteLayoutTab extends Tab {
 
     private final String text;
 
-    private final DogHubSiteLayoutTabRouterLink tabRouterLink;
-
     public  DogHubSiteLayoutTab(String text, Class<? extends Component> navigationTarget) {
         this.text = text;
         addClassName(CLASS_NAME);
         setId(format("%s-%s", CLASS_NAME, text));
-        tabRouterLink = new DogHubSiteLayoutTabRouterLink(text, navigationTarget);
+        DogHubSiteLayoutTabRouterLink tabRouterLink = new DogHubSiteLayoutTabRouterLink(text, navigationTarget);
         add(tabRouterLink);
         ComponentUtil.setData(this, Class.class, navigationTarget);
     }

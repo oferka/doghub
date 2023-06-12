@@ -9,13 +9,10 @@ public class DogHubSiteLayoutTitleRouterLink extends RouterLink {
 
     public static final String CLASS_NAME = DogHubSiteLayout.ID + "-title-router-link";
 
-    private final DogHubSiteLayoutTitleRouterLinkImage image;
-
     public DogHubSiteLayoutTitleRouterLink() {
         super(EMPTY, SiteHomeView.class);
         addClassName(CLASS_NAME);
-
-        image = new DogHubSiteLayoutTitleRouterLinkImage();
+        DogHubSiteLayoutTitleRouterLinkImage image = new DogHubSiteLayoutTitleRouterLinkImage();
         add(image);
     }
 }
