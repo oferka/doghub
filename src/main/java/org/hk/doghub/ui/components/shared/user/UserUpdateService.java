@@ -15,7 +15,6 @@ import java.util.Optional;
 
 import static java.lang.String.format;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
-import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.hk.doghub.model.user.DogHubAddress.*;
 import static org.hk.doghub.model.user.DogHubUser.*;
 

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 import static java.lang.String.format;
-import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.hk.doghub.model.tip.DogHubTip.*;
 
 @Slf4j

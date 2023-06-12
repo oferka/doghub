@@ -29,14 +29,14 @@ public class EntitiesViewBody<T extends NamedEntity & HasThumbnailPicture & HasF
 
     private void setPresentationType(EntitiesViewPresentationMode presentationMode) {
         switch (presentationMode) {
-            case GRID:
+            case GRID -> {
                 remove(cardPresentation);
                 add(gridPresentation);
-                break;
-            case LIST:
+            }
+            case LIST -> {
                 remove(gridPresentation);
                 add(cardPresentation);
-                break;
+            }
         }
     }
 

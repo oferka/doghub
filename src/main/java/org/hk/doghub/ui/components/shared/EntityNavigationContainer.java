@@ -2,6 +2,7 @@ package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.router.HasUrlParameter;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.AbstractEntity;
 import org.hk.doghub.security.AuthenticatedUser;
@@ -10,19 +11,19 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.CENTER;
 
 @Slf4j
-public class EntityNavigationContainer<T extends AbstractEntity> extends HorizontalLayout {
+public class EntityNavigationContainer<T extends AbstractEntity, C extends Component & HasUrlParameter<Long>> extends HorizontalLayout {
 
     public static final String CLASS_NAME = "entity-navigation-container";
 
-    private final PreviousEntityRouterLink<T> previous;
+    private final PreviousEntityRouterLink<T, C> previous;
 
     private final EntitiesRouterLink entities;
 
-    private final NextEntityRouterLink<T> next;
+    private final NextEntityRouterLink<T, C> next;
 
     private long selectedEntityId;
 
-    public EntityNavigationContainer(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class entityClass, String entitiesLabel, Class<? extends Component> entitiesClass) {
+    public EntityNavigationContainer(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class<? extends C> entityClass, String entitiesLabel, Class<? extends Component> entitiesClass) {
         addClassName(CLASS_NAME);
 
         setWidthFull();

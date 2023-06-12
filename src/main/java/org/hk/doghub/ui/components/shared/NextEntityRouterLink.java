@@ -1,5 +1,7 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.RouterLink;
 import org.hk.doghub.model.AbstractEntity;
 import org.hk.doghub.security.AuthenticatedUser;
@@ -9,7 +11,7 @@ import java.util.Optional;
 
 import static java.text.MessageFormat.format;
 
-public class NextEntityRouterLink<T extends AbstractEntity> extends RouterLink {
+public class NextEntityRouterLink<T extends AbstractEntity, C extends Component & HasUrlParameter<Long>> extends RouterLink {
 
     public static final String CLASS_NAME = "next-entity-router-link";
 
@@ -19,9 +21,9 @@ public class NextEntityRouterLink<T extends AbstractEntity> extends RouterLink {
 
     private final AuthenticatedUser authenticatedUser;
 
-    private final Class navigationTarget;
+    private final Class<? extends C> navigationTarget;
 
-    public NextEntityRouterLink(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class navigationTarget) {
+    public NextEntityRouterLink(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class<? extends C> navigationTarget) {
         this.entityDataProvider = entityDataProvider;
         this.authenticatedUser = authenticatedUser;
         this.navigationTarget = navigationTarget;

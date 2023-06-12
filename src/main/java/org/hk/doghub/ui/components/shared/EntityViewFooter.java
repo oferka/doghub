@@ -13,7 +13,7 @@ public class EntityViewFooter<T extends AbstractEntity, C extends Component & Ha
 
     public static final String CLASS_NAME = EntityView.CLASS_NAME + "-footer";
 
-    private final EntityNavigationContainer<T> navigationContainer;
+    private final EntityNavigationContainer<T, C> navigationContainer;
 
     public EntityViewFooter(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, String entityLabel, Class<? extends C> entityClass, String entitiesLabel, Class<? extends Component> entitiesClass) {
         addClassName(CLASS_NAME);
