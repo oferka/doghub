@@ -5,6 +5,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.router.HasUrlParameter;
 import org.hk.doghub.model.HasFeedback;
 import org.hk.doghub.model.HasThumbnailPicture;
 import org.hk.doghub.model.NamedEntity;
@@ -14,11 +15,11 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 import java.util.Collection;
 import java.util.List;
 
-public abstract class EntitiesList<T extends NamedEntity & HasThumbnailPicture & HasFeedback> extends Div {
+public abstract class EntitiesList<T extends NamedEntity & HasThumbnailPicture & HasFeedback, C extends Component & HasUrlParameter<Long>> extends Div {
 
     public static final String CLASS_NAME = "entities-list";
 
-    public EntitiesList(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser) {
+    public EntitiesList(EntityDataProvider<T> entityDataProvider, AuthenticatedUser authenticatedUser, Class<? extends C> entityClass) {
         addClassName(CLASS_NAME);
         setWidthFull();
         Grid<T> grid = new Grid<>();
@@ -26,13 +27,13 @@ public abstract class EntitiesList<T extends NamedEntity & HasThumbnailPicture &
         setSizeFull();
         grid.setHeightFull();
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
-        grid.addComponentColumn((T entity) -> createListItem(entity, authenticatedUser));
+        grid.addComponentColumn((T entity) -> createListItem(entity, authenticatedUser, entityClass));
         grid.setItems(getItems(entityDataProvider, authenticatedUser));
         add(grid);
     }
 
-    private HorizontalLayout createListItem(T entity, AuthenticatedUser authenticatedUser) {
-        return new EntitiesListItem<>(entity, getListItemInfoBodyComponents(entity, authenticatedUser));
+    private HorizontalLayout createListItem(T entity, AuthenticatedUser authenticatedUser, Class<? extends C> entityClass) {
+        return new EntitiesListItem<>(entity, getListItemInfoBodyComponents(entity, authenticatedUser), entityClass);
     }
 
     protected abstract List<Component> getListItemInfoBodyComponents(T entity, AuthenticatedUser authenticatedUser);

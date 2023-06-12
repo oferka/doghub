@@ -13,10 +13,10 @@ public class EntitiesViewBody<T extends NamedEntity & HasThumbnailPicture & HasF
 
     public static final String CLASS_NAME = "entities-view-body";
 
-    private final EntitiesViewBodyListPresentation<T> cardPresentation;
+    private final EntitiesViewBodyListPresentation<T, C> cardPresentation;
     private final EntitiesViewBodyGridPresentation<T, C> gridPresentation;
 
-    public EntitiesViewBody(EntitiesList<T> list, EntitiesGrid<T, C> grid, EntitiesViewState viewState) {
+    public EntitiesViewBody(EntitiesList<T, C> list, EntitiesGrid<T, C> grid, EntitiesViewState viewState) {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
