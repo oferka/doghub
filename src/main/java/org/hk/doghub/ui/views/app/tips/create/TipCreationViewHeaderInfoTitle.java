@@ -11,11 +11,11 @@ public class TipCreationViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipCreationViewHeaderInfo.CLASS_NAME + "-title";
 
-    public TipCreationViewHeaderInfoTitle(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+    public TipCreationViewHeaderInfoTitle() {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         EntityCreationViewHeaderInfoTitleIcon icon = new EntityCreationViewHeaderInfoTitleIcon(LINK);
-        TipCreationViewHeaderInfoTitleText text = new TipCreationViewHeaderInfoTitleText(authenticatedUser, tipCreationService);
+        TipCreationViewHeaderInfoTitleText text = new TipCreationViewHeaderInfoTitleText();
         add(icon, text);
         setVerticalComponentAlignment(CENTER, icon, text);
     }

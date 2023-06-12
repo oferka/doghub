@@ -13,7 +13,7 @@ public class UserCreationViewHeaderInfo extends VerticalLayout {
     public UserCreationViewHeaderInfo(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        UserCreationViewHeaderInfoTitle title = new UserCreationViewHeaderInfoTitle(authenticatedUser, userCreationService);
+        UserCreationViewHeaderInfoTitle title = new UserCreationViewHeaderInfoTitle();
         UserCreationViewHeaderInfoDescription description = new UserCreationViewHeaderInfoDescription(authenticatedUser, userCreationService);
         add(title, description);
     }

@@ -9,7 +9,7 @@ public class UserCreationViewHeaderInfoTitleText extends H2 {
 
     public static final String CLASS_NAME = UserCreationViewHeaderInfoTitle.CLASS_NAME + "-text";
 
-    public UserCreationViewHeaderInfoTitleText(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserCreationViewHeaderInfoTitleText() {
         addClassName(CLASS_NAME);
 
         setTitleText("Create a User");

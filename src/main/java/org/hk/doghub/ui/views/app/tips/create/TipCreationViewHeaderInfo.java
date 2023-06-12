@@ -12,7 +12,7 @@ public class TipCreationViewHeaderInfo extends VerticalLayout {
     public TipCreationViewHeaderInfo(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        TipCreationViewHeaderInfoTitle title = new TipCreationViewHeaderInfoTitle(authenticatedUser, tipCreationService);
+        TipCreationViewHeaderInfoTitle title = new TipCreationViewHeaderInfoTitle();
         TipCreationViewHeaderInfoDescription description = new TipCreationViewHeaderInfoDescription(authenticatedUser, tipCreationService);
         add(title, description);
     }

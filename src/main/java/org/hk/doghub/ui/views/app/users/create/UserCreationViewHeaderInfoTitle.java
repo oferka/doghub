@@ -12,11 +12,11 @@ public class UserCreationViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserCreationViewHeaderInfo.CLASS_NAME + "-title";
 
-    public UserCreationViewHeaderInfoTitle(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserCreationViewHeaderInfoTitle() {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         EntityCreationViewHeaderInfoTitleIcon icon = new EntityCreationViewHeaderInfoTitleIcon(USERS);
-        UserCreationViewHeaderInfoTitleText text = new UserCreationViewHeaderInfoTitleText(authenticatedUser, userCreationService);
+        UserCreationViewHeaderInfoTitleText text = new UserCreationViewHeaderInfoTitleText();
         add(icon, text);
         setVerticalComponentAlignment(CENTER, icon, text);
     }

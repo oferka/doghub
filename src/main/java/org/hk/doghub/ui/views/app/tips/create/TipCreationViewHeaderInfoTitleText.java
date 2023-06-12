@@ -8,7 +8,7 @@ public class TipCreationViewHeaderInfoTitleText extends H2 {
 
     public static final String CLASS_NAME = TipCreationViewHeaderInfoTitle.CLASS_NAME + "-text";
 
-    public TipCreationViewHeaderInfoTitleText(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+    public TipCreationViewHeaderInfoTitleText() {
         addClassName(CLASS_NAME);
 
         setTitleText("Create a Tip");
