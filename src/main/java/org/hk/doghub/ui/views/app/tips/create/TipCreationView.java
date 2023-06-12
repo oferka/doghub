@@ -28,7 +28,7 @@ public class TipCreationView extends VerticalLayout {
         add(header);
         TipCreationViewBody body = new TipCreationViewBody(authenticatedUser, tipCreationService);
         addAndExpand(body);
-        TipCreationViewFooter footer = new TipCreationViewFooter(authenticatedUser, tipCreationService);
+        TipCreationViewFooter footer = new TipCreationViewFooter();
         add(footer);
     }
 }

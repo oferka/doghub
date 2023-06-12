@@ -11,7 +11,7 @@ public class UserCreationViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = UserCreationView.CLASS_NAME + "-footer";
 
-    public UserCreationViewFooter(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserCreationViewFooter() {
         addClassName(CLASS_NAME);
 
         setWidthFull();

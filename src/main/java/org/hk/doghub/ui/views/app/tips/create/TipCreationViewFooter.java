@@ -10,7 +10,7 @@ public class TipCreationViewFooter extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipCreationView.CLASS_NAME + "-footer";
 
-    public TipCreationViewFooter(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
+    public TipCreationViewFooter() {
         addClassName(CLASS_NAME);
 
         setWidthFull();

@@ -29,7 +29,7 @@ public class UserCreationView extends VerticalLayout {
         add(header);
         UserCreationViewBody body = new UserCreationViewBody(authenticatedUser, userCreationService);
         addAndExpand(body);
-        UserCreationViewFooter footer = new UserCreationViewFooter(authenticatedUser, userCreationService);
+        UserCreationViewFooter footer = new UserCreationViewFooter();
         add(footer);
     }
 }
