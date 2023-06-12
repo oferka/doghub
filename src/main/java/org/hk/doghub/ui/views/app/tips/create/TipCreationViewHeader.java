@@ -9,19 +9,12 @@ public class TipCreationViewHeader extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipCreationView.CLASS_NAME + "-header";
 
-    private final TipCreationViewHeaderInfo info;
-    private final TipCreationViewHeaderActions actions;
-
     public TipCreationViewHeader(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
-
         setWidthFull();
         setAlignItems(CENTER);
-
-        info = new TipCreationViewHeaderInfo(authenticatedUser, tipCreationService);
-        add(info);
-
-        actions = new TipCreationViewHeaderActions(authenticatedUser, tipCreationService);
-        add(actions);
+        TipCreationViewHeaderInfo info = new TipCreationViewHeaderInfo(authenticatedUser, tipCreationService);
+        TipCreationViewHeaderActions actions = new TipCreationViewHeaderActions(authenticatedUser, tipCreationService);
+        add(info, actions);
     }
 }

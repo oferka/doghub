@@ -7,16 +7,10 @@ public class TipCreationViewHeaderActions extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipCreationViewHeader.CLASS_NAME + "-actions";
 
-    private final TipCreationViewHeaderActionsShareButton share;
-    private final TipCreationViewHeaderActionsExportButton export;
-
     public TipCreationViewHeaderActions(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
-
-        share = new TipCreationViewHeaderActionsShareButton(authenticatedUser, tipCreationService);
-        add(share);
-
-        export = new TipCreationViewHeaderActionsExportButton(authenticatedUser, tipCreationService);
-        add(export);
+        TipCreationViewHeaderActionsShareButton share = new TipCreationViewHeaderActionsShareButton(authenticatedUser, tipCreationService);
+        TipCreationViewHeaderActionsExportButton export = new TipCreationViewHeaderActionsExportButton(authenticatedUser, tipCreationService);
+        add(share, export);
     }
 }

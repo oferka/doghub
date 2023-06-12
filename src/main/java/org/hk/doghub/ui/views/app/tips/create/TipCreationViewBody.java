@@ -10,15 +10,11 @@ public class TipCreationViewBody extends HorizontalLayout {
 
     public static final String CLASS_NAME = TipCreationView.CLASS_NAME + "-body";
 
-    private final TipCreationContainer tipCreationContainer;
-
     public TipCreationViewBody(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
-
         setWidthFull();
         setAlignItems(CENTER);
-
-        tipCreationContainer = new TipCreationContainer(authenticatedUser, tipCreationService);
+        TipCreationContainer tipCreationContainer = new TipCreationContainer(authenticatedUser, tipCreationService);
         add(tipCreationContainer);
     }
 }

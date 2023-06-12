@@ -19,20 +19,13 @@ public class TipCreationView extends VerticalLayout {
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Tip Creation";
 
-    private final TipCreationViewHeader header;
-    private final TipCreationViewBody body;
-    private final TipCreationViewFooter footer;
-
     public TipCreationView(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
-
-        header = new TipCreationViewHeader(authenticatedUser, tipCreationService);
+        TipCreationViewHeader header = new TipCreationViewHeader(authenticatedUser, tipCreationService);
         add(header);
-
-        body = new TipCreationViewBody(authenticatedUser, tipCreationService);
+        TipCreationViewBody body = new TipCreationViewBody(authenticatedUser, tipCreationService);
         addAndExpand(body);
-
-        footer = new TipCreationViewFooter(authenticatedUser, tipCreationService);
+        TipCreationViewFooter footer = new TipCreationViewFooter(authenticatedUser, tipCreationService);
         add(footer);
     }
 }
