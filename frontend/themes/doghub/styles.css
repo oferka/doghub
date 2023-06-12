@@ -44,6 +44,7 @@
 @import url('./shared/entities-view-header-info-title-icon.css');
 @import url('./shared/entities-view-header-info-title-text.css');
 @import url('./shared/entity-avatar.css');
+@import url('./shared/entity-creation-view-header-info-description.css');
 @import url('./shared/entity-creation-view-header-info-title.css');
 @import url('./shared/entity-creation-view-header-info-title-icon.css');
 @import url('./shared/entity-creation-view-header-info-title-text.css');
@@ -194,7 +195,6 @@
 @import url('./views/app/user-creation-view-header-actions-export-button.css');
 @import url('./views/app/user-creation-view-header-actions-share-button.css');
 @import url('./views/app/user-creation-view-header-info.css');
-@import url('./views/app/user-creation-view-header-info-description.css');
 @import url('./views/app/user-tips-avatar-group.css');
 @import url('./views/app/user-tips-router-link.css');
 @import url('./views/app/user-view.css');

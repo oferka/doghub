@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.users.create;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.hk.doghub.ui.components.shared.EntityCreationViewHeaderInfoDescription;
 import org.hk.doghub.ui.components.shared.EntityCreationViewHeaderInfoTitle;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
@@ -14,7 +15,7 @@ public class UserCreationViewHeaderInfo extends VerticalLayout {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         EntityCreationViewHeaderInfoTitle title = new EntityCreationViewHeaderInfoTitle(USERS, "Create a User");
-        UserCreationViewHeaderInfoDescription description = new UserCreationViewHeaderInfoDescription();
+        EntityCreationViewHeaderInfoDescription description = new EntityCreationViewHeaderInfoDescription("Add someone you love to DogHub");
         add(title, description);
     }
 }
