@@ -2,7 +2,9 @@ package org.hk.doghub.ui.views.app.tips.create;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityCreationViewHeaderInfoTitle;
 
+import static com.vaadin.flow.component.icon.VaadinIcon.LINK;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
 public class TipCreationViewHeaderInfo extends VerticalLayout {
@@ -12,7 +14,7 @@ public class TipCreationViewHeaderInfo extends VerticalLayout {
     public TipCreationViewHeaderInfo(AuthenticatedUser authenticatedUser, TipCreationService tipCreationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        TipCreationViewHeaderInfoTitle title = new TipCreationViewHeaderInfoTitle();
+        EntityCreationViewHeaderInfoTitle title = new EntityCreationViewHeaderInfoTitle(LINK, "Create a Tip");
         TipCreationViewHeaderInfoDescription description = new TipCreationViewHeaderInfoDescription(authenticatedUser, tipCreationService);
         add(title, description);
     }
