@@ -1,5 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
@@ -36,11 +38,36 @@ public class UsersView extends EntitiesView<DogHubUser, UserView> {
 
     @Override
     protected @NotNull EntitiesViewHeader getViewHeader(EntityDataProvider<DogHubUser> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
-        return new EntitiesViewHeader(viewState, USERS, UsersView.NAME, entityDataProvider.count(), "Users view description", UserCreationView.class, UserView.NAME);
+        return new EntitiesViewHeader(viewState, getHeaderIcon(), getTitleText(), entityDataProvider.count(), getTitleDescription(), getEntityCreationClass(), getEntityLabel());
     }
 
     @Override
     protected @NotNull EntitiesViewBody<DogHubUser, UserView> getViewBody(EntityDataProvider<DogHubUser> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
         return new EntitiesViewBody<>(new UsersList(entityDataProvider, authenticatedUser), new UsersGrid(entityDataProvider, authenticatedUser), viewState);
+    }
+
+    @Override
+    protected @NotNull VaadinIcon getHeaderIcon() {
+        return USERS;
+    }
+
+    @Override
+    protected @NotNull String getTitleText() {
+        return UsersView.NAME;
+    }
+
+    @Override
+    protected @NotNull String getTitleDescription() {
+        return "Users view description";
+    }
+
+    @Override
+    protected @NotNull Class<? extends Component> getEntityCreationClass() {
+        return UserCreationView.class;
+    }
+
+    @Override
+    protected @NotNull String getEntityLabel() {
+        return UserView.NAME;
     }
 }

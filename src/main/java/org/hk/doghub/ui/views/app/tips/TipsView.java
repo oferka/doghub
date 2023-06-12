@@ -1,5 +1,7 @@
 package org.hk.doghub.ui.views.app.tips;
 
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
@@ -36,11 +38,36 @@ public class TipsView extends EntitiesView<DogHubTip, TipView> {
 
     @Override
     protected @NotNull EntitiesViewHeader getViewHeader(EntityDataProvider<DogHubTip> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
-        return new EntitiesViewHeader(viewState, LINK, TipsView.NAME, ((TipDataProvider)entityDataProvider).countForUser(authenticatedUser), "Tips view description", TipCreationView.class, TipView.NAME);
+        return new EntitiesViewHeader(viewState, getHeaderIcon(), getTitleText(), ((TipDataProvider)entityDataProvider).countForUser(authenticatedUser), getTitleDescription(), getEntityCreationClass(), getEntityLabel());
     }
 
     @Override
     protected @NotNull EntitiesViewBody<DogHubTip, TipView> getViewBody(EntityDataProvider<DogHubTip> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser) {
         return new EntitiesViewBody<>(new TipsList(entityDataProvider, authenticatedUser), new TipsGrid(entityDataProvider, authenticatedUser), viewState);
+    }
+
+    @Override
+    protected @NotNull VaadinIcon getHeaderIcon() {
+        return LINK;
+    }
+
+    @Override
+    protected @NotNull String getTitleText() {
+        return TipsView.NAME;
+    }
+
+    @Override
+    protected @NotNull String getTitleDescription() {
+        return "Tips view description";
+    }
+
+    @Override
+    protected @NotNull Class<? extends Component> getEntityCreationClass() {
+        return TipCreationView.class;
+    }
+
+    @Override
+    protected @NotNull String getEntityLabel() {
+        return TipView.NAME;
     }
 }
