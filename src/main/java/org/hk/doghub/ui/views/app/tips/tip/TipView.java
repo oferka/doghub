@@ -21,7 +21,7 @@ import org.hk.doghub.ui.views.app.tips.TipsView;
 @Route(value = TipsView.ROUTE, layout = DogHubAppLayout.class)
 @PageTitle(TipView.NAME)
 @RolesAllowed({"USER", "ADMIN"})
-    public class TipView extends EntityView<DogHubTip, TipUpdateParameters> {
+    public class TipView extends EntityView<DogHubTip, TipUpdateParameters, TipView> {
 
     public static final String CLASS_NAME = "tip-view";
     public static final String NAME = "Tip";
@@ -50,7 +50,7 @@ import org.hk.doghub.ui.views.app.tips.TipsView;
     }
 
     @Override
-    protected Class getEntityClass() {
+    protected Class<? extends TipView> getEntityClass() {
         return TipView.class;
     }
 

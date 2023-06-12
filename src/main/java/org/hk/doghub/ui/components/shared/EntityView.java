@@ -1,5 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
@@ -10,13 +11,13 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 
-public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P extends EntityUpdateParameters> extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, InfoCancelListener {
+public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P extends EntityUpdateParameters, C extends Component & HasUrlParameter<Long>> extends VerticalLayout implements HasUrlParameter<Long>, InfoSaveListener, InfoCancelListener {
 
     public static final String CLASS_NAME = "entity-view";
 
     private final EntityViewHeader<T> header;
     private final EntityViewBody<T, P> body;
-    private final EntityViewFooter<T> footer;
+    private final EntityViewFooter<T, C> footer;
 
     protected final EntityDataProvider<T> entityDataProvider;
 
@@ -36,7 +37,7 @@ public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P 
         body.addInfoSaveListener(this);
         body.addInfoCancelListener(this);
         addAndExpand(body);
-        footer = new EntityViewFooter<T>(entityDataProvider, authenticatedUser, getEntityLabel(), getEntityClass(), getEntitiesLabel(), getEntitiesClass());
+        footer = new EntityViewFooter<T, C>(entityDataProvider, authenticatedUser, getEntityLabel(), getEntityClass(), getEntitiesLabel(), getEntitiesClass());
         add(footer);
     }
 
@@ -44,7 +45,7 @@ public abstract class EntityView<T extends NamedEntity & HasThumbnailPicture, P 
 
     protected abstract String getEntityLabel();
 
-    protected abstract Class getEntityClass();
+    protected abstract Class<? extends C> getEntityClass();
 
     protected abstract String getEntitiesLabel();
 
