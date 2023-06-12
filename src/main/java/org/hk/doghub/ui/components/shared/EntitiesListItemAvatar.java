@@ -8,11 +8,9 @@ public class EntitiesListItemAvatar<T extends NamedEntity & HasThumbnailPicture>
 
     public static final String CLASS_NAME = "entities-list-item-avatar";
 
-    private final EntityAvatar<T> avatar;
-
     public EntitiesListItemAvatar(T entity) {
         addClassNames(CLASS_NAME);
-        avatar = new EntityAvatar<>(entity);
+        EntityAvatar<T> avatar = new EntityAvatar<>(entity);
         add(avatar);
     }
 }

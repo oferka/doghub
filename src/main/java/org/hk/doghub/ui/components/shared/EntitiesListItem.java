@@ -13,15 +13,12 @@ public class EntitiesListItem<T extends NamedEntity & HasThumbnailPicture & HasF
 
     public static final String CLASS_NAME = "entities-list-item";
 
-    private final EntitiesListItemAvatar<T> avatar;
-    private final EntitiesListItemInfo<T, C> info;
-
     public EntitiesListItem(T entity, List<Component> components, Class<? extends C> entityClass) {
         addClassName(CLASS_NAME);
         setSpacing(false);
         getThemeList().add("spacing-s");
-        avatar = new EntitiesListItemAvatar<>(entity);
-        info = new EntitiesListItemInfo<>(entity, components, entityClass);
+        EntitiesListItemAvatar<T> avatar = new EntitiesListItemAvatar<>(entity);
+        EntitiesListItemInfo<T, C> info = new EntitiesListItemInfo<>(entity, components, entityClass);
         add(avatar, info);
     }
 }
