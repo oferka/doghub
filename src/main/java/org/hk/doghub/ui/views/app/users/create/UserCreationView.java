@@ -5,6 +5,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityCreationViewFooter;
 import org.hk.doghub.ui.components.shared.EntityCreationViewHeader;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
@@ -29,7 +30,7 @@ public class UserCreationView extends VerticalLayout {
         add(header);
         UserCreationViewBody body = new UserCreationViewBody(authenticatedUser, userCreationService);
         addAndExpand(body);
-        UserCreationViewFooter footer = new UserCreationViewFooter();
+        EntityCreationViewFooter footer = new EntityCreationViewFooter();
         add(footer);
     }
 }

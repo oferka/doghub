@@ -5,6 +5,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityCreationViewFooter;
 import org.hk.doghub.ui.components.shared.EntityCreationViewHeader;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.TipsView;
@@ -28,7 +29,7 @@ public class TipCreationView extends VerticalLayout {
         add(header);
         TipCreationViewBody body = new TipCreationViewBody(authenticatedUser, tipCreationService);
         addAndExpand(body);
-        TipCreationViewFooter footer = new TipCreationViewFooter();
+        EntityCreationViewFooter footer = new EntityCreationViewFooter();
         add(footer);
     }
 }
