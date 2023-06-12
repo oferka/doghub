@@ -9,13 +9,11 @@ public class EntitiesListItemInfoHeader<T extends NamedEntity> extends Horizonta
 
     public static final String CLASS_NAME = "entities-list-item-info-header";
 
-    private final EntitiesListItemInfoHeaderName<T> name;
-
     public <C extends Component & HasUrlParameter<Long>> EntitiesListItemInfoHeader(T entity, Class<? extends C> entityClass) {
         addClassName(CLASS_NAME);
         setSpacing(false);
         getThemeList().add("spacing-s");
-        name = new EntitiesListItemInfoHeaderName<>(entity, entityClass);
+        EntitiesListItemInfoHeaderName<T> name = new EntitiesListItemInfoHeaderName<>(entity, entityClass);
         add(name);
     }
 }

@@ -10,11 +10,9 @@ public class EntitiesListItemInfoBody<T extends NamedEntity> extends VerticalLay
 
     public static final String CLASS_NAME = "entities-list-item-info-body";
 
-    private final EntitiesListItemInfoCreationTime<T> creationTime;
-
     public EntitiesListItemInfoBody(T entity, List<Component> components) {
         addClassName(CLASS_NAME);
-        creationTime = new EntitiesListItemInfoCreationTime<>(entity);
+        EntitiesListItemInfoCreationTime<T> creationTime = new EntitiesListItemInfoCreationTime<>(entity);
         add(creationTime);
         add(components);
     }

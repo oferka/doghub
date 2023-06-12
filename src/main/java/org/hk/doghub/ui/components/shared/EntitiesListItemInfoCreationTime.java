@@ -7,11 +7,9 @@ public class EntitiesListItemInfoCreationTime<T extends AbstractEntity> extends 
 
     public static final String CLASS_NAME = "entities-list-item-info-creation-time";
 
-    private final CreationTimeLabel creationTime;
-
     public EntitiesListItemInfoCreationTime(T entity) {
         addClassNames(CLASS_NAME);
-        creationTime = new CreationTimeLabel(entity.getCreationTime());
+        CreationTimeLabel creationTime = new CreationTimeLabel(entity.getCreationTime());
         add(creationTime);
     }
 }

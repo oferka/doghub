@@ -12,17 +12,13 @@ public class EntitiesListItemInfo<T extends NamedEntity & HasFeedback, C extends
 
     public static final String CLASS_NAME = "entities-list-item-info";
 
-    private final EntitiesListItemInfoHeader<T> header;
-    private final EntitiesListItemInfoBody<T> body;
-    private final FeedbackContainer<T> feedback;
-
     public EntitiesListItemInfo(T entity, List<Component> components, Class<? extends C> entityClass) {
         addClassName(CLASS_NAME);
         setSpacing(false);
         setPadding(false);
-        header = new EntitiesListItemInfoHeader<>(entity, entityClass);
-        body = new EntitiesListItemInfoBody<>(entity, components);
-        feedback = new FeedbackContainer<>(entity);
+        EntitiesListItemInfoHeader<T> header = new EntitiesListItemInfoHeader<>(entity, entityClass);
+        EntitiesListItemInfoBody<T>body = new EntitiesListItemInfoBody<>(entity, components);
+        FeedbackContainer<T> feedback = new FeedbackContainer<>(entity);
         add(header, body, feedback);
     }
 }
