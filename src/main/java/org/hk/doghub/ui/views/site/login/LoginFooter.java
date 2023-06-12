@@ -8,14 +8,10 @@ public class LoginFooter extends VerticalLayout {
 
     public static final String CLASS_NAME = "login-footer";
 
-    private final LoginFooterCreateAccount createAccount;
-
     public LoginFooter() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        createAccount = new LoginFooterCreateAccount();
+        LoginFooterCreateAccount createAccount = new LoginFooterCreateAccount();
         add(createAccount);
     }
 }

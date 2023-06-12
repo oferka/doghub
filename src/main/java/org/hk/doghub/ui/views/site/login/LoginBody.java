@@ -9,30 +9,16 @@ public class LoginBody extends VerticalLayout {
 
     public static final String CLASS_NAME = "login-body";
 
-    private final LoginWith loginWith;
-
-    private final LoginDivider loginDivider;
-
     private final LoginWithEmail loginWithEmail;
-
-    private final RememberMe rememberMe;
 
     public LoginBody() {
         addClassName(CLASS_NAME);
-
         setAlignItems(CENTER);
-
-        loginWith = new LoginWith();
-        add(loginWith);
-
-        loginDivider = new LoginDivider();
-        add(loginDivider);
-
+        LoginWith loginWith = new LoginWith();
+        LoginDivider loginDivider = new LoginDivider();
         loginWithEmail = new LoginWithEmail();
-        add(loginWithEmail);
-
-        rememberMe = new RememberMe();
-        add(rememberMe);
+        RememberMe rememberMe = new RememberMe();
+        add(loginWith, loginDivider, loginWithEmail, rememberMe);
     }
 
     public void setError(BeforeEnterEvent event) {
