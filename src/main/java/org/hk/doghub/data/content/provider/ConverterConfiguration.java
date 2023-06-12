@@ -14,9 +14,7 @@ public class ConverterConfiguration {
     @Bean
     public ModelMapper userModelMapper() {
         ModelMapper modelMapper = new ModelMapper();
-        modelMapper.typeMap(User.class, DogHubUser.class).addMappings(mapper -> {
-            mapper.map(User::getEmail, DogHubUser::setUsername);
-        });
+        modelMapper.typeMap(User.class, DogHubUser.class).addMappings(mapper -> mapper.map(User::getEmail, DogHubUser::setUsername));
         return modelMapper;
     }
 }

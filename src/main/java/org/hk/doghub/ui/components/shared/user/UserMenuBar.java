@@ -35,9 +35,7 @@ public class UserMenuBar extends MenuBar {
             subMenu.addItem(new RouterLink(NotificationsView.NAME, NotificationsView.class));
             subMenu.addItem(new RouterLink(HelpView.NAME, HelpView.class));
             subMenu.add(new Hr());
-            subMenu.addItem("Sign out", e -> {
-                authenticatedUser.logout();
-            });
+            subMenu.addItem("Sign out", e -> authenticatedUser.logout());
         }
     }
 }
