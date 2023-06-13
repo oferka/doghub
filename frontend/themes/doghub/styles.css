@@ -44,6 +44,7 @@
 @import url('./shared/entities-view-header-info-title-icon.css');
 @import url('./shared/entities-view-header-info-title-text.css');
 @import url('./shared/entity-avatar.css');
+@import url('./shared/entity-creation-button.css');
 @import url('./shared/entity-creation-view-footer.css');
 @import url('./shared/entity-creation-view-header.css');
 @import url('./shared/entity-creation-view-header-actions.css');
@@ -99,7 +100,6 @@
 @import url('./shared/user-avatar-router-link.css');
 @import url('./shared/tip-content-field.css');
 @import url('./shared/tip-created-by-field.css');
-@import url('./shared/tip-creation-button.css');
 @import url('./shared/tip-creation-container.css');
 @import url('./shared/tip-creation-time-field.css');
 @import url('./shared/tip-id-field.css');
@@ -111,7 +111,6 @@
 @import url('./shared/user-city-field.css');
 @import url('./shared/user-company-field.css');
 @import url('./shared/user-country-field.css');
-@import url('./shared/user-creation-button.css');
 @import url('./shared/user-creation-container.css');
 @import url('./shared/user-date-of-birth-field.css');
 @import url('./shared/user-date-of-registration-field.css');
