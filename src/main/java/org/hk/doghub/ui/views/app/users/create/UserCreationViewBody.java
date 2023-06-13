@@ -1,8 +1,11 @@
 package org.hk.doghub.ui.views.app.users.create;
 
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.user.UserCreationContainer;
+import org.hk.doghub.ui.components.shared.user.EntityCreationContainer;
+import org.hk.doghub.ui.components.shared.user.UserCreationContainerForm;
+import org.hk.doghub.ui.components.shared.user.UserCreationParameters;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -15,7 +18,7 @@ public class UserCreationViewBody extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        UserCreationContainer userCreationContainer = new UserCreationContainer(authenticatedUser, userCreationService);
-        add(userCreationContainer);
+        EntityCreationContainer<DogHubUser, UserCreationParameters> creationContainer = new EntityCreationContainer<>(new UserCreationContainerForm(authenticatedUser, userCreationService));
+        add(creationContainer);
     }
 }
