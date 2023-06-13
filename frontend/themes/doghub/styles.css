@@ -47,6 +47,7 @@
 @import url('./shared/entity-creation-button.css');
 @import url('./shared/entity-creation-container.css');
 @import url('./shared/entity-creation-container-form.css');
+@import url('./shared/entity-creation-view-body.css');
 @import url('./shared/entity-creation-view-footer.css');
 @import url('./shared/entity-creation-view-header.css');
 @import url('./shared/entity-creation-view-header-actions.css');
@@ -163,8 +164,6 @@
 @import url('./views/app/tip-anchor.css');
 @import url('./views/app/tip-creation-view.css');
 @import url('./views/app/tip-view.css');
-@import url('./views/app/tip-creation-view.css');
-@import url('./views/app/tip-creation-view-body.css');
 @import url('./views/app/tips-grid.css');
 @import url('./views/app/tips-list.css');
 @import url('./views/app/tips-view.css');
@@ -190,7 +189,6 @@
 @import url('./views/app/doghub-app-layout-header-user-settings-button.css');
 @import url('./views/app/doghub-app-layout-header-user-settings-router-link.css');
 @import url('./views/app/user-creation-view.css');
-@import url('./views/app/user-creation-view-body.css');
 @import url('./views/app/user-tips-avatar-group.css');
 @import url('./views/app/user-tips-router-link.css');
 @import url('./views/app/user-view.css');

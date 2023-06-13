@@ -4,9 +4,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.security.AuthenticatedUser;
+import org.hk.doghub.ui.components.shared.EntityCreationViewBody;
 import org.hk.doghub.ui.components.shared.EntityCreationViewFooter;
 import org.hk.doghub.ui.components.shared.EntityCreationViewHeader;
+import org.hk.doghub.ui.components.shared.user.UserCreationContainerForm;
+import org.hk.doghub.ui.components.shared.user.UserCreationParameters;
 import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -24,11 +28,11 @@ public class UserCreationView extends VerticalLayout {
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "User Creation";
 
-    public UserCreationView(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public UserCreationView(AuthenticatedUser authenticatedUser, UserCreationService creationService) {
         addClassName(CLASS_NAME);
         EntityCreationViewHeader header = new EntityCreationViewHeader(USERS, "Create a User", "Add someone you love to DogHub");
         add(header);
-        UserCreationViewBody body = new UserCreationViewBody(authenticatedUser, userCreationService);
+        EntityCreationViewBody<DogHubUser, UserCreationParameters> body = new EntityCreationViewBody<>(new UserCreationContainerForm(authenticatedUser, creationService));
         addAndExpand(body);
         EntityCreationViewFooter footer = new EntityCreationViewFooter();
         add(footer);
