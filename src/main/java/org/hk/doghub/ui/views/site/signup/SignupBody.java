@@ -14,12 +14,12 @@ public class SignupBody extends VerticalLayout {
 
     public static final String CLASS_NAME = "signup-body";
 
-    public SignupBody(AuthenticatedUser authenticatedUser, UserCreationService userCreationService) {
+    public SignupBody(AuthenticatedUser authenticatedUser, UserCreationService creationService) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         SignupWith signupWith = new SignupWith();
         SignupDivider signupDivider = new SignupDivider();
-        EntityCreationContainer<DogHubUser, UserCreationParameters> creationContainer = new EntityCreationContainer<>(new UserCreationContainerForm(authenticatedUser, userCreationService));
+        EntityCreationContainer<DogHubUser, UserCreationParameters> creationContainer = new EntityCreationContainer<>(new UserCreationContainerForm(authenticatedUser, creationService));
         SignupMessage signupMessage = new SignupMessage();
         add(signupWith, signupDivider, creationContainer, signupMessage);
     }
