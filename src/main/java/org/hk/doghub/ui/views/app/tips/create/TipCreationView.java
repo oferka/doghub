@@ -1,14 +1,15 @@
 package org.hk.doghub.ui.views.app.tips.create;
 
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.security.AuthenticatedUser;
-import org.hk.doghub.ui.components.shared.EntityCreationViewBody;
-import org.hk.doghub.ui.components.shared.EntityCreationViewFooter;
-import org.hk.doghub.ui.components.shared.EntityCreationViewHeader;
+import org.hk.doghub.ui.components.shared.EntityCreationContainerForm;
+import org.hk.doghub.ui.components.shared.EntityCreationService;
+import org.hk.doghub.ui.components.shared.EntityCreationView;
 import org.hk.doghub.ui.components.shared.tip.TipCreationContainerForm;
 import org.hk.doghub.ui.components.shared.tip.TipCreationParameters;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
@@ -19,7 +20,7 @@ import static com.vaadin.flow.component.icon.VaadinIcon.LINK;
 @PageTitle(TipCreationView.NAME)
 @Route(value = TipCreationView.ROUTE, layout = DogHubAppLayout.class)
 @RolesAllowed({"USER", "ADMIN"})
-public class TipCreationView extends VerticalLayout {
+public class TipCreationView extends EntityCreationView<DogHubTip, TipCreationParameters> {
 
     public static final String ROUTE = TipsView.ROUTE + "/create";
     private static final String ID_PREFIX = "tip-creation";
@@ -28,12 +29,27 @@ public class TipCreationView extends VerticalLayout {
     public static final String NAME = "Tip Creation";
 
     public TipCreationView(AuthenticatedUser authenticatedUser, TipCreationService creationService) {
+        super(authenticatedUser, creationService);
         addClassName(CLASS_NAME);
-        EntityCreationViewHeader header = new EntityCreationViewHeader(LINK, "Create a Tip", "Add some interesting tip to DogHub");
-        add(header);
-        EntityCreationViewBody<DogHubTip, TipCreationParameters> body = new EntityCreationViewBody<>(new TipCreationContainerForm(authenticatedUser, creationService));
-        addAndExpand(body);
-        EntityCreationViewFooter footer = new EntityCreationViewFooter();
-        add(footer);
+    }
+
+    @Override
+    protected @NotNull VaadinIcon getHeaderIcon() {
+        return LINK;
+    }
+
+    @Override
+    protected @NotNull String getHeaderTitleText() {
+        return "Create a Tip";
+    }
+
+    @Override
+    protected @NotNull String getHeaderDescriptionText() {
+        return "Add some interesting tip to DogHub";
+    }
+
+    @Override
+    protected @NotNull EntityCreationContainerForm<DogHubTip, TipCreationParameters> getForm(AuthenticatedUser authenticatedUser, EntityCreationService<DogHubTip, TipCreationParameters> creationService) {
+        return new TipCreationContainerForm(authenticatedUser, creationService);
     }
 }
