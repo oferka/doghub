@@ -75,7 +75,7 @@ public abstract class EntityCreationContainerForm<T extends NamedEntity, P exten
     }
 
     private void showCreateFailedWithInvalidInputNotification(List<String> violations) {
-        Notification notification = new SaveFailedWithInvalidInputNotification(violations);
+        Notification notification = new SaveFailedWithInvalidInputNotification(violations); //todo
         notification.open();
     }
 }
