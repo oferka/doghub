@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.content.generator.tip.Tip;
-import org.hk.doghub.data.content.provider.Converter;
+import org.hk.doghub.data.content.provider.AbstractConverter;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.tip.DogHubTip;
@@ -14,13 +14,11 @@ import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class TipConverter implements Converter<Tip, DogHubTip> {
+public class TipConverter extends AbstractConverter<Tip, DogHubTip> {
 
     private final ModelMapper modelMapper;
 
@@ -37,14 +35,6 @@ public class TipConverter implements Converter<Tip, DogHubTip> {
         Optional<DogHubUser> createdByOptional = getCreatedBy();
         createdByOptional.ifPresent(dogHubTip::setCreatedBy);
         return dogHubTip;
-    }
-
-    public List<DogHubTip> convert(List<Tip> tips) {
-        List<DogHubTip> result = new ArrayList<>();
-        for (Tip tip : tips) {
-            result.add(convert(tip));
-        }
-        return result;
     }
 
     private @NotNull DogHubFeedback getFeedback() {

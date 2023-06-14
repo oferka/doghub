@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.content.generator.user.User;
-import org.hk.doghub.data.content.provider.Converter;
+import org.hk.doghub.data.content.provider.AbstractConverter;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.model.user.Role;
@@ -14,9 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static java.lang.String.format;
@@ -24,7 +22,7 @@ import static java.lang.String.format;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserConverter implements Converter<User, DogHubUser> {
+public class UserConverter extends AbstractConverter<User, DogHubUser> {
 
     private final PasswordEncoder passwordEncoder;
 
@@ -38,14 +36,6 @@ public class UserConverter implements Converter<User, DogHubUser> {
         dogHubUser.setRoles(getUserRoles());
         log.info(format("User Name: %s, password: %s, roles: %s", dogHubUser.getUsername(), user.getPassword(), dogHubUser.getRoles()));
         return dogHubUser;
-    }
-
-    public List<DogHubUser> convert(List<User> users) {
-        List<DogHubUser> result =  new ArrayList<>();
-        for(User user : users) {
-            result.add(convert(user));
-        }
-        return result;
     }
 
     private @NotNull DogHubFeedback getFeedback() {
