@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.GeneratorService;
 import org.hk.doghub.data.content.generator.tip.Tip;
+import org.hk.doghub.data.content.provider.Converter;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class DogHubTipContentProvider {
 
     private final GeneratorService<Tip> generatorService;
 
-    private final TipConverter converter;
+    private final Converter<Tip, DogHubTip> converter;
 
     public @NotNull DogHubTip get() {
         return getTip();
