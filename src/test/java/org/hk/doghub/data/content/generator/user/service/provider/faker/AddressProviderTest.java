@@ -1,8 +1,9 @@
 package org.hk.doghub.data.content.generator.user.service.provider.faker;
 
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.data.content.generator.user.model.Address;
-import org.hk.doghub.data.content.generator.user.model.User;
+import org.hk.doghub.data.content.generator.user.Address;
+import org.hk.doghub.data.content.generator.user.User;
+import org.hk.doghub.data.content.generator.user.faker.AddressProvider;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -2,7 +2,7 @@ package org.hk.doghub.data.content.provider.tip;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.hk.doghub.data.content.generator.tip.model.Tip;
+import org.hk.doghub.data.content.generator.tip.Tip;
 import org.springframework.stereotype.Service;
 
 import static java.lang.String.format;

@@ -1,6 +1,8 @@
 package org.hk.doghub.data.content.generator.user.service.provider.randomme;
 
-import org.hk.doghub.data.content.generator.user.model.User;
+import org.hk.doghub.data.content.generator.user.User;
+import org.hk.doghub.data.content.generator.user.randomme.RandomMeClient;
+import org.hk.doghub.data.content.generator.user.randomme.RandomMeResponseConverter;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

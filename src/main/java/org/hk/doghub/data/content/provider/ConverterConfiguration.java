@@ -1,7 +1,7 @@
 package org.hk.doghub.data.content.provider;
 
 import lombok.RequiredArgsConstructor;
-import org.hk.doghub.data.content.generator.user.model.User;
+import org.hk.doghub.data.content.generator.user.User;
 import org.hk.doghub.model.user.DogHubUser;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

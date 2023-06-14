@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
-import org.hk.doghub.data.content.generator.user.model.User;
+import org.hk.doghub.data.content.generator.user.User;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.model.user.Role;
