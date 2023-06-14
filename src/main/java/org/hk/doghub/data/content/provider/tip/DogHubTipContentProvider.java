@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.GeneratorService;
 import org.hk.doghub.data.content.generator.tip.Tip;
 import org.hk.doghub.data.content.provider.Converter;
+import org.hk.doghub.data.content.provider.EntityProvider;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class DogHubTipContentProvider {
+public class DogHubTipContentProvider implements EntityProvider<DogHubTip> {
 
     private final GeneratorService<Tip> generatorService;
 
@@ -24,7 +25,7 @@ public class DogHubTipContentProvider {
         return getTip();
     }
 
-    public List<DogHubTip> get(int numberOfItems) {
+    public @NotNull List<DogHubTip> get(int numberOfItems) {
         return converter.convert(generatorService.generate(numberOfItems));
     }
 
