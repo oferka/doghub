@@ -18,52 +18,46 @@ import static java.lang.String.format;
 @ToString
 public class User extends ProvidedObject {
 
-    @NotNull
-    @Size(min = 2, max = 64)
-    @NotBlank
+    public static final int FIRST_NAME_MAX_LENGTH = 64;
+    public static final int LAST_NAME_MAX_LENGTH = 64;
+    public static final int EMAIL_MAX_LENGTH = 128;
+    public static final int TITLE_MAX_LENGTH = 64;
+    public static final int PASSWORD_MAX_LENGTH = 128;
+    public static final int COMPANY_MAX_LENGTH = 64;
+    public static final int MOBILE_NUMBER_MAX_LENGTH = 64;
+
+    @NotNull @NotBlank @Size(max = FIRST_NAME_MAX_LENGTH)
     private String firstName;
 
-    @NotNull
-    @Size(min = 2, max = 64)
-    @NotBlank
+    @NotNull @NotBlank @Size(max = LAST_NAME_MAX_LENGTH)
     private String lastName;
 
-    @Email
+    @Email @NotBlank @Size(max = EMAIL_MAX_LENGTH)
     private String email;
 
-    @NotNull
-    @Size(min = 2, max = 64)
-    @NotBlank
+    @NotNull @NotBlank @Size(max = TITLE_MAX_LENGTH)
     private String title;
 
-    @NotNull
-    @Size(min = 2, max = 64)
-    @NotBlank
+    @NotNull @NotBlank @Size(max = PASSWORD_MAX_LENGTH)
     private String password;
 
-    @NotNull
-    @URL
+    @NotNull @URL
     private String thumbnailPicture;
 
     @JsonSerialize(using = ZonedDateTimeSerializer.class)
-    @NotNull
-    @Past
+    @NotNull @Past
     private ZonedDateTime dateOfBirth;
 
-    @NotNull
-    @Size(min = 2, max = 64)
-    @NotBlank
+    @NotNull @NotBlank @Size(max = COMPANY_MAX_LENGTH)
     private String company;
 
     @NotNull
     private Address address;
 
-    @NotNull
-    @Size(min = 2, max = 64)
-    @NotBlank
+    @NotNull @NotBlank @Size(max = MOBILE_NUMBER_MAX_LENGTH)
     private String mobileNumber;
 
-    public @NotNull @NotBlank @Size(min = 4, max = 128) String getName() {
+    public @NotNull @NotBlank @Size(max = FIRST_NAME_MAX_LENGTH + LAST_NAME_MAX_LENGTH + 1) String getName() {
         return format("%s %s", firstName, lastName);
     }
 }

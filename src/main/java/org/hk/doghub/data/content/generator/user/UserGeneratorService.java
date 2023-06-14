@@ -1,5 +1,6 @@
 package org.hk.doghub.data.content.generator.user;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.hk.doghub.data.content.generator.GeneratorService;
 import org.hk.doghub.data.content.generator.Provider;
@@ -14,7 +15,7 @@ public class UserGeneratorService extends GeneratorService<User> {
     private final Provider<User> provider;
 
     @Override
-    protected Provider<User> getProvider() {
+    protected @NotNull Provider<User> getProvider() {
         return provider;
     }
 }

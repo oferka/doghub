@@ -14,14 +14,13 @@ import org.hk.doghub.data.content.generator.ProvidedObject;
 @ToString
 public class Tip extends ProvidedObject {
 
-    @NotNull
-    @Size(min = 2, max = 64)
-    @NotBlank
+    public static final int STREET_NAME_MAX_LENGTH = 64;
+    public static final int CONTENT_MAX_LENGTH = 1024;
+
+    @NotNull @NotBlank @Size(max = STREET_NAME_MAX_LENGTH)
     private String title;
 
-    @NotNull
-    @Size(min = 2, max = 1024)
-    @NotBlank
+    @NotNull @NotBlank @Size(max = CONTENT_MAX_LENGTH)
     private String content;
 
     @URL

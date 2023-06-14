@@ -2,6 +2,7 @@ package org.hk.doghub.data.content.generator.tip.domcop;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.tip.Tip;
@@ -23,12 +24,12 @@ public class TipProviderDomCop implements TipProvider {
     private final CSVContentProvider csvContentProvider;
 
     @Override
-    public List<Tip> get(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfItems) {
+    public @NotNull List<Tip> get(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfItems) {
         return csvContentProvider.get(numberOfItems);
     }
 
     @Override
-    public Tip get() {
+    public @NotNull Tip get() {
         return csvContentProvider.get();
     }
 }

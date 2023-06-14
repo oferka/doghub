@@ -2,6 +2,7 @@ package org.hk.doghub.data.content.generator.user.faker;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.User;
@@ -41,7 +42,7 @@ public class UserProviderFaker implements UserProvider {
     private final DateOfBirthProvider dateOfBirthProvider;
 
     @Override
-    public List<User> get(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfItems) {
+    public @NotNull List<User> get(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfItems) {
         List<User> result = new ArrayList<>();
         for(int i = 0; i< numberOfItems; i++) {
             result.add(get());
@@ -50,7 +51,7 @@ public class UserProviderFaker implements UserProvider {
     }
 
     @Override
-    public User get() {
+    public @NotNull User get() {
         User result = new User();
         result.setFirstName(firstNameProvider.get(result));
         result.setLastName(lastNameProvider.get(result));
