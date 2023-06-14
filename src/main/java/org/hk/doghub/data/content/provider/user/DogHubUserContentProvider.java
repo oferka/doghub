@@ -17,17 +17,17 @@ public class DogHubUserContentProvider {
 
     private final GeneratorService<User> generatorService;
 
-    private final UserConverter userConverter;
+    private final UserConverter converter;
 
     public @NotNull DogHubUser get() {
         return getUser();
     }
 
     public List<DogHubUser> get(int numberOfItems) {
-        return userConverter.convert(generatorService.generate(numberOfItems));
+        return converter.convert(generatorService.generate(numberOfItems));
     }
 
     private @NotNull DogHubUser getUser() {
-        return userConverter.convert(generatorService.generate());
+        return converter.convert(generatorService.generate());
     }
 }

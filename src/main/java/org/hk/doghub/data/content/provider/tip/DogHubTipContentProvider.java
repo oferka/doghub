@@ -17,17 +17,17 @@ public class DogHubTipContentProvider {
 
     private final GeneratorService<Tip> generatorService;
 
-    private final TipConverter tipConverter;
+    private final TipConverter converter;
 
     public @NotNull DogHubTip get() {
         return getTip();
     }
 
     public List<DogHubTip> get(int numberOfItems) {
-        return tipConverter.convert(generatorService.generate(numberOfItems));
+        return converter.convert(generatorService.generate(numberOfItems));
     }
 
     private @NotNull DogHubTip getTip() {
-        return tipConverter.convert(generatorService.generate());
+        return converter.convert(generatorService.generate());
     }
 }
