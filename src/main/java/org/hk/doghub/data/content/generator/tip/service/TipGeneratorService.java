@@ -9,8 +9,8 @@ import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
-import static org.hk.doghub.data.content.generator.EntityProvider.MAX_NUMBER_OF_ITEMS;
-import static org.hk.doghub.data.content.generator.EntityProvider.MIN_NUMBER_OF_ITEMS;
+import static org.hk.doghub.data.content.generator.Provider.MAX_NUMBER_OF_ITEMS;
+import static org.hk.doghub.data.content.generator.Provider.MIN_NUMBER_OF_ITEMS;
 
 @Service
 @RequiredArgsConstructor

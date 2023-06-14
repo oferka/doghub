@@ -2,11 +2,10 @@ package org.hk.doghub.data.content.generator;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import org.hk.doghub.data.content.generator.user.model.User;
 
 import java.util.List;
 
-public interface EntityProvider<T extends ProvidedObject> {
+public interface Provider<T extends ProvidedObject> {
 
     int MIN_NUMBER_OF_ITEMS = 1;
 
