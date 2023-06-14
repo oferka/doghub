@@ -3,7 +3,8 @@ package org.hk.doghub.data.content.provider.tip;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.data.content.generator.tip.TipGeneratorService;
+import org.hk.doghub.data.content.generator.GeneratorService;
+import org.hk.doghub.data.content.generator.tip.Tip;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @Slf4j
 public class DogHubTipContentProvider {
 
-    private final TipGeneratorService tipGeneratorService;
+    private final GeneratorService<Tip> generatorService;
 
     private final TipConverter tipConverter;
 
@@ -23,10 +24,10 @@ public class DogHubTipContentProvider {
     }
 
     public List<DogHubTip> get(int numberOfItems) {
-        return tipConverter.convert(tipGeneratorService.generate(numberOfItems));
+        return tipConverter.convert(generatorService.generate(numberOfItems));
     }
 
     private @NotNull DogHubTip getTip() {
-        return tipConverter.convert(tipGeneratorService.generate());
+        return tipConverter.convert(generatorService.generate());
     }
 }
