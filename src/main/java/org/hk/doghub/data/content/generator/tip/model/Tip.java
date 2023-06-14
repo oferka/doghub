@@ -7,11 +7,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
+import org.hk.doghub.data.content.generator.ProvidedObject;
 
 @Getter
 @Setter
 @ToString
-public class Tip {
+public class Tip extends ProvidedObject {
 
     @NotNull
     @Size(min = 2, max = 64)

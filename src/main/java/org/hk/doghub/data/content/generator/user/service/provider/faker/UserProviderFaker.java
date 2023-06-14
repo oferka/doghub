@@ -41,16 +41,16 @@ public class UserProviderFaker implements UserProvider {
     private final DateOfBirthProvider dateOfBirthProvider;
 
     @Override
-    public List<User> generate(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfItems) {
+    public List<User> get(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfItems) {
         List<User> result = new ArrayList<>();
         for(int i = 0; i< numberOfItems; i++) {
-            result.add(generate());
+            result.add(get());
         }
         return result;
     }
 
     @Override
-    public User generate() {
+    public User get() {
         User result = new User();
         result.setFirstName(firstNameProvider.get(result));
         result.setLastName(lastNameProvider.get(result));

@@ -20,13 +20,13 @@ class UserProviderRandomMeTest {
 
     @RepeatedTest(10)
     public void shouldGenerate() {
-        User user = userProvider.generate();
+        User user = userProvider.get();
         assertNotNull(user);
     }
 
     @RepeatedTest(10)
     public void shouldGenerateMultiple() {
-        List<User> users = userProvider.generate(50);
+        List<User> users = userProvider.get(50);
         assertEquals(50, users.size());
     }
 }

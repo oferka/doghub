@@ -23,13 +23,13 @@ public class UserProviderRandomMe implements UserProvider {
     private final RandomMeResponseConverter randomMeResponseConverter;
 
     @Override
-    public List<User> generate(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfItems) {
+    public List<User> get(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfItems) {
         RandomMeResponse response = randomMeClient.get(numberOfItems);
         return randomMeResponseConverter.convertToUsers(response);
     }
 
     @Override
-    public User generate() {
-        return generate(20).get(0);
+    public User get() {
+        return get(20).get(0);
     }
 }

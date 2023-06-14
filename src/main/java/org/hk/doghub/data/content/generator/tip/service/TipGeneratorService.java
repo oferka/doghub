@@ -20,10 +20,10 @@ public class TipGeneratorService {
     private final TipProvider tipProvider;
 
     public List<Tip> generate(@Min(MIN_NUMBER_OF_TIPS) @Max(MAX_NUMBER_OF_TIPS) int numberOfTips) {
-        return tipProvider.generate(numberOfTips);
+        return tipProvider.get(numberOfTips);
     }
 
     public Tip generate() {
-        return tipProvider.generate();
+        return tipProvider.get();
     }
 }

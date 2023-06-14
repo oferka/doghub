@@ -23,12 +23,12 @@ public class TipProviderDomCop implements TipProvider {
     private final CSVContentProvider csvContentProvider;
 
     @Override
-    public List<Tip> generate(@Min(MIN_NUMBER_OF_TIPS) @Max(MAX_NUMBER_OF_TIPS) int numberOfItems) {
+    public List<Tip> get(@Min(MIN_NUMBER_OF_TIPS) @Max(MAX_NUMBER_OF_TIPS) int numberOfItems) {
         return csvContentProvider.get(numberOfItems);
     }
 
     @Override
-    public Tip generate() {
+    public Tip get() {
         return csvContentProvider.get();
     }
 }

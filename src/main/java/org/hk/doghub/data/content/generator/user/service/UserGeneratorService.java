@@ -20,10 +20,10 @@ public class UserGeneratorService {
     private final UserProvider userProvider;
 
     public List<User> generate(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfUsers) {
-        return userProvider.generate(numberOfUsers);
+        return userProvider.get(numberOfUsers);
     }
 
     public User generate() {
-        return userProvider.generate();
+        return userProvider.get();
     }
 }

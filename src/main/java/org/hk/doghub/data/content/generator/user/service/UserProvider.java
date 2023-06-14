@@ -12,7 +12,7 @@ public interface UserProvider {
 
     int MAX_NUMBER_OF_USERS = 999;
 
-    List<User> generate(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfItems);
+    List<User> get(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfItems);
 
-    User generate();
+    User get();
 }

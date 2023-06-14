@@ -12,7 +12,7 @@ public interface TipProvider {
 
     int MAX_NUMBER_OF_TIPS = 999;
 
-    List<Tip> generate(@Min(MIN_NUMBER_OF_TIPS) @Max(MAX_NUMBER_OF_TIPS) int numberOfItems);
+    List<Tip> get(@Min(MIN_NUMBER_OF_TIPS) @Max(MAX_NUMBER_OF_TIPS) int numberOfItems);
 
-    Tip generate();
+    Tip get();
 }

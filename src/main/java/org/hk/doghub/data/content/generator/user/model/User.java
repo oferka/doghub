@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
+import org.hk.doghub.data.content.generator.ProvidedObject;
 
 import java.time.ZonedDateTime;
 
@@ -15,7 +16,7 @@ import static java.lang.String.format;
 @Getter
 @Setter
 @ToString
-public class User {
+public class User extends ProvidedObject {
 
     @NotNull
     @Size(min = 2, max = 64)
