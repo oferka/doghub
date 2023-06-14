@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.content.generator.user.User;
+import org.hk.doghub.data.content.provider.Converter;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.model.user.Role;
@@ -23,7 +24,7 @@ import static java.lang.String.format;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserConverter {
+public class UserConverter implements Converter<User, DogHubUser> {
 
     private final PasswordEncoder passwordEncoder;
 
