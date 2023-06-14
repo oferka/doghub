@@ -11,7 +11,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class TipGeneratorService extends GeneratorService<Tip> {
 
-    private final TipProvider provider;
+    private final Provider<Tip> provider;
 
     @Override
     protected Provider<Tip> getProvider() {

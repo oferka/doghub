@@ -11,7 +11,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class UserGeneratorService extends GeneratorService<User> {
 
-    private final UserProvider provider;
+    private final Provider<User> provider;
 
     @Override
     protected Provider<User> getProvider() {
