@@ -21,14 +21,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TipConverter {
 
-    private final ModelMapper tipModelMapper;
+    private final ModelMapper modelMapper;
 
     private final DogHubUserService dogHubUserService;
 
     private final UrlFaviconProvider urlFaviconProvider;
 
     public DogHubTip convert(@NotNull Tip tip) {
-        DogHubTip dogHubTip = tipModelMapper.map(tip, DogHubTip.class);
+        DogHubTip dogHubTip = modelMapper.map(tip, DogHubTip.class);
         dogHubTip.setThumbnailPicture(urlFaviconProvider.get(tip));
         dogHubTip.setFeedback(getFeedback());
         dogHubTip.setCreationTime(getCreationTime());

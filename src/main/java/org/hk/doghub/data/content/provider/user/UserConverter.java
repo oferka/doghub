@@ -27,10 +27,10 @@ public class UserConverter {
 
     private final PasswordEncoder passwordEncoder;
 
-    private final ModelMapper userModelMapper;
+    private final ModelMapper modelMapper;
 
     public DogHubUser convert(@NotNull User user) {
-        DogHubUser dogHubUser = userModelMapper.map(user, DogHubUser.class);
+        DogHubUser dogHubUser = modelMapper.map(user, DogHubUser.class);
         dogHubUser.setCreationTime(ZonedDateTime.now().minusDays(RandomUtils.nextLong(1, 1000)));
         dogHubUser.setHashedPassword(passwordEncoder.encode(user.getPassword()));
         dogHubUser.setFeedback(getFeedback());
