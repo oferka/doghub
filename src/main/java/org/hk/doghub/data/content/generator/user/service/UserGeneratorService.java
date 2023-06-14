@@ -1,29 +1,21 @@
 package org.hk.doghub.data.content.generator.user.service;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
+import org.hk.doghub.data.content.generator.GeneratorService;
+import org.hk.doghub.data.content.generator.Provider;
 import org.hk.doghub.data.content.generator.user.model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
-import java.util.List;
-
-import static org.hk.doghub.data.content.generator.Provider.MAX_NUMBER_OF_ITEMS;
-import static org.hk.doghub.data.content.generator.Provider.MIN_NUMBER_OF_ITEMS;
-
 @Service
 @RequiredArgsConstructor
 @Validated
-public class UserGeneratorService {
+public class UserGeneratorService extends GeneratorService<User> {
 
-    private final UserProvider userProvider;
+    private final UserProvider provider;
 
-    public List<User> generate(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfUsers) {
-        return userProvider.get(numberOfUsers);
-    }
-
-    public User generate() {
-        return userProvider.get();
+    @Override
+    protected Provider<User> getProvider() {
+        return provider;
     }
 }
