@@ -9,8 +9,8 @@ import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
-import static org.hk.doghub.data.content.generator.user.service.UserProvider.MAX_NUMBER_OF_USERS;
-import static org.hk.doghub.data.content.generator.user.service.UserProvider.MIN_NUMBER_OF_USERS;
+import static org.hk.doghub.data.content.generator.EntityProvider.MAX_NUMBER_OF_ITEMS;
+import static org.hk.doghub.data.content.generator.EntityProvider.MIN_NUMBER_OF_ITEMS;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class UserGeneratorService {
 
     private final UserProvider userProvider;
 
-    public List<User> generate(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfUsers) {
+    public List<User> generate(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfUsers) {
         return userProvider.get(numberOfUsers);
     }
 

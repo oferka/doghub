@@ -25,7 +25,7 @@ public class TipProviderFaker implements TipProvider {
     private final TipMoreInfoProvider tipMoreInfoProvider;
 
     @Override
-    public List<Tip> get(@Min(MIN_NUMBER_OF_TIPS) @Max(MAX_NUMBER_OF_TIPS) int numberOfItems) {
+    public List<Tip> get(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfItems) {
         List<Tip> result = new ArrayList<>();
         for(int i = 0; i< numberOfItems; i++) {
             result.add(get());

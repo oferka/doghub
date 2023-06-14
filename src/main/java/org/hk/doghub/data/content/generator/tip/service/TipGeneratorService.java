@@ -9,8 +9,8 @@ import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
-import static org.hk.doghub.data.content.generator.tip.service.TipProvider.MAX_NUMBER_OF_TIPS;
-import static org.hk.doghub.data.content.generator.tip.service.TipProvider.MIN_NUMBER_OF_TIPS;
+import static org.hk.doghub.data.content.generator.EntityProvider.MAX_NUMBER_OF_ITEMS;
+import static org.hk.doghub.data.content.generator.EntityProvider.MIN_NUMBER_OF_ITEMS;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class TipGeneratorService {
 
     private final TipProvider tipProvider;
 
-    public List<Tip> generate(@Min(MIN_NUMBER_OF_TIPS) @Max(MAX_NUMBER_OF_TIPS) int numberOfTips) {
+    public List<Tip> generate(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfTips) {
         return tipProvider.get(numberOfTips);
     }
 

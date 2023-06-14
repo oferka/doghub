@@ -41,7 +41,7 @@ public class UserProviderFaker implements UserProvider {
     private final DateOfBirthProvider dateOfBirthProvider;
 
     @Override
-    public List<User> get(@Min(MIN_NUMBER_OF_USERS) @Max(MAX_NUMBER_OF_USERS) int numberOfItems) {
+    public List<User> get(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfItems) {
         List<User> result = new ArrayList<>();
         for(int i = 0; i< numberOfItems; i++) {
             result.add(get());
