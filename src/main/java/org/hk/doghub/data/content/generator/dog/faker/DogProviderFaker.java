@@ -20,11 +20,17 @@ import java.util.List;
 public class DogProviderFaker implements DogProvider {
 
     private final DogNameProvider nameProvider;
+
     private final DogBreedProvider breedProvider;
+
     private final DogSoundProvider soundProvider;
+
     private final DogAgeProvider ageProvider;
+
     private final DogCoatLengthProvider coatLengthProvider;
+
     private final DogSizeProvider sizeProvider;
+
     private final DogGenderProvider genderProvider;
 
     @Override
