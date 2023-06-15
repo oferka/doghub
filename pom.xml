@@ -34,7 +34,7 @@
         <snakeyaml.version>2.0</snakeyaml.version>
         <webdrivermanager.version>5.3.1</webdrivermanager.version>
         <ashot.version>1.5.4</ashot.version>
-        <selenium.version>4.9.1</selenium.version>
+        <selenium.version>4.10.0</selenium.version>
     </properties>
     <repositories>
         <!-- The order of definitions matters. Explicitly defining central here to make sure it has the highest priority. -->
