@@ -1,25 +1,26 @@
-package org.hk.doghub.data.content.generator.user.service.provider.faker;
+package org.hk.doghub.data.content.generator.user.faker;
 
+import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.User;
-import org.hk.doghub.data.content.generator.user.faker.DateOfBirthProvider;
+import org.hk.doghub.data.content.generator.user.faker.MobileNumberProvider;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.ZonedDateTime;
-
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class DateOfBirthProviderTest {
+@Slf4j
+class MobileNumberProviderTest {
 
     @Autowired
-    private DateOfBirthProvider dateOfBirthProvider;
+    private MobileNumberProvider mobileNumberProvider;
 
     @RepeatedTest(10)
     public void shouldGenerate() {
         User user = new User();
-        ZonedDateTime dateOfBirth = dateOfBirthProvider.get(user);
-        assertNotNull(dateOfBirth);
+        String mobileNumber = mobileNumberProvider.get(user);
+        log.info(mobileNumber);
+        assertNotNull(mobileNumber);
     }
 }

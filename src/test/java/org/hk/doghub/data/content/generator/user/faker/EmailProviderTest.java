@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.generator.user.service.provider.faker;
+package org.hk.doghub.data.content.generator.user.faker;
 
 import org.hk.doghub.data.content.generator.user.User;
 import org.hk.doghub.data.content.generator.user.faker.EmailProvider;

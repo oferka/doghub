@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.generator.user.service.provider.randomme;
+package org.hk.doghub.data.content.generator.user.randomme;
 
 import org.hk.doghub.data.content.generator.user.User;
 import org.hk.doghub.data.content.generator.user.randomme.RandomMeClient;

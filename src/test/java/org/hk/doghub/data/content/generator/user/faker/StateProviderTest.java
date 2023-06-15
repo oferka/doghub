@@ -1,8 +1,8 @@
-package org.hk.doghub.data.content.generator.user.service.provider.faker;
+package org.hk.doghub.data.content.generator.user.faker;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.Address;
-import org.hk.doghub.data.content.generator.user.faker.CountryProvider;
+import org.hk.doghub.data.content.generator.user.faker.StateProvider;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,16 +11,16 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @Slf4j
-class CountryProviderTest {
+class StateProviderTest {
 
     @Autowired
-    private CountryProvider countryProvider;
+    private StateProvider stateProvider;
 
     @RepeatedTest(10)
     public void shouldGenerate() {
         Address address = new Address();
-        String country = countryProvider.get(address);
-        log.info(country);
-        assertNotNull(country);
+        String state = stateProvider.get(address);
+        log.info(state);
+        assertNotNull(state);
     }
 }

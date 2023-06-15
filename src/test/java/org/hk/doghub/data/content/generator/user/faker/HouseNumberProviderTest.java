@@ -1,26 +1,23 @@
-package org.hk.doghub.data.content.generator.user.service.provider.faker;
+package org.hk.doghub.data.content.generator.user.faker;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.Address;
-import org.hk.doghub.data.content.generator.user.faker.PostcodeProvider;
+import org.hk.doghub.data.content.generator.user.faker.HouseNumberProvider;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 @SpringBootTest
 @Slf4j
-class PostcodeProviderTest {
+class HouseNumberProviderTest {
 
     @Autowired
-    private PostcodeProvider postcodeProvider;
+    private HouseNumberProvider houseNumberProvider;
 
     @RepeatedTest(10)
     public void shouldGenerate() {
         Address address = new Address();
-        String postcode = postcodeProvider.get(address);
-        log.info(postcode);
-        assertNotNull(postcode);
+        int houseNumber = houseNumberProvider.get(address);
+        log.info(Integer.toString(houseNumber));
     }
 }

@@ -1,7 +1,8 @@
-package org.hk.doghub.data.content.generator.user.service.provider.faker;
+package org.hk.doghub.data.content.generator.user.faker;
 
+import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.User;
-import org.hk.doghub.data.content.generator.user.faker.PasswordProvider;
+import org.hk.doghub.data.content.generator.user.faker.CompanyProvider;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,15 +10,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class PasswordProviderTest {
+@Slf4j
+class CompanyProviderTest {
 
     @Autowired
-    private PasswordProvider passwordProvider;
+    private CompanyProvider companyProvider;
 
     @RepeatedTest(10)
     public void shouldGenerate() {
         User user = new User();
-        String password = passwordProvider.get(user);
-        assertNotNull(password);
+        String company = companyProvider.get(user);
+        log.info(company);
+        assertNotNull(company);
     }
 }

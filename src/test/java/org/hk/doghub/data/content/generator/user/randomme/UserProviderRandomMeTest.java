@@ -1,8 +1,8 @@
-package org.hk.doghub.data.content.generator.user.service;
+package org.hk.doghub.data.content.generator.user.randomme;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.User;
-import org.hk.doghub.data.content.generator.user.UserGeneratorService;
+import org.hk.doghub.data.content.generator.user.randomme.UserProviderRandomMe;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,21 +14,20 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @Slf4j
-class UserGeneratorServiceTest {
+class UserProviderRandomMeTest {
 
     @Autowired
-    private UserGeneratorService userGeneratorService;
+    private UserProviderRandomMe userProvider;
 
     @RepeatedTest(10)
-    void shouldGenerate() {
-        User user = userGeneratorService.generate();
+    public void shouldGenerate() {
+        User user = userProvider.get();
         assertNotNull(user);
-        log.info(user.toString());
     }
 
     @RepeatedTest(10)
     public void shouldGenerateMultiple() {
-        List<User> users = userGeneratorService.generate(5);
-        assertEquals(5, users.size());
+        List<User> users = userProvider.get(50);
+        assertEquals(50, users.size());
     }
 }
