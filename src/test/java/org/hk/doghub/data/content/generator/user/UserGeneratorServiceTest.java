@@ -20,14 +20,14 @@ class UserGeneratorServiceTest {
 
     @RepeatedTest(10)
     void shouldGenerate() {
-        User user = generatorService.generate();
-        assertNotNull(user);
-        log.info(user.toString());
+        User entity = generatorService.generate();
+        assertNotNull(entity);
+        log.info(entity.toString());
     }
 
     @RepeatedTest(10)
     public void shouldGenerateMultiple() {
-        List<User> users = generatorService.generate(5);
-        assertEquals(5, users.size());
+        List<User> entities = generatorService.generate(5);
+        assertEquals(5, entities.size());
     }
 }
