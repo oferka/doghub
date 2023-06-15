@@ -10,7 +10,7 @@ import org.hk.doghub.model.AbstractEntity;
 import java.util.List;
 
 @Slf4j
-public abstract class AbstractEntityLoader<T extends AbstractEntity> implements EntityLoader<T> {
+public abstract class AbstractEntityLoader<T extends AbstractEntity> implements EntityLoader {
 
     public long load() {
         List<T> content = getEntityProvider().get(getEntityProviderConfiguration().getNumberOfItems());

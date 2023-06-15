@@ -1,8 +1,6 @@
 package org.hk.doghub.data.content.loader;
 
-import org.hk.doghub.model.AbstractEntity;
-
-public interface EntityLoader<T extends AbstractEntity> {
+public interface EntityLoader {
 
     long load();
 }
