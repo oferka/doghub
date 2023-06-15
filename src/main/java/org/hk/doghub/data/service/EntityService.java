@@ -28,6 +28,4 @@ public interface EntityService<T extends AbstractEntity> {
     Optional<T> findPrevious(@NotNull Long id);
 
     Optional<T> findNext(@NotNull Long id);
-
-    Optional<T> findRandom();
 }

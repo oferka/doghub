@@ -3,47 +3,26 @@ package org.hk.doghub.data.service.user;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomUtils;
+import org.hk.doghub.data.repository.EntityRepository;
 import org.hk.doghub.data.repository.user.DogHubUserRepository;
-import org.hk.doghub.data.service.EntityService;
+import org.hk.doghub.data.service.AbstractEntityService;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class DogHubUserService implements EntityService<DogHubUser> {
+public class DogHubUserService extends AbstractEntityService<DogHubUser> {
 
     private final DogHubUserRepository repository;
 
-    public Optional<DogHubUser> findById(@NotNull Long id) {
-        return repository.findById(id);
-    }
-
-    public List<DogHubUser> findAll() {
-        return repository.findAll();
-    }
-
-    public Page<DogHubUser> findAll(@NotNull Pageable pageable) {
-        return repository.findAll(pageable);
-    }
-
-    public Page<DogHubUser> findAll(@NotNull Pageable pageable, @NotNull Specification<DogHubUser> filter) {
-        return repository.findAll(filter, pageable);
-    }
-
-    public DogHubUser save(@NotNull DogHubUser entity) {
-        return repository.save(entity);
-    }
-
-    public int count() {
-        return (int)repository.count();
+    @Override
+    protected EntityRepository<DogHubUser> getEntityRepository() {
+        return repository;
     }
 
     public boolean exists(@NotNull DogHubUser user) {
