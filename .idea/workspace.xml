@@ -7,8 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 567">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/csv/CSVContentProviderTest.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 568">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/csv/CsvReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/TipProviderDomCopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/TipProviderDomCopTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/csv/CSVContentProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/csv/CSVContentProviderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,7 @@
       <recent name="org.hk.doghub.data.content.generator.user" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CSVContentProviderTest">
+  <component name="RunManager" selected="JUnit.CsvReaderTest">
     <configuration name="CSVContentProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -116,6 +118,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv.CSVContentProviderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CsvReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.tip.domcop.csv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv.CsvReaderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,14 +183,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="user in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -182,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CsvReaderTest" />
         <item itemvalue="JUnit.CSVContentProviderTest" />
         <item itemvalue="JUnit.TipProviderDomCopTest" />
         <item itemvalue="JUnit.TipTitleProviderTest" />
         <item itemvalue="JUnit.TipMoreInfoProviderTest" />
-        <item itemvalue="JUnit.user in doghub" />
       </list>
     </recent_temporary>
   </component>
@@ -198,13 +207,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00523" summary="doghub 519">
-      <created>1686762873116</created>
-      <option name="number" value="00523" />
-      <option name="presentableId" value="LOCAL-00523" />
-      <option name="project" value="LOCAL" />
-      <updated>1686762873116</updated>
     </task>
     <task id="LOCAL-00524" summary="doghub 520">
       <created>1686763122512</created>
@@ -542,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686834707020</updated>
     </task>
-    <option name="localTasksCounter" value="572" />
+    <task id="LOCAL-00572" summary="doghub 568">
+      <created>1686835039878</created>
+      <option name="number" value="00572" />
+      <option name="presentableId" value="LOCAL-00572" />
+      <option name="project" value="LOCAL" />
+      <updated>1686835039878</updated>
+    </task>
+    <option name="localTasksCounter" value="573" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 543" />
     <MESSAGE value="doghub 544" />
     <MESSAGE value="doghub 545" />
     <MESSAGE value="doghub 546" />
@@ -583,6 +591,7 @@
     <MESSAGE value="doghub 565" />
     <MESSAGE value="doghub 566" />
     <MESSAGE value="doghub 567" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 567" />
+    <MESSAGE value="doghub 568" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 568" />
   </component>
 </project>
