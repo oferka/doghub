@@ -7,22 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 551">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/DogProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogAgeProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogBreedProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogCoatLengthProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogGenderProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogNameProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogProviderFaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogSizeProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogSoundProvider.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 553">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/Tip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/Tip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/faker/TipContentProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/faker/TipContentProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/faker/TipMoreInfoProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/faker/TipMoreInfoProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/faker/TipTitleProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/tip/faker/TipTitleProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/faker/UserProviderFaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/faker/UserProviderFaker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,20 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00507" summary="doghub 503">
-      <created>1686663279691</created>
-      <option name="number" value="00507" />
-      <option name="presentableId" value="LOCAL-00507" />
-      <option name="project" value="LOCAL" />
-      <updated>1686663279691</updated>
-    </task>
-    <task id="LOCAL-00508" summary="doghub 504">
-      <created>1686664223170</created>
-      <option name="number" value="00508" />
-      <option name="presentableId" value="LOCAL-00508" />
-      <option name="project" value="LOCAL" />
-      <updated>1686664223170</updated>
     </task>
     <task id="LOCAL-00509" summary="doghub 505">
       <created>1686664255177</created>
@@ -554,7 +527,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686825352177</updated>
     </task>
-    <option name="localTasksCounter" value="556" />
+    <task id="LOCAL-00556" summary="doghub 552">
+      <created>1686826705968</created>
+      <option name="number" value="00556" />
+      <option name="presentableId" value="LOCAL-00556" />
+      <option name="project" value="LOCAL" />
+      <updated>1686826705968</updated>
+    </task>
+    <task id="LOCAL-00557" summary="doghub 553">
+      <created>1686826788688</created>
+      <option name="number" value="00557" />
+      <option name="presentableId" value="LOCAL-00557" />
+      <option name="project" value="LOCAL" />
+      <updated>1686826788688</updated>
+    </task>
+    <option name="localTasksCounter" value="558" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,8 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 527" />
-    <MESSAGE value="doghub 528" />
     <MESSAGE value="doghub 529" />
     <MESSAGE value="doghub 530" />
     <MESSAGE value="doghub 531" />
@@ -595,6 +580,8 @@
     <MESSAGE value="doghub 549" />
     <MESSAGE value="doghub 550" />
     <MESSAGE value="doghub 551" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 551" />
+    <MESSAGE value="doghub 552" />
+    <MESSAGE value="doghub 553" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 553" />
   </component>
 </project>
