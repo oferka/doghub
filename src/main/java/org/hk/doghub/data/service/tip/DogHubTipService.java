@@ -28,14 +28,6 @@ public class DogHubTipService implements EntityService<DogHubTip> {
         return repository.save(entity);
     }
 
-    public Iterable<DogHubTip> saveAll(@NotNull Iterable<DogHubTip> entities) {
-        return repository.saveAll(entities);
-    }
-
-    public void deleteById(@NotNull Long id) {
-        repository.deleteById(id);
-    }
-
     public List<DogHubTip> findAll() {
         return repository.findAll();
     }

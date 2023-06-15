@@ -30,14 +30,6 @@ public class DogHubUserService implements EntityService<DogHubUser> {
         return repository.save(entity);
     }
 
-    public Iterable<DogHubUser> saveAll(@NotNull Iterable<DogHubUser> entities) {
-        return repository.saveAll(entities);
-    }
-
-    public void deleteById(@NotNull Long id) {
-        repository.deleteById(id);
-    }
-
     public List<DogHubUser> findAll() {
         return repository.findAll();
     }
