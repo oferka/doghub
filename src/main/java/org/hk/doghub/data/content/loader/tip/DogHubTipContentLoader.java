@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class DogHubTipContentLoader implements EntityContentLoader {
+public class DogHubTipContentLoader implements EntityContentLoader<DogHubTip> {
 
     private final EntityProvider<DogHubTip> entityProvider;
 
