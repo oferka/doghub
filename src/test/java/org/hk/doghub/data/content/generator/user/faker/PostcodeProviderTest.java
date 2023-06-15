@@ -13,13 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class PostcodeProviderTest {
 
     @Autowired
-    private PostcodeProvider postcodeProvider;
+    private PostcodeProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {
-        Address address = new Address();
-        String postcode = postcodeProvider.get(address);
-        log.info(postcode);
-        assertNotNull(postcode);
+        String value = provider.get(new Address());
+        log.info(value);
+        assertNotNull(value);
     }
 }

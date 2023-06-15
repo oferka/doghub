@@ -13,12 +13,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class DateOfBirthProviderTest {
 
     @Autowired
-    private DateOfBirthProvider dateOfBirthProvider;
+    private DateOfBirthProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {
-        User user = new User();
-        ZonedDateTime dateOfBirth = dateOfBirthProvider.get(user);
-        assertNotNull(dateOfBirth);
+        ZonedDateTime value = provider.get(new User());
+        assertNotNull(value);
     }
 }

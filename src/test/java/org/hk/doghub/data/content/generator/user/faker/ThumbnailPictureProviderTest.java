@@ -11,12 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class ThumbnailPictureProviderTest {
 
     @Autowired
-    private ThumbnailPictureProvider thumbnailPictureProvider;
+    private ThumbnailPictureProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {
-        User user = new User();
-        String thumbnailPicture = thumbnailPictureProvider.get(user);
-        assertNotNull(thumbnailPicture);
+        String value = provider.get(new User());
+        assertNotNull(value);
     }
 }

@@ -11,12 +11,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 class HouseNumberProviderTest {
 
     @Autowired
-    private HouseNumberProvider houseNumberProvider;
+    private HouseNumberProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {
-        Address address = new Address();
-        int houseNumber = houseNumberProvider.get(address);
-        log.info(Integer.toString(houseNumber));
+        int value = provider.get(new Address());
+        log.info(Integer.toString(value));
     }
 }

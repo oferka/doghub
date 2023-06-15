@@ -11,12 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class LastNameProviderTest {
 
     @Autowired
-    private LastNameProvider lastNameProvider;
+    private LastNameProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {
-        User user = new User();
-        String lastName = lastNameProvider.get(user);
-        assertNotNull(lastName);
+        String value = provider.get(new User());
+        assertNotNull(value);
     }
 }
