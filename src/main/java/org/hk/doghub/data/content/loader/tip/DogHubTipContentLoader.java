@@ -3,6 +3,7 @@ package org.hk.doghub.data.content.loader.tip;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.provider.EntityProvider;
+import org.hk.doghub.data.content.provider.EntityProviderConfiguration;
 import org.hk.doghub.data.service.tip.DogHubTipService;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class DogHubTipContentLoader {
 
     private final EntityProvider<DogHubTip> entityProvider;
 
-    private final DogHubTipProviderConfiguration contentProviderConfiguration;
+    private final EntityProviderConfiguration<DogHubTip> contentProviderConfiguration;
 
     private final DogHubTipService dogHubTipService;
 
