@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.generator.user;
+package org.hk.doghub.data.content.generator.tip;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.Provider;
@@ -13,21 +13,21 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @Slf4j
-class UserProviderTest {
+class TipProviderTest {
 
     @Autowired
-    private Provider<User> provider;
+    private Provider<Tip> provider;
 
     @RepeatedTest(10)
     void shouldGet() {
-        User entity = provider.get();
+        Tip entity = provider.get();
         assertNotNull(entity);
         log.info(entity.toString());
     }
 
     @RepeatedTest(10)
     public void shouldGetMultiple() {
-        List<User> entities = provider.get(5);
+        List<Tip> entities = provider.get(5);
         assertEquals(5, entities.size());
     }
 }
