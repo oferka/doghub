@@ -105,7 +105,7 @@
       <recent name="org.hk.doghub.data.content.generator.user.service.provider.randomme" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TipGeneratorServiceTest">
+  <component name="RunManager" selected="JUnit.generator in doghub">
     <configuration name="TipGeneratorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -151,10 +151,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="content in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="generator in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content" />
+      <dir value="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.generator in doghub" />
         <item itemvalue="JUnit.TipGeneratorServiceTest" />
         <item itemvalue="JUnit.org.hk.doghub.data.content.generator in doghub" />
         <item itemvalue="JUnit.UserProviderTest" />
         <item itemvalue="JUnit.UserGeneratorServiceTest" />
-        <item itemvalue="JUnit.content in doghub" />
       </list>
     </recent_temporary>
   </component>
