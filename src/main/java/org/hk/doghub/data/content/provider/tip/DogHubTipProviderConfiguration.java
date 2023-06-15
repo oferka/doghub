@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.loader.tip;
+package org.hk.doghub.data.content.provider.tip;
 
 import org.hk.doghub.data.content.provider.EntityProviderConfiguration;
 import org.hk.doghub.model.tip.DogHubTip;
