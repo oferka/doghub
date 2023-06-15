@@ -17,12 +17,12 @@ public class DogHubUserContentLoader {
 
     private final EntityProvider<DogHubUser> entityProvider;
 
-    private final EntityProviderConfiguration<DogHubUser> contentProviderConfiguration;
+    private final EntityProviderConfiguration<DogHubUser> providerConfiguration;
 
     private final DogHubUserService dogHubUserService;
 
     public long load() {
-        List<DogHubUser> content = entityProvider.get(contentProviderConfiguration.getNumberOfItems());
+        List<DogHubUser> content = entityProvider.get(providerConfiguration.getNumberOfItems());
         long savedUsersCounter = 0;
         for(DogHubUser user : content) {
             try {

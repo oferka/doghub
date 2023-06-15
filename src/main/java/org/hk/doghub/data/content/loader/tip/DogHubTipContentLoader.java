@@ -17,12 +17,12 @@ public class DogHubTipContentLoader {
 
     private final EntityProvider<DogHubTip> entityProvider;
 
-    private final EntityProviderConfiguration<DogHubTip> contentProviderConfiguration;
+    private final EntityProviderConfiguration<DogHubTip> providerConfiguration;
 
     private final DogHubTipService dogHubTipService;
 
     public long load() {
-        List<DogHubTip> content = entityProvider.get(contentProviderConfiguration.getNumberOfItems());
+        List<DogHubTip> content = entityProvider.get(providerConfiguration.getNumberOfItems());
         long savedTipsCounter = 0;
         for(DogHubTip tip : content) {
             try {
