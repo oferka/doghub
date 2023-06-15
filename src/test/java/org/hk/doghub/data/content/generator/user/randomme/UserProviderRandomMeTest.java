@@ -16,17 +16,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class UserProviderRandomMeTest {
 
     @Autowired
-    private UserProviderRandomMe userProvider;
+    private UserProviderRandomMe provider;
 
     @RepeatedTest(10)
     public void shouldGet() {
-        User user = userProvider.get();
+        User user = provider.get();
         assertNotNull(user);
     }
 
     @RepeatedTest(10)
     public void shouldGetMultiple() {
-        List<User> users = userProvider.get(50);
+        List<User> users = provider.get(50);
         assertEquals(50, users.size());
     }
 }

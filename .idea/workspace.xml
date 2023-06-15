@@ -106,7 +106,7 @@
       <recent name="org.hk.doghub.automation.sound.player.clip" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TipTitleProviderTest">
+  <component name="RunManager" selected="JUnit.TipProviderDomCopTest">
     <configuration name="AddressProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -122,21 +122,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TipContentProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.tip.faker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.faker.TipContentProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TipMoreInfoProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -147,6 +132,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.faker" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.faker.TipMoreInfoProviderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TipProviderDomCopTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.tip.domcop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.domcop" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.TipProviderDomCopTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TipProviderDomCopTest" />
         <item itemvalue="JUnit.TipTitleProviderTest" />
         <item itemvalue="JUnit.TipMoreInfoProviderTest" />
         <item itemvalue="JUnit.user in doghub" />
         <item itemvalue="JUnit.AddressProviderTest" />
-        <item itemvalue="JUnit.TipContentProviderTest" />
       </list>
     </recent_temporary>
   </component>
