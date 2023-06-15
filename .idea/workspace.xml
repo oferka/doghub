@@ -125,7 +125,7 @@
       <recent name="org.hk.doghub.data.content.generator.user.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.content in doghub">
+  <component name="RunManager" selected="JUnit.UserProviderTest">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -147,21 +147,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.automation.e2e.selenium.ui.actions.select.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.select" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.ui.actions.select.SelectExecutorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TitleVerifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -172,6 +157,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.automation.e2e.selenium.page" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.automation.e2e.selenium.page.TitleVerifierTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.UserProviderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -193,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserProviderTest" />
         <item itemvalue="JUnit.content in doghub" />
         <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.TitleVerifierTest" />
         <item itemvalue="JUnit.All in doghub" />
-        <item itemvalue="JUnit.SelectExecutorTest" />
       </list>
     </recent_temporary>
   </component>
