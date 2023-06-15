@@ -2,7 +2,7 @@ package org.hk.doghub.data.content.loader.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.data.content.provider.user.DogHubUserContentProvider;
+import org.hk.doghub.data.content.provider.EntityProvider;
 import org.hk.doghub.data.content.provider.user.DogHubUserContentProviderConfiguration;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.user.DogHubUser;
@@ -15,14 +15,14 @@ import java.util.List;
 @Slf4j
 public class DogHubUserContentLoader {
 
-    private final DogHubUserContentProvider contentProvider;
+    private final EntityProvider<DogHubUser> entityProvider;
 
     private final DogHubUserContentProviderConfiguration contentProviderConfiguration;
 
     private final DogHubUserService dogHubUserService;
 
     public long load() {
-        List<DogHubUser> content = contentProvider.get(contentProviderConfiguration.getNumberOfItems());
+        List<DogHubUser> content = entityProvider.get(contentProviderConfiguration.getNumberOfItems());
         long savedUsersCounter = 0;
         for(DogHubUser user : content) {
             try {
