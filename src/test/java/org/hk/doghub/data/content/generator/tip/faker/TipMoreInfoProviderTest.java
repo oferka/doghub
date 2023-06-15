@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @Slf4j
-class TipContentProviderTest {
+class TipMoreInfoProviderTest {
 
     @Autowired
-    private TipContentProvider provider;
+    private TipMoreInfoProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {

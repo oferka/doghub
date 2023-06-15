@@ -1,7 +1,6 @@
 package org.hk.doghub.data.content.generator.tip.faker;
 
 import org.hk.doghub.data.content.generator.tip.Tip;
-import org.hk.doghub.data.content.generator.user.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
