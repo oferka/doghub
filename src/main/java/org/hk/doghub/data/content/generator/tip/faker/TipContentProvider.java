@@ -7,10 +7,12 @@ import net.datafaker.Faker;
 import org.hk.doghub.data.content.generator.tip.Tip;
 import org.springframework.stereotype.Service;
 
+import static org.hk.doghub.data.content.generator.tip.Tip.CONTENT_MAX_LENGTH;
+
 @Service
 public class TipContentProvider {
 
-    public @NotNull @Size(min = 2, max = 1024) @NotBlank String get(@NotNull Tip tip) {
+    public @NotNull @NotBlank @Size(max = CONTENT_MAX_LENGTH) String get(@NotNull Tip tip) {
         return new Faker().book().genre();
     }
 }

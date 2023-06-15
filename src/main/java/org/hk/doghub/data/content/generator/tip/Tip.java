@@ -14,10 +14,10 @@ import org.hk.doghub.data.content.generator.ProvidedObject;
 @ToString
 public class Tip extends ProvidedObject {
 
-    public static final int STREET_NAME_MAX_LENGTH = 64;
+    public static final int TITLE_MAX_LENGTH = 64;
     public static final int CONTENT_MAX_LENGTH = 1024;
 
-    @NotNull @NotBlank @Size(max = STREET_NAME_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = TITLE_MAX_LENGTH)
     private String title;
 
     @NotNull @NotBlank @Size(max = CONTENT_MAX_LENGTH)

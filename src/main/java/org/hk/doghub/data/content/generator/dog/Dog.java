@@ -21,38 +21,24 @@ public class Dog extends ProvidedObject {
     public static final int SIZE_MAX_LENGTH = 32;
     public static final int GENDER_MAX_LENGTH = 32;
 
-    @NotNull
-    @NotBlank
-    @Size(max = NAME_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = NAME_MAX_LENGTH)
     private String name;
 
-    @NotNull
-    @NotBlank
-    @Size(max = BREED_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = BREED_MAX_LENGTH)
     private String breed;
 
-    @NotNull
-    @NotBlank
-    @Size(max = SOUND_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = SOUND_MAX_LENGTH)
     private String sound;
 
-    @NotNull
-    @NotBlank
-    @Size(max = AGE_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = AGE_MAX_LENGTH)
     private String age;
 
-    @NotNull
-    @NotBlank
-    @Size(max = COAT_LENGTH_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = COAT_LENGTH_MAX_LENGTH)
     private String coatLength;
 
-    @NotNull
-    @NotBlank
-    @Size(max = SIZE_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = SIZE_MAX_LENGTH)
     private String size;
 
-    @NotNull
-    @NotBlank
-    @Size(max = GENDER_MAX_LENGTH)
+    @NotNull @NotBlank @Size(max = GENDER_MAX_LENGTH)
     private String gender;
 }

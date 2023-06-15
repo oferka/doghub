@@ -7,10 +7,12 @@ import net.datafaker.Faker;
 import org.hk.doghub.data.content.generator.tip.Tip;
 import org.springframework.stereotype.Service;
 
+import static org.hk.doghub.data.content.generator.tip.Tip.TITLE_MAX_LENGTH;
+
 @Service
 public class TipTitleProvider {
 
-    public @NotNull @Size(min = 2, max = 64) @NotBlank String get(@NotNull Tip tip) {
+    public @NotNull @NotBlank @Size(max = TITLE_MAX_LENGTH) String get(@NotNull Tip tip) {
         Faker faker = new Faker();
         return faker.book().title() + " - " + faker.expression("#{regexify '[a-z]{3,5}'}");
     }
