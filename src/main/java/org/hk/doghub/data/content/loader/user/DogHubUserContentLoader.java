@@ -2,6 +2,7 @@ package org.hk.doghub.data.content.loader.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.data.content.loader.EntityContentLoader;
 import org.hk.doghub.data.content.provider.EntityProvider;
 import org.hk.doghub.data.content.provider.EntityProviderConfiguration;
 import org.hk.doghub.data.service.EntityService;
@@ -13,7 +14,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class DogHubUserContentLoader {
+public class DogHubUserContentLoader implements EntityContentLoader {
 
     private final EntityProvider<DogHubUser> entityProvider;
 
