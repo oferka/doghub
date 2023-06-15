@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.loader.tip.DogHubTipLoader;
 import org.hk.doghub.data.content.loader.user.DogHubUserLoader;
+import org.hk.doghub.model.tip.DogHubTip;
+import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,8 +13,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ContentLoader {
 
-    private final DogHubUserLoader dogHubUserLoader;
-    private final DogHubTipLoader dogHubTipLoader;
+    private final EntityLoader<DogHubUser> dogHubUserLoader;
+    private final EntityLoader<DogHubTip> dogHubTipLoader;
 
     public void load() {
         long ensuredLoadedUsersCounter = dogHubUserLoader.load();
