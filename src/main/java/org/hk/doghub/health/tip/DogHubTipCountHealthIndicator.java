@@ -1,30 +1,21 @@
 package org.hk.doghub.health.tip;
 
 import lombok.RequiredArgsConstructor;
-import org.hk.doghub.data.service.tip.DogHubTipService;
+import org.hk.doghub.data.service.EntityService;
+import org.hk.doghub.health.EntityCountHealthIndicator;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.springframework.boot.actuate.autoconfigure.health.ConditionalOnEnabledHealthIndicator;
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 @ConditionalOnEnabledHealthIndicator("dogHubTipCountHealthIndicator")
-public class DogHubTipCountHealthIndicator implements HealthIndicator {
+public class DogHubTipCountHealthIndicator extends EntityCountHealthIndicator<DogHubTip> {
 
-    private final DogHubTipService dogHubTipService;
+    private final EntityService<DogHubTip> entityService;
 
     @Override
-    public Health health() {
-        Health.Builder healthBuilder;
-        try {
-            long count = dogHubTipService.count();
-            healthBuilder = (count >= 0)?Health.up():Health.down();
-            healthBuilder.withDetail("number_of_entries", count);
-        }
-        catch (Exception e) {
-            healthBuilder = Health.down(e);
-        }
-        return healthBuilder.build();
+    protected EntityService<DogHubTip> getEntityService() {
+        return entityService;
     }
 }
