@@ -17,9 +17,9 @@ public class ContentLoader {
     private final EntityLoader<DogHubTip> dogHubTipLoader;
 
     public void load() {
-        long ensuredLoadedUsersCounter = dogHubUserLoader.load();
-        long ensuredLoadedTipsCounter = dogHubTipLoader.load();
-        long loadedEntitiesCounter = ensuredLoadedUsersCounter + ensuredLoadedTipsCounter;
+        long loadedUsersCounter = dogHubUserLoader.load();
+        long loadedTipsCounter = dogHubTipLoader.load();
+        long loadedEntitiesCounter = loadedUsersCounter + loadedTipsCounter;
         log.info("{} entities loaded", loadedEntitiesCounter);
     }
 }
