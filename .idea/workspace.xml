@@ -7,10 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 568">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/csv/CsvReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/TipProviderDomCopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/TipProviderDomCopTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/csv/CSVContentProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/tip/domcop/csv/CSVContentProviderTest.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 570">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +105,7 @@
       <recent name="org.hk.doghub.data.content.generator.user" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CsvReaderTest">
+  <component name="RunManager" selected="JUnit.DogProviderTest">
     <configuration name="CSVContentProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -138,16 +136,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TipMoreInfoProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.tip.faker.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.faker.TipMoreInfoProviderTest" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.DogProviderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,17 +166,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TipTitleProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="content in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.tip.faker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.faker.TipTitleProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogProviderTest" />
+        <item itemvalue="JUnit.content in doghub" />
         <item itemvalue="JUnit.CsvReaderTest" />
         <item itemvalue="JUnit.CSVContentProviderTest" />
         <item itemvalue="JUnit.TipProviderDomCopTest" />
-        <item itemvalue="JUnit.TipTitleProviderTest" />
-        <item itemvalue="JUnit.TipMoreInfoProviderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -207,20 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00524" summary="doghub 520">
-      <created>1686763122512</created>
-      <option name="number" value="00524" />
-      <option name="presentableId" value="LOCAL-00524" />
-      <option name="project" value="LOCAL" />
-      <updated>1686763122513</updated>
-    </task>
-    <task id="LOCAL-00525" summary="doghub 521">
-      <created>1686763700219</created>
-      <option name="number" value="00525" />
-      <option name="presentableId" value="LOCAL-00525" />
-      <option name="project" value="LOCAL" />
-      <updated>1686763700219</updated>
     </task>
     <task id="LOCAL-00526" summary="doghub 522">
       <created>1686804469133</created>
@@ -551,7 +528,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686835039878</updated>
     </task>
-    <option name="localTasksCounter" value="573" />
+    <task id="LOCAL-00573" summary="doghub 569">
+      <created>1686835494759</created>
+      <option name="number" value="00573" />
+      <option name="presentableId" value="LOCAL-00573" />
+      <option name="project" value="LOCAL" />
+      <updated>1686835494759</updated>
+    </task>
+    <task id="LOCAL-00574" summary="doghub 570">
+      <created>1686835516577</created>
+      <option name="number" value="00574" />
+      <option name="presentableId" value="LOCAL-00574" />
+      <option name="project" value="LOCAL" />
+      <updated>1686835516577</updated>
+    </task>
+    <option name="localTasksCounter" value="575" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -567,8 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 544" />
-    <MESSAGE value="doghub 545" />
     <MESSAGE value="doghub 546" />
     <MESSAGE value="doghub 547" />
     <MESSAGE value="doghub 548" />
@@ -592,6 +581,8 @@
     <MESSAGE value="doghub 566" />
     <MESSAGE value="doghub 567" />
     <MESSAGE value="doghub 568" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 568" />
+    <MESSAGE value="doghub 569" />
+    <MESSAGE value="doghub 570" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 570" />
   </component>
 </project>
