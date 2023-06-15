@@ -15,7 +15,7 @@ class CsvReaderTest {
     private CsvReader reader;
 
     @Test
-    void shouldGet() {
+    void shouldRead() {
         List<TipLine> tipLines = reader.read();
         assertNotNull(tipLines);
     }
