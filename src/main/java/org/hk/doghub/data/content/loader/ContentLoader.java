@@ -2,8 +2,8 @@ package org.hk.doghub.data.content.loader;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.data.content.loader.tip.DogHubTipContentLoader;
-import org.hk.doghub.data.content.loader.user.DogHubUserContentLoader;
+import org.hk.doghub.data.content.loader.tip.DogHubTipLoader;
+import org.hk.doghub.data.content.loader.user.DogHubUserLoader;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ContentLoader {
 
-    private final DogHubUserContentLoader dogHubUserContentLoader;
-    private final DogHubTipContentLoader dogHubTipContentLoader;
+    private final DogHubUserLoader dogHubUserContentLoader;
+    private final DogHubTipLoader dogHubTipContentLoader;
 
     public void ensureContentLoaded() {
         long ensuredLoadedUsersCounter = dogHubUserContentLoader.load();
