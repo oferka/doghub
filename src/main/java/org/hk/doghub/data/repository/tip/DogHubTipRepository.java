@@ -9,10 +9,6 @@ import java.util.Optional;
 
 public interface DogHubTipRepository extends EntityRepository<DogHubTip> {
 
-    Optional<DogHubTip> findByTitle(String title);
-
-    boolean existsByTitle(String title);
-
     List<DogHubTip> findByCreatedBy(DogHubUser user);
 
     long countByCreatedBy(DogHubUser user);
