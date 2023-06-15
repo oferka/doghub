@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.data.repository.user.DogHubUserRepository;
+import org.hk.doghub.data.service.EntityService;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,7 +18,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class DogHubUserService {
+public class DogHubUserService implements EntityService<DogHubUser> {
 
     private final DogHubUserRepository repository;
 

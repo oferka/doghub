@@ -3,6 +3,7 @@ package org.hk.doghub.data.service.tip;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.hk.doghub.data.repository.tip.DogHubTipRepository;
+import org.hk.doghub.data.service.EntityService;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.data.domain.Page;
@@ -15,7 +16,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class DogHubTipService {
+public class DogHubTipService implements EntityService<DogHubTip> {
 
     private final DogHubTipRepository repository;
 

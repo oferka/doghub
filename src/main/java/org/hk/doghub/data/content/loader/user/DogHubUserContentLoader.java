@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.provider.EntityProvider;
 import org.hk.doghub.data.content.provider.EntityProviderConfiguration;
-import org.hk.doghub.data.service.user.DogHubUserService;
+import org.hk.doghub.data.service.EntityService;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +19,14 @@ public class DogHubUserContentLoader {
 
     private final EntityProviderConfiguration<DogHubUser> providerConfiguration;
 
-    private final DogHubUserService dogHubUserService;
+    private final EntityService<DogHubUser> entityService;
 
     public long load() {
         List<DogHubUser> content = entityProvider.get(providerConfiguration.getNumberOfItems());
         long savedUsersCounter = 0;
         for(DogHubUser user : content) {
             try {
-                dogHubUserService.save(user);
+                entityService.save(user);
                 savedUsersCounter++;
             }
             catch (Exception e) {
