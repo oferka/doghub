@@ -14,10 +14,10 @@ public class ContentLoader {
     private final DogHubUserLoader dogHubUserLoader;
     private final DogHubTipLoader dogHubTipLoader;
 
-    public void ensureContentLoaded() {
+    public void load() {
         long ensuredLoadedUsersCounter = dogHubUserLoader.load();
         long ensuredLoadedTipsCounter = dogHubTipLoader.load();
         long loadedEntitiesCounter = ensuredLoadedUsersCounter + ensuredLoadedTipsCounter;
-        log.info("{} entities ensured loaded", loadedEntitiesCounter);
+        log.info("{} entities loaded", loadedEntitiesCounter);
     }
 }

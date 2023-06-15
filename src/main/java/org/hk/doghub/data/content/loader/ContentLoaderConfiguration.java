@@ -9,6 +9,6 @@ public class ContentLoaderConfiguration {
 
     @Bean
     public CommandLineRunner loadContent(ContentLoader contentLoader) {
-        return args -> contentLoader.ensureContentLoaded();
+        return args -> contentLoader.load();
     }
 }
