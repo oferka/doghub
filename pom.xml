@@ -32,7 +32,7 @@
         <opencsv.version>5.7.1</opencsv.version>
         <commons-validator.version>1.7</commons-validator.version>
         <snakeyaml.version>2.0</snakeyaml.version>
-        <webdrivermanager.version>5.3.1</webdrivermanager.version>
+        <webdrivermanager.version>5.3.3</webdrivermanager.version>
         <ashot.version>1.5.4</ashot.version>
         <selenium.version>4.10.0</selenium.version>
     </properties>
