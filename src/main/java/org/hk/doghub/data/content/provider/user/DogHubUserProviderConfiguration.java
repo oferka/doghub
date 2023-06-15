@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:user-content-provider-configuration.properties")
-@ConfigurationProperties(prefix = "user.content.provider")
-public class DogHubUserContentProviderConfiguration extends EntityProviderConfiguration {
+@PropertySource("classpath:user-provider-configuration.properties")
+@ConfigurationProperties(prefix = "user.provider")
+public class DogHubUserProviderConfiguration extends EntityProviderConfiguration {
 }

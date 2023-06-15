@@ -3,7 +3,7 @@ package org.hk.doghub.data.content.loader.user;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.provider.EntityProvider;
-import org.hk.doghub.data.content.provider.user.DogHubUserContentProviderConfiguration;
+import org.hk.doghub.data.content.provider.user.DogHubUserProviderConfiguration;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class DogHubUserContentLoader {
 
     private final EntityProvider<DogHubUser> entityProvider;
 
-    private final DogHubUserContentProviderConfiguration contentProviderConfiguration;
+    private final DogHubUserProviderConfiguration contentProviderConfiguration;
 
     private final DogHubUserService dogHubUserService;
 

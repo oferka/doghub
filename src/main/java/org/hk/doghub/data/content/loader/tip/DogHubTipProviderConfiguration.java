@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:tip-content-provider-configuration.properties")
-@ConfigurationProperties(prefix = "tip.content.provider")
-public class DogHubTipContentProviderConfiguration extends EntityProviderConfiguration {
+@PropertySource("classpath:tip-provider-configuration.properties")
+@ConfigurationProperties(prefix = "tip.provider")
+public class DogHubTipProviderConfiguration extends EntityProviderConfiguration {
 }

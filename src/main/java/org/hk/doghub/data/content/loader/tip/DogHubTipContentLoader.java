@@ -16,7 +16,7 @@ public class DogHubTipContentLoader {
 
     private final EntityProvider<DogHubTip> entityProvider;
 
-    private final DogHubTipContentProviderConfiguration contentProviderConfiguration;
+    private final DogHubTipProviderConfiguration contentProviderConfiguration;
 
     private final DogHubTipService dogHubTipService;
 
