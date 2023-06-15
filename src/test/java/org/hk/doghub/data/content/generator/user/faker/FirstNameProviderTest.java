@@ -14,7 +14,7 @@ class FirstNameProviderTest {
     private FirstNameProvider firstNameProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         String firstName = firstNameProvider.get(user);
         assertNotNull(firstName);

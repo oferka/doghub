@@ -16,7 +16,7 @@ class TitleProviderTest {
     private TitleProvider titleProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         String title = titleProvider.get(user);
         log.info(title);

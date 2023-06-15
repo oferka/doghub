@@ -19,13 +19,13 @@ class UserProviderRandomMeTest {
     private UserProviderRandomMe userProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = userProvider.get();
         assertNotNull(user);
     }
 
     @RepeatedTest(10)
-    public void shouldGenerateMultiple() {
+    public void shouldGetMultiple() {
         List<User> users = userProvider.get(50);
         assertEquals(50, users.size());
     }

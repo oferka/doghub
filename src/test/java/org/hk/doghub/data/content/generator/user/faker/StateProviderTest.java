@@ -16,7 +16,7 @@ class StateProviderTest {
     private StateProvider stateProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         Address address = new Address();
         String state = stateProvider.get(address);
         log.info(state);

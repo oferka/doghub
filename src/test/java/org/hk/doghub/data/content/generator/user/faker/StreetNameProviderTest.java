@@ -16,7 +16,7 @@ class StreetNameProviderTest {
     private StreetNameProvider streetNameProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         Address address = new Address();
         String streetName = streetNameProvider.get(address);
         log.info(streetName);

@@ -7,28 +7,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 554">
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/UserGeneratorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/UserGeneratorServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/AddressProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/AddressProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/CityProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CityProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/CompanyProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CompanyProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/CountryProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CountryProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/DateOfBirthProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/DateOfBirthProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/EmailProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/EmailProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/FirstNameProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/FirstNameProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/HouseNumberProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/HouseNumberProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/LastNameProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/LastNameProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/MobileNumberProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/MobileNumberProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/PasswordProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/PasswordProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/PostcodeProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/PostcodeProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/StateProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/StateProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/StreetNameProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/StreetNameProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/ThumbnailPictureProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/ThumbnailPictureProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/TitleProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/TitleProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/faker/UserProviderFakerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/UserProviderFakerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/randomme/RandomMeClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/randomme/RandomMeClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/randomme/RandomMeResponseConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/randomme/RandomMeResponseConverterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/service/provider/randomme/UserProviderRandomMeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/randomme/UserProviderRandomMeTest.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 556">
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/AddressProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/AddressProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CityProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CityProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CompanyProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CompanyProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CountryProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/CountryProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/DateOfBirthProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/DateOfBirthProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/FirstNameProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/FirstNameProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/HouseNumberProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/HouseNumberProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/LastNameProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/LastNameProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/MobileNumberProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/MobileNumberProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/PasswordProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/PasswordProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/PostcodeProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/PostcodeProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/StateProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/StateProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/StreetNameProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/StreetNameProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/ThumbnailPictureProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/ThumbnailPictureProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/TitleProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/TitleProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/UserProviderFakerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/faker/UserProviderFakerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/randomme/UserProviderRandomMeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/user/randomme/UserProviderRandomMeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +34,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -118,14 +114,14 @@
       <recent name="org.hk.doghub.ui.components.shared" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.hk.doghub.data.content.generator.user" />
       <recent name="org.hk.doghub.data.repository.user" />
       <recent name="org.hk.doghub.automation.sound.player.clip" />
       <recent name="org.hk.doghub.data.content.generator.user.service.provider.randomme" />
       <recent name="org.hk.doghub.data.content.generator.user.service.provider.faker" />
-      <recent name="org.hk.doghub.data.content.generator.user.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserProviderTest">
+  <component name="RunManager" selected="JUnit.content in doghub">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -193,8 +189,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserProviderTest" />
         <item itemvalue="JUnit.content in doghub" />
+        <item itemvalue="JUnit.UserProviderTest" />
         <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.TitleVerifierTest" />
         <item itemvalue="JUnit.All in doghub" />
@@ -209,20 +205,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00510" summary="doghub 506">
-      <created>1686665407407</created>
-      <option name="number" value="00510" />
-      <option name="presentableId" value="LOCAL-00510" />
-      <option name="project" value="LOCAL" />
-      <updated>1686665407407</updated>
-    </task>
-    <task id="LOCAL-00511" summary="doghub 507">
-      <created>1686740463539</created>
-      <option name="number" value="00511" />
-      <option name="presentableId" value="LOCAL-00511" />
-      <option name="project" value="LOCAL" />
-      <updated>1686740463539</updated>
     </task>
     <task id="LOCAL-00512" summary="doghub 508">
       <created>1686741096273</created>
@@ -553,7 +535,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686827415301</updated>
     </task>
-    <option name="localTasksCounter" value="559" />
+    <task id="LOCAL-00559" summary="doghub 555">
+      <created>1686827832890</created>
+      <option name="number" value="00559" />
+      <option name="presentableId" value="LOCAL-00559" />
+      <option name="project" value="LOCAL" />
+      <updated>1686827832890</updated>
+    </task>
+    <task id="LOCAL-00560" summary="doghub 556">
+      <created>1686828113475</created>
+      <option name="number" value="00560" />
+      <option name="presentableId" value="LOCAL-00560" />
+      <option name="project" value="LOCAL" />
+      <updated>1686828113475</updated>
+    </task>
+    <option name="localTasksCounter" value="561" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,8 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 530" />
-    <MESSAGE value="doghub 531" />
     <MESSAGE value="doghub 532" />
     <MESSAGE value="doghub 533" />
     <MESSAGE value="doghub 534" />
@@ -594,6 +588,8 @@
     <MESSAGE value="doghub 552" />
     <MESSAGE value="doghub 553" />
     <MESSAGE value="doghub 554" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 554" />
+    <MESSAGE value="doghub 555" />
+    <MESSAGE value="doghub 556" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 556" />
   </component>
 </project>

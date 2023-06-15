@@ -16,7 +16,7 @@ class DateOfBirthProviderTest {
     private DateOfBirthProvider dateOfBirthProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         ZonedDateTime dateOfBirth = dateOfBirthProvider.get(user);
         assertNotNull(dateOfBirth);

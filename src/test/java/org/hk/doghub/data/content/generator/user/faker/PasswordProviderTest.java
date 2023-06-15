@@ -14,7 +14,7 @@ class PasswordProviderTest {
     private PasswordProvider passwordProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         String password = passwordProvider.get(user);
         assertNotNull(password);

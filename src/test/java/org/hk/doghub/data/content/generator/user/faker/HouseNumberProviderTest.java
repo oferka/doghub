@@ -14,7 +14,7 @@ class HouseNumberProviderTest {
     private HouseNumberProvider houseNumberProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         Address address = new Address();
         int houseNumber = houseNumberProvider.get(address);
         log.info(Integer.toString(houseNumber));

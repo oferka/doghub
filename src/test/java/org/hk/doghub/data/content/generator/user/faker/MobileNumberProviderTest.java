@@ -16,7 +16,7 @@ class MobileNumberProviderTest {
     private MobileNumberProvider mobileNumberProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         String mobileNumber = mobileNumberProvider.get(user);
         log.info(mobileNumber);

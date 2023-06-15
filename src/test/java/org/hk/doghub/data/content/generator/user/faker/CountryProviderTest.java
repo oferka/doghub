@@ -16,7 +16,7 @@ class CountryProviderTest {
     private CountryProvider countryProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         Address address = new Address();
         String country = countryProvider.get(address);
         log.info(country);

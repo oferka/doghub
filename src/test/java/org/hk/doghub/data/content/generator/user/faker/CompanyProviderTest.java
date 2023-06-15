@@ -16,7 +16,7 @@ class CompanyProviderTest {
     private CompanyProvider companyProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         String company = companyProvider.get(user);
         log.info(company);

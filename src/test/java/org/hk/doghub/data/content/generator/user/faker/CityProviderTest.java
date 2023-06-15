@@ -16,7 +16,7 @@ class CityProviderTest {
     private CityProvider cityProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         Address address = new Address();
         String city = cityProvider.get(address);
         log.info(city);

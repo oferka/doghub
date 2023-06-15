@@ -16,7 +16,7 @@ class PostcodeProviderTest {
     private PostcodeProvider postcodeProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         Address address = new Address();
         String postcode = postcodeProvider.get(address);
         log.info(postcode);

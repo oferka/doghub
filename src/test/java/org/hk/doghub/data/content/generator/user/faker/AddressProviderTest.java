@@ -17,7 +17,7 @@ class AddressProviderTest {
     private AddressProvider addressProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         Address address = addressProvider.get(user);
         log.info(address.toString());

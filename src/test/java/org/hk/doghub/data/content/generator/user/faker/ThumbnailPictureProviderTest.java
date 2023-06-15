@@ -14,7 +14,7 @@ class ThumbnailPictureProviderTest {
     private ThumbnailPictureProvider thumbnailPictureProvider;
 
     @RepeatedTest(10)
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = new User();
         String thumbnailPicture = thumbnailPictureProvider.get(user);
         assertNotNull(thumbnailPicture);

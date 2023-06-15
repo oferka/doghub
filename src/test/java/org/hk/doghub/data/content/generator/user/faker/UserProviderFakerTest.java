@@ -17,13 +17,13 @@ class UserProviderFakerTest {
     private UserProviderFaker userProvider;
 
     @Test
-    public void shouldGenerate() {
+    public void shouldGet() {
         User user = userProvider.get();
         assertNotNull(user);
     }
 
     @Test
-    public void shouldGenerateMultiple() {
+    public void shouldGetMultiple() {
         List<User> users = userProvider.get(10);
         assertEquals(10, users.size());
     }
