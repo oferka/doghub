@@ -1,6 +1,5 @@
-package org.hk.doghub.data.content.provider.user;
+package org.hk.doghub.data.content.loader;
 
-import org.hk.doghub.data.content.loader.ContentLoader;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
