@@ -14,13 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class AddressProviderTest {
 
     @Autowired
-    private AddressProvider addressProvider;
+    private AddressProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {
-        User user = new User();
-        Address address = addressProvider.get(user);
-        log.info(address.toString());
-        assertNotNull(address);
+        Address value = provider.get(new User());
+        log.info(value.toString());
+        assertNotNull(value);
     }
 }

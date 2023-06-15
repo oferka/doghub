@@ -105,7 +105,22 @@
       <recent name="org.hk.doghub.automation.sound.player.clip" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TipContentProviderTest">
+  <component name="RunManager" selected="JUnit.AddressProviderTest">
+    <configuration name="AddressProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.faker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user.faker" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.faker.AddressProviderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TipContentProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -131,21 +146,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.TipGeneratorServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.user.UserProviderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddressProviderTest" />
         <item itemvalue="JUnit.TipContentProviderTest" />
         <item itemvalue="JUnit.generator in doghub" />
         <item itemvalue="JUnit.TipGeneratorServiceTest" />
         <item itemvalue="JUnit.org.hk.doghub.data.content.generator in doghub" />
-        <item itemvalue="JUnit.UserProviderTest" />
       </list>
     </recent_temporary>
   </component>
