@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 570">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 571">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/dog/faker/DogProviderFakerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,14 +98,14 @@
       <recent name="org.hk.doghub.ui.components.shared" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.hk.doghub.data.content.generator.dog.faker" />
+      <recent name="org.hk.doghub.data.content.generator.dog" />
       <recent name="org.hk.doghub.data.content.generator.tip.domcop.csv" />
       <recent name="org.hk.doghub.data.content.generator.tip.domcop" />
       <recent name="org.hk.doghub.data.content.generator.tip.faker" />
-      <recent name="org.hk.doghub.data.content.generator.tip" />
-      <recent name="org.hk.doghub.data.content.generator.user" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogProviderTest">
+  <component name="RunManager" selected="JUnit.DogProviderFakerTest">
     <configuration name="CSVContentProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -136,6 +136,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DogProviderFakerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.faker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.faker" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.faker.DogProviderFakerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DogProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -146,21 +161,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.DogProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TipProviderDomCopTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.tip.domcop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.domcop" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.TipProviderDomCopTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogProviderFakerTest" />
         <item itemvalue="JUnit.DogProviderTest" />
         <item itemvalue="JUnit.content in doghub" />
         <item itemvalue="JUnit.CsvReaderTest" />
         <item itemvalue="JUnit.CSVContentProviderTest" />
-        <item itemvalue="JUnit.TipProviderDomCopTest" />
       </list>
     </recent_temporary>
   </component>
@@ -198,13 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00526" summary="doghub 522">
-      <created>1686804469133</created>
-      <option name="number" value="00526" />
-      <option name="presentableId" value="LOCAL-00526" />
-      <option name="project" value="LOCAL" />
-      <updated>1686804469133</updated>
     </task>
     <task id="LOCAL-00527" summary="doghub 523">
       <created>1686804716491</created>
@@ -542,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686835516577</updated>
     </task>
-    <option name="localTasksCounter" value="575" />
+    <task id="LOCAL-00575" summary="doghub 571">
+      <created>1686837504745</created>
+      <option name="number" value="00575" />
+      <option name="presentableId" value="LOCAL-00575" />
+      <option name="project" value="LOCAL" />
+      <updated>1686837504745</updated>
+    </task>
+    <option name="localTasksCounter" value="576" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 546" />
     <MESSAGE value="doghub 547" />
     <MESSAGE value="doghub 548" />
     <MESSAGE value="doghub 549" />
@@ -583,6 +582,7 @@
     <MESSAGE value="doghub 568" />
     <MESSAGE value="doghub 569" />
     <MESSAGE value="doghub 570" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 570" />
+    <MESSAGE value="doghub 571" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 571" />
   </component>
 </project>
