@@ -105,22 +105,7 @@
       <recent name="org.hk.doghub.data.content.generator.tip.faker" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogProviderFakerTest">
-    <configuration name="CSVContentProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.tip.domcop.csv.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv.CSVContentProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DogAgeProviderTest">
     <configuration name="CsvReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -131,6 +116,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.tip.domcop.csv.CsvReaderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogAgeProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.faker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.faker" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.faker.DogAgeProviderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogAgeProviderTest" />
         <item itemvalue="JUnit.DogProviderFakerTest" />
         <item itemvalue="JUnit.DogProviderTest" />
         <item itemvalue="JUnit.content in doghub" />
         <item itemvalue="JUnit.CsvReaderTest" />
-        <item itemvalue="JUnit.CSVContentProviderTest" />
       </list>
     </recent_temporary>
   </component>
