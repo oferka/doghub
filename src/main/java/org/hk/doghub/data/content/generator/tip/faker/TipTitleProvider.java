@@ -14,6 +14,6 @@ public class TipTitleProvider {
 
     public @NotNull @NotBlank @Size(max = TITLE_MAX_LENGTH) String get(@NotNull Tip tip) {
         Faker faker = new Faker();
-        return faker.book().title() + " - " + faker.expression("#{regexify '[a-z]{3,5}'}");
+        return new Faker().book().title() + " - " + faker.expression("#{regexify '[a-z]{3,5}'}");
     }
 }

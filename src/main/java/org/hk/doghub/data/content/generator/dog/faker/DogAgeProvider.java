@@ -13,7 +13,6 @@ import static org.hk.doghub.data.content.generator.dog.Dog.AGE_MAX_LENGTH;
 public class DogAgeProvider {
 
     public @NotNull @NotBlank @Size(max = AGE_MAX_LENGTH) String get(@NotNull Dog dog) {
-        Faker faker = new Faker();
-        return faker.dog().age();
+        return new Faker().dog().age();
     }
 }

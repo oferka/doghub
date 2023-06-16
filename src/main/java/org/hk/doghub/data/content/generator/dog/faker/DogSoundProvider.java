@@ -13,7 +13,6 @@ import static org.hk.doghub.data.content.generator.dog.Dog.SOUND_MAX_LENGTH;
 public class DogSoundProvider {
 
     public @NotNull @NotBlank @Size(max = SOUND_MAX_LENGTH) String get(@NotNull Dog dog) {
-        Faker faker = new Faker();
-        return faker.dog().sound();
+        return new Faker().dog().sound();
     }
 }

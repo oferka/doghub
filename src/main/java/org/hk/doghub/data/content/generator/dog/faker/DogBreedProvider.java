@@ -13,7 +13,6 @@ import static org.hk.doghub.data.content.generator.dog.Dog.BREED_MAX_LENGTH;
 public class DogBreedProvider {
 
     public @NotNull @NotBlank @Size(max = BREED_MAX_LENGTH) String get(@NotNull Dog dog) {
-        Faker faker = new Faker();
-        return faker.dog().breed();
+        return new Faker().dog().breed();
     }
 }

@@ -13,7 +13,6 @@ import static org.hk.doghub.data.content.generator.dog.Dog.COAT_LENGTH_MAX_LENGT
 public class DogCoatLengthProvider {
 
     public @NotNull @NotBlank @Size(max = COAT_LENGTH_MAX_LENGTH) String get(@NotNull Dog dog) {
-        Faker faker = new Faker();
-        return faker.dog().coatLength();
+        return new Faker().dog().coatLength();
     }
 }
