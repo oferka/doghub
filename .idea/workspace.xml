@@ -109,7 +109,7 @@
       <recent name="org.hk.doghub.data.content.generator.dog.faker" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubDogLoaderTest">
+  <component name="RunManager" selected="JUnit.ContentLoaderTest">
     <configuration name="ContentLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -193,8 +193,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DogHubDogLoaderTest" />
         <item itemvalue="JUnit.ContentLoaderTest" />
+        <item itemvalue="JUnit.DogHubDogLoaderTest" />
         <item itemvalue="JUnit.DogHubUserLoaderTest" />
         <item itemvalue="JUnit.DogHubTipLoaderTest (1)" />
         <item itemvalue="JUnit.DogHubTipLoaderTest" />

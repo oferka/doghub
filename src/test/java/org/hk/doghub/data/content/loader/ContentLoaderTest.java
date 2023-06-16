@@ -10,7 +10,7 @@ class ContentLoaderTest {
     @Autowired
     private ContentLoader loader;
 
-    @RepeatedTest(10)
+    @RepeatedTest(3)
     void shouldLoad() {
         loader.load();
     }

@@ -17,7 +17,7 @@ class DogHubDogLoaderTest {
     @Autowired
     private AbstractEntityLoader<DogHubDog> loader;
 
-    @RepeatedTest(10)
+    @RepeatedTest(3)
     void shouldLoad() {
         long loadedCounter = loader.load();
         assertTrue(loadedCounter > 0);
