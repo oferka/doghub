@@ -7,6 +7,7 @@ import io.micrometer.core.instrument.MeterRegistry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.service.EntityService;
+import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.boot.CommandLineRunner;
@@ -45,6 +46,11 @@ public class DogHubMetricsConfiguration {
     @Bean
     CommandLineRunner addDogHubTipEntityCountGauge(EntityService<DogHubTip> entityService) {
         return args -> Gauge.builder("doghub_tip_entity_count", entityService::count).register(registry);
+    }
+
+    @Bean
+    CommandLineRunner addDogHubDogEntityCountGauge(EntityService<DogHubDog> entityService) {
+        return args -> Gauge.builder("doghub_dog_entity_count", entityService::count).register(registry);
     }
 
     @Bean
