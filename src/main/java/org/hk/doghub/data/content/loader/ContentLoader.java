@@ -2,6 +2,7 @@ package org.hk.doghub.data.content.loader;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
@@ -17,11 +18,13 @@ public class ContentLoader {
 
     private final AbstractEntityLoader<DogHubUser> dogHubUserLoader;
     private final AbstractEntityLoader<DogHubTip> dogHubTipLoader;
+    private final AbstractEntityLoader<DogHubDog> dogHubDogLoader;
 
     public void load() {
         List<EntityLoader> entityLoaders = asList(
                 dogHubUserLoader,
-                dogHubTipLoader
+                dogHubTipLoader,
+                dogHubDogLoader
         );
         long loadedEntitiesCounter = 0;
         for(EntityLoader entityLoader : entityLoaders) {

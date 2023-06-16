@@ -7,12 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 581">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/dog/DogHubDogLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/loader/dog/DogHubDogLoaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/loader/tip/DogHubTipLoaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/loader/user/DogHubUserLoaderTest.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 582">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/repository/dog/DogHubDogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/service/dog/DogHubDogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/loader/ContentLoaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/loader/ContentLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +102,29 @@
       <recent name="org.hk.doghub.ui.components.shared" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.hk.doghub.data.content.loader" />
       <recent name="org.hk.doghub.data.content.loader.tip" />
       <recent name="org.hk.doghub.data.content.provider.dog" />
       <recent name="org.hk.doghub.data.content.generator.dog" />
       <recent name="org.hk.doghub.data.content.generator.dog.faker" />
-      <recent name="org.hk.doghub.data.content.generator.tip.domcop.csv" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.DogHubDogLoaderTest">
+    <configuration name="ContentLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.content.loader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.loader" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.loader.ContentLoaderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DogHubDogLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -170,14 +185,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="provider in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/provider" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -187,10 +194,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DogHubDogLoaderTest" />
+        <item itemvalue="JUnit.ContentLoaderTest" />
         <item itemvalue="JUnit.DogHubUserLoaderTest" />
         <item itemvalue="JUnit.DogHubTipLoaderTest (1)" />
         <item itemvalue="JUnit.DogHubTipLoaderTest" />
-        <item itemvalue="JUnit.provider in doghub" />
       </list>
     </recent_temporary>
   </component>
@@ -202,13 +209,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00537" summary="doghub 533">
-      <created>1686807388217</created>
-      <option name="number" value="00537" />
-      <option name="presentableId" value="LOCAL-00537" />
-      <option name="project" value="LOCAL" />
-      <updated>1686807388217</updated>
     </task>
     <task id="LOCAL-00538" summary="doghub 534">
       <created>1686807522773</created>
@@ -546,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686894739923</updated>
     </task>
-    <option name="localTasksCounter" value="586" />
+    <task id="LOCAL-00586" summary="doghub 582">
+      <created>1686895608561</created>
+      <option name="number" value="00586" />
+      <option name="presentableId" value="LOCAL-00586" />
+      <option name="project" value="LOCAL" />
+      <updated>1686895608561</updated>
+    </task>
+    <option name="localTasksCounter" value="587" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 557" />
     <MESSAGE value="doghub 558" />
     <MESSAGE value="doghub 559" />
     <MESSAGE value="doghub 560" />
@@ -587,6 +593,7 @@
     <MESSAGE value="doghub 579" />
     <MESSAGE value="doghub 580" />
     <MESSAGE value="doghub 581" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 581" />
+    <MESSAGE value="doghub 582" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 582" />
   </component>
 </project>
