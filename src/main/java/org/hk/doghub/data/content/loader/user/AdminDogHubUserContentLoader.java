@@ -2,7 +2,7 @@ package org.hk.doghub.data.content.loader.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hk.doghub.data.content.provider.user.AdminDogHubUserContentProvider;
+import org.hk.doghub.data.content.provider.user.AdminDogHubUserProvider;
 import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.model.user.DogHubUser;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class AdminDogHubUserContentLoader {
 
-    private final AdminDogHubUserContentProvider contentProvider;
+    private final AdminDogHubUserProvider contentProvider;
 
     private final DogHubUserService usaUserService;
 

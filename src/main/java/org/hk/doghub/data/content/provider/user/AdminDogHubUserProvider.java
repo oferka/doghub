@@ -22,7 +22,7 @@ import static org.hk.doghub.model.user.Role.USER;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class AdminDogHubUserContentProvider {
+public class AdminDogHubUserProvider {
 
     private final PasswordEncoder passwordEncoder;
 

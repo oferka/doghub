@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class DogHubUserContentProvider extends AbstractEntityProvider<User, DogHubUser> {
+public class DogHubUserProvider extends AbstractEntityProvider<User, DogHubUser> {
 
     private final GeneratorService<User> generatorService;
 

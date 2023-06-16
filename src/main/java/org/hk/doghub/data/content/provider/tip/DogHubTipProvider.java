@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class DogHubTipContentProvider extends AbstractEntityProvider<Tip, DogHubTip> {
+public class DogHubTipProvider extends AbstractEntityProvider<Tip, DogHubTip> {
 
     private final GeneratorService<Tip> generatorService;
 
