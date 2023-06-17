@@ -15,9 +15,14 @@ class DogBreedProviderTest {
     @Autowired
     private DogBreedProvider provider;
 
+    @Autowired
+    private DogThumbnailPictureProvider thumbnailPictureProvider;
+
     @RepeatedTest(10)
     public void shouldGet() {
-        String value = provider.get(new Dog());
+        Dog dog = new Dog();
+        dog.setThumbnailPicture(thumbnailPictureProvider.get(dog));
+        String value = provider.get(dog);
         log.info(value);
         assertNotNull(value);
     }
