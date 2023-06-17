@@ -38,7 +38,7 @@ public class UserProviderFaker implements UserProvider {
 
     private final PasswordProvider passwordProvider;
 
-    private final ThumbnailPictureProvider thumbnailPictureProvider;
+    private final UserThumbnailPictureProvider thumbnailPictureProvider;
 
     private final DateOfBirthProvider dateOfBirthProvider;
 

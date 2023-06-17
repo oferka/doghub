@@ -8,10 +8,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class ThumbnailPictureProviderTest {
+class UserThumbnailPictureProviderTest {
 
     @Autowired
-    private ThumbnailPictureProvider provider;
+    private UserThumbnailPictureProvider provider;
 
     @RepeatedTest(10)
     public void shouldGet() {

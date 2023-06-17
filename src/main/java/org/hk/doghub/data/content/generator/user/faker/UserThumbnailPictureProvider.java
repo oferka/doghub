@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import static java.lang.String.format;
 
 @Service
-public class ThumbnailPictureProvider {
+public class UserThumbnailPictureProvider {
 
     public @NotNull @URL String get(@NotNull User user) {
         String gender = (RandomUtils.nextBoolean())?"men":"women";
