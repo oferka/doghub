@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.data.content.generator.ProvidedObject;
 
 @Getter
@@ -23,6 +24,9 @@ public class Dog extends ProvidedObject {
 
     @NotNull @NotBlank @Size(max = NAME_MAX_LENGTH)
     private String name;
+
+    @NotNull @URL
+    private String thumbnailPicture;
 
     @NotNull @NotBlank @Size(max = BREED_MAX_LENGTH)
     private String breed;

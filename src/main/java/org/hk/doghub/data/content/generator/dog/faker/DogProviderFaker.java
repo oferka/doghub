@@ -22,6 +22,8 @@ public class DogProviderFaker implements DogProvider {
 
     private final DogNameProvider nameProvider;
 
+    private final DogThumbnailPictureProvider thumbnailPictureProvider;
+
     private final DogBreedProvider breedProvider;
 
     private final DogSoundProvider soundProvider;
@@ -43,6 +45,7 @@ public class DogProviderFaker implements DogProvider {
     public @NotNull Dog get() {
         Dog result = new Dog();
         result.setName(nameProvider.get(result));
+        result.setThumbnailPicture(thumbnailPictureProvider.get(result));
         result.setBreed(breedProvider.get(result));
         result.setSound(soundProvider.get(result));
         result.setAge(ageProvider.get(result));
