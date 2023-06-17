@@ -1,6 +1,5 @@
 package org.hk.doghub.ui.components.shared.tip;
 
-import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.ui.components.shared.EntityInfoContainerForm;
 import org.hk.doghub.ui.components.shared.EntityUpdateParameters;
@@ -10,7 +9,6 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-@Slf4j
 public class TipInfoContainerForm extends EntityInfoContainerForm<DogHubTip, TipUpdateParameters> {
 
     public static final String CLASS_NAME = "tip-info-container-form";

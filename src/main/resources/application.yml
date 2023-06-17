@@ -5,7 +5,7 @@ spring:
   application:
     name: "doghub"
   profiles:
-    active: "users-service-data-provider, tips-service-data-provider"
+    active: "users-service-data-provider, tips-service-data-provider, dogs-service-data-provider"
   data:
     rest:
       basePath: "/api/rest"
