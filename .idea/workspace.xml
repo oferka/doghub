@@ -7,14 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 596">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogApiClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogApiPaths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogApiRandomImageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogApiUriComponents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/content/generator/dog/faker/DogApiClientTest.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 597">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/randomme/RandomMeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/user/randomme/RandomMeClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogThumbnailPictureProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/generator/dog/faker/DogThumbnailPictureProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dog-provider-configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dog-provider-configuration.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +107,7 @@
       <recent name="org.hk.doghub.data.content.loader" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogApiClientTest">
+  <component name="RunManager" selected="Application.DogHubApplication">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -187,9 +183,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.DogApiClientTest" />
         <item itemvalue="JUnit.DogApiClientTest.shouldGetRandomImageFromAllDogsCollection" />
-        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.DogThumbnailPictureProviderTest" />
         <item itemvalue="JUnit.java in doghub" />
       </list>
@@ -203,13 +199,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00552" summary="doghub 548">
-      <created>1686820885270</created>
-      <option name="number" value="00552" />
-      <option name="presentableId" value="LOCAL-00552" />
-      <option name="project" value="LOCAL" />
-      <updated>1686820885270</updated>
     </task>
     <task id="LOCAL-00553" summary="doghub 549">
       <created>1686821218250</created>
@@ -547,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687011078226</updated>
     </task>
-    <option name="localTasksCounter" value="601" />
+    <task id="LOCAL-00601" summary="doghub 597">
+      <created>1687027124446</created>
+      <option name="number" value="00601" />
+      <option name="presentableId" value="LOCAL-00601" />
+      <option name="project" value="LOCAL" />
+      <updated>1687027124446</updated>
+    </task>
+    <option name="localTasksCounter" value="602" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 572" />
     <MESSAGE value="doghub 573" />
     <MESSAGE value="doghub 574" />
     <MESSAGE value="doghub 575" />
@@ -588,6 +583,7 @@
     <MESSAGE value="doghub 594" />
     <MESSAGE value="doghub 595" />
     <MESSAGE value="doghub 596" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 596" />
+    <MESSAGE value="doghub 597" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 597" />
   </component>
 </project>
