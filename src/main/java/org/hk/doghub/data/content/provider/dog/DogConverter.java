@@ -26,16 +26,11 @@ public class DogConverter extends AbstractConverter<Dog, DogHubDog> {
 
     public DogHubDog convert(@NotNull Dog dog) {
         DogHubDog dogHubDog = modelMapper.map(dog, DogHubDog.class);
-        dogHubDog.setThumbnailPicture(getThumbnailPicture(dog));
         dogHubDog.setFeedback(getFeedback());
         dogHubDog.setCreationTime(getCreationTime());
         Optional<DogHubUser> createdByOptional = getCreatedBy();
         createdByOptional.ifPresent(dogHubDog::setCreatedBy);
         return dogHubDog;
-    }
-
-    private String getThumbnailPicture(@NotNull Dog dog) {
-        return null; //todo
     }
 
     private @NotNull DogHubFeedback getFeedback() {
