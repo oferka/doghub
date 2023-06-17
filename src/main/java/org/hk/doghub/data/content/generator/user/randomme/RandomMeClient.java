@@ -1,7 +1,6 @@
 package org.hk.doghub.data.content.generator.user.randomme;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.data.content.generator.user.randomme.response.RandomMeResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -10,7 +9,6 @@ import static org.hk.doghub.data.content.generator.user.randomme.RandomMeUriComp
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class RandomMeClient {
 
     private final RestTemplate restTemplate;
