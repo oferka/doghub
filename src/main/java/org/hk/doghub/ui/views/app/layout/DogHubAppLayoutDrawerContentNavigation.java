@@ -5,6 +5,7 @@ import org.hk.doghub.ui.components.appnav.AppNav;
 import org.hk.doghub.ui.components.appnav.AppNavItem;
 import org.hk.doghub.ui.views.app.about.AboutView;
 import org.hk.doghub.ui.views.app.admin.AdminView;
+import org.hk.doghub.ui.views.app.dogs.DogsView;
 import org.hk.doghub.ui.views.app.home.AppHomeView;
 import org.hk.doghub.ui.views.app.tips.TipsView;
 import org.hk.doghub.ui.views.app.users.UsersView;
@@ -41,9 +42,13 @@ public class DogHubAppLayoutDrawerContentNavigation extends AppNav {
             }
             addItem(appHomeNavItem);
         }
+        if (accessChecker.hasAccess(DogsView.class)) {
+            AppNavItem dogsNavItem = new AppNavItem(DogsView.NAME, DogsView.class, DOG_SOLID.create());
+            addItem(dogsNavItem);
+        }
         if (accessChecker.hasAccess(TipsView.class)) {
-            AppNavItem urlsNavItem = new AppNavItem(TipsView.NAME, TipsView.class, LINK_SOLID.create());
-            addItem(urlsNavItem);
+            AppNavItem tipsNavItem = new AppNavItem(TipsView.NAME, TipsView.class, LINK_SOLID.create());
+            addItem(tipsNavItem);
         }
         if (accessChecker.hasAccess(AboutView.class)) {
             AppNavItem aboutNavItem = new AppNavItem(AboutView.NAME, AboutView.class, INFO_CIRCLE_SOLID.create());
