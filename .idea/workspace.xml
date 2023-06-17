@@ -7,65 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 586">
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-age-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-breed-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-coat-length-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-created-by-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-creation-container-form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-creation-time-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-gender-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-id-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-info-container-form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-name-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-size-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-sound-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/shared/dog-thumbnail-picture-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dog-age-cell.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dog-breed-cell.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dog-coat-length-cell.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dog-gender-cell.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dog-size-cell.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dog-sound-cell.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dogs-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dogs-list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/themes/doghub/views/app/dogs-view.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogAgeField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogBreedField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogCoatLengthField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogCreatedByField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogCreationContainerForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogCreationParameters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogCreationTimeField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogGenderField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogIdField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogInfoContainerForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogNameField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogSizeField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogSoundField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogThumbnailPictureField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogUpdateParameters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogUpdateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogAgeCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogBreedCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogCoatLengthCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogDataProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogGenderCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogServiceDataProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogSizeCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogSoundCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogsGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogsList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/DogsViewState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/create/DogCreationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/create/DogCreationView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/app/dogs/dog/DogView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/themes/doghub/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipInfoContainerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/tip/TipInfoContainerForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 587" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,13 +186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00542" summary="doghub 538">
-      <created>1686808294496</created>
-      <option name="number" value="00542" />
-      <option name="presentableId" value="LOCAL-00542" />
-      <option name="project" value="LOCAL" />
-      <updated>1686808294496</updated>
     </task>
     <task id="LOCAL-00543" summary="doghub 539">
       <created>1686809196415</created>
@@ -588,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686898234187</updated>
     </task>
-    <option name="localTasksCounter" value="591" />
+    <task id="LOCAL-00591" summary="doghub 587">
+      <created>1686981697196</created>
+      <option name="number" value="00591" />
+      <option name="presentableId" value="LOCAL-00591" />
+      <option name="project" value="LOCAL" />
+      <updated>1686981697196</updated>
+    </task>
+    <option name="localTasksCounter" value="592" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -604,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 562" />
     <MESSAGE value="doghub 563" />
     <MESSAGE value="doghub 564" />
     <MESSAGE value="doghub 565" />
@@ -629,6 +570,7 @@
     <MESSAGE value="doghub 584" />
     <MESSAGE value="doghub 585" />
     <MESSAGE value="doghub 586" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 586" />
+    <MESSAGE value="doghub 587" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 587" />
   </component>
 </project>
