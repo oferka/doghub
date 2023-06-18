@@ -107,7 +107,7 @@
       <recent name="org.hk.doghub.data.content.loader" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogBreedProviderTest">
+  <component name="RunManager" selected="Application.DogHubApplication">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -191,9 +191,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.DogBreedProviderTest" />
         <item itemvalue="JUnit.DogBreedProviderTest.shouldGet" />
-        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.DogApiClientTest" />
         <item itemvalue="JUnit.DogApiClientTest.shouldGetRandomImageFromAllDogsCollection" />
       </list>

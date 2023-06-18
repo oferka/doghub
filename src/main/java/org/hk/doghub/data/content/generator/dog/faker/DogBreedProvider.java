@@ -9,7 +9,6 @@ import org.hk.doghub.data.content.generator.dog.Dog;
 import org.springframework.stereotype.Service;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 
 import static org.hk.doghub.data.content.generator.dog.Dog.BREED_MAX_LENGTH;
 
