@@ -11,6 +11,7 @@ import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
+import static org.vaadin.lineawesome.LineAwesomeIcon.FILE_SIGNATURE_SOLID;
 
 public class NameField extends TextField {
 
@@ -23,7 +24,7 @@ public class NameField extends TextField {
         setLabel(LABEL);
         setRequiredIndicatorVisible(true);
         setMaxLength(NAME_MAX_LENGTH);
-        setPrefixComponent(USER.create());
+        setPrefixComponent(FILE_SIGNATURE_SOLID.create());
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);
     }
