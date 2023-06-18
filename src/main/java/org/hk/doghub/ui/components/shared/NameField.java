@@ -7,7 +7,6 @@ import org.hk.doghub.model.NamedEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
