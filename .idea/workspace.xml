@@ -110,7 +110,7 @@
       <recent name="org.hk.doghub.data.content.loader" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogApiClientTest.shouldGetAllBreeds">
+  <component name="RunManager" selected="JUnit.DogApiClientTest">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -128,12 +128,12 @@
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.faker.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.dogapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.faker.DogApiClientTest" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.dogapi" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.dogapi.DogApiClientTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,12 +143,12 @@
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.faker.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.dogapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.faker.DogApiClientTest" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.dogapi" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.dogapi.DogApiClientTest" />
       <option name="METHOD_NAME" value="shouldGetAllBreeds" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -159,7 +159,7 @@
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.faker.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.dogapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,7 +174,7 @@
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.faker.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.dogapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -194,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DogApiClientTest.shouldGetAllBreeds" />
+        <item itemvalue="JUnit.DogApiClientTest" />
         <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.DogApiClientTest.shouldGetAllBreeds" />
         <item itemvalue="JUnit.DogBreedProviderTest" />
         <item itemvalue="JUnit.DogBreedProviderTest.shouldGet" />
-        <item itemvalue="JUnit.DogApiClientTest" />
       </list>
     </recent_temporary>
   </component>

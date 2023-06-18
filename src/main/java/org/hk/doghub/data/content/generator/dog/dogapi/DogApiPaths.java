@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.generator.dog.faker;
+package org.hk.doghub.data.content.generator.dog.dogapi;
 
 public interface DogApiPaths {
 

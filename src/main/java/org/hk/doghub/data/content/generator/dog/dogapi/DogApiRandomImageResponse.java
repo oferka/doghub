@@ -1,4 +1,4 @@
-package org.hk.doghub.data.content.generator.dog.faker;
+package org.hk.doghub.data.content.generator.dog.dogapi;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

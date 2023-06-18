@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.URL;
 import org.hk.doghub.data.content.generator.dog.Dog;
+import org.hk.doghub.data.content.generator.dog.dogapi.DogApiClient;
+import org.hk.doghub.data.content.generator.dog.dogapi.DogApiRandomImageResponse;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

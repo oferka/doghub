@@ -1,6 +1,6 @@
-package org.hk.doghub.data.content.generator.dog.faker;
+package org.hk.doghub.data.content.generator.dog.dogapi;
 
-import static org.hk.doghub.data.content.generator.dog.faker.DogApiPaths.*;
+import static org.hk.doghub.data.content.generator.dog.dogapi.DogApiPaths.*;
 
 public interface DogApiUriComponents {
 
