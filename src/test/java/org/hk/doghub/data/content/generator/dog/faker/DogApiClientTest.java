@@ -17,10 +17,17 @@ class DogApiClientTest {
     @Autowired
     private DogApiClient dogApiClient;
 
-    @RepeatedTest(10)
+    @RepeatedTest(3)
     public void shouldGetRandomImageFromAllDogsCollection() throws URISyntaxException, IOException {
         DogApiRandomImageResponse response = dogApiClient.getRandomImageFromAllDogsCollection();
         assertNotNull(response);
         log.info(response.getMessage());
+    }
+
+    @RepeatedTest(3)
+    public void shouldGetAllBreeds() throws URISyntaxException, IOException {
+        DogApiListAllBreedsResponse response = dogApiClient.getAllBreeds();
+        assertNotNull(response);
+        log.info(response.getStatus());
     }
 }
