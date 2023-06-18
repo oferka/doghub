@@ -37,7 +37,7 @@ public class TipServiceDataProvider implements TipDataProvider {
     }
 
     @Override
-    public List<DogHubTip> findAllForUser(@NotNull AuthenticatedUser authenticatedUser) {
+    public @NotNull List<DogHubTip> findAllForUser(@NotNull AuthenticatedUser authenticatedUser) {
         List<DogHubTip> result = emptyList();
         if(authenticatedUser.hasAdminRole()) {
             result = findAll();
