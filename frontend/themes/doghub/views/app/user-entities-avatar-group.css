@@ -1,0 +1,7 @@
+.user-entities-avatar-group {
+    cursor: pointer;
+}
+
+.user-entities-avatar-group > vaadin-avatar {
+    cursor: pointer;
+}

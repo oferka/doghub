@@ -1,7 +1,2 @@
 .user-tips-avatar-group {
-    cursor: pointer;
-}
-
-.user-tips-avatar-group > vaadin-avatar {
-    cursor: pointer;
 }

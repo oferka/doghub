@@ -1,7 +1,2 @@
 .user-dogs-avatar-group {
-    cursor: pointer;
-}
-
-.user-dogs-avatar-group > vaadin-avatar {
-    cursor: pointer;
 }
