@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.views.app.users;
 
 import com.vaadin.flow.router.RouterLink;
+import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.views.app.dogs.DogsView;
 
@@ -13,7 +14,7 @@ public class UserDogsRouterLink extends RouterLink {
     public UserDogsRouterLink(DogHubUser user) {
         super(EMPTY, DogsView.class);
         addClassName(CLASS_NAME);
-        UserDogsAvatarGroup avatarGroup = new UserDogsAvatarGroup(user);
+        UserEntitiesAvatarGroup<DogHubDog> avatarGroup = new UserDogsAvatarGroup(user);
         add(avatarGroup);
     }
 }
