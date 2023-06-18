@@ -4,7 +4,8 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.ui.components.shared.DogHubComboBoxField;
 
-import static java.util.Arrays.asList;
+import java.util.List;
+
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.dog.DogHubDog.BREED_MAX_LENGTH;
 import static org.vaadin.lineawesome.LineAwesomeIcon.CERTIFICATE_SOLID;
@@ -15,8 +16,8 @@ public class DogBreedField extends DogHubComboBoxField {
 
     public static final String LABEL = "Breed";
 
-    public DogBreedField() {
-        super(LABEL, BREED_MAX_LENGTH, CERTIFICATE_SOLID.create(), asList("Irish Spaniel", "Weimaraner", "Kerryblue Terrier", "Japanese Spaniel"));
+    public DogBreedField(@NotNull List<String> breeds) {
+        super(LABEL, BREED_MAX_LENGTH, CERTIFICATE_SOLID.create(), breeds);
         addClassName(CLASS_NAME);
     }
 

@@ -9,6 +9,8 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,7 +39,7 @@ public class DogServiceDataProvider implements DogDataProvider {
     }
 
     @Override
-    public List<DogHubDog> findAllForUser(@NotNull AuthenticatedUser authenticatedUser) {
+    public @NotNull List<DogHubDog> findAllForUser(@NotNull AuthenticatedUser authenticatedUser) {
         List<DogHubDog> result = emptyList();
         if(authenticatedUser.hasAdminRole()) {
             result = findAll();
@@ -76,6 +78,11 @@ public class DogServiceDataProvider implements DogDataProvider {
             }
         }
         return result;
+    }
+
+    @Override
+    public @NotNull List<String> getAllBreeds() throws URISyntaxException, IOException {
+        return dogHubDogService.getAllBreeds();
     }
 
     @Override

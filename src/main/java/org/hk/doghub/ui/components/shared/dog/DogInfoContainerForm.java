@@ -1,14 +1,22 @@
 package org.hk.doghub.ui.components.shared.dog;
 
+import jakarta.validation.constraints.NotNull;
+import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.ui.components.shared.EntityInfoContainerForm;
 import org.hk.doghub.ui.components.shared.EntityUpdateParameters;
 import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
+import org.hk.doghub.ui.views.app.dogs.DogDataProvider;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Arrays.asList;
+
+@Slf4j
 public class DogInfoContainerForm extends EntityInfoContainerForm<DogHubDog, DogUpdateParameters> {
 
     public static final String CLASS_NAME = "dog-info-container-form";
@@ -36,7 +44,7 @@ public class DogInfoContainerForm extends EntityInfoContainerForm<DogHubDog, Dog
     protected void createFields() {
         id = new DogIdField();
         name = new DogNameField();
-        breed = new DogBreedField();
+        breed = new DogBreedField(getAllBreeds((DogDataProvider) entityDataProvider));
         sound = new DogSoundField();
         age = new DogAgeField();
         coatLength = new DogCoatLengthField();
@@ -110,5 +118,16 @@ public class DogInfoContainerForm extends EntityInfoContainerForm<DogHubDog, Dog
         violations.addAll(creationTime.validateField());
         violations.addAll(createdBy.validateTipField());
         return violations;
+    }
+
+    private List<String> getAllBreeds(@NotNull DogDataProvider dogDataProvider) {
+        List<String> result = asList("Irish Spaniel", "Weimaraner", "Kerryblue Terrier", "Japanese Spaniel");
+        try {
+            result = dogDataProvider.getAllBreeds();
+        }
+        catch (URISyntaxException | IOException e) {
+            log.error("Failed to get all breeds. Using a default list", e);
+        }
+        return result;
     }
 }

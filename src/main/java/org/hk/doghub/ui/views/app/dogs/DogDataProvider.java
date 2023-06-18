@@ -5,13 +5,17 @@ import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 public interface DogDataProvider extends EntityDataProvider<DogHubDog> {
 
-    List<DogHubDog> findAllForUser(@NotNull AuthenticatedUser authenticatedUser);
+    @NotNull List<DogHubDog> findAllForUser(@NotNull AuthenticatedUser authenticatedUser);
 
     long countForUser(@NotNull AuthenticatedUser authenticatedUser);
 
     boolean hasAccess(@NotNull AuthenticatedUser authenticatedUser, @NotNull Long urlId);
+
+    @NotNull List<String> getAllBreeds() throws URISyntaxException, IOException;
 }
