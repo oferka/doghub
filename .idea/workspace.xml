@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 602">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogSizeField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogSizeField.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 603">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogCoatLengthField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/dog/DogCoatLengthField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,13 +205,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00558" summary="doghub 554">
-      <created>1686827415301</created>
-      <option name="number" value="00558" />
-      <option name="presentableId" value="LOCAL-00558" />
-      <option name="project" value="LOCAL" />
-      <updated>1686827415301</updated>
     </task>
     <task id="LOCAL-00559" summary="doghub 555">
       <created>1686827832890</created>
@@ -549,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687063711877</updated>
     </task>
-    <option name="localTasksCounter" value="607" />
+    <task id="LOCAL-00607" summary="doghub 603">
+      <created>1687065235783</created>
+      <option name="number" value="00607" />
+      <option name="presentableId" value="LOCAL-00607" />
+      <option name="project" value="LOCAL" />
+      <updated>1687065235783</updated>
+    </task>
+    <option name="localTasksCounter" value="608" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 578" />
     <MESSAGE value="doghub 579" />
     <MESSAGE value="doghub 580" />
     <MESSAGE value="doghub 581" />
@@ -590,6 +589,7 @@
     <MESSAGE value="doghub 600" />
     <MESSAGE value="doghub 601" />
     <MESSAGE value="doghub 602" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 602" />
+    <MESSAGE value="doghub 603" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 603" />
   </component>
 </project>
