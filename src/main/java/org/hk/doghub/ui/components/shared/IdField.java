@@ -10,6 +10,7 @@ import java.util.List;
 
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
+import static org.vaadin.lineawesome.LineAwesomeIcon.ID_CARD_SOLID;
 
 public class IdField extends BigDecimalField {
 
@@ -20,6 +21,7 @@ public class IdField extends BigDecimalField {
     public IdField() {
         addClassName(CLASS_NAME);
         setLabel(LABEL);
+        setPrefixComponent(ID_CARD_SOLID.create());
         setRequiredIndicatorVisible(true);
         setReadOnly(true);
         setValueChangeMode(EAGER);
