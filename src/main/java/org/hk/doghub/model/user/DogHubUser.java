@@ -16,6 +16,7 @@ import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.HasFeedback;
 import org.hk.doghub.model.HasThumbnailPicture;
 import org.hk.doghub.model.NamedEntity;
+import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.model.tip.DogHubTip;
 
 import java.time.ZonedDateTime;
@@ -75,6 +76,9 @@ public class DogHubUser extends NamedEntity implements HasThumbnailPicture, HasF
 
     @OneToMany(mappedBy = "createdBy", fetch = FetchType.EAGER)
     private List<DogHubTip> dogHubTips;
+
+    @OneToMany(mappedBy = "createdBy", fetch = FetchType.EAGER)
+    private List<DogHubDog> dogHubDogs;
 
     @NotNull
     @Enumerated(EnumType.STRING)
