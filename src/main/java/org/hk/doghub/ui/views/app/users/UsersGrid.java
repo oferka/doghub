@@ -20,6 +20,7 @@ public class UsersGrid extends EntitiesGrid<DogHubUser, UserView> {
 
     @Override
     protected void addSpecificColumns(AuthenticatedUser authenticatedUser, Class<? extends UserView> entityClass) {
+        addColumn(new ComponentRenderer<>(UserDogsRouterLink::new)).setHeader("Dogs").setComparator(user -> user.getDogHubDogs().size());
         addColumn(new ComponentRenderer<>(UserTipsRouterLink::new)).setHeader("Tips").setComparator(user -> user.getDogHubTips().size());
     }
 
