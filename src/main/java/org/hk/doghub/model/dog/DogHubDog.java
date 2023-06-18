@@ -6,17 +6,14 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
-import org.hk.doghub.model.DogHubFeedback;
-import org.hk.doghub.model.HasFeedback;
-import org.hk.doghub.model.HasThumbnailPicture;
-import org.hk.doghub.model.NamedEntity;
+import org.hk.doghub.model.*;
 import org.hk.doghub.model.user.DogHubUser;
 
 @Entity
 @Getter
 @Setter
 @Table(uniqueConstraints = { @UniqueConstraint(name = "Unique_name_and_created_by_id", columnNames = { "name", "created_by_id" }) })
-public class DogHubDog extends NamedEntity implements HasThumbnailPicture, HasFeedback {
+public class DogHubDog extends NamedEntity implements HasThumbnailPicture, HasFeedback, HasCreatedBy {
 
     public static final int BREED_MAX_LENGTH = 64;
 
