@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.HasUrlParameter;
 import jakarta.validation.constraints.NotNull;
@@ -29,7 +28,7 @@ public abstract class EntitiesView<T extends NamedEntity & HasThumbnailPicture &
 
     protected abstract @NotNull EntitiesViewBody<T, C> getViewBody(EntityDataProvider<T> entityDataProvider, EntitiesViewState viewState, AuthenticatedUser authenticatedUser);
 
-    protected abstract @NotNull VaadinIcon getHeaderIcon();
+    protected abstract @NotNull Component getHeaderIcon();
 
     protected abstract @NotNull String getTitleText();
 

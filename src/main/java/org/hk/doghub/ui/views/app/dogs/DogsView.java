@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.views.app.dogs;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
@@ -47,8 +46,8 @@ public class DogsView extends EntitiesView<DogHubDog, DogView> {
     }
 
     @Override
-    protected @NotNull VaadinIcon getHeaderIcon() {
-        return SWORD;
+    protected @NotNull Component getHeaderIcon() {
+        return SWORD.create();
     }
 
     @Override

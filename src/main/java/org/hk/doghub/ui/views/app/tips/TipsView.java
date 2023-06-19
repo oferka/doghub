@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.views.app.tips;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
@@ -47,8 +46,8 @@ public class TipsView extends EntitiesView<DogHubTip, TipView> {
     }
 
     @Override
-    protected @NotNull VaadinIcon getHeaderIcon() {
-        return LINK;
+    protected @NotNull Component getHeaderIcon() {
+        return LINK.create();
     }
 
     @Override

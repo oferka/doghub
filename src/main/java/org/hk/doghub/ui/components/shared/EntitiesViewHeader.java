@@ -1,7 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import jakarta.validation.constraints.NotNull;
 
@@ -12,7 +11,7 @@ public class EntitiesViewHeader extends HorizontalLayout {
     public static final String CLASS_NAME = "entities-view-header";
 
     public EntitiesViewHeader(@NotNull EntitiesViewState viewState,
-                              @NotNull VaadinIcon vaadinIcon,
+                              @NotNull Component icon,
                               @NotNull String titleText,
                               long entityCount,
                               @NotNull String descriptionText,
@@ -21,7 +20,7 @@ public class EntitiesViewHeader extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setWidthFull();
         setAlignItems(CENTER);
-        EntitiesViewHeaderInfo info = new EntitiesViewHeaderInfo(vaadinIcon, titleText, entityCount, descriptionText);
+        EntitiesViewHeaderInfo info = new EntitiesViewHeaderInfo(icon, titleText, entityCount, descriptionText);
         EntitiesViewHeaderActions actions = new EntitiesViewHeaderActions(viewState, entityCreationNavigationTarget, entityName);
         add(info, actions);
     }
