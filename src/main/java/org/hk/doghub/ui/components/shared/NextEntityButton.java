@@ -4,7 +4,7 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.ARROW_RIGHT;
+import static org.vaadin.lineawesome.LineAwesomeIcon.ARROW_RIGHT_SOLID;
 
 @Slf4j
 public class NextEntityButton extends Button {
@@ -13,7 +13,7 @@ public class NextEntityButton extends Button {
 
     public NextEntityButton(String text) {
         addClassName(CLASS_NAME);
-        setIcon(ARROW_RIGHT.create());
+        setIcon(ARROW_RIGHT_SOLID.create());
         setIconAfterText(true);
         setText(text);
         addClickListener(this::nextEntityClicked);
