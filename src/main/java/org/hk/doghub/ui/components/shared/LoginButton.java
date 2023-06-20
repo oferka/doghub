@@ -18,7 +18,6 @@ public class LoginButton extends Button {
         setIcon(USER_CHECK.create());
         setText("Log in");
         addClickListener(this::loginClicked);
-        addClickShortcut(KEY_L, ALT);
     }
 
     private void loginClicked(ClickEvent<Button> event) {

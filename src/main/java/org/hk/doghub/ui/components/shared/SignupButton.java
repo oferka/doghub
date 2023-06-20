@@ -20,7 +20,6 @@ public class SignupButton extends Button {
         setIcon(SIGN_IN.create());
         setText("Sign up");
         addClickListener(this::signupClicked);
-        addClickShortcut(KEY_S, ALT);
     }
 
     private void signupClicked(ClickEvent<Button> event) {
