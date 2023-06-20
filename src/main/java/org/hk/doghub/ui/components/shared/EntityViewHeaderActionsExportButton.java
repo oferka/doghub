@@ -2,7 +2,6 @@ package org.hk.doghub.ui.components.shared;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import org.hk.doghub.model.NamedEntity;
 import org.hk.doghub.ui.views.app.EntityDataProvider;
@@ -11,6 +10,7 @@ import java.util.Optional;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_PRIMARY;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
+import static org.vaadin.lineawesome.LineAwesomeIcon.DOWNLOAD_SOLID;
 
 public class EntityViewHeaderActionsExportButton<T extends NamedEntity> extends Button {
 
@@ -22,7 +22,7 @@ public class EntityViewHeaderActionsExportButton<T extends NamedEntity> extends 
     public EntityViewHeaderActionsExportButton(EntityDataProvider<T> entityDataProvider) {
         this.entityDataProvider = entityDataProvider;
         addClassName(CLASS_NAME);
-        setIcon(VaadinIcon.DOWNLOAD.create());
+        setIcon(DOWNLOAD_SOLID.create());
         setText("Export");
         addThemeVariants(LUMO_PRIMARY);
         addClickListener(this::exportClicked);
