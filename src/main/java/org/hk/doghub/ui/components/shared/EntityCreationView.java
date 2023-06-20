@@ -1,6 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.NamedEntity;
@@ -20,7 +20,7 @@ public abstract class EntityCreationView<T extends NamedEntity, P extends Entity
         add(footer);
     }
 
-    protected abstract @NotNull VaadinIcon getHeaderIcon();
+    protected abstract @NotNull Component getHeaderIcon();
 
     protected abstract @NotNull String getHeaderTitleText();
 

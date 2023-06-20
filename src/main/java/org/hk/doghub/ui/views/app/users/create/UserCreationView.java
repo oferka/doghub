@@ -1,6 +1,6 @@
 package org.hk.doghub.ui.views.app.users.create;
 
-import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
@@ -35,8 +35,8 @@ public class UserCreationView extends EntityCreationView<DogHubUser, UserCreatio
     }
 
     @Override
-    protected @NotNull VaadinIcon getHeaderIcon() {
-        return USERS;
+    protected @NotNull Component getHeaderIcon() {
+        return USERS.create();
     }
 
     @Override

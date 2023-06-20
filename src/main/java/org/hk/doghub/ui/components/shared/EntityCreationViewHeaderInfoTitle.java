@@ -1,6 +1,6 @@
 package org.hk.doghub.ui.components.shared;
 
-import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import jakarta.validation.constraints.NotNull;
 
@@ -10,10 +10,10 @@ public class EntityCreationViewHeaderInfoTitle extends HorizontalLayout {
 
     public static final String CLASS_NAME = "entity-creation-view-header-info-title";
 
-    public EntityCreationViewHeaderInfoTitle(@NotNull VaadinIcon vaadinIcon, @NotNull String titleText) {
+    public EntityCreationViewHeaderInfoTitle(@NotNull Component icon, @NotNull String titleText) {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
-        EntityCreationViewHeaderInfoTitleIcon icon = new EntityCreationViewHeaderInfoTitleIcon(vaadinIcon);
+        icon.addClassName(CLASS_NAME + "-icon");
         EntityCreationViewHeaderInfoTitleText text = new EntityCreationViewHeaderInfoTitleText(titleText);
         add(icon, text);
         setVerticalComponentAlignment(CENTER, icon, text);

@@ -1,6 +1,6 @@
 package org.hk.doghub.ui.views.app.dogs.create;
 
-import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.RolesAllowed;
@@ -15,7 +15,7 @@ import org.hk.doghub.ui.components.shared.dog.DogCreationParameters;
 import org.hk.doghub.ui.views.app.dogs.DogsView;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.SWORD;
+import static org.vaadin.lineawesome.LineAwesomeIcon.DOG_SOLID;
 
 @PageTitle(DogCreationView.NAME)
 @Route(value = DogCreationView.ROUTE, layout = DogHubAppLayout.class)
@@ -34,8 +34,8 @@ public class DogCreationView extends EntityCreationView<DogHubDog, DogCreationPa
     }
 
     @Override
-    protected @NotNull VaadinIcon getHeaderIcon() {
-        return SWORD;
+    protected @NotNull Component getHeaderIcon() {
+        return DOG_SOLID.create();
     }
 
     @Override
