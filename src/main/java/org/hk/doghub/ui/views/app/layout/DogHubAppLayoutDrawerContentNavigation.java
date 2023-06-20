@@ -50,10 +50,6 @@ public class DogHubAppLayoutDrawerContentNavigation extends AppNav {
             AppNavItem tips = new AppNavItem(TipsView.NAME, TipsView.class, LINK_SOLID.create());
             addItem(tips);
         }
-        if (accessChecker.hasAccess(AboutView.class)) {
-            AppNavItem about = new AppNavItem(AboutView.NAME, AboutView.class, INFO_CIRCLE_SOLID.create());
-            addItem(about);
-        }
         if (accessChecker.hasAccess(AdminView.class)) {
             AppNavItem admin = new AppNavItem(AdminView.NAME, AdminView.class, TOOLS_SOLID.create());
             if (accessChecker.hasAccess(UsersView.class)) {
@@ -62,5 +58,10 @@ public class DogHubAppLayoutDrawerContentNavigation extends AppNav {
             }
             addItem(admin);
         }
+        if (accessChecker.hasAccess(AboutView.class)) {
+            AppNavItem about = new AppNavItem(AboutView.NAME, AboutView.class, INFO_CIRCLE_SOLID.create());
+            addItem(about);
+        }
+        addItem(new AppNavItem("View Code", "https://github.com/oferka/doghub", GITHUB.create()));
     }
 }
