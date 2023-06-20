@@ -8,8 +8,8 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 
 import java.util.Optional;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.SHARE;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
+import static org.vaadin.lineawesome.LineAwesomeIcon.SHARE_SOLID;
 
 public class EntityViewHeaderActionsShareButton<T extends NamedEntity> extends Button {
 
@@ -21,7 +21,7 @@ public class EntityViewHeaderActionsShareButton<T extends NamedEntity> extends B
     public EntityViewHeaderActionsShareButton(EntityDataProvider<T> entityDataProvider) {
         this.entityDataProvider = entityDataProvider;
         addClassName(CLASS_NAME);
-        setIcon(SHARE.create());
+        setIcon(SHARE_SOLID.create());
         setText("Share");
         addClickListener(this::shareClicked);
     }

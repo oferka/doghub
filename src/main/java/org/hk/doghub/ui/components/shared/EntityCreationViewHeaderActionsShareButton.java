@@ -6,8 +6,8 @@ import com.vaadin.flow.component.notification.Notification;
 
 import static com.vaadin.flow.component.Key.KEY_S;
 import static com.vaadin.flow.component.KeyModifier.ALT;
-import static com.vaadin.flow.component.icon.VaadinIcon.SHARE;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
+import static org.vaadin.lineawesome.LineAwesomeIcon.SHARE_SOLID;
 
 public class EntityCreationViewHeaderActionsShareButton extends Button {
 
@@ -15,7 +15,7 @@ public class EntityCreationViewHeaderActionsShareButton extends Button {
 
     public EntityCreationViewHeaderActionsShareButton() {
         addClassName(CLASS_NAME);
-        setIcon(SHARE.create());
+        setIcon(SHARE_SOLID.create());
         setText("Share");
         addClickListener(this::shareClicked);
         addClickShortcut(KEY_S, ALT);
