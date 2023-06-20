@@ -4,8 +4,8 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
-import static com.vaadin.flow.component.icon.VaadinIcon.TABLE;
 import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.GRID;
+import static org.vaadin.lineawesome.LineAwesomeIcon.TABLE_SOLID;
 
 public class EntitiesViewHeaderActionsTypeSelectorGridButton extends Button {
 
@@ -19,7 +19,7 @@ public class EntitiesViewHeaderActionsTypeSelectorGridButton extends Button {
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Grid View");
         setTooltipText("Grid View");
-        setIcon(TABLE.create());
+        setIcon(TABLE_SOLID.create());
         addClickListener(this::gridPresentationTypeClicked);
     }
 

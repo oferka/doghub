@@ -4,8 +4,8 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
-import static com.vaadin.flow.component.icon.VaadinIcon.BULLETS;
 import static org.hk.doghub.ui.components.shared.EntitiesViewPresentationMode.LIST;
+import static org.vaadin.lineawesome.LineAwesomeIcon.BARS_SOLID;
 
 public class EntitiesViewHeaderActionsTypeSelectorListButton extends Button {
 
@@ -19,7 +19,7 @@ public class EntitiesViewHeaderActionsTypeSelectorListButton extends Button {
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "List View");
         setTooltipText("List View");
-        setIcon(BULLETS.create());
+        setIcon(BARS_SOLID.create());
         addClickListener(this::cardPresentationTypeClicked);
     }
 
