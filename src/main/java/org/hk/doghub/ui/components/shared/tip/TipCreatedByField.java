@@ -7,9 +7,9 @@ import org.hk.doghub.model.tip.DogHubTip;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.USER;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static java.text.MessageFormat.format;
+import static org.vaadin.lineawesome.LineAwesomeIcon.USER_SOLID;
 
 public class TipCreatedByField extends TextField {
 
@@ -24,7 +24,7 @@ public class TipCreatedByField extends TextField {
         setReadOnly(true);
         setMinLength(2);
         setMaxLength(128);
-        setPrefixComponent(USER.create());
+        setPrefixComponent(USER_SOLID.create());
         setValueChangeMode(EAGER);
         addValueChangeListener(this::valueChanged);
     }

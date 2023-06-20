@@ -16,7 +16,7 @@ import org.hk.doghub.ui.components.shared.user.UserCreationService;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.users.UsersView;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
+import static org.vaadin.lineawesome.LineAwesomeIcon.USERS_COG_SOLID;
 
 @PageTitle(UserCreationView.NAME)
 @Route(value = UserCreationView.ROUTE, layout = DogHubAppLayout.class)
@@ -36,7 +36,7 @@ public class UserCreationView extends EntityCreationView<DogHubUser, UserCreatio
 
     @Override
     protected @NotNull Component getHeaderIcon() {
-        return USERS.create();
+        return USERS_COG_SOLID.create();
     }
 
     @Override
