@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.Key.KEY_L;
 import static com.vaadin.flow.component.KeyModifier.ALT;
-import static org.vaadin.lineawesome.LineAwesomeIcon.USER_CHECK_SOLID;
+import static com.vaadin.flow.component.icon.VaadinIcon.USER_CHECK;
 
 @Slf4j
 public class LoginButton extends Button {
@@ -15,7 +15,7 @@ public class LoginButton extends Button {
 
     public LoginButton() {
         addClassName(CLASS_NAME);
-        setIcon(USER_CHECK_SOLID.create());
+        setIcon(USER_CHECK.create());
         setText("Log in");
         addClickListener(this::loginClicked);
         addClickShortcut(KEY_L, ALT);
