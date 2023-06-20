@@ -8,8 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import static com.vaadin.flow.component.Key.KEY_N;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_PRIMARY;
-import static com.vaadin.flow.component.icon.VaadinIcon.PLUS_CIRCLE;
 import static java.text.MessageFormat.format;
+import static org.vaadin.lineawesome.LineAwesomeIcon.PLUS_SOLID;
 
 @Slf4j
 public class EntitiesViewHeaderActionsNewButton extends Button {
@@ -18,7 +18,7 @@ public class EntitiesViewHeaderActionsNewButton extends Button {
 
     public EntitiesViewHeaderActionsNewButton(@NotNull String entityName) {
         addClassName(CLASS_NAME);
-        setIcon(PLUS_CIRCLE.create());
+        setIcon(PLUS_SOLID.create());
         setText(format("New {0}", entityName));
         addThemeVariants(LUMO_PRIMARY);
         addClickListener(this::newClicked);
