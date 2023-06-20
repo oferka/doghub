@@ -9,10 +9,10 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import java.util.List;
 
 import static com.vaadin.flow.component.details.DetailsVariant.SMALL;
-import static com.vaadin.flow.component.icon.VaadinIcon.WARNING;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static com.vaadin.flow.component.notification.NotificationVariant.LUMO_ERROR;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+import static org.vaadin.lineawesome.LineAwesomeIcon.EXCLAMATION_SOLID;
 
 public class SaveFailedWithInvalidInputNotification extends Notification {
 
@@ -28,7 +28,7 @@ public class SaveFailedWithInvalidInputNotification extends Notification {
         Details info = new Details("Save Failed!", unorderedList);
         info.setOpened(false);
         info.addThemeVariants(SMALL);
-        HorizontalLayout layout = new HorizontalLayout(WARNING.create(), info, new CloseNotificationButton(this));
+        HorizontalLayout layout = new HorizontalLayout(EXCLAMATION_SOLID.create(), info, new CloseNotificationButton(this));
         layout.setAlignItems(CENTER);
         add(layout);
         setPosition(MIDDLE);
