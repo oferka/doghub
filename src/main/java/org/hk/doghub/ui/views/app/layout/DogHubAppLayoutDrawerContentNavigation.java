@@ -23,44 +23,44 @@ public class DogHubAppLayoutDrawerContentNavigation extends AppNav {
     public DogHubAppLayoutDrawerContentNavigation(AccessAnnotationChecker accessChecker) {
         addClassName(CLASS_NAME);
         if (accessChecker.hasAccess(AppHomeView.class)) {
-            AppNavItem appHomeNavItem = new AppNavItem(AppHomeView.NAME, AppHomeView.class, HOME_SOLID.create());
+            AppNavItem appHome = new AppNavItem(AppHomeView.NAME, AppHomeView.class, HOME_SOLID.create());
             if (accessChecker.hasAccess(ProfileView.class)) {
-                AppNavItem profileAppNavItem = new AppNavItem(ProfileView.NAME, ProfileView.class, ID_BADGE_SOLID.create());
-                appHomeNavItem.addItem(profileAppNavItem);
+                AppNavItem profile = new AppNavItem(ProfileView.NAME, ProfileView.class, ID_BADGE_SOLID.create());
+                appHome.addItem(profile);
             }
             if (accessChecker.hasAccess(SettingsView.class)) {
-                AppNavItem settingsAppNavItem = new AppNavItem(SettingsView.NAME, SettingsView.class, COG_SOLID.create());
-                appHomeNavItem.addItem(settingsAppNavItem);
+                AppNavItem settings = new AppNavItem(SettingsView.NAME, SettingsView.class, COG_SOLID.create());
+                appHome.addItem(settings);
             }
             if (accessChecker.hasAccess(NotificationsView.class)) {
-                AppNavItem notificationsAppNavItem = new AppNavItem(NotificationsView.NAME, NotificationsView.class, BELL.create());
-                appHomeNavItem.addItem(notificationsAppNavItem);
+                AppNavItem notifications = new AppNavItem(NotificationsView.NAME, NotificationsView.class, BELL.create());
+                appHome.addItem(notifications);
             }
             if (accessChecker.hasAccess(HelpView.class)) {
-                AppNavItem helpAppNavItem = new AppNavItem(HelpView.NAME, HelpView.class, QUESTION_CIRCLE.create());
-                appHomeNavItem.addItem(helpAppNavItem);
+                AppNavItem help = new AppNavItem(HelpView.NAME, HelpView.class, QUESTION_CIRCLE.create());
+                appHome.addItem(help);
             }
-            addItem(appHomeNavItem);
+            addItem(appHome);
         }
         if (accessChecker.hasAccess(DogsView.class)) {
-            AppNavItem dogsNavItem = new AppNavItem(DogsView.NAME, DogsView.class, DOG_SOLID.create());
-            addItem(dogsNavItem);
+            AppNavItem dogs = new AppNavItem(DogsView.NAME, DogsView.class, DOG_SOLID.create());
+            addItem(dogs);
         }
         if (accessChecker.hasAccess(TipsView.class)) {
-            AppNavItem tipsNavItem = new AppNavItem(TipsView.NAME, TipsView.class, LINK_SOLID.create());
-            addItem(tipsNavItem);
+            AppNavItem tips = new AppNavItem(TipsView.NAME, TipsView.class, LINK_SOLID.create());
+            addItem(tips);
         }
         if (accessChecker.hasAccess(AboutView.class)) {
-            AppNavItem aboutNavItem = new AppNavItem(AboutView.NAME, AboutView.class, INFO_CIRCLE_SOLID.create());
-            addItem(aboutNavItem);
+            AppNavItem about = new AppNavItem(AboutView.NAME, AboutView.class, INFO_CIRCLE_SOLID.create());
+            addItem(about);
         }
         if (accessChecker.hasAccess(AdminView.class)) {
-            AppNavItem adminAppNavItem = new AppNavItem(AdminView.NAME, AdminView.class, TOOLS_SOLID.create());
+            AppNavItem admin = new AppNavItem(AdminView.NAME, AdminView.class, TOOLS_SOLID.create());
             if (accessChecker.hasAccess(UsersView.class)) {
-                AppNavItem usersAppNavItem = new AppNavItem(UsersView.NAME, UsersView.class, USERS_COG_SOLID.create());
-                adminAppNavItem.addItem(usersAppNavItem);
+                AppNavItem users = new AppNavItem(UsersView.NAME, UsersView.class, USERS_COG_SOLID.create());
+                admin.addItem(users);
             }
-            addItem(adminAppNavItem);
+            addItem(admin);
         }
     }
 }
