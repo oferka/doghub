@@ -4,7 +4,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY_INLINE;
-import static com.vaadin.flow.component.icon.VaadinIcon.CLOSE_SMALL;
+import static org.vaadin.lineawesome.LineAwesomeIcon.WINDOW_CLOSE_SOLID;
 
 public class CloseNotificationButton extends Button {
 
@@ -12,7 +12,7 @@ public class CloseNotificationButton extends Button {
 
     public CloseNotificationButton(Notification notification) {
         addClassName(CLASS_NAME);
-        setIcon(CLOSE_SMALL.create());
+        setIcon(WINDOW_CLOSE_SOLID.create());
         addThemeVariants(LUMO_TERTIARY_INLINE);
         addClickListener(clickEvent -> notification.close());
     }
