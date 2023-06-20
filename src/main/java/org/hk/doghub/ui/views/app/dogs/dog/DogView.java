@@ -23,8 +23,8 @@ import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 @RolesAllowed({"USER", "ADMIN"})
 public class DogView extends EntityView<DogHubDog, DogUpdateParameters, DogView, DogsView> {
 
-    public static final String CLASS_NAME = "tip-view";
-    public static final String NAME = "Tip";
+    public static final String CLASS_NAME = "dog-view";
+    public static final String NAME = "Dog";
 
     public DogView(EntityDataProvider<DogHubDog> entityDataProvider, AuthenticatedUser authenticatedUser, EntityUpdateService<DogHubDog, DogUpdateParameters> entityUpdateService) {
         super(entityDataProvider, authenticatedUser, entityUpdateService);
