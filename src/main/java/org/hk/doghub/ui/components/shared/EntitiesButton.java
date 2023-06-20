@@ -4,7 +4,7 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.TABLE;
+import static org.vaadin.lineawesome.LineAwesomeIcon.TABLE_SOLID;
 
 @Slf4j
 public class EntitiesButton extends Button {
@@ -13,7 +13,7 @@ public class EntitiesButton extends Button {
 
     public EntitiesButton(String entitiesLabel) {
         addClassName(CLASS_NAME);
-        setIcon(TABLE.create());
+        setIcon(TABLE_SOLID.create());
         setText(entitiesLabel);
         addClickListener(this::entitiesClicked);
     }
