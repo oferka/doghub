@@ -16,8 +16,8 @@ import org.hk.doghub.ui.views.app.dogs.create.DogCreationView;
 import org.hk.doghub.ui.views.app.dogs.dog.DogView;
 import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.SWORD;
 import static org.hk.doghub.ui.views.app.dogs.DogsView.ROUTE;
+import static org.vaadin.lineawesome.LineAwesomeIcon.DOG_SOLID;
 
 @PageTitle(DogsView.NAME)
 @Route(value = ROUTE, layout = DogHubAppLayout.class)
@@ -47,7 +47,7 @@ public class DogsView extends EntitiesView<DogHubDog, DogView> {
 
     @Override
     protected @NotNull Component getHeaderIcon() {
-        return SWORD.create();
+        return DOG_SOLID.create();
     }
 
     @Override
