@@ -4,8 +4,6 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.vaadin.flow.component.Key.KEY_L;
-import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.icon.VaadinIcon.USER_CHECK;
 
 @Slf4j
