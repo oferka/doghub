@@ -10,9 +10,9 @@ import org.hk.doghub.ui.views.app.EntityDataProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.MAILBOX;
 import static com.vaadin.flow.data.value.ValueChangeMode.EAGER;
 import static org.hk.doghub.ui.components.shared.user.UserEmailField.LABEL;
+import static org.vaadin.lineawesome.LineAwesomeIcon.INBOX_SOLID;
 
 
 @Slf4j
@@ -53,7 +53,7 @@ public class UserInfoContainerForm extends EntityInfoContainerForm<DogHubUser, U
         mobileNumber = new UserMobileNumberField();
         email = new UserEmailField();
         email.setLabel(LABEL);
-        email.setPrefixComponent(MAILBOX.create());
+        email.setPrefixComponent(INBOX_SOLID.create());
         email.setValueChangeMode(EAGER);
         thumbnailPicture = new UserThumbnailPictureField();
         company = new UserCompanyField();

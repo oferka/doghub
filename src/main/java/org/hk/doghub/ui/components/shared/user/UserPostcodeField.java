@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.EditableTextField;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.user.DogHubAddress.POSTCODE_MAX_LENGTH;
+import static org.vaadin.lineawesome.LineAwesomeIcon.MAP_MARKER_SOLID;
 
 public class UserPostcodeField extends EditableTextField {
 
@@ -15,7 +15,7 @@ public class UserPostcodeField extends EditableTextField {
     public static final String LABEL = "Postcode";
 
     public UserPostcodeField() {
-        super(LABEL, false, POSTCODE_MAX_LENGTH, MAP_MARKER.create(), null);
+        super(LABEL, false, POSTCODE_MAX_LENGTH, MAP_MARKER_SOLID.create(), null);
         addClassName(CLASS_NAME);
     }
 

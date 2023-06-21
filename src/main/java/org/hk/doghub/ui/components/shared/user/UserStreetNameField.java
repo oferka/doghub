@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.EditableTextField;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.user.DogHubAddress.STREET_NAME_MAX_LENGTH;
+import static org.vaadin.lineawesome.LineAwesomeIcon.ROAD_SOLID;
 
 public class UserStreetNameField extends EditableTextField {
 
@@ -15,7 +15,7 @@ public class UserStreetNameField extends EditableTextField {
     public static final String LABEL = "Street Name";
 
     public UserStreetNameField() {
-        super(LABEL, false, STREET_NAME_MAX_LENGTH, MAP_MARKER.create(), null);
+        super(LABEL, false, STREET_NAME_MAX_LENGTH, ROAD_SOLID.create(), null);
         addClassName(CLASS_NAME);
     }
 

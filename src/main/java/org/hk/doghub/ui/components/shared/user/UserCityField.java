@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.EditableTextField;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.MAP_MARKER;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.user.DogHubAddress.CITY_MAX_LENGTH;
+import static org.vaadin.lineawesome.LineAwesomeIcon.CITY_SOLID;
 
 public class UserCityField extends EditableTextField {
 
@@ -15,7 +15,7 @@ public class UserCityField extends EditableTextField {
     public static final String LABEL = "City";
 
     public UserCityField() {
-        super(LABEL, false, CITY_MAX_LENGTH, MAP_MARKER.create(), null);
+        super(LABEL, false, CITY_MAX_LENGTH, CITY_SOLID.create(), null);
         addClassName(CLASS_NAME);
     }
 
