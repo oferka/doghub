@@ -16,8 +16,8 @@ import org.hk.doghub.ui.views.app.layout.DogHubAppLayout;
 import org.hk.doghub.ui.views.app.tips.create.TipCreationView;
 import org.hk.doghub.ui.views.app.tips.tip.TipView;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.LINK;
 import static org.hk.doghub.ui.views.app.tips.TipsView.ROUTE;
+import static org.vaadin.lineawesome.LineAwesomeIcon.LINK_SOLID;
 
 @PageTitle(TipsView.NAME)
 @Route(value = ROUTE, layout = DogHubAppLayout.class)
@@ -47,7 +47,7 @@ public class TipsView extends EntitiesView<DogHubTip, TipView> {
 
     @Override
     protected @NotNull Component getHeaderIcon() {
-        return LINK.create();
+        return LINK_SOLID.create();
     }
 
     @Override
