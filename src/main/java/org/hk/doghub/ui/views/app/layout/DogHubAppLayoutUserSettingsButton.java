@@ -2,11 +2,10 @@ package org.hk.doghub.ui.views.app.layout;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.icon.Icon;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
-import static com.vaadin.flow.component.icon.VaadinIcon.COG_O;
+import static org.vaadin.lineawesome.LineAwesomeIcon.COG_SOLID;
 
 @Slf4j
 public class DogHubAppLayoutUserSettingsButton extends Button {
@@ -18,8 +17,7 @@ public class DogHubAppLayoutUserSettingsButton extends Button {
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Settings");
         setTooltipText("Settings");
-        Icon settingsIcon = COG_O.create();
-        setIcon(settingsIcon);
+        setIcon(COG_SOLID.create());
         addClickListener(this::settingsClicked);
     }
 

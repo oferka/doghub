@@ -2,11 +2,10 @@ package org.hk.doghub.ui.views.app.layout;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.icon.Icon;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
-import static com.vaadin.flow.component.icon.VaadinIcon.USER_CARD;
+import static org.vaadin.lineawesome.LineAwesomeIcon.ID_CARD_SOLID;
 
 @Slf4j
 public class DogHubAppLayoutUserProfileButton extends Button {
@@ -18,8 +17,7 @@ public class DogHubAppLayoutUserProfileButton extends Button {
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Profile");
         setTooltipText("Profile");
-        Icon profileIcon = USER_CARD.create();
-        setIcon(profileIcon);
+        setIcon(ID_CARD_SOLID.create());
         addClickListener(this::profileClicked);
     }
 
