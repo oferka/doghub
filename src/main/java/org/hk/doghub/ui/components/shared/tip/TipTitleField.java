@@ -4,8 +4,8 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.ui.components.shared.EditableTextField;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.DIAMOND;
 import static org.hk.doghub.model.tip.DogHubTip.TITLE_MAX_LENGTH;
+import static org.vaadin.lineawesome.LineAwesomeIcon.HEADING_SOLID;
 
 public class TipTitleField extends EditableTextField {
 
@@ -14,7 +14,7 @@ public class TipTitleField extends EditableTextField {
     public static final String LABEL = "Title";
 
     public TipTitleField() {
-        super(LABEL, true, TITLE_MAX_LENGTH, DIAMOND.create(), null);
+        super(LABEL, true, TITLE_MAX_LENGTH, HEADING_SOLID.create(), null);
         addClassName(CLASS_NAME);
     }
 

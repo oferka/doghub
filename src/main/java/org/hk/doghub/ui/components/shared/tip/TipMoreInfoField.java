@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.ui.components.shared.EditableTextField;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.INFO_CIRCLE;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.tip.DogHubTip.MORE_INFO_MAX_LENGTH;
+import static org.vaadin.lineawesome.LineAwesomeIcon.INFO_CIRCLE_SOLID;
 
 public class TipMoreInfoField extends EditableTextField {
 
@@ -15,7 +15,7 @@ public class TipMoreInfoField extends EditableTextField {
     public static final String LABEL = "More Information URL";
 
     public TipMoreInfoField() {
-        super(LABEL, false, MORE_INFO_MAX_LENGTH, INFO_CIRCLE.create(), null);
+        super(LABEL, false, MORE_INFO_MAX_LENGTH, INFO_CIRCLE_SOLID.create(), null);
         addClassName(CLASS_NAME);
     }
 
