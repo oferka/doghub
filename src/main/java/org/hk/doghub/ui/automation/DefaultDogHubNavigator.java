@@ -9,6 +9,7 @@ import org.hk.doghub.ui.views.site.beauty.BeautyView;
 import org.hk.doghub.ui.views.site.health.HealthView;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
 import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
+import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.playdate.PlaydateView;
 import org.hk.doghub.ui.views.site.safety.SafetyView;
 import org.hk.doghub.ui.views.site.social.SocialView;
@@ -79,6 +80,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     @Override
     public void navigateToHealthView(@NotNull WebDriver webDriver) {
         navigateTo(webDriver, HealthView.NAME, destinationProvider.getHealthView());
+    }
+
+    @Override
+    public void navigateToLoginView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, LoginView.NAME, destinationProvider.getLoginView());
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {
