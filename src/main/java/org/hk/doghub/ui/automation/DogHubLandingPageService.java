@@ -10,12 +10,16 @@ import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.ui.components.shared.LoginButton;
 import org.hk.doghub.ui.components.shared.SignupButton;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
+import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTab;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTitleRouterLinkImage;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -108,12 +112,12 @@ public class DogHubLandingPageService {
 //        log.info("Click test cases completed");
 //    }
 //
-//    public List<WebElement> getNavigationBarLinks(@NotNull WebDriver webDriver) {
-//        log.info("Get navigation bar elements started");
-//        List<WebElement> navigationLinks = elementsRetriever.getByPresence(webDriver, landingPageElementLocatorProvider.getNavigationBarLinks());
-//        log.info("Get navigation bar elements completed, Found {} links", navigationLinks.size());
-//        return navigationLinks;
-//    }
+    public List<WebElement> getTabs(@NotNull WebDriver webDriver) {
+        log.info("Get navigation bar elements started");
+        List<WebElement> navigationLinks = elementsRetriever.getByPresence(webDriver, By.className(DogHubSiteLayoutTab.CLASS_NAME));
+        log.info("Get navigation bar elements completed, Found {} links", navigationLinks.size());
+        return navigationLinks;
+    }
 //
 //    public void browseNavigationBarLinks(@NotNull WebDriver webDriver) {
 //        log.info("Browse navigation bar links started");

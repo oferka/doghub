@@ -1,7 +1,12 @@
 package org.hk.doghub.ui.e2e;
 
+import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.openqa.selenium.WebElement;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
 
@@ -11,8 +16,8 @@ public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
 //    @Autowired
 //    private UserGeneratorService userGeneratorService;
 //
-//    @Autowired
-//    private ElementHighlighter elementHighlighter;
+    @Autowired
+    private ElementHighlighter elementHighlighter;
 
     @ParameterizedTest
     @EnumSource(Setup.class)
@@ -94,15 +99,15 @@ public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
 //        landingPageService.clickTestCases(webDriver);
 //    }
 //
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldGetNavigationLinks(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        List<WebElement> navigationElements = landingPageService.getNavigationBarLinks(webDriver);
-//        for(WebElement navigationElement : navigationElements) {
-//            elementHighlighter.eventHighlight(webDriver, navigationElement);
-//        }
-//    }
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetTabs(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        List<WebElement> navigationElements = landingPageService.getTabs(webDriver);
+        for(WebElement navigationElement : navigationElements) {
+            elementHighlighter.eventHighlight(webDriver, navigationElement);
+        }
+    }
 //
 //    @ParameterizedTest
 //    @EnumSource(Setup.class)
