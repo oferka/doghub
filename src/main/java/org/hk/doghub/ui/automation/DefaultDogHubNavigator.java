@@ -33,36 +33,6 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
         navigateTo(webDriver, AdoptionView.NAME, destinationProvider.getAdoptionView());
     }
 
-//    @Override
-//    public void navigateToSignupLoginPage(@NotNull WebDriver webDriver) {
-//        navigateTo(webDriver, "login/signup", destinationProvider.getSignupLoginPage());
-//    }
-//
-//    @Override
-//    public void navigateToContactUsPage(@NotNull WebDriver webDriver) {
-//        navigateTo(webDriver, "contact_us", destinationProvider.getContactUsPage());
-//    }
-//
-//    @Override
-//    public void navigateToTestCasesPage(@NotNull WebDriver webDriver) {
-//        navigateTo(webDriver, "test_cases", destinationProvider.getTestCasesPage());
-//    }
-//
-//    @Override
-//    public void navigateToProductsPage(@NotNull WebDriver webDriver) {
-//        navigateTo(webDriver, "products", destinationProvider.getProductsPage());
-//    }
-//
-//    @Override
-//    public void navigateToCartPage(@NotNull WebDriver webDriver) {
-//        navigateTo(webDriver, "cart", destinationProvider.getCartPage());
-//    }
-//
-//    @Override
-//    public void navigateToApiTestingPage(@NotNull WebDriver webDriver) {
-//        navigateTo(webDriver, "api_testing", destinationProvider.getApiTestingPage());
-//    }
-
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {
         log.info("Navigate to '{}' started", pageName);
         String currentUrl = webDriver.getCurrentUrl();
