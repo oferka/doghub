@@ -8,6 +8,8 @@ import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
+import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTitleRouterLinkImage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Slf4j
 public class DogHubLandingPageService {
-
-    private final DogHubLandingPageElementLocatorProvider dogHubLandingPageElementLocatorProvider;
-
-//    private final SignupLoginElementLocatorProvider signupLoginElementLocatorProvider;
 
     private final ClickExecutor clickExecutor;
 
@@ -37,7 +35,7 @@ public class DogHubLandingPageService {
 
     public void clickLogo(@NotNull WebDriver webDriver) {
         log.info("Click logo started");
-        clickExecutor.click(webDriver, dogHubLandingPageElementLocatorProvider.getLogo());
+        clickExecutor.click(webDriver, By.className(DogHubSiteLayoutTitleRouterLinkImage.CLASS_NAME));
         titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
         log.info("Click logo completed");
     }
