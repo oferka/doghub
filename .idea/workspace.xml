@@ -7,22 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 647">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubDestinationProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubNavigator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubUriComponentsProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubDestinationProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubLandingPageElementLocatorProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubLandingPageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubNavigator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubTestApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubUriComponentsProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubUriComponentsProviderConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dog-hub-uri-components.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/BaseLandingPageTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/DogHubLandingPageServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/Setup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 648">
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/BaseLandingPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/BaseLandingPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +108,7 @@
       <recent name="org.hk.doghub.data.content.loader" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in doghub">
+  <component name="RunManager" selected="JUnit.DogHubLandingPageServiceTest.shouldNavigateToLandingPage">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -196,8 +182,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in doghub" />
         <item itemvalue="JUnit.DogHubLandingPageServiceTest.shouldNavigateToLandingPage" />
+        <item itemvalue="JUnit.java in doghub" />
         <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="Application.DogHubTestApplication" />
         <item itemvalue="JUnit.DogApiClientTest" />
@@ -212,13 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00603" summary="doghub 599">
-      <created>1687028857440</created>
-      <option name="number" value="00603" />
-      <option name="presentableId" value="LOCAL-00603" />
-      <option name="project" value="LOCAL" />
-      <updated>1687028857440</updated>
     </task>
     <task id="LOCAL-00604" summary="doghub 600">
       <created>1687060174082</created>
@@ -556,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687408175998</updated>
     </task>
-    <option name="localTasksCounter" value="652" />
+    <task id="LOCAL-00652" summary="doghub 648">
+      <created>1687419059880</created>
+      <option name="number" value="00652" />
+      <option name="presentableId" value="LOCAL-00652" />
+      <option name="project" value="LOCAL" />
+      <updated>1687419059881</updated>
+    </task>
+    <option name="localTasksCounter" value="653" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 623" />
     <MESSAGE value="doghub 624" />
     <MESSAGE value="doghub 625" />
     <MESSAGE value="doghub 626" />
@@ -597,7 +582,8 @@
     <MESSAGE value="doghub 645" />
     <MESSAGE value="doghub 646" />
     <MESSAGE value="doghub 647" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 647" />
+    <MESSAGE value="doghub 648" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 648" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
