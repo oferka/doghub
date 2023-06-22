@@ -29,36 +29,6 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
         return getPageURI(AdoptionView.ROUTE, AdoptionView.NAME);
     }
 
-//    @Override
-//    public URI getSignupLoginPage() {
-//        return getPageURI(SignupLoginPage.ROUTE, SignupLoginPage.TITLE);
-//    }
-//
-//    @Override
-//    public URI getContactUsPage() {
-//        return getPageURI(ContactUsPage.ROUTE, ContactUsPage.TITLE);
-//    }
-//
-//    @Override
-//    public URI getTestCasesPage() {
-//        return getPageURI(TestCasesPage.ROUTE, TestCasesPage.TITLE);
-//    }
-//
-//    @Override
-//    public URI getProductsPage() {
-//        return getPageURI(ProductsPage.ROUTE, ProductsPage.TITLE);
-//    }
-//
-//    @Override
-//    public URI getCartPage() {
-//        return getPageURI(CartPage.ROUTE, CartPage.TITLE);
-//    }
-//
-//    @Override
-//    public URI getApiTestingPage() {
-//        return getPageURI(ApiTestingPage.ROUTE, ApiTestingPage.TITLE);
-//    }
-
     private URI getPageURI(String pageRoute, String pageTitle) {
         log.info("Get URI for '{}' page started", pageTitle);
         UriComponents uriComponents = dogHubUriComponentsProvider.get(pageRoute);

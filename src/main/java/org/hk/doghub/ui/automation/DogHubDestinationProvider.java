@@ -9,16 +9,4 @@ public interface DogHubDestinationProvider {
     URI getSiteHomeView();
 
     URI getAdoptionView();
-
-//    URI getSignupLoginPage();
-//
-//    URI getContactUsPage();
-//
-//    URI getTestCasesPage();
-//
-//    URI getProductsPage();
-//
-//    URI getCartPage();
-//
-//    URI getApiTestingPage();
 }
