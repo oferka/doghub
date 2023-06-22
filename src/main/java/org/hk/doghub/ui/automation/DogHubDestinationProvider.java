@@ -27,4 +27,6 @@ public interface DogHubDestinationProvider {
     URI getHealthView();
 
     URI getLoginView();
+
+    URI getSignupView();
 }

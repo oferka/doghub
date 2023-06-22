@@ -10,6 +10,7 @@ import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.playdate.PlaydateView;
 import org.hk.doghub.ui.views.site.safety.SafetyView;
+import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.hk.doghub.ui.views.site.social.SocialView;
 import org.hk.doghub.ui.views.site.store.StoreView;
 import org.hk.doghub.ui.views.site.training.TrainingView;
@@ -79,6 +80,11 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
     @Override
     public URI getLoginView() {
         return getPageURI(LoginView.ROUTE, LoginView.NAME);
+    }
+
+    @Override
+    public URI getSignupView() {
+        return getPageURI(SignupView.ROUTE, SignupView.NAME);
     }
 
     private URI getPageURI(String pageRoute, String pageTitle) {

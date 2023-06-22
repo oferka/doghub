@@ -12,6 +12,7 @@ import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.playdate.PlaydateView;
 import org.hk.doghub.ui.views.site.safety.SafetyView;
+import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.hk.doghub.ui.views.site.social.SocialView;
 import org.hk.doghub.ui.views.site.store.StoreView;
 import org.hk.doghub.ui.views.site.training.TrainingView;
@@ -85,6 +86,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     @Override
     public void navigateToLoginView(@NotNull WebDriver webDriver) {
         navigateTo(webDriver, LoginView.NAME, destinationProvider.getLoginView());
+    }
+
+    @Override
+    public void navigateToSignupView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, SignupView.NAME, destinationProvider.getSignupView());
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {
