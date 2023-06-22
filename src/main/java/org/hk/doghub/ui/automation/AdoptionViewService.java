@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
-import org.hk.doghub.ui.views.site.home.SiteHomeView;
+import org.hk.doghub.ui.views.site.adoption.AdoptionView;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTab;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ import static java.lang.String.format;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class SiteHomeViewService {
+public class AdoptionViewService {
 
     private final ClickExecutor clickExecutor;
 
@@ -26,14 +26,14 @@ public class SiteHomeViewService {
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
-        clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, SiteHomeView.NAME)));
-        titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
+        clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, AdoptionView.NAME)));
+        titleVerifier.verifyEquals(webDriver, AdoptionView.NAME);
         log.info("Navigate from home page completed");
     }
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
-        navigator.navigateToSiteHomeView(webDriver);
+        navigator.navigateToAdoptionView(webDriver);
         log.info("Navigate directly completed");
     }
 }

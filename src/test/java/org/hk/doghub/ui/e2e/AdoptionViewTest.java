@@ -1,14 +1,14 @@
 package org.hk.doghub.ui.e2e;
 
-import org.hk.doghub.ui.automation.SiteHomeViewService;
+import org.hk.doghub.ui.automation.AdoptionViewService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class SiteHomeViewTest extends DogHubUITest {
+public class AdoptionViewTest extends DogHubUITest {
 
     @Autowired
-    private SiteHomeViewService viewService;
+    private AdoptionViewService viewService;
 
     @ParameterizedTest
     @EnumSource(Setup.class)

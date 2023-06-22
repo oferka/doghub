@@ -4,6 +4,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.ui.views.site.adoption.AdoptionView;
+import org.hk.doghub.ui.views.site.home.SiteHomeView;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +24,13 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     }
 
     @Override
-    public void navigateToSiteHomePage(@NotNull WebDriver webDriver) {
-        navigateTo(webDriver, "home", destinationProvider.getSiteHomePage());
+    public void navigateToSiteHomeView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, SiteHomeView.NAME, destinationProvider.getSiteHomeView());
+    }
+
+    @Override
+    public void navigateToAdoptionView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, AdoptionView.NAME, destinationProvider.getAdoptionView());
     }
 
 //    @Override
