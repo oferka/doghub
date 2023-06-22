@@ -24,15 +24,15 @@ public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
     @EnumSource(Setup.class)
     public void shouldClickLogo(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
-        dogHubLandingPageService.clickLogo(webDriver);
+        landingPageService.clickLogo(webDriver);
     }
 
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldClickHome(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        landingPageService.clickHome(webDriver);
-//    }
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickHome(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        landingPageService.clickHome(webDriver);
+    }
 //
 //    @ParameterizedTest
 //    @EnumSource(Setup.class)

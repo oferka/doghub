@@ -40,13 +40,13 @@ public class DogHubLandingPageService {
         log.info("Click logo completed");
     }
 
-//    public void clickHome(@NotNull WebDriver webDriver) {
-//        log.info("Click home started");
-//        clickExecutor.click(webDriver, landingPageElementLocatorProvider.getHomeLink());
-//        titleVerifier.verifyEquals(webDriver, LandingPage.TITLE);
-//        log.info("Click home completed");
-//    }
-//
+    public void clickHome(@NotNull WebDriver webDriver) {
+        log.info("Click home started");
+        clickExecutor.click(webDriver, By.className(DogHubSiteLayoutTitleRouterLinkImage.CLASS_NAME));
+        titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
+        log.info("Click home completed");
+    }
+
 //    public void clickSignupLogin(@NotNull WebDriver webDriver) {
 //        log.info("Click signup/login started");
 //        clickExecutor.click(webDriver, landingPageElementLocatorProvider.getSignupLoginLink());

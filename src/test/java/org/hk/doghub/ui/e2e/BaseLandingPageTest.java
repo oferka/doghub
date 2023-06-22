@@ -19,13 +19,13 @@ public abstract class BaseLandingPageTest {
     private WebDriverProvider webDriverProvider;
 
     @Autowired
-    protected DogHubLandingPageService dogHubLandingPageService;
+    protected DogHubLandingPageService landingPageService;
 
     protected WebDriver webDriver;
 
     protected void initiateWebDriverAndNavigateToLandingPage(Setup setup) {
         webDriver = webDriverProvider.get(browserProvider.get(setup.getBrowserConfiguration()));
-        dogHubLandingPageService.navigate(webDriver);
+        landingPageService.navigate(webDriver);
     }
 
     @AfterEach
