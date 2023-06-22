@@ -12,4 +12,18 @@ public interface DogHubNavigator {
     void navigateToAdoptionView(@NotNull WebDriver webDriver);
 
     void navigateToTrainingView(@NotNull WebDriver webDriver);
+
+    void navigateToKnowledgeView(@NotNull WebDriver webDriver);
+
+    void navigateToSafetyView(@NotNull WebDriver webDriver);
+
+    void navigateToSocialView(@NotNull WebDriver webDriver);
+
+    void navigateToStoreView(@NotNull WebDriver webDriver);
+
+    void navigateToPlaydateView(@NotNull WebDriver webDriver);
+
+    void navigateToBeautyView(@NotNull WebDriver webDriver);
+
+    void navigateToHealthView(@NotNull WebDriver webDriver);
 }

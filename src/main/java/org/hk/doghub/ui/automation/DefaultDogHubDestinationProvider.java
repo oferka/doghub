@@ -3,7 +3,14 @@ package org.hk.doghub.ui.automation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.ui.views.site.adoption.AdoptionView;
+import org.hk.doghub.ui.views.site.beauty.BeautyView;
+import org.hk.doghub.ui.views.site.health.HealthView;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
+import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
+import org.hk.doghub.ui.views.site.playdate.PlaydateView;
+import org.hk.doghub.ui.views.site.safety.SafetyView;
+import org.hk.doghub.ui.views.site.social.SocialView;
+import org.hk.doghub.ui.views.site.store.StoreView;
 import org.hk.doghub.ui.views.site.training.TrainingView;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponents;
@@ -32,6 +39,40 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
 
     public URI getTrainingView() {
         return getPageURI(TrainingView.ROUTE, TrainingView.NAME);
+    }
+
+    public URI getKnowledgeView() {
+        return getPageURI(KnowledgeView.ROUTE, KnowledgeView.NAME);
+    }
+
+    @Override
+    public URI getSafetyView() {
+        return getPageURI(SafetyView.ROUTE, SafetyView.NAME);
+    }
+
+    @Override
+    public URI getSocialView() {
+        return getPageURI(SocialView.ROUTE, SocialView.NAME);
+    }
+
+    @Override
+    public URI getStoreView() {
+        return getPageURI(StoreView.ROUTE, StoreView.NAME);
+    }
+
+    @Override
+    public URI getPlaydateView() {
+        return getPageURI(PlaydateView.ROUTE, PlaydateView.NAME);
+    }
+
+    @Override
+    public URI getBeautyView() {
+        return getPageURI(BeautyView.ROUTE, BeautyView.NAME);
+    }
+
+    @Override
+    public URI getHealthView() {
+        return getPageURI(HealthView.ROUTE, HealthView.NAME);
     }
 
     private URI getPageURI(String pageRoute, String pageTitle) {

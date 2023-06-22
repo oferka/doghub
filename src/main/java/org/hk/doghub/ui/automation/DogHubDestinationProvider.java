@@ -11,4 +11,18 @@ public interface DogHubDestinationProvider {
     URI getAdoptionView();
 
     URI getTrainingView();
+
+    URI getKnowledgeView();
+
+    URI getSafetyView();
+
+    URI getSocialView();
+
+    URI getStoreView();
+
+    URI getPlaydateView();
+
+    URI getBeautyView();
+
+    URI getHealthView();
 }
