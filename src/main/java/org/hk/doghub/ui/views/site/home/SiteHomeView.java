@@ -19,7 +19,7 @@ import static org.hk.doghub.ui.views.site.home.SiteHomeView.ROUTE;
 public class SiteHomeView extends VerticalLayout {
 
     public static final String ROUTE = "site-home";
-    private static final String ID_PREFIX = "site-home";
+    public static final String ID_PREFIX = "site-home";
     private static final String ID_SUFFIX = "-view";
     public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Site Home";

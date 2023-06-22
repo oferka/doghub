@@ -20,6 +20,10 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
         return getPageURI(SiteHomeView.ROUTE, SiteHomeView.NAME);
     }
 
+    public URI getSiteHomePage() {
+        return getPageURI(SiteHomeView.ROUTE, SiteHomeView.NAME);
+    }
+
 //    @Override
 //    public URI getSignupLoginPage() {
 //        return getPageURI(SignupLoginPage.ROUTE, SignupLoginPage.TITLE);

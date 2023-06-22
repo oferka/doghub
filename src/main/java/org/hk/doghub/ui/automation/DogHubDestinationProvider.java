@@ -6,6 +6,8 @@ public interface DogHubDestinationProvider {
 
     URI getLandingPage();
 
+    URI getSiteHomePage();
+
 //    URI getSignupLoginPage();
 //
 //    URI getContactUsPage();

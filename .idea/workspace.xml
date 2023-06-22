@@ -7,7 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 655" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 656">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/SiteHomeViewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubDestinationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubDestinationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubDestinationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubDestinationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/home/SiteHomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/home/SiteHomeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/SiteHomeViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/SiteHomeViewTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +115,7 @@
       <recent name="org.hk.doghub.data.content.loader" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.e2e in doghub">
+  <component name="RunManager" selected="JUnit.SiteHomeViewTest.shouldNavigateFromHomePage">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -136,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubLandingPageServiceTest.shouldClickSignup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SiteHomeViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -145,14 +154,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.DogHubLandingPageServiceTest" />
-      <option name="METHOD_NAME" value="shouldClickSignup(org.hk.doghub.ui.e2e.Setup)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SiteHomeViewTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubLandingPageServiceTest.shouldGetTabs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SiteHomeViewTest.shouldNavigateFromHomePage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -161,8 +169,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.DogHubLandingPageServiceTest" />
-      <option name="METHOD_NAME" value="shouldGetTabs(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SiteHomeViewTest" />
+      <option name="METHOD_NAME" value="shouldNavigateFromHomePage(org.hk.doghub.ui.e2e.Setup)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SiteHomeViewTest.shouldNavigateFromHomePage" />
+        <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.SiteHomeViewTest" />
         <item itemvalue="JUnit.e2e in doghub" />
         <item itemvalue="JUnit.DogHubLandingPageServiceTest.shouldBrowseTabs" />
-        <item itemvalue="JUnit.DogHubLandingPageServiceTest.shouldGetTabs" />
-        <item itemvalue="Application.DogHubApplication" />
-        <item itemvalue="JUnit.DogHubLandingPageServiceTest.shouldClickSignup" />
       </list>
     </recent_temporary>
   </component>
@@ -200,13 +208,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00611" summary="doghub 607">
-      <created>1687066121914</created>
-      <option name="number" value="00611" />
-      <option name="presentableId" value="LOCAL-00611" />
-      <option name="project" value="LOCAL" />
-      <updated>1687066121914</updated>
     </task>
     <task id="LOCAL-00612" summary="doghub 608">
       <created>1687066647930</created>
@@ -544,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687422379100</updated>
     </task>
-    <option name="localTasksCounter" value="660" />
+    <task id="LOCAL-00660" summary="doghub 656">
+      <created>1687424098886</created>
+      <option name="number" value="00660" />
+      <option name="presentableId" value="LOCAL-00660" />
+      <option name="project" value="LOCAL" />
+      <updated>1687424098886</updated>
+    </task>
+    <option name="localTasksCounter" value="661" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -560,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 631" />
     <MESSAGE value="doghub 632" />
     <MESSAGE value="doghub 633" />
     <MESSAGE value="doghub 634" />
@@ -585,7 +592,8 @@
     <MESSAGE value="doghub 653" />
     <MESSAGE value="doghub 654" />
     <MESSAGE value="doghub 655" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 655" />
+    <MESSAGE value="doghub 656" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 656" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

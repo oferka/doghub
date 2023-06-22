@@ -7,7 +7,7 @@ public interface DogHubNavigator {
 
     void navigateToLandingPage(@NotNull WebDriver webDriver);
 
-//    void navigateToSignupLoginPage(@NotNull WebDriver webDriver);
+    void navigateToSiteHomePage(@NotNull WebDriver webDriver);
 //
 //    void navigateToContactUsPage(@NotNull WebDriver webDriver);
 //

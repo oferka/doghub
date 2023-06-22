@@ -21,6 +21,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
         navigateTo(webDriver, "landing", destinationProvider.getLandingPage());
     }
 
+    @Override
+    public void navigateToSiteHomePage(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, "home", destinationProvider.getSiteHomePage());
+    }
+
 //    @Override
 //    public void navigateToSignupLoginPage(@NotNull WebDriver webDriver) {
 //        navigateTo(webDriver, "login/signup", destinationProvider.getSignupLoginPage());
