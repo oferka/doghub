@@ -10,12 +10,6 @@ import java.util.List;
 
 public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
 
-//    @Autowired
-//    private SignupLoginService signupLoginService;
-//
-//    @Autowired
-//    private UserGeneratorService userGeneratorService;
-//
     @Autowired
     private ElementHighlighter elementHighlighter;
 
@@ -53,52 +47,6 @@ public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
         landingPageService.clickSignup(webDriver);
     }
 
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldClickCart(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        landingPageService.clickCart(webDriver);
-//    }
-//
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldClickApiTesting(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        landingPageService.clickApiTesting(webDriver);
-//    }
-//
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldDeleteCurrentAccount(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        User user = userGeneratorService.generate();
-//        signupLoginService.registerUser(webDriver, user);
-//        landingPageService.deleteCurrentAccount(webDriver);
-//    }
-//
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldLogoutCurrentUser(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        User user = userGeneratorService.generate();
-//        signupLoginService.registerUser(webDriver, user);
-//        landingPageService.logoutCurrentUser(webDriver);
-//    }
-//
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldClickContactUs(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        landingPageService.clickContactUs(webDriver);
-//    }
-//
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldClickTestCases(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        landingPageService.clickTestCases(webDriver);
-//    }
-//
     @ParameterizedTest
     @EnumSource(Setup.class)
     public void shouldGetTabs(Setup setup) {
@@ -108,11 +56,11 @@ public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
             elementHighlighter.eventHighlight(webDriver, navigationElement);
         }
     }
-//
-//    @ParameterizedTest
-//    @EnumSource(Setup.class)
-//    public void shouldBrowseNavigationLinks(Setup setup) {
-//        initiateWebDriverAndNavigateToLandingPage(setup);
-//        landingPageService.browseNavigationBarLinks(webDriver);
-//    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldBrowseTabs(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        landingPageService.browseTabs(webDriver);
+    }
 }
