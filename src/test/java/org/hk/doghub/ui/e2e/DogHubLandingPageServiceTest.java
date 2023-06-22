@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class DogHubLandingPageServiceTest extends BaseLandingPageTest {
+public class DogHubLandingPageServiceTest extends DogHubUITest {
 
     @Autowired
     private ElementHighlighter elementHighlighter;

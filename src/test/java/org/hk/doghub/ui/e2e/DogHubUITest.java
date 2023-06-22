@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = DogHubApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public abstract class BaseLandingPageTest {
+public abstract class DogHubUITest {
 
     @Autowired
     private BrowserProvider browserProvider;
