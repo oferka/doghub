@@ -10,4 +10,6 @@ public interface DogHubNavigator {
     void navigateToSiteHomeView(@NotNull WebDriver webDriver);
 
     void navigateToAdoptionView(@NotNull WebDriver webDriver);
+
+    void navigateToTrainingView(@NotNull WebDriver webDriver);
 }

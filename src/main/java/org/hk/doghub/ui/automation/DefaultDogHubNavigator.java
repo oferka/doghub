@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.ui.views.site.adoption.AdoptionView;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
+import org.hk.doghub.ui.views.site.training.TrainingView;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     @Override
     public void navigateToAdoptionView(@NotNull WebDriver webDriver) {
         navigateTo(webDriver, AdoptionView.NAME, destinationProvider.getAdoptionView());
+    }
+
+    @Override
+    public void navigateToTrainingView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, TrainingView.NAME, destinationProvider.getTrainingView());
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.ui.views.site.adoption.AdoptionView;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
+import org.hk.doghub.ui.views.site.training.TrainingView;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponents;
 
@@ -27,6 +28,10 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
 
     public URI getAdoptionView() {
         return getPageURI(AdoptionView.ROUTE, AdoptionView.NAME);
+    }
+
+    public URI getTrainingView() {
+        return getPageURI(TrainingView.ROUTE, TrainingView.NAME);
     }
 
     private URI getPageURI(String pageRoute, String pageTitle) {
