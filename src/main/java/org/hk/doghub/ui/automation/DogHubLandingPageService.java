@@ -7,8 +7,12 @@ import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighte
 import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
+import org.hk.doghub.ui.components.shared.LoginButton;
+import org.hk.doghub.ui.components.shared.SignupButton;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTitleRouterLinkImage;
+import org.hk.doghub.ui.views.site.login.LoginView;
+import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
@@ -47,13 +51,20 @@ public class DogHubLandingPageService {
         log.info("Click home completed");
     }
 
-//    public void clickSignupLogin(@NotNull WebDriver webDriver) {
-//        log.info("Click signup/login started");
-//        clickExecutor.click(webDriver, landingPageElementLocatorProvider.getSignupLoginLink());
-//        titleVerifier.verifyEquals(webDriver, SignupLoginPage.TITLE);
-//        log.info("Click signup/login completed");
-//    }
-//
+    public void clickLogin(@NotNull WebDriver webDriver) {
+        log.info("Click login started");
+        clickExecutor.click(webDriver, By.className(LoginButton.CLASS_NAME));
+        titleVerifier.verifyEquals(webDriver, LoginView.NAME);
+        log.info("Click login completed");
+    }
+
+    public void clickSignup(@NotNull WebDriver webDriver) {
+        log.info("Click signup started");
+        clickExecutor.click(webDriver, By.className(SignupButton.CLASS_NAME));
+        titleVerifier.verifyEquals(webDriver, SignupView.NAME);
+        log.info("Click signup completed");
+    }
+
 //    public void clickCart(@NotNull WebDriver webDriver) {
 //        log.info("Click cart started");
 //        clickExecutor.click(webDriver, landingPageElementLocatorProvider.getCartLink());
