@@ -22,6 +22,8 @@ public class SiteHomeViewService {
 
     private final TitleVerifier titleVerifier;
 
+    private final DogHubNavigator navigator;
+
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
         clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, SiteHomeView.NAME)));
@@ -31,7 +33,7 @@ public class SiteHomeViewService {
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
-        //todo
+        navigator.navigateToSiteHomePage(webDriver);
         log.info("Navigate directly completed");
     }
 }
