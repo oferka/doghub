@@ -7,7 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 646">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 647">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubDestinationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubNavigator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubUriComponentsProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubDestinationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubLandingPageElementLocatorProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubLandingPageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubNavigator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubTestApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubUriComponentsProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DogHubUriComponentsProviderConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dog-hub-uri-components.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/BaseLandingPageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/DogHubLandingPageServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/Setup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +78,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/frontend/themes/doghub/views/app",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/main/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -77,9 +91,9 @@
       <recent name="org.hk.doghub.data.content.generator.dog.faker" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/frontend/themes/doghub/views/app" />
       <recent name="$PROJECT_DIR$/frontend/themes/doghub/shared" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/src/test/java/org/hk/doghub/automation/e2e/selenium/ui/actions" />
     </key>
@@ -108,13 +122,26 @@
       <recent name="org.hk.doghub.data.content.loader" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DogHubApplication">
+  <component name="RunManager" selected="JUnit.java in doghub">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.hk.doghub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubTestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.automation.DogHubTestApplication" />
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.ui.automation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,49 +164,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogApiClientTest.shouldGetAllBreeds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubLandingPageServiceTest.shouldNavigateToLandingPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.dogapi.*" />
+          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.dogapi" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.dogapi.DogApiClientTest" />
-      <option name="METHOD_NAME" value="shouldGetAllBreeds" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.DogHubLandingPageServiceTest" />
+      <option name="METHOD_NAME" value="shouldNavigateToLandingPage(org.hk.doghub.ui.e2e.Setup)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogBreedProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.dogapi.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.faker.DogBreedProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DogBreedProviderTest.shouldGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.generator.dog.dogapi.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.generator.dog.faker" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.generator.dog.faker.DogBreedProviderTest" />
-      <option name="METHOD_NAME" value="shouldGet" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -192,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in doghub" />
+        <item itemvalue="JUnit.DogHubLandingPageServiceTest.shouldNavigateToLandingPage" />
         <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="Application.DogHubTestApplication" />
         <item itemvalue="JUnit.DogApiClientTest" />
-        <item itemvalue="JUnit.DogApiClientTest.shouldGetAllBreeds" />
-        <item itemvalue="JUnit.DogBreedProviderTest" />
-        <item itemvalue="JUnit.DogBreedProviderTest.shouldGet" />
       </list>
     </recent_temporary>
   </component>
@@ -208,13 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00602" summary="doghub 598">
-      <created>1687027744444</created>
-      <option name="number" value="00602" />
-      <option name="presentableId" value="LOCAL-00602" />
-      <option name="project" value="LOCAL" />
-      <updated>1687027744444</updated>
     </task>
     <task id="LOCAL-00603" summary="doghub 599">
       <created>1687028857440</created>
@@ -552,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687335174864</updated>
     </task>
-    <option name="localTasksCounter" value="651" />
+    <task id="LOCAL-00651" summary="doghub 647">
+      <created>1687408175998</created>
+      <option name="number" value="00651" />
+      <option name="presentableId" value="LOCAL-00651" />
+      <option name="project" value="LOCAL" />
+      <updated>1687408175998</updated>
+    </task>
+    <option name="localTasksCounter" value="652" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 622" />
     <MESSAGE value="doghub 623" />
     <MESSAGE value="doghub 624" />
     <MESSAGE value="doghub 625" />
@@ -593,6 +596,18 @@
     <MESSAGE value="doghub 644" />
     <MESSAGE value="doghub 645" />
     <MESSAGE value="doghub 646" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 646" />
+    <MESSAGE value="doghub 647" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 647" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/DefaultDogHubUriComponentsProvider.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
