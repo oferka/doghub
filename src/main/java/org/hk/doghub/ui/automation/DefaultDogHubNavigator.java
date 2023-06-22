@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.ui.views.app.about.AboutView;
 import org.hk.doghub.ui.views.site.adoption.AdoptionView;
 import org.hk.doghub.ui.views.site.beauty.BeautyView;
 import org.hk.doghub.ui.views.site.health.HealthView;
@@ -97,6 +98,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     @Override
     public void navigateToHelpView(@NotNull WebDriver webDriver) {
         navigateTo(webDriver, HelpView.NAME, destinationProvider.getHelpView());
+    }
+
+    @Override
+    public void navigateToAboutView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, AboutView.NAME, destinationProvider.getAboutView());
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {

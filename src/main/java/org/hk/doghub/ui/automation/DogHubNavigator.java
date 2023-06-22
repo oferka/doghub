@@ -32,4 +32,6 @@ public interface DogHubNavigator {
     void navigateToSignupView(@NotNull WebDriver webDriver);
 
     void navigateToHelpView(@NotNull WebDriver webDriver);
+
+    void navigateToAboutView(@NotNull WebDriver webDriver);
 }
