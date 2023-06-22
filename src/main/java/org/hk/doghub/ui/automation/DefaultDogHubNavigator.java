@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.ui.views.site.adoption.AdoptionView;
 import org.hk.doghub.ui.views.site.beauty.BeautyView;
 import org.hk.doghub.ui.views.site.health.HealthView;
+import org.hk.doghub.ui.views.site.help.HelpView;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
 import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
 import org.hk.doghub.ui.views.site.login.LoginView;
@@ -91,6 +92,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     @Override
     public void navigateToSignupView(@NotNull WebDriver webDriver) {
         navigateTo(webDriver, SignupView.NAME, destinationProvider.getSignupView());
+    }
+
+    @Override
+    public void navigateToHelpView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, HelpView.NAME, destinationProvider.getHelpView());
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {

@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.ui.views.site.adoption.AdoptionView;
 import org.hk.doghub.ui.views.site.beauty.BeautyView;
 import org.hk.doghub.ui.views.site.health.HealthView;
+import org.hk.doghub.ui.views.site.help.HelpView;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
 import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
 import org.hk.doghub.ui.views.site.login.LoginView;
@@ -85,6 +86,11 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
     @Override
     public URI getSignupView() {
         return getPageURI(SignupView.ROUTE, SignupView.NAME);
+    }
+
+    @Override
+    public URI getHelpView() {
+        return getPageURI(HelpView.ROUTE, HelpView.NAME);
     }
 
     private URI getPageURI(String pageRoute, String pageTitle) {
