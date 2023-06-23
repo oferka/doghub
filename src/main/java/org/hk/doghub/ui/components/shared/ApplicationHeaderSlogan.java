@@ -8,6 +8,6 @@ public class ApplicationHeaderSlogan extends Span {
 
     public ApplicationHeaderSlogan() {
         addClassName(CLASS_NAME);
-        setText("Kinky Web Browsing");
+        setText("Man's best friend");
     }
 }
