@@ -15,6 +15,7 @@ import org.hk.doghub.ui.views.site.safety.SafetyView;
 import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.hk.doghub.ui.views.site.social.SocialView;
 import org.hk.doghub.ui.views.site.store.StoreView;
+import org.hk.doghub.ui.views.site.tos.TermsOfServiceView;
 import org.hk.doghub.ui.views.site.training.TrainingView;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponents;
@@ -97,6 +98,11 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
     @Override
     public URI getAboutView() {
         return getPageURI(AboutView.ROUTE, AboutView.NAME);
+    }
+
+    @Override
+    public URI getTermsOfServiceView() {
+        return getPageURI(TermsOfServiceView.ROUTE, TermsOfServiceView.NAME);
     }
 
     private URI getPageURI(String pageRoute, String pageTitle) {

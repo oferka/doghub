@@ -17,6 +17,7 @@ import org.hk.doghub.ui.views.site.safety.SafetyView;
 import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.hk.doghub.ui.views.site.social.SocialView;
 import org.hk.doghub.ui.views.site.store.StoreView;
+import org.hk.doghub.ui.views.site.tos.TermsOfServiceView;
 import org.hk.doghub.ui.views.site.training.TrainingView;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
@@ -103,6 +104,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     @Override
     public void navigateToAboutView(@NotNull WebDriver webDriver) {
         navigateTo(webDriver, AboutView.NAME, destinationProvider.getAboutView());
+    }
+
+    @Override
+    public void navigateToTermsOfServiceView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, TermsOfServiceView.NAME, destinationProvider.getTermsOfServiceView());
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {
