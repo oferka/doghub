@@ -13,6 +13,7 @@ import org.hk.doghub.ui.views.site.home.SiteHomeView;
 import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.playdate.PlaydateView;
+import org.hk.doghub.ui.views.site.privacy.PrivacyPolicyView;
 import org.hk.doghub.ui.views.site.safety.SafetyView;
 import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.hk.doghub.ui.views.site.social.SocialView;
@@ -109,6 +110,11 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     @Override
     public void navigateToTermsOfServiceView(@NotNull WebDriver webDriver) {
         navigateTo(webDriver, TermsOfServiceView.NAME, destinationProvider.getTermsOfServiceView());
+    }
+
+    @Override
+    public void navigateToPrivacyPolicyView(@NotNull WebDriver webDriver) {
+        navigateTo(webDriver, PrivacyPolicyView.NAME, destinationProvider.getPrivacyPolicyView());
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {

@@ -35,4 +35,6 @@ public interface DogHubDestinationProvider {
     URI getAboutView();
 
     URI getTermsOfServiceView();
+
+    URI getPrivacyPolicyView();
 }
