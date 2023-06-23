@@ -114,7 +114,7 @@
       <recent name="org.hk.doghub.ui.e2e" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SignupViewTest.shouldClickSignupWithGoogle">
+  <component name="RunManager" selected="JUnit.SignupViewTest.shouldClickSignupWithFacebook">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -143,6 +143,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SignupViewTest.shouldClickSignupWithFacebook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
+      <option name="METHOD_NAME" value="shouldClickSignupWithFacebook(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SignupViewTest.shouldClickSignupWithGoogle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -155,21 +171,6 @@
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
       <option name="METHOD_NAME" value="shouldClickSignupWithGoogle(org.hk.doghub.ui.e2e.Setup)" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TermsOfServiceViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.TermsOfServiceViewTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SignupViewTest.shouldClickSignupWithFacebook" />
         <item itemvalue="JUnit.SignupViewTest.shouldClickSignupWithGoogle" />
         <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="Docker.doghub: Compose Deployment" />
         <item itemvalue="JUnit.PrivacyPolicyViewTest" />
-        <item itemvalue="JUnit.TermsOfServiceViewTest" />
       </list>
     </recent_temporary>
   </component>

@@ -31,4 +31,12 @@ public class SignupViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.clickSignupWithGoogle(webDriver);
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickSignupWithFacebook(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.clickSignupWithFacebook(webDriver);
+    }
 }

@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
+import org.hk.doghub.ui.views.site.signup.SignupWithFacebook;
 import org.hk.doghub.ui.views.site.signup.SignupWithGoogle;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -36,5 +37,11 @@ public class SignupViewService {
         log.info("Click signup with google started");
         clickExecutor.click(webDriver, By.className(SignupWithGoogle.CLASS_NAME));
         log.info("Click signup with google completed");
+    }
+
+    public void clickSignupWithFacebook(@NotNull WebDriver webDriver) {
+        log.info("Click signup with facebook started");
+        clickExecutor.click(webDriver, By.className(SignupWithFacebook.CLASS_NAME));
+        log.info("Click signup with facebook completed");
     }
 }
