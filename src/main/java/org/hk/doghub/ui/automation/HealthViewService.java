@@ -7,7 +7,6 @@ import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.ui.views.site.health.HealthView;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTab;
-import org.hk.doghub.ui.views.site.playdate.PlaydateView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
