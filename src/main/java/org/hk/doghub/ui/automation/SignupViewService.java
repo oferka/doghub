@@ -53,7 +53,7 @@ public class SignupViewService {
 
     public void enterEmail(@NotNull WebDriver webDriver, @NotNull String email) {
         log.info("Enter email {} started", email);
-        textInputExecutor.enterText(webDriver, By.xpath(format("//*[@class='%s']/child::input", UserEmailField.CLASS_NAME)), email);
+        textInputExecutor.enterText(webDriver, By.xpath(format("//*[@class='%s']/child::input", UserEmailField.CLASS_NAME)), email, false, true);
         log.info("Enter email {} completed", email);
     }
 }
