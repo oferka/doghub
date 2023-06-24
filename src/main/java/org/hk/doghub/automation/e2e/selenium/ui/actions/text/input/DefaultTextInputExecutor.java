@@ -41,7 +41,13 @@ public class DefaultTextInputExecutor implements TextInputExecutor {
         enterText(webDriver, elementRetriever.getByClickable(webDriver, locator), text, enter, oneByOne);
     }
 
-    private void enterText(@NotNull WebDriver webDriver, @NotNull WebElement element, @NotNull String text, boolean enter, boolean oneByOne) {
+    @Override
+    public void enterText(@NotNull WebDriver webDriver, @NotNull WebElement element, @NotNull String text) {
+        enterText(webDriver, element, text, true, false);
+    }
+
+    @Override
+    public void enterText(@NotNull WebDriver webDriver, @NotNull WebElement element, @NotNull String text, boolean enter, boolean oneByOne) {
         log.info("Enter text '{}' to element started", text);
         elementHighlighter.eventHighlight(webDriver, element);
         element.clear();
