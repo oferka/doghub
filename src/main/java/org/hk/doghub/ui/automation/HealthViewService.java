@@ -28,7 +28,7 @@ public class HealthViewService {
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
         clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, HealthView.NAME)));
-        titleVerifier.verifyEquals(webDriver, PlaydateView.NAME);
+        titleVerifier.verifyEquals(webDriver, HealthView.NAME);
         log.info("Navigate from home page completed");
     }
 

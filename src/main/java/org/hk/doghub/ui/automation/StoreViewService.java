@@ -28,7 +28,7 @@ public class StoreViewService {
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
         clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, StoreView.NAME)));
-        titleVerifier.verifyEquals(webDriver, SafetyView.NAME);
+        titleVerifier.verifyEquals(webDriver, StoreView.NAME);
         log.info("Navigate from home page completed");
     }
 

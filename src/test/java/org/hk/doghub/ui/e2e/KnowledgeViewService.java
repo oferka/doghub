@@ -29,7 +29,7 @@ public class KnowledgeViewService {
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
         clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, KnowledgeView.NAME)));
-        titleVerifier.verifyEquals(webDriver, BeautyView.NAME);
+        titleVerifier.verifyEquals(webDriver, KnowledgeView.NAME);
         log.info("Navigate from home page completed");
     }
 
