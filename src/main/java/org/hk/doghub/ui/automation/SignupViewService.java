@@ -14,6 +14,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
+import static com.vaadin.flow.component.Tag.INPUT;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -56,7 +58,7 @@ public class SignupViewService {
     public void enterEmail(@NotNull WebDriver webDriver, @NotNull String email) {
         log.info("Enter email {} started", email);
         WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserEmailField.CLASS_NAME));
-        WebElement emailFieldInputElement = emailFieldElement.findElement(By.tagName("input"));
+        WebElement emailFieldInputElement = emailFieldElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, emailFieldInputElement, email, true, true);
         log.info("Enter email {} completed", email);
     }
