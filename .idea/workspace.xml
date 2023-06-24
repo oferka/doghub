@@ -114,7 +114,7 @@
       <recent name="org.hk.doghub.ui.e2e" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SignupViewTest.shouldToggleShowHidePassword">
+  <component name="RunManager" selected="JUnit.SignupViewTest.shouldEnterPasswordAndShowIt">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -124,22 +124,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignupViewTest.shouldClickSignupWithFacebook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
-      <option name="METHOD_NAME" value="shouldClickSignupWithFacebook(org.hk.doghub.ui.e2e.Setup)" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,6 +160,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SignupViewTest.shouldEnterPasswordAndShowIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
+      <option name="METHOD_NAME" value="shouldEnterPasswordAndShowIt(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SignupViewTest.shouldToggleShowHidePassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -200,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SignupViewTest.shouldEnterPasswordAndShowIt" />
         <item itemvalue="JUnit.SignupViewTest.shouldToggleShowHidePassword" />
         <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.SignupViewTest.shouldEnterPassword" />
         <item itemvalue="JUnit.SignupViewTest.shouldEnterEmail" />
-        <item itemvalue="JUnit.SignupViewTest.shouldClickSignupWithFacebook" />
       </list>
     </recent_temporary>
   </component>

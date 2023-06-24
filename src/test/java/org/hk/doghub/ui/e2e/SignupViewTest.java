@@ -1,5 +1,6 @@
 package org.hk.doghub.ui.e2e;
 
+import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.ui.automation.SignupViewService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -53,7 +54,7 @@ public class SignupViewTest extends DogHubUITest {
     public void shouldEnterPassword(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        viewService.enterPassword(webDriver, "aaaaaaaaa1");
+        viewService.enterPassword(webDriver, getValidPassword());
     }
 
     @ParameterizedTest
@@ -62,5 +63,18 @@ public class SignupViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.toggleShowHidePassword(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldEnterPasswordAndShowIt(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterPassword(webDriver, getValidPassword());
+        viewService.toggleShowHidePassword(webDriver);
+    }
+
+    private @NotNull String getValidPassword() {
+        return "aaaaaaaaa1";
     }
 }
