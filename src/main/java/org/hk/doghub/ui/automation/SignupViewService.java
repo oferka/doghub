@@ -71,4 +71,12 @@ public class SignupViewService {
         textInputExecutor.enterText(webDriver, passwordFieldInputElement, password, true, true);
         log.info("Enter password {} completed", password);
     }
+
+    public void toggleShowHidePassword(@NotNull WebDriver webDriver) {
+        log.info("Toggle show/hide password started");
+        WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserPasswordField.CLASS_NAME));
+        WebElement passwordFieldShowHideElement = passwordFieldElement.findElement(By.tagName("vaadin-password-field-button"));
+        clickExecutor.click(webDriver, passwordFieldShowHideElement);
+        log.info("Toggle show/hide password completed");
+    }
 }

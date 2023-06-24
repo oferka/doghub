@@ -55,4 +55,12 @@ public class SignupViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.enterPassword(webDriver, "aaaaaaaaa1");
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldToggleShowHidePassword(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.toggleShowHidePassword(webDriver);
+    }
 }
