@@ -7,6 +7,7 @@ import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
 import org.hk.doghub.ui.components.shared.user.UserEmailField;
+import org.hk.doghub.ui.components.shared.user.UserPasswordField;
 import org.hk.doghub.ui.views.site.signup.SignupWithFacebook;
 import org.hk.doghub.ui.views.site.signup.SignupWithGoogle;
 import org.openqa.selenium.By;
@@ -61,5 +62,13 @@ public class SignupViewService {
         WebElement emailFieldInputElement = emailFieldElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, emailFieldInputElement, email, true, true);
         log.info("Enter email {} completed", email);
+    }
+
+    public void enterPassword(@NotNull WebDriver webDriver, @NotNull String password) {
+        log.info("Enter password {} started", password);
+        WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserPasswordField.CLASS_NAME));
+        WebElement passwordFieldInputElement = passwordFieldElement.findElement(By.tagName(INPUT));
+        textInputExecutor.enterText(webDriver, passwordFieldInputElement, password, true, true);
+        log.info("Enter password {} completed", password);
     }
 }
