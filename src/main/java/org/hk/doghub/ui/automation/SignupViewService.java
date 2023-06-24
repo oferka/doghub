@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
+import org.hk.doghub.ui.components.shared.EntityCreationButton;
 import org.hk.doghub.ui.components.shared.user.UserEmailField;
 import org.hk.doghub.ui.components.shared.user.UserPasswordField;
 import org.hk.doghub.ui.views.site.signup.SignupWithFacebook;
@@ -78,5 +79,11 @@ public class SignupViewService {
         WebElement passwordFieldShowHideElement = passwordFieldElement.findElement(By.tagName("vaadin-password-field-button"));
         clickExecutor.click(webDriver, passwordFieldShowHideElement);
         log.info("Toggle show/hide password completed");
+    }
+
+    public void clickContinue(@NotNull WebDriver webDriver) {
+        log.info("Click continue started");
+        clickExecutor.click(webDriver, By.className(EntityCreationButton.CLASS_NAME));
+        log.info("Click continue completed");
     }
 }
