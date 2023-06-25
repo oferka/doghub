@@ -8,7 +8,6 @@ import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
 import org.hk.doghub.data.content.generator.user.UserProvider;
-import org.hk.doghub.ui.components.shared.user.UserPasswordField;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.login.LoginWithFacebook;
 import org.hk.doghub.ui.views.site.login.LoginWithGoogle;
@@ -17,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
+import static com.vaadin.flow.component.Tag.DIV;
 import static com.vaadin.flow.component.Tag.INPUT;
 
 @Service
@@ -85,6 +85,14 @@ public class LoginViewService {
         WebElement passwordFieldShowHideElement = passwordFieldElement.findElement(By.tagName("vaadin-password-field-button"));
         clickExecutor.click(webDriver, passwordFieldShowHideElement);
         log.info("Toggle show/hide password completed");
+    }
+
+    public void verifyEmailErrorMessage(@NotNull WebDriver webDriver) {
+        log.info("Verify email error message started");
+        WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-text-field"));
+        WebElement emailFieldErrorMessageElement = emailFieldElement.findElement(By.tagName(DIV));
+        assert emailFieldErrorMessageElement.getText().equals("Username is required");
+        log.info("Verify email error message completed");
     }
 
     public @NotNull String getValidEmail() {

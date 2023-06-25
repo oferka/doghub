@@ -5,6 +5,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static org.apache.logging.log4j.util.Strings.EMPTY;
+
 public class LoginViewTest extends DogHubUITest {
 
     @Autowired
@@ -46,6 +48,15 @@ public class LoginViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.enterEmail(webDriver, viewService.getValidEmail());
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldDisplayErrorOnEmptyEmail(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterEmail(webDriver, EMPTY);
+        viewService.verifyEmailErrorMessage(webDriver);
     }
 
     @ParameterizedTest
