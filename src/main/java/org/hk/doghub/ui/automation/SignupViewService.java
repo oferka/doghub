@@ -144,4 +144,16 @@ public class SignupViewService {
         assert emailFieldErrorMessageElement.getText().equals(UserEmailField.ERROR_MESSAGE);
         log.info("Verify email error message completed");
     }
+
+    public @NotNull String getInvalidPassword() {
+        return RandomStringUtils.randomAlphabetic(5);
+    }
+
+    public void verifyPasswordErrorMessage(@NotNull WebDriver webDriver) {
+        log.info("Verify password error message started");
+        WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserPasswordField.CLASS_NAME));
+        WebElement passwordFieldErrorMessageElement = passwordFieldElement.findElement(By.tagName(DIV));
+        assert passwordFieldErrorMessageElement.getText().equals(UserPasswordField.ERROR_MESSAGE);
+        log.info("Verify password error message completed");
+    }
 }
