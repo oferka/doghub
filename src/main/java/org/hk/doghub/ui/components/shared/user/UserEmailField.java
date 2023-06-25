@@ -17,12 +17,14 @@ public class UserEmailField extends EmailField {
 
     public static final String LABEL = "Email";
 
+    public static final String ERROR_MESSAGE = "Please enter a valid email address";
+
     public UserEmailField() {
         addClassName(CLASS_NAME);
         setPlaceholder(LABEL);
         setMaxLength(EMAIL_MAX_LENGTH);
         getElement().setAttribute("name", "email");
-        setErrorMessage(format("Please enter a valid {0} address", LABEL));
+        setErrorMessage(ERROR_MESSAGE);
         setClearButtonVisible(true);
     }
 

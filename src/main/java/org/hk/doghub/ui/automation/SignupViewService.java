@@ -141,11 +141,7 @@ public class SignupViewService {
         log.info("Verify email error message started");
         WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserEmailField.CLASS_NAME));
         WebElement emailFieldErrorMessageElement = emailFieldElement.findElement(By.tagName(DIV));
-        assert emailFieldErrorMessageElement.getText().equals(getInvalidEmailErrorMessage());
+        assert emailFieldErrorMessageElement.getText().equals(UserEmailField.ERROR_MESSAGE);
         log.info("Verify email error message completed");
-    }
-
-    private @NotNull String getInvalidEmailErrorMessage() {
-        return "Please enter a valid Email address";
     }
 }
