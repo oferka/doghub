@@ -46,7 +46,7 @@ public class SignupViewTest extends DogHubUITest {
     public void shouldEnterEmail(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        viewService.enterEmail(webDriver, "a.b@c.com");
+        viewService.enterEmail(webDriver, getValidEmail());
     }
 
     @ParameterizedTest
@@ -80,6 +80,26 @@ public class SignupViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.clickContinue(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickTermsOfService(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.clickTermsOfService(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickPrivacyPolicy(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.clickPrivacyPolicy(webDriver);
+    }
+
+    private @NotNull String getValidEmail() {
+        return "a.b@c.com";
     }
 
     private @NotNull String getValidPassword() {

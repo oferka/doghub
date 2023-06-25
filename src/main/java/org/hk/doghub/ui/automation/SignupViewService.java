@@ -9,8 +9,10 @@ import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExec
 import org.hk.doghub.ui.components.shared.EntityCreationButton;
 import org.hk.doghub.ui.components.shared.user.UserEmailField;
 import org.hk.doghub.ui.components.shared.user.UserPasswordField;
+import org.hk.doghub.ui.views.site.signup.PrivacyPolicyAnchor;
 import org.hk.doghub.ui.views.site.signup.SignupWithFacebook;
 import org.hk.doghub.ui.views.site.signup.SignupWithGoogle;
+import org.hk.doghub.ui.views.site.signup.TermsOfServiceAnchor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -85,5 +87,17 @@ public class SignupViewService {
         log.info("Click continue started");
         clickExecutor.click(webDriver, By.className(EntityCreationButton.CLASS_NAME));
         log.info("Click continue completed");
+    }
+
+    public void clickTermsOfService(@NotNull WebDriver webDriver) {
+        log.info("Click terms of service started");
+        clickExecutor.click(webDriver, By.className(TermsOfServiceAnchor.CLASS_NAME));
+        log.info("Click terms of service completed");
+    }
+
+    public void clickPrivacyPolicy(@NotNull WebDriver webDriver) {
+        log.info("Click privacy policy started");
+        clickExecutor.click(webDriver, By.className(PrivacyPolicyAnchor.CLASS_NAME));
+        log.info("Click privacy policy completed");
     }
 }
