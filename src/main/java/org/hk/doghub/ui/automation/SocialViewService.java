@@ -34,6 +34,7 @@ public class SocialViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToSocialView(webDriver);
+        titleVerifier.verifyEquals(webDriver, SocialView.NAME);
         log.info("Navigate directly completed");
     }
 }

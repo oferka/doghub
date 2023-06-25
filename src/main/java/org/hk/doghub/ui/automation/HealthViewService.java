@@ -34,6 +34,7 @@ public class HealthViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToHealthView(webDriver);
+        titleVerifier.verifyEquals(webDriver, HealthView.NAME);
         log.info("Navigate directly completed");
     }
 }

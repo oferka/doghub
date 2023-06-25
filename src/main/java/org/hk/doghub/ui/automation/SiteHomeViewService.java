@@ -34,6 +34,7 @@ public class SiteHomeViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToSiteHomeView(webDriver);
+        titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
         log.info("Navigate directly completed");
     }
 }

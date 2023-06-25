@@ -34,6 +34,7 @@ public class SafetyViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToSafetyView(webDriver);
+        titleVerifier.verifyEquals(webDriver, SafetyView.NAME);
         log.info("Navigate directly completed");
     }
 }

@@ -34,6 +34,7 @@ public class StoreViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToStoreView(webDriver);
+        titleVerifier.verifyEquals(webDriver, StoreView.NAME);
         log.info("Navigate directly completed");
     }
 }

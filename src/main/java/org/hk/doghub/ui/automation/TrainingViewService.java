@@ -34,6 +34,7 @@ public class TrainingViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToTrainingView(webDriver);
+        titleVerifier.verifyEquals(webDriver, TrainingView.NAME);
         log.info("Navigate directly completed");
     }
 }

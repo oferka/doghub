@@ -34,6 +34,7 @@ public class PlaydateViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToPlaydateView(webDriver);
+        titleVerifier.verifyEquals(webDriver, PlaydateView.NAME);
         log.info("Navigate directly completed");
     }
 }

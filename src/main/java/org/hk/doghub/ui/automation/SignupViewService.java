@@ -45,6 +45,7 @@ public class SignupViewService {
     public void navigateDirectly(@NotNull WebDriver webDriver) {
         log.info("Navigate directly started");
         navigator.navigateToSignupView(webDriver);
+        titleVerifier.verifyEquals(webDriver, SignupView.NAME);
         log.info("Navigate directly completed");
     }
 
