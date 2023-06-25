@@ -47,4 +47,12 @@ public class LoginViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.enterEmail(webDriver, viewService.getValidEmail());
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldEnterPassword(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterPassword(webDriver, viewService.getValidPassword());
+    }
 }

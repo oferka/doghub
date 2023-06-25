@@ -70,7 +70,19 @@ public class LoginViewService {
         log.info("Enter email {} completed", email);
     }
 
+    public void enterPassword(@NotNull WebDriver webDriver, @NotNull String password) {
+        log.info("Enter password {} started", password);
+        WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-password-field"));
+        WebElement passwordFieldInputElement = passwordFieldElement.findElement(By.tagName(INPUT));
+        textInputExecutor.enterText(webDriver, passwordFieldInputElement, password, true, true);
+        log.info("Enter password {} completed", password);
+    }
+
     public @NotNull String getValidEmail() {
         return userProvider.get().getEmail();
+    }
+
+    public @NotNull String getValidPassword() {
+        return userProvider.get().getPassword();
     }
 }
