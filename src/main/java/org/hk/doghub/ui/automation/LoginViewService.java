@@ -8,6 +8,7 @@ import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
 import org.hk.doghub.data.content.generator.user.UserProvider;
+import org.hk.doghub.ui.components.shared.user.UserPasswordField;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.login.LoginWithFacebook;
 import org.hk.doghub.ui.views.site.login.LoginWithGoogle;
@@ -76,6 +77,14 @@ public class LoginViewService {
         WebElement passwordFieldInputElement = passwordFieldElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, passwordFieldInputElement, password, true, true);
         log.info("Enter password {} completed", password);
+    }
+
+    public void toggleShowHidePassword(@NotNull WebDriver webDriver) {
+        log.info("Toggle show/hide password started");
+        WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-password-field"));
+        WebElement passwordFieldShowHideElement = passwordFieldElement.findElement(By.tagName("vaadin-password-field-button"));
+        clickExecutor.click(webDriver, passwordFieldShowHideElement);
+        log.info("Toggle show/hide password completed");
     }
 
     public @NotNull String getValidEmail() {
