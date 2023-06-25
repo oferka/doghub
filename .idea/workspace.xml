@@ -7,7 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 694">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 695">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/SignupViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/SignupViewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/SignupViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/SignupViewTest.java" afterDir="false" />
     </list>
@@ -113,7 +114,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SignupViewTest">
+  <component name="RunManager" selected="JUnit.SignupViewTest.shouldDisplayErrorOnInvalidEmail">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -158,6 +159,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SignupViewTest.shouldDisplayErrorOnInvalidEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
+      <option name="METHOD_NAME" value="shouldDisplayErrorOnInvalidEmail(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SignupViewTest.shouldSignup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -174,14 +191,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="e2e in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -190,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SignupViewTest.shouldDisplayErrorOnInvalidEmail" />
+        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.SignupViewTest" />
         <item itemvalue="JUnit.SignupViewTest.shouldSignup" />
-        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.SignupViewTest.shouldClickContinue" />
-        <item itemvalue="JUnit.e2e in doghub" />
       </list>
     </recent_temporary>
   </component>
@@ -206,13 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00650" summary="doghub 646">
-      <created>1687335174864</created>
-      <option name="number" value="00650" />
-      <option name="presentableId" value="LOCAL-00650" />
-      <option name="project" value="LOCAL" />
-      <updated>1687335174864</updated>
     </task>
     <task id="LOCAL-00651" summary="doghub 647">
       <created>1687408175998</created>
@@ -550,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687678641176</updated>
     </task>
-    <option name="localTasksCounter" value="699" />
+    <task id="LOCAL-00699" summary="doghub 695">
+      <created>1687679045126</created>
+      <option name="number" value="00699" />
+      <option name="presentableId" value="LOCAL-00699" />
+      <option name="project" value="LOCAL" />
+      <updated>1687679045126</updated>
+    </task>
+    <option name="localTasksCounter" value="700" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,7 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 670" />
     <MESSAGE value="doghub 671" />
     <MESSAGE value="doghub 672" />
     <MESSAGE value="doghub 673" />
@@ -591,6 +599,7 @@
     <MESSAGE value="doghub 692" />
     <MESSAGE value="doghub 693" />
     <MESSAGE value="doghub 694" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 694" />
+    <MESSAGE value="doghub 695" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 695" />
   </component>
 </project>

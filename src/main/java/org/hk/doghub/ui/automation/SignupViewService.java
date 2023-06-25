@@ -3,6 +3,7 @@ package org.hk.doghub.ui.automation;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
@@ -19,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
+import static com.vaadin.flow.component.Tag.DIV;
 import static com.vaadin.flow.component.Tag.INPUT;
 
 @Service
@@ -129,5 +131,21 @@ public class SignupViewService {
 
     public @NotNull String getValidPassword() {
         return userProvider.get().getPassword();
+    }
+
+    public @NotNull String getInvalidEmail() {
+        return RandomStringUtils.randomAlphabetic(12);
+    }
+
+    public void verifyEmailErrorMessage(@NotNull WebDriver webDriver) {
+        log.info("Verify email error message started");
+        WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserEmailField.CLASS_NAME));
+        WebElement emailFieldErrorMessageElement = emailFieldElement.findElement(By.tagName(DIV));
+        assert emailFieldErrorMessageElement.getText().equals(getInvalidEmailErrorMessage());
+        log.info("Verify email error message completed");
+    }
+
+    private @NotNull String getInvalidEmailErrorMessage() {
+        return "Please enter a valid Email address";
     }
 }
