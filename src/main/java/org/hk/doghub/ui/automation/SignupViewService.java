@@ -7,6 +7,8 @@ import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
+import org.hk.doghub.data.content.generator.user.UserProvider;
+import org.hk.doghub.data.service.user.DogHubUserService;
 import org.hk.doghub.ui.components.shared.EntityCreationButton;
 import org.hk.doghub.ui.components.shared.user.UserEmailField;
 import org.hk.doghub.ui.components.shared.user.UserPasswordField;
@@ -35,6 +37,10 @@ public class SignupViewService {
     private final ElementRetriever elementRetriever;
 
     private final TitleVerifier titleVerifier;
+
+    private final DogHubUserService userService;
+
+    private final UserProvider userProvider;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
@@ -110,9 +116,18 @@ public class SignupViewService {
         log.info("Click sign in completed");
     }
 
-    public void verifySignup(@NotNull WebDriver webDriver, @NotNull String username, @NotNull String password) {
+    public void verifySignup(@NotNull WebDriver webDriver, @NotNull String username) {
         log.info("Verify signup started");
+        userService.existsByUsername(username);
         titleVerifier.verifyEquals(webDriver, LoginView.NAME);
         log.info("Verify signup completed");
+    }
+
+    public @NotNull String getValidEmail() {
+        return userProvider.get().getEmail();
+    }
+
+    public @NotNull String getValidPassword() {
+        return userProvider.get().getPassword();
     }
 }

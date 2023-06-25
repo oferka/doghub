@@ -1,7 +1,5 @@
 package org.hk.doghub.ui.e2e;
 
-import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.data.content.generator.user.UserProvider;
 import org.hk.doghub.ui.automation.SignupViewService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -11,9 +9,6 @@ public class SignupViewTest extends DogHubUITest {
 
     @Autowired
     private SignupViewService viewService;
-
-    @Autowired
-    private UserProvider userProvider;
 
     @ParameterizedTest
     @EnumSource(Setup.class)
@@ -50,7 +45,7 @@ public class SignupViewTest extends DogHubUITest {
     public void shouldEnterEmail(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        viewService.enterEmail(webDriver, getValidEmail());
+        viewService.enterEmail(webDriver, viewService.getValidEmail());
     }
 
     @ParameterizedTest
@@ -58,7 +53,7 @@ public class SignupViewTest extends DogHubUITest {
     public void shouldEnterPassword(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        viewService.enterPassword(webDriver, getValidPassword());
+        viewService.enterPassword(webDriver, viewService.getValidPassword());
     }
 
     @ParameterizedTest
@@ -74,7 +69,7 @@ public class SignupViewTest extends DogHubUITest {
     public void shouldEnterPasswordAndShowIt(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        viewService.enterPassword(webDriver, getValidPassword());
+        viewService.enterPassword(webDriver, viewService.getValidPassword());
         viewService.toggleShowHidePassword(webDriver);
     }
 
@@ -91,12 +86,12 @@ public class SignupViewTest extends DogHubUITest {
     public void shouldSignup(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        String username = getValidEmail();
-        String password = getValidPassword();
+        String username = viewService.getValidEmail();
+        String password = viewService.getValidPassword();
         viewService.enterEmail(webDriver, username);
         viewService.enterPassword(webDriver, password);
         viewService.clickContinue(webDriver);
-        viewService.verifySignup(webDriver, username, password);
+        viewService.verifySignup(webDriver, username);
     }
 
     @ParameterizedTest
@@ -121,13 +116,5 @@ public class SignupViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.clickSignIn(webDriver);
-    }
-
-    private @NotNull String getValidEmail() {
-        return userProvider.get().getEmail();
-    }
-
-    private @NotNull String getValidPassword() {
-        return userProvider.get().getPassword();
     }
 }
