@@ -3,16 +3,20 @@ package org.hk.doghub.ui.automation;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
+import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
+import org.hk.doghub.data.content.generator.user.UserProvider;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.login.LoginWithFacebook;
 import org.hk.doghub.ui.views.site.login.LoginWithGoogle;
-import org.hk.doghub.ui.views.site.signup.SignupWithFacebook;
-import org.hk.doghub.ui.views.site.signup.SignupWithGoogle;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
+
+import static com.vaadin.flow.component.Tag.INPUT;
 
 @Service
 @RequiredArgsConstructor
@@ -26,6 +30,12 @@ public class LoginViewService {
     private final ClickExecutor clickExecutor;
 
     private final TitleVerifier titleVerifier;
+
+    private final TextInputExecutor textInputExecutor;
+
+    private final ElementRetriever elementRetriever;
+
+    private final UserProvider userProvider;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
@@ -50,5 +60,17 @@ public class LoginViewService {
         log.info("Click login with facebook started");
         clickExecutor.click(webDriver, By.className(LoginWithFacebook.CLASS_NAME));
         log.info("Click login with facebook completed");
+    }
+
+    public void enterEmail(@NotNull WebDriver webDriver, @NotNull String email) {
+        log.info("Enter email {} started", email);
+        WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-text-field"));
+        WebElement emailFieldInputElement = emailFieldElement.findElement(By.tagName(INPUT));
+        textInputExecutor.enterText(webDriver, emailFieldInputElement, email, true, true);
+        log.info("Enter email {} completed", email);
+    }
+
+    public @NotNull String getValidEmail() {
+        return userProvider.get().getEmail();
     }
 }

@@ -2,8 +2,6 @@ package org.hk.doghub.ui.components.shared.user;
 
 import com.vaadin.flow.component.textfield.PasswordField;
 
-import static java.text.MessageFormat.format;
-
 public class UserPasswordField extends PasswordField {
 
     public static final String CLASS_NAME = "user-password-field";

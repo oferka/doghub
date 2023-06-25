@@ -7,7 +7,6 @@ import org.hk.doghub.model.user.DogHubUser;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.text.MessageFormat.format;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hk.doghub.model.user.DogHubUser.EMAIL_MAX_LENGTH;
 

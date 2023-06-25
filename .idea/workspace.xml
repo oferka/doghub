@@ -7,9 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 700">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 701">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/LoginViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/LoginViewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserEmailField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserEmailField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/components/shared/user/UserPasswordField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/LoginViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/LoginViewTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +116,20 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginViewTest">
+  <component name="RunManager" selected="Application.DogHubApplication">
+    <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -130,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignupViewTest.shouldDisplayErrorOnInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginViewTest.shouldDisplayErrorOnInvalidEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -139,14 +154,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
-      <option name="METHOD_NAME" value="shouldDisplayErrorOnInvalidPassword(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.LoginViewTest" />
+      <option name="METHOD_NAME" value="shouldDisplayErrorOnInvalidEmail(org.hk.doghub.ui.e2e.Setup)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignupViewTest.shouldNotSignupOnInvalidEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginViewTest.shouldEnterEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -155,8 +170,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
-      <option name="METHOD_NAME" value="shouldNotSignupOnInvalidEmail(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.LoginViewTest" />
+      <option name="METHOD_NAME" value="shouldEnterEmail(org.hk.doghub.ui.e2e.Setup)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,22 +193,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignupViewTest.shouldNotSignupOnInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
-      <option name="METHOD_NAME" value="shouldNotSignupOnInvalidPassword(org.hk.doghub.ui.e2e.Setup)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -202,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.LoginViewTest.shouldDisplayErrorOnInvalidEmail" />
+        <item itemvalue="JUnit.LoginViewTest.shouldEnterEmail" />
         <item itemvalue="JUnit.LoginViewTest" />
         <item itemvalue="JUnit.SignupViewTest.shouldNotSignupOnInvalidEmailAndPassword" />
-        <item itemvalue="JUnit.SignupViewTest.shouldNotSignupOnInvalidPassword" />
-        <item itemvalue="JUnit.SignupViewTest.shouldNotSignupOnInvalidEmail" />
-        <item itemvalue="JUnit.SignupViewTest.shouldDisplayErrorOnInvalidPassword" />
       </list>
     </recent_temporary>
   </component>
@@ -218,13 +217,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00656" summary="doghub 652">
-      <created>1687420577915</created>
-      <option name="number" value="00656" />
-      <option name="presentableId" value="LOCAL-00656" />
-      <option name="project" value="LOCAL" />
-      <updated>1687420577915</updated>
     </task>
     <task id="LOCAL-00657" summary="doghub 653">
       <created>1687420974602</created>
@@ -562,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687690783084</updated>
     </task>
-    <option name="localTasksCounter" value="705" />
+    <task id="LOCAL-00705" summary="doghub 701">
+      <created>1687700817402</created>
+      <option name="number" value="00705" />
+      <option name="presentableId" value="LOCAL-00705" />
+      <option name="project" value="LOCAL" />
+      <updated>1687700817402</updated>
+    </task>
+    <option name="localTasksCounter" value="706" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -578,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 676" />
     <MESSAGE value="doghub 677" />
     <MESSAGE value="doghub 678" />
     <MESSAGE value="doghub 679" />
@@ -603,6 +601,7 @@
     <MESSAGE value="doghub 698" />
     <MESSAGE value="doghub 699" />
     <MESSAGE value="doghub 700" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 700" />
+    <MESSAGE value="doghub 701" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 701" />
   </component>
 </project>
