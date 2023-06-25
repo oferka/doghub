@@ -8,9 +8,11 @@ import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
 import org.hk.doghub.data.content.generator.user.UserProvider;
+import org.hk.doghub.ui.views.site.login.LoginFooterCreateAccountSignupLink;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.login.LoginWithFacebook;
 import org.hk.doghub.ui.views.site.login.LoginWithGoogle;
+import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -109,6 +111,12 @@ public class LoginViewService {
         WebElement continueElement = loginFormElement.findElement(By.tagName("vaadin-button"));
         clickExecutor.click(webDriver, continueElement);
         log.info("Click continue completed");
+    }
+    public void clickSignup(@NotNull WebDriver webDriver) {
+        log.info("Click signup started");
+        clickExecutor.click(webDriver, By.className(LoginFooterCreateAccountSignupLink.CLASS_NAME));
+        titleVerifier.verifyEquals(webDriver, SignupView.NAME);
+        log.info("Click signup completed");
     }
 
     public @NotNull String getValidEmail() {

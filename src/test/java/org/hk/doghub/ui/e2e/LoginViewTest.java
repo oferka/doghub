@@ -100,4 +100,12 @@ public class LoginViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.clickContinue(webDriver);
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickSignup(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.clickSignup(webDriver);
+    }
 }
