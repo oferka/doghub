@@ -1,6 +1,7 @@
 package org.hk.doghub.ui.e2e;
 
 import jakarta.validation.constraints.NotNull;
+import org.hk.doghub.data.content.generator.user.UserProvider;
 import org.hk.doghub.ui.automation.SignupViewService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -10,6 +11,9 @@ public class SignupViewTest extends DogHubUITest {
 
     @Autowired
     private SignupViewService viewService;
+
+    @Autowired
+    private UserProvider userProvider;
 
     @ParameterizedTest
     @EnumSource(Setup.class)
@@ -84,6 +88,19 @@ public class SignupViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldSignup(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        String username = getValidEmail();
+        String password = getValidPassword();
+        viewService.enterEmail(webDriver, username);
+        viewService.enterPassword(webDriver, password);
+        viewService.clickContinue(webDriver);
+        viewService.verifySignup(webDriver, username, password);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldClickTermsOfService(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -107,10 +124,10 @@ public class SignupViewTest extends DogHubUITest {
     }
 
     private @NotNull String getValidEmail() {
-        return "a.b@c.com";
+        return userProvider.get().getEmail();
     }
 
     private @NotNull String getValidPassword() {
-        return "aaaaaaaaa1";
+        return userProvider.get().getPassword();
     }
 }

@@ -109,4 +109,10 @@ public class SignupViewService {
         titleVerifier.verifyEquals(webDriver, LoginView.NAME);
         log.info("Click sign in completed");
     }
+
+    public void verifySignup(@NotNull WebDriver webDriver, @NotNull String username, @NotNull String password) {
+        log.info("Verify signup started");
+        titleVerifier.verifyEquals(webDriver, LoginView.NAME);
+        log.info("Verify signup completed");
+    }
 }
