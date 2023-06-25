@@ -140,6 +140,20 @@ public class SignupViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldNotSignupOnInvalidEmailAndPassword(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        String username = viewService.getInvalidEmail();
+        String password = viewService.getInvalidPassword();
+        viewService.enterEmail(webDriver, username);
+        viewService.enterPassword(webDriver, password);
+        viewService.clickContinue(webDriver);
+        viewService.verifyEmailErrorMessage(webDriver);
+        viewService.verifyPasswordErrorMessage(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldClickTermsOfService(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);

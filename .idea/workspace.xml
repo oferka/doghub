@@ -113,20 +113,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SignupViewTest.shouldNotSignupOnInvalidPassword">
-    <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SignupViewTest.shouldNotSignupOnInvalidEmailAndPassword">
     <configuration name="SignupViewTest.shouldDisplayErrorOnInvalidEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -175,6 +162,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SignupViewTest.shouldNotSignupOnInvalidEmailAndPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SignupViewTest" />
+      <option name="METHOD_NAME" value="shouldNotSignupOnInvalidEmailAndPassword(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SignupViewTest.shouldNotSignupOnInvalidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -199,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SignupViewTest.shouldNotSignupOnInvalidEmailAndPassword" />
         <item itemvalue="JUnit.SignupViewTest.shouldNotSignupOnInvalidPassword" />
         <item itemvalue="JUnit.SignupViewTest.shouldNotSignupOnInvalidEmail" />
         <item itemvalue="JUnit.SignupViewTest.shouldDisplayErrorOnInvalidPassword" />
         <item itemvalue="JUnit.SignupViewTest.shouldDisplayErrorOnInvalidEmail" />
-        <item itemvalue="Application.DogHubApplication" />
       </list>
     </recent_temporary>
   </component>
