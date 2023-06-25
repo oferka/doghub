@@ -98,6 +98,14 @@ public class SignupViewTest extends DogHubUITest {
         viewService.clickPrivacyPolicy(webDriver);
     }
 
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickSignIn(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.clickSignIn(webDriver);
+    }
+
     private @NotNull String getValidEmail() {
         return "a.b@c.com";
     }

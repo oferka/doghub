@@ -4,15 +4,14 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
+import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
 import org.hk.doghub.ui.components.shared.EntityCreationButton;
 import org.hk.doghub.ui.components.shared.user.UserEmailField;
 import org.hk.doghub.ui.components.shared.user.UserPasswordField;
-import org.hk.doghub.ui.views.site.signup.PrivacyPolicyAnchor;
-import org.hk.doghub.ui.views.site.signup.SignupWithFacebook;
-import org.hk.doghub.ui.views.site.signup.SignupWithGoogle;
-import org.hk.doghub.ui.views.site.signup.TermsOfServiceAnchor;
+import org.hk.doghub.ui.views.site.login.LoginView;
+import org.hk.doghub.ui.views.site.signup.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,6 +33,8 @@ public class SignupViewService {
     private final TextInputExecutor textInputExecutor;
 
     private final ElementRetriever elementRetriever;
+
+    private final TitleVerifier titleVerifier;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
@@ -99,5 +100,12 @@ public class SignupViewService {
         log.info("Click privacy policy started");
         clickExecutor.click(webDriver, By.className(PrivacyPolicyAnchor.CLASS_NAME));
         log.info("Click privacy policy completed");
+    }
+
+    public void clickSignIn(@NotNull WebDriver webDriver) {
+        log.info("Click sign in started");
+        clickExecutor.click(webDriver, By.className(SignupFooterAlreadyHaveAccountLoginLink.CLASS_NAME));
+        titleVerifier.verifyEquals(webDriver, LoginView.NAME);
+        log.info("Click sign in completed");
     }
 }
