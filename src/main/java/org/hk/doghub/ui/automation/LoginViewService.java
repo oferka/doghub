@@ -95,6 +95,14 @@ public class LoginViewService {
         log.info("Verify email error message completed");
     }
 
+    public void verifyPasswordErrorMessage(@NotNull WebDriver webDriver) {
+        log.info("Verify password error message started");
+        WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-password-field"));
+        WebElement passwordFieldErrorMessageElement = passwordFieldElement.findElement(By.tagName(DIV));
+        assert passwordFieldErrorMessageElement.getText().equals("Password is required");
+        log.info("Verify password error message completed");
+    }
+
     public @NotNull String getValidEmail() {
         return userProvider.get().getEmail();
     }
