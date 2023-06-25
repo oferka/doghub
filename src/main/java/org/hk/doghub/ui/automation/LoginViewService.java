@@ -103,6 +103,14 @@ public class LoginViewService {
         log.info("Verify password error message completed");
     }
 
+    public void clickContinue(@NotNull WebDriver webDriver) {
+        log.info("Click continue started");
+        WebElement loginFormElement = elementRetriever.getByPresence(webDriver, By.tagName("form"));
+        WebElement continueElement = loginFormElement.findElement(By.tagName("vaadin-button"));
+        clickExecutor.click(webDriver, continueElement);
+        log.info("Click continue completed");
+    }
+
     public @NotNull String getValidEmail() {
         return userProvider.get().getEmail();
     }
