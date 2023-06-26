@@ -18,8 +18,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
-import static com.vaadin.flow.component.Tag.DIV;
-import static com.vaadin.flow.component.Tag.INPUT;
+import static com.vaadin.flow.component.Tag.*;
 
 @Service
 @RequiredArgsConstructor
@@ -125,5 +124,15 @@ public class LoginViewService {
 
     public @NotNull String getValidPassword() {
         return userProvider.get().getPassword();
+    }
+
+    public void verifyIncorrectUsernameOrPasswordMessage(@NotNull WebDriver webDriver) {
+        log.info("Verify incorrect username or password message started");
+        WebElement loginFormWrapperElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-login-form-wrapper"));
+        WebElement formSectionElement = loginFormWrapperElement.getShadowRoot().findElement(By.cssSelector(SECTION));
+        WebElement errorMessageElement = formSectionElement.findElement(By.tagName(DIV));
+        WebElement errorMessageTitleElement = errorMessageElement.findElement(By.tagName(H5));
+        assert errorMessageTitleElement.getText().equals("Incorrect username or password");
+        log.info("Verify incorrect username or password message completed");
     }
 }

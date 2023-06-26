@@ -7,7 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 708">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 709">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/LoginViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/LoginViewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/LoginViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/LoginViewTest.java" afterDir="false" />
     </list>
@@ -113,7 +114,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginViewTest.shouldClickSignup">
+  <component name="RunManager" selected="JUnit.LoginViewTest.shouldPresentIncorrectUsernameOrPasswordMessage">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -127,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginViewTest.shouldClickContinue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -137,8 +138,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.LoginViewTest" />
-      <option name="METHOD_NAME" value="shouldClickContinue(org.hk.doghub.ui.e2e.Setup)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,7 +175,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginViewTest.shouldEnterPasswordAndShowIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginViewTest.shouldPresentIncorrectUsernameOrPasswordMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -185,7 +185,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.LoginViewTest" />
-      <option name="METHOD_NAME" value="shouldEnterPasswordAndShowIt(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="METHOD_NAME" value="shouldPresentIncorrectUsernameOrPasswordMessage(org.hk.doghub.ui.e2e.Setup)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginViewTest.shouldPresentIncorrectUsernameOrPasswordMessage" />
+        <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.LoginViewTest" />
         <item itemvalue="JUnit.LoginViewTest.shouldClickSignup" />
         <item itemvalue="JUnit.LoginViewTest.shouldClickTermsOfService" />
-        <item itemvalue="JUnit.LoginViewTest.shouldClickContinue" />
-        <item itemvalue="Application.DogHubApplication" />
-        <item itemvalue="JUnit.LoginViewTest.shouldEnterPasswordAndShowIt" />
       </list>
     </recent_temporary>
   </component>
@@ -215,13 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00664" summary="doghub 660">
-      <created>1687431999944</created>
-      <option name="number" value="00664" />
-      <option name="presentableId" value="LOCAL-00664" />
-      <option name="project" value="LOCAL" />
-      <updated>1687431999944</updated>
     </task>
     <task id="LOCAL-00665" summary="doghub 661">
       <created>1687432096252</created>
@@ -559,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687704292769</updated>
     </task>
-    <option name="localTasksCounter" value="713" />
+    <task id="LOCAL-00713" summary="doghub 709">
+      <created>1687704615888</created>
+      <option name="number" value="00713" />
+      <option name="presentableId" value="LOCAL-00713" />
+      <option name="project" value="LOCAL" />
+      <updated>1687704615888</updated>
+    </task>
+    <option name="localTasksCounter" value="714" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -575,7 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 684" />
     <MESSAGE value="doghub 685" />
     <MESSAGE value="doghub 686" />
     <MESSAGE value="doghub 687" />
@@ -600,6 +599,18 @@
     <MESSAGE value="doghub 706" />
     <MESSAGE value="doghub 707" />
     <MESSAGE value="doghub 708" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 708" />
+    <MESSAGE value="doghub 709" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 709" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/LoginViewService.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

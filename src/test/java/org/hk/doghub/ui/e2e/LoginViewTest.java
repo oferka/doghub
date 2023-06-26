@@ -103,6 +103,16 @@ public class LoginViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldPresentIncorrectUsernameOrPasswordMessage(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterEmail(webDriver, viewService.getValidEmail());
+        viewService.enterPassword(webDriver, viewService.getValidPassword());
+        viewService.verifyIncorrectUsernameOrPasswordMessage(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldClickSignup(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
