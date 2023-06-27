@@ -106,9 +106,7 @@ public class SignupViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         String username = viewService.getValidEmail();
         String password = viewService.getValidPassword();
-        viewService.enterEmail(webDriver, username);
-        viewService.enterPassword(webDriver, password);
-        viewService.clickContinue(webDriver);
+        submitSignupWithEmailForm(username, password);
         viewService.verifySignup(webDriver, username);
     }
 
@@ -119,9 +117,7 @@ public class SignupViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         String username = viewService.getInvalidEmail();
         String password = viewService.getValidPassword();
-        viewService.enterEmail(webDriver, username);
-        viewService.enterPassword(webDriver, password);
-        viewService.clickContinue(webDriver);
+        submitSignupWithEmailForm(username, password);
         viewService.verifyEmailErrorMessage(webDriver);
     }
 
@@ -132,9 +128,7 @@ public class SignupViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         String username = viewService.getValidEmail();
         String password = viewService.getInvalidPassword();
-        viewService.enterEmail(webDriver, username);
-        viewService.enterPassword(webDriver, password);
-        viewService.clickContinue(webDriver);
+        submitSignupWithEmailForm(username, password);
         viewService.verifyPasswordErrorMessage(webDriver);
     }
 
@@ -145,9 +139,7 @@ public class SignupViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         String username = viewService.getInvalidEmail();
         String password = viewService.getInvalidPassword();
-        viewService.enterEmail(webDriver, username);
-        viewService.enterPassword(webDriver, password);
-        viewService.clickContinue(webDriver);
+        submitSignupWithEmailForm(username, password);
         viewService.verifyEmailErrorMessage(webDriver);
         viewService.verifyPasswordErrorMessage(webDriver);
     }
@@ -174,5 +166,11 @@ public class SignupViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.clickSignIn(webDriver);
+    }
+
+    private void submitSignupWithEmailForm(String username, String password) {
+        viewService.enterEmail(webDriver, username);
+        viewService.enterPassword(webDriver, password);
+        viewService.clickContinue(webDriver);
     }
 }
