@@ -7,7 +7,11 @@ import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
-import org.hk.doghub.data.content.generator.user.UserProvider;
+import org.hk.doghub.data.content.generator.Provider;
+import org.hk.doghub.data.content.generator.user.User;
+import org.hk.doghub.data.content.provider.Converter;
+import org.hk.doghub.data.service.EntityService;
+import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.views.site.login.LoginFooterCreateAccountSignupLink;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.login.LoginWithFacebook;
@@ -18,7 +22,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+
 import static com.vaadin.flow.component.Tag.*;
+import static org.hk.doghub.model.user.Role.USER;
 
 @Service
 @RequiredArgsConstructor
@@ -37,7 +44,11 @@ public class LoginViewService {
 
     private final ElementRetriever elementRetriever;
 
-    private final UserProvider userProvider;
+    private final Provider<User> userProvider;
+
+    private final Converter<User, DogHubUser> userConverter;
+
+    private final EntityService<DogHubUser> userEntityService;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         log.info("Navigate from home page started");
@@ -134,5 +145,13 @@ public class LoginViewService {
         WebElement errorMessageTitleElement = errorMessageElement.findElement(By.tagName(H5));
         assert errorMessageTitleElement.getText().equals("Incorrect username or password");
         log.info("Verify incorrect username or password message completed");
+    }
+
+    public User loadUser() {
+        User user = userProvider.get();
+        DogHubUser dogHubUser = userConverter.convert(user);
+        dogHubUser.setRoles(Set.of(USER));
+        userEntityService.save(dogHubUser);
+        return user;
     }
 }
