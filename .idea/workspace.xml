@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 710">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/user/AdminDogHubUserProviderConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/admin-user.properties" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 711">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/user/AdminDogHubUserProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/user/AdminDogHubUserProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/user/AdminDogHubUserProviderConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/user/AdminDogHubUserProviderConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/admin-user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin-user.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,13 +217,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00666" summary="doghub 662">
-      <created>1687432539665</created>
-      <option name="number" value="00666" />
-      <option name="presentableId" value="LOCAL-00666" />
-      <option name="project" value="LOCAL" />
-      <updated>1687432539665</updated>
     </task>
     <task id="LOCAL-00667" summary="doghub 663">
       <created>1687435042243</created>
@@ -561,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687755422814</updated>
     </task>
-    <option name="localTasksCounter" value="715" />
+    <task id="LOCAL-00715" summary="doghub 711">
+      <created>1687854305577</created>
+      <option name="number" value="00715" />
+      <option name="presentableId" value="LOCAL-00715" />
+      <option name="project" value="LOCAL" />
+      <updated>1687854305577</updated>
+    </task>
+    <option name="localTasksCounter" value="716" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -577,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 686" />
     <MESSAGE value="doghub 687" />
     <MESSAGE value="doghub 688" />
     <MESSAGE value="doghub 689" />
@@ -602,6 +601,18 @@
     <MESSAGE value="doghub 708" />
     <MESSAGE value="doghub 709" />
     <MESSAGE value="doghub 710" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 710" />
+    <MESSAGE value="doghub 711" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 711" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/hk/doghub/data/content/provider/user/AdminDogHubUserProvider.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
