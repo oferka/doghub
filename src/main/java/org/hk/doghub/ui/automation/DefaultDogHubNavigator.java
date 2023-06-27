@@ -118,7 +118,6 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
     }
 
     private void navigateTo(@NotNull WebDriver webDriver, @NotNull @NotBlank String pageName, @NotNull URI uri) {
-        log.info("Navigate to '{}' started", pageName);
         String currentUrl = webDriver.getCurrentUrl();
         String destination = uri.toString();
         if(currentUrl.equals(destination)) {
@@ -127,6 +126,5 @@ public class DefaultDogHubNavigator implements DogHubNavigator {
         else {
             webDriver.get(uri.toString());
         }
-        log.info("Navigate to '{}' completed", pageName);
     }
 }

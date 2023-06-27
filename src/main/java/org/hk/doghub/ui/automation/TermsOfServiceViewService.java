@@ -14,8 +14,6 @@ public class TermsOfServiceViewService {
     private final DogHubNavigator navigator;
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        log.info("Navigate directly started");
         navigator.navigateToTermsOfServiceView(webDriver);
-        log.info("Navigate directly completed");
     }
 }

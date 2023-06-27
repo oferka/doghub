@@ -18,9 +18,7 @@ public class AboutViewService {
     private final TitleVerifier titleVerifier;
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        log.info("Navigate directly started");
         navigator.navigateToAboutView(webDriver);
         titleVerifier.verifyEquals(webDriver, AboutView.NAME);
-        log.info("Navigate directly completed");
     }
 }

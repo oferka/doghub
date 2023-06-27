@@ -18,9 +18,7 @@ public class HelpViewService {
     private final TitleVerifier titleVerifier;
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        log.info("Navigate directly started");
         navigator.navigateToHelpView(webDriver);
         titleVerifier.verifyEquals(webDriver, HelpView.NAME);
-        log.info("Navigate directly completed");
     }
 }

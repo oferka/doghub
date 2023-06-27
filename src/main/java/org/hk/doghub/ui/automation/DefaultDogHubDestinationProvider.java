@@ -112,10 +112,7 @@ public class DefaultDogHubDestinationProvider implements DogHubDestinationProvid
     }
 
     private URI getPageURI(String pageRoute, String pageTitle) {
-        log.info("Get URI for '{}' page started", pageTitle);
         UriComponents uriComponents = dogHubUriComponentsProvider.get(pageRoute);
-        URI result = uriComponents.toUri();
-        log.info("Get URI for '{}' page completed", pageTitle);
-        return result;
+        return uriComponents.toUri();
     }
 }

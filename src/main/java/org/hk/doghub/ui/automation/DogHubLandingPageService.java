@@ -43,60 +43,42 @@ public class DogHubLandingPageService {
     }
 
     public void clickLogo(@NotNull WebDriver webDriver) {
-        log.info("Click logo started");
         clickExecutor.click(webDriver, By.className(DogHubSiteLayoutTitleRouterLinkImage.CLASS_NAME));
         titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
-        log.info("Click logo completed");
     }
 
     public void clickHome(@NotNull WebDriver webDriver) {
-        log.info("Click home started");
         clickExecutor.click(webDriver, By.className(DogHubSiteLayoutTitleRouterLinkImage.CLASS_NAME));
         titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
-        log.info("Click home completed");
     }
 
     public void clickLogin(@NotNull WebDriver webDriver) {
-        log.info("Click login started");
         clickExecutor.click(webDriver, By.className(LoginButton.CLASS_NAME));
         titleVerifier.verifyEquals(webDriver, LoginView.NAME);
-        log.info("Click login completed");
     }
 
     public void clickSignup(@NotNull WebDriver webDriver) {
-        log.info("Click signup started");
         clickExecutor.click(webDriver, By.className(SignupButton.CLASS_NAME));
         titleVerifier.verifyEquals(webDriver, SignupView.NAME);
-        log.info("Click signup completed");
     }
 
     public List<WebElement> getTabs(@NotNull WebDriver webDriver) {
-        log.info("Get tabs started");
-        List<WebElement> tabs = elementsRetriever.getByPresence(webDriver, By.className(DogHubSiteLayoutTab.CLASS_NAME));
-        log.info("Get tabs completed, Found {} links", tabs.size());
-        return tabs;
+        return elementsRetriever.getByPresence(webDriver, By.className(DogHubSiteLayoutTab.CLASS_NAME));
     }
 
     public void browseTabs(@NotNull WebDriver webDriver) {
-        log.info("Browse tabs started");
         int numberOfTabs = getNumberOfTabs(webDriver);
         for(int i=0; i<numberOfTabs; i++) {
             browseTab(webDriver, i);
         }
-        log.info("Browse tabs completed");
     }
     private int getNumberOfTabs(@NotNull WebDriver webDriver) {
-        log.info("Get number of tabs started");
-        int result = getTabs(webDriver).size();
-        log.info("Get number of tabs completed. Result is {}", result);
-        return result;
+        return getTabs(webDriver).size();
     }
 
     private void browseTab(@NotNull WebDriver webDriver, int tabIndex) {
-        log.info("Browse tab started");
         clickExecutor.click(webDriver, getTabs(webDriver).get(tabIndex));
         navigate(webDriver);
-        log.info("Browse tab completed");
     }
 
     public boolean isLoggedIn(@NotNull WebDriver webDriver) {

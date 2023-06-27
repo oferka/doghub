@@ -25,16 +25,12 @@ public class TrainingViewService {
     private final DogHubNavigator navigator;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
-        log.info("Navigate from home page started");
         clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, TrainingView.NAME)));
         titleVerifier.verifyEquals(webDriver, TrainingView.NAME);
-        log.info("Navigate from home page completed");
     }
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        log.info("Navigate directly started");
         navigator.navigateToTrainingView(webDriver);
         titleVerifier.verifyEquals(webDriver, TrainingView.NAME);
-        log.info("Navigate directly completed");
     }
 }

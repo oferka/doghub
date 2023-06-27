@@ -17,7 +17,6 @@ public class DefaultDogHubUriComponentsProvider implements DogHubUriComponentsPr
 
     @Override
     public @NotNull UriComponents get(int port, @NotNull String path) {
-        log.info("Get Uri components started");
         UriComponents result = UriComponentsBuilder
                 .newInstance()
                 .scheme(dogHubUriComponentsProviderConfiguration.getSchema())
@@ -25,7 +24,6 @@ public class DefaultDogHubUriComponentsProvider implements DogHubUriComponentsPr
                 .port(port)
                 .path(path)
                 .build();
-        log.info("Get Uri components completed. Result is {}", result);
         return result;
     }
 

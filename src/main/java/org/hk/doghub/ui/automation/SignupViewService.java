@@ -45,84 +45,60 @@ public class SignupViewService {
     private final UserProvider userProvider;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
-        log.info("Navigate from home page started");
         landingPageService.clickSignup(webDriver);
-        log.info("Navigate from home page completed");
     }
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        log.info("Navigate directly started");
         navigator.navigateToSignupView(webDriver);
         titleVerifier.verifyEquals(webDriver, SignupView.NAME);
-        log.info("Navigate directly completed");
     }
 
     public void clickSignupWithGoogle(@NotNull WebDriver webDriver) {
-        log.info("Click signup with google started");
         clickExecutor.click(webDriver, By.className(SignupWithGoogle.CLASS_NAME));
-        log.info("Click signup with google completed");
     }
 
     public void clickSignupWithFacebook(@NotNull WebDriver webDriver) {
-        log.info("Click signup with facebook started");
         clickExecutor.click(webDriver, By.className(SignupWithFacebook.CLASS_NAME));
-        log.info("Click signup with facebook completed");
     }
 
     public void enterEmail(@NotNull WebDriver webDriver, @NotNull String email) {
-        log.info("Enter email {} started", email);
         WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserEmailField.CLASS_NAME));
         WebElement emailFieldInputElement = emailFieldElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, emailFieldInputElement, email, true, true);
-        log.info("Enter email {} completed", email);
     }
 
     public void enterPassword(@NotNull WebDriver webDriver, @NotNull String password) {
-        log.info("Enter password {} started", password);
         WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserPasswordField.CLASS_NAME));
         WebElement passwordFieldInputElement = passwordFieldElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, passwordFieldInputElement, password, true, true);
-        log.info("Enter password {} completed", password);
     }
 
     public void toggleShowHidePassword(@NotNull WebDriver webDriver) {
-        log.info("Toggle show/hide password started");
         WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserPasswordField.CLASS_NAME));
         WebElement passwordFieldShowHideElement = passwordFieldElement.findElement(By.tagName("vaadin-password-field-button"));
         clickExecutor.click(webDriver, passwordFieldShowHideElement);
-        log.info("Toggle show/hide password completed");
     }
 
     public void clickContinue(@NotNull WebDriver webDriver) {
-        log.info("Click continue started");
         clickExecutor.click(webDriver, By.className(EntityCreationButton.CLASS_NAME));
-        log.info("Click continue completed");
     }
 
     public void clickTermsOfService(@NotNull WebDriver webDriver) {
-        log.info("Click terms of service started");
         clickExecutor.click(webDriver, By.className(TermsOfServiceAnchor.CLASS_NAME));
-        log.info("Click terms of service completed");
     }
 
     public void clickPrivacyPolicy(@NotNull WebDriver webDriver) {
-        log.info("Click privacy policy started");
         clickExecutor.click(webDriver, By.className(PrivacyPolicyAnchor.CLASS_NAME));
-        log.info("Click privacy policy completed");
     }
 
     public void clickSignIn(@NotNull WebDriver webDriver) {
-        log.info("Click sign in started");
         clickExecutor.click(webDriver, By.className(SignupFooterAlreadyHaveAccountLoginLink.CLASS_NAME));
         titleVerifier.verifyEquals(webDriver, LoginView.NAME);
-        log.info("Click sign in completed");
     }
 
     public void verifySignup(@NotNull WebDriver webDriver, @NotNull String username) {
-        log.info("Verify signup started");
         userService.existsByUsername(username);
         titleVerifier.verifyEquals(webDriver, LoginView.NAME);
-        log.info("Verify signup completed");
     }
 
     public @NotNull String getValidEmail() {
@@ -138,11 +114,9 @@ public class SignupViewService {
     }
 
     public void verifyEmailErrorMessage(@NotNull WebDriver webDriver) {
-        log.info("Verify email error message started");
         WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserEmailField.CLASS_NAME));
         WebElement emailFieldErrorMessageElement = emailFieldElement.findElement(By.tagName(DIV));
         assert emailFieldErrorMessageElement.getText().equals(UserEmailField.ERROR_MESSAGE);
-        log.info("Verify email error message completed");
     }
 
     public @NotNull String getInvalidPassword() {
@@ -150,10 +124,8 @@ public class SignupViewService {
     }
 
     public void verifyPasswordErrorMessage(@NotNull WebDriver webDriver) {
-        log.info("Verify password error message started");
         WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.className(UserPasswordField.CLASS_NAME));
         WebElement passwordFieldErrorMessageElement = passwordFieldElement.findElement(By.tagName(DIV));
         assert passwordFieldErrorMessageElement.getText().equals(UserPasswordField.ERROR_MESSAGE);
-        log.info("Verify password error message completed");
     }
 }

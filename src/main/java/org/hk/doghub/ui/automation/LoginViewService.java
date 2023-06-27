@@ -53,82 +53,60 @@ public class LoginViewService {
     private final EntityService<DogHubUser> userEntityService;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
-        log.info("Navigate from home page started");
         landingPageService.clickLogin(webDriver);
-        log.info("Navigate from home page completed");
     }
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        log.info("Navigate directly started");
         navigator.navigateToLoginView(webDriver);
         titleVerifier.verifyEquals(webDriver, LoginView.NAME);
-        log.info("Navigate directly completed");
     }
 
     public void clickLoginWithGoogle(@NotNull WebDriver webDriver) {
-        log.info("Click login with google started");
         clickExecutor.click(webDriver, By.className(LoginWithGoogle.CLASS_NAME));
-        log.info("Click login with google completed");
     }
 
     public void clickLoginWithFacebook(@NotNull WebDriver webDriver) {
-        log.info("Click login with facebook started");
         clickExecutor.click(webDriver, By.className(LoginWithFacebook.CLASS_NAME));
-        log.info("Click login with facebook completed");
     }
 
     public void enterEmail(@NotNull WebDriver webDriver, @NotNull String email) {
-        log.info("Enter email {} started", email);
         WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-text-field"));
         WebElement emailFieldInputElement = emailFieldElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, emailFieldInputElement, email, true, true);
-        log.info("Enter email {} completed", email);
     }
 
     public void enterPassword(@NotNull WebDriver webDriver, @NotNull String password) {
-        log.info("Enter password {} started", password);
         WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-password-field"));
         WebElement passwordFieldInputElement = passwordFieldElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, passwordFieldInputElement, password, true, true);
-        log.info("Enter password {} completed", password);
     }
 
     public void toggleShowHidePassword(@NotNull WebDriver webDriver) {
-        log.info("Toggle show/hide password started");
         WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-password-field"));
         WebElement passwordFieldShowHideElement = passwordFieldElement.findElement(By.tagName("vaadin-password-field-button"));
         clickExecutor.click(webDriver, passwordFieldShowHideElement);
-        log.info("Toggle show/hide password completed");
     }
 
     public void verifyEmailErrorMessage(@NotNull WebDriver webDriver) {
-        log.info("Verify email error message started");
         WebElement emailFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-text-field"));
         WebElement emailFieldErrorMessageElement = emailFieldElement.findElement(By.tagName(DIV));
         assert emailFieldErrorMessageElement.getText().equals("Username is required");
-        log.info("Verify email error message completed");
     }
 
     public void verifyPasswordErrorMessage(@NotNull WebDriver webDriver) {
-        log.info("Verify password error message started");
         WebElement passwordFieldElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-password-field"));
         WebElement passwordFieldErrorMessageElement = passwordFieldElement.findElement(By.tagName(DIV));
         assert passwordFieldErrorMessageElement.getText().equals("Password is required");
-        log.info("Verify password error message completed");
     }
 
     public void clickContinue(@NotNull WebDriver webDriver) {
-        log.info("Click continue started");
         WebElement loginFormElement = elementRetriever.getByPresence(webDriver, By.tagName("form"));
         WebElement continueElement = loginFormElement.findElement(By.tagName("vaadin-button"));
         clickExecutor.click(webDriver, continueElement);
-        log.info("Click continue completed");
     }
     public void clickSignup(@NotNull WebDriver webDriver) {
-        log.info("Click signup started");
         clickExecutor.click(webDriver, By.className(LoginFooterCreateAccountSignupLink.CLASS_NAME));
         titleVerifier.verifyEquals(webDriver, SignupView.NAME);
-        log.info("Click signup completed");
     }
 
     public @NotNull String getValidEmail() {
@@ -140,19 +118,15 @@ public class LoginViewService {
     }
 
     public void verifyIncorrectUsernameOrPasswordMessage(@NotNull WebDriver webDriver) {
-        log.info("Verify incorrect username or password message started");
         WebElement loginFormWrapperElement = elementRetriever.getByPresence(webDriver, By.tagName("vaadin-login-form-wrapper"));
         WebElement formSectionElement = loginFormWrapperElement.getShadowRoot().findElement(By.cssSelector(SECTION));
         WebElement errorMessageElement = formSectionElement.findElement(By.tagName(DIV));
         WebElement errorMessageTitleElement = errorMessageElement.findElement(By.tagName(H5));
         assert errorMessageTitleElement.getText().equals("Incorrect username or password");
-        log.info("Verify incorrect username or password message completed");
     }
 
     public void verifyLoggedIn(@NotNull WebDriver webDriver) {
-        log.info("Verify logged in started");
         assert landingPageService.isLoggedIn(webDriver);
-        log.info("Verify logged in completed");
     }
 
     public User loadUser() {
@@ -168,12 +142,10 @@ public class LoginViewService {
     }
 
     private User loadUser(Set<Role> roles) {
-        log.info("Load user with roles {} started", roles);
         User user = userProvider.get();
         DogHubUser dogHubUser = userConverter.convert(user);
         dogHubUser.setRoles(roles);
         userEntityService.save(dogHubUser);
-        log.info("Load user {} with roles {} completed", dogHubUser.getUsername(), roles);
         return user;
     }
 }

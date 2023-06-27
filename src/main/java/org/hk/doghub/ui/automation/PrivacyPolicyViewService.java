@@ -14,8 +14,6 @@ public class PrivacyPolicyViewService {
     private final DogHubNavigator navigator;
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        log.info("Navigate directly started");
         navigator.navigateToPrivacyPolicyView(webDriver);
-        log.info("Navigate directly completed");
     }
 }
