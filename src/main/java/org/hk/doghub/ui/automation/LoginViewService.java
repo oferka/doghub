@@ -130,6 +130,10 @@ public class LoginViewService {
         assert landingPageService.isLoggedIn(webDriver);
     }
 
+    public void verifyLoggedInWithSignedUpUser(@NotNull WebDriver webDriver) {
+        titleVerifier.verifyEquals(webDriver, ProfileView.NAME);
+    }
+
     public User loadUser() {
         return loadUser(Set.of(USER));
     }
@@ -148,9 +152,5 @@ public class LoginViewService {
         dogHubUser.setRoles(roles);
         userEntityService.save(dogHubUser);
         return user;
-    }
-
-    public void verifyLoggedInWithSignedUpUser(@NotNull WebDriver webDriver) {
-        titleVerifier.verifyEquals(webDriver, ProfileView.NAME);
     }
 }
