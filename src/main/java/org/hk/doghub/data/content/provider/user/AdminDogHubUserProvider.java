@@ -24,13 +24,15 @@ import static org.hk.doghub.model.user.Role.USER;
 @Slf4j
 public class AdminDogHubUserProvider {
 
+    private final AdminDogHubUserProviderConfiguration configuration;
+
     private final PasswordEncoder passwordEncoder;
 
     public @NotNull DogHubUser get() {
         DogHubUser adminUsaUser = new DogHubUser();
-        adminUsaUser.setName("Ofer Karp");
-        adminUsaUser.setUsername("ofer.karp@gmail.com");
-        adminUsaUser.setEmail("ofer.karp@gmail.com");
+        adminUsaUser.setName(configuration.getName());
+        adminUsaUser.setUsername(configuration.getUsername());
+        adminUsaUser.setEmail(configuration.getEmail());
         adminUsaUser.setTitle("Mr.");
         adminUsaUser.setThumbnailPicture("https://en.gravatar.com/userimage/33131799/3024d9952717995b6facc57f7bd50d2e.png");
         adminUsaUser.setDateOfBirth(ZonedDateTime.of(LocalDate.of(1976, 4, 15), LocalTime.of(2,  44), ZoneId.of("GMT+02:00")));
