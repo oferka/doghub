@@ -12,6 +12,7 @@ import org.hk.doghub.data.content.generator.user.User;
 import org.hk.doghub.data.content.provider.Converter;
 import org.hk.doghub.data.service.EntityService;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.model.user.Role;
 import org.hk.doghub.ui.views.site.login.LoginFooterCreateAccountSignupLink;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.login.LoginWithFacebook;
@@ -155,32 +156,24 @@ public class LoginViewService {
     }
 
     public User loadUser() {
-        log.info("Load user started");
-        User user = userProvider.get();
-        DogHubUser dogHubUser = userConverter.convert(user);
-        dogHubUser.setRoles(Set.of(USER));
-        userEntityService.save(dogHubUser);
-        log.info("Load user '{}' completed", dogHubUser.getUsername());
-        return user;
+        return loadUser(Set.of(USER));
     }
 
     public User loadUserWithAdminRole() {
-        log.info("Load user with admin role started");
-        User user = userProvider.get();
-        DogHubUser dogHubUser = userConverter.convert(user);
-        dogHubUser.setRoles(Set.of(ADMIN));
-        userEntityService.save(dogHubUser);
-        log.info("Load user with admin role '{}' completed", dogHubUser.getUsername());
-        return user;
+        return loadUser(Set.of(ADMIN));
     }
 
     public User loadUserWithAdminAndUserRoles() {
-        log.info("Load user with admin and user roles started");
+        return loadUser(Set.of(ADMIN, USER));
+    }
+
+    private User loadUser(Set<Role> roles) {
+        log.info("Load user with roles {} started", roles);
         User user = userProvider.get();
         DogHubUser dogHubUser = userConverter.convert(user);
-        dogHubUser.setRoles(Set.of(ADMIN, USER));
+        dogHubUser.setRoles(roles);
         userEntityService.save(dogHubUser);
-        log.info("Load user with admin and user roles '{}' completed", dogHubUser.getUsername());
+        log.info("Load user {} with roles {} completed", dogHubUser.getUsername(), roles);
         return user;
     }
 }
