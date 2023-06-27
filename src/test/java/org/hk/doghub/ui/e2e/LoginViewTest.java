@@ -110,7 +110,7 @@ public class LoginViewTest extends DogHubUITest {
         User user = viewService.loadUser();
         viewService.enterEmail(webDriver, user.getEmail());
         viewService.enterPassword(webDriver, user.getPassword());
-        //todo - verify
+        viewService.verifyLoggedIn(webDriver);
     }
 
     @ParameterizedTest

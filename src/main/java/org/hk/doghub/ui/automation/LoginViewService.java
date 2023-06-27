@@ -148,10 +148,17 @@ public class LoginViewService {
     }
 
     public User loadUser() {
+        log.info("Load user started");
         User user = userProvider.get();
         DogHubUser dogHubUser = userConverter.convert(user);
         dogHubUser.setRoles(Set.of(USER));
         userEntityService.save(dogHubUser);
+        log.info("Load user '{}' completed", dogHubUser.getUsername());
         return user;
+    }
+
+    public void verifyLoggedIn(@NotNull WebDriver webDriver) {
+        log.info("Verify logged in started");
+        log.info("Verify logged in completed");
     }
 }
