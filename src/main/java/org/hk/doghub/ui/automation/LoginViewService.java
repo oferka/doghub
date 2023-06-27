@@ -35,7 +35,7 @@ import static org.hk.doghub.model.user.Role.USER;
 @Slf4j
 public class LoginViewService {
 
-    private final DogHubLandingPageService landingPageService;
+    private final SiteHomeViewService landingPageService;
 
     private final DogHubNavigator navigator;
 

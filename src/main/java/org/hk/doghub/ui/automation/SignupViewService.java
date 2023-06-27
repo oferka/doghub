@@ -28,7 +28,7 @@ import static com.vaadin.flow.component.Tag.INPUT;
 @Slf4j
 public class SignupViewService {
 
-    private final DogHubLandingPageService landingPageService;
+    private final SiteHomeViewService landingPageService;
 
     private final DogHubNavigator navigator;
 

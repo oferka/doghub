@@ -3,7 +3,7 @@ package org.hk.doghub.ui.e2e;
 import org.hk.doghub.DogHubApplication;
 import org.hk.doghub.automation.e2e.selenium.browser.BrowserProvider;
 import org.hk.doghub.automation.e2e.selenium.browser.WebDriverProvider;
-import org.hk.doghub.ui.automation.DogHubLandingPageService;
+import org.hk.doghub.ui.automation.SiteHomeViewService;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,13 @@ public abstract class DogHubUITest {
     private WebDriverProvider webDriverProvider;
 
     @Autowired
-    protected DogHubLandingPageService landingPageService;
+    protected SiteHomeViewService siteHomeViewService;
 
     protected WebDriver webDriver;
 
     protected void initiateWebDriverAndNavigateToLandingPage(Setup setup) {
         webDriver = webDriverProvider.get(browserProvider.get(setup.getBrowserConfiguration()));
-        landingPageService.navigate(webDriver);
+        siteHomeViewService.navigateDirectly(webDriver);
     }
 
     @AfterEach
