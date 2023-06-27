@@ -25,6 +25,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 import static com.vaadin.flow.component.Tag.*;
+import static org.hk.doghub.model.user.Role.ADMIN;
 import static org.hk.doghub.model.user.Role.USER;
 
 @Service
@@ -147,6 +148,12 @@ public class LoginViewService {
         log.info("Verify incorrect username or password message completed");
     }
 
+    public void verifyLoggedIn(@NotNull WebDriver webDriver) {
+        log.info("Verify logged in started");
+        assert landingPageService.isLoggedIn(webDriver);
+        log.info("Verify logged in completed");
+    }
+
     public User loadUser() {
         log.info("Load user started");
         User user = userProvider.get();
@@ -157,9 +164,23 @@ public class LoginViewService {
         return user;
     }
 
-    public void verifyLoggedIn(@NotNull WebDriver webDriver) {
-        log.info("Verify logged in started");
-        assert landingPageService.isLoggedIn(webDriver);
-        log.info("Verify logged in completed");
+    public User loadUserWithAdminRole() {
+        log.info("Load user with admin role started");
+        User user = userProvider.get();
+        DogHubUser dogHubUser = userConverter.convert(user);
+        dogHubUser.setRoles(Set.of(ADMIN));
+        userEntityService.save(dogHubUser);
+        log.info("Load user with admin role '{}' completed", dogHubUser.getUsername());
+        return user;
+    }
+
+    public User loadUserWithAdminAndUserRoles() {
+        log.info("Load user with admin and user roles started");
+        User user = userProvider.get();
+        DogHubUser dogHubUser = userConverter.convert(user);
+        dogHubUser.setRoles(Set.of(ADMIN, USER));
+        userEntityService.save(dogHubUser);
+        log.info("Load user with admin and user roles '{}' completed", dogHubUser.getUsername());
+        return user;
     }
 }

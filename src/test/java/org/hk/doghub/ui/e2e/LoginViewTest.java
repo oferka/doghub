@@ -104,10 +104,32 @@ public class LoginViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
-    public void shouldLoadUserAndLogin(Setup setup) {
+    public void shouldLoginUser(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         User user = viewService.loadUser();
+        viewService.enterEmail(webDriver, user.getEmail());
+        viewService.enterPassword(webDriver, user.getPassword());
+        viewService.verifyLoggedIn(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldLoginUserWithAdminRole(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        User user = viewService.loadUserWithAdminRole();
+        viewService.enterEmail(webDriver, user.getEmail());
+        viewService.enterPassword(webDriver, user.getPassword());
+        viewService.verifyLoggedIn(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldLoginUserWithAdminAndUserRoles(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        User user = viewService.loadUserWithAdminAndUserRoles();
         viewService.enterEmail(webDriver, user.getEmail());
         viewService.enterPassword(webDriver, user.getPassword());
         viewService.verifyLoggedIn(webDriver);
