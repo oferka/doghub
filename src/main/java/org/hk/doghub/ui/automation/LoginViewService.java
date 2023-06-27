@@ -159,6 +159,7 @@ public class LoginViewService {
 
     public void verifyLoggedIn(@NotNull WebDriver webDriver) {
         log.info("Verify logged in started");
+        assert landingPageService.isLoggedIn(webDriver);
         log.info("Verify logged in completed");
     }
 }

@@ -3,9 +3,11 @@ package org.hk.doghub.ui.automation;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetriever;
 import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
+import org.hk.doghub.ui.components.shared.EntityAvatar;
 import org.hk.doghub.ui.components.shared.LoginButton;
 import org.hk.doghub.ui.components.shared.SignupButton;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
@@ -32,6 +34,8 @@ public class DogHubLandingPageService {
     private final DogHubNavigator dogHubNavigator;
 
     private final ElementsRetriever elementsRetriever;
+
+    private final ElementDisplayStatusRetriever elementDisplayStatusRetriever;
 
     public void navigate(@NotNull WebDriver webDriver) {
         dogHubNavigator.navigateToLandingPage(webDriver);
@@ -93,5 +97,10 @@ public class DogHubLandingPageService {
         clickExecutor.click(webDriver, getTabs(webDriver).get(tabIndex));
         navigate(webDriver);
         log.info("Browse tab completed");
+    }
+
+    public boolean isLoggedIn(@NotNull WebDriver webDriver) {
+        titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
+        return elementDisplayStatusRetriever.isDisplayed(webDriver, By.className(EntityAvatar.CLASS_NAME), true);
     }
 }
