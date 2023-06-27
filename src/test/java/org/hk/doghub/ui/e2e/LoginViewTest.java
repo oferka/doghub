@@ -108,8 +108,7 @@ public class LoginViewTest extends DogHubUITest {
     public void shouldLoginUser(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        User user = viewService.loadUser();
-        loginUser(user);
+        loginUser(viewService.loadUser());
     }
 
     @ParameterizedTest
@@ -117,8 +116,7 @@ public class LoginViewTest extends DogHubUITest {
     public void shouldLoginUserWithAdminRole(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        User user = viewService.loadUserWithAdminRole();
-        loginUser(user);
+        loginUser(viewService.loadUserWithAdminRole());
     }
 
     @ParameterizedTest
@@ -126,8 +124,7 @@ public class LoginViewTest extends DogHubUITest {
     public void shouldLoginUserWithAdminAndUserRoles(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        User user = viewService.loadUserWithAdminAndUserRoles();
-        loginUser(user);
+        loginUser(viewService.loadUserWithAdminAndUserRoles());
     }
 
     private void loginUser(@NotNull User user) {
