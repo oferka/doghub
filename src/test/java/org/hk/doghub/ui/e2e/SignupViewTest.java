@@ -1,5 +1,6 @@
 package org.hk.doghub.ui.e2e;
 
+import org.hk.doghub.ui.automation.LoginViewService;
 import org.hk.doghub.ui.automation.SignupViewService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -9,6 +10,9 @@ public class SignupViewTest extends DogHubUITest {
 
     @Autowired
     private SignupViewService viewService;
+
+    @Autowired
+    private LoginViewService loginViewService;
 
     @ParameterizedTest
     @EnumSource(Setup.class)
@@ -108,6 +112,20 @@ public class SignupViewTest extends DogHubUITest {
         String password = viewService.getValidPassword();
         submitSignupWithEmailForm(username, password);
         viewService.verifySignup(webDriver, username);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldLoginWithSignedUpUser(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        String username = viewService.getValidEmail();
+        String password = viewService.getValidPassword();
+        submitSignupWithEmailForm(username, password);
+        viewService.verifySignup(webDriver, username);
+        loginViewService.enterEmail(webDriver, username);
+        loginViewService.enterPassword(webDriver, password);
+        loginViewService.verifyLoggedInWithSignedUpUser(webDriver);
     }
 
     @ParameterizedTest

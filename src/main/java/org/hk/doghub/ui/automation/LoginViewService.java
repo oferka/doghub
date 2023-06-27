@@ -17,6 +17,7 @@ import org.hk.doghub.ui.views.site.login.LoginFooterCreateAccountSignupLink;
 import org.hk.doghub.ui.views.site.login.LoginView;
 import org.hk.doghub.ui.views.site.login.LoginWithFacebook;
 import org.hk.doghub.ui.views.site.login.LoginWithGoogle;
+import org.hk.doghub.ui.views.site.profile.ProfileView;
 import org.hk.doghub.ui.views.site.signup.SignupView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -147,5 +148,9 @@ public class LoginViewService {
         dogHubUser.setRoles(roles);
         userEntityService.save(dogHubUser);
         return user;
+    }
+
+    public void verifyLoggedInWithSignedUpUser(@NotNull WebDriver webDriver) {
+        titleVerifier.verifyEquals(webDriver, ProfileView.NAME);
     }
 }
