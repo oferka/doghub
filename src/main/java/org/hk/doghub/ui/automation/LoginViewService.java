@@ -35,7 +35,7 @@ import static org.hk.doghub.model.user.Role.USER;
 @Slf4j
 public class LoginViewService {
 
-    private final SiteHomeViewService landingPageService;
+    private final SiteHomeViewService siteHomeViewService;
 
     private final DogHubNavigator navigator;
 
@@ -54,7 +54,7 @@ public class LoginViewService {
     private final EntityService<DogHubUser> userEntityService;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
-        landingPageService.clickLogin(webDriver);
+        siteHomeViewService.clickLogin(webDriver);
     }
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
@@ -127,7 +127,7 @@ public class LoginViewService {
     }
 
     public void verifyLoggedIn(@NotNull WebDriver webDriver) {
-        assert landingPageService.isLoggedIn(webDriver);
+        assert siteHomeViewService.isLoggedIn(webDriver);
     }
 
     public void verifyLoggedInWithSignedUpUser(@NotNull WebDriver webDriver) {
