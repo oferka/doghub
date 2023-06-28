@@ -1,7 +1,5 @@
 package org.hk.doghub.ui.e2e;
 
-import jakarta.validation.constraints.NotNull;
-import org.hk.doghub.data.content.generator.user.User;
 import org.hk.doghub.ui.automation.LoginViewService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -108,7 +106,7 @@ public class LoginViewTest extends DogHubUITest {
     public void shouldLoginUser(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        loginUser(viewService.loadUser());
+        viewService.loginUser(webDriver, viewService.loadUser());
     }
 
     @ParameterizedTest
@@ -116,7 +114,7 @@ public class LoginViewTest extends DogHubUITest {
     public void shouldLoginUserWithAdminRole(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        loginUser(viewService.loadUserWithAdminRole());
+        viewService.loginUser(webDriver, viewService.loadUserWithAdminRole());
     }
 
     @ParameterizedTest
@@ -124,13 +122,7 @@ public class LoginViewTest extends DogHubUITest {
     public void shouldLoginUserWithAdminAndUserRoles(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
-        loginUser(viewService.loadUserWithAdminAndUserRoles());
-    }
-
-    private void loginUser(@NotNull User user) {
-        viewService.enterEmail(webDriver, user.getEmail());
-        viewService.enterPassword(webDriver, user.getPassword());
-        viewService.verifyLoggedIn(webDriver);
+        viewService.loginUser(webDriver, viewService.loadUserWithAdminAndUserRoles());
     }
 
     @ParameterizedTest

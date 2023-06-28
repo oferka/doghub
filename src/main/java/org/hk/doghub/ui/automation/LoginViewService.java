@@ -153,4 +153,10 @@ public class LoginViewService {
         userEntityService.save(dogHubUser);
         return user;
     }
+
+    public void loginUser(@NotNull WebDriver webDriver, @NotNull User user) {
+        enterEmail(webDriver, user.getEmail());
+        enterPassword(webDriver, user.getPassword());
+        verifyLoggedIn(webDriver);
+    }
 }
