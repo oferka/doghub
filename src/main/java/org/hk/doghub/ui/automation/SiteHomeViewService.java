@@ -7,9 +7,9 @@ import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDispl
 import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
-import org.hk.doghub.ui.components.shared.EntityAvatar;
 import org.hk.doghub.ui.components.shared.LoginButton;
 import org.hk.doghub.ui.components.shared.SignupButton;
+import org.hk.doghub.ui.components.shared.user.UserMenuBar;
 import org.hk.doghub.ui.views.site.home.SiteHomeView;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTab;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTitleRouterLinkImage;
@@ -90,6 +90,6 @@ public class SiteHomeViewService {
 
     public boolean isLoggedIn(@NotNull WebDriver webDriver) {
         titleVerifier.verifyEquals(webDriver, SiteHomeView.NAME);
-        return elementDisplayStatusRetriever.isDisplayed(webDriver, By.className(EntityAvatar.CLASS_NAME), true);
+        return elementDisplayStatusRetriever.isDisplayed(webDriver, By.className(UserMenuBar.CLASS_NAME), true);
     }
 }

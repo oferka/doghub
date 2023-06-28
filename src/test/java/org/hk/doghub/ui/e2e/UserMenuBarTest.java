@@ -16,4 +16,12 @@ public class UserMenuBarTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         userMenuBarService.loginUser(webDriver);
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldPresentMenuBar(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        userMenuBarService.openMenuBar(webDriver);
+        userMenuBarService.verifyMenuBarIsDisplayed(webDriver);
+    }
 }
