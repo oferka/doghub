@@ -12,7 +12,7 @@ public class UserMenuBarTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
-    public void shouldBeDisplayedWhenLoggedIn(Setup setup) {
+    public void shouldDisplayUserAvatarWhenLoggedIn(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         userMenuBarService.loginUser(webDriver);
     }
