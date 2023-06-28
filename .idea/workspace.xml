@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 727">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 728">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/UserMenuBarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/UserMenuBarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/UserMenuBarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/UserMenuBarTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +114,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginViewTest">
+  <component name="RunManager" selected="JUnit.UserMenuBarTest.shouldPresentMenuBar">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -198,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserMenuBarTest.shouldPresentMenuBar" />
+        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.LoginViewTest" />
         <item itemvalue="JUnit.UserMenuBarTest" />
         <item itemvalue="JUnit.SiteHomeViewTest" />
-        <item itemvalue="Application.DogHubApplication" />
-        <item itemvalue="JUnit.UserMenuBarTest.shouldPresentMenuBar" />
       </list>
     </recent_temporary>
   </component>
@@ -214,13 +213,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00683" summary="doghub 679">
-      <created>1687585640439</created>
-      <option name="number" value="00683" />
-      <option name="presentableId" value="LOCAL-00683" />
-      <option name="project" value="LOCAL" />
-      <updated>1687585640439</updated>
     </task>
     <task id="LOCAL-00684" summary="doghub 680">
       <created>1687587083576</created>
@@ -558,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687938611277</updated>
     </task>
-    <option name="localTasksCounter" value="732" />
+    <task id="LOCAL-00732" summary="doghub 728">
+      <created>1687940633953</created>
+      <option name="number" value="00732" />
+      <option name="presentableId" value="LOCAL-00732" />
+      <option name="project" value="LOCAL" />
+      <updated>1687940633954</updated>
+    </task>
+    <option name="localTasksCounter" value="733" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -574,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 703" />
     <MESSAGE value="doghub 704" />
     <MESSAGE value="doghub 705" />
     <MESSAGE value="doghub 706" />
@@ -599,6 +597,7 @@
     <MESSAGE value="doghub 725" />
     <MESSAGE value="doghub 726" />
     <MESSAGE value="doghub 727" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 727" />
+    <MESSAGE value="doghub 728" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 728" />
   </component>
 </project>

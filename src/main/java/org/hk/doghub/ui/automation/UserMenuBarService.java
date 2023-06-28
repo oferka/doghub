@@ -43,6 +43,6 @@ public class UserMenuBarService {
     }
 
     public void verifyMenuBarIsDisplayed(@NotNull WebDriver webDriver) {
-//        assert elementDisplayStatusRetriever.isDisplayed(webDriver, )
+        assert elementDisplayStatusRetriever.isDisplayed(webDriver, By.cssSelector("vaadin-menu-bar-list-box[role='menu']"));
     }
 }
