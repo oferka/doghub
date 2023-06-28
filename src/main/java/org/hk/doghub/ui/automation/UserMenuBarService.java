@@ -5,12 +5,16 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetriever;
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
+import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.ui.components.shared.user.UserMenuBar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +33,9 @@ public class UserMenuBarService {
     @Autowired
     private ElementDisplayStatusRetriever elementDisplayStatusRetriever;
 
+    @Autowired
+    private ElementsRetriever elementsRetriever;
+
 
     public void loginUser(@NotNull WebDriver webDriver) {
         loginViewService.navigateFromHomePage(webDriver);
@@ -44,5 +51,9 @@ public class UserMenuBarService {
 
     public void verifyMenuBarIsDisplayed(@NotNull WebDriver webDriver) {
         assert elementDisplayStatusRetriever.isDisplayed(webDriver, By.cssSelector("vaadin-menu-bar-list-box[role='menu']"));
+    }
+
+    public List<WebElement> getMenuItems(@NotNull WebDriver webDriver) {
+        return elementsRetriever.getByPresence(webDriver, By.cssSelector("vaadin-menu-bar-item"));
     }
 }
