@@ -42,4 +42,11 @@ public class UserMenuBarTest extends DogHubUITest {
             elementHighlighter.eventHighlight(webDriver, menuItem);
         }
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldNavigateToProfileView(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        userMenuBarService.navigateToProfileView(webDriver);
+    }
 }

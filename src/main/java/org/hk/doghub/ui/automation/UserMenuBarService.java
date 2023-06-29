@@ -7,7 +7,6 @@ import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDispl
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
-import org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutor;
 import org.hk.doghub.ui.components.shared.user.UserMenuBar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -37,13 +36,6 @@ public class UserMenuBarService {
     @Autowired
     private ElementsRetriever elementsRetriever;
 
-    @Autowired
-    private SiteHomeViewService siteHomeViewService;
-
-    @Autowired
-    private PauseExecutor pauseExecutor;
-
-
     public void loginUser(@NotNull WebDriver webDriver) {
         loginViewService.navigateFromHomePage(webDriver);
         loginViewService.loginUser(webDriver, loginViewService.loadUser());
@@ -66,5 +58,10 @@ public class UserMenuBarService {
 
     public List<WebElement> getMenuItems(@NotNull WebDriver webDriver) {
         return elementsRetriever.getByPresence(webDriver, By.cssSelector("vaadin-menu-bar-item"));
+    }
+
+    public void navigateToProfileView(@NotNull WebDriver webDriver) {
+        openMenuBar(webDriver);
+        clickExecutor.click(webDriver, By.xpath("//vaadin-menu-bar-item/child::a[@href='profile']"));
     }
 }
