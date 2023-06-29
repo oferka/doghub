@@ -9,7 +9,10 @@ import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.ui.components.shared.user.UserMenuBar;
+import org.hk.doghub.ui.views.site.help.HelpView;
+import org.hk.doghub.ui.views.site.notifications.NotificationsView;
 import org.hk.doghub.ui.views.site.profile.ProfileView;
+import org.hk.doghub.ui.views.site.settings.SettingsView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -68,8 +71,24 @@ public class UserMenuBarService {
     }
 
     public void navigateToProfileView(@NotNull WebDriver webDriver) {
+        navigateToView(webDriver, ProfileView.ROUTE, ProfileView.NAME);
+    }
+
+    public void navigateToSettingsView(@NotNull WebDriver webDriver) {
+        navigateToView(webDriver, SettingsView.ROUTE, SettingsView.NAME);
+    }
+
+    public void navigateToNotificationsView(@NotNull WebDriver webDriver) {
+        navigateToView(webDriver, NotificationsView.ROUTE, NotificationsView.NAME);
+    }
+
+    public void navigateToHelpView(@NotNull WebDriver webDriver) {
+        navigateToView(webDriver, HelpView.ROUTE, HelpView.NAME);
+    }
+
+    private void navigateToView(@NotNull WebDriver webDriver, @NotNull String route, @NotNull String title) {
         openMenuBar(webDriver);
-        clickExecutor.click(webDriver, By.xpath(format("//vaadin-menu-bar-item/child::a[@href='%s']", ProfileView.ROUTE)));
-        titleVerifier.verifyEquals(webDriver, ProfileView.NAME);
+        clickExecutor.click(webDriver, By.xpath(format("//vaadin-menu-bar-item/child::a[@href='%s']", route)));
+        titleVerifier.verifyEquals(webDriver, title);
     }
 }

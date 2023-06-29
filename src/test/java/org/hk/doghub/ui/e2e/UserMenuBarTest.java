@@ -49,4 +49,25 @@ public class UserMenuBarTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         userMenuBarService.navigateToProfileView(webDriver);
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldNavigateToSettingsView(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        userMenuBarService.navigateToSettingsView(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldNavigateToNotificationsView(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        userMenuBarService.navigateToNotificationsView(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldNavigateToHelpView(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        userMenuBarService.navigateToHelpView(webDriver);
+    }
 }
