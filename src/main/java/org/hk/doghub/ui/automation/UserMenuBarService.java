@@ -18,6 +18,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static java.lang.String.format;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -67,7 +69,7 @@ public class UserMenuBarService {
 
     public void navigateToProfileView(@NotNull WebDriver webDriver) {
         openMenuBar(webDriver);
-        clickExecutor.click(webDriver, By.xpath("//vaadin-menu-bar-item/child::a[@href='profile']"));
+        clickExecutor.click(webDriver, By.xpath(format("//vaadin-menu-bar-item/child::a[@href='%s']", ProfileView.ROUTE)));
         titleVerifier.verifyEquals(webDriver, ProfileView.NAME);
     }
 }
