@@ -6,8 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetriever;
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
+import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.ui.components.shared.user.UserMenuBar;
+import org.hk.doghub.ui.views.site.profile.ProfileView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +38,9 @@ public class UserMenuBarService {
     @Autowired
     private ElementsRetriever elementsRetriever;
 
+    @Autowired
+    private TitleVerifier titleVerifier;
+
     public void loginUser(@NotNull WebDriver webDriver) {
         loginViewService.navigateFromHomePage(webDriver);
         loginViewService.loginUser(webDriver, loginViewService.loadUser());
@@ -63,5 +68,6 @@ public class UserMenuBarService {
     public void navigateToProfileView(@NotNull WebDriver webDriver) {
         openMenuBar(webDriver);
         clickExecutor.click(webDriver, By.xpath("//vaadin-menu-bar-item/child::a[@href='profile']"));
+        titleVerifier.verifyEquals(webDriver, ProfileView.NAME);
     }
 }
