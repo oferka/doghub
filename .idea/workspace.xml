@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 734">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 735">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/UserMenuBarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/UserMenuBarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/UserMenuBarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/UserMenuBarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +114,7 @@
       <recent name="org.hk.doghub.ui.e2e" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserMenuBarTest.shouldNavigateToHelpView">
+  <component name="RunManager" selected="JUnit.java in doghub">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -129,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfileViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserMenuBarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -138,7 +137,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.UserMenuBarTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,22 +159,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMenuBarTest.shouldNavigateToProfileView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.UserMenuBarTest" />
-      <option name="METHOD_NAME" value="shouldNavigateToProfileView(org.hk.doghub.ui.e2e.Setup)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserMenuBarTest.shouldNavigateToSettingsView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -192,6 +175,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -200,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in doghub" />
+        <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.UserMenuBarTest" />
         <item itemvalue="JUnit.UserMenuBarTest.shouldNavigateToHelpView" />
         <item itemvalue="JUnit.UserMenuBarTest.shouldNavigateToSettingsView" />
-        <item itemvalue="JUnit.UserMenuBarTest.shouldNavigateToProfileView" />
-        <item itemvalue="JUnit.ProfileViewTest" />
-        <item itemvalue="Application.DogHubApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -216,13 +207,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00690" summary="doghub 686">
-      <created>1687620523401</created>
-      <option name="number" value="00690" />
-      <option name="presentableId" value="LOCAL-00690" />
-      <option name="project" value="LOCAL" />
-      <updated>1687620523402</updated>
     </task>
     <task id="LOCAL-00691" summary="doghub 687">
       <created>1687620549265</created>
@@ -560,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688023224798</updated>
     </task>
-    <option name="localTasksCounter" value="739" />
+    <task id="LOCAL-00739" summary="doghub 735">
+      <created>1688023580063</created>
+      <option name="number" value="00739" />
+      <option name="presentableId" value="LOCAL-00739" />
+      <option name="project" value="LOCAL" />
+      <updated>1688023580064</updated>
+    </task>
+    <option name="localTasksCounter" value="740" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -576,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 710" />
     <MESSAGE value="doghub 711" />
     <MESSAGE value="doghub 712" />
     <MESSAGE value="doghub 713" />
@@ -601,6 +591,7 @@
     <MESSAGE value="doghub 732" />
     <MESSAGE value="doghub 733" />
     <MESSAGE value="doghub 734" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 734" />
+    <MESSAGE value="doghub 735" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 735" />
   </component>
 </project>

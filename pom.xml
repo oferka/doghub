@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.0</version>
+        <version>3.1.1</version>
     </parent>
     <groupId>org.hk</groupId>
     <artifactId>doghub</artifactId>
@@ -22,17 +22,17 @@
         <junit-jupiter-engine.version>5.9.3</junit-jupiter-engine.version>
         <springdoc-openapi-starter-webmvc-ui.version>2.1.0</springdoc-openapi-starter-webmvc-ui.version>
         <spring-cloud-dependencies.version>2022.0.3</spring-cloud-dependencies.version>
-        <vaadin.version>24.1.0</vaadin.version>
+        <vaadin.version>24.1.1</vaadin.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <modelmapper.version>3.1.1</modelmapper.version>
         <line-awesome.version>1.1.0</line-awesome.version>
-        <datafaker.version>2.0.0</datafaker.version>
+        <datafaker.version>2.0.1</datafaker.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
         <opencsv.version>5.7.1</opencsv.version>
         <commons-validator.version>1.7</commons-validator.version>
         <snakeyaml.version>2.0</snakeyaml.version>
-        <webdrivermanager.version>5.3.3</webdrivermanager.version>
+        <webdrivermanager.version>5.4.0</webdrivermanager.version>
         <ashot.version>1.5.4</ashot.version>
         <selenium.version>4.10.0</selenium.version>
     </properties>
