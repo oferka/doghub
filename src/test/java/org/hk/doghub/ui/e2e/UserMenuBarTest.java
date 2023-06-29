@@ -38,7 +38,7 @@ public class UserMenuBarTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         userMenuBarService.openMenuBar(webDriver);
         List<WebElement> menuItems = userMenuBarService.getMenuItems(webDriver);
-        for(WebElement menuItem : menuItems) {
+        for (WebElement menuItem : menuItems) {
             elementHighlighter.eventHighlight(webDriver, menuItem);
         }
     }

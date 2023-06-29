@@ -7,6 +7,7 @@ import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDispl
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
+import org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutor;
 import org.hk.doghub.ui.components.shared.user.UserMenuBar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -36,6 +37,12 @@ public class UserMenuBarService {
     @Autowired
     private ElementsRetriever elementsRetriever;
 
+    @Autowired
+    private SiteHomeViewService siteHomeViewService;
+
+    @Autowired
+    private PauseExecutor pauseExecutor;
+
 
     public void loginUser(@NotNull WebDriver webDriver) {
         loginViewService.navigateFromHomePage(webDriver);
@@ -50,7 +57,11 @@ public class UserMenuBarService {
     }
 
     public void verifyMenuBarIsDisplayed(@NotNull WebDriver webDriver) {
-        assert elementDisplayStatusRetriever.isDisplayed(webDriver, By.cssSelector("vaadin-menu-bar-list-box[role='menu']"));
+        assert isMenuBarIsDisplayed(webDriver);
+    }
+
+    private boolean isMenuBarIsDisplayed(@NotNull WebDriver webDriver) {
+        return elementDisplayStatusRetriever.isDisplayed(webDriver, By.cssSelector("vaadin-menu-bar-list-box[role='menu']"));
     }
 
     public List<WebElement> getMenuItems(@NotNull WebDriver webDriver) {
