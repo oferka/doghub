@@ -8,6 +8,7 @@ import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighte
 import org.hk.doghub.automation.e2e.selenium.elements.retrieve.ElementsRetriever;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
+import org.hk.doghub.ui.components.shared.user.SignOutButton;
 import org.hk.doghub.ui.components.shared.user.UserMenuBar;
 import org.hk.doghub.ui.views.site.help.HelpView;
 import org.hk.doghub.ui.views.site.notifications.NotificationsView;
@@ -30,6 +31,9 @@ public class UserMenuBarService {
 
     @Autowired
     private LoginViewService loginViewService;
+
+    @Autowired
+    private SiteHomeViewService siteHomeViewService;
 
     @Autowired
     private ElementHighlighter elementHighlighter;
@@ -90,5 +94,11 @@ public class UserMenuBarService {
         openMenuBar(webDriver);
         clickExecutor.click(webDriver, By.xpath(format("//vaadin-menu-bar-item/child::a[@href='%s']", route)));
         titleVerifier.verifyEquals(webDriver, title);
+    }
+
+    public void signOut(@NotNull WebDriver webDriver) {
+        openMenuBar(webDriver);
+        clickExecutor.click(webDriver, By.className(SignOutButton.CLASS_NAME));
+        assert(!siteHomeViewService.isLoggedIn(webDriver));
     }
 }
