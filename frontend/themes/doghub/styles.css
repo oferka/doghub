@@ -118,6 +118,7 @@
 @import url('./shared/save-failed-with-unexpected-error-notification.css');
 @import url('./shared/saved-successfully-notification.css');
 @import url('./shared/shares-container.css');
+@import url('./shared/sign-out-button.css');
 @import url('./shared/signup-button.css');
 @import url('./shared/signup-router-link.css');
 @import url('./shared/user-avatar-router-link.css');
