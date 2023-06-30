@@ -8,11 +8,11 @@ import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
 import static org.vaadin.lineawesome.LineAwesomeIcon.QUESTION_CIRCLE_SOLID;
 
 @Slf4j
-public class DogHubAppLayoutUserHelpButton extends Button {
+public class HelpButton extends Button {
 
-    public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-help-button";
+    public static final String CLASS_NAME = "help-button";
 
-    public DogHubAppLayoutUserHelpButton() {
+    public HelpButton() {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Help");

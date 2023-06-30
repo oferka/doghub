@@ -1,8 +1,8 @@
-.doghub-app-layout-header-user-notifications-button {
+.settings-button {
     color: var(--lumo-header-text-color);
     cursor: pointer;
     background: transparent;
 }
-.doghub-app-layout-header-user-notifications-button:hover {
+.settings-button:hover {
     color: var(--lumo-primary-text-color);
 }

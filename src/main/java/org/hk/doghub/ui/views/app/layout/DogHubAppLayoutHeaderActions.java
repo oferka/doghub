@@ -5,6 +5,7 @@ import org.hk.doghub.security.AuthenticatedUser;
 import org.hk.doghub.ui.components.shared.user.UserMenuBar;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class DogHubAppLayoutHeaderActions extends HorizontalLayout {
 
@@ -12,10 +13,10 @@ public class DogHubAppLayoutHeaderActions extends HorizontalLayout {
 
     public DogHubAppLayoutHeaderActions(AuthenticatedUser authenticatedUser) {
         addClassName(CLASS_NAME);
-        DogHubAppLayoutUserProfileRouterLink profile = new DogHubAppLayoutUserProfileRouterLink();
-        DogHubAppLayoutUserSettingsRouterLink settings = new DogHubAppLayoutUserSettingsRouterLink();
-        DogHubAppLayoutUserNotificationsRouterLink notifications = new DogHubAppLayoutUserNotificationsRouterLink();
-        DogHubAppLayoutUserHelpRouterLink help = new DogHubAppLayoutUserHelpRouterLink();
+        ProfileRouterLink profile = new ProfileRouterLink(EMPTY);
+        SettingsRouterLink settings = new SettingsRouterLink(EMPTY);
+        NotificationsRouterLink notifications = new NotificationsRouterLink(EMPTY);
+        HelpRouterLink help = new HelpRouterLink(EMPTY);
         UserMenuBar user = new UserMenuBar(authenticatedUser);
         add(profile, settings, notifications, help, user);
         setVerticalComponentAlignment(CENTER, profile, settings, notifications, help, user);

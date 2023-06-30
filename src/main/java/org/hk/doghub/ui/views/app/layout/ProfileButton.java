@@ -8,11 +8,11 @@ import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
 import static org.vaadin.lineawesome.LineAwesomeIcon.ID_CARD_SOLID;
 
 @Slf4j
-public class DogHubAppLayoutUserProfileButton extends Button {
+public class ProfileButton extends Button {
 
-    public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-profile-button";
+    public static final String CLASS_NAME = "profile-button";
 
-    public DogHubAppLayoutUserProfileButton() {
+    public ProfileButton() {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Profile");

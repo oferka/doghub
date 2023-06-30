@@ -8,11 +8,11 @@ import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
 import static org.vaadin.lineawesome.LineAwesomeIcon.BELL_SOLID;
 
 @Slf4j
-public class DogHubAppLayoutUserNotificationsButton extends Button {
+public class NotificationsButton extends Button {
 
-    public static final String CLASS_NAME = DogHubAppLayoutHeader.CLASS_NAME + "-user-notifications-button";
+    public static final String CLASS_NAME = "notifications-button";
 
-    public DogHubAppLayoutUserNotificationsButton() {
+    public NotificationsButton() {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Notifications");
