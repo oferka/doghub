@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.layout;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
@@ -12,10 +13,11 @@ public class NotificationsButton extends Button {
 
     public static final String CLASS_NAME = "notifications-button";
 
-    public NotificationsButton() {
+    public NotificationsButton(@NotNull String text) {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Notifications");
+        setText(text);
         setTooltipText("Notifications");
         setIcon(BELL_SOLID.create());
         addClickListener(this::notificationsClicked);

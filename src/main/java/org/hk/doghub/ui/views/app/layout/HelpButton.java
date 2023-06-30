@@ -2,6 +2,7 @@ package org.hk.doghub.ui.views.app.layout;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_ICON;
@@ -12,10 +13,11 @@ public class HelpButton extends Button {
 
     public static final String CLASS_NAME = "help-button";
 
-    public HelpButton() {
+    public HelpButton(@NotNull String text) {
         addClassName(CLASS_NAME);
         addThemeVariants(LUMO_ICON);
         getElement().setAttribute("aria-label", "Help");
+        setText(text);
         setTooltipText("Help");
         setIcon(QUESTION_CIRCLE_SOLID.create());
         addClickListener(this::helpClicked);
