@@ -19,7 +19,7 @@ public class DogHubComboBoxField extends ComboBox<String> {
         addClassName(CLASS_NAME);
         setLabel(label);
         setPrefixComponent(prefixComponent);
-        setHelperText(format("Select or type your %s", label));
+        setHelperText(format("Select or type your {0}", label));
         setItems(values);
         setAllowCustomValue(true);
         addValueChangeListener(this::valueChanged);

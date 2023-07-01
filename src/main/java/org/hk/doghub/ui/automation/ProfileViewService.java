@@ -7,9 +7,7 @@ import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDispl
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutor;
-import org.hk.doghub.ui.components.shared.user.UserIdField;
-import org.hk.doghub.ui.components.shared.user.UserNameField;
-import org.hk.doghub.ui.components.shared.user.UserUsernameField;
+import org.hk.doghub.ui.components.shared.user.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -49,6 +47,14 @@ public class ProfileViewService {
 
     public void verifyNameDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserNameField.CLASS_NAME));
+    }
+
+    public void verifyMobileNumberDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserMobileNumberField.CLASS_NAME));
+    }
+
+    public void verifyEmailDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserEmailField.CLASS_NAME));
     }
 
     private void verifyFieldDisplayed(@NotNull WebDriver webDriver, By fieldLocator) {

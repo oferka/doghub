@@ -16,6 +16,7 @@ public class UserMobileNumberField extends EditableTextField {
 
     public UserMobileNumberField() {
         super(LABEL, false, MOBILE_NUMBER_MAX_LENGTH, MOBILE_SOLID.create(), "[0-9()+-]");
+        addClassName(CLASS_NAME);
     }
 
     public void setValue(@NotNull DogHubUser user) {
