@@ -117,7 +117,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldDisplayFields">
+  <component name="RunManager" selected="JUnit.ProfileViewTest">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -202,10 +202,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayFields" />
-        <item itemvalue="Application.DogHubApplication" />
-        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayMobileNumber" />
         <item itemvalue="JUnit.ProfileViewTest" />
+        <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayFields" />
+        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayMobileNumber" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayName" />
       </list>
     </recent_temporary>
