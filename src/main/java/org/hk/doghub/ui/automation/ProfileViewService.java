@@ -40,27 +40,18 @@ public class ProfileViewService {
     }
 
     public void verifyIdDisplayed(@NotNull WebDriver webDriver) {
-        By fieldLocator = By.className(UserIdField.CLASS_NAME);
-        assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
-        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
-        elementHighlighter.highlight(webDriver, inputElement);
-        String value = inputElement.getAttribute("value");
-        log.info(format("Field value is: {0}", value));
-        pauseExecutor.pause(Duration.ofSeconds(1));
+        verifyFieldDisplayed(webDriver, By.className(UserIdField.CLASS_NAME));
     }
 
     public void verifyUsernameDisplayed(@NotNull WebDriver webDriver) {
-        By fieldLocator = By.className(UserUsernameField.CLASS_NAME);
-        assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
-        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
-        elementHighlighter.highlight(webDriver, inputElement);
-        String value = inputElement.getAttribute("value");
-        log.info(format("Field value is: {0}", value));
-        pauseExecutor.pause(Duration.ofSeconds(1));
+        verifyFieldDisplayed(webDriver, By.className(UserUsernameField.CLASS_NAME));
     }
 
     public void verifyNameDisplayed(@NotNull WebDriver webDriver) {
-        By fieldLocator = By.className(UserNameField.CLASS_NAME);
+        verifyFieldDisplayed(webDriver, By.className(UserNameField.CLASS_NAME));
+    }
+
+    private void verifyFieldDisplayed(@NotNull WebDriver webDriver, By fieldLocator) {
         assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
         elementHighlighter.highlight(webDriver, inputElement);
