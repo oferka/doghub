@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 747">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 748">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/ProfileViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/ProfileViewService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,13 +207,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00703" summary="doghub 699">
-      <created>1687690695465</created>
-      <option name="number" value="00703" />
-      <option name="presentableId" value="LOCAL-00703" />
-      <option name="project" value="LOCAL" />
-      <updated>1687690695465</updated>
     </task>
     <task id="LOCAL-00704" summary="doghub 700">
       <created>1687690783084</created>
@@ -552,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688192339512</updated>
     </task>
-    <option name="localTasksCounter" value="752" />
+    <task id="LOCAL-00752" summary="doghub 748">
+      <created>1688194560253</created>
+      <option name="number" value="00752" />
+      <option name="presentableId" value="LOCAL-00752" />
+      <option name="project" value="LOCAL" />
+      <updated>1688194560253</updated>
+    </task>
+    <option name="localTasksCounter" value="753" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 723" />
     <MESSAGE value="doghub 724" />
     <MESSAGE value="doghub 725" />
     <MESSAGE value="doghub 726" />
@@ -593,15 +591,16 @@
     <MESSAGE value="doghub 745" />
     <MESSAGE value="doghub 746" />
     <MESSAGE value="doghub 747" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 747" />
+    <MESSAGE value="doghub 748" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 748" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/ProfileViewService.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="39" />
+          <line>38</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

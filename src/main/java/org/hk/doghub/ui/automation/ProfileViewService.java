@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetriever;
+import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.ui.components.shared.user.UserIdField;
 import org.openqa.selenium.By;
@@ -25,6 +26,8 @@ public class ProfileViewService {
 
     private final ElementRetriever elementRetriever;
 
+    private final ElementHighlighter elementHighlighter;
+
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         userMenuBarService.navigateToProfileView(webDriver);
     }
@@ -33,6 +36,7 @@ public class ProfileViewService {
         By fieldLocator = By.className(UserIdField.CLASS_NAME);
         assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
+        elementHighlighter.highlight(webDriver, inputElement);
         String value = inputElement.getAttribute("value");
         log.info(format("Field value is: {0}", value));
     }
