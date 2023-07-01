@@ -59,6 +59,46 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldDisplayThumbnailPicture(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyThumbnailPictureDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldDisplayCompany(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyCompanyDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldDisplayCity(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyCityDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldDisplayStreetName(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyStreetNameDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldDisplayPostcode(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyPostcodeDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldDisplayFields(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -67,5 +107,10 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.verifyNameDisplayed(webDriver);
         viewService.verifyMobileNumberDisplayed(webDriver);
         viewService.verifyEmailDisplayed(webDriver);
+        viewService.verifyThumbnailPictureDisplayed(webDriver);
+        viewService.verifyCompanyDisplayed(webDriver);
+        viewService.verifyCityDisplayed(webDriver);
+        viewService.verifyStreetNameDisplayed(webDriver);
+        viewService.verifyPostcodeDisplayed(webDriver);
     }
 }

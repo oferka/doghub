@@ -57,6 +57,26 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserEmailField.CLASS_NAME));
     }
 
+    public void verifyThumbnailPictureDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME));
+    }
+
+    public void verifyCompanyDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserCompanyField.CLASS_NAME));
+    }
+
+    public void verifyCityDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserCityField.CLASS_NAME));
+    }
+
+    public void verifyStreetNameDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserStreetNameField.CLASS_NAME));
+    }
+
+    public void verifyPostcodeDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserPostcodeField.CLASS_NAME));
+    }
+
     private void verifyFieldDisplayed(@NotNull WebDriver webDriver, By fieldLocator) {
         assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
