@@ -73,6 +73,10 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserDateOfBirthField.CLASS_NAME));
     }
 
+    public void verifyDateOfRegistrationDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
+    }
+
     public void verifyCountryDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserCountryField.CLASS_NAME));
     }

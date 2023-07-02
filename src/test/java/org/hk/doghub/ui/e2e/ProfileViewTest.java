@@ -91,6 +91,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldDisplayDateOfRegistration(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyDateOfRegistrationDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldDisplayCountry(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -142,6 +150,8 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.verifyEmailDisplayed(webDriver);
         viewService.verifyThumbnailPictureDisplayed(webDriver);
         viewService.verifyCompanyDisplayed(webDriver);
+        viewService.verifyDateOfBirthDisplayed(webDriver);
+        viewService.verifyDateOfRegistrationDisplayed(webDriver);
         viewService.verifyCountryDisplayed(webDriver);
         viewService.verifyStateDisplayed(webDriver);
         viewService.verifyCityDisplayed(webDriver);
