@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 755">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 757">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/ProfileViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/ProfileViewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/ProfileViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e/ProfileViewTest.java" afterDir="false" />
     </list>
@@ -115,20 +114,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldDisplayFields">
-    <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldDisplayState">
     <configuration name="ProfileViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -140,6 +126,22 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileViewTest.shouldDisplayCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
+      <option name="METHOD_NAME" value="shouldDisplayCountry(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,7 +162,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfileViewTest.shouldDisplayMobileNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileViewTest.shouldDisplayState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -170,7 +172,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
-      <option name="METHOD_NAME" value="shouldDisplayMobileNumber(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="METHOD_NAME" value="shouldDisplayState(org.hk.doghub.ui.e2e.Setup)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayState" />
+        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayCountry" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayFields" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayTitle" />
         <item itemvalue="JUnit.ProfileViewTest" />
-        <item itemvalue="Application.DogHubApplication" />
-        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayMobileNumber" />
       </list>
     </recent_temporary>
   </component>
@@ -216,20 +218,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00711" summary="doghub 707">
-      <created>1687703297454</created>
-      <option name="number" value="00711" />
-      <option name="presentableId" value="LOCAL-00711" />
-      <option name="project" value="LOCAL" />
-      <updated>1687703297454</updated>
-    </task>
-    <task id="LOCAL-00712" summary="doghub 708">
-      <created>1687704292769</created>
-      <option name="number" value="00712" />
-      <option name="presentableId" value="LOCAL-00712" />
-      <option name="project" value="LOCAL" />
-      <updated>1687704292769</updated>
     </task>
     <task id="LOCAL-00713" summary="doghub 709">
       <created>1687704615888</created>
@@ -560,7 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688232586670</updated>
     </task>
-    <option name="localTasksCounter" value="760" />
+    <task id="LOCAL-00760" summary="doghub 756">
+      <created>1688307119165</created>
+      <option name="number" value="00760" />
+      <option name="presentableId" value="LOCAL-00760" />
+      <option name="project" value="LOCAL" />
+      <updated>1688307119165</updated>
+    </task>
+    <task id="LOCAL-00761" summary="doghub 757">
+      <created>1688307363160</created>
+      <option name="number" value="00761" />
+      <option name="presentableId" value="LOCAL-00761" />
+      <option name="project" value="LOCAL" />
+      <updated>1688307363160</updated>
+    </task>
+    <option name="localTasksCounter" value="762" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -576,8 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 731" />
-    <MESSAGE value="doghub 732" />
     <MESSAGE value="doghub 733" />
     <MESSAGE value="doghub 734" />
     <MESSAGE value="doghub 735" />
@@ -601,6 +601,8 @@
     <MESSAGE value="doghub 753" />
     <MESSAGE value="doghub 754" />
     <MESSAGE value="doghub 755" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 755" />
+    <MESSAGE value="doghub 756" />
+    <MESSAGE value="doghub 757" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 757" />
   </component>
 </project>

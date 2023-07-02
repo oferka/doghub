@@ -69,6 +69,14 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserCompanyField.CLASS_NAME));
     }
 
+    public void verifyCountryDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserCountryField.CLASS_NAME));
+    }
+
+    public void verifyStateDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserStateField.CLASS_NAME));
+    }
+
     public void verifyCityDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserCityField.CLASS_NAME));
     }
