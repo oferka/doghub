@@ -114,7 +114,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldDisplayStreetNumber">
+  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldDisplayFields">
     <configuration name="ProfileViewTest.shouldDisplayDateOfBirth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -203,8 +203,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayStreetNumber" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayFields" />
+        <item itemvalue="JUnit.ProfileViewTest.shouldDisplayStreetNumber" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayDateOfRegistration" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayDateOfBirth" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayState" />
