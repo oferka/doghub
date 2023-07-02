@@ -45,6 +45,10 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserUsernameField.CLASS_NAME));
     }
 
+    public void verifyTitleDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserTitleField.CLASS_NAME));
+    }
+
     public void verifyNameDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserNameField.CLASS_NAME));
     }
