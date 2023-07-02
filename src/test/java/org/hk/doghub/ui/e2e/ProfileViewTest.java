@@ -112,6 +112,7 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyIdDisplayed(webDriver);
         viewService.verifyUsernameDisplayed(webDriver);
+        viewService.verifyTitleDisplayed(webDriver);
         viewService.verifyNameDisplayed(webDriver);
         viewService.verifyMobileNumberDisplayed(webDriver);
         viewService.verifyEmailDisplayed(webDriver);
