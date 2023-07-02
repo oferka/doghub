@@ -134,6 +134,8 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.verifyEmailDisplayed(webDriver);
         viewService.verifyThumbnailPictureDisplayed(webDriver);
         viewService.verifyCompanyDisplayed(webDriver);
+        viewService.verifyCountryDisplayed(webDriver);
+        viewService.verifyStateDisplayed(webDriver);
         viewService.verifyCityDisplayed(webDriver);
         viewService.verifyStreetNameDisplayed(webDriver);
         viewService.verifyPostcodeDisplayed(webDriver);
