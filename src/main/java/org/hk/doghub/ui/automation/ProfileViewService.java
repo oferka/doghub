@@ -93,6 +93,10 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserStreetNameField.CLASS_NAME));
     }
 
+    public void verifyStreetNumberDisplayed(@NotNull WebDriver webDriver) {
+        verifyFieldDisplayed(webDriver, By.className(UserStreetNumberField.CLASS_NAME));
+    }
+
     public void verifyPostcodeDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserPostcodeField.CLASS_NAME));
     }

@@ -131,6 +131,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldDisplayStreetNumber(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyStreetNumberDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldDisplayPostcode(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -156,6 +164,7 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.verifyStateDisplayed(webDriver);
         viewService.verifyCityDisplayed(webDriver);
         viewService.verifyStreetNameDisplayed(webDriver);
+        viewService.verifyStreetNumberDisplayed(webDriver);
         viewService.verifyPostcodeDisplayed(webDriver);
     }
 }
