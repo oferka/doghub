@@ -138,6 +138,10 @@ public class ProfileViewService {
         enterValueToField(webDriver, By.className(UserNameField.CLASS_NAME), userProvider.get().getName());
     }
 
+    public void enterMobileNumber(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserMobileNumberField.CLASS_NAME), userProvider.get().getMobileNumber());
+    }
+
     private void enterValueToField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, inputElement, value);
