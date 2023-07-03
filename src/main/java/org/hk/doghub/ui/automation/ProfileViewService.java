@@ -10,6 +10,7 @@ import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutor;
 import org.hk.doghub.ui.components.shared.InfoCancelButton;
 import org.hk.doghub.ui.components.shared.InfoSaveButton;
+import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
 import org.hk.doghub.ui.components.shared.user.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -121,5 +122,9 @@ public class ProfileViewService {
 
     public void clickCancel(@NotNull WebDriver webDriver) {
         clickExecutor.click(webDriver, By.className(InfoCancelButton.CLASS_NAME));
+    }
+
+    public void verifySavedSuccessfullyNotificationDisplayed(@NotNull WebDriver webDriver) {
+        elementRetriever.getByPresence(webDriver, By.className(SavedSuccessfullyNotification.CLASS_NAME));
     }
 }
