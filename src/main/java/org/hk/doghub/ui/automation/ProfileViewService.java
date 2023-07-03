@@ -6,7 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetriever;
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
+import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutor;
+import org.hk.doghub.ui.components.shared.InfoSaveButton;
 import org.hk.doghub.ui.components.shared.user.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,6 +34,8 @@ public class ProfileViewService {
     private final ElementHighlighter elementHighlighter;
 
     private final PauseExecutor pauseExecutor;
+
+    private final ClickExecutor clickExecutor;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         userMenuBarService.navigateToProfileView(webDriver);
@@ -108,5 +112,9 @@ public class ProfileViewService {
         String value = inputElement.getAttribute("value");
         log.info(format("Field value is: {0}", value));
         pauseExecutor.pause(Duration.ofSeconds(1));
+    }
+
+    public void clickSave(@NotNull WebDriver webDriver) {
+        clickExecutor.click(webDriver, By.className(InfoSaveButton.CLASS_NAME));
     }
 }

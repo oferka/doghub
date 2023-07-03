@@ -167,4 +167,12 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.verifyStreetNumberDisplayed(webDriver);
         viewService.verifyPostcodeDisplayed(webDriver);
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickSave(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.clickSave(webDriver);
+    }
 }
