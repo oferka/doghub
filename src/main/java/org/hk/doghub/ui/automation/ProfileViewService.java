@@ -3,11 +3,13 @@ package org.hk.doghub.ui.automation;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetriever;
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutor;
+import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExecutor;
 import org.hk.doghub.ui.components.shared.InfoCancelButton;
 import org.hk.doghub.ui.components.shared.InfoSaveButton;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
@@ -38,6 +40,8 @@ public class ProfileViewService {
     private final PauseExecutor pauseExecutor;
 
     private final ClickExecutor clickExecutor;
+
+    private final TextInputExecutor textInputExecutor;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
         userMenuBarService.navigateToProfileView(webDriver);
@@ -126,5 +130,14 @@ public class ProfileViewService {
 
     public void verifySavedSuccessfullyNotificationDisplayed(@NotNull WebDriver webDriver) {
         elementRetriever.getByPresence(webDriver, By.className(SavedSuccessfullyNotification.CLASS_NAME));
+    }
+
+    public void enterName(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserNameField.CLASS_NAME), RandomStringUtils.randomAlphabetic(10));
+    }
+
+    private void enterValueToField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
+        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
+        textInputExecutor.enterText(webDriver, inputElement, value);
     }
 }
