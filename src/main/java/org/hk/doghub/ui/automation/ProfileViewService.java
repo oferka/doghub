@@ -8,6 +8,7 @@ import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighte
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.pause.PauseExecutor;
+import org.hk.doghub.ui.components.shared.InfoCancelButton;
 import org.hk.doghub.ui.components.shared.InfoSaveButton;
 import org.hk.doghub.ui.components.shared.user.*;
 import org.openqa.selenium.By;
@@ -116,5 +117,9 @@ public class ProfileViewService {
 
     public void clickSave(@NotNull WebDriver webDriver) {
         clickExecutor.click(webDriver, By.className(InfoSaveButton.CLASS_NAME));
+    }
+
+    public void clickCancel(@NotNull WebDriver webDriver) {
+        clickExecutor.click(webDriver, By.className(InfoCancelButton.CLASS_NAME));
     }
 }

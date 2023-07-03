@@ -175,4 +175,12 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.clickSave(webDriver);
     }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldClickCancel(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.clickCancel(webDriver);
+    }
 }
