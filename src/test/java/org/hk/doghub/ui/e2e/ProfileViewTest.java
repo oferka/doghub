@@ -87,6 +87,16 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldEnterEmail(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterEmail(webDriver);
+        viewService.clickSave(webDriver);
+        viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldDisplayThumbnailPicture(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -195,6 +205,7 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.enterName(webDriver);
         viewService.enterMobileNumber(webDriver);
+        viewService.enterEmail(webDriver);
         viewService.clickSave(webDriver);
         viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
     }
