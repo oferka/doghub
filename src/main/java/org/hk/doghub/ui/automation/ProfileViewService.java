@@ -146,6 +146,14 @@ public class ProfileViewService {
         enterValueToField(webDriver, By.className(UserEmailField.CLASS_NAME), userProvider.get().getEmail());
     }
 
+    public void enterThumbnailPicture(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME), userProvider.get().getThumbnailPicture());
+    }
+
+    public void enterCompany(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserCompanyField.CLASS_NAME), userProvider.get().getCompany());
+    }
+
     private void enterValueToField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, inputElement, value, true, true);
