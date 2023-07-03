@@ -144,6 +144,6 @@ public class ProfileViewService {
 
     private void enterValueToField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
-        textInputExecutor.enterText(webDriver, inputElement, value);
+        textInputExecutor.enterText(webDriver, inputElement, value, true, true);
     }
 }
