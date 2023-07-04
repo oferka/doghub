@@ -5,6 +5,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 public class ProfileViewTest extends DogHubUITest {
 
     @Autowired
@@ -27,6 +29,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetIdValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getIdValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldNotAllowEditingId(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -43,6 +53,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetUsernameValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getUsernameValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldNotAllowEditingUsername(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -55,6 +73,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyTitleDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetTitleValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getTitleValue(webDriver));
     }
 
     @ParameterizedTest
@@ -77,6 +103,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetNameValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getNameValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldEnterName(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -91,6 +125,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyMobileNumberDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetMobileNumberValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getMobileNumberValue(webDriver));
     }
 
     @ParameterizedTest
@@ -113,6 +155,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetEmailValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getEmailValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldEnterEmail(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -127,6 +177,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyThumbnailPictureDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetThumbnailPictureValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getThumbnailPictureValue(webDriver));
     }
 
     @ParameterizedTest
@@ -149,6 +207,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetCompanyValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getCompanyValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldEnterCompany(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -163,6 +229,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyDateOfBirthDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetDateOfBirthValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getDateOfBirthValue(webDriver));
     }
 
     @ParameterizedTest
@@ -185,6 +259,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetDateOfRegistrationValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getDateOfRegistrationValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldNotAllowEditingDateOfRegistration(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -197,6 +279,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyCountryDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetCountryValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getCountryValue(webDriver));
     }
 
     @ParameterizedTest
@@ -219,6 +309,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetStateValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getStateValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldEnterState(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -233,6 +331,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyCityDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetCityValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getCityValue(webDriver));
     }
 
     @ParameterizedTest
@@ -255,6 +361,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetStreetNameValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getStreetNameValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldEnterStreetName(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -273,6 +387,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldGetStreetNumberValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getStreetNumberValue(webDriver));
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldEnterStreetNumber(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -287,6 +409,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyPostcodeDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetPostcodeValue(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        assertNotNull(viewService.getPostcodeValue(webDriver));
     }
 
     @ParameterizedTest
@@ -320,6 +450,29 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.verifyStreetNameDisplayed(webDriver);
         viewService.verifyStreetNumberDisplayed(webDriver);
         viewService.verifyPostcodeDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldGetFieldValues(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.getIdValue(webDriver);
+        viewService.getUsernameValue(webDriver);
+        viewService.getTitleValue(webDriver);
+        viewService.getNameValue(webDriver);
+        viewService.getMobileNumberValue(webDriver);
+        viewService.getEmailValue(webDriver);
+        viewService.getTitleValue(webDriver);
+        viewService.getCompanyValue(webDriver);
+        viewService.getDateOfBirthValue(webDriver);
+        viewService.getDateOfRegistrationValue(webDriver);
+        viewService.getCountryValue(webDriver);
+        viewService.getStateValue(webDriver);
+        viewService.getCityValue(webDriver);
+        viewService.getStreetNameValue(webDriver);
+        viewService.getStreetNumberValue(webDriver);
+        viewService.getPostcodeValue(webDriver);
     }
 
     @ParameterizedTest
