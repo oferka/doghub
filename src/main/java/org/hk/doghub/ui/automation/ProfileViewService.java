@@ -51,7 +51,7 @@ public class ProfileViewService {
     }
 
     public String getIdValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserIdField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserIdField.CLASS_NAME));
     }
 
     public void verifyIdReadOnly(@NotNull WebDriver webDriver) {
@@ -67,7 +67,7 @@ public class ProfileViewService {
     }
 
     public String getUsernameValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserUsernameField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserUsernameField.CLASS_NAME));
     }
 
     public void verifyTitleDisplayed(@NotNull WebDriver webDriver) {
@@ -75,7 +75,7 @@ public class ProfileViewService {
     }
 
     public String getTitleValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserTitleField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserTitleField.CLASS_NAME));
     }
 
     public void verifyNameDisplayed(@NotNull WebDriver webDriver) {
@@ -83,7 +83,7 @@ public class ProfileViewService {
     }
 
     public String getNameValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserNameField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserNameField.CLASS_NAME));
     }
 
     public void verifyMobileNumberDisplayed(@NotNull WebDriver webDriver) {
@@ -91,7 +91,7 @@ public class ProfileViewService {
     }
 
     public String getMobileNumberValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserMobileNumberField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserMobileNumberField.CLASS_NAME));
     }
 
     public void verifyEmailDisplayed(@NotNull WebDriver webDriver) {
@@ -99,7 +99,7 @@ public class ProfileViewService {
     }
 
     public String getEmailValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserEmailField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserEmailField.CLASS_NAME));
     }
 
     public void verifyThumbnailPictureDisplayed(@NotNull WebDriver webDriver) {
@@ -107,7 +107,7 @@ public class ProfileViewService {
     }
 
     public String getThumbnailPictureValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME));
     }
 
     public void verifyCompanyDisplayed(@NotNull WebDriver webDriver) {
@@ -115,7 +115,7 @@ public class ProfileViewService {
     }
 
     public String getCompanyValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserCompanyField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserCompanyField.CLASS_NAME));
     }
 
     public void verifyDateOfBirthDisplayed(@NotNull WebDriver webDriver) {
@@ -123,7 +123,7 @@ public class ProfileViewService {
     }
 
     public String getDateOfBirthValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserDateOfBirthField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserDateOfBirthField.CLASS_NAME));
     }
 
     public void verifyDateOfRegistrationDisplayed(@NotNull WebDriver webDriver) {
@@ -131,7 +131,7 @@ public class ProfileViewService {
     }
 
     public String getDateOfRegistrationValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
     }
 
     public void verifyDateOfRegistrationReadOnly(@NotNull WebDriver webDriver) {
@@ -143,7 +143,7 @@ public class ProfileViewService {
     }
 
     public String getCountryValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserCountryField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserCountryField.CLASS_NAME));
     }
 
     public void verifyStateDisplayed(@NotNull WebDriver webDriver) {
@@ -151,7 +151,7 @@ public class ProfileViewService {
     }
 
     public String getStateValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserStateField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserStateField.CLASS_NAME));
     }
 
     public void verifyCityDisplayed(@NotNull WebDriver webDriver) {
@@ -159,7 +159,7 @@ public class ProfileViewService {
     }
 
     public String getCityValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserCityField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserCityField.CLASS_NAME));
     }
 
     public void verifyStreetNameDisplayed(@NotNull WebDriver webDriver) {
@@ -167,7 +167,7 @@ public class ProfileViewService {
     }
 
     public String getStreetNameValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserStreetNameField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserStreetNameField.CLASS_NAME));
     }
 
     public void verifyStreetNumberDisplayed(@NotNull WebDriver webDriver) {
@@ -175,7 +175,7 @@ public class ProfileViewService {
     }
 
     public String getStreetNumberValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserStreetNumberField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserStreetNumberField.CLASS_NAME));
     }
 
     public void verifyPostcodeDisplayed(@NotNull WebDriver webDriver) {
@@ -183,7 +183,7 @@ public class ProfileViewService {
     }
 
     public String getPostcodeValue(@NotNull WebDriver webDriver) {
-        return getFieldValue(webDriver, By.className(UserPostcodeField.CLASS_NAME));
+        return getTextFieldValue(webDriver, By.className(UserPostcodeField.CLASS_NAME));
     }
 
     public void clickSave(@NotNull WebDriver webDriver) {
@@ -199,62 +199,62 @@ public class ProfileViewService {
     }
 
     public void enterTitle(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserTitleField.CLASS_NAME), userProvider.get().getTitle());
+        enterValueToTextField(webDriver, By.className(UserTitleField.CLASS_NAME), userProvider.get().getTitle());
     }
 
     public void enterName(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserNameField.CLASS_NAME), userProvider.get().getName());
+        enterValueToTextField(webDriver, By.className(UserNameField.CLASS_NAME), userProvider.get().getName());
     }
 
     public void enterMobileNumber(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserMobileNumberField.CLASS_NAME), userProvider.get().getMobileNumber());
+        enterValueToTextField(webDriver, By.className(UserMobileNumberField.CLASS_NAME), userProvider.get().getMobileNumber());
     }
 
     public void enterEmail(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserEmailField.CLASS_NAME), userProvider.get().getEmail());
+        enterValueToTextField(webDriver, By.className(UserEmailField.CLASS_NAME), userProvider.get().getEmail());
     }
 
     public void enterThumbnailPicture(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME), userProvider.get().getThumbnailPicture());
+        enterValueToTextField(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME), userProvider.get().getThumbnailPicture());
     }
 
     public void enterCompany(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserCompanyField.CLASS_NAME), userProvider.get().getCompany());
+        enterValueToTextField(webDriver, By.className(UserCompanyField.CLASS_NAME), userProvider.get().getCompany());
     }
 
     public void enterDateOfBirth(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserDateOfBirthField.CLASS_NAME), userProvider.get().getDateOfBirth().toLocalDateTime().toString());
+        enterValueToTextField(webDriver, By.className(UserDateOfBirthField.CLASS_NAME), userProvider.get().getDateOfBirth().toLocalDateTime().toString());
     }
 
     public void enterCountry(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserCountryField.CLASS_NAME), userProvider.get().getAddress().getCountry());
+        enterValueToTextField(webDriver, By.className(UserCountryField.CLASS_NAME), userProvider.get().getAddress().getCountry());
     }
 
     public void enterState(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserStateField.CLASS_NAME), userProvider.get().getAddress().getState());
+        enterValueToTextField(webDriver, By.className(UserStateField.CLASS_NAME), userProvider.get().getAddress().getState());
     }
 
     public void enterCity(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserCityField.CLASS_NAME), userProvider.get().getAddress().getCity());
+        enterValueToTextField(webDriver, By.className(UserCityField.CLASS_NAME), userProvider.get().getAddress().getCity());
     }
 
     public void enterStreetName(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserStreetNameField.CLASS_NAME), userProvider.get().getAddress().getStreetName());
+        enterValueToTextField(webDriver, By.className(UserStreetNameField.CLASS_NAME), userProvider.get().getAddress().getStreetName());
     }
 
     public void enterStreetNumber(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserStreetNumberField.CLASS_NAME), String.valueOf(userProvider.get().getAddress().getNumber()));
+        enterValueToTextField(webDriver, By.className(UserStreetNumberField.CLASS_NAME), String.valueOf(userProvider.get().getAddress().getNumber()));
     }
 
     public void enterPostcode(@NotNull WebDriver webDriver) {
-        enterValueToField(webDriver, By.className(UserPostcodeField.CLASS_NAME), userProvider.get().getAddress().getPostcode());
+        enterValueToTextField(webDriver, By.className(UserPostcodeField.CLASS_NAME), userProvider.get().getAddress().getPostcode());
     }
 
     private void verifyFieldDisplayed(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
         assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
     }
 
-    private String getFieldValue(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
+    private String getTextFieldValue(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
         elementHighlighter.highlight(webDriver, inputElement);
         String value = inputElement.getAttribute("value");
@@ -266,7 +266,7 @@ public class ProfileViewService {
         assert elementRetriever.getByPresence(webDriver, fieldLocator).getAttribute("readonly").equalsIgnoreCase(Boolean.TRUE.toString());
     }
 
-    private void enterValueToField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
+    private void enterValueToTextField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, inputElement, value, true, true);
     }
