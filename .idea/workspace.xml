@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldGetFieldValues">
+  <component name="RunManager" selected="JUnit.ProfileViewTest">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -203,9 +203,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProfileViewTest" />
         <item itemvalue="JUnit.ProfileViewTest.shouldGetFieldValues" />
         <item itemvalue="Application.DogHubApplication" />
-        <item itemvalue="JUnit.ProfileViewTest" />
         <item itemvalue="JUnit.ProfileViewTest.shouldNotAllowEditingId" />
         <item itemvalue="JUnit.ProfileViewTest.shouldEnterFields" />
       </list>
