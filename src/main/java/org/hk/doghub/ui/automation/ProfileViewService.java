@@ -158,6 +158,10 @@ public class ProfileViewService {
         enterValueToField(webDriver, By.className(UserCompanyField.CLASS_NAME), userProvider.get().getCompany());
     }
 
+    public void enterCountry(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserCountryField.CLASS_NAME), userProvider.get().getAddress().getCountry());
+    }
+
     public void enterCity(@NotNull WebDriver webDriver) {
         enterValueToField(webDriver, By.className(UserCityField.CLASS_NAME), userProvider.get().getAddress().getCity());
     }
