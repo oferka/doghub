@@ -287,7 +287,12 @@ public class ProfileViewService {
     }
 
     private void enterValueToDateTimeField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull LocalDateTime localDateTime) {
-        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
-        textInputExecutor.enterText(webDriver, inputElement, localDateTime.toString(), true, true);
+        WebElement datePickerElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName("vaadin-date-picker"));
+        WebElement datePickerInputElement = datePickerElement.findElement(By.tagName(INPUT));
+        textInputExecutor.enterText(webDriver, datePickerInputElement, localDateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), true, true);
+
+        WebElement timePickerElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName("vaadin-time-picker"));
+        WebElement timePickerInputElement = timePickerElement.findElement(By.tagName(INPUT));
+        textInputExecutor.enterText(webDriver, timePickerInputElement, localDateTime.format(DateTimeFormatter.ofPattern("HH:mm")), true, true);
     }
 }
