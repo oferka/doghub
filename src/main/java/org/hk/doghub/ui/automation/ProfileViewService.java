@@ -19,6 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static com.vaadin.flow.component.Tag.INPUT;
 
@@ -145,7 +146,7 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserDateOfBirthField.CLASS_NAME));
     }
 
-    public String getDateOfBirthValue(@NotNull WebDriver webDriver) {
+    public LocalDateTime getDateOfBirthValue(@NotNull WebDriver webDriver) {
         return getDateTimeFieldValue(webDriver, By.className(UserDateOfBirthField.CLASS_NAME));
     }
 
@@ -157,7 +158,7 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
     }
 
-    public String getDateOfRegistrationValue(@NotNull WebDriver webDriver) {
+    public LocalDateTime getDateOfRegistrationValue(@NotNull WebDriver webDriver) {
         return getDateTimeFieldValue(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
     }
 
@@ -261,19 +262,19 @@ public class ProfileViewService {
         return value;
     }
 
-    private String getDateTimeFieldValue(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
+    private LocalDateTime getDateTimeFieldValue(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
         WebElement datePickerElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName("vaadin-date-picker"));
         WebElement datePickerInputElement = datePickerElement.findElement(By.tagName(INPUT));
         elementHighlighter.highlight(webDriver, datePickerInputElement);
         String dateValue = datePickerInputElement.getAttribute("value");
-        log.info("Date value is: {}", dateValue);
 
         WebElement timePickerElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName("vaadin-time-picker"));
         WebElement timePickerInputElement = timePickerElement.findElement(By.tagName(INPUT));
         elementHighlighter.highlight(webDriver, timePickerInputElement);
         String timeValue = timePickerInputElement.getAttribute("value");
-        log.info("Time value is: {}", dateValue);
-        return dateValue + " " + timeValue;
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return LocalDateTime.parse(dateValue + " " + timeValue, formatter);
     }
 
     private void verifyFieldReadOnly(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
