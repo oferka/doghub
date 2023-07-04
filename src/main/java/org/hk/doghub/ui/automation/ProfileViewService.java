@@ -15,7 +15,6 @@ import org.hk.doghub.ui.components.shared.InfoSaveButton;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
 import org.hk.doghub.ui.components.shared.user.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
@@ -55,16 +54,15 @@ public class ProfileViewService {
     }
 
     public void verifyIdReadOnly(@NotNull WebDriver webDriver) {
-        try {
-            enterValueToField(webDriver, By.className(UserIdField.CLASS_NAME), String.valueOf(1));
-        }
-        catch (InvalidElementStateException e) {
-            log.info("Id field is read only as expected");
-        }
+        verifyFieldReadOnly(webDriver, By.className(UserIdField.CLASS_NAME));
     }
 
     public void verifyUsernameDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserUsernameField.CLASS_NAME));
+    }
+
+    public void verifyUsernameReadOnly(@NotNull WebDriver webDriver) {
+        verifyFieldReadOnly(webDriver, By.className(UserUsernameField.CLASS_NAME));
     }
 
     public void verifyTitleDisplayed(@NotNull WebDriver webDriver) {
@@ -99,6 +97,10 @@ public class ProfileViewService {
         verifyFieldDisplayed(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
     }
 
+    public void verifyDateOfRegistrationReadOnly(@NotNull WebDriver webDriver) {
+        verifyFieldReadOnly(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
+    }
+
     public void verifyCountryDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserCountryField.CLASS_NAME));
     }
@@ -121,15 +123,6 @@ public class ProfileViewService {
 
     public void verifyPostcodeDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserPostcodeField.CLASS_NAME));
-    }
-
-    private void verifyFieldDisplayed(@NotNull WebDriver webDriver, By fieldLocator) {
-        assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
-        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
-        elementHighlighter.highlight(webDriver, inputElement);
-        String value = inputElement.getAttribute("value");
-        log.info(format("Field value is: {0}", value));
-        pauseExecutor.pause(Duration.ofSeconds(1));
     }
 
     public void clickSave(@NotNull WebDriver webDriver) {
@@ -194,6 +187,19 @@ public class ProfileViewService {
 
     public void enterPostcode(@NotNull WebDriver webDriver) {
         enterValueToField(webDriver, By.className(UserPostcodeField.CLASS_NAME), userProvider.get().getAddress().getPostcode());
+    }
+
+    private void verifyFieldDisplayed(@NotNull WebDriver webDriver, By fieldLocator) {
+        assert elementDisplayStatusRetriever.isDisplayed(webDriver, fieldLocator);
+        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
+        elementHighlighter.highlight(webDriver, inputElement);
+        String value = inputElement.getAttribute("value");
+        log.info(format("Field value is: {0}", value));
+        pauseExecutor.pause(Duration.ofSeconds(1));
+    }
+
+    private void verifyFieldReadOnly(@NotNull WebDriver webDriver, By fieldLocator) {
+        assert elementRetriever.getByPresence(webDriver, fieldLocator).getAttribute("readonly").equalsIgnoreCase(Boolean.TRUE.toString());
     }
 
     private void enterValueToField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {

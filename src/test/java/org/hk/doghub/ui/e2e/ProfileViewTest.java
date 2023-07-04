@@ -43,6 +43,14 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldNotAllowEditingUsername(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyUsernameReadOnly(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldDisplayTitle(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
@@ -173,6 +181,14 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyDateOfRegistrationDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldNotAllowEditingDateOfRegistration(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.verifyDateOfRegistrationReadOnly(webDriver);
     }
 
     @ParameterizedTest
