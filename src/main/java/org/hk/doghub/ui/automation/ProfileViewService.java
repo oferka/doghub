@@ -262,11 +262,18 @@ public class ProfileViewService {
     }
 
     private String getDateTimeFieldValue(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
-        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
-        elementHighlighter.highlight(webDriver, inputElement);
-        String value = inputElement.getAttribute("value");
-        log.info("Field value is: {}", value);
-        return value;
+        WebElement datePickerElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName("vaadin-date-picker"));
+        WebElement datePickerInputElement = datePickerElement.findElement(By.tagName(INPUT));
+        elementHighlighter.highlight(webDriver, datePickerInputElement);
+        String dateValue = datePickerInputElement.getAttribute("value");
+        log.info("Date value is: {}", dateValue);
+
+        WebElement timePickerElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName("vaadin-time-picker"));
+        WebElement timePickerInputElement = timePickerElement.findElement(By.tagName(INPUT));
+        elementHighlighter.highlight(webDriver, timePickerInputElement);
+        String timeValue = timePickerInputElement.getAttribute("value");
+        log.info("Time value is: {}", dateValue);
+        return dateValue + " " + timeValue;
     }
 
     private void verifyFieldReadOnly(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {

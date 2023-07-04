@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 783" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 786">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/ProfileViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/automation/ProfileViewService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +117,20 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldEnterStreetNumber">
+  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldGetDateOfBirthValue">
+    <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProfileViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -178,22 +194,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfileViewTest.shouldGetFieldValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
-      <option name="METHOD_NAME" value="shouldGetFieldValues(org.hk.doghub.ui.e2e.Setup)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -202,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProfileViewTest.shouldEnterStreetNumber" />
         <item itemvalue="JUnit.ProfileViewTest.shouldGetDateOfBirthValue" />
+        <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.ProfileViewTest.shouldEnterStreetNumber" />
         <item itemvalue="JUnit.ProfileViewTest.shouldDisplayDateOfBirth" />
         <item itemvalue="JUnit.ProfileViewTest" />
-        <item itemvalue="JUnit.ProfileViewTest.shouldGetFieldValues" />
       </list>
     </recent_temporary>
   </component>
@@ -218,27 +218,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00739" summary="doghub 735">
-      <created>1688023580063</created>
-      <option name="number" value="00739" />
-      <option name="presentableId" value="LOCAL-00739" />
-      <option name="project" value="LOCAL" />
-      <updated>1688023580064</updated>
-    </task>
-    <task id="LOCAL-00740" summary="doghub 736">
-      <created>1688037213719</created>
-      <option name="number" value="00740" />
-      <option name="presentableId" value="LOCAL-00740" />
-      <option name="project" value="LOCAL" />
-      <updated>1688037213719</updated>
-    </task>
-    <task id="LOCAL-00741" summary="doghub 737">
-      <created>1688101841186</created>
-      <option name="number" value="00741" />
-      <option name="presentableId" value="LOCAL-00741" />
-      <option name="project" value="LOCAL" />
-      <updated>1688101841186</updated>
     </task>
     <task id="LOCAL-00742" summary="doghub 738">
       <created>1688103261521</created>
@@ -562,7 +541,28 @@
       <option name="project" value="LOCAL" />
       <updated>1688464330948</updated>
     </task>
-    <option name="localTasksCounter" value="788" />
+    <task id="LOCAL-00788" summary="doghub 784">
+      <created>1688464667589</created>
+      <option name="number" value="00788" />
+      <option name="presentableId" value="LOCAL-00788" />
+      <option name="project" value="LOCAL" />
+      <updated>1688464667589</updated>
+    </task>
+    <task id="LOCAL-00789" summary="doghub 785">
+      <created>1688465107156</created>
+      <option name="number" value="00789" />
+      <option name="presentableId" value="LOCAL-00789" />
+      <option name="project" value="LOCAL" />
+      <updated>1688465107156</updated>
+    </task>
+    <task id="LOCAL-00790" summary="doghub 786">
+      <created>1688465239363</created>
+      <option name="number" value="00790" />
+      <option name="presentableId" value="LOCAL-00790" />
+      <option name="project" value="LOCAL" />
+      <updated>1688465239364</updated>
+    </task>
+    <option name="localTasksCounter" value="791" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -578,9 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 759" />
-    <MESSAGE value="doghub 760" />
-    <MESSAGE value="doghub 761" />
     <MESSAGE value="doghub 762" />
     <MESSAGE value="doghub 763" />
     <MESSAGE value="doghub 764" />
@@ -603,6 +600,9 @@
     <MESSAGE value="doghub 781" />
     <MESSAGE value="doghub 782" />
     <MESSAGE value="doghub 783" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 783" />
+    <MESSAGE value="doghub 784" />
+    <MESSAGE value="doghub 785" />
+    <MESSAGE value="doghub 786" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 786" />
   </component>
 </project>
