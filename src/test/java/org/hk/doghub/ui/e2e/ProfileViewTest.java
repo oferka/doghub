@@ -173,10 +173,30 @@ public class ProfileViewTest extends DogHubUITest {
 
     @ParameterizedTest
     @EnumSource(Setup.class)
+    public void shouldEnterCity(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterCity(webDriver);
+        viewService.clickSave(webDriver);
+        viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
     public void shouldDisplayStreetName(Setup setup) {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyStreetNameDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldEnterStreetName(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterStreetName(webDriver);
+        viewService.clickSave(webDriver);
+        viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
     }
 
     @ParameterizedTest
@@ -193,6 +213,16 @@ public class ProfileViewTest extends DogHubUITest {
         initiateWebDriverAndNavigateToLandingPage(setup);
         viewService.navigateFromHomePage(webDriver);
         viewService.verifyPostcodeDisplayed(webDriver);
+    }
+
+    @ParameterizedTest
+    @EnumSource(Setup.class)
+    public void shouldEnterPostcode(Setup setup) {
+        initiateWebDriverAndNavigateToLandingPage(setup);
+        viewService.navigateFromHomePage(webDriver);
+        viewService.enterPostcode(webDriver);
+        viewService.clickSave(webDriver);
+        viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
     }
 
     @ParameterizedTest
@@ -228,6 +258,9 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.enterEmail(webDriver);
         viewService.enterThumbnailPicture(webDriver);
         viewService.enterCompany(webDriver);
+        viewService.enterCity(webDriver);
+        viewService.enterStreetName(webDriver);
+        viewService.enterPostcode(webDriver);
         viewService.clickSave(webDriver);
         viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
     }

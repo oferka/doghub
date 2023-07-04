@@ -154,6 +154,18 @@ public class ProfileViewService {
         enterValueToField(webDriver, By.className(UserCompanyField.CLASS_NAME), userProvider.get().getCompany());
     }
 
+    public void enterCity(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserCityField.CLASS_NAME), userProvider.get().getAddress().getCity());
+    }
+
+    public void enterStreetName(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserStreetNameField.CLASS_NAME), userProvider.get().getAddress().getStreetName());
+    }
+
+    public void enterPostcode(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserPostcodeField.CLASS_NAME), userProvider.get().getAddress().getPostcode());
+    }
+
     private void enterValueToField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, inputElement, value, true, true);
