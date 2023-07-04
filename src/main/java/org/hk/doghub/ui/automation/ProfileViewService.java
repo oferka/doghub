@@ -174,6 +174,10 @@ public class ProfileViewService {
         enterValueToField(webDriver, By.className(UserStreetNameField.CLASS_NAME), userProvider.get().getAddress().getStreetName());
     }
 
+    public void enterStreetNumber(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserStreetNumberField.CLASS_NAME), String.valueOf(userProvider.get().getAddress().getNumber()));
+    }
+
     public void enterPostcode(@NotNull WebDriver webDriver) {
         enterValueToField(webDriver, By.className(UserPostcodeField.CLASS_NAME), userProvider.get().getAddress().getPostcode());
     }
