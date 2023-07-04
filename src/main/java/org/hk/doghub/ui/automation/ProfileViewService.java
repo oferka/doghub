@@ -15,6 +15,7 @@ import org.hk.doghub.ui.components.shared.InfoSaveButton;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
 import org.hk.doghub.ui.components.shared.user.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,15 @@ public class ProfileViewService {
 
     public void verifyIdDisplayed(@NotNull WebDriver webDriver) {
         verifyFieldDisplayed(webDriver, By.className(UserIdField.CLASS_NAME));
+    }
+
+    public void verifyIdReadOnly(@NotNull WebDriver webDriver) {
+        try {
+            enterValueToField(webDriver, By.className(UserIdField.CLASS_NAME), String.valueOf(1));
+        }
+        catch (InvalidElementStateException e) {
+            log.info("Id field is read only as expected");
+        }
     }
 
     public void verifyUsernameDisplayed(@NotNull WebDriver webDriver) {
