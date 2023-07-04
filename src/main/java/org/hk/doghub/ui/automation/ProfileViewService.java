@@ -134,6 +134,10 @@ public class ProfileViewService {
         elementRetriever.getByPresence(webDriver, By.className(SavedSuccessfullyNotification.CLASS_NAME));
     }
 
+    public void enterTitle(@NotNull WebDriver webDriver) {
+        enterValueToField(webDriver, By.className(UserTitleField.CLASS_NAME), userProvider.get().getTitle());
+    }
+
     public void enterName(@NotNull WebDriver webDriver) {
         enterValueToField(webDriver, By.className(UserNameField.CLASS_NAME), userProvider.get().getName());
     }
