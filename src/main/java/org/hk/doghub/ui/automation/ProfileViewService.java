@@ -18,6 +18,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 import static com.vaadin.flow.component.Tag.INPUT;
 
 @Service
@@ -148,7 +150,7 @@ public class ProfileViewService {
     }
 
     public void enterDateOfBirth(@NotNull WebDriver webDriver) {
-        enterValueToTextField(webDriver, By.className(UserDateOfBirthField.CLASS_NAME), userProvider.get().getDateOfBirth().toLocalDateTime().toString());
+        enterValueToDateTimeField(webDriver, By.className(UserDateOfBirthField.CLASS_NAME), userProvider.get().getDateOfBirth().toLocalDateTime());
     }
 
     public void verifyDateOfRegistrationDisplayed(@NotNull WebDriver webDriver) {
@@ -156,7 +158,7 @@ public class ProfileViewService {
     }
 
     public String getDateOfRegistrationValue(@NotNull WebDriver webDriver) {
-        return getTextFieldValue(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
+        return getDateTimeFieldValue(webDriver, By.className(UserDateOfRegistrationField.CLASS_NAME));
     }
 
     public void verifyDateOfRegistrationReadOnly(@NotNull WebDriver webDriver) {
@@ -274,5 +276,10 @@ public class ProfileViewService {
     private void enterValueToTextField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull String value) {
         WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, inputElement, value, true, true);
+    }
+
+    private void enterValueToDateTimeField(@NotNull WebDriver webDriver, @NotNull By fieldLocator, @NotNull LocalDateTime localDateTime) {
+        WebElement inputElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName(INPUT));
+        textInputExecutor.enterText(webDriver, inputElement, localDateTime.toString(), true, true);
     }
 }
