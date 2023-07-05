@@ -9,6 +9,7 @@ import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.ui.components.shared.EntityUpdateService;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.time.ZonedDateTime;
 import java.util.Optional;
@@ -21,6 +22,7 @@ import static org.hk.doghub.model.user.DogHubUser.*;
 @Slf4j
 @Service
 @RequiredArgsConstructor
+@Validated
 public class UserUpdateService implements EntityUpdateService<DogHubUser, UserUpdateParameters>  {
 
     private final DogHubUserService userService;

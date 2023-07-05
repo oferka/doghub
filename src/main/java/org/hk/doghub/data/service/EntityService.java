@@ -1,5 +1,6 @@
 package org.hk.doghub.data.service;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.AbstractEntity;
 import org.springframework.data.domain.Page;
@@ -17,13 +18,13 @@ public interface EntityService<T extends AbstractEntity> {
 
     Page<T> findAll(@NotNull Pageable pageable);
 
-    T save(@NotNull T entity);
+    T save(@NotNull @Valid T entity);
 
     Page<T> findAll(@NotNull Pageable pageable, @NotNull Specification<T> filter);
 
     int count();
 
-    boolean exists(@NotNull T entity);
+    boolean exists(@NotNull @Valid T entity);
 
     Optional<T> findPrevious(@NotNull Long id);
 

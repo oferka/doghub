@@ -3,6 +3,7 @@ package org.hk.doghub.ui.automation;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.hk.doghub.automation.e2e.selenium.element.display.status.ElementDisplayStatusRetriever;
 import org.hk.doghub.automation.e2e.selenium.element.highlight.ElementHighlighter;
 import org.hk.doghub.automation.e2e.selenium.element.retrieve.ElementRetriever;
@@ -11,6 +12,7 @@ import org.hk.doghub.automation.e2e.selenium.ui.actions.text.input.TextInputExec
 import org.hk.doghub.data.content.generator.user.UserProvider;
 import org.hk.doghub.ui.components.shared.InfoCancelButton;
 import org.hk.doghub.ui.components.shared.InfoSaveButton;
+import org.hk.doghub.ui.components.shared.SaveFailedWithInvalidInputNotification;
 import org.hk.doghub.ui.components.shared.SavedSuccessfullyNotification;
 import org.hk.doghub.ui.components.shared.user.*;
 import org.openqa.selenium.By;
@@ -22,6 +24,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import static com.vaadin.flow.component.Tag.INPUT;
+import static org.hk.doghub.model.user.DogHubUser.TITLE_MAX_LENGTH;
 
 @Service
 @RequiredArgsConstructor
@@ -80,6 +83,10 @@ public class ProfileViewService {
 
     public void enterTitle(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserTitleField.CLASS_NAME), userProvider.get().getTitle());
+    }
+
+    public void enterInvalidTitle(@NotNull WebDriver webDriver) {
+        enterValueToTextField(webDriver, By.className(UserTitleField.CLASS_NAME), RandomStringUtils.randomAlphabetic(TITLE_MAX_LENGTH+1));
     }
 
     public void verifyNameDisplayed(@NotNull WebDriver webDriver) {
@@ -248,6 +255,10 @@ public class ProfileViewService {
 
     public void verifySavedSuccessfullyNotificationDisplayed(@NotNull WebDriver webDriver) {
         elementRetriever.getByPresence(webDriver, By.className(SavedSuccessfullyNotification.CLASS_NAME));
+    }
+
+    public void verifySaveFailedWithInvalidInputNotificationDisplayed(@NotNull WebDriver webDriver) {
+        elementRetriever.getByPresence(webDriver, By.className(SaveFailedWithInvalidInputNotification.CLASS_NAME));
     }
 
     private void verifyFieldDisplayed(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
