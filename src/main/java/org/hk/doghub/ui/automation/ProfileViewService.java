@@ -83,6 +83,7 @@ public class ProfileViewService {
 
     public void enterTitle(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserTitleField.CLASS_NAME), userProvider.get().getTitle());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserTitleField.CLASS_NAME));
     }
 
     public void enterInvalidTitle(@NotNull WebDriver webDriver) {
@@ -99,6 +100,7 @@ public class ProfileViewService {
 
     public void enterName(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserNameField.CLASS_NAME), userProvider.get().getName());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserNameField.CLASS_NAME));
     }
 
     public void verifyMobileNumberDisplayed(@NotNull WebDriver webDriver) {
@@ -111,6 +113,7 @@ public class ProfileViewService {
 
     public void enterMobileNumber(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserMobileNumberField.CLASS_NAME), userProvider.get().getMobileNumber());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserMobileNumberField.CLASS_NAME));
     }
 
     public void verifyEmailDisplayed(@NotNull WebDriver webDriver) {
@@ -123,6 +126,7 @@ public class ProfileViewService {
 
     public void enterEmail(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserEmailField.CLASS_NAME), userProvider.get().getEmail());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserEmailField.CLASS_NAME));
     }
 
     public void verifyThumbnailPictureDisplayed(@NotNull WebDriver webDriver) {
@@ -135,6 +139,7 @@ public class ProfileViewService {
 
     public void enterThumbnailPicture(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME), userProvider.get().getThumbnailPicture());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserThumbnailPictureField.CLASS_NAME));
     }
 
     public void verifyCompanyDisplayed(@NotNull WebDriver webDriver) {
@@ -147,6 +152,7 @@ public class ProfileViewService {
 
     public void enterCompany(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserCompanyField.CLASS_NAME), userProvider.get().getCompany());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserCompanyField.CLASS_NAME));
     }
 
     public void verifyDateOfBirthDisplayed(@NotNull WebDriver webDriver) {
@@ -159,6 +165,7 @@ public class ProfileViewService {
 
     public void enterDateOfBirth(@NotNull WebDriver webDriver) {
         enterValueToDateTimeField(webDriver, By.className(UserDateOfBirthField.CLASS_NAME), userProvider.get().getDateOfBirth().toLocalDateTime());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserDateOfBirthField.CLASS_NAME));
     }
 
     public void verifyDateOfRegistrationDisplayed(@NotNull WebDriver webDriver) {
@@ -183,6 +190,7 @@ public class ProfileViewService {
 
     public void enterCountry(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserCountryField.CLASS_NAME), userProvider.get().getAddress().getCountry());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserCountryField.CLASS_NAME));
     }
 
     public void verifyStateDisplayed(@NotNull WebDriver webDriver) {
@@ -195,6 +203,7 @@ public class ProfileViewService {
 
     public void enterState(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserStateField.CLASS_NAME), userProvider.get().getAddress().getState());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserStateField.CLASS_NAME));
     }
 
     public void verifyCityDisplayed(@NotNull WebDriver webDriver) {
@@ -207,6 +216,7 @@ public class ProfileViewService {
 
     public void enterCity(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserCityField.CLASS_NAME), userProvider.get().getAddress().getCity());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserCityField.CLASS_NAME));
     }
 
     public void verifyStreetNameDisplayed(@NotNull WebDriver webDriver) {
@@ -219,6 +229,7 @@ public class ProfileViewService {
 
     public void enterStreetName(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserStreetNameField.CLASS_NAME), userProvider.get().getAddress().getStreetName());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserStreetNameField.CLASS_NAME));
     }
 
     public void verifyStreetNumberDisplayed(@NotNull WebDriver webDriver) {
@@ -231,6 +242,7 @@ public class ProfileViewService {
 
     public void enterStreetNumber(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserStreetNumberField.CLASS_NAME), String.valueOf(userProvider.get().getAddress().getNumber()));
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserStreetNumberField.CLASS_NAME));
     }
 
     public void verifyPostcodeDisplayed(@NotNull WebDriver webDriver) {
@@ -243,6 +255,7 @@ public class ProfileViewService {
 
     public void enterPostcode(@NotNull WebDriver webDriver) {
         enterValueToTextField(webDriver, By.className(UserPostcodeField.CLASS_NAME), userProvider.get().getAddress().getPostcode());
+        verifyFieldErrorMessageIsHidden(webDriver, By.className(UserPostcodeField.CLASS_NAME));
     }
 
     public void clickSave(@NotNull WebDriver webDriver) {
@@ -305,5 +318,10 @@ public class ProfileViewService {
         WebElement timePickerElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.tagName("vaadin-time-picker"));
         WebElement timePickerInputElement = timePickerElement.findElement(By.tagName(INPUT));
         textInputExecutor.enterText(webDriver, timePickerInputElement, localDateTime.format(DateTimeFormatter.ofPattern("HH:mm")), true, true);
+    }
+
+    private void verifyFieldErrorMessageIsHidden(@NotNull WebDriver webDriver, @NotNull By fieldLocator) {
+        WebElement errorMessageElement = elementRetriever.getByPresence(webDriver, fieldLocator).findElement(By.xpath("//div[@slot='error-message']"));
+        assert errorMessageElement.getAttribute("hidden").equalsIgnoreCase(Boolean.TRUE.toString());
     }
 }
