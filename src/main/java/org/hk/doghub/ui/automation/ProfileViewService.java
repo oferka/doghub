@@ -284,7 +284,7 @@ public class ProfileViewService {
         elementHighlighter.highlight(webDriver, timePickerInputElement);
         String timeValue = timePickerInputElement.getAttribute("value");
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy H:mm");
         return LocalDateTime.parse(dateValue + " " + timeValue, formatter);
     }
 
