@@ -187,4 +187,20 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     private @NotNull ZonedDateTime getFutureDateTime() {
         return ZonedDateTime.now().plus(Duration.ofDays(10));
     }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullCompany() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setCompany(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getCompany());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithCompanyThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setCompany(randomAlphabetic(COMPANY_MAX_LENGTH + 1));
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
 }
