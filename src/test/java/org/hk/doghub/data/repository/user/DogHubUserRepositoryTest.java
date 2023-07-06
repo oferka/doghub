@@ -496,6 +496,18 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         assertTrue(userOptional.isEmpty());
     }
 
+    @RepeatedTest(10)
+    void shouldNotFindUserByNullUserName() {
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(null);
+        assertTrue(userOptional.isEmpty());
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindUserByUserNameThatExceedsMaxLength() {
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(randomAlphabetic(USER_NAME_MAX_LENGTH + 1));
+        assertTrue(userOptional.isEmpty());
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
