@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 793">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 794">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserDataTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -105,82 +107,93 @@
       <recent name="org.hk.doghub.ui.components.shared.user" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.hk.doghub.data.repository.user" />
       <recent name="org.hk.doghub.data.content.generator.dog.faker" />
       <recent name="org.hk.doghub.health.user" />
       <recent name="org.hk.doghub.health.tip" />
       <recent name="org.hk.doghub.health.dog" />
-      <recent name="org.hk.doghub.data.content.loader" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.hk.doghub.ui.e2e" />
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProfileViewTest.shouldEnterFields">
-    <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
+  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest">
+    <configuration name="DogHubUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProfileViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfileViewTest.shouldEnterFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithNullCreationTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
-      <option name="METHOD_NAME" value="shouldEnterFields(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotSaveUserWithNullCreationTime" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfileViewTest.shouldValidateTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNullCreationTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.ProfileViewTest" />
-      <option name="METHOD_NAME" value="shouldValidateTitle(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldSaveUserWithNullCreationTime" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="e2e in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithSpecifiedId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/org/hk/doghub/ui/e2e" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldSaveUserWithSpecifiedId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithSpecifiedNonExistingId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldSaveUserWithSpecifiedNonExistingId" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -193,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProfileViewTest.shouldEnterFields" />
-        <item itemvalue="JUnit.ProfileViewTest" />
-        <item itemvalue="JUnit.e2e in doghub" />
-        <item itemvalue="JUnit.ProfileViewTest.shouldValidateTitle" />
-        <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithSpecifiedNonExistingId" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithSpecifiedId" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNullCreationTime" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithNullCreationTime" />
       </list>
     </recent_temporary>
   </component>
@@ -209,13 +222,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00749" summary="doghub 745">
-      <created>1688107357318</created>
-      <option name="number" value="00749" />
-      <option name="presentableId" value="LOCAL-00749" />
-      <option name="project" value="LOCAL" />
-      <updated>1688107357318</updated>
     </task>
     <task id="LOCAL-00750" summary="doghub 746">
       <created>1688134919654</created>
@@ -553,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688551856929</updated>
     </task>
-    <option name="localTasksCounter" value="798" />
+    <task id="LOCAL-00798" summary="doghub 794">
+      <created>1688626537947</created>
+      <option name="number" value="00798" />
+      <option name="presentableId" value="LOCAL-00798" />
+      <option name="project" value="LOCAL" />
+      <updated>1688626537947</updated>
+    </task>
+    <option name="localTasksCounter" value="799" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 769" />
     <MESSAGE value="doghub 770" />
     <MESSAGE value="doghub 771" />
     <MESSAGE value="doghub 772" />
@@ -594,6 +606,7 @@
     <MESSAGE value="doghub 791" />
     <MESSAGE value="doghub 792" />
     <MESSAGE value="doghub 793" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 793" />
+    <MESSAGE value="doghub 794" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 794" />
   </component>
 </project>

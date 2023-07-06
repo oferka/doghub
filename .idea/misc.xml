@@ -8,6 +8,7 @@
     <writeAnnotations>
       <writeAnnotation name="org.springframework.beans.factory.annotation.Autowired" />
       <writeAnnotation name="org.springframework.beans.factory.annotation.Value" />
+      <writeAnnotation name="jakarta.persistence.Version" />
     </writeAnnotations>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
