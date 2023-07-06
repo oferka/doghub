@@ -1,5 +1,6 @@
 package org.hk.doghub.data.repository.user;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
@@ -9,6 +10,7 @@ import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.List;
 
+import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DogHubUserRepositoryTest extends DogHubUserDataTest {
@@ -49,9 +51,23 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldNotSaveUserWithInvalidCreationTime() {
+    void shouldNotSaveUserWithFutureCreationTime() {
         DogHubUser item = dogHubUserProvider.get();
         item.setCreationTime(ZonedDateTime.now().plus(Duration.ofDays(10)));
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithNullName() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setName(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithNameThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setName(RandomStringUtils.randomAlphabetic(NAME_MAX_LENGTH+1));
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 }
