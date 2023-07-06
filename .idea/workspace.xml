@@ -7,7 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 801">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 802">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +117,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest">
+  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithPostcodeThatExceedsMaxLength">
     <configuration name="DogHubUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -132,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithEmailThatHasInvalidFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithNegativeStreetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -142,13 +143,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotSaveUserWithEmailThatHasInvalidFormat" />
+      <option name="METHOD_NAME" value="shouldNotSaveUserWithNegativeStreetNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithFutureDateOfBirth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithPostcodeThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -158,13 +159,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotSaveUserWithFutureDateOfBirth" />
+      <option name="METHOD_NAME" value="shouldNotSaveUserWithPostcodeThatExceedsMaxLength" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithThumbnailPictureThatHasInvalidFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNegativeStreetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -174,13 +175,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotSaveUserWithThumbnailPictureThatHasInvalidFormat" />
+      <option name="METHOD_NAME" value="shouldSaveUserWithNegativeStreetNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNullDateOfBirth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNullStreetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -190,7 +191,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldSaveUserWithNullDateOfBirth" />
+      <option name="METHOD_NAME" value="shouldSaveUserWithNullStreetNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -204,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithPostcodeThatExceedsMaxLength" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNegativeStreetNumber" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithNegativeStreetNumber" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNullStreetNumber" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithFutureDateOfBirth" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNullDateOfBirth" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithThumbnailPictureThatHasInvalidFormat" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithEmailThatHasInvalidFormat" />
       </list>
     </recent_temporary>
   </component>
@@ -220,13 +221,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00757" summary="doghub 753">
-      <created>1688231912002</created>
-      <option name="number" value="00757" />
-      <option name="presentableId" value="LOCAL-00757" />
-      <option name="project" value="LOCAL" />
-      <updated>1688231912002</updated>
     </task>
     <task id="LOCAL-00758" summary="doghub 754">
       <created>1688232166039</created>
@@ -564,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688640561310</updated>
     </task>
-    <option name="localTasksCounter" value="806" />
+    <task id="LOCAL-00806" summary="doghub 802">
+      <created>1688640701790</created>
+      <option name="number" value="00806" />
+      <option name="presentableId" value="LOCAL-00806" />
+      <option name="project" value="LOCAL" />
+      <updated>1688640701790</updated>
+    </task>
+    <option name="localTasksCounter" value="807" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -580,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 777" />
     <MESSAGE value="doghub 778" />
     <MESSAGE value="doghub 779" />
     <MESSAGE value="doghub 780" />
@@ -605,6 +605,7 @@
     <MESSAGE value="doghub 799" />
     <MESSAGE value="doghub 800" />
     <MESSAGE value="doghub 801" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 801" />
+    <MESSAGE value="doghub 802" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 802" />
   </component>
 </project>

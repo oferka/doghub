@@ -15,6 +15,7 @@ import java.util.List;
 import static java.text.MessageFormat.format;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
+import static org.hk.doghub.model.user.DogHubAddress.*;
 import static org.hk.doghub.model.user.DogHubUser.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -202,5 +203,113 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setCompany(randomAlphabetic(COMPANY_MAX_LENGTH + 1));
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullAddress() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setAddress(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getAddress());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullCountry() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setCountry(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getAddress().getCountry());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithCountryThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setCountry(randomAlphabetic(COUNTRY_MAX_LENGTH + 256));
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullState() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setState(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getAddress().getState());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithStateThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setState(randomAlphabetic(STATE_MAX_LENGTH + 256));
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullCity() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setCity(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getAddress().getCity());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithCityThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setCity(randomAlphabetic(CITY_MAX_LENGTH + 256));
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullStreetName() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setStreetName(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getAddress().getStreetName());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithStreetNameThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setStreetName(randomAlphabetic(STREET_NAME_MAX_LENGTH + 256));
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullStreetNumber() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setNumber(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getAddress().getNumber());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNegativeStreetNumber() {
+        DogHubUser item = dogHubUserProvider.get();
+        Integer negativeNumber = -10;
+        item.getAddress().setNumber(negativeNumber);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(negativeNumber, item.getAddress().getNumber());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullPostcode() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setPostcode(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getAddress().getPostcode());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithPostcodeThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getAddress().setPostcode(randomAlphabetic(POSTCODE_MAX_LENGTH + 256));
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 }
