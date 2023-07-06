@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 802">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 803">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" afterDir="false" />
     </list>
@@ -117,7 +117,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithPostcodeThatExceedsMaxLength">
+  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest">
     <configuration name="DogHubUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -205,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubUserRepositoryTest" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithPostcodeThatExceedsMaxLength" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNegativeStreetNumber" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithNegativeStreetNumber" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNullStreetNumber" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -221,13 +221,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00758" summary="doghub 754">
-      <created>1688232166039</created>
-      <option name="number" value="00758" />
-      <option name="presentableId" value="LOCAL-00758" />
-      <option name="project" value="LOCAL" />
-      <updated>1688232166039</updated>
     </task>
     <task id="LOCAL-00759" summary="doghub 755">
       <created>1688232586670</created>
@@ -565,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688640701790</updated>
     </task>
-    <option name="localTasksCounter" value="807" />
+    <task id="LOCAL-00807" summary="doghub 803">
+      <created>1688641951865</created>
+      <option name="number" value="00807" />
+      <option name="presentableId" value="LOCAL-00807" />
+      <option name="project" value="LOCAL" />
+      <updated>1688641951865</updated>
+    </task>
+    <option name="localTasksCounter" value="808" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -581,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 778" />
     <MESSAGE value="doghub 779" />
     <MESSAGE value="doghub 780" />
     <MESSAGE value="doghub 781" />
@@ -606,6 +605,7 @@
     <MESSAGE value="doghub 800" />
     <MESSAGE value="doghub 801" />
     <MESSAGE value="doghub 802" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 802" />
+    <MESSAGE value="doghub 803" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 803" />
   </component>
 </project>

@@ -312,4 +312,34 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         item.getAddress().setPostcode(randomAlphabetic(POSTCODE_MAX_LENGTH + 256));
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullMobileNumber() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setMobileNumber(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getMobileNumber());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithMobileNumberThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setMobileNumber(randomAlphabetic(MOBILE_NUMBER_MAX_LENGTH + 1));
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithNullHashedPassword() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setHashedPassword(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithHashedPasswordThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setHashedPassword(randomAlphabetic(PASSWORD_MAX_LENGTH + 1));
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
 }
