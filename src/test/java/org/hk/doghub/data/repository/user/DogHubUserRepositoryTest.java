@@ -547,6 +547,16 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
+    void shouldNotFindTop1ByIdGreaterThanOrderById() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        assertEquals(saved.size(), items.size());
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findTop1ByIdGreaterThanOrderById(saved.get(9).getId());
+        assertTrue(userOptional.isEmpty());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
     void shouldFindTop1ByIdLessThanOrderByIdDesc() {
         List<DogHubUser> items = dogHubUserProvider.get(10);
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
