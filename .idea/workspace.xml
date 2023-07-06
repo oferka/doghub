@@ -116,7 +116,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithEmptyTips">
+  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest">
     <configuration name="DogHubUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -204,10 +204,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubUserRepositoryTest" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithEmptyTips" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNullTips" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithNullTips" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNegativeComments" />
       </list>
     </recent_temporary>
