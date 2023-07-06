@@ -10,6 +10,7 @@ import org.springframework.transaction.TransactionSystemException;
 
 import java.time.Duration;
 import java.time.ZonedDateTime;
+import java.util.Collections;
 import java.util.List;
 
 import static java.text.MessageFormat.format;
@@ -53,7 +54,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setCreationTime(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getCreationTime());
+        assertNull(saved.getCreationTime());
         dogHubUserRepository.delete(saved);
     }
 
@@ -108,7 +109,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setEmail(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getEmail());
+        assertNull(saved.getEmail());
         dogHubUserRepository.delete(saved);
     }
 
@@ -133,7 +134,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setTitle(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getTitle());
+        assertNull(saved.getTitle());
         dogHubUserRepository.delete(saved);
     }
 
@@ -149,7 +150,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setThumbnailPicture(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getThumbnailPicture());
+        assertNull(saved.getThumbnailPicture());
         dogHubUserRepository.delete(saved);
     }
 
@@ -174,7 +175,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setDateOfBirth(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getDateOfBirth());
+        assertNull(saved.getDateOfBirth());
         dogHubUserRepository.delete(saved);
     }
 
@@ -194,7 +195,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setCompany(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getCompany());
+        assertNull(saved.getCompany());
         dogHubUserRepository.delete(saved);
     }
 
@@ -210,7 +211,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setAddress(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getAddress());
+        assertNull(saved.getAddress());
         dogHubUserRepository.delete(saved);
     }
 
@@ -219,7 +220,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getAddress().setCountry(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getAddress().getCountry());
+        assertNull(saved.getAddress().getCountry());
         dogHubUserRepository.delete(saved);
     }
 
@@ -235,7 +236,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getAddress().setState(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getAddress().getState());
+        assertNull(saved.getAddress().getState());
         dogHubUserRepository.delete(saved);
     }
 
@@ -251,7 +252,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getAddress().setCity(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getAddress().getCity());
+        assertNull(saved.getAddress().getCity());
         dogHubUserRepository.delete(saved);
     }
 
@@ -267,7 +268,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getAddress().setStreetName(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getAddress().getStreetName());
+        assertNull(saved.getAddress().getStreetName());
         dogHubUserRepository.delete(saved);
     }
 
@@ -283,7 +284,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getAddress().setNumber(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getAddress().getNumber());
+        assertNull(saved.getAddress().getNumber());
         dogHubUserRepository.delete(saved);
     }
 
@@ -293,7 +294,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         Integer negativeNumber = -10;
         item.getAddress().setNumber(negativeNumber);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertEquals(negativeNumber, item.getAddress().getNumber());
+        assertEquals(negativeNumber, saved.getAddress().getNumber());
         dogHubUserRepository.delete(saved);
     }
 
@@ -302,7 +303,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getAddress().setPostcode(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getAddress().getPostcode());
+        assertNull(saved.getAddress().getPostcode());
         dogHubUserRepository.delete(saved);
     }
 
@@ -318,7 +319,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setMobileNumber(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getMobileNumber());
+        assertNull(saved.getMobileNumber());
         dogHubUserRepository.delete(saved);
     }
 
@@ -355,7 +356,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getFeedback().setLikes(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getFeedback().getLikes());
+        assertNull(saved.getFeedback().getLikes());
         dogHubUserRepository.delete(saved);
     }
 
@@ -365,7 +366,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         Long negativeNumber = -10L;
         item.getFeedback().setLikes(negativeNumber);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertEquals(negativeNumber, item.getFeedback().getLikes());
+        assertEquals(negativeNumber, saved.getFeedback().getLikes());
         dogHubUserRepository.delete(saved);
     }
 
@@ -374,7 +375,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getFeedback().setShares(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getFeedback().getShares());
+        assertNull(saved.getFeedback().getShares());
         dogHubUserRepository.delete(saved);
     }
 
@@ -384,7 +385,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         Long negativeNumber = -10L;
         item.getFeedback().setShares(negativeNumber);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertEquals(negativeNumber, item.getFeedback().getShares());
+        assertEquals(negativeNumber, saved.getFeedback().getShares());
         dogHubUserRepository.delete(saved);
     }
 
@@ -393,7 +394,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.getFeedback().setComments(null);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertNull(item.getFeedback().getComments());
+        assertNull(saved.getFeedback().getComments());
         dogHubUserRepository.delete(saved);
     }
 
@@ -403,7 +404,23 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         Long negativeNumber = -10L;
         item.getFeedback().setComments(negativeNumber);
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertEquals(negativeNumber, item.getFeedback().getComments());
+        assertEquals(negativeNumber, saved.getFeedback().getComments());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithNullRoles() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setRoles(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithEmptyRoles() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setRoles(Collections.emptySet());
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertTrue(saved.getRoles().isEmpty());
         dogHubUserRepository.delete(saved);
     }
 }
