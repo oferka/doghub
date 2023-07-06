@@ -423,4 +423,22 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         assertTrue(saved.getRoles().isEmpty());
         dogHubUserRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullTips() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setDogHubTips(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(saved.getDogHubTips());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithEmptyTips() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setDogHubTips(Collections.emptyList());
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertTrue(saved.getDogHubTips().isEmpty());
+        dogHubUserRepository.delete(saved);
+    }
 }
