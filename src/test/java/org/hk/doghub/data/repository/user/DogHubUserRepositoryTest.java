@@ -480,7 +480,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldFindUserByUserName() {
+    void shouldFindUserByUsername() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
         assertEquals(item.getUsername(), saved.getUsername());
@@ -491,19 +491,46 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldNotFindUserByNonExistingUserName() {
+    void shouldNotFindUserByNonExistingUsername() {
         Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(getNonExistingUsername());
         assertTrue(userOptional.isEmpty());
     }
 
     @RepeatedTest(10)
-    void shouldNotFindUserByNullUserName() {
+    void shouldNotFindUserByNullUsername() {
         Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(null);
         assertTrue(userOptional.isEmpty());
     }
 
     @RepeatedTest(10)
-    void shouldNotFindUserByUserNameThatExceedsMaxLength() {
+    void shouldNotFindUserByUsernameThatExceedsMaxLength() {
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(getUsernameThatExceedsMaxLength());
+        assertTrue(userOptional.isEmpty());
+    }
+
+    @RepeatedTest(10)
+    void shouldExistByUsername() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(item.getUsername(), saved.getUsername());
+        assertTrue(dogHubUserRepository.existsByUsername(item.getUsername()));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistByNullUsername() {
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(null);
+        assertTrue(userOptional.isEmpty());
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistByNonExistingUsername() {
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(getNonExistingUsername());
+        assertTrue(userOptional.isEmpty());
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistByUsernameThatExceedsMaxLength() {
         Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(getUsernameThatExceedsMaxLength());
         assertTrue(userOptional.isEmpty());
     }
