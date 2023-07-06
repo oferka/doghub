@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static java.text.MessageFormat.format;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
@@ -457,6 +458,17 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         item.setDogHubDogs(Collections.emptyList());
         DogHubUser saved = dogHubUserRepository.save(item);
         assertTrue(saved.getDogHubDogs().isEmpty());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindUserById() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(item.getUsername(), saved.getUsername());
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findById(saved.getId());
+        assertTrue(userOptional.isPresent());
+        assertEquals(item.getUsername(), userOptional.get().getUsername());
         dogHubUserRepository.delete(saved);
     }
 }
