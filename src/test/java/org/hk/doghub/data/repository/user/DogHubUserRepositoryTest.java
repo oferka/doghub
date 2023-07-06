@@ -141,4 +141,29 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         item.setTitle(randomAlphabetic(TITLE_MAX_LENGTH + 1));
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullThumbnailPicture() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setThumbnailPicture(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getThumbnailPicture());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithThumbnailPictureThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setThumbnailPicture(randomAlphabetic(THUMBNAIL_PICTURE_MAX_LENGTH + 1));
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithThumbnailPictureThatHasInvalidFormat() {
+        DogHubUser item = dogHubUserProvider.get();
+        String invalidThumbnailPicture = item.getThumbnailPicture().replace(':', '@');
+        log.info(format("Invalid thumbnail picture {0}", invalidThumbnailPicture));
+        item.setThumbnailPicture(invalidThumbnailPicture);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
 }
