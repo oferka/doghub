@@ -535,6 +535,28 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         assertTrue(userOptional.isEmpty());
     }
 
+    @RepeatedTest(10)
+    void shouldFindTop1ByIdGreaterThanOrderById() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        assertEquals(saved.size(), items.size());
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findTop1ByIdGreaterThanOrderById(saved.get(0).getId());
+        assertTrue(userOptional.isPresent());
+        assertEquals(userOptional.get().getId(), saved.get(1).getId());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindTop1ByIdLessThanOrderByIdDesc() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        assertEquals(saved.size(), items.size());
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findTop1ByIdLessThanOrderByIdDesc(saved.get(5).getId());
+        assertTrue(userOptional.isPresent());
+        assertEquals(userOptional.get().getId(), saved.get(4).getId());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
