@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.user.DogHubUser;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.TransactionSystemException;
@@ -470,5 +471,15 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         assertTrue(userOptional.isPresent());
         assertEquals(item.getUsername(), userOptional.get().getUsername());
         dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindUserByIdNonExistingId() {
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findById(getNonExistingId());
+        Assertions.assertTrue(userOptional.isEmpty());
+    }
+
+    private @NotNull Long getNonExistingId() {
+        return RandomUtils.nextLong();
     }
 }
