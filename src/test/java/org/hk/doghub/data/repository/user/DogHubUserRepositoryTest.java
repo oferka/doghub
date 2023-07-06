@@ -1,5 +1,6 @@
 package org.hk.doghub.data.repository.user;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.user.DogHubUser;
@@ -58,7 +59,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithFutureCreationTime() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setCreationTime(ZonedDateTime.now().plus(Duration.ofDays(10)));
+        item.setCreationTime(getFutureDateTime());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -165,5 +166,25 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         log.info(format("Invalid thumbnail picture {0}", invalidThumbnailPicture));
         item.setThumbnailPicture(invalidThumbnailPicture);
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullDateOfBirth() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setDateOfBirth(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getDateOfBirth());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithFutureDateOfBirth() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setDateOfBirth(getFutureDateTime());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    private @NotNull ZonedDateTime getFutureDateTime() {
+        return ZonedDateTime.now().plus(Duration.ofDays(10));
     }
 }
