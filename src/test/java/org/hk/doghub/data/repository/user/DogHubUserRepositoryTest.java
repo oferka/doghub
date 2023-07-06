@@ -479,7 +479,28 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         Assertions.assertTrue(userOptional.isEmpty());
     }
 
+    @RepeatedTest(10)
+    void shouldFindUserByUserName() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(item.getUsername(), saved.getUsername());
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(saved.getUsername());
+        assertTrue(userOptional.isPresent());
+        assertEquals(item.getUsername(), userOptional.get().getUsername());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindUserByNonExistingUserName() {
+        Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(getNonExistingUsername());
+        assertTrue(userOptional.isEmpty());
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
+    }
+
+    private @NotNull String getNonExistingUsername() {
+        return dogHubUserProvider.get().getUsername();
     }
 }
