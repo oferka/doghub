@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 803">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 804">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" afterDir="false" />
     </list>
@@ -133,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithNegativeStreetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithNullFeedback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -143,13 +143,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotSaveUserWithNegativeStreetNumber" />
+      <option name="METHOD_NAME" value="shouldNotSaveUserWithNullFeedback" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithPostcodeThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldNotSaveUserWithNullLikes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -159,13 +159,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotSaveUserWithPostcodeThatExceedsMaxLength" />
+      <option name="METHOD_NAME" value="shouldNotSaveUserWithNullLikes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNegativeStreetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNegativeLikes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -175,13 +175,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldSaveUserWithNegativeStreetNumber" />
+      <option name="METHOD_NAME" value="shouldSaveUserWithNegativeLikes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNullStreetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldSaveUserWithNullLikes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -191,7 +191,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldSaveUserWithNullStreetNumber" />
+      <option name="METHOD_NAME" value="shouldSaveUserWithNullLikes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,10 +206,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DogHubUserRepositoryTest" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithPostcodeThatExceedsMaxLength" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNegativeStreetNumber" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithNegativeStreetNumber" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNullStreetNumber" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNegativeLikes" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithNullLikes" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithNullLikes" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotSaveUserWithNullFeedback" />
       </list>
     </recent_temporary>
   </component>
@@ -221,13 +221,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00759" summary="doghub 755">
-      <created>1688232586670</created>
-      <option name="number" value="00759" />
-      <option name="presentableId" value="LOCAL-00759" />
-      <option name="project" value="LOCAL" />
-      <updated>1688232586670</updated>
     </task>
     <task id="LOCAL-00760" summary="doghub 756">
       <created>1688307119165</created>
@@ -565,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688641951865</updated>
     </task>
-    <option name="localTasksCounter" value="808" />
+    <task id="LOCAL-00808" summary="doghub 804">
+      <created>1688643105613</created>
+      <option name="number" value="00808" />
+      <option name="presentableId" value="LOCAL-00808" />
+      <option name="project" value="LOCAL" />
+      <updated>1688643105613</updated>
+    </task>
+    <option name="localTasksCounter" value="809" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -581,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 779" />
     <MESSAGE value="doghub 780" />
     <MESSAGE value="doghub 781" />
     <MESSAGE value="doghub 782" />
@@ -606,6 +605,7 @@
     <MESSAGE value="doghub 801" />
     <MESSAGE value="doghub 802" />
     <MESSAGE value="doghub 803" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 803" />
+    <MESSAGE value="doghub 804" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 804" />
   </component>
 </project>

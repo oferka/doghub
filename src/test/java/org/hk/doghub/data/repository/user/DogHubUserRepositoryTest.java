@@ -342,4 +342,68 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         item.setHashedPassword(randomAlphabetic(PASSWORD_MAX_LENGTH + 1));
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldNotSaveUserWithNullFeedback() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.setFeedback(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullLikes() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getFeedback().setLikes(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getFeedback().getLikes());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNegativeLikes() {
+        DogHubUser item = dogHubUserProvider.get();
+        Long negativeNumber = -10L;
+        item.getFeedback().setLikes(negativeNumber);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(negativeNumber, item.getFeedback().getLikes());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullShares() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getFeedback().setShares(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getFeedback().getShares());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNegativeShares() {
+        DogHubUser item = dogHubUserProvider.get();
+        Long negativeNumber = -10L;
+        item.getFeedback().setShares(negativeNumber);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(negativeNumber, item.getFeedback().getShares());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNullComments() {
+        DogHubUser item = dogHubUserProvider.get();
+        item.getFeedback().setComments(null);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertNull(item.getFeedback().getComments());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveUserWithNegativeComments() {
+        DogHubUser item = dogHubUserProvider.get();
+        Long negativeNumber = -10L;
+        item.getFeedback().setComments(negativeNumber);
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(negativeNumber, item.getFeedback().getComments());
+        dogHubUserRepository.delete(saved);
+    }
 }
