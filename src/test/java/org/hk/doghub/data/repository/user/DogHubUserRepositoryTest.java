@@ -14,7 +14,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static java.text.MessageFormat.format;
 import static java.time.Duration.ofDays;
 import static java.time.ZonedDateTime.now;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
@@ -158,16 +157,14 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithThumbnailPictureThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setThumbnailPicture(randomAlphabetic(THUMBNAIL_PICTURE_MAX_LENGTH + 1));
+        item.setThumbnailPicture(getThumbnailPictureThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
     @RepeatedTest(10)
     void shouldNotSaveUserWithThumbnailPictureThatHasInvalidFormat() {
         DogHubUser item = dogHubUserProvider.get();
-        String invalidThumbnailPicture = item.getThumbnailPicture().replace(':', '@');
-        log.info(format("Invalid thumbnail picture {0}", invalidThumbnailPicture));
-        item.setThumbnailPicture(invalidThumbnailPicture);
+        item.setThumbnailPicture(getThumbnailPictureWithInvalidFormat());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -731,6 +728,45 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(saved);
     }
 
+    @RepeatedTest(10)
+    void shouldUpdateUserThumbnailPicture() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String thumbnailPicture = dogHubUserProvider.get().getThumbnailPicture();
+        saved.setThumbnailPicture(thumbnailPicture);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(thumbnailPicture, updated.getThumbnailPicture());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserThumbnailPictureToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setThumbnailPicture(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getThumbnailPicture());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserThumbnailPictureToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setEmail(getThumbnailPictureThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserThumbnailPictureToValueThatHasInvalidFormat() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setThumbnailPicture(getThumbnailPictureWithInvalidFormat());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
@@ -755,6 +791,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         return randomAlphabetic(TITLE_MAX_LENGTH + 1);
     }
 
+    private @NotNull String getThumbnailPictureThatExceedsMaxLength() {
+        return randomAlphabetic(THUMBNAIL_PICTURE_MAX_LENGTH + 1);
+    }
+
     private @NotNull ZonedDateTime getFutureDateTime() {
         return now().plus(ofDays(10));
     }
@@ -765,5 +805,9 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getEmailWithInvalidFormat() {
         return dogHubUserProvider.get().getEmail().replace('@', '.');
+    }
+
+    private @NotNull String getThumbnailPictureWithInvalidFormat() {
+        return dogHubUserProvider.get().getThumbnailPicture().replace(':', '.');
     }
 }
