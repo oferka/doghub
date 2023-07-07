@@ -1132,6 +1132,26 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(updated);
     }
 
+    @RepeatedTest(10)
+    void shouldUpdateUserDogsToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setDogHubDogs(null);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertNull(updated.getDogHubDogs());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserDogsToEmptyList() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setDogHubDogs(emptyList());
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(emptyList(), updated.getDogHubDogs());
+        dogHubUserRepository.delete(updated);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
