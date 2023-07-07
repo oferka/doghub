@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
+import org.hk.doghub.model.user.Role;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -15,10 +16,12 @@ import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static java.time.Duration.ofDays;
 import static java.time.ZonedDateTime.now;
 import static java.util.Collections.emptyList;
+import static java.util.Collections.emptySet;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.hk.doghub.model.user.DogHubAddress.*;
@@ -1242,6 +1245,37 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         saved.setDogHubDogs(emptyList());
         DogHubUser updated = dogHubUserRepository.save(saved);
         assertEquals(emptyList(), updated.getDogHubDogs());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserRoles() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        Set<Role> roles = dogHubUserProvider.get().getRoles();
+        saved.setRoles(roles);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(roles, updated.getRoles());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserRolesToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setRoles(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserRolesToEmpty() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        Set<Role> roles = emptySet();
+        saved.setRoles(roles);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(roles, updated.getRoles());
         dogHubUserRepository.delete(updated);
     }
 
