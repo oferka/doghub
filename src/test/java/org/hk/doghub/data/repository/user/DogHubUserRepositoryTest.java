@@ -767,6 +767,37 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(saved);
     }
 
+    @RepeatedTest(10)
+    void shouldUpdateUserDateOfBirth() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        ZonedDateTime dateOfBirth = getPastDateTime();
+        saved.setDateOfBirth(dateOfBirth);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(dateOfBirth, updated.getDateOfBirth());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserDateOfBirthToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setDateOfBirth(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getDateOfBirth());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserDateOfBirthToFuture() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        ZonedDateTime dateOfBirth = getFutureDateTime();
+        saved.setDateOfBirth(dateOfBirth);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
