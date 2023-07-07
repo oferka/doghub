@@ -196,7 +196,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithCompanyThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setCompany(randomAlphabetic(COMPANY_MAX_LENGTH + 1));
+        item.setCompany(getCompanyThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -798,6 +798,36 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(saved);
     }
 
+    @RepeatedTest(10)
+    void shouldUpdateUserCompany() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String company = dogHubUserProvider.get().getCompany();
+        saved.setCompany(company);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(company, updated.getCompany());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserCompanyToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setCompany(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getCompany());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserCompanyToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setEmail(getCompanyThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
@@ -824,6 +854,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getThumbnailPictureThatExceedsMaxLength() {
         return randomAlphabetic(THUMBNAIL_PICTURE_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getCompanyThatExceedsMaxLength() {
+        return randomAlphabetic(COMPANY_MAX_LENGTH + 1);
     }
 
     private @NotNull ZonedDateTime getFutureDateTime() {
