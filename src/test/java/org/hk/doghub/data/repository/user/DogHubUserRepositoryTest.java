@@ -1113,6 +1113,99 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
+    void shouldUpdateUserLikes() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        Long likes = dogHubUserProvider.get().getFeedback().getLikes();
+        saved.getFeedback().setLikes(likes);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(likes, updated.getFeedback().getLikes());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserLikesToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getFeedback().setLikes(null);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertNull(updated.getFeedback().getLikes());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserLikesToNegativeValue() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getFeedback().setLikes(-10L);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(-10, updated.getFeedback().getLikes());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserShares() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        Long shares = dogHubUserProvider.get().getFeedback().getShares();
+        saved.getFeedback().setShares(shares);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(shares, updated.getFeedback().getShares());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserSharesToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getFeedback().setShares(null);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertNull(updated.getFeedback().getShares());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserSharesToNegativeValue() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getFeedback().setShares(-10L);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(-10, updated.getFeedback().getShares());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserComments() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        Long comments = dogHubUserProvider.get().getFeedback().getComments();
+        saved.getFeedback().setComments(comments);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(comments, updated.getFeedback().getComments());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserCommentsToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getFeedback().setComments(null);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertNull(updated.getFeedback().getComments());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserCommentsToNegativeValue() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getFeedback().setComments(-10L);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(-10, updated.getFeedback().getComments());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
     void shouldUpdateUserTipsToNull() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
