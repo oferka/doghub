@@ -78,7 +78,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithNameThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setName(randomAlphabetic(NAME_MAX_LENGTH + 1));
+        item.setName(getNameThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -619,7 +619,36 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldNotUpdateUserNameToValueThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        saved.setName(getUsernameThatExceedsMaxLength());
+        saved.setName(getNameThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserUsername() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String username = dogHubUserProvider.get().getUsername();
+        saved.setUsername(username);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(username, updated.getUsername());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserUsernameToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setUsername(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserUsernameToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setUsername(getUsernameThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
     }
@@ -630,6 +659,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getNonExistingUsername() {
         return dogHubUserProvider.get().getUsername();
+    }
+
+    private @NotNull String getNameThatExceedsMaxLength() {
+        return randomAlphabetic(NAME_MAX_LENGTH + 1);
     }
 
     private @NotNull String getUsernameThatExceedsMaxLength() {
