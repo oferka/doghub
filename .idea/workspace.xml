@@ -117,22 +117,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatExceedsMaxLength">
-    <configuration name="DogHubUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatHasInvalidFormat">
     <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -144,6 +129,22 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
       <option name="METHOD_NAME" value="shouldNotUpdateUserEmailToValueThatExceedsMaxLength" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatHasInvalidFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotUpdateUserEmailToValueThatHasInvalidFormat" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -205,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatHasInvalidFormat" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatExceedsMaxLength" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserEmailToNull" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserEmail" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserUsernameToNonUniqueValue" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest" />
       </list>
     </recent_temporary>
   </component>

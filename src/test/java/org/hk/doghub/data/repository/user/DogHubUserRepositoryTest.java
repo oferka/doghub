@@ -126,9 +126,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithEmailThatHasInvalidFormat() {
         DogHubUser item = dogHubUserProvider.get();
-        String invalidEmail = item.getEmail().replace('@', '.');
-        log.info(format("Invalid email {0}", invalidEmail));
-        item.setEmail(invalidEmail);
+        item.setEmail(getEmailWithInvalidFormat());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -694,6 +692,15 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(saved);
     }
 
+    @RepeatedTest(10)
+    void shouldNotUpdateUserEmailToValueThatHasInvalidFormat() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setEmail(getEmailWithInvalidFormat());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
@@ -720,5 +727,9 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull ZonedDateTime getPastDateTime() {
         return now().minus(ofDays(10));
+    }
+
+    private @NotNull String getEmailWithInvalidFormat() {
+        return dogHubUserProvider.get().getEmail().replace('@', '.');
     }
 }
