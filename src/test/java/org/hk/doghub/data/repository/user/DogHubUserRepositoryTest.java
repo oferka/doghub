@@ -119,7 +119,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithEmailThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setEmail(randomAlphabetic(EMAIL_MAX_LENGTH + 1));
+        item.setEmail(getEmailThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -653,6 +653,47 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(saved);
     }
 
+    @RepeatedTest(10)
+    void shouldNotUpdateUserUsernameToNonUniqueValue() {
+        List<DogHubUser> items = dogHubUserProvider.get(2);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        DogHubUser first = saved.get(0);
+        DogHubUser second = saved.get(1);
+        second.setUsername(first.getUsername());
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(second));
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserEmail() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String email = dogHubUserProvider.get().getEmail();
+        saved.setEmail(email);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(email, updated.getEmail());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserEmailToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setEmail(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getEmail());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserEmailToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setEmail(getEmailThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
@@ -667,6 +708,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getUsernameThatExceedsMaxLength() {
         return randomAlphabetic(USER_NAME_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getEmailThatExceedsMaxLength() {
+        return randomAlphabetic(EMAIL_MAX_LENGTH + 1);
     }
 
     private @NotNull ZonedDateTime getFutureDateTime() {
