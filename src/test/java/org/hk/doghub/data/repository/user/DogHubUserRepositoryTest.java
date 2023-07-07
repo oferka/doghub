@@ -9,13 +9,14 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.TransactionSystemException;
 
-import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import static java.text.MessageFormat.format;
+import static java.time.Duration.ofDays;
+import static java.time.ZonedDateTime.now;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.hk.doghub.model.user.DogHubAddress.*;
@@ -186,10 +187,6 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         item.setDateOfBirth(getFutureDateTime());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
-    }
-
-    private @NotNull ZonedDateTime getFutureDateTime() {
-        return ZonedDateTime.now().plus(Duration.ofDays(10));
     }
 
     @RepeatedTest(10)
@@ -567,6 +564,66 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.deleteAll(saved);
     }
 
+    @RepeatedTest(10)
+    void shouldUpdateUserCreationTime() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        ZonedDateTime creationTime = getPastDateTime();
+        saved.setCreationTime(creationTime);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(creationTime, updated.getCreationTime());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserCreationTimeToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setCreationTime(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getCreationTime());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserCreationTimeToFuture() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        ZonedDateTime creationTime = getFutureDateTime();
+        saved.setCreationTime(creationTime);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserName() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String name = dogHubUserProvider.get().getName();
+        saved.setName(name);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(name, updated.getName());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserNameToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setName(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserNameToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setName(getUsernameThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
@@ -577,5 +634,13 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getUsernameThatExceedsMaxLength() {
         return randomAlphabetic(USER_NAME_MAX_LENGTH + 1);
+    }
+
+    private @NotNull ZonedDateTime getFutureDateTime() {
+        return now().plus(ofDays(10));
+    }
+
+    private @NotNull ZonedDateTime getPastDateTime() {
+        return now().minus(ofDays(10));
     }
 }
