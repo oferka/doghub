@@ -238,7 +238,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithStateThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setState(randomAlphabetic(STATE_MAX_LENGTH + 1));
+        item.getAddress().setState(getStateThatExceedsMaxLength());
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -254,7 +254,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithCityThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setCity(randomAlphabetic(CITY_MAX_LENGTH + 1));
+        item.getAddress().setCity(getCityThatExceedsMaxLength());
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -270,7 +270,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithStreetNameThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setStreetName(randomAlphabetic(STREET_NAME_MAX_LENGTH + 1));
+        item.getAddress().setStreetName(getStreetNameThatExceedsMaxLength());
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -305,7 +305,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithPostcodeThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setPostcode(randomAlphabetic(POSTCODE_MAX_LENGTH + 1));
+        item.getAddress().setPostcode(getPostcodeThatExceedsMaxLength());
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -321,7 +321,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithMobileNumberThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setMobileNumber(randomAlphabetic(MOBILE_NUMBER_MAX_LENGTH + 1));
+        item.setMobileNumber(getMobileNumberThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -335,7 +335,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithHashedPasswordThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setHashedPassword(randomAlphabetic(PASSWORD_MAX_LENGTH + 1));
+        item.setHashedPassword(getHashedPasswordThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -875,8 +875,68 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldNotUpdateUserCountryToValueThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        saved.setEmail(getCountryThatExceedsMaxLength());
-        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        saved.getAddress().setCountry(getCountryThatExceedsMaxLength());
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserState() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String state = dogHubUserProvider.get().getAddress().getState();
+        saved.getAddress().setState(state);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(state, updated.getAddress().getState());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserStateToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getAddress().setState(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getAddress().getState());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserStateToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getAddress().setState(getStateThatExceedsMaxLength());
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserCity() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String city = dogHubUserProvider.get().getAddress().getCity();
+        saved.getAddress().setCity(city);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(city, updated.getAddress().getCity());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserCityToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getAddress().setCity(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getAddress().getCity());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserCityToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getAddress().setCity(getCityThatExceedsMaxLength());
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
     }
 
@@ -914,6 +974,30 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getCountryThatExceedsMaxLength() {
         return randomAlphabetic(COUNTRY_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getStateThatExceedsMaxLength() {
+        return randomAlphabetic(STATE_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getCityThatExceedsMaxLength() {
+        return randomAlphabetic(CITY_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getStreetNameThatExceedsMaxLength() {
+        return randomAlphabetic(STREET_NAME_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getPostcodeThatExceedsMaxLength() {
+        return randomAlphabetic(POSTCODE_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getHashedPasswordThatExceedsMaxLength() {
+        return randomAlphabetic(PASSWORD_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getMobileNumberThatExceedsMaxLength() {
+        return randomAlphabetic(MOBILE_NUMBER_MAX_LENGTH + 1);
     }
 
     private @NotNull ZonedDateTime getFutureDateTime() {
