@@ -117,8 +117,8 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserMobileNumberToValueThatExceedsMaxLength">
-    <configuration name="DogHubUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserHashedPasswordToValueThatExceedsMaxLength">
+    <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserHashedPasswordToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -128,7 +128,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="shouldNotUpdateUserHashedPasswordToNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserHashedPasswordToValueThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotUpdateUserHashedPasswordToValueThatExceedsMaxLength" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserMobileNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserHashedPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +176,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldUpdateUserMobileNumber" />
+      <option name="METHOD_NAME" value="shouldUpdateUserHashedPassword" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,22 +198,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserStreetNumberToNegativeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldUpdateUserStreetNumberToNegativeValue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -205,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserHashedPasswordToValueThatExceedsMaxLength" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserHashedPasswordToNull" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserHashedPassword" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserMobileNumberToValueThatExceedsMaxLength" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserMobileNumberToNull" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserMobileNumber" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserStreetNumberToNegativeValue" />
       </list>
     </recent_temporary>
   </component>

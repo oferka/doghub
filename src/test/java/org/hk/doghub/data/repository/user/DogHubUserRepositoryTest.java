@@ -1056,7 +1056,36 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldNotUpdateUserMobileNumberToValueThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        saved.setEmail(getMobileNumberThatExceedsMaxLength());
+        saved.setMobileNumber(getMobileNumberThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserHashedPassword() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String hashedPassword = dogHubUserProvider.get().getHashedPassword();
+        saved.setHashedPassword(hashedPassword);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(hashedPassword, updated.getHashedPassword());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserHashedPasswordToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setHashedPassword(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserHashedPasswordToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setHashedPassword(getHashedPasswordThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
     }
