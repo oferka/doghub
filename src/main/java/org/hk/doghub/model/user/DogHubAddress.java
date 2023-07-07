@@ -3,6 +3,7 @@ package org.hk.doghub.model.user;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,6 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@EqualsAndHashCode
 public class DogHubAddress {
 
     public static final int CITY_MAX_LENGTH = 64;

@@ -3,6 +3,7 @@ package org.hk.doghub.data.repository.user;
 import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
+import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
@@ -826,6 +827,27 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         saved.setEmail(getCompanyThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserAddress() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        DogHubAddress address = dogHubUserProvider.get().getAddress();
+        saved.setAddress(address);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(address, updated.getAddress());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserAddressToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setAddress(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getAddress());
+        dogHubUserRepository.delete(updated);
     }
 
     private @NotNull Long getNonExistingId() {
