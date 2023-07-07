@@ -2,6 +2,7 @@ package org.hk.doghub.model;
 
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.PositiveOrZero;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,6 +11,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@EqualsAndHashCode
 public class DogHubFeedback {
 
     @PositiveOrZero

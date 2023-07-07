@@ -3,6 +3,7 @@ package org.hk.doghub.data.repository.user;
 import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.Assertions;
@@ -1086,6 +1087,26 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
         saved.setHashedPassword(getHashedPasswordThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserFeedback() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        DogHubFeedback feedback = dogHubUserProvider.get().getFeedback();
+        saved.setFeedback(feedback);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(feedback, updated.getFeedback());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserFeedbackToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setFeedback(null);
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
     }
