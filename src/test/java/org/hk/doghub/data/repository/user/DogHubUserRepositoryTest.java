@@ -238,7 +238,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithStateThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setState(randomAlphabetic(STATE_MAX_LENGTH + 256));
+        item.getAddress().setState(randomAlphabetic(STATE_MAX_LENGTH + 1));
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -254,7 +254,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithCityThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setCity(randomAlphabetic(CITY_MAX_LENGTH + 256));
+        item.getAddress().setCity(randomAlphabetic(CITY_MAX_LENGTH + 1));
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -270,7 +270,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithStreetNameThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setStreetName(randomAlphabetic(STREET_NAME_MAX_LENGTH + 256));
+        item.getAddress().setStreetName(randomAlphabetic(STREET_NAME_MAX_LENGTH + 1));
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -305,7 +305,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithPostcodeThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setPostcode(randomAlphabetic(POSTCODE_MAX_LENGTH + 256));
+        item.getAddress().setPostcode(randomAlphabetic(POSTCODE_MAX_LENGTH + 1));
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -913,7 +913,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     private @NotNull String getCountryThatExceedsMaxLength() {
-        return randomAlphabetic(COUNTRY_MAX_LENGTH + 256);
+        return randomAlphabetic(COUNTRY_MAX_LENGTH + 1);
     }
 
     private @NotNull ZonedDateTime getFutureDateTime() {

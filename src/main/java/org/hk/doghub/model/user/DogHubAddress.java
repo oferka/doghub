@@ -1,5 +1,6 @@
 package org.hk.doghub.model.user;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
@@ -29,17 +30,22 @@ public class DogHubAddress {
     private Integer number = 0;
 
     @Size(max = STREET_NAME_MAX_LENGTH)
+    @Column(length = STREET_NAME_MAX_LENGTH)
     private String streetName;
 
     @Size(max = CITY_MAX_LENGTH)
+    @Column(length = CITY_MAX_LENGTH)
     private String city;
 
     @Size(max = STATE_MAX_LENGTH)
+    @Column(length = STATE_MAX_LENGTH)
     private String state;
 
     @Size(max = COUNTRY_MAX_LENGTH)
+    @Column(length = COUNTRY_MAX_LENGTH)
     private String country;
 
     @Size(max = POSTCODE_MAX_LENGTH)
+    @Column(length = POSTCODE_MAX_LENGTH)
     private String postcode;
 }
