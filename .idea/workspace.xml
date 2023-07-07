@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 819">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 821">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +116,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatHasInvalidFormat">
+  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserTitleToValueThatExceedsMaxLength">
     <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -150,7 +149,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserUsernameToNonUniqueValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserTitleToValueThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -160,13 +159,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotUpdateUserUsernameToNonUniqueValue" />
+      <option name="METHOD_NAME" value="shouldNotUpdateUserTitleToValueThatExceedsMaxLength" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -176,13 +175,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldUpdateUserEmail" />
+      <option name="METHOD_NAME" value="shouldUpdateUserTitle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserEmailToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserTitleToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -192,7 +191,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldUpdateUserEmailToNull" />
+      <option name="METHOD_NAME" value="shouldUpdateUserTitleToNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserTitleToValueThatExceedsMaxLength" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserTitleToNull" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserTitle" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatHasInvalidFormat" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserEmailToValueThatExceedsMaxLength" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserEmailToNull" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserEmail" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserUsernameToNonUniqueValue" />
       </list>
     </recent_temporary>
   </component>
@@ -222,20 +221,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00775" summary="doghub 771">
-      <created>1688389963632</created>
-      <option name="number" value="00775" />
-      <option name="presentableId" value="LOCAL-00775" />
-      <option name="project" value="LOCAL" />
-      <updated>1688389963632</updated>
-    </task>
-    <task id="LOCAL-00776" summary="doghub 772">
-      <created>1688390107779</created>
-      <option name="number" value="00776" />
-      <option name="presentableId" value="LOCAL-00776" />
-      <option name="project" value="LOCAL" />
-      <updated>1688390107779</updated>
     </task>
     <task id="LOCAL-00777" summary="doghub 773">
       <created>1688396808079</created>
@@ -566,7 +551,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688708255385</updated>
     </task>
-    <option name="localTasksCounter" value="824" />
+    <task id="LOCAL-00824" summary="doghub 820">
+      <created>1688708806403</created>
+      <option name="number" value="00824" />
+      <option name="presentableId" value="LOCAL-00824" />
+      <option name="project" value="LOCAL" />
+      <updated>1688708806403</updated>
+    </task>
+    <task id="LOCAL-00825" summary="doghub 821">
+      <created>1688709007277</created>
+      <option name="number" value="00825" />
+      <option name="presentableId" value="LOCAL-00825" />
+      <option name="project" value="LOCAL" />
+      <updated>1688709007277</updated>
+    </task>
+    <option name="localTasksCounter" value="826" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,8 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 795" />
-    <MESSAGE value="doghub 796" />
     <MESSAGE value="doghub 797" />
     <MESSAGE value="doghub 798" />
     <MESSAGE value="doghub 799" />
@@ -607,6 +604,8 @@
     <MESSAGE value="doghub 817" />
     <MESSAGE value="doghub 818" />
     <MESSAGE value="doghub 819" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 819" />
+    <MESSAGE value="doghub 820" />
+    <MESSAGE value="doghub 821" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 821" />
   </component>
 </project>

@@ -142,7 +142,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithTitleThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setTitle(randomAlphabetic(TITLE_MAX_LENGTH + 1));
+        item.setTitle(getTitleThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -701,6 +701,36 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(saved);
     }
 
+    @RepeatedTest(10)
+    void shouldUpdateUserTitle() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String title = dogHubUserProvider.get().getTitle();
+        saved.setTitle(title);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(title, updated.getTitle());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserTitleToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setTitle(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getTitle());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserTitleToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setEmail(getTitleThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
@@ -719,6 +749,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getEmailThatExceedsMaxLength() {
         return randomAlphabetic(EMAIL_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getTitleThatExceedsMaxLength() {
+        return randomAlphabetic(TITLE_MAX_LENGTH + 1);
     }
 
     private @NotNull ZonedDateTime getFutureDateTime() {
