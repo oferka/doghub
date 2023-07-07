@@ -222,7 +222,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldNotSaveUserWithCountryThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
-        item.getAddress().setCountry(randomAlphabetic(COUNTRY_MAX_LENGTH + 256));
+        item.getAddress().setCountry(getCountryThatExceedsMaxLength());
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item));
     }
 
@@ -850,6 +850,36 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         dogHubUserRepository.delete(updated);
     }
 
+    @RepeatedTest(10)
+    void shouldUpdateUserCountry() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        String country = dogHubUserProvider.get().getAddress().getCountry();
+        saved.getAddress().setCountry(country);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertEquals(country, updated.getAddress().getCountry());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserCountryToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.getAddress().setCountry(null);
+        DogHubUser updated = dogHubUserRepository.save(item);
+        assertNull(updated.getAddress().getCountry());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateUserCountryToValueThatExceedsMaxLength() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setEmail(getCountryThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
+        dogHubUserRepository.delete(saved);
+    }
+
     private @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
     }
@@ -880,6 +910,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     private @NotNull String getCompanyThatExceedsMaxLength() {
         return randomAlphabetic(COMPANY_MAX_LENGTH + 1);
+    }
+
+    private @NotNull String getCountryThatExceedsMaxLength() {
+        return randomAlphabetic(COUNTRY_MAX_LENGTH + 256);
     }
 
     private @NotNull ZonedDateTime getFutureDateTime() {
