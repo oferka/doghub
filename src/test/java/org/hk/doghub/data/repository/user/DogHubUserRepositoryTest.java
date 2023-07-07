@@ -18,6 +18,7 @@ import java.util.Optional;
 
 import static java.time.Duration.ofDays;
 import static java.time.ZonedDateTime.now;
+import static java.util.Collections.emptyList;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.hk.doghub.model.user.DogHubAddress.*;
@@ -432,7 +433,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldSaveUserWithEmptyTips() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setDogHubTips(Collections.emptyList());
+        item.setDogHubTips(emptyList());
         DogHubUser saved = dogHubUserRepository.save(item);
         assertTrue(saved.getDogHubTips().isEmpty());
         dogHubUserRepository.delete(saved);
@@ -450,7 +451,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldSaveUserWithEmptyDogs() {
         DogHubUser item = dogHubUserProvider.get();
-        item.setDogHubDogs(Collections.emptyList());
+        item.setDogHubDogs(emptyList());
         DogHubUser saved = dogHubUserRepository.save(item);
         assertTrue(saved.getDogHubDogs().isEmpty());
         dogHubUserRepository.delete(saved);
@@ -1109,6 +1110,26 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         saved.setFeedback(null);
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserTipsToNull() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setDogHubTips(null);
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertNull(updated.getDogHubTips());
+        dogHubUserRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateUserTipsToEmptyList() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        saved.setDogHubTips(emptyList());
+        DogHubUser updated = dogHubUserRepository.save(saved);
+        assertEquals(emptyList(), updated.getDogHubTips());
+        dogHubUserRepository.delete(updated);
     }
 
     private @NotNull Long getNonExistingId() {
