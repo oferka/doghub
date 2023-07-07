@@ -4,6 +4,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.DogHubFeedback;
+import org.hk.doghub.model.dog.DogHubDog;
+import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubAddress;
 import org.hk.doghub.model.user.DogHubUser;
 import org.hk.doghub.model.user.Role;
@@ -1222,9 +1224,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldUpdateUserTipsToEmptyList() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        saved.setDogHubTips(emptyList());
+        List<DogHubTip> tips = emptyList();
+        saved.setDogHubTips(tips);
         DogHubUser updated = dogHubUserRepository.save(saved);
-        assertEquals(emptyList(), updated.getDogHubTips());
+        assertEquals(tips, updated.getDogHubTips());
         dogHubUserRepository.delete(updated);
     }
 
@@ -1242,9 +1245,10 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldUpdateUserDogsToEmptyList() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        saved.setDogHubDogs(emptyList());
+        List<DogHubDog> dogs = emptyList();
+        saved.setDogHubDogs(dogs);
         DogHubUser updated = dogHubUserRepository.save(saved);
-        assertEquals(emptyList(), updated.getDogHubDogs());
+        assertEquals(dogs, updated.getDogHubDogs());
         dogHubUserRepository.delete(updated);
     }
 
