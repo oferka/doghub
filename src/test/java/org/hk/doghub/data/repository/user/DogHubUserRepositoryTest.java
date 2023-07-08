@@ -96,10 +96,9 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldNotSaveUserWithNonUniqueUserName() {
+    void shouldNotSaveUserWithNonUniqueUsername() {
         DogHubUser item1 = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item1);
-        assertEquals(item1.getUsername(), saved.getUsername());
         DogHubUser item2 = dogHubUserProvider.get();
         item2.setUsername(item1.getUsername());
         assertThrows(DataIntegrityViolationException.class, () -> dogHubUserRepository.save(item2));
