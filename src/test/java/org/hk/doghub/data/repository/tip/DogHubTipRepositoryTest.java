@@ -209,4 +209,11 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         assertEquals(negativeNumber, saved.getFeedback().getComments());
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithNullCreatedBy() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setCreatedBy(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
+    }
 }
