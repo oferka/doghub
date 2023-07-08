@@ -18,7 +18,6 @@ import static org.hk.doghub.model.HasThumbnailPicture.THUMBNAIL_PICTURE_MAX_LENG
 import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
 import static org.hk.doghub.model.user.DogHubAddress.*;
 import static org.hk.doghub.model.user.DogHubUser.*;
-import static org.hk.doghub.model.user.DogHubUser.MOBILE_NUMBER_MAX_LENGTH;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest

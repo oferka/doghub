@@ -226,4 +226,13 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         item.setCreatedBy(createdBy);
         assertThrows(DataIntegrityViolationException.class, () -> dogHubTipRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldFindAllTips() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        List<DogHubTip> allTips = dogHubTipRepository.findAll();
+        assertTrue(allTips.size() >= saved.size());
+        dogHubTipRepository.deleteAll(saved);
+    }
 }
