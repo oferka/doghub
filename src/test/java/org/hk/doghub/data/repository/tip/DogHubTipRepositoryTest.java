@@ -2,7 +2,6 @@ package org.hk.doghub.data.repository.tip;
 
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -265,7 +264,7 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
     @RepeatedTest(10)
     void shouldNotFindTipByIdNonExistingId() {
         Optional<DogHubTip> userOptional = dogHubTipRepository.findById(getNonExistingId());
-        Assertions.assertTrue(userOptional.isEmpty());
+        assertTrue(userOptional.isEmpty());
     }
 
     @RepeatedTest(10)
@@ -274,6 +273,19 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         DogHubTip saved = dogHubTipRepository.save(item);
         List<DogHubTip> tips = dogHubTipRepository.findByCreatedBy(saved.getCreatedBy());
         assertFalse(tips.isEmpty());
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindTipByNonExistingCreatedBy() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        DogHubUser createdBy = saved.getCreatedBy();
+        Long originalId = createdBy.getId();
+        createdBy.setId(getNonExistingId());
+        List<DogHubTip> tips = dogHubTipRepository.findByCreatedBy(createdBy);
+        assertTrue(tips.isEmpty());
+        createdBy.setId(originalId);
         dogHubTipRepository.delete(saved);
     }
 }
