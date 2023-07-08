@@ -2,6 +2,7 @@ package org.hk.doghub.data.repository.tip;
 
 import org.hk.doghub.model.tip.DogHubTip;
 import org.junit.jupiter.api.RepeatedTest;
+import org.springframework.transaction.TransactionSystemException;
 
 import java.util.List;
 
@@ -41,5 +42,12 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         DogHubTip saved = dogHubTipRepository.save(item);
         assertNull(saved.getCreationTime());
         dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithFutureCreationTime() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setCreationTime(getFutureDateTime());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
     }
 }
