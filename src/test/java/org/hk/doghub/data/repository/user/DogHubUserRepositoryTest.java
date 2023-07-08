@@ -1,6 +1,5 @@
 package org.hk.doghub.data.repository.user;
 
-import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.model.tip.DogHubTip;
@@ -46,8 +45,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     @RepeatedTest(10)
     void shouldSaveUserWithSpecifiedNonExistingId() {
         DogHubUser item = dogHubUserProvider.get();
-        Long id = RandomUtils.nextLong(1000000, Long.MAX_VALUE);
-        item.setId(id);
+        item.setId(getNonExistingId());
         DogHubUser saved = dogHubUserRepository.save(item);
         assertNotEquals(item.getId(), saved.getId());
         dogHubUserRepository.delete(saved);
