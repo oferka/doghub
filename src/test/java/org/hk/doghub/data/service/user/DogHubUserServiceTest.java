@@ -5,9 +5,11 @@ import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DogHubUserServiceTest extends DogHubUserDataTest {
 
@@ -18,10 +20,18 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
     void shouldFindUserById() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertEquals(item.getUsername(), saved.getUsername());
         Optional<DogHubUser> userOptional = dogHubUserService.findById(saved.getId());
         assertTrue(userOptional.isPresent());
         assertEquals(item.getUsername(), userOptional.get().getUsername());
         dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindAllUsers() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        List<DogHubUser> allUsers = dogHubUserService.findAll();
+        assertTrue(allUsers.size() >= saved.size());
+        dogHubUserRepository.deleteAll(saved);
     }
 }
