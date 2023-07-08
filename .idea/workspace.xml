@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByTop1ByIdGreaterThanOrderById">
+  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldFindTipByTop1ByIdLessThanOrderByIdDesc">
     <configuration name="DogHubTipRepositoryTest.shouldFindTipByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -135,7 +135,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubTipRepositoryTest.shouldNotFindTipByIdNonExistingId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubTipRepositoryTest.shouldFindTipByTop1ByIdLessThanOrderByIdDesc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -145,7 +145,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotFindTipByIdNonExistingId" />
+      <option name="METHOD_NAME" value="shouldFindTipByTop1ByIdLessThanOrderByIdDesc" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldFindTipByTop1ByIdLessThanOrderByIdDesc" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByTop1ByIdGreaterThanOrderById" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByNullCreatedBy" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByNonExistingCreatedBy" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldFindTipByCreatedBy" />
-        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByIdNonExistingId" />
       </list>
     </recent_temporary>
   </component>
