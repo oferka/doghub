@@ -4,6 +4,9 @@ import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.TransactionSystemException;
 
 import java.util.List;
@@ -233,6 +236,16 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
         List<DogHubTip> allTips = dogHubTipRepository.findAll();
         assertTrue(allTips.size() >= saved.size());
+        dogHubTipRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindAllTipsWithPaging() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        int pageSize = 5;
+        Page<DogHubTip> tips = dogHubTipRepository.findAll(PageRequest.of(0, pageSize, Sort.by(Sort.Direction.ASC, "id")));
+        assertEquals(pageSize, tips.toList().size());
         dogHubTipRepository.deleteAll(saved);
     }
 }
