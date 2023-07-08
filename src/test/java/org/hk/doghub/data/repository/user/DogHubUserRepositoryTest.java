@@ -461,6 +461,15 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
+    void shouldFindAllUsers() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        List<DogHubUser> allUsers = dogHubUserRepository.findAll();
+        assertTrue(allUsers.size() >= saved.size());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
     void shouldFindUserById() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
