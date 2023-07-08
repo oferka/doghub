@@ -288,4 +288,10 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         createdBy.setId(originalId);
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldNotFindTipByNullCreatedBy() {
+        List<DogHubTip> tips = dogHubTipRepository.findByCreatedBy(null);
+        assertTrue(tips.isEmpty());
+    }
 }
