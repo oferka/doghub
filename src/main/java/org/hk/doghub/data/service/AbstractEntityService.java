@@ -30,8 +30,8 @@ public abstract class AbstractEntityService<T extends AbstractEntity> implements
         return getEntityRepository().save(entity);
     }
 
-    public int count() {
-        return (int)getEntityRepository().count();
+    public long count() {
+        return getEntityRepository().count();
     }
 
     protected abstract EntityRepository<T> getEntityRepository();

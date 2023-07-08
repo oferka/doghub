@@ -19,7 +19,7 @@ public interface EntityService<T extends AbstractEntity> {
 
     T save(@NotNull @Valid T entity);
 
-    int count();
+    long count();
 
     boolean exists(@NotNull @Valid T entity);
 
