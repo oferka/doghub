@@ -116,7 +116,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldFindAllUsersWithPaging">
+  <component name="RunManager" selected="JUnit.DogHubUserServiceTest.shouldSaveUser">
     <configuration name="DogHubUserRepositoryTest.shouldFindAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -145,21 +145,6 @@
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
       <option name="METHOD_NAME" value="shouldFindAllUsersWithPaging" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DogHubUserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.service.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.user.DogHubUserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,6 +181,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DogHubUserServiceTest.shouldSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.service.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.user.DogHubUserServiceTest" />
+      <option name="METHOD_NAME" value="shouldSaveUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -204,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubUserServiceTest.shouldSaveUser" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldFindAllUsersWithPaging" />
         <item itemvalue="JUnit.DogHubUserServiceTest.shouldFindAllUsers" />
         <item itemvalue="JUnit.DogHubUserServiceTest.shouldFindAllUsersWithPaging" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldFindAllUsers" />
-        <item itemvalue="JUnit.DogHubUserServiceTest" />
       </list>
     </recent_temporary>
   </component>
