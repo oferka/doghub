@@ -1,6 +1,5 @@
 package org.hk.doghub.data.repository.user;
 
-import jakarta.validation.constraints.NotNull;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.dog.DogHubDog;
@@ -22,14 +21,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import static java.time.Duration.ofDays;
-import static java.time.ZonedDateTime.now;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptySet;
-import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
-import static org.hk.doghub.model.NamedEntity.NAME_MAX_LENGTH;
-import static org.hk.doghub.model.user.DogHubAddress.*;
-import static org.hk.doghub.model.user.DogHubUser.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DogHubUserRepositoryTest extends DogHubUserDataTest {
@@ -1311,81 +1304,5 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         DogHubUser updated = dogHubUserRepository.save(saved);
         assertEquals(roles, updated.getRoles());
         dogHubUserRepository.delete(updated);
-    }
-
-    private @NotNull Long getNonExistingId() {
-        return RandomUtils.nextLong();
-    }
-
-    private @NotNull String getNonExistingUsername() {
-        return dogHubUserProvider.get().getUsername();
-    }
-
-    private @NotNull String getNameThatExceedsMaxLength() {
-        return randomAlphabetic(NAME_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getUsernameThatExceedsMaxLength() {
-        return randomAlphabetic(USER_NAME_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getEmailThatExceedsMaxLength() {
-        return randomAlphabetic(EMAIL_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getTitleThatExceedsMaxLength() {
-        return randomAlphabetic(TITLE_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getThumbnailPictureThatExceedsMaxLength() {
-        return randomAlphabetic(THUMBNAIL_PICTURE_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getCompanyThatExceedsMaxLength() {
-        return randomAlphabetic(COMPANY_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getCountryThatExceedsMaxLength() {
-        return randomAlphabetic(COUNTRY_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getStateThatExceedsMaxLength() {
-        return randomAlphabetic(STATE_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getCityThatExceedsMaxLength() {
-        return randomAlphabetic(CITY_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getStreetNameThatExceedsMaxLength() {
-        return randomAlphabetic(STREET_NAME_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getPostcodeThatExceedsMaxLength() {
-        return randomAlphabetic(POSTCODE_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getHashedPasswordThatExceedsMaxLength() {
-        return randomAlphabetic(PASSWORD_MAX_LENGTH + 1);
-    }
-
-    private @NotNull String getMobileNumberThatExceedsMaxLength() {
-        return randomAlphabetic(MOBILE_NUMBER_MAX_LENGTH + 1);
-    }
-
-    private @NotNull ZonedDateTime getFutureDateTime() {
-        return now().plus(ofDays(10));
-    }
-
-    private @NotNull ZonedDateTime getPastDateTime() {
-        return now().minus(ofDays(10));
-    }
-
-    private @NotNull String getEmailWithInvalidFormat() {
-        return dogHubUserProvider.get().getEmail().replace('@', '.');
-    }
-
-    private @NotNull String getThumbnailPictureWithInvalidFormat() {
-        return dogHubUserProvider.get().getThumbnailPicture().replace(':', '.');
     }
 }

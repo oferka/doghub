@@ -1,5 +1,6 @@
 package org.hk.doghub.data.service.user;
 
+import jakarta.validation.ConstraintViolationException;
 import org.hk.doghub.data.repository.user.DogHubUserDataTest;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
@@ -133,5 +134,57 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
         Optional<DogHubUser> userOptional = dogHubUserService.findRandom();
         assertTrue(userOptional.isPresent());
         dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindUserByUsername() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(item.getUsername(), saved.getUsername());
+        Optional<DogHubUser> userOptional = dogHubUserService.findByUsername(saved.getUsername());
+        assertTrue(userOptional.isPresent());
+        assertEquals(item.getUsername(), userOptional.get().getUsername());
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindUserByNonExistingUsername() {
+        Optional<DogHubUser> userOptional = dogHubUserService.findByUsername(getNonExistingUsername());
+        assertTrue(userOptional.isEmpty());
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindUserByNullUsername() {
+        assertThrows(ConstraintViolationException.class, () -> dogHubUserService.findByUsername(null));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindUserByUsernameThatExceedsMaxLength() {
+        assertThrows(ConstraintViolationException.class, () -> dogHubUserService.findByUsername(getUsernameThatExceedsMaxLength()));
+    }
+
+    @RepeatedTest(10)
+    void shouldExistByUsername() {
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        assertEquals(item.getUsername(), saved.getUsername());
+        assertTrue(dogHubUserService.existsByUsername(item.getUsername()));
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistByNullUsername() {
+        assertThrows(ConstraintViolationException.class, () -> dogHubUserService.findByUsername(null));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistByNonExistingUsername() {
+        Optional<DogHubUser> userOptional = dogHubUserService.findByUsername(getNonExistingUsername());
+        assertTrue(userOptional.isEmpty());
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistByUsernameThatExceedsMaxLength() {
+        assertThrows(ConstraintViolationException.class, () -> dogHubUserService.findByUsername(getUsernameThatExceedsMaxLength()));
     }
 }
