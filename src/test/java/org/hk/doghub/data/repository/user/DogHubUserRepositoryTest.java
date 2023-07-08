@@ -588,6 +588,16 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
+    void shouldCountUsers() {
+        long countBefore = dogHubUserRepository.count();
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        long countAfter = dogHubUserRepository.count();
+        assertEquals(countAfter, countBefore + 1);
+        dogHubUserRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
     void shouldUpdateUserCreationTime() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);

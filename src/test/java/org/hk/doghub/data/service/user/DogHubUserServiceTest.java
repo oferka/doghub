@@ -54,4 +54,14 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
         assertEquals(item.getUsername(), saved.getUsername());
         dogHubUserRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldCountUsers() {
+        int countBefore = dogHubUserService.count();
+        DogHubUser item = dogHubUserProvider.get();
+        DogHubUser saved = dogHubUserRepository.save(item);
+        int countAfter = dogHubUserService.count();
+        assertEquals(countAfter, countBefore + 1);
+        dogHubUserRepository.delete(saved);
+    }
 }
