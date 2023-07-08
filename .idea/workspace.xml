@@ -120,22 +120,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldSaveTipWithSpecifiedNonExistingId">
-    <configuration name="DogHubTipRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldSaveTipWithNullCreationTime">
     <configuration name="DogHubTipRepositoryTest.shouldSaveAllTips" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -147,6 +132,22 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
       <option name="METHOD_NAME" value="shouldSaveAllTips" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubTipRepositoryTest.shouldSaveTipWithNullCreationTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldSaveTipWithNullCreationTime" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldSaveTipWithNullCreationTime" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldSaveTipWithSpecifiedNonExistingId" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldSaveUserWithSpecifiedNonExistingId" />
         <item itemvalue="JUnit.data in doghub" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldSaveAllTips" />
-        <item itemvalue="JUnit.DogHubTipRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
