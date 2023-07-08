@@ -125,4 +125,13 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
         assertTrue(userOptional.isEmpty());
         dogHubUserRepository.deleteAll(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldFindRandomUser() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        Optional<DogHubUser> userOptional = dogHubUserService.findRandom();
+        assertTrue(userOptional.isPresent());
+        dogHubUserRepository.deleteAll(saved);
+    }
 }
