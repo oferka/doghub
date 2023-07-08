@@ -1,7 +1,6 @@
 package org.hk.doghub.data.repository.user;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.dog.DogHubDog;
@@ -30,7 +29,6 @@ import static org.hk.doghub.model.user.DogHubAddress.*;
 import static org.hk.doghub.model.user.DogHubUser.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Slf4j
 class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
