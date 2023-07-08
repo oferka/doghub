@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotSaveTipWithNameThatExceedsMaxLength">
+  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotSaveUserWithNullTitle">
     <configuration name="DogHubTipRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -166,6 +166,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DogHubTipRepositoryTest.shouldNotSaveUserWithNullTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotSaveUserWithNullTitle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DogHubTipRepositoryTest.shouldSaveTipWithNullCreationTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -182,22 +198,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubTipRepositoryTest.shouldSaveTipWithSpecifiedNonExistingId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldSaveTipWithSpecifiedNonExistingId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -206,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotSaveUserWithNullTitle" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotSaveTipWithNameThatExceedsMaxLength" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotSaveTipWithNullName" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldSaveTipWithNullCreationTime" />
-        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldSaveTipWithSpecifiedNonExistingId" />
       </list>
     </recent_temporary>
   </component>
