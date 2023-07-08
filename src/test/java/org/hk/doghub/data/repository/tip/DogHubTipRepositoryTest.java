@@ -50,4 +50,11 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         item.setCreationTime(getFutureDateTime());
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithNullName() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setName(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
+    }
 }
