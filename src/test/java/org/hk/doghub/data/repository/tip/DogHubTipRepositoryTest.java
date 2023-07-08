@@ -90,4 +90,13 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         assertThrows(DataIntegrityViolationException.class, () -> dogHubTipRepository.save(item2));
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldSaveTipWithNullContent() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setContent(null);
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertNull(saved.getContent());
+        dogHubTipRepository.delete(saved);
+    }
 }
