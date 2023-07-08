@@ -267,4 +267,13 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         Optional<DogHubTip> userOptional = dogHubTipRepository.findById(getNonExistingId());
         Assertions.assertTrue(userOptional.isEmpty());
     }
+
+    @RepeatedTest(10)
+    void shouldFindTipByCreatedBy() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        List<DogHubTip> tips = dogHubTipRepository.findByCreatedBy(saved.getCreatedBy());
+        assertFalse(tips.isEmpty());
+        dogHubTipRepository.delete(saved);
+    }
 }

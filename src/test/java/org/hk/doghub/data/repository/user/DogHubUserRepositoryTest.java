@@ -493,7 +493,6 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldFindUserByUsername() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        assertEquals(item.getUsername(), saved.getUsername());
         Optional<DogHubUser> userOptional = dogHubUserRepository.findByUsername(saved.getUsername());
         assertTrue(userOptional.isPresent());
         assertEquals(item.getUsername(), userOptional.get().getUsername());
