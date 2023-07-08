@@ -31,7 +31,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindAllUsers() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         List<DogHubUser> allUsers = dogHubUserService.findAll();
         assertTrue(allUsers.size() >= saved.size());
@@ -40,7 +40,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindAllUsersWithPaging() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         int pageSize = 5;
         Page<DogHubUser> users = dogHubUserService.findAll(PageRequest.of(0, pageSize));
@@ -85,7 +85,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindPreviousUser() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         List<DogHubUser> allUsers = dogHubUserRepository.findAll();
         int index = 5;
@@ -97,7 +97,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldNotFindPreviousUserOnMinimalId() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         long minimalId = dogHubUserRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.ASC, "id"))).iterator().next().getId();
         Optional<DogHubUser> userOptional = dogHubUserService.findPrevious(minimalId);
@@ -107,7 +107,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindNextUser() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         List<DogHubUser> allUsers = dogHubUserRepository.findAll();
         int index = 5;
@@ -119,7 +119,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldNotFindNextUserOnMaximalId() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         long maximalId = dogHubUserRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.DESC, "id"))).iterator().next().getId();
         Optional<DogHubUser> userOptional = dogHubUserService.findNext(maximalId);
@@ -129,7 +129,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindRandomUser() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         Optional<DogHubUser> userOptional = dogHubUserService.findRandom();
         assertTrue(userOptional.isPresent());

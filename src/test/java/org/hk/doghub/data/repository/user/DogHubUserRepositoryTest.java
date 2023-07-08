@@ -37,7 +37,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldSaveAllUsers() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         assertEquals(saved.size(), items.size());
         dogHubUserRepository.deleteAll(saved);
@@ -458,7 +458,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindAllUsers() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         List<DogHubUser> allUsers = dogHubUserRepository.findAll();
         assertTrue(allUsers.size() >= saved.size());
@@ -467,7 +467,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindAllUsersWithPaging() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         int pageSize = 5;
         Page<DogHubUser> users = dogHubUserRepository.findAll(PageRequest.of(0, pageSize, Sort.by(Sort.Direction.ASC, "id")));
@@ -550,7 +550,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindTop1ByIdGreaterThanOrderById() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         assertEquals(saved.size(), items.size());
         Optional<DogHubUser> userOptional = dogHubUserRepository.findTop1ByIdGreaterThanOrderById(saved.get(0).getId());
@@ -561,7 +561,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldNotFindTop1ByIdGreaterThanOrderById() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         assertEquals(saved.size(), items.size());
         Optional<DogHubUser> userOptional = dogHubUserRepository.findTop1ByIdGreaterThanOrderById(saved.get(9).getId());
@@ -571,7 +571,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldFindTop1ByIdLessThanOrderByIdDesc() {
-        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         assertEquals(saved.size(), items.size());
         Optional<DogHubUser> userOptional = dogHubUserRepository.findTop1ByIdLessThanOrderByIdDesc(saved.get(5).getId());
@@ -681,7 +681,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
 
     @RepeatedTest(10)
     void shouldNotUpdateUserUsernameToNonUniqueValue() {
-        List<DogHubUser> items = dogHubUserProvider.get(2);
+        List<DogHubUser> items = dogHubUserProvider.get(getNumberOfItemsToLoad());
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         DogHubUser first = saved.get(0);
         DogHubUser second = saved.get(1);
