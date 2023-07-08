@@ -6,6 +6,7 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
@@ -82,7 +83,7 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldFindPrevious() {
+    void shouldFindPreviousUser() {
         List<DogHubUser> items = dogHubUserProvider.get(10);
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         List<DogHubUser> allUsers = dogHubUserRepository.findAll();
@@ -90,6 +91,38 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
         Optional<DogHubUser> userOptional = dogHubUserService.findPrevious(allUsers.get(index).getId());
         assertTrue(userOptional.isPresent());
         assertEquals(allUsers.get(index-1).getId(), userOptional.get().getId());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindPreviousUserOnMinimalId() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        long minimalId = dogHubUserRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.ASC, "id"))).iterator().next().getId();
+        Optional<DogHubUser> userOptional = dogHubUserService.findPrevious(minimalId);
+        assertTrue(userOptional.isEmpty());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindNextUser() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        List<DogHubUser> allUsers = dogHubUserRepository.findAll();
+        int index = 5;
+        Optional<DogHubUser> userOptional = dogHubUserService.findNext(allUsers.get(index).getId());
+        assertTrue(userOptional.isPresent());
+        assertEquals(allUsers.get(index+1).getId(), userOptional.get().getId());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindNextUserOnMaximalId() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        long maximalId = dogHubUserRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.DESC, "id"))).iterator().next().getId();
+        Optional<DogHubUser> userOptional = dogHubUserService.findNext(maximalId);
+        assertTrue(userOptional.isEmpty());
         dogHubUserRepository.deleteAll(saved);
     }
 }
