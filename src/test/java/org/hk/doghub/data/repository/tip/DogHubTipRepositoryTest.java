@@ -122,4 +122,27 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         item.setMoreInfo(getMoreInfoThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldSaveTipWithNullThumbnailPicture() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setThumbnailPicture(null);
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertNull(saved.getThumbnailPicture());
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithThumbnailPictureThatExceedsMaxLength() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setThumbnailPicture(getThumbnailPictureThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithThumbnailPictureThatHasInvalidFormat() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setThumbnailPicture(getThumbnailPictureWithInvalidFormat());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
+    }
 }
