@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 852">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/tip/DogHubTipDataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 853">
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/tip/DogHubTipRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/tip/DogHubTipRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,23 +58,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ofer.karp/IdeaProjects/doghub/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "org.hk.doghub.data.repository.tip.DogHubTipDataTest",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/ofer.karp/IdeaProjects/doghub/src/main/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.hk.doghub.data.content.provider.user" />
@@ -96,6 +95,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="org.hk.doghub.data.repository.tip.DogHubTipDataTest" />
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -106,11 +106,11 @@
       <recent name="org.hk.doghub.ui.components.shared.user" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.hk.doghub.data.repository.tip" />
       <recent name="org.hk.doghub.data.service.user" />
       <recent name="org.hk.doghub.data.repository.user" />
       <recent name="org.hk.doghub.data.content.generator.dog.faker" />
       <recent name="org.hk.doghub.health.user" />
-      <recent name="org.hk.doghub.health.tip" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.hk.doghub.data.repository.tip" />
@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest">
+  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldSaveAllTips">
     <configuration name="DogHubTipRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -134,17 +134,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserServiceTest.shouldFindNextUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubTipRepositoryTest.shouldSaveAllTips" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.service.user.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.user.DogHubUserServiceTest" />
-      <option name="METHOD_NAME" value="shouldFindNextUser" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldSaveAllTips" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -198,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldSaveAllTips" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest" />
         <item itemvalue="JUnit.data in doghub" />
         <item itemvalue="JUnit.DogHubUserServiceTest.shouldFindRandomUser" />
         <item itemvalue="JUnit.DogHubUserServiceTest.shouldNotFindNextUserOnMaximalId" />
-        <item itemvalue="JUnit.DogHubUserServiceTest.shouldFindNextUser" />
       </list>
     </recent_temporary>
   </component>
@@ -214,13 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00808" summary="doghub 804">
-      <created>1688643105613</created>
-      <option name="number" value="00808" />
-      <option name="presentableId" value="LOCAL-00808" />
-      <option name="project" value="LOCAL" />
-      <updated>1688643105613</updated>
     </task>
     <task id="LOCAL-00809" summary="doghub 805">
       <created>1688643599929</created>
@@ -558,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688797380862</updated>
     </task>
-    <option name="localTasksCounter" value="857" />
+    <task id="LOCAL-00857" summary="doghub 853">
+      <created>1688821620017</created>
+      <option name="number" value="00857" />
+      <option name="presentableId" value="LOCAL-00857" />
+      <option name="project" value="LOCAL" />
+      <updated>1688821620017</updated>
+    </task>
+    <option name="localTasksCounter" value="858" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -574,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 828" />
     <MESSAGE value="doghub 829" />
     <MESSAGE value="doghub 830" />
     <MESSAGE value="doghub 831" />
@@ -599,6 +598,7 @@
     <MESSAGE value="doghub 850" />
     <MESSAGE value="doghub 851" />
     <MESSAGE value="doghub 852" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 852" />
+    <MESSAGE value="doghub 853" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 853" />
   </component>
 </project>
