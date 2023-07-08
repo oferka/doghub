@@ -7,10 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 838">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/service/user/DogHubUserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/user/DogHubUserRepositoryTest.java" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 841">
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/service/user/DogHubUserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/service/user/DogHubUserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubUserRepositoryTest.shouldFindAllUsers">
+  <component name="RunManager" selected="JUnit.DogHubUserServiceTest.shouldFindAllUsers">
     <configuration name="DogHubUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -145,22 +143,6 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
       <option name="METHOD_NAME" value="shouldFindAllUsers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldUpdateUserRolesToEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldUpdateUserRolesToEmpty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,6 +179,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DogHubUserServiceTest.shouldFindAllUsersWithPaging" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.service.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.user" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.user.DogHubUserServiceTest" />
+      <option name="METHOD_NAME" value="shouldFindAllUsersWithPaging" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -205,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldFindAllUsers" />
         <item itemvalue="JUnit.DogHubUserServiceTest.shouldFindAllUsers" />
+        <item itemvalue="JUnit.DogHubUserServiceTest.shouldFindAllUsersWithPaging" />
+        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldFindAllUsers" />
         <item itemvalue="JUnit.DogHubUserServiceTest" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldUpdateUserRolesToEmpty" />
       </list>
     </recent_temporary>
   </component>
@@ -221,27 +219,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00794" summary="doghub 790">
-      <created>1688543334086</created>
-      <option name="number" value="00794" />
-      <option name="presentableId" value="LOCAL-00794" />
-      <option name="project" value="LOCAL" />
-      <updated>1688543334086</updated>
-    </task>
-    <task id="LOCAL-00795" summary="doghub 791">
-      <created>1688545718585</created>
-      <option name="number" value="00795" />
-      <option name="presentableId" value="LOCAL-00795" />
-      <option name="project" value="LOCAL" />
-      <updated>1688545718585</updated>
-    </task>
-    <task id="LOCAL-00796" summary="doghub 792">
-      <created>1688549182286</created>
-      <option name="number" value="00796" />
-      <option name="presentableId" value="LOCAL-00796" />
-      <option name="project" value="LOCAL" />
-      <updated>1688549182286</updated>
     </task>
     <task id="LOCAL-00797" summary="doghub 793">
       <created>1688551856929</created>
@@ -565,7 +542,28 @@
       <option name="project" value="LOCAL" />
       <updated>1688739820064</updated>
     </task>
-    <option name="localTasksCounter" value="843" />
+    <task id="LOCAL-00843" summary="doghub 839">
+      <created>1688791452775</created>
+      <option name="number" value="00843" />
+      <option name="presentableId" value="LOCAL-00843" />
+      <option name="project" value="LOCAL" />
+      <updated>1688791452775</updated>
+    </task>
+    <task id="LOCAL-00844" summary="doghub 840">
+      <created>1688791665721</created>
+      <option name="number" value="00844" />
+      <option name="presentableId" value="LOCAL-00844" />
+      <option name="project" value="LOCAL" />
+      <updated>1688791665721</updated>
+    </task>
+    <task id="LOCAL-00845" summary="doghub 841">
+      <created>1688791750980</created>
+      <option name="number" value="00845" />
+      <option name="presentableId" value="LOCAL-00845" />
+      <option name="project" value="LOCAL" />
+      <updated>1688791750980</updated>
+    </task>
+    <option name="localTasksCounter" value="846" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -581,9 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 814" />
-    <MESSAGE value="doghub 815" />
-    <MESSAGE value="doghub 816" />
     <MESSAGE value="doghub 817" />
     <MESSAGE value="doghub 818" />
     <MESSAGE value="doghub 819" />
@@ -606,6 +601,9 @@
     <MESSAGE value="doghub 836" />
     <MESSAGE value="doghub 837" />
     <MESSAGE value="doghub 838" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 838" />
+    <MESSAGE value="doghub 839" />
+    <MESSAGE value="doghub 840" />
+    <MESSAGE value="doghub 841" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 841" />
   </component>
 </project>

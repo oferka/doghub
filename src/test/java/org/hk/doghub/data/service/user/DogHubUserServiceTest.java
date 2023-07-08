@@ -4,6 +4,8 @@ import org.hk.doghub.data.repository.user.DogHubUserDataTest;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,6 +34,16 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         List<DogHubUser> allUsers = dogHubUserService.findAll();
         assertTrue(allUsers.size() >= saved.size());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindAllUsersWithPaging() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        int pageSize = 5;
+        Page<DogHubUser> users = dogHubUserService.findAll(PageRequest.of(0, pageSize));
+        assertEquals(pageSize, users.toList().size());
         dogHubUserRepository.deleteAll(saved);
     }
 }
