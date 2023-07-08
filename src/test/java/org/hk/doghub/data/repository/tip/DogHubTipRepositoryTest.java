@@ -294,4 +294,14 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         List<DogHubTip> tips = dogHubTipRepository.findByCreatedBy(null);
         assertTrue(tips.isEmpty());
     }
+
+    @RepeatedTest(10)
+    void shouldNotFindTipByTop1ByIdGreaterThanOrderById() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        Long id = saved.get(0).getId();
+        Optional<DogHubTip> tipOptional = dogHubTipRepository.findTop1ByIdGreaterThanOrderById(id);
+        assertTrue(tipOptional.isPresent());
+        dogHubTipRepository.deleteAll(saved);
+    }
 }

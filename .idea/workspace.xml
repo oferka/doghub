@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByNullCreatedBy">
+  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByTop1ByIdGreaterThanOrderById">
     <configuration name="DogHubTipRepositoryTest.shouldFindTipByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -130,22 +130,6 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
       <option name="METHOD_NAME" value="shouldFindTipByCreatedBy" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DogHubTipRepositoryTest.shouldFindTipById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldFindTipById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,6 +183,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DogHubTipRepositoryTest.shouldNotFindTipByTop1ByIdGreaterThanOrderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotFindTipByTop1ByIdGreaterThanOrderById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -207,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByTop1ByIdGreaterThanOrderById" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByNullCreatedBy" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByNonExistingCreatedBy" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldFindTipByCreatedBy" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotFindTipByIdNonExistingId" />
-        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldFindTipById" />
       </list>
     </recent_temporary>
   </component>
