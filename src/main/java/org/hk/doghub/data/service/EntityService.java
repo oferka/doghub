@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import org.hk.doghub.model.AbstractEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,8 +18,6 @@ public interface EntityService<T extends AbstractEntity> {
     Page<T> findAll(@NotNull Pageable pageable);
 
     T save(@NotNull @Valid T entity);
-
-    Page<T> findAll(@NotNull Pageable pageable, @NotNull Specification<T> filter);
 
     int count();
 
