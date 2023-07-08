@@ -11,12 +11,6 @@ public interface DogHubTipRepository extends EntityRepository<DogHubTip> {
 
     List<DogHubTip> findByCreatedBy(DogHubUser user);
 
-    long countByCreatedBy(DogHubUser user);
-
-    boolean existsByIdAndCreatedBy(Long id, DogHubUser user);
-
-    boolean existsByTitleAndCreatedBy(String title, DogHubUser user);
-
     Optional<DogHubTip> findTop1ByIdGreaterThanOrderById(Long id);
 
     Optional<DogHubTip> findTop1ByIdLessThanOrderByIdDesc(Long id);
@@ -24,4 +18,10 @@ public interface DogHubTipRepository extends EntityRepository<DogHubTip> {
     Optional<DogHubTip> findTop1ByIdGreaterThanAndCreatedByOrderById(Long id, DogHubUser user);
 
     Optional<DogHubTip> findTop1ByIdLessThanAndCreatedByOrderByIdDesc(Long id, DogHubUser user);
+
+    boolean existsByIdAndCreatedBy(Long id, DogHubUser user);
+
+    boolean existsByTitleAndCreatedBy(String title, DogHubUser user);
+
+    long countByCreatedBy(DogHubUser user);
 }
