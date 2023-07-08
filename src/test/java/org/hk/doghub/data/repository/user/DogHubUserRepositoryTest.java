@@ -82,7 +82,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldNotSaveUserWithNullUserName() {
+    void shouldNotSaveUserWithNullUsername() {
         DogHubUser item = dogHubUserProvider.get();
         item.setUsername(null);
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(item));

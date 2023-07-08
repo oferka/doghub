@@ -57,4 +57,11 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         item.setName(null);
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithNameThatExceedsMaxLength() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setName(getNameThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
+    }
 }
