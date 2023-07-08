@@ -106,4 +106,20 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         item.setContent(getContentThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldSaveTipWithNullMoreInfo() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setMoreInfo(null);
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertNull(saved.getMoreInfo());
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithMoreInfoThatExceedsMaxLength() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setMoreInfo(getMoreInfoThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
+    }
 }
