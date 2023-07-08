@@ -2,6 +2,7 @@ package org.hk.doghub.data.repository.tip;
 
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -259,5 +260,11 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         assertTrue(tipOptional.isPresent());
         assertEquals(item.getTitle(), tipOptional.get().getTitle());
         dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindTipByIdNonExistingId() {
+        Optional<DogHubTip> userOptional = dogHubTipRepository.findById(getNonExistingId());
+        Assertions.assertTrue(userOptional.isEmpty());
     }
 }
