@@ -66,9 +66,16 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldNotSaveUserWithNullTitle() {
+    void shouldNotSaveTipWithNullTitle() {
         DogHubTip item = dogHubTipProvider.get();
         item.setTitle(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveTipWithTitleThatExceedsMaxLength() {
+        DogHubTip item = dogHubTipProvider.get();
+        item.setTitle(getTitleThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
     }
 }
