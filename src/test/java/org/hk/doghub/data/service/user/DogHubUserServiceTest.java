@@ -80,4 +80,16 @@ class DogHubUserServiceTest extends DogHubUserDataTest {
         assertFalse(dogHubUserService.exists(saved));
         dogHubUserRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldFindPrevious() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        List<DogHubUser> allUsers = dogHubUserRepository.findAll();
+        int index = 5;
+        Optional<DogHubUser> userOptional = dogHubUserService.findPrevious(allUsers.get(index).getId());
+        assertTrue(userOptional.isPresent());
+        assertEquals(allUsers.get(index-1).getId(), userOptional.get().getId());
+        dogHubUserRepository.deleteAll(saved);
+    }
 }
