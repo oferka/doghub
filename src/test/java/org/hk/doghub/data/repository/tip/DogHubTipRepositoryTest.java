@@ -10,6 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.transaction.TransactionSystemException;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -247,5 +248,16 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         Page<DogHubTip> tips = dogHubTipRepository.findAll(PageRequest.of(0, pageSize, Sort.by(Sort.Direction.ASC, "id")));
         assertEquals(pageSize, tips.toList().size());
         dogHubTipRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindTipById() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertEquals(item.getTitle(), saved.getTitle());
+        Optional<DogHubTip> tipOptional = dogHubTipRepository.findById(saved.getId());
+        assertTrue(tipOptional.isPresent());
+        assertEquals(item.getTitle(), tipOptional.get().getTitle());
+        dogHubTipRepository.delete(saved);
     }
 }
