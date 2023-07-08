@@ -11,6 +11,9 @@ import org.hk.doghub.model.user.Role;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.TransactionSystemException;
 
 import java.time.ZonedDateTime;
@@ -466,6 +469,16 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
         List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
         List<DogHubUser> allUsers = dogHubUserRepository.findAll();
         assertTrue(allUsers.size() >= saved.size());
+        dogHubUserRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindAllUsersWithPaging() {
+        List<DogHubUser> items = dogHubUserProvider.get(10);
+        List<DogHubUser> saved = dogHubUserRepository.saveAll(items);
+        int pageSize = 5;
+        Page<DogHubUser> users = dogHubUserRepository.findAll(PageRequest.of(0, pageSize, Sort.by(Sort.Direction.ASC, "id")));
+        assertEquals(pageSize, users.toList().size());
         dogHubUserRepository.deleteAll(saved);
     }
 
