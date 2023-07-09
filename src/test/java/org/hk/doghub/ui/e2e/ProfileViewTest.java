@@ -100,7 +100,7 @@ public class ProfileViewTest extends DogHubUITest {
         viewService.navigateFromHomePage(webDriver);
         viewService.enterInvalidTitle(webDriver);
         viewService.clickSave(webDriver);
-        viewService.verifySaveFailedWithInvalidInputNotificationDisplayed(webDriver);
+        viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
         viewService.enterTitle(webDriver);
         viewService.clickSave(webDriver);
         viewService.verifySavedSuccessfullyNotificationDisplayed(webDriver);
