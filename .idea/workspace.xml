@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest">
+  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNull">
     <configuration name="DogHubTipRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -134,7 +134,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubTipRepositoryTest.shouldCountTips" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -144,13 +144,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldCountTips" />
+      <option name="METHOD_NAME" value="shouldNotUpdateTipCreatedByToNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubTipRepositoryTest.shouldCountTipsByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubTipRepositoryTest.shouldUpdateTipCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -160,7 +160,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldCountTipsByCreatedBy" />
+      <option name="METHOD_NAME" value="shouldUpdateTipCreatedBy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -198,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNull" />
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldUpdateTipCreatedBy" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest" />
         <item itemvalue="JUnit.data in doghub" />
         <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserTitleToValueThatExceedsMaxLength" />
-        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldCountTipsByCreatedBy" />
-        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldCountTips" />
       </list>
     </recent_temporary>
   </component>
