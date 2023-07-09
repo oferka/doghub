@@ -198,4 +198,12 @@ class DogHubTipServiceTest extends DogHubTipDataTest {
         dogHubTipRepository.delete(saved1);
         dogHubTipRepository.delete(saved2);
     }
+
+    @RepeatedTest(10)
+    void shouldCountTipsByCreatedBy() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertTrue(dogHubTipService.countByCreatedBy(saved.getCreatedBy()) > 0);
+        dogHubTipRepository.delete(saved);
+    }
 }
