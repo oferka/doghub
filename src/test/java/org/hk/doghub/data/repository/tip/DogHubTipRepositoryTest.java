@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.transaction.TransactionSystemException;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -451,6 +452,37 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         DogHubTip item = dogHubTipProvider.get();
         DogHubTip saved = dogHubTipRepository.save(item);
         assertTrue(dogHubTipRepository.countByCreatedBy(saved.getCreatedBy()) > 0);
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipCreationTime() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        ZonedDateTime creationTime = getPastDateTime();
+        saved.setCreationTime(creationTime);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(creationTime, updated.getCreationTime());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipCreationTimeToNull() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setCreationTime(null);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertNull(updated.getCreationTime());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateTipCreationTimeToFuture() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        ZonedDateTime creationTime = getFutureDateTime();
+        saved.setCreationTime(creationTime);
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
         dogHubTipRepository.delete(saved);
     }
 }
