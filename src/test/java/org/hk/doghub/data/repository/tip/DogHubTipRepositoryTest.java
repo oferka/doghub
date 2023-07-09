@@ -373,4 +373,18 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         dogHubTipRepository.delete(saved1);
         dogHubTipRepository.delete(saved2);
     }
+
+    @RepeatedTest(10)
+    void shouldNotFindTipByTop1ByIdLessThanAndCreatedByOrderByIdDesc() {
+        DogHubTip item1 = dogHubTipProvider.get();
+        DogHubTip saved1 = dogHubTipRepository.save(item1);
+        DogHubTip item2 = dogHubTipProvider.get();
+        item2.setCreatedBy(item1.getCreatedBy());
+        DogHubTip saved2 = dogHubTipRepository.save(item2);
+        long minimalId = dogHubTipRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.ASC, "id"))).iterator().next().getId();
+        Optional<DogHubTip> tipOptional = dogHubTipRepository.findTop1ByIdLessThanAndCreatedByOrderByIdDesc(minimalId, saved1.getCreatedBy());
+        assertTrue(tipOptional.isEmpty());
+        dogHubTipRepository.delete(saved1);
+        dogHubTipRepository.delete(saved2);
+    }
 }
