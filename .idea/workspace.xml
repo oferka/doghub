@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipServiceTest.shouldNotExistByIdAndCreatedByForNonExistingId">
+  <component name="RunManager" selected="JUnit.DogHubTipServiceTest">
     <configuration name="DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNonExistingUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -206,10 +206,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipServiceTest" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotExistByIdAndCreatedByForNonExistingId" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldExistByIdAndCreatedByForExistingTip" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotExistForNonExistingTitle" />
-        <item itemvalue="JUnit.DogHubTipServiceTest" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNonExistingUser" />
       </list>
     </recent_temporary>

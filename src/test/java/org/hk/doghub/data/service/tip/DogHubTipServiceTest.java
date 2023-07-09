@@ -96,4 +96,20 @@ class DogHubTipServiceTest extends DogHubTipDataTest {
         assertFalse(dogHubTipService.existsByIdAndCreatedBy(getNonExistingId(), saved.getCreatedBy()));
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldExistByTitleAndCreatedByForExistingTip() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertTrue(dogHubTipService.existsByTitleAndCreatedBy(saved.getTitle(), saved.getCreatedBy()));
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistByTitleAndCreatedByForNonExistingTitle() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertFalse(dogHubTipService.existsByTitleAndCreatedBy(getNonExistingTitle(), saved.getCreatedBy()));
+        dogHubTipRepository.delete(saved);
+    }
 }
