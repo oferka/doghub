@@ -7,7 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 914">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 915">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/service/tip/DogHubTipServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/service/tip/DogHubTipServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,23 +119,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipServiceTest">
-    <configuration name="DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNonExistingUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotUpdateTipCreatedByToNonExistingUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DogHubTipServiceTest.shouldNotFindTipByCreatedByForNonExistingCreatedBy">
     <configuration name="DogHubTipServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -150,7 +135,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubTipServiceTest.shouldExistByIdAndCreatedByForExistingTip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubTipServiceTest.shouldFindTipByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -160,7 +145,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
-      <option name="METHOD_NAME" value="shouldExistByIdAndCreatedByForExistingTip" />
+      <option name="METHOD_NAME" value="shouldFindTipByCreatedBy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,7 +167,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubTipServiceTest.shouldNotExistForNonExistingTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubTipServiceTest.shouldNotFindTipByCreatedByForNonExistingCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -192,7 +177,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
-      <option name="METHOD_NAME" value="shouldNotExistForNonExistingTitle" />
+      <option name="METHOD_NAME" value="shouldNotFindTipByCreatedByForNonExistingCreatedBy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubTipServiceTest.shouldNotFindTipByNullCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.service.tip.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
+      <option name="METHOD_NAME" value="shouldNotFindTipByNullCreatedBy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotFindTipByCreatedByForNonExistingCreatedBy" />
+        <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotFindTipByNullCreatedBy" />
+        <item itemvalue="JUnit.DogHubTipServiceTest.shouldFindTipByCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotExistByIdAndCreatedByForNonExistingId" />
-        <item itemvalue="JUnit.DogHubTipServiceTest.shouldExistByIdAndCreatedByForExistingTip" />
-        <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotExistForNonExistingTitle" />
-        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNonExistingUser" />
       </list>
     </recent_temporary>
   </component>
@@ -222,13 +223,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00870" summary="doghub 866">
-      <created>1688823245443</created>
-      <option name="number" value="00870" />
-      <option name="presentableId" value="LOCAL-00870" />
-      <option name="project" value="LOCAL" />
-      <updated>1688823245443</updated>
     </task>
     <task id="LOCAL-00871" summary="doghub 867">
       <created>1688823364284</created>
@@ -566,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688884562315</updated>
     </task>
-    <option name="localTasksCounter" value="919" />
+    <task id="LOCAL-00919" summary="doghub 915">
+      <created>1688884904597</created>
+      <option name="number" value="00919" />
+      <option name="presentableId" value="LOCAL-00919" />
+      <option name="project" value="LOCAL" />
+      <updated>1688884904597</updated>
+    </task>
+    <option name="localTasksCounter" value="920" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 890" />
     <MESSAGE value="doghub 891" />
     <MESSAGE value="doghub 892" />
     <MESSAGE value="doghub 893" />
@@ -607,6 +607,7 @@
     <MESSAGE value="doghub 912" />
     <MESSAGE value="doghub 913" />
     <MESSAGE value="doghub 914" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 914" />
+    <MESSAGE value="doghub 915" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 915" />
   </component>
 </project>

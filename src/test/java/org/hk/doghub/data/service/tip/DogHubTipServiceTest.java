@@ -1,5 +1,6 @@
 package org.hk.doghub.data.service.tip;
 
+import jakarta.validation.ConstraintViolationException;
 import org.hk.doghub.data.repository.tip.DogHubTipDataTest;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.junit.jupiter.api.RepeatedTest;
@@ -156,5 +157,21 @@ class DogHubTipServiceTest extends DogHubTipDataTest {
         Optional<DogHubTip> tipOptional = dogHubTipService.findNext(maximalId);
         assertTrue(tipOptional.isEmpty());
         dogHubTipRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindTipByCreatedBy() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertFalse(dogHubTipService.findByCreatedBy(saved.getCreatedBy()).isEmpty());
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindTipByNullCreatedBy() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertThrows(ConstraintViolationException.class, () -> dogHubTipService.findByCreatedBy(null));
+        dogHubTipRepository.delete(saved);
     }
 }
