@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 915">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 917">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/service/tip/DogHubTipServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/service/tip/DogHubTipServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,8 +118,8 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipServiceTest.shouldFindPreviousTipByCreatedBy">
-    <configuration name="DogHubTipServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DogHubTipServiceTest.shouldFindNextTipByCreatedBy">
+    <configuration name="DogHubTipServiceTest.shouldFindNextTipByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -130,7 +129,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="shouldFindNextTipByCreatedBy" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -207,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipServiceTest.shouldFindNextTipByCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldFindPreviousTipByCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotFindTipByCreatedByForNonExistingCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotFindTipByNullCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldFindTipByCreatedBy" />
-        <item itemvalue="JUnit.DogHubTipServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -223,20 +223,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00871" summary="doghub 867">
-      <created>1688823364284</created>
-      <option name="number" value="00871" />
-      <option name="presentableId" value="LOCAL-00871" />
-      <option name="project" value="LOCAL" />
-      <updated>1688823364284</updated>
-    </task>
-    <task id="LOCAL-00872" summary="doghub 868">
-      <created>1688823482377</created>
-      <option name="number" value="00872" />
-      <option name="presentableId" value="LOCAL-00872" />
-      <option name="project" value="LOCAL" />
-      <updated>1688823482377</updated>
     </task>
     <task id="LOCAL-00873" summary="doghub 869">
       <created>1688823759044</created>
@@ -567,7 +553,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688884904597</updated>
     </task>
-    <option name="localTasksCounter" value="920" />
+    <task id="LOCAL-00920" summary="doghub 916">
+      <created>1688885338373</created>
+      <option name="number" value="00920" />
+      <option name="presentableId" value="LOCAL-00920" />
+      <option name="project" value="LOCAL" />
+      <updated>1688885338373</updated>
+    </task>
+    <task id="LOCAL-00921" summary="doghub 917">
+      <created>1688885562634</created>
+      <option name="number" value="00921" />
+      <option name="presentableId" value="LOCAL-00921" />
+      <option name="project" value="LOCAL" />
+      <updated>1688885562634</updated>
+    </task>
+    <option name="localTasksCounter" value="922" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -583,8 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 891" />
-    <MESSAGE value="doghub 892" />
     <MESSAGE value="doghub 893" />
     <MESSAGE value="doghub 894" />
     <MESSAGE value="doghub 895" />
@@ -608,6 +606,8 @@
     <MESSAGE value="doghub 913" />
     <MESSAGE value="doghub 914" />
     <MESSAGE value="doghub 915" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 915" />
+    <MESSAGE value="doghub 916" />
+    <MESSAGE value="doghub 917" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 917" />
   </component>
 </project>
