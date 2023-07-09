@@ -780,7 +780,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldNotUpdateUserThumbnailPictureToValueThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        saved.setEmail(getThumbnailPictureThatExceedsMaxLength());
+        saved.setThumbnailPicture(getThumbnailPictureThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
     }
