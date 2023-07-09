@@ -435,4 +435,22 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         assertFalse(dogHubTipRepository.existsByTitleAndCreatedBy(getNonExistingTitle(), saved.getCreatedBy()));
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldCountTips() {
+        long countBefore = dogHubTipRepository.count();
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        long countAfter = dogHubTipRepository.count();
+        assertEquals(countAfter, countBefore + 1);
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldCountTipsByCreatedBy() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertTrue(dogHubTipRepository.countByCreatedBy(saved.getCreatedBy()) > 0);
+        dogHubTipRepository.delete(saved);
+    }
 }
