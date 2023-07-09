@@ -174,4 +174,16 @@ class DogHubTipServiceTest extends DogHubTipDataTest {
         assertThrows(ConstraintViolationException.class, () -> dogHubTipService.findByCreatedBy(null));
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldFindPreviousTipByCreatedBy() {
+        DogHubTip item1 = dogHubTipProvider.get();
+        DogHubTip saved1 = dogHubTipRepository.save(item1);
+        DogHubTip item2 = dogHubTipProvider.get();
+        item2.setCreatedBy(saved1.getCreatedBy());
+        DogHubTip saved2 = dogHubTipRepository.save(item2);
+        assertTrue(dogHubTipService.findPreviousByCreatedBy(saved2.getId(), saved2.getCreatedBy()).isPresent());
+        dogHubTipRepository.delete(saved1);
+        dogHubTipRepository.delete(saved2);
+    }
 }

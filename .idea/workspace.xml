@@ -119,7 +119,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipServiceTest.shouldNotFindTipByCreatedByForNonExistingCreatedBy">
+  <component name="RunManager" selected="JUnit.DogHubTipServiceTest.shouldFindPreviousTipByCreatedBy">
     <configuration name="DogHubTipServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -135,6 +135,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DogHubTipServiceTest.shouldFindPreviousTipByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.service.tip.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
+      <option name="METHOD_NAME" value="shouldFindPreviousTipByCreatedBy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DogHubTipServiceTest.shouldFindTipByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -146,22 +162,6 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
       <option name="METHOD_NAME" value="shouldFindTipByCreatedBy" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DogHubTipServiceTest.shouldNotExistByIdAndCreatedByForNonExistingId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.service.tip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
-      <option name="METHOD_NAME" value="shouldNotExistByIdAndCreatedByForNonExistingId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipServiceTest.shouldFindPreviousTipByCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotFindTipByCreatedByForNonExistingCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotFindTipByNullCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest.shouldFindTipByCreatedBy" />
         <item itemvalue="JUnit.DogHubTipServiceTest" />
-        <item itemvalue="JUnit.DogHubTipServiceTest.shouldNotExistByIdAndCreatedByForNonExistingId" />
       </list>
     </recent_temporary>
   </component>
