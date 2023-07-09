@@ -1,5 +1,6 @@
 package org.hk.doghub.data.repository.tip;
 
+import org.hk.doghub.model.DogHubFeedback;
 import org.hk.doghub.model.tip.DogHubTip;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
@@ -653,5 +654,118 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         saved.setThumbnailPicture(getThumbnailPictureWithInvalidFormat());
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
         dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipFeedback() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        DogHubFeedback feedback = dogHubTipProvider.get().getFeedback();
+        saved.setFeedback(feedback);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(feedback, updated.getFeedback());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateTipFeedbackToNull() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setFeedback(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipLikes() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        Long likes = dogHubTipProvider.get().getFeedback().getLikes();
+        saved.getFeedback().setLikes(likes);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(likes, updated.getFeedback().getLikes());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipLikesToNull() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.getFeedback().setLikes(null);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertNull(updated.getFeedback().getLikes());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipLikesToNegativeValue() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.getFeedback().setLikes(-10L);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(-10, updated.getFeedback().getLikes());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipShares() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        Long shares = dogHubTipProvider.get().getFeedback().getShares();
+        saved.getFeedback().setShares(shares);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(shares, updated.getFeedback().getShares());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipSharesToNull() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.getFeedback().setShares(null);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertNull(updated.getFeedback().getShares());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipSharesToNegativeValue() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.getFeedback().setShares(-10L);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(-10, updated.getFeedback().getShares());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipComments() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        Long comments = dogHubTipProvider.get().getFeedback().getComments();
+        saved.getFeedback().setComments(comments);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(comments, updated.getFeedback().getComments());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipCommentsToNull() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.getFeedback().setComments(null);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertNull(updated.getFeedback().getComments());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipCommentsToNegativeValue() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.getFeedback().setComments(-10L);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(-10, updated.getFeedback().getComments());
+        dogHubTipRepository.delete(updated);
     }
 }
