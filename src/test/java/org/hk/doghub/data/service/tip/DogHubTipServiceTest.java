@@ -10,8 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DogHubTipServiceTest extends DogHubTipDataTest {
 
@@ -62,6 +61,23 @@ class DogHubTipServiceTest extends DogHubTipDataTest {
         DogHubTip saved = dogHubTipRepository.save(item);
         long countAfter = dogHubTipService.count();
         assertEquals(countAfter, countBefore + 1);
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldExistForExistingTip() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        assertTrue(dogHubTipService.exists(saved));
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotExistForNonExistingTitle() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setTitle(dogHubTipProvider.get().getTitle());
+        assertFalse(dogHubTipService.exists(saved));
         dogHubTipRepository.delete(saved);
     }
 }
