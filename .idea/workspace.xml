@@ -119,7 +119,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest">
+  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldSaveDogWithSpecifiedNonExistingId">
     <configuration name="DogHubDogRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -135,17 +135,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubTipServiceTest.shouldCountTipsByCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubDogRepositoryTest.shouldSaveDogWithSpecifiedNonExistingId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.service.tip.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.repository.dog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.service.tip" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.service.tip.DogHubTipServiceTest" />
-      <option name="METHOD_NAME" value="shouldCountTipsByCreatedBy" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldSaveDogWithSpecifiedNonExistingId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldSaveDogWithSpecifiedNonExistingId" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest" />
         <item itemvalue="JUnit.ProfileViewTest.shouldValidateTitle" />
         <item itemvalue="JUnit.java in doghub" />
         <item itemvalue="JUnit.org.hk.doghub.data in doghub" />
-        <item itemvalue="JUnit.DogHubTipServiceTest.shouldCountTipsByCreatedBy" />
       </list>
     </recent_temporary>
   </component>

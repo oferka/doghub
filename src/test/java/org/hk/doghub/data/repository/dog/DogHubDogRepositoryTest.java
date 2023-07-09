@@ -6,6 +6,7 @@ import org.junit.jupiter.api.RepeatedTest;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class DogHubDogRepositoryTest extends DogHubDogDataTest {
 
@@ -24,15 +25,15 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         assertEquals(saved.size(), items.size());
         dogHubDogRepository.deleteAll(saved);
     }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithSpecifiedNonExistingId() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setId(getNonExistingId());
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertNotEquals(item.getId(), saved.getId());
-//        dogHubTipRepository.delete(saved);
-//    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithSpecifiedNonExistingId() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setId(getNonExistingId());
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNotEquals(item.getId(), saved.getId());
+        dogHubDogRepository.delete(saved);
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldSaveTipWithNullCreationTime() {
