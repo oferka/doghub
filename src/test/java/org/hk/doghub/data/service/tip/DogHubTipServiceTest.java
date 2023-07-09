@@ -46,4 +46,22 @@ class DogHubTipServiceTest extends DogHubTipDataTest {
         assertEquals(pageSize, tips.toList().size());
         dogHubTipRepository.deleteAll(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldSaveTip() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipService.save(item);
+        assertEquals(item.getTitle(), saved.getTitle());
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldCountTips() {
+        long countBefore = dogHubTipService.count();
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        long countAfter = dogHubTipService.count();
+        assertEquals(countAfter, countBefore + 1);
+        dogHubTipRepository.delete(saved);
+    }
 }
