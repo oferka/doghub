@@ -34,6 +34,14 @@ public class DogHubTipService extends AbstractEntityService<DogHubTip> {
         return existsByTitleAndCreatedBy(entity.getTitle(), entity.getCreatedBy());
     }
 
+    public boolean existsByIdAndCreatedBy(@NotNull Long id, @NotNull @Valid DogHubUser user) {
+        return repository.existsByIdAndCreatedBy(id, user);
+    }
+
+    public boolean existsByTitleAndCreatedBy(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull @Valid DogHubUser user) {
+        return repository.existsByTitleAndCreatedBy(title, user);
+    }
+
     public Optional<DogHubTip> findPrevious(@NotNull Long id) {
         return repository.findTop1ByIdLessThanOrderByIdDesc(id);
     }
@@ -48,14 +56,6 @@ public class DogHubTipService extends AbstractEntityService<DogHubTip> {
 
     public long countByCreatedBy(@NotNull @Valid DogHubUser user) {
         return repository.countByCreatedBy(user);
-    }
-
-    public boolean existsByIdAndCreatedBy(@NotNull Long id, @NotNull @Valid DogHubUser user) {
-        return repository.existsByIdAndCreatedBy(id, user);
-    }
-
-    public boolean existsByTitleAndCreatedBy(@NotNull @Size(max = TITLE_MAX_LENGTH) String title, @NotNull @Valid DogHubUser user) {
-        return repository.existsByTitleAndCreatedBy(title, user);
     }
 
     public Optional<DogHubTip> findPreviousByCreatedBy(@NotNull Long id, @NotNull @Valid DogHubUser user) {
