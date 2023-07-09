@@ -3,6 +3,8 @@ package org.hk.doghub.data.repository.dog;
 import org.hk.doghub.model.dog.DogHubDog;
 import org.junit.jupiter.api.RepeatedTest;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DogHubDogRepositoryTest extends DogHubDogDataTest {
@@ -15,13 +17,13 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.delete(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldSaveAllTips() {
-//        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
-//        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
-//        assertEquals(saved.size(), items.size());
-//        dogHubTipRepository.deleteAll(saved);
-//    }
+    @RepeatedTest(10)
+    void shouldSaveAllDogs() {
+        List<DogHubDog> items = dogHubDogProvider.get(getNumberOfItemsToLoad());
+        List<DogHubDog> saved = dogHubDogRepository.saveAll(items);
+        assertEquals(saved.size(), items.size());
+        dogHubDogRepository.deleteAll(saved);
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldSaveTipWithSpecifiedNonExistingId() {
