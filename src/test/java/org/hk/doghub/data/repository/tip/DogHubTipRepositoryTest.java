@@ -585,4 +585,43 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipThumbnailPicture() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        String thumbnailPicture = dogHubTipProvider.get().getThumbnailPicture();
+        saved.setThumbnailPicture(thumbnailPicture);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(thumbnailPicture, updated.getThumbnailPicture());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipThumbnailPictureToNull() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setThumbnailPicture(null);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertNull(updated.getThumbnailPicture());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateTipThumbnailPictureToValueThatExceedsMaxLength() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setThumbnailPicture(getThumbnailPictureThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateTipThumbnailPictureToValueThatHasInvalidFormat() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setThumbnailPicture(getThumbnailPictureWithInvalidFormat());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
+        dogHubTipRepository.delete(saved);
+    }
 }
