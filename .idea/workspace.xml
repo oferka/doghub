@@ -119,7 +119,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldSaveDogWithSpecifiedNonExistingId">
+  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldSaveDogWithNullCreationTime">
     <configuration name="DogHubDogRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -131,6 +131,22 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubDogRepositoryTest.shouldSaveDogWithNullCreationTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.dog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldSaveDogWithNullCreationTime" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,20 +191,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.hk.doghub.data in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -197,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldSaveDogWithNullCreationTime" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldSaveDogWithSpecifiedNonExistingId" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest" />
         <item itemvalue="JUnit.ProfileViewTest.shouldValidateTitle" />
         <item itemvalue="JUnit.java in doghub" />
-        <item itemvalue="JUnit.org.hk.doghub.data in doghub" />
       </list>
     </recent_temporary>
   </component>
