@@ -54,15 +54,15 @@ public class DogHubTipService extends AbstractEntityService<DogHubTip> {
         return repository.findByCreatedBy(user);
     }
 
-    public long countByCreatedBy(@NotNull @Valid DogHubUser user) {
-        return repository.countByCreatedBy(user);
-    }
-
     public Optional<DogHubTip> findPreviousByCreatedBy(@NotNull Long id, @NotNull @Valid DogHubUser user) {
         return repository.findTop1ByIdLessThanAndCreatedByOrderByIdDesc(id, user);
     }
 
     public Optional<DogHubTip> findNextByCreatedBy(@NotNull Long id, @NotNull @Valid DogHubUser user) {
         return repository.findTop1ByIdGreaterThanAndCreatedByOrderById(id, user);
+    }
+
+    public long countByCreatedBy(@NotNull @Valid DogHubUser user) {
+        return repository.countByCreatedBy(user);
     }
 }
