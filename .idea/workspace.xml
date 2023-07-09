@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 902">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 904">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/tip/DogHubTipRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/tip/DogHubTipRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +118,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNull">
+  <component name="RunManager" selected="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNonExistingUser">
     <configuration name="DogHubTipRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -130,6 +130,22 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNonExistingUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.tip.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.tip" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.tip.DogHubTipRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotUpdateTipCreatedByToNonExistingUser" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,22 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserRepositoryTest.shouldNotUpdateUserTitleToValueThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.user.DogHubUserRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotUpdateUserTitleToValueThatExceedsMaxLength" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="data in doghub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <option name="TEST_OBJECT" value="directory" />
@@ -198,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNonExistingUser" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldNotUpdateTipCreatedByToNull" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest.shouldUpdateTipCreatedBy" />
         <item itemvalue="JUnit.DogHubTipRepositoryTest" />
         <item itemvalue="JUnit.data in doghub" />
-        <item itemvalue="JUnit.DogHubUserRepositoryTest.shouldNotUpdateUserTitleToValueThatExceedsMaxLength" />
       </list>
     </recent_temporary>
   </component>
@@ -214,20 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00858" summary="doghub 854">
-      <created>1688821732440</created>
-      <option name="number" value="00858" />
-      <option name="presentableId" value="LOCAL-00858" />
-      <option name="project" value="LOCAL" />
-      <updated>1688821732440</updated>
-    </task>
-    <task id="LOCAL-00859" summary="doghub 855">
-      <created>1688822267798</created>
-      <option name="number" value="00859" />
-      <option name="presentableId" value="LOCAL-00859" />
-      <option name="project" value="LOCAL" />
-      <updated>1688822267798</updated>
     </task>
     <task id="LOCAL-00860" summary="doghub 856">
       <created>1688822368425</created>
@@ -558,7 +544,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688881963626</updated>
     </task>
-    <option name="localTasksCounter" value="907" />
+    <task id="LOCAL-00907" summary="doghub 903">
+      <created>1688882449534</created>
+      <option name="number" value="00907" />
+      <option name="presentableId" value="LOCAL-00907" />
+      <option name="project" value="LOCAL" />
+      <updated>1688882449534</updated>
+    </task>
+    <task id="LOCAL-00908" summary="doghub 904">
+      <created>1688882694720</created>
+      <option name="number" value="00908" />
+      <option name="presentableId" value="LOCAL-00908" />
+      <option name="project" value="LOCAL" />
+      <updated>1688882694720</updated>
+    </task>
+    <option name="localTasksCounter" value="909" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -574,8 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 878" />
-    <MESSAGE value="doghub 879" />
     <MESSAGE value="doghub 880" />
     <MESSAGE value="doghub 881" />
     <MESSAGE value="doghub 882" />
@@ -599,6 +597,8 @@
     <MESSAGE value="doghub 900" />
     <MESSAGE value="doghub 901" />
     <MESSAGE value="doghub 902" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 902" />
+    <MESSAGE value="doghub 903" />
+    <MESSAGE value="doghub 904" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 904" />
   </component>
 </project>
