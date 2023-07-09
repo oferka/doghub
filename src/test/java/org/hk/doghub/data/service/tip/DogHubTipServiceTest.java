@@ -6,6 +6,7 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
@@ -111,5 +112,49 @@ class DogHubTipServiceTest extends DogHubTipDataTest {
         DogHubTip saved = dogHubTipRepository.save(item);
         assertFalse(dogHubTipService.existsByTitleAndCreatedBy(getNonExistingTitle(), saved.getCreatedBy()));
         dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindPreviousTip() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        List<DogHubTip> allTips = dogHubTipRepository.findAll();
+        int index = 5;
+        Optional<DogHubTip> tipOptional = dogHubTipService.findPrevious(allTips.get(index).getId());
+        assertTrue(tipOptional.isPresent());
+        assertEquals(allTips.get(index-1).getId(), tipOptional.get().getId());
+        dogHubTipRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindPreviousTipOnMinimalId() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        long minimalId = dogHubTipRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.ASC, "id"))).iterator().next().getId();
+        Optional<DogHubTip> tipOptional = dogHubTipService.findPrevious(minimalId);
+        assertTrue(tipOptional.isEmpty());
+        dogHubTipRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldFindNextTip() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        List<DogHubTip> allTips = dogHubTipRepository.findAll();
+        int index = 5;
+        Optional<DogHubTip> tipOptional = dogHubTipService.findNext(allTips.get(index).getId());
+        assertTrue(tipOptional.isPresent());
+        assertEquals(allTips.get(index+1).getId(), tipOptional.get().getId());
+        dogHubTipRepository.deleteAll(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindNextTipOnMaximalId() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        long maximalId = dogHubTipRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.DESC, "id"))).iterator().next().getId();
+        Optional<DogHubTip> tipOptional = dogHubTipService.findNext(maximalId);
+        assertTrue(tipOptional.isEmpty());
+        dogHubTipRepository.deleteAll(saved);
     }
 }
