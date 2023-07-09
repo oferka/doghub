@@ -750,7 +750,7 @@ class DogHubUserRepositoryTest extends DogHubUserDataTest {
     void shouldNotUpdateUserTitleToValueThatExceedsMaxLength() {
         DogHubUser item = dogHubUserProvider.get();
         DogHubUser saved = dogHubUserRepository.save(item);
-        saved.setEmail(getTitleThatExceedsMaxLength());
+        saved.setTitle(getTitleThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubUserRepository.save(saved));
         dogHubUserRepository.delete(saved);
     }
