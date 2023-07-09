@@ -514,4 +514,45 @@ class DogHubTipRepositoryTest extends DogHubTipDataTest {
         assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
         dogHubTipRepository.delete(saved);
     }
+
+    @RepeatedTest(10)
+    void shouldUpdateTipTitle() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        String title = dogHubTipProvider.get().getTitle();
+        saved.setTitle(title);
+        DogHubTip updated = dogHubTipRepository.save(saved);
+        assertEquals(title, updated.getTitle());
+        dogHubTipRepository.delete(updated);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateTipTitleToNull() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setTitle(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateTipTitleToValueThatExceedsMaxLength() {
+        DogHubTip item = dogHubTipProvider.get();
+        DogHubTip saved = dogHubTipRepository.save(item);
+        saved.setTitle(getTitleThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(saved));
+        dogHubTipRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotUpdateTipTitleToNonUniqueValueCombinedWithCreatedBy() {
+        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
+        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
+        DogHubTip first = saved.get(0);
+        DogHubTip second = saved.get(1);
+        second.setTitle(first.getTitle());
+        second.setCreatedBy(first.getCreatedBy());
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubTipRepository.save(second));
+        dogHubTipRepository.deleteAll(saved);
+    }
 }
