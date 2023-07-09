@@ -31,7 +31,7 @@ public class DogHubTipService extends AbstractEntityService<DogHubTip> {
 
     @Override
     public boolean exists(@NotNull @Valid DogHubTip entity) {
-        return existsByIdAndCreatedBy(entity.getId(), entity.getCreatedBy());
+        return existsByTitleAndCreatedBy(entity.getTitle(), entity.getCreatedBy());
     }
 
     public Optional<DogHubTip> findPrevious(@NotNull Long id) {
