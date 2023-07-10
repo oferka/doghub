@@ -173,93 +173,92 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
     }
 
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullThumbnailPicture() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setThumbnailPicture(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getThumbnailPicture());
+        dogHubDogRepository.delete(saved);
+    }
 
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNullThumbnailPicture() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setThumbnailPicture(null);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertNull(saved.getThumbnailPicture());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithThumbnailPictureThatExceedsMaxLength() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setThumbnailPicture(getThumbnailPictureThatExceedsMaxLength());
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithThumbnailPictureThatHasInvalidFormat() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setThumbnailPicture(getThumbnailPictureWithInvalidFormat());
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithNullFeedback() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setFeedback(null);
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNullLikes() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.getFeedback().setLikes(null);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertNull(saved.getFeedback().getLikes());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNegativeLikes() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        Long negativeNumber = -10L;
-//        item.getFeedback().setLikes(negativeNumber);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertEquals(negativeNumber, saved.getFeedback().getLikes());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNullShares() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.getFeedback().setShares(null);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertNull(saved.getFeedback().getShares());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNegativeShares() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        Long negativeNumber = -10L;
-//        item.getFeedback().setShares(negativeNumber);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertEquals(negativeNumber, saved.getFeedback().getShares());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNullComments() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.getFeedback().setComments(null);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertNull(saved.getFeedback().getComments());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNegativeComments() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        Long negativeNumber = -10L;
-//        item.getFeedback().setComments(negativeNumber);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertEquals(negativeNumber, saved.getFeedback().getComments());
-//        dogHubTipRepository.delete(saved);
-//    }
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithThumbnailPictureThatExceedsMaxLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setThumbnailPicture(getThumbnailPictureThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithThumbnailPictureThatHasInvalidFormat() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setThumbnailPicture(getThumbnailPictureWithInvalidFormat());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithNullFeedback() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setFeedback(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullLikes() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.getFeedback().setLikes(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getFeedback().getLikes());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNegativeLikes() {
+        DogHubDog item = dogHubDogProvider.get();
+        Long negativeNumber = -10L;
+        item.getFeedback().setLikes(negativeNumber);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertEquals(negativeNumber, saved.getFeedback().getLikes());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullShares() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.getFeedback().setShares(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getFeedback().getShares());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNegativeShares() {
+        DogHubDog item = dogHubDogProvider.get();
+        Long negativeNumber = -10L;
+        item.getFeedback().setShares(negativeNumber);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertEquals(negativeNumber, saved.getFeedback().getShares());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullComments() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.getFeedback().setComments(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getFeedback().getComments());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNegativeComments() {
+        DogHubDog item = dogHubDogProvider.get();
+        Long negativeNumber = -10L;
+        item.getFeedback().setComments(negativeNumber);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertEquals(negativeNumber, saved.getFeedback().getComments());
+        dogHubDogRepository.delete(saved);
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldNotSaveTipWithNullCreatedBy() {
