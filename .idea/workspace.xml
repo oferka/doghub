@@ -120,7 +120,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldNotSaveDogWithNonExistingCreatedBy">
+  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldFindAllDogs">
     <configuration name="DogHubDogRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -136,7 +136,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubDogRepositoryTest.shouldNotSaveDogWithNameThatExceedsMaxLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubDogRepositoryTest.shouldFindAllDogs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -146,7 +146,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotSaveDogWithNameThatExceedsMaxLength" />
+      <option name="METHOD_NAME" value="shouldFindAllDogs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldFindAllDogs" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotSaveDogWithNonExistingCreatedBy" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotSaveDogWithNullCreatedBy" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotSaveDogWithNonUniqueNameAndCreatedBy" />
-        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotSaveDogWithNameThatExceedsMaxLength" />
       </list>
     </recent_temporary>
   </component>
