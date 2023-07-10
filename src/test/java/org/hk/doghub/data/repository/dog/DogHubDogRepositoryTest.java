@@ -76,54 +76,24 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         assertThrows(DataIntegrityViolationException.class, () -> dogHubDogRepository.save(item2));
         dogHubDogRepository.delete(saved);
     }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithNullTitle() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setTitle(null);
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithTitleThatExceedsMaxLength() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setTitle(getTitleThatExceedsMaxLength());
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
-//
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNullContent() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setContent(null);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertNull(saved.getContent());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithContentThatExceedsMaxLength() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setContent(getContentThatExceedsMaxLength());
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldSaveTipWithNullMoreInfo() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setMoreInfo(null);
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertNull(saved.getMoreInfo());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithMoreInfoThatExceedsMaxLength() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setMoreInfo(getMoreInfoThatExceedsMaxLength());
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
-//
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullBreed() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setBreed(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getBreed());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithBreedThatExceedsMaxLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setBreed(getBreedThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
+
 //    @RepeatedTest(10)
 //    void shouldSaveTipWithNullThumbnailPicture() {
 //        DogHubTip item = dogHubTipProvider.get();
