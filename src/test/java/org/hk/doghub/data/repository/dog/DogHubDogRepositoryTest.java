@@ -4,6 +4,9 @@ import org.hk.doghub.model.dog.DogHubDog;
 import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.TransactionSystemException;
 
 import java.util.List;
@@ -286,15 +289,15 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.deleteAll(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldFindAllTipsWithPaging() {
-//        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
-//        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
-//        int pageSize = 5;
-//        Page<DogHubTip> tips = dogHubTipRepository.findAll(PageRequest.of(0, pageSize, Sort.by(Sort.Direction.ASC, "id")));
-//        assertEquals(pageSize, tips.toList().size());
-//        dogHubTipRepository.deleteAll(saved);
-//    }
+    @RepeatedTest(10)
+    void shouldFindAllDogsWithPaging() {
+        List<DogHubDog> items = dogHubDogProvider.get(getNumberOfItemsToLoad());
+        List<DogHubDog> saved = dogHubDogRepository.saveAll(items);
+        int pageSize = 5;
+        Page<DogHubDog> tips = dogHubDogRepository.findAll(PageRequest.of(0, pageSize, Sort.by(Sort.Direction.ASC, "id")));
+        assertEquals(pageSize, tips.toList().size());
+        dogHubDogRepository.deleteAll(saved);
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldFindTipById() {
