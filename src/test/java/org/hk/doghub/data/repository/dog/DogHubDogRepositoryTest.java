@@ -1,6 +1,7 @@
 package org.hk.doghub.data.repository.dog;
 
 import org.hk.doghub.model.dog.DogHubDog;
+import org.hk.doghub.model.user.DogHubUser;
 import org.junit.jupiter.api.RepeatedTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.TransactionSystemException;
@@ -267,14 +268,14 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
     }
 
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithNonExistingCreatedBy() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubUser createdBy = item.getCreatedBy();
-//        createdBy.setId(getNonExistingId());
-//        item.setCreatedBy(createdBy);
-//        assertThrows(DataIntegrityViolationException.class, () -> dogHubTipRepository.save(item));
-//    }
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithNonExistingCreatedBy() {
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubUser createdBy = item.getCreatedBy();
+        createdBy.setId(getNonExistingId());
+        item.setCreatedBy(createdBy);
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubDogRepository.save(item));
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldFindAllTips() {
