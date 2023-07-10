@@ -93,6 +93,38 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
     }
 
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullSound() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setSound(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getSound());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithSoundThatExceedsMaxLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setSound(getSoundThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullAge() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setAge(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getAge());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithAgeThatExceedsMaxLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setAge(getAgeThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
 
 //    @RepeatedTest(10)
 //    void shouldSaveTipWithNullThumbnailPicture() {
