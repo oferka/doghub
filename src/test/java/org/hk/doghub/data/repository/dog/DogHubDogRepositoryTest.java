@@ -125,6 +125,54 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
     }
 
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullCoatLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setCoatLength(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getCoatLength());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithCoatLengthThatExceedsMaxLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setCoatLength(getCoatLengthThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullSize() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setSize(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getSize());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithSizeThatExceedsMaxLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setSize(getSizeThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
+    @RepeatedTest(10)
+    void shouldSaveDogWithNullGender() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setGender(null);
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertNull(saved.getGender());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithGenderThatExceedsMaxLength() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setGender(getGenderThatExceedsMaxLength());
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
+
 
 //    @RepeatedTest(10)
 //    void shouldSaveTipWithNullThumbnailPicture() {
