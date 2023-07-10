@@ -50,13 +50,13 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         item.setCreationTime(getFutureDateTime());
         assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
     }
-//
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithNullName() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        item.setName(null);
-//        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
-//    }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithNullName() {
+        DogHubDog item = dogHubDogProvider.get();
+        item.setName(null);
+        assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldNotSaveTipWithNameThatExceedsMaxLength() {
