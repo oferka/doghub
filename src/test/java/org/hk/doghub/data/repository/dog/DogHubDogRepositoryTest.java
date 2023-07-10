@@ -2,6 +2,7 @@ package org.hk.doghub.data.repository.dog;
 
 import org.hk.doghub.model.dog.DogHubDog;
 import org.junit.jupiter.api.RepeatedTest;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.TransactionSystemException;
 
 import java.util.List;
@@ -64,6 +65,17 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         item.setName(getNameThatExceedsMaxLength());
         assertThrows(TransactionSystemException.class, () -> dogHubDogRepository.save(item));
     }
+
+    @RepeatedTest(10)
+    void shouldNotSaveDogWithNonUniqueNameAndCreatedBy() {
+        DogHubDog item1 = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item1);
+        DogHubDog item2 = dogHubDogProvider.get();
+        item2.setName(item1.getName());
+        item2.setCreatedBy(item1.getCreatedBy());
+        assertThrows(DataIntegrityViolationException.class, () -> dogHubDogRepository.save(item2));
+        dogHubDogRepository.delete(saved);
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldNotSaveTipWithNullTitle() {
@@ -79,16 +91,6 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
 //        assertThrows(TransactionSystemException.class, () -> dogHubTipRepository.save(item));
 //    }
 //
-//    @RepeatedTest(10)
-//    void shouldNotSaveTipWithNonUniqueTitleAndCreatedBy() {
-//        DogHubTip item1 = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item1);
-//        DogHubTip item2 = dogHubTipProvider.get();
-//        item2.setTitle(item1.getTitle());
-//        item2.setCreatedBy(item1.getCreatedBy());
-//        assertThrows(DataIntegrityViolationException.class, () -> dogHubTipRepository.save(item2));
-//        dogHubTipRepository.delete(saved);
-//    }
 //
 //    @RepeatedTest(10)
 //    void shouldSaveTipWithNullContent() {
