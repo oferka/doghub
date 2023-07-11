@@ -10,6 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.transaction.TransactionSystemException;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -298,24 +299,24 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         assertEquals(pageSize, tips.toList().size());
         dogHubDogRepository.deleteAll(saved);
     }
-//
-//    @RepeatedTest(10)
-//    void shouldFindTipById() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertEquals(item.getTitle(), saved.getTitle());
-//        Optional<DogHubTip> tipOptional = dogHubTipRepository.findById(saved.getId());
-//        assertTrue(tipOptional.isPresent());
-//        assertEquals(item.getTitle(), tipOptional.get().getTitle());
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldNotFindTipByIdNonExistingId() {
-//        Optional<DogHubTip> userOptional = dogHubTipRepository.findById(getNonExistingId());
-//        assertTrue(userOptional.isEmpty());
-//    }
-//
+
+    @RepeatedTest(10)
+    void shouldFindDogById() {
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertEquals(item.getName(), saved.getName());
+        Optional<DogHubDog> tipOptional = dogHubDogRepository.findById(saved.getId());
+        assertTrue(tipOptional.isPresent());
+        assertEquals(item.getName(), tipOptional.get().getName());
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldNotFindDogByIdNonExistingId() {
+        Optional<DogHubDog> userOptional = dogHubDogRepository.findById(getNonExistingId());
+        assertTrue(userOptional.isEmpty());
+    }
+
 //    @RepeatedTest(10)
 //    void shouldFindTipByCreatedBy() {
 //        DogHubTip item = dogHubTipProvider.get();
