@@ -338,13 +338,13 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         createdBy.setId(originalId);
         dogHubDogRepository.delete(saved);
     }
-//
-//    @RepeatedTest(10)
-//    void shouldNotFindTipByNullCreatedBy() {
-//        List<DogHubTip> tips = dogHubTipRepository.findByCreatedBy(null);
-//        assertTrue(tips.isEmpty());
-//    }
-//
+
+    @RepeatedTest(10)
+    void shouldNotFindDogByNullCreatedBy() {
+        List<DogHubDog> tips = dogHubDogRepository.findByCreatedBy(null);
+        assertTrue(tips.isEmpty());
+    }
+
 //    @RepeatedTest(10)
 //    void shouldFindTipByTop1ByIdGreaterThanOrderById() {
 //        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
