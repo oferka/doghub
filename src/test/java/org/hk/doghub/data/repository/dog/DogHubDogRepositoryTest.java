@@ -438,14 +438,14 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.delete(saved2);
     }
 
-//    @RepeatedTest(10)
-//    void shouldExistById() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertTrue(dogHubTipRepository.existsById(saved.getId()));
-//        dogHubTipRepository.delete(saved);
-//    }
-//
+    @RepeatedTest(10)
+    void shouldExistById() {
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertTrue(dogHubDogRepository.existsById(saved.getId()));
+        dogHubDogRepository.delete(saved);
+    }
+
 //    @RepeatedTest(10)
 //    void shouldNotExistByNonExistingId() {
 //        DogHubTip item = dogHubTipProvider.get();
