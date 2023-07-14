@@ -119,7 +119,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldExistById">
+  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldNotExistByNonExistingId">
     <configuration name="DogHubDogRepositoryTest.shouldExistById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -136,22 +136,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubDogRepositoryTest.shouldFindDogByTop1ByIdGreaterThanAndCreatedByOrderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.dog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldFindDogByTop1ByIdGreaterThanAndCreatedByOrderById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DogHubDogRepositoryTest.shouldFindDogByTop1ByIdLessThanAndCreatedByOrderByIdDesc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
@@ -163,6 +147,22 @@
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
       <option name="METHOD_NAME" value="shouldFindDogByTop1ByIdLessThanAndCreatedByOrderByIdDesc" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubDogRepositoryTest.shouldNotExistByNonExistingId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.dog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotExistByNonExistingId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotExistByNonExistingId" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldExistById" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotFindDogByTop1ByIdLessThanAndCreatedByOrderByIdDesc" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldFindDogByTop1ByIdLessThanAndCreatedByOrderByIdDesc" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotFindDogByTop1ByIdGreaterThanAndCreatedByOrderById" />
-        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldFindDogByTop1ByIdGreaterThanAndCreatedByOrderById" />
       </list>
     </recent_temporary>
   </component>
