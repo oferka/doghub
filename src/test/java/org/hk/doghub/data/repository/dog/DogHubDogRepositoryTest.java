@@ -385,19 +385,19 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.deleteAll(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldFindTipByTop1ByIdGreaterThanAndCreatedByOrderById() {
-//        DogHubTip item1 = dogHubTipProvider.get();
-//        DogHubTip saved1 = dogHubTipRepository.save(item1);
-//        DogHubTip item2 = dogHubTipProvider.get();
-//        item2.setCreatedBy(item1.getCreatedBy());
-//        DogHubTip saved2 = dogHubTipRepository.save(item2);
-//        Optional<DogHubTip> tipOptional = dogHubTipRepository.findTop1ByIdGreaterThanAndCreatedByOrderById(saved1.getId(), saved1.getCreatedBy());
-//        assertTrue(tipOptional.isPresent());
-//        dogHubTipRepository.delete(saved1);
-//        dogHubTipRepository.delete(saved2);
-//    }
-//
+    @RepeatedTest(10)
+    void shouldFindDogByTop1ByIdGreaterThanAndCreatedByOrderById() {
+        DogHubDog item1 = dogHubDogProvider.get();
+        DogHubDog saved1 = dogHubDogRepository.save(item1);
+        DogHubDog item2 = dogHubDogProvider.get();
+        item2.setCreatedBy(item1.getCreatedBy());
+        DogHubDog saved2 = dogHubDogRepository.save(item2);
+        Optional<DogHubDog> tipOptional = dogHubDogRepository.findTop1ByIdGreaterThanAndCreatedByOrderById(saved1.getId(), saved1.getCreatedBy());
+        assertTrue(tipOptional.isPresent());
+        dogHubDogRepository.delete(saved1);
+        dogHubDogRepository.delete(saved2);
+    }
+
 //    @RepeatedTest(10)
 //    void shouldNotFindTipByTop1ByIdGreaterThanAndCreatedByOrderById() {
 //        DogHubTip item1 = dogHubTipProvider.get();
