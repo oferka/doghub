@@ -326,18 +326,18 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.delete(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldNotFindTipByNonExistingCreatedBy() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        DogHubUser createdBy = saved.getCreatedBy();
-//        Long originalId = createdBy.getId();
-//        createdBy.setId(getNonExistingId());
-//        List<DogHubTip> tips = dogHubTipRepository.findByCreatedBy(createdBy);
-//        assertTrue(tips.isEmpty());
-//        createdBy.setId(originalId);
-//        dogHubTipRepository.delete(saved);
-//    }
+    @RepeatedTest(10)
+    void shouldNotFindDogByNonExistingCreatedBy() {
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item);
+        DogHubUser createdBy = saved.getCreatedBy();
+        Long originalId = createdBy.getId();
+        createdBy.setId(getNonExistingId());
+        List<DogHubDog> tips = dogHubDogRepository.findByCreatedBy(createdBy);
+        assertTrue(tips.isEmpty());
+        createdBy.setId(originalId);
+        dogHubDogRepository.delete(saved);
+    }
 //
 //    @RepeatedTest(10)
 //    void shouldNotFindTipByNullCreatedBy() {
