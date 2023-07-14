@@ -355,16 +355,16 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.deleteAll(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldNotFindTipByTop1ByIdGreaterThanOrderById() {
-//        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
-//        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
-//        long maximalId = dogHubTipRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.DESC, "id"))).iterator().next().getId();
-//        Optional<DogHubTip> tipOptional = dogHubTipRepository.findTop1ByIdGreaterThanOrderById(maximalId);
-//        assertTrue(tipOptional.isEmpty());
-//        dogHubTipRepository.deleteAll(saved);
-//    }
-//
+    @RepeatedTest(10)
+    void shouldNotFindDogByTop1ByIdGreaterThanOrderById() {
+        List<DogHubDog> items = dogHubDogProvider.get(getNumberOfItemsToLoad());
+        List<DogHubDog> saved = dogHubDogRepository.saveAll(items);
+        long maximalId = dogHubDogRepository.findAll(PageRequest.of(0, 1, Sort.by(Sort.Direction.DESC, "id"))).iterator().next().getId();
+        Optional<DogHubDog> dogOptional = dogHubDogRepository.findTop1ByIdGreaterThanOrderById(maximalId);
+        assertTrue(dogOptional.isEmpty());
+        dogHubDogRepository.deleteAll(saved);
+    }
+
 //    @RepeatedTest(10)
 //    void shouldFindTipByTop1ByIdLessThanOrderByIdDesc() {
 //        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
