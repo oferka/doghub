@@ -365,16 +365,16 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.deleteAll(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldFindTipByTop1ByIdLessThanOrderByIdDesc() {
-//        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
-//        List<DogHubTip> saved = dogHubTipRepository.saveAll(items);
-//        Long id = saved.get(1).getId();
-//        Optional<DogHubTip> tipOptional = dogHubTipRepository.findTop1ByIdLessThanOrderByIdDesc(id);
-//        assertTrue(tipOptional.isPresent());
-//        dogHubTipRepository.deleteAll(saved);
-//    }
-//
+    @RepeatedTest(10)
+    void shouldFindDogByTop1ByIdLessThanOrderByIdDesc() {
+        List<DogHubDog> items = dogHubDogProvider.get(getNumberOfItemsToLoad());
+        List<DogHubDog> saved = dogHubDogRepository.saveAll(items);
+        Long id = saved.get(1).getId();
+        Optional<DogHubDog> tipOptional = dogHubDogRepository.findTop1ByIdLessThanOrderByIdDesc(id);
+        assertTrue(tipOptional.isPresent());
+        dogHubDogRepository.deleteAll(saved);
+    }
+
 //    @RepeatedTest(10)
 //    void shouldNotFindTipByTop1ByIdLessThanOrderByIdDesc() {
 //        List<DogHubTip> items = dogHubTipProvider.get(getNumberOfItemsToLoad());
