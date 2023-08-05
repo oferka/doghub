@@ -1,6 +1,6 @@
 package org.hk.doghub.ui.views.site.signup;
 
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -13,9 +13,9 @@ public class SignupMessageSecondLine extends HorizontalLayout {
         addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         TermsOfServiceAnchor termsOfService = new TermsOfServiceAnchor();
-        Label andLabel = new Label("and");
-        andLabel.addClassName(CLASS_NAME + "-and");
+        Span and = new Span("and");
+        and.addClassName(CLASS_NAME + "-and");
         PrivacyPolicyAnchor privacyPolicy = new PrivacyPolicyAnchor();
-        add(termsOfService, andLabel, privacyPolicy);
+        add(termsOfService, and, privacyPolicy);
     }
 }
