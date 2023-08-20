@@ -19,9 +19,9 @@
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson-datatype-jsr310.version>2.15.2</jackson-datatype-jsr310.version>
-        <springdoc-openapi-starter-webmvc-ui.version>2.1.0</springdoc-openapi-starter-webmvc-ui.version>
+        <springdoc-openapi-starter-webmvc-ui.version>2.2.0</springdoc-openapi-starter-webmvc-ui.version>
         <spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
-        <vaadin.version>24.1.4</vaadin.version>
+        <vaadin.version>24.1.5</vaadin.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <modelmapper.version>3.1.1</modelmapper.version>
         <line-awesome.version>1.1.0</line-awesome.version>
