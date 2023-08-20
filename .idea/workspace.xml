@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 950">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 951">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/signup/SignupMessageSecondLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hk/doghub/ui/views/site/signup/SignupMessageSecondLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/dog/DogHubDogRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hk/doghub/data/repository/dog/DogHubDogRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +70,9 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;org.hk.doghub.data.repository.tip.DogHubTipDataTest&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/ofer.karp/IdeaProjects/doghub/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
@@ -123,7 +121,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DogHubApplication">
+  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -137,7 +135,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubDogRepositoryTest.shouldExistById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubDogRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
@@ -147,7 +145,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldExistById" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogHubDogRepositoryTest.shouldExistByIdAndCreatedBy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.data.repository.dog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldExistByIdAndCreatedBy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,22 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubDogRepositoryTest.shouldNotFindDogByTop1ByIdLessThanAndCreatedByOrderByIdDesc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="doghub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.repository.dog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldNotFindDogByTop1ByIdLessThanAndCreatedByOrderByIdDesc" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -201,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubDogRepositoryTest" />
         <item itemvalue="Application.DogHubApplication" />
+        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldExistByIdAndCreatedBy" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotExistByNonExistingId" />
         <item itemvalue="Docker.doghub: Compose Deployment" />
-        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldExistById" />
-        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotFindDogByTop1ByIdLessThanAndCreatedByOrderByIdDesc" />
       </list>
     </recent_temporary>
   </component>
@@ -217,13 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00907" summary="doghub 903">
-      <created>1688882449534</created>
-      <option name="number" value="00907" />
-      <option name="presentableId" value="LOCAL-00907" />
-      <option name="project" value="LOCAL" />
-      <updated>1688882449534</updated>
     </task>
     <task id="LOCAL-00908" summary="doghub 904">
       <created>1688882694720</created>
@@ -561,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689359423866</updated>
     </task>
-    <option name="localTasksCounter" value="956" />
+    <task id="LOCAL-00956" summary="doghub 951">
+      <created>1691222821380</created>
+      <option name="number" value="00956" />
+      <option name="presentableId" value="LOCAL-00956" />
+      <option name="project" value="LOCAL" />
+      <updated>1691222821381</updated>
+    </task>
+    <option name="localTasksCounter" value="957" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -577,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 926" />
     <MESSAGE value="doghub 927" />
     <MESSAGE value="doghub 928" />
     <MESSAGE value="doghub 929" />
@@ -602,6 +598,7 @@
     <MESSAGE value="doghub 948" />
     <MESSAGE value="doghub 949" />
     <MESSAGE value="doghub 950" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 950" />
+    <MESSAGE value="doghub 951" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 951" />
   </component>
 </project>
