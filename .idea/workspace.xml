@@ -119,7 +119,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldExistByNameAndCreatedBy">
+  <component name="RunManager" selected="JUnit.DogHubDogRepositoryTest.shouldNotExistByNameAndCreatedByWithNonExistingTitle">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -165,17 +165,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogHubUserLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DogHubDogRepositoryTest.shouldNotExistByNameAndCreatedByWithNonExistingTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="doghub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hk.doghub.data.content.loader.user.*" />
+          <option name="PATTERN" value="org.hk.doghub.data.repository.dog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hk.doghub.data.content.loader.user" />
-      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.content.loader.user.DogHubUserLoaderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.hk.doghub.data.repository.dog" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.data.repository.dog.DogHubDogRepositoryTest" />
+      <option name="METHOD_NAME" value="shouldNotExistByNameAndCreatedByWithNonExistingTitle" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotExistByNameAndCreatedByWithNonExistingTitle" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldExistByNameAndCreatedBy" />
         <item itemvalue="JUnit.DogHubDogRepositoryTest.shouldNotExistByIdAndCreatedByWithNonExistingId" />
         <item itemvalue="JUnit.data in doghub" />
         <item itemvalue="Application.DogHubApplication" />
-        <item itemvalue="JUnit.DogHubUserLoaderTest" />
       </list>
     </recent_temporary>
   </component>

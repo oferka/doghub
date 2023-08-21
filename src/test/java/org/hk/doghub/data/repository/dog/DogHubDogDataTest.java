@@ -52,6 +52,10 @@ public class DogHubDogDataTest {
         return RandomUtils.nextLong();
     }
 
+    protected @NotNull String getNonExistingName() {
+        return dogHubDogProvider.get().getName();
+    }
+
     protected @NotNull String getNonExistingBreed() {
         return dogHubDogProvider.get().getBreed();
     }
