@@ -462,22 +462,22 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.delete(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldNotExistByIdAndCreatedByWithNonExistingId() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertFalse(dogHubTipRepository.existsByIdAndCreatedBy(getNonExistingId(), saved.getCreatedBy()));
-//        dogHubTipRepository.delete(saved);
-//    }
-//
-//    @RepeatedTest(10)
-//    void shouldExistByTitleAndCreatedBy() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertTrue(dogHubTipRepository.existsByTitleAndCreatedBy(saved.getTitle(), saved.getCreatedBy()));
-//        dogHubTipRepository.delete(saved);
-//    }
-//
+    @RepeatedTest(10)
+    void shouldNotExistByIdAndCreatedByWithNonExistingId() {
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertFalse(dogHubDogRepository.existsByIdAndCreatedBy(getNonExistingId(), saved.getCreatedBy()));
+        dogHubDogRepository.delete(saved);
+    }
+
+    @RepeatedTest(10)
+    void shouldExistByNameAndCreatedBy() {
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertTrue(dogHubDogRepository.existsByNameAndCreatedBy(saved.getName(), saved.getCreatedBy()));
+        dogHubDogRepository.delete(saved);
+    }
+
 //    @RepeatedTest(10)
 //    void shouldNotExistByTitleAndCreatedByWithNonExistingTitle() {
 //        DogHubTip item = dogHubTipProvider.get();
