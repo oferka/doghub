@@ -487,7 +487,7 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
     }
 
     @RepeatedTest(10)
-    void shouldCountTips() {
+    void shouldCountDogs() {
         long countBefore = dogHubDogRepository.count();
         DogHubDog item = dogHubDogProvider.get();
         DogHubDog saved = dogHubDogRepository.save(item);
@@ -496,14 +496,14 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.delete(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldCountTipsByCreatedBy() {
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        assertTrue(dogHubTipRepository.countByCreatedBy(saved.getCreatedBy()) > 0);
-//        dogHubTipRepository.delete(saved);
-//    }
-//
+    @RepeatedTest(10)
+    void shouldCountDogsByCreatedBy() {
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item);
+        assertTrue(dogHubDogRepository.countByCreatedBy(saved.getCreatedBy()) > 0);
+        dogHubDogRepository.delete(saved);
+    }
+
 //    @RepeatedTest(10)
 //    void shouldUpdateTipCreationTime() {
 //        DogHubTip item = dogHubTipProvider.get();
