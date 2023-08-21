@@ -486,16 +486,16 @@ class DogHubDogRepositoryTest extends DogHubDogDataTest {
         dogHubDogRepository.delete(saved);
     }
 
-//    @RepeatedTest(10)
-//    void shouldCountTips() {
-//        long countBefore = dogHubTipRepository.count();
-//        DogHubTip item = dogHubTipProvider.get();
-//        DogHubTip saved = dogHubTipRepository.save(item);
-//        long countAfter = dogHubTipRepository.count();
-//        assertEquals(countAfter, countBefore + 1);
-//        dogHubTipRepository.delete(saved);
-//    }
-//
+    @RepeatedTest(10)
+    void shouldCountTips() {
+        long countBefore = dogHubDogRepository.count();
+        DogHubDog item = dogHubDogProvider.get();
+        DogHubDog saved = dogHubDogRepository.save(item);
+        long countAfter = dogHubDogRepository.count();
+        assertEquals(countAfter, countBefore + 1);
+        dogHubDogRepository.delete(saved);
+    }
+
 //    @RepeatedTest(10)
 //    void shouldCountTipsByCreatedBy() {
 //        DogHubTip item = dogHubTipProvider.get();
