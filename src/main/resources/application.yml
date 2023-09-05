@@ -13,8 +13,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-  mustache:
-    check-template-location: false
 
 management:
   endpoints:
