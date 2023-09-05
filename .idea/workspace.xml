@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 960">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 961">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,13 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684060594268</updated>
-    </task>
-    <task id="LOCAL-00917" summary="doghub 913">
-      <created>1688884491290</created>
-      <option name="number" value="00917" />
-      <option name="presentableId" value="LOCAL-00917" />
-      <option name="project" value="LOCAL" />
-      <updated>1688884491290</updated>
     </task>
     <task id="LOCAL-00918" summary="doghub 914">
       <created>1688884562315</created>
@@ -557,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692975537427</updated>
     </task>
-    <option name="localTasksCounter" value="966" />
+    <task id="LOCAL-00966" summary="doghub 961">
+      <created>1693469696535</created>
+      <option name="number" value="00966" />
+      <option name="presentableId" value="LOCAL-00966" />
+      <option name="project" value="LOCAL" />
+      <updated>1693469696535</updated>
+    </task>
+    <option name="localTasksCounter" value="967" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -573,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 936" />
     <MESSAGE value="doghub 937" />
     <MESSAGE value="doghub 938" />
     <MESSAGE value="doghub 939" />
@@ -598,6 +598,7 @@
     <MESSAGE value="doghub 958" />
     <MESSAGE value="doghub 959" />
     <MESSAGE value="doghub 960" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 960" />
+    <MESSAGE value="doghub 961" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 961" />
   </component>
 </project>
