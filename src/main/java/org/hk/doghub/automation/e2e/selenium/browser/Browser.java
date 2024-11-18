@@ -5,24 +5,21 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Getter
 public class Browser {
 
-    @Getter
-    @Setter
     @NotNull
     private BrowserType type;
 
-    @Getter
-    @Setter
     private boolean maximize;
 
-    @Getter
-    @Setter
     private boolean headless;
 
+    @Getter
     @AllArgsConstructor
     @ToString
     public enum BrowserType {
@@ -33,7 +30,6 @@ public class Browser {
         EDGE("edge"),
         SAFARI("safari");
 
-        @Getter
         @NotNull
         @Size(min = 2, max = 16)
         @NotBlank
