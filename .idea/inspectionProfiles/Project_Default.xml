@@ -15,6 +15,7 @@
           <option value="doghub" />
           <option value="doghub" />
           <option value="doghub" />
+          <option value="doghub" />
         </list>
       </option>
       <option name="ignoredPackages">
@@ -22,10 +23,12 @@
           <option value="commons-io:commons-io:2.5" />
           <option value="io.netty:netty-common:4.1.114.Final" />
           <option value="org.xmlunit:xmlunit-core:2.9.1" />
+          <option value="com.nimbusds:nimbus-jose-jwt:9.31" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />

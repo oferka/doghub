@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 964" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 965">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -575,7 +578,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693901239715</updated>
     </task>
-    <option name="localTasksCounter" value="970" />
+    <option name="localTasksCounter" value="971" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -591,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 940" />
     <MESSAGE value="doghub 941" />
     <MESSAGE value="doghub 942" />
     <MESSAGE value="doghub 943" />
@@ -616,6 +618,7 @@
     <MESSAGE value="doghub 962" />
     <MESSAGE value="doghub 963" />
     <MESSAGE value="doghub 964" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 964" />
+    <MESSAGE value="doghub 965" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 965" />
   </component>
 </project>
