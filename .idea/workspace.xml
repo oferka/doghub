@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 981">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 983">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/postgres/doghub/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/setup/postgres/doghub/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -578,7 +577,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693901239715</updated>
     </task>
-    <option name="localTasksCounter" value="987" />
+    <option name="localTasksCounter" value="989" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -594,8 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 957" />
-    <MESSAGE value="doghub 958" />
     <MESSAGE value="doghub 959" />
     <MESSAGE value="doghub 960" />
     <MESSAGE value="doghub 961" />
@@ -619,6 +616,8 @@
     <MESSAGE value="doghub 979" />
     <MESSAGE value="doghub 980" />
     <MESSAGE value="doghub 981" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 981" />
+    <MESSAGE value="doghub 982" />
+    <MESSAGE value="doghub 983" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 983" />
   </component>
 </project>
