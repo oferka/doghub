@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres:
-    image: 'postgres:15.4-alpine3.18'
+    image: 'postgres'
     container_name: local-postgres-doghub
     restart: always
     environment:
