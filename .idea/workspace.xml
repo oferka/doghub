@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 973">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 976">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -577,7 +577,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693901239715</updated>
     </task>
-    <option name="localTasksCounter" value="979" />
+    <option name="localTasksCounter" value="982" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -593,9 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 949" />
-    <MESSAGE value="doghub 950" />
-    <MESSAGE value="doghub 951" />
     <MESSAGE value="doghub 952" />
     <MESSAGE value="doghub 953" />
     <MESSAGE value="doghub 954" />
@@ -618,6 +615,9 @@
     <MESSAGE value="doghub 971" />
     <MESSAGE value="doghub 972" />
     <MESSAGE value="doghub 973" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 973" />
+    <MESSAGE value="doghub 974" />
+    <MESSAGE value="doghub 975" />
+    <MESSAGE value="doghub 976" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 976" />
   </component>
 </project>
