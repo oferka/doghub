@@ -7,9 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 984">
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 985">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +83,7 @@
     "JUnit.AboutViewTest.executor": "Run",
     "JUnit.DogHubApplicationTest.executor": "Run",
     "JUnit.LoginViewTest.shouldNavigateFromHomePage.executor": "Debug",
+    "JUnit.SiteHomeViewTest.shouldNavigateFromHomePage.executor": "Run",
     "JUnit.org.hk.doghub.data in doghub.executor": "Run",
     "JUnit.org.hk.doghub.health in doghub.executor": "Run",
     "Maven.doghub [clean].executor": "Run",
@@ -147,7 +148,7 @@
       <recent name="org.hk.doghub.ui.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginViewTest.shouldNavigateFromHomePage">
+  <component name="RunManager" selected="JUnit.SiteHomeViewTest.shouldNavigateFromHomePage">
     <configuration name="DogHubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hk.doghub.DogHubApplication" />
       <module name="doghub" />
@@ -192,6 +193,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SiteHomeViewTest.shouldNavigateFromHomePage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="doghub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hk.doghub.ui.e2e.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hk.doghub.ui.e2e" />
+      <option name="MAIN_CLASS_NAME" value="org.hk.doghub.ui.e2e.SiteHomeViewTest" />
+      <option name="METHOD_NAME" value="shouldNavigateFromHomePage(org.hk.doghub.ui.e2e.Setup)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -206,21 +223,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="prometheus-grafana: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="setup/prometheus-grafana/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SiteHomeViewTest.shouldNavigateFromHomePage" />
+        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="JUnit.LoginViewTest.shouldNavigateFromHomePage" />
         <item itemvalue="JUnit.AboutViewTest" />
-        <item itemvalue="Application.DogHubApplication" />
         <item itemvalue="Docker.doghub: Compose Deployment" />
-        <item itemvalue="Docker.prometheus-grafana: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -576,7 +585,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693901239715</updated>
     </task>
-    <option name="localTasksCounter" value="990" />
+    <option name="localTasksCounter" value="991" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -592,7 +601,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 960" />
     <MESSAGE value="doghub 961" />
     <MESSAGE value="doghub 962" />
     <MESSAGE value="doghub 963" />
@@ -617,7 +625,8 @@
     <MESSAGE value="doghub 982" />
     <MESSAGE value="doghub 983" />
     <MESSAGE value="doghub 984" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 984" />
+    <MESSAGE value="doghub 985" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 985" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
