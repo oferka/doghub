@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
-import org.hk.doghub.ui.automation.DogHubNavigator;
 import org.hk.doghub.ui.views.site.knowledge.KnowledgeView;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTab;
 import org.openqa.selenium.By;

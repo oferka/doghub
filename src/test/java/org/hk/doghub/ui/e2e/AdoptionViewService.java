@@ -1,12 +1,12 @@
-package org.hk.doghub.ui.automation;
+package org.hk.doghub.ui.e2e;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hk.doghub.automation.e2e.selenium.page.TitleVerifier;
 import org.hk.doghub.automation.e2e.selenium.ui.actions.click.ClickExecutor;
+import org.hk.doghub.ui.views.site.adoption.AdoptionView;
 import org.hk.doghub.ui.views.site.layout.DogHubSiteLayoutTab;
-import org.hk.doghub.ui.views.site.store.StoreView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import static java.lang.String.format;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class StoreViewService {
+public class AdoptionViewService {
 
     private final ClickExecutor clickExecutor;
 
@@ -25,12 +25,12 @@ public class StoreViewService {
     private final DogHubNavigator navigator;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
-        clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, StoreView.NAME)));
-        titleVerifier.verifyEquals(webDriver, StoreView.NAME);
+        clickExecutor.click(webDriver, By.id(format("%s-%s", DogHubSiteLayoutTab.CLASS_NAME, AdoptionView.NAME)));
+        titleVerifier.verifyEquals(webDriver, AdoptionView.NAME);
     }
 
     public void navigateDirectly(@NotNull WebDriver webDriver) {
-        navigator.navigateToStoreView(webDriver);
-        titleVerifier.verifyEquals(webDriver, StoreView.NAME);
+        navigator.navigateToAdoptionView(webDriver);
+        titleVerifier.verifyEquals(webDriver, AdoptionView.NAME);
     }
 }

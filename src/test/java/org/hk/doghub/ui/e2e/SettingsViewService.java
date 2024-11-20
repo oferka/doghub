@@ -1,4 +1,4 @@
-package org.hk.doghub.ui.automation;
+package org.hk.doghub.ui.e2e;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class NotificationsViewService {
+public class SettingsViewService {
 
     private final UserMenuBarService userMenuBarService;
 
     public void navigateFromHomePage(@NotNull WebDriver webDriver) {
-        userMenuBarService.navigateToNotificationsView(webDriver);
+        userMenuBarService.navigateToSettingsView(webDriver);
     }
 }

@@ -3,7 +3,6 @@ package org.hk.doghub.ui.e2e;
 import org.hk.doghub.DogHubApplication;
 import org.hk.doghub.automation.e2e.selenium.browser.BrowserProvider;
 import org.hk.doghub.automation.e2e.selenium.browser.WebDriverProvider;
-import org.hk.doghub.ui.automation.SiteHomeViewService;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;

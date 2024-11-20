@@ -1,4 +1,4 @@
-package org.hk.doghub.ui.automation;
+package org.hk.doghub.ui.e2e;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

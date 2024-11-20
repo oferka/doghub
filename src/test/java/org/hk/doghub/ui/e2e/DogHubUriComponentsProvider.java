@@ -1,4 +1,4 @@
-package org.hk.doghub.ui.automation;
+package org.hk.doghub.ui.e2e;
 
 import jakarta.validation.constraints.NotNull;
 import org.springframework.web.util.UriComponents;
