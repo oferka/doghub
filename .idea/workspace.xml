@@ -7,10 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 986">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    <list default="true" id="95da4ff5-efad-40e1-90ab-402a5c6403c9" name="Changes" comment="doghub 988">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -588,7 +586,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693901239715</updated>
     </task>
-    <option name="localTasksCounter" value="992" />
+    <option name="localTasksCounter" value="993" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -604,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="doghub 962" />
     <MESSAGE value="doghub 963" />
     <MESSAGE value="doghub 964" />
     <MESSAGE value="doghub 965" />
@@ -629,6 +626,7 @@
     <MESSAGE value="doghub 984" />
     <MESSAGE value="doghub 985" />
     <MESSAGE value="doghub 986" />
-    <option name="LAST_COMMIT_MESSAGE" value="doghub 986" />
+    <MESSAGE value="doghub 988" />
+    <option name="LAST_COMMIT_MESSAGE" value="doghub 988" />
   </component>
 </project>
