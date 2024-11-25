@@ -31,6 +31,5 @@ public abstract class AbstractEntityLoader<T extends AbstractEntity> implements 
     protected abstract @NotNull EntityProvider<T> getEntityProvider();
     protected abstract @NotNull EntityProviderConfiguration<T> getEntityProviderConfiguration();
     protected abstract @NotNull EntityService<T> getEntityService();
-
     protected abstract @NotNull String getEntityName();
 }
