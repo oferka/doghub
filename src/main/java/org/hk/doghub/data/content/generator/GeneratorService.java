@@ -15,8 +15,8 @@ import static org.hk.doghub.data.content.generator.Provider.MIN_NUMBER_OF_ITEMS;
 @Validated
 public abstract class GeneratorService<T extends ProvidedObject> {
 
-    public @NotNull List<T> generate(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfUsers) {
-        return getProvider().get(numberOfUsers);
+    public @NotNull List<T> generate(@Min(MIN_NUMBER_OF_ITEMS) @Max(MAX_NUMBER_OF_ITEMS) int numberOfItems) {
+        return getProvider().get(numberOfItems);
     }
 
     public @NotNull T generate() {
